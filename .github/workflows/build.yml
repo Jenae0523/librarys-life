@@ -34,23 +34,21 @@ jobs:
       - name: Build Eleventy Site
         run: npx @11ty/eleventy
 
-      # ✅ 新增这一步：配置 GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # 上传 _site 到 Pages
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Show Page URL
+        run: echo "Your page is deployed at ${{ steps.deployment.outputs.page_url }}"
