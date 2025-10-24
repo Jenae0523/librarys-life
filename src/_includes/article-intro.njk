@@ -1,0 +1,29 @@
+<!-- 栏目介绍 -->
+<section class="g-bg-gray-light-v5 g-pb-40">
+<header class="text-center g-width-60x--md mx-auto g-mb-50">
+    
+    <!-- 栏目标题（支持两排）-->
+    {% if title_line1 %}
+    <h2 class="h1 g-color-gray-dark-v1 g-pt-80 g-font-weight-300">
+      {{ title_line1 }}
+    </h2>
+    {% endif %}
+
+    {% if title_line2 %}
+    <h2 class="h1 g-color-gray-dark-v1 g-mb-30 g-font-weight-300">
+      {{ title_line2 }}
+    </h2>
+    {% endif %}
+
+    <!-- MP3有声书 -->
+    {% if audio %}
+    <audio controls="controls">
+      <source src="{{ audio }}" type="audio/mpeg">
+    </audio>
+    {% endif %}
+
+
+    
+  </header>
+</section>
+

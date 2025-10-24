@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  {% include "head.njk" %}
+  <style>
+    /* 固定封面比例 1920x1080 (16:9) */
+    .article-cover {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    /* 两行标题 */
+    .article-title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .article-title span {
+      display: block;
+    }
+
+    /* 整个卡片可点击 */
+    .article-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-decoration: none;
+    }
+
+    /* 分页导航 */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 40px 0 0 0;
+    }
+    .pagination li {
+      margin: 0 5px;
+    }
+    .pagination a {
+      display: block;
+      padding: 8px 14px;
+      border: 1px solid #ddd;
+      border-radius: 9999px;  /* 极大值，形成圆角胶囊按钮 */
+      color: #333;
+      text-decoration: none;
+    }
+    .pagination a:hover {
+      background-color: #f5f5f5;
+    }
+    /* active 页高亮 */
+    .pagination .active a {
+      background-color: var(--color-primary, #6281c8);
+      color: #fff;
+      border-color: var(--color-primary, #6281c8);
+      font-weight: bold;
+    }
+	.article-title .title-line1 {
+      font-size: 1.5rem;   /* 比原来大 */
+      font-weight: 500;    /* 粗体 */
+      display: block;
+    }
+
+    .article-title .title-line2 {
+      font-size: 1.1rem;     /* 比第一行小 */
+      font-weight: 400;    /* 正常/细体 */
+      display: block;
+      margin-top: 2px;     /* 行间距微调 */
+}
+
+  </style>
+</head>
+
+<body>
+  <main>
+    {% include "header.njk" %}
+    {% include "starnight.njk" %}
+    {% include "article-intro.njk" %}
+
+    <div class="container g-pt-100 g-pb-40">
+      <div class="row justify-content-between">
+
+        <!-- 左侧：文章列表 -->
+        <div class="col-lg-9 g-mb-80">
+          <div class="g-pr-20--lg">
+            <div class="row">
+              {% for article in pagination.items %}
+              <div class="col-md-6 g-mb-40">
+                <a href="{{ article.url }}" class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
+                  <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">{{ article.date | dateCN }}</p>				
+                  <img src="{{ article.data.cover }}" 
+                       alt="{{ article.data.title_line1 }} {{ article.data.title_line2 }}" 
+                       class="article-cover">
+
+                  <h3 class="article-title g-color-gray-dark-v2">
+				    {% if article.data.title_line1 %}
+                       <span class="title-line1">{{ article.data.title_line1 }}</span>
+					{% endif %}   
+					{% if article.data.title_line2 %}
+					   <span class="title-line2">{{ article.data.title_line2 }}</span>
+					{% endif %}  
+                  </h3>
+
+
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+
+            <!-- 分页导航 -->
+            <nav>
+              <ul class="pagination">
+                {% set currentPage = pagination.pageNumber %}
+
+                {% if currentPage > 0 %}
+                  <li><a href="/articles-list/{{ currentPage - 1 }}/">上一页</a></li>
+                {% endif %}
+
+                {% for pageEntry in pagination.pages %}
+                  {% set pageNum = loop.index0 %}
+                  <li class="{% if pageNum == currentPage %}active{% endif %}">
+                    <a href="/articles-list/{{ pageNum }}/">{{ pageNum + 1 }}</a>
+                  </li>
+                {% endfor %}
+
+                {% if currentPage < pagination.pages | length - 1 %}
+                  <li><a href="/articles-list/{{ currentPage + 1 }}/">下一页</a></li>
+                {% endif %}
+              </ul>
+              <hr class="g-brd-gray-light-v4 g-my-50">
+            </nav>
+          </div>
+        </div>
+
+        <!-- 右侧 -->
+        <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-80">
+          <div class="g-pl-20--lg">
+            {% include "donation.njk" %}
+            {% include "email.njk" %}
+            <hr class="g-brd-gray-light-v4 g-my-50">
+            {% include "sidebar-nav.njk" %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include "footer.njk" %}
+  </main>
+  {% include "scripts.njk" %}
+</body>
+</html>

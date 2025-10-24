@@ -1,0 +1,48 @@
+<footer class="ebook-footer g-bg-light g-pt-50 g-pb-50">
+
+    <div class="sharethis-inline-share-buttons"></div>
+    <p class="g-mt-40 g-color-gray-dark">对你获取的信息，保持善意的怀疑和独立思考是明智的。</p>
+  </div>
+</footer>
+
+<style>
+.ebook-footer {
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+/* 标题样式 */
+.ebook-footer h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.8em;
+}
+
+/* 网格布局：默认两列 */
+.ebook-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2em 2em;
+  justify-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 小屏幕时变成一列 */
+@media (max-width: 600px) {
+  .ebook-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 链接样式 */
+.ebook-link {
+  font-size: 1rem;
+  color: #6B77CC;
+  text-decoration: underline;  /* 始终显示下划线 */
+  transition: color 0.3s;
+}
+
+.ebook-link:hover {
+  color: #ff6600;
+}
+</style>

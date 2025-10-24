@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  {% include "head.njk" %}
+</head>
+
+<style>
+.article-body p {
+  margin-bottom: 2em;
+  line-height: 2.2;
+  font-size: 16px;
+}
+
+.article-body h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-top: 3em;
+  margin-bottom: 1.2em;
+}
+
+.article-body h3 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+}
+
+.article-body h4 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+}
+
+.article-body .tags {
+  margin-top: 3.5em;
+  padding-top: 1.2em;
+  border-top: 1px solid #eee;
+}
+.nav-link-hover-underline:hover {
+  text-decoration: underline;
+}
+.article-body img {
+  display: block;        /* 让图片变成块级元素 */
+  margin: 2em auto;      /* 上下留空、左右自动居中 */
+  max-width: 100%;       /* 不超过容器宽度，自适应缩放 */
+  height: auto;          /* 保持宽高比 */
+}
+
+
+/* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
+.article-body p + p {
+  margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+</style>
+
+
+<body>
+  <main>
+    {% include "header.njk" %}	
+    {% include "starnight.njk" %}	
+    {% include "article-intro.njk" %}
+
+    <!-- 响应式两栏布局 -->
+    <div class="container g-pt-100 g-pb-20">
+      <div class="row justify-content-between">
+        <!-- 左侧：正文内容和视频 -->
+        <div class="col-lg-9 g-mb-80">
+          <div class="g-pr-20--lg">
+            <article class="g-mb-100">
+              <div class="g-mb-30 g-font-size-15">
+
+                <!-- YouTube 视频（如果有） -->
+                {% if youtube %}
+                <div class="embed-responsive embed-responsive-16by9 g-mb-10">
+                  <iframe width="100%" src="{{ youtube }}" frameborder="0" allowfullscreen></iframe>
+                </div>
+                {% endif %}
+
+<span class="d-block g-color-gray-dark-v4 g-font-size-13 g-pt-20 g-pb-10">{{ date | dateCN }}</span>
+
+                <!-- 正文内容 -->			
+<div class="article-body g-color-black" style="line-height: 2.5; font-size: 16px;">
+  {{ content | safe }}
+</div>
+
+
+                <!-- 横线与再次分享 -->
+                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <div class="sharethis-inline-share-buttons"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+
+
+	
+        <!-- 右侧：捐赠和邮件 -->
+        <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-80">
+          <div class="g-pl-20--lg">
+            <div id="stickyblock-start" class="js-sticky-block g-sticky-block--lg g-pt-50"
+                 data-start-point="#stickyblock-start" data-end-point="#stickyblock-end">
+
+
+              {% include "donation.njk" %}
+              {% include "email.njk" %}
+			  
+			  <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- tags区块 -->
+			  {% include "tag.njk" %}
+			  
+			  <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">			  			  
+              <!-- 相关文章 -->			  
+			  {% include "related-posts.njk" %}
+			  
+			  <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">	
+              <!-- 侧边文章目录 -->					  
+			  {% include "sidebar-nav.njk" %}
+			  
+			  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include "footer.njk" %}
+  </main>
+
+  {% include "scripts.njk" %}
+</body>
+</html>
