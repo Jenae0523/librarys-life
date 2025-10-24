@@ -44,6 +44,7 @@ module.exports = function(eleventyConfig) {
       layouts: "_layouts",
       output: "_site"
     },
-    passthroughFileCopy: true
+    passthroughFileCopy: true,
+	pathPrefix: "/librarys-life/"   // ← 新增这一行，GitHub仓库名
   };
 };
