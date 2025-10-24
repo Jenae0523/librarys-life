@@ -34,6 +34,10 @@ jobs:
       - name: Build Eleventy Site
         run: npx @11ty/eleventy
 
+      # ✅ 必加这行，告诉 GitHub 这是 Pages 站点
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
