@@ -3,8 +3,8 @@ name: Build and Deploy Eleventy Site
 on:
   push:
     branches:
-      - main  # 每次 push 到 main 分支时触发
-  workflow_dispatch:  # 可手动触发
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -34,14 +34,15 @@ jobs:
       - name: Build Eleventy Site
         run: npx @11ty/eleventy
 
-      # ✅ 必加这行，告诉 GitHub 这是 Pages 站点
+      # ✅ 新增这一步：配置 GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      # 上传 _site 到 Pages
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site   # Eleventy 输出目录
+          path: _site
 
   deploy:
     environment:
