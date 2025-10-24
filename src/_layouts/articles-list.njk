@@ -98,7 +98,7 @@
             <div class="row">
               {% for article in pagination.items %}
               <div class="col-md-6 g-mb-40">
-                <a href="{{ article.url }}" class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
+                <a href="{{ article.url | url }}" class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
                   <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">{{ article.date | dateCN }}</p>				
                   <img src="{{ article.data.cover }}" 
                        alt="{{ article.data.title_line1 }} {{ article.data.title_line2 }}" 
@@ -125,18 +125,18 @@
                 {% set currentPage = pagination.pageNumber %}
 
                 {% if currentPage > 0 %}
-                  <li><a href="/articles-list/{{ currentPage - 1 }}/">上一页</a></li>
+                  <li><a href="/librarys-life/articles-list/{{ currentPage - 1 }}/">上一页</a></li>
                 {% endif %}
 
                 {% for pageEntry in pagination.pages %}
                   {% set pageNum = loop.index0 %}
                   <li class="{% if pageNum == currentPage %}active{% endif %}">
-                    <a href="/articles-list/{{ pageNum }}/">{{ pageNum + 1 }}</a>
+                    <a href="/librarys-life/articles-list/{{ pageNum }}/">{{ pageNum + 1 }}</a>
                   </li>
                 {% endfor %}
 
                 {% if currentPage < pagination.pages | length - 1 %}
-                  <li><a href="/articles-list/{{ currentPage + 1 }}/">下一页</a></li>
+                  <li><a href="/librarys-life/articles-list/{{ currentPage + 1 }}/">下一页</a></li>
                 {% endif %}
               </ul>
               <hr class="g-brd-gray-light-v4 g-my-50">
