@@ -31,11 +31,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # ✅ 新增这部分，强制删除旧的 _site 文件夹
-      - name: Clean old build
-        run: rm -rf _site
-
-      # ✅ 然后再重新完整构建
       - name: Build Eleventy Site
         run: npx @11ty/eleventy
 
