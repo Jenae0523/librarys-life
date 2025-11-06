@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20251107-0209">
+<meta name="version" content="20251107-0314">
 
 
 <meta charset="utf-8">
@@ -364,6 +364,7 @@
 
 
 
+
       
         
         <div class="col-md-6 g-mt-30">
@@ -435,6 +436,7 @@
     
   </article>
 </div>
+
 
 
 
@@ -512,6 +514,7 @@
 
 
 
+
       
         
         <div class="col-md-6 g-mt-30">
@@ -583,6 +586,7 @@
     
   </article>
 </div>
+
 
 
 
@@ -660,6 +664,7 @@
 
 
 
+
       
         
         <div class="col-md-6 g-mt-30">
@@ -731,6 +736,7 @@
     
   </article>
 </div>
+
 
 
 
@@ -808,6 +814,7 @@
 
 
 
+
       
         
         <div class="col-md-6 g-mt-30">
@@ -879,6 +886,7 @@
     
   </article>
 </div>
+
 
 
 
@@ -956,6 +964,7 @@
 
 
 
+
       
         
         <div class="col-md-6 g-mt-30">
@@ -1030,6 +1039,7 @@
 
 
 
+
       
         
         <div class="col-md-6 g-mt-30">
@@ -1101,6 +1111,7 @@
     
   </article>
 </div>
+
 
 
 
@@ -1179,74 +1190,97 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
   document.querySelectorAll(".show-subtitles").forEach(button => {
     const article = button.closest("article");
     const audio = article.querySelector("audio");
     const container = article.querySelector(".subtitle-box");
     let subtitles = [];
+    let currentIndex = -1;
+    let isLoaded = false;
 
+    // 平滑滚动函数（修正版）
+    const smoothScrollTo = (target) => {
+      if (!target) return;
+      const targetTop = target.offsetTop - container.offsetTop;
+      const start = container.scrollTop;
+      const end = targetTop - container.clientHeight / 2 + target.clientHeight / 2;
+      const distance = end - start;
+      const duration = 400;
+      const startTime = performance.now();
+
+      const step = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const ease = 0.5 - Math.cos(progress * Math.PI) / 2;
+        container.scrollTop = start + distance * ease;
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    // 加载字幕文件
     const loadSubtitles = async () => {
       try {
         const res = await fetch(button.dataset.subtitle);
         const data = await res.json();
         container.innerHTML = data.map(s => 
-          `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.3em 0;">${s.text}</p>`
+          `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.4em 0;">${s.text}</p>`
         ).join("");
         subtitles = Array.from(container.querySelectorAll("p"));
-      } catch(err) {
+        isLoaded = true;
+        currentIndex = -1;
+      } catch (err) {
         container.innerHTML = "<p style='color:red;'>加载字幕失败。</p>";
         console.error("字幕加载失败：", err);
       }
     };
 
-    // 按钮点击
+    // 高亮并滚动同步
+    const highlightSubtitles = () => {
+      if (!isLoaded || !subtitles.length) return;
+      const t = audio.currentTime;
+      let idx = subtitles.findIndex(p => t >= parseFloat(p.dataset.start) && t <= parseFloat(p.dataset.end));
+      if (idx === -1) return;
+
+      if (idx !== currentIndex) {
+        subtitles.forEach(p => p.style.color = "#555");
+        subtitles[idx].style.color = "#6B77CC";
+        smoothScrollTo(subtitles[idx]);
+        currentIndex = idx;
+      }
+    };
+
+    // 按钮点击事件
     button.addEventListener("click", async () => {
       const isHidden = container.style.display === "none";
-
       if (isHidden) {
         container.style.display = "block";
         button.textContent = "关闭字幕";
-        // 设置蓝紫色边框文字，白底
         button.style.border = "1px solid #6B77CC";
         button.style.color = "#6B77CC";
-        button.style.background = "#fff";
-        await loadSubtitles();
-        highlightSubtitles(); // 初始化高亮
+
+        if (!isLoaded) await loadSubtitles();
+        highlightSubtitles();
       } else {
         container.style.display = "none";
         button.textContent = "显示字幕";
-        // 恢复默认白底灰边按钮
         button.style.border = "1px solid #ccc";
         button.style.color = "#333";
-        button.style.background = "#fff";
+        currentIndex = -1;
       }
     });
 
-    // 高亮字幕函数
-    const highlightSubtitles = () => {
-      if (!subtitles.length) return;
-      const current = audio.currentTime;
-      subtitles.forEach(line => {
-        const start = parseFloat(line.dataset.start);
-        const end = parseFloat(line.dataset.end);
-        if (current >= start && current <= end) {
-          line.style.color = "#6B77CC";
-          line.style.fontWeight = "bold";
-          line.scrollIntoView({ behavior: "smooth", block: "center" });
-        } else {
-          line.style.color = "#333";
-          line.style.fontWeight = "normal";
-        }
-      });
-    };
-
-    // 每次 timeupdate 都刷新高亮
+    // 音频事件监听（关键改进点）
     audio.addEventListener("timeupdate", highlightSubtitles);
+    audio.addEventListener("seeked", () => {
+      currentIndex = -1; // 重置索引
+      highlightSubtitles(); // 马上刷新字幕位置
+    });
+    audio.addEventListener("play", highlightSubtitles);
+    audio.addEventListener("loadedmetadata", highlightSubtitles);
   });
-
 });
 </script>
+
 
 
       
