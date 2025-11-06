@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20251107-0049">
+<meta name="version" content="20251107-0112">
 
 
 <meta charset="utf-8">
@@ -293,69 +293,71 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
     
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <img 
-        class="rounded mb-2" 
-        src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
-        alt="第一章：婆罗门之子" 
-        style="width:80px; height:80px; object-fit:cover;"
-      >
+    <!-- 上半部分：左右两列 -->
+    <div class="d-flex w-100 align-items-center mb-2">
+      <!-- 左侧：封面图 + 显示字幕按钮 -->
+      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <img 
+          class="rounded mb-2" 
+          src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
+          alt="第一章：婆罗门之子" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
 
-      
-      <button 
-        class="btn btn-sm btn-outline-secondary show-subtitles" 
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha1.json">
-        显示字幕
-      </button>
-      
-    </div>
-
-    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
-    <div class="flex-grow-1">
-      <!-- 标题 -->
-      <h2 class="mb-2">
-        <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-        <span class="g-font-weight-700 g-font-size-16"> 第一章：婆罗门之子</span>
-      </h2>
-
-      <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-        天赋聪颖的悉达多，在祭祀与经文中成长，却开始质疑众神与知识的意义。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha1.json">
-        <source src="https://toonwoo.com/audio/siddhartha/audio1.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-      <!-- 内嵌字幕容器 -->
-      
-      <div class="subtitle-box" style="
-          display:none;
-          max-height: 150px;
-          overflow-y:auto;
-          margin-top:5px;
-          padding:5px;
-          border:1px solid #ccc;
-          border-radius:5px;
-          font-size: 0.95rem;
-          line-height:1.5;
-          background:#f9f9f9;
-        ">
+        
+        <button 
+          class="btn btn-sm btn-outline-secondary show-subtitles" 
+          data-subtitle="/audiobooks/siddhartha/texts/siddhartha1.json">
+          显示字幕
+        </button>
+        
       </div>
-      
 
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-        更新日期：2025年10月31日
-      </p>
+      <!-- 右侧：文字 + 音频 + 更新日期 -->
+      <div class="flex-grow-1">
+        <h2 class="mb-2">
+          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
+          <span class="g-font-weight-700 g-font-size-16"> 第一章：婆罗门之子</span>
+        </h2>
+
+        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
+          天赋聪颖的悉达多，在祭祀与经文中成长，却开始质疑众神与知识的意义。
+        </p>
+
+        
+        <audio 
+          controls 
+          style="width: 100%; margin-top: 5px;" 
+          data-subtitle="/audiobooks/siddhartha/texts/siddhartha1.json">
+          <source src="https://toonwoo.com/audio/siddhartha/audio1.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。
+        </audio>
+        
+
+        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
+          更新日期：2025年10月31日
+        </p>
+      </div>
     </div>
+
+    <!-- 下半部分：拉通字幕容器 -->
+    
+    <div class="subtitle-box w-100" style="
+        display:none;
+        max-height: 200px;
+        overflow-y:auto;
+        margin-top:10px;
+        padding:8px;
+        border:1px solid #ccc;
+        border-radius:5px;
+        font-size: 1.05rem;
+        line-height:1.6;
+        background:#f9f9f9;
+      ">
+    </div>
+    
   </article>
 </div>
 
@@ -364,49 +366,51 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
     
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <img 
-        class="rounded mb-2" 
-        src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
-        alt="第二章：沙门" 
-        style="width:80px; height:80px; object-fit:cover;"
-      >
+    <!-- 上半部分：左右两列 -->
+    <div class="d-flex w-100 align-items-center mb-2">
+      <!-- 左侧：封面图 + 显示字幕按钮 -->
+      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <img 
+          class="rounded mb-2" 
+          src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
+          alt="第二章：沙门" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
 
-      
+        
+      </div>
+
+      <!-- 右侧：文字 + 音频 + 更新日期 -->
+      <div class="flex-grow-1">
+        <h2 class="mb-2">
+          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
+          <span class="g-font-weight-700 g-font-size-16"> 第二章：沙门</span>
+        </h2>
+
+        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
+          他离开家乡，与苦行者为伴，试图在极端禁欲中找到心灵的自由。
+        </p>
+
+        
+        <audio 
+          controls 
+          style="width: 100%; margin-top: 5px;" 
+          data-subtitle="">
+          <source src="https://toonwoo.com/audio/siddhartha/audio2.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。
+        </audio>
+        
+
+        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
+          更新日期：2025年10月31日
+        </p>
+      </div>
     </div>
 
-    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
-    <div class="flex-grow-1">
-      <!-- 标题 -->
-      <h2 class="mb-2">
-        <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-        <span class="g-font-weight-700 g-font-size-16"> 第二章：沙门</span>
-      </h2>
-
-      <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-        他离开家乡，与苦行者为伴，试图在极端禁欲中找到心灵的自由。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="">
-        <source src="https://toonwoo.com/audio/siddhartha/audio2.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-      <!-- 内嵌字幕容器 -->
-      
-
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-        更新日期：2025年10月31日
-      </p>
-    </div>
+    <!-- 下半部分：拉通字幕容器 -->
+    
   </article>
 </div>
 
@@ -415,49 +419,51 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
     
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <img 
-        class="rounded mb-2" 
-        src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
-        alt="第三章：乔达摩" 
-        style="width:80px; height:80px; object-fit:cover;"
-      >
+    <!-- 上半部分：左右两列 -->
+    <div class="d-flex w-100 align-items-center mb-2">
+      <!-- 左侧：封面图 + 显示字幕按钮 -->
+      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <img 
+          class="rounded mb-2" 
+          src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
+          alt="第三章：乔达摩" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
 
-      
+        
+      </div>
+
+      <!-- 右侧：文字 + 音频 + 更新日期 -->
+      <div class="flex-grow-1">
+        <h2 class="mb-2">
+          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
+          <span class="g-font-weight-700 g-font-size-16"> 第三章：乔达摩</span>
+        </h2>
+
+        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
+          悉达多遇见佛陀，却决定不做追随者，要亲自走出自己的觉悟之路。
+        </p>
+
+        
+        <audio 
+          controls 
+          style="width: 100%; margin-top: 5px;" 
+          data-subtitle="">
+          <source src="https://toonwoo.com/audio/siddhartha/audio3.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。
+        </audio>
+        
+
+        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
+          更新日期：2025年10月31日
+        </p>
+      </div>
     </div>
 
-    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
-    <div class="flex-grow-1">
-      <!-- 标题 -->
-      <h2 class="mb-2">
-        <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-        <span class="g-font-weight-700 g-font-size-16"> 第三章：乔达摩</span>
-      </h2>
-
-      <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-        悉达多遇见佛陀，却决定不做追随者，要亲自走出自己的觉悟之路。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="">
-        <source src="https://toonwoo.com/audio/siddhartha/audio3.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-      <!-- 内嵌字幕容器 -->
-      
-
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-        更新日期：2025年10月31日
-      </p>
-    </div>
+    <!-- 下半部分：拉通字幕容器 -->
+    
   </article>
 </div>
 
@@ -466,49 +472,51 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
     
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <img 
-        class="rounded mb-2" 
-        src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
-        alt="第四章：觉醒" 
-        style="width:80px; height:80px; object-fit:cover;"
-      >
+    <!-- 上半部分：左右两列 -->
+    <div class="d-flex w-100 align-items-center mb-2">
+      <!-- 左侧：封面图 + 显示字幕按钮 -->
+      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <img 
+          class="rounded mb-2" 
+          src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
+          alt="第四章：觉醒" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
 
-      
+        
+      </div>
+
+      <!-- 右侧：文字 + 音频 + 更新日期 -->
+      <div class="flex-grow-1">
+        <h2 class="mb-2">
+          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
+          <span class="g-font-weight-700 g-font-size-16"> 第四章：觉醒</span>
+        </h2>
+
+        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
+          当他离开信仰与师父，第一次真正看见世界的色彩与生命的呼吸。
+        </p>
+
+        
+        <audio 
+          controls 
+          style="width: 100%; margin-top: 5px;" 
+          data-subtitle="">
+          <source src="https://toonwoo.com/audio/siddhartha/audio4.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。
+        </audio>
+        
+
+        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
+          更新日期：2025年10月31日
+        </p>
+      </div>
     </div>
 
-    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
-    <div class="flex-grow-1">
-      <!-- 标题 -->
-      <h2 class="mb-2">
-        <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-        <span class="g-font-weight-700 g-font-size-16"> 第四章：觉醒</span>
-      </h2>
-
-      <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-        当他离开信仰与师父，第一次真正看见世界的色彩与生命的呼吸。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="">
-        <source src="https://toonwoo.com/audio/siddhartha/audio4.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-      <!-- 内嵌字幕容器 -->
-      
-
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-        更新日期：2025年10月31日
-      </p>
-    </div>
+    <!-- 下半部分：拉通字幕容器 -->
+    
   </article>
 </div>
 
@@ -517,49 +525,51 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
     
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <img 
-        class="rounded mb-2" 
-        src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
-        alt="第五章：迦摩罗" 
-        style="width:80px; height:80px; object-fit:cover;"
-      >
+    <!-- 上半部分：左右两列 -->
+    <div class="d-flex w-100 align-items-center mb-2">
+      <!-- 左侧：封面图 + 显示字幕按钮 -->
+      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <img 
+          class="rounded mb-2" 
+          src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
+          alt="第五章：迦摩罗" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
 
-      
+        
+      </div>
+
+      <!-- 右侧：文字 + 音频 + 更新日期 -->
+      <div class="flex-grow-1">
+        <h2 class="mb-2">
+          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
+          <span class="g-font-weight-700 g-font-size-16"> 第五章：迦摩罗</span>
+        </h2>
+
+        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
+          美人迦摩罗教会他欲望与感官的艺术，悉达多开始体验尘世的欢愉。
+        </p>
+
+        
+        <audio 
+          controls 
+          style="width: 100%; margin-top: 5px;" 
+          data-subtitle="">
+          <source src="https://toonwoo.com/audio/siddhartha/audio5.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。
+        </audio>
+        
+
+        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
+          更新日期：2025年10月31日
+        </p>
+      </div>
     </div>
 
-    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
-    <div class="flex-grow-1">
-      <!-- 标题 -->
-      <h2 class="mb-2">
-        <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-        <span class="g-font-weight-700 g-font-size-16"> 第五章：迦摩罗</span>
-      </h2>
-
-      <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-        美人迦摩罗教会他欲望与感官的艺术，悉达多开始体验尘世的欢愉。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="">
-        <source src="https://toonwoo.com/audio/siddhartha/audio5.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-      <!-- 内嵌字幕容器 -->
-      
-
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-        更新日期：2025年10月31日
-      </p>
-    </div>
+    <!-- 下半部分：拉通字幕容器 -->
+    
   </article>
 </div>
 
@@ -568,49 +578,51 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
     
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <img 
-        class="rounded mb-2" 
-        src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
-        alt="第六章：尘世间" 
-        style="width:80px; height:80px; object-fit:cover;"
-      >
+    <!-- 上半部分：左右两列 -->
+    <div class="d-flex w-100 align-items-center mb-2">
+      <!-- 左侧：封面图 + 显示字幕按钮 -->
+      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <img 
+          class="rounded mb-2" 
+          src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
+          alt="第六章：尘世间" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
 
-      
+        
+      </div>
+
+      <!-- 右侧：文字 + 音频 + 更新日期 -->
+      <div class="flex-grow-1">
+        <h2 class="mb-2">
+          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
+          <span class="g-font-weight-700 g-font-size-16"> 第六章：尘世间</span>
+        </h2>
+
+        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
+          他成为富有的商人，学习金钱与权力的游戏，却感到灵魂渐渐干涸。
+        </p>
+
+        
+        <audio 
+          controls 
+          style="width: 100%; margin-top: 5px;" 
+          data-subtitle="">
+          <source src="https://toonwoo.com/audio/siddhartha/audio6.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。
+        </audio>
+        
+
+        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
+          更新日期：2025年10月31日
+        </p>
+      </div>
     </div>
 
-    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
-    <div class="flex-grow-1">
-      <!-- 标题 -->
-      <h2 class="mb-2">
-        <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-        <span class="g-font-weight-700 g-font-size-16"> 第六章：尘世间</span>
-      </h2>
-
-      <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-        他成为富有的商人，学习金钱与权力的游戏，却感到灵魂渐渐干涸。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="">
-        <source src="https://toonwoo.com/audio/siddhartha/audio6.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-      <!-- 内嵌字幕容器 -->
-      
-
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-        更新日期：2025年10月31日
-      </p>
-    </div>
+    <!-- 下半部分：拉通字幕容器 -->
+    
   </article>
 </div>
 
@@ -619,49 +631,51 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
     
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <img 
-        class="rounded mb-2" 
-        src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
-        alt="第七章：轮回" 
-        style="width:80px; height:80px; object-fit:cover;"
-      >
+    <!-- 上半部分：左右两列 -->
+    <div class="d-flex w-100 align-items-center mb-2">
+      <!-- 左侧：封面图 + 显示字幕按钮 -->
+      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <img 
+          class="rounded mb-2" 
+          src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
+          alt="第七章：轮回" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
 
-      
+        
+      </div>
+
+      <!-- 右侧：文字 + 音频 + 更新日期 -->
+      <div class="flex-grow-1">
+        <h2 class="mb-2">
+          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
+          <span class="g-font-weight-700 g-font-size-16"> 第七章：轮回</span>
+        </h2>
+
+        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
+          被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。
+        </p>
+
+        
+        <audio 
+          controls 
+          style="width: 100%; margin-top: 5px;" 
+          data-subtitle="">
+          <source src="https://toonwoo.com/audio/siddhartha/audio7.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。
+        </audio>
+        
+
+        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
+          更新日期：2025年10月31日
+        </p>
+      </div>
     </div>
 
-    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
-    <div class="flex-grow-1">
-      <!-- 标题 -->
-      <h2 class="mb-2">
-        <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-        <span class="g-font-weight-700 g-font-size-16"> 第七章：轮回</span>
-      </h2>
-
-      <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-        被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="">
-        <source src="https://toonwoo.com/audio/siddhartha/audio7.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-      <!-- 内嵌字幕容器 -->
-      
-
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-        更新日期：2025年10月31日
-      </p>
-    </div>
+    <!-- 下半部分：拉通字幕容器 -->
+    
   </article>
 </div>
 
@@ -670,49 +684,51 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
     
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <img 
-        class="rounded mb-2" 
-        src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
-        alt="第八章：在河边" 
-        style="width:80px; height:80px; object-fit:cover;"
-      >
+    <!-- 上半部分：左右两列 -->
+    <div class="d-flex w-100 align-items-center mb-2">
+      <!-- 左侧：封面图 + 显示字幕按钮 -->
+      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <img 
+          class="rounded mb-2" 
+          src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
+          alt="第八章：在河边" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
 
-      
+        
+      </div>
+
+      <!-- 右侧：文字 + 音频 + 更新日期 -->
+      <div class="flex-grow-1">
+        <h2 class="mb-2">
+          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
+          <span class="g-font-weight-700 g-font-size-16"> 第八章：在河边</span>
+        </h2>
+
+        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
+          在绝望中，他听见河流的声音，像一首永恒的诗，唤醒他沉睡的心。
+        </p>
+
+        
+        <audio 
+          controls 
+          style="width: 100%; margin-top: 5px;" 
+          data-subtitle="">
+          <source src="https://toonwoo.com/audio/siddhartha/audio8.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。
+        </audio>
+        
+
+        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
+          更新日期：2025年10月31日
+        </p>
+      </div>
     </div>
 
-    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
-    <div class="flex-grow-1">
-      <!-- 标题 -->
-      <h2 class="mb-2">
-        <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-        <span class="g-font-weight-700 g-font-size-16"> 第八章：在河边</span>
-      </h2>
-
-      <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-        在绝望中，他听见河流的声音，像一首永恒的诗，唤醒他沉睡的心。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="">
-        <source src="https://toonwoo.com/audio/siddhartha/audio8.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-      <!-- 内嵌字幕容器 -->
-      
-
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-        更新日期：2025年10月31日
-      </p>
-    </div>
+    <!-- 下半部分：拉通字幕容器 -->
+    
   </article>
 </div>
 
@@ -721,49 +737,51 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
     
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <img 
-        class="rounded mb-2" 
-        src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
-        alt="第九章：船夫" 
-        style="width:80px; height:80px; object-fit:cover;"
-      >
+    <!-- 上半部分：左右两列 -->
+    <div class="d-flex w-100 align-items-center mb-2">
+      <!-- 左侧：封面图 + 显示字幕按钮 -->
+      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <img 
+          class="rounded mb-2" 
+          src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
+          alt="第九章：船夫" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
 
-      
+        
+      </div>
+
+      <!-- 右侧：文字 + 音频 + 更新日期 -->
+      <div class="flex-grow-1">
+        <h2 class="mb-2">
+          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
+          <span class="g-font-weight-700 g-font-size-16"> 第九章：船夫</span>
+        </h2>
+
+        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
+          悉达多与摆渡人一起生活，从河流中学习聆听与静观的智慧。
+        </p>
+
+        
+        <audio 
+          controls 
+          style="width: 100%; margin-top: 5px;" 
+          data-subtitle="">
+          <source src="https://toonwoo.com/audio/siddhartha/audio9.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。
+        </audio>
+        
+
+        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
+          更新日期：2025年10月31日
+        </p>
+      </div>
     </div>
 
-    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
-    <div class="flex-grow-1">
-      <!-- 标题 -->
-      <h2 class="mb-2">
-        <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-        <span class="g-font-weight-700 g-font-size-16"> 第九章：船夫</span>
-      </h2>
-
-      <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-        悉达多与摆渡人一起生活，从河流中学习聆听与静观的智慧。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="">
-        <source src="https://toonwoo.com/audio/siddhartha/audio9.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-      <!-- 内嵌字幕容器 -->
-      
-
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-        更新日期：2025年10月31日
-      </p>
-    </div>
+    <!-- 下半部分：拉通字幕容器 -->
+    
   </article>
 </div>
 
@@ -772,49 +790,51 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
     
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <img 
-        class="rounded mb-2" 
-        src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
-        alt="第十章：儿子" 
-        style="width:80px; height:80px; object-fit:cover;"
-      >
+    <!-- 上半部分：左右两列 -->
+    <div class="d-flex w-100 align-items-center mb-2">
+      <!-- 左侧：封面图 + 显示字幕按钮 -->
+      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <img 
+          class="rounded mb-2" 
+          src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
+          alt="第十章：儿子" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
 
-      
+        
+      </div>
+
+      <!-- 右侧：文字 + 音频 + 更新日期 -->
+      <div class="flex-grow-1">
+        <h2 class="mb-2">
+          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
+          <span class="g-font-weight-700 g-font-size-16"> 第十章：儿子</span>
+        </h2>
+
+        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
+          他尝到为人父的痛与执着，领悟爱并非占有，而是放手。
+        </p>
+
+        
+        <audio 
+          controls 
+          style="width: 100%; margin-top: 5px;" 
+          data-subtitle="">
+          <source src="https://toonwoo.com/audio/siddhartha/audio10.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。
+        </audio>
+        
+
+        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
+          更新日期：2025年10月31日
+        </p>
+      </div>
     </div>
 
-    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
-    <div class="flex-grow-1">
-      <!-- 标题 -->
-      <h2 class="mb-2">
-        <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-        <span class="g-font-weight-700 g-font-size-16"> 第十章：儿子</span>
-      </h2>
-
-      <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-        他尝到为人父的痛与执着，领悟爱并非占有，而是放手。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="">
-        <source src="https://toonwoo.com/audio/siddhartha/audio10.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-      <!-- 内嵌字幕容器 -->
-      
-
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-        更新日期：2025年10月31日
-      </p>
-    </div>
+    <!-- 下半部分：拉通字幕容器 -->
+    
   </article>
 </div>
 
@@ -823,49 +843,51 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
     
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <img 
-        class="rounded mb-2" 
-        src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
-        alt="第十一章：唵" 
-        style="width:80px; height:80px; object-fit:cover;"
-      >
+    <!-- 上半部分：左右两列 -->
+    <div class="d-flex w-100 align-items-center mb-2">
+      <!-- 左侧：封面图 + 显示字幕按钮 -->
+      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <img 
+          class="rounded mb-2" 
+          src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
+          alt="第十一章：唵" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
 
-      
+        
+      </div>
+
+      <!-- 右侧：文字 + 音频 + 更新日期 -->
+      <div class="flex-grow-1">
+        <h2 class="mb-2">
+          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
+          <span class="g-font-weight-700 g-font-size-16"> 第十一章：唵</span>
+        </h2>
+
+        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
+          万千声音汇成一体，悉达多听懂了生命的圆满与“一”的真谛。
+        </p>
+
+        
+        <audio 
+          controls 
+          style="width: 100%; margin-top: 5px;" 
+          data-subtitle="">
+          <source src="https://toonwoo.com/audio/siddhartha/audio11.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。
+        </audio>
+        
+
+        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
+          更新日期：2025年10月31日
+        </p>
+      </div>
     </div>
 
-    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
-    <div class="flex-grow-1">
-      <!-- 标题 -->
-      <h2 class="mb-2">
-        <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-        <span class="g-font-weight-700 g-font-size-16"> 第十一章：唵</span>
-      </h2>
-
-      <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-        万千声音汇成一体，悉达多听懂了生命的圆满与“一”的真谛。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="">
-        <source src="https://toonwoo.com/audio/siddhartha/audio11.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-      <!-- 内嵌字幕容器 -->
-      
-
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-        更新日期：2025年10月31日
-      </p>
-    </div>
+    <!-- 下半部分：拉通字幕容器 -->
+    
   </article>
 </div>
 
@@ -874,49 +896,51 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
     
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <img 
-        class="rounded mb-2" 
-        src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
-        alt="第十二章（完结）：乔文达" 
-        style="width:80px; height:80px; object-fit:cover;"
-      >
+    <!-- 上半部分：左右两列 -->
+    <div class="d-flex w-100 align-items-center mb-2">
+      <!-- 左侧：封面图 + 显示字幕按钮 -->
+      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <img 
+          class="rounded mb-2" 
+          src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
+          alt="第十二章（完结）：乔文达" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
 
-      
+        
+      </div>
+
+      <!-- 右侧：文字 + 音频 + 更新日期 -->
+      <div class="flex-grow-1">
+        <h2 class="mb-2">
+          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
+          <span class="g-font-weight-700 g-font-size-16"> 第十二章（完结）：乔文达</span>
+        </h2>
+
+        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
+          昔日好友戈文达与悉达多重逢，在他宁静的微笑中，体悟到一切修行的终点其实是：爱与存在本身。
+        </p>
+
+        
+        <audio 
+          controls 
+          style="width: 100%; margin-top: 5px;" 
+          data-subtitle="">
+          <source src="https://toonwoo.com/audio/siddhartha/audio12.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。
+        </audio>
+        
+
+        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
+          更新日期：2025年10月31日
+        </p>
+      </div>
     </div>
 
-    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
-    <div class="flex-grow-1">
-      <!-- 标题 -->
-      <h2 class="mb-2">
-        <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-        <span class="g-font-weight-700 g-font-size-16"> 第十二章（完结）：乔文达</span>
-      </h2>
-
-      <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-        昔日好友戈文达与悉达多重逢，在他宁静的微笑中，体悟到一切修行的终点其实是：爱与存在本身。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="">
-        <source src="https://toonwoo.com/audio/siddhartha/audio12.mp3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-      <!-- 内嵌字幕容器 -->
-      
-
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-        更新日期：2025年10月31日
-      </p>
-    </div>
+    <!-- 下半部分：拉通字幕容器 -->
+    
   </article>
 </div>
 
@@ -947,7 +971,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const subtitles = await res.json();
 
         container.innerHTML = subtitles.map(s => 
-          `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.2em 0;">${s.text}</p>`
+          `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.3em 0;">${s.text}</p>`
         ).join("");
 
         const lines = Array.from(container.querySelectorAll("p"));
