@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20251107-0112">
+<meta name="version" content="20251107-0136">
 
 
 <meta charset="utf-8">
@@ -352,7 +352,7 @@
         padding:8px;
         border:1px solid #ccc;
         border-radius:5px;
-        font-size: 1.05rem;
+        font-size: 1.15rem;
         line-height:1.6;
         background:#f9f9f9;
       ">
@@ -947,58 +947,70 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
   document.querySelectorAll(".show-subtitles").forEach(button => {
+    const article = button.closest("article");
+    const audio = article.querySelector("audio");
+    const container = article.querySelector(".subtitle-box");
+    let subtitles = [];
+    let loaded = false;
+
+    // 绑定一次 timeupdate
+    audio.addEventListener("timeupdate", () => {
+      if (!loaded) return;
+      const current = audio.currentTime;
+      subtitles.forEach(line => {
+        const start = parseFloat(line.dataset.start);
+        const end = parseFloat(line.dataset.end);
+        if (current >= start && current <= end) {
+          line.style.color = "#6B77CC";
+          line.style.fontWeight = "bold";
+          line.scrollIntoView({ behavior: "smooth", block: "center" });
+        } else {
+          line.style.color = "#333";
+          line.style.fontWeight = "normal";
+        }
+      });
+    });
+
     button.addEventListener("click", async () => {
       const subtitleUrl = button.dataset.subtitle;
-      const article = button.closest("article");
-      const audio = article.querySelector("audio");
-      const container = article.querySelector(".subtitle-box");
+      if (!subtitleUrl) return;
 
-      if (!subtitleUrl || !audio || !container) return;
+      const isHidden = container.style.display === "none";
 
-      // 切换显示状态
-      if (container.style.display === "none") {
+      if (isHidden) {
         container.style.display = "block";
+        button.textContent = "关闭字幕";
+        button.classList.remove("btn-outline-secondary");
+        button.classList.add("btn-secondary");
+
+        if (!loaded) {
+          container.innerHTML = "<p>加载中...</p>";
+          try {
+            const res = await fetch(subtitleUrl);
+            const data = await res.json();
+            container.innerHTML = data.map(s => 
+              `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.3em 0;">${s.text}</p>`
+            ).join("");
+            subtitles = Array.from(container.querySelectorAll("p"));
+            loaded = true;
+          } catch(err) {
+            container.innerHTML = "<p style='color:red;'>加载字幕失败。</p>";
+            console.error("字幕加载失败：", err);
+          }
+        }
+
       } else {
         container.style.display = "none";
-        return;
-      }
-
-      container.innerHTML = "<p>加载中...</p>";
-
-      try {
-        const res = await fetch(subtitleUrl);
-        const subtitles = await res.json();
-
-        container.innerHTML = subtitles.map(s => 
-          `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.3em 0;">${s.text}</p>`
-        ).join("");
-
-        const lines = Array.from(container.querySelectorAll("p"));
-
-        // 清除之前的 timeupdate 监听
-        audio.ontimeupdate = () => {
-          const current = audio.currentTime;
-          lines.forEach(line => {
-            const start = parseFloat(line.dataset.start);
-            const end = parseFloat(line.dataset.end);
-            if (current >= start && current <= end) {
-              line.style.color = "#6B77CC";
-              line.style.fontWeight = "bold";
-              line.scrollIntoView({ behavior: "smooth", block: "center" });
-            } else {
-              line.style.color = "#333";
-              line.style.fontWeight = "normal";
-            }
-          });
-        };
-
-      } catch (err) {
-        container.innerHTML = "<p style='color:red;'>加载字幕失败。</p>";
-        console.error("字幕加载失败：", err);
+        button.textContent = "显示字幕";
+        button.classList.remove("btn-secondary");
+        button.classList.add("btn-outline-secondary");
       }
     });
+
   });
+
 });
 </script>
 
