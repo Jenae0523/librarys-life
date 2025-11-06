@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20251031-1647">
+<meta name="version" content="20251107-0049">
 
 
 <meta charset="utf-8">
@@ -972,6 +972,42 @@ $(document).on('ready', function () {
   setTimeout(function () {
     $.HSCore.components.HSStickyBlock.init('.js-sticky-block');
   }, 300);
+
+  // ===== 字幕滚动功能 =====
+  $('.show-subtitles').on('click', function() {
+    const subtitleUrl = $(this).data('subtitle'); // JSON 字幕路径
+    const audioElem = $(this).closest('.audio-card').find('audio')[0];
+    const subtitleBox = $(this).siblings('.subtitle-box');
+
+    if (!subtitleUrl || !audioElem) return;
+
+    subtitleBox.html('');      // 清空之前字幕
+    subtitleBox.show();        // 显示字幕框
+
+    fetch(subtitleUrl)
+      .then(res => res.json())
+      .then(subtitles => {
+        // subtitles 格式：[{start:0.5,end:3.2,text:"字幕内容"},...]
+        function updateSubtitle() {
+          const currentTime = audioElem.currentTime;
+          const currentLine = subtitles.find(line => currentTime >= line.start && currentTime <= line.end);
+          if (currentLine) {
+            subtitleBox.html(currentLine.text);
+          } else {
+            subtitleBox.html('');
+          }
+          if (!audioElem.paused && !audioElem.ended) {
+            requestAnimationFrame(updateSubtitle);
+          }
+        }
+
+        // 播放/继续时同步滚动
+        audioElem.addEventListener('play', () => updateSubtitle());
+        // 自动开始显示
+        updateSubtitle();
+      })
+      .catch(err => console.error('字幕加载失败', err));
+  });
 });
 
 $(window).on('load', function () {

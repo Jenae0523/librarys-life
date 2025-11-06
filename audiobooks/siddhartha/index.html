@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20251031-1647">
+<meta name="version" content="20251107-0049">
 
 
 <meta charset="utf-8">
@@ -293,20 +293,29 @@
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex justify-content-between align-items-center u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
     
-    <!-- 封面图：固定大小，不受右侧文字影响 -->
-    <a class="d-block g-mr-30">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
       <img 
-        class="rounded" 
+        class="rounded mb-2" 
         src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
         alt="第一章：婆罗门之子" 
         style="width:80px; height:80px; object-fit:cover;"
       >
-    </a>
 
+      
+      <button 
+        class="btn btn-sm btn-outline-secondary show-subtitles" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha1.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
     <div class="flex-grow-1">
-      <!-- 标题放大：书名加粗大字体，章节标题略小 -->
+      <!-- 标题 -->
       <h2 class="mb-2">
         <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
         <span class="g-font-weight-700 g-font-size-16"> 第一章：婆罗门之子</span>
@@ -317,37 +326,61 @@
       </p>
 
       
-      <audio controls style="width: 100%; margin-top: 5px;">
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha1.json">
         <source src="https://toonwoo.com/audio/siddhartha/audio1.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
+      
+
+      <!-- 内嵌字幕容器 -->
+      
+      <div class="subtitle-box" style="
+          display:none;
+          max-height: 150px;
+          overflow-y:auto;
+          margin-top:5px;
+          padding:5px;
+          border:1px solid #ccc;
+          border-radius:5px;
+          font-size: 0.95rem;
+          line-height:1.5;
+          background:#f9f9f9;
+        ">
+      </div>
       
 
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
         更新日期：2025年10月31日
       </p>
     </div>
-
   </article>
 </div>
+
+
 
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex justify-content-between align-items-center u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
     
-    <!-- 封面图：固定大小，不受右侧文字影响 -->
-    <a class="d-block g-mr-30">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
       <img 
-        class="rounded" 
+        class="rounded mb-2" 
         src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
         alt="第二章：沙门" 
         style="width:80px; height:80px; object-fit:cover;"
       >
-    </a>
 
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
     <div class="flex-grow-1">
-      <!-- 标题放大：书名加粗大字体，章节标题略小 -->
+      <!-- 标题 -->
       <h2 class="mb-2">
         <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
         <span class="g-font-weight-700 g-font-size-16"> 第二章：沙门</span>
@@ -358,37 +391,47 @@
       </p>
 
       
-      <audio controls style="width: 100%; margin-top: 5px;">
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="">
         <source src="https://toonwoo.com/audio/siddhartha/audio2.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
+      
+
+      <!-- 内嵌字幕容器 -->
       
 
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
         更新日期：2025年10月31日
       </p>
     </div>
-
   </article>
 </div>
+
+
 
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex justify-content-between align-items-center u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
     
-    <!-- 封面图：固定大小，不受右侧文字影响 -->
-    <a class="d-block g-mr-30">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
       <img 
-        class="rounded" 
+        class="rounded mb-2" 
         src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
         alt="第三章：乔达摩" 
         style="width:80px; height:80px; object-fit:cover;"
       >
-    </a>
 
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
     <div class="flex-grow-1">
-      <!-- 标题放大：书名加粗大字体，章节标题略小 -->
+      <!-- 标题 -->
       <h2 class="mb-2">
         <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
         <span class="g-font-weight-700 g-font-size-16"> 第三章：乔达摩</span>
@@ -399,37 +442,47 @@
       </p>
 
       
-      <audio controls style="width: 100%; margin-top: 5px;">
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="">
         <source src="https://toonwoo.com/audio/siddhartha/audio3.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
+      
+
+      <!-- 内嵌字幕容器 -->
       
 
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
         更新日期：2025年10月31日
       </p>
     </div>
-
   </article>
 </div>
+
+
 
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex justify-content-between align-items-center u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
     
-    <!-- 封面图：固定大小，不受右侧文字影响 -->
-    <a class="d-block g-mr-30">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
       <img 
-        class="rounded" 
+        class="rounded mb-2" 
         src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
         alt="第四章：觉醒" 
         style="width:80px; height:80px; object-fit:cover;"
       >
-    </a>
 
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
     <div class="flex-grow-1">
-      <!-- 标题放大：书名加粗大字体，章节标题略小 -->
+      <!-- 标题 -->
       <h2 class="mb-2">
         <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
         <span class="g-font-weight-700 g-font-size-16"> 第四章：觉醒</span>
@@ -440,37 +493,47 @@
       </p>
 
       
-      <audio controls style="width: 100%; margin-top: 5px;">
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="">
         <source src="https://toonwoo.com/audio/siddhartha/audio4.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
+      
+
+      <!-- 内嵌字幕容器 -->
       
 
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
         更新日期：2025年10月31日
       </p>
     </div>
-
   </article>
 </div>
+
+
 
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex justify-content-between align-items-center u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
     
-    <!-- 封面图：固定大小，不受右侧文字影响 -->
-    <a class="d-block g-mr-30">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
       <img 
-        class="rounded" 
+        class="rounded mb-2" 
         src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
         alt="第五章：迦摩罗" 
         style="width:80px; height:80px; object-fit:cover;"
       >
-    </a>
 
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
     <div class="flex-grow-1">
-      <!-- 标题放大：书名加粗大字体，章节标题略小 -->
+      <!-- 标题 -->
       <h2 class="mb-2">
         <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
         <span class="g-font-weight-700 g-font-size-16"> 第五章：迦摩罗</span>
@@ -481,37 +544,47 @@
       </p>
 
       
-      <audio controls style="width: 100%; margin-top: 5px;">
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="">
         <source src="https://toonwoo.com/audio/siddhartha/audio5.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
+      
+
+      <!-- 内嵌字幕容器 -->
       
 
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
         更新日期：2025年10月31日
       </p>
     </div>
-
   </article>
 </div>
+
+
 
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex justify-content-between align-items-center u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
     
-    <!-- 封面图：固定大小，不受右侧文字影响 -->
-    <a class="d-block g-mr-30">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
       <img 
-        class="rounded" 
+        class="rounded mb-2" 
         src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
         alt="第六章：尘世间" 
         style="width:80px; height:80px; object-fit:cover;"
       >
-    </a>
 
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
     <div class="flex-grow-1">
-      <!-- 标题放大：书名加粗大字体，章节标题略小 -->
+      <!-- 标题 -->
       <h2 class="mb-2">
         <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
         <span class="g-font-weight-700 g-font-size-16"> 第六章：尘世间</span>
@@ -522,37 +595,47 @@
       </p>
 
       
-      <audio controls style="width: 100%; margin-top: 5px;">
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="">
         <source src="https://toonwoo.com/audio/siddhartha/audio6.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
+      
+
+      <!-- 内嵌字幕容器 -->
       
 
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
         更新日期：2025年10月31日
       </p>
     </div>
-
   </article>
 </div>
+
+
 
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex justify-content-between align-items-center u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
     
-    <!-- 封面图：固定大小，不受右侧文字影响 -->
-    <a class="d-block g-mr-30">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
       <img 
-        class="rounded" 
+        class="rounded mb-2" 
         src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
         alt="第七章：轮回" 
         style="width:80px; height:80px; object-fit:cover;"
       >
-    </a>
 
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
     <div class="flex-grow-1">
-      <!-- 标题放大：书名加粗大字体，章节标题略小 -->
+      <!-- 标题 -->
       <h2 class="mb-2">
         <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
         <span class="g-font-weight-700 g-font-size-16"> 第七章：轮回</span>
@@ -563,37 +646,47 @@
       </p>
 
       
-      <audio controls style="width: 100%; margin-top: 5px;">
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="">
         <source src="https://toonwoo.com/audio/siddhartha/audio7.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
+      
+
+      <!-- 内嵌字幕容器 -->
       
 
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
         更新日期：2025年10月31日
       </p>
     </div>
-
   </article>
 </div>
+
+
 
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex justify-content-between align-items-center u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
     
-    <!-- 封面图：固定大小，不受右侧文字影响 -->
-    <a class="d-block g-mr-30">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
       <img 
-        class="rounded" 
+        class="rounded mb-2" 
         src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
         alt="第八章：在河边" 
         style="width:80px; height:80px; object-fit:cover;"
       >
-    </a>
 
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
     <div class="flex-grow-1">
-      <!-- 标题放大：书名加粗大字体，章节标题略小 -->
+      <!-- 标题 -->
       <h2 class="mb-2">
         <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
         <span class="g-font-weight-700 g-font-size-16"> 第八章：在河边</span>
@@ -604,37 +697,47 @@
       </p>
 
       
-      <audio controls style="width: 100%; margin-top: 5px;">
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="">
         <source src="https://toonwoo.com/audio/siddhartha/audio8.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
+      
+
+      <!-- 内嵌字幕容器 -->
       
 
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
         更新日期：2025年10月31日
       </p>
     </div>
-
   </article>
 </div>
+
+
 
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex justify-content-between align-items-center u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
     
-    <!-- 封面图：固定大小，不受右侧文字影响 -->
-    <a class="d-block g-mr-30">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
       <img 
-        class="rounded" 
+        class="rounded mb-2" 
         src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
         alt="第九章：船夫" 
         style="width:80px; height:80px; object-fit:cover;"
       >
-    </a>
 
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
     <div class="flex-grow-1">
-      <!-- 标题放大：书名加粗大字体，章节标题略小 -->
+      <!-- 标题 -->
       <h2 class="mb-2">
         <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
         <span class="g-font-weight-700 g-font-size-16"> 第九章：船夫</span>
@@ -645,37 +748,47 @@
       </p>
 
       
-      <audio controls style="width: 100%; margin-top: 5px;">
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="">
         <source src="https://toonwoo.com/audio/siddhartha/audio9.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
+      
+
+      <!-- 内嵌字幕容器 -->
       
 
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
         更新日期：2025年10月31日
       </p>
     </div>
-
   </article>
 </div>
+
+
 
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex justify-content-between align-items-center u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
     
-    <!-- 封面图：固定大小，不受右侧文字影响 -->
-    <a class="d-block g-mr-30">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
       <img 
-        class="rounded" 
+        class="rounded mb-2" 
         src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
         alt="第十章：儿子" 
         style="width:80px; height:80px; object-fit:cover;"
       >
-    </a>
 
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
     <div class="flex-grow-1">
-      <!-- 标题放大：书名加粗大字体，章节标题略小 -->
+      <!-- 标题 -->
       <h2 class="mb-2">
         <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
         <span class="g-font-weight-700 g-font-size-16"> 第十章：儿子</span>
@@ -686,37 +799,47 @@
       </p>
 
       
-      <audio controls style="width: 100%; margin-top: 5px;">
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="">
         <source src="https://toonwoo.com/audio/siddhartha/audio10.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
+      
+
+      <!-- 内嵌字幕容器 -->
       
 
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
         更新日期：2025年10月31日
       </p>
     </div>
-
   </article>
 </div>
+
+
 
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex justify-content-between align-items-center u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
     
-    <!-- 封面图：固定大小，不受右侧文字影响 -->
-    <a class="d-block g-mr-30">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
       <img 
-        class="rounded" 
+        class="rounded mb-2" 
         src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
         alt="第十一章：唵" 
         style="width:80px; height:80px; object-fit:cover;"
       >
-    </a>
 
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
     <div class="flex-grow-1">
-      <!-- 标题放大：书名加粗大字体，章节标题略小 -->
+      <!-- 标题 -->
       <h2 class="mb-2">
         <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
         <span class="g-font-weight-700 g-font-size-16"> 第十一章：唵</span>
@@ -727,37 +850,47 @@
       </p>
 
       
-      <audio controls style="width: 100%; margin-top: 5px;">
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="">
         <source src="https://toonwoo.com/audio/siddhartha/audio11.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
+      
+
+      <!-- 内嵌字幕容器 -->
       
 
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
         更新日期：2025年10月31日
       </p>
     </div>
-
   </article>
 </div>
+
+
 
       
         
         <div class="col-md-6 g-mt-30">
-  <article class="d-flex justify-content-between align-items-center u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30">
+  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center">
     
-    <!-- 封面图：固定大小，不受右侧文字影响 -->
-    <a class="d-block g-mr-30">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
       <img 
-        class="rounded" 
+        class="rounded mb-2" 
         src="https://toonwoo.com/img/books-covers/siddhartha.jpg" 
         alt="第十二章（完结）：乔文达" 
         style="width:80px; height:80px; object-fit:cover;"
       >
-    </a>
 
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 + 字幕容器 -->
     <div class="flex-grow-1">
-      <!-- 标题放大：书名加粗大字体，章节标题略小 -->
+      <!-- 标题 -->
       <h2 class="mb-2">
         <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
         <span class="g-font-weight-700 g-font-size-16"> 第十二章（完结）：乔文达</span>
@@ -768,19 +901,83 @@
       </p>
 
       
-      <audio controls style="width: 100%; margin-top: 5px;">
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="">
         <source src="https://toonwoo.com/audio/siddhartha/audio12.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
+      
+
+      <!-- 内嵌字幕容器 -->
       
 
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
         更新日期：2025年10月31日
       </p>
     </div>
-
   </article>
 </div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".show-subtitles").forEach(button => {
+    button.addEventListener("click", async () => {
+      const subtitleUrl = button.dataset.subtitle;
+      const article = button.closest("article");
+      const audio = article.querySelector("audio");
+      const container = article.querySelector(".subtitle-box");
+
+      if (!subtitleUrl || !audio || !container) return;
+
+      // 切换显示状态
+      if (container.style.display === "none") {
+        container.style.display = "block";
+      } else {
+        container.style.display = "none";
+        return;
+      }
+
+      container.innerHTML = "<p>加载中...</p>";
+
+      try {
+        const res = await fetch(subtitleUrl);
+        const subtitles = await res.json();
+
+        container.innerHTML = subtitles.map(s => 
+          `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.2em 0;">${s.text}</p>`
+        ).join("");
+
+        const lines = Array.from(container.querySelectorAll("p"));
+
+        // 清除之前的 timeupdate 监听
+        audio.ontimeupdate = () => {
+          const current = audio.currentTime;
+          lines.forEach(line => {
+            const start = parseFloat(line.dataset.start);
+            const end = parseFloat(line.dataset.end);
+            if (current >= start && current <= end) {
+              line.style.color = "#6B77CC";
+              line.style.fontWeight = "bold";
+              line.scrollIntoView({ behavior: "smooth", block: "center" });
+            } else {
+              line.style.color = "#333";
+              line.style.fontWeight = "normal";
+            }
+          });
+        };
+
+      } catch (err) {
+        container.innerHTML = "<p style='color:red;'>加载字幕失败。</p>";
+        console.error("字幕加载失败：", err);
+      }
+    });
+  });
+});
+</script>
+
 
       
     </div>
@@ -867,6 +1064,42 @@ $(document).on('ready', function () {
   setTimeout(function () {
     $.HSCore.components.HSStickyBlock.init('.js-sticky-block');
   }, 300);
+
+  // ===== 字幕滚动功能 =====
+  $('.show-subtitles').on('click', function() {
+    const subtitleUrl = $(this).data('subtitle'); // JSON 字幕路径
+    const audioElem = $(this).closest('.audio-card').find('audio')[0];
+    const subtitleBox = $(this).siblings('.subtitle-box');
+
+    if (!subtitleUrl || !audioElem) return;
+
+    subtitleBox.html('');      // 清空之前字幕
+    subtitleBox.show();        // 显示字幕框
+
+    fetch(subtitleUrl)
+      .then(res => res.json())
+      .then(subtitles => {
+        // subtitles 格式：[{start:0.5,end:3.2,text:"字幕内容"},...]
+        function updateSubtitle() {
+          const currentTime = audioElem.currentTime;
+          const currentLine = subtitles.find(line => currentTime >= line.start && currentTime <= line.end);
+          if (currentLine) {
+            subtitleBox.html(currentLine.text);
+          } else {
+            subtitleBox.html('');
+          }
+          if (!audioElem.paused && !audioElem.ended) {
+            requestAnimationFrame(updateSubtitle);
+          }
+        }
+
+        // 播放/继续时同步滚动
+        audioElem.addEventListener('play', () => updateSubtitle());
+        // 自动开始显示
+        updateSubtitle();
+      })
+      .catch(err => console.error('字幕加载失败', err));
+  });
 });
 
 $(window).on('load', function () {
