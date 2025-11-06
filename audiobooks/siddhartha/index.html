@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20251107-0136">
+<meta name="version" content="20251107-0142">
 
 
 <meta charset="utf-8">
@@ -953,11 +953,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const audio = article.querySelector("audio");
     const container = article.querySelector(".subtitle-box");
     let subtitles = [];
-    let loaded = false;
 
-    // 绑定一次 timeupdate
-    audio.addEventListener("timeupdate", () => {
-      if (!loaded) return;
+    const loadSubtitles = async () => {
+      try {
+        const res = await fetch(button.dataset.subtitle);
+        const data = await res.json();
+        container.innerHTML = data.map(s => 
+          `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.3em 0;">${s.text}</p>`
+        ).join("");
+        subtitles = Array.from(container.querySelectorAll("p"));
+      } catch(err) {
+        container.innerHTML = "<p style='color:red;'>加载字幕失败。</p>";
+        console.error("字幕加载失败：", err);
+      }
+    };
+
+    // 按钮点击
+    button.addEventListener("click", async () => {
+      const isHidden = container.style.display === "none";
+
+      if (isHidden) {
+        container.style.display = "block";
+        button.textContent = "关闭字幕";
+        button.classList.remove("btn-outline-secondary");
+        button.classList.add("btn-secondary");
+        await loadSubtitles();
+        highlightSubtitles(); // 初始化高亮
+      } else {
+        container.style.display = "none";
+        button.textContent = "显示字幕";
+        button.classList.remove("btn-secondary");
+        button.classList.add("btn-outline-secondary");
+      }
+    });
+
+    // 高亮字幕函数
+    const highlightSubtitles = () => {
+      if (!subtitles.length) return;
       const current = audio.currentTime;
       subtitles.forEach(line => {
         const start = parseFloat(line.dataset.start);
@@ -971,44 +1003,10 @@ document.addEventListener("DOMContentLoaded", () => {
           line.style.fontWeight = "normal";
         }
       });
-    });
+    };
 
-    button.addEventListener("click", async () => {
-      const subtitleUrl = button.dataset.subtitle;
-      if (!subtitleUrl) return;
-
-      const isHidden = container.style.display === "none";
-
-      if (isHidden) {
-        container.style.display = "block";
-        button.textContent = "关闭字幕";
-        button.classList.remove("btn-outline-secondary");
-        button.classList.add("btn-secondary");
-
-        if (!loaded) {
-          container.innerHTML = "<p>加载中...</p>";
-          try {
-            const res = await fetch(subtitleUrl);
-            const data = await res.json();
-            container.innerHTML = data.map(s => 
-              `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.3em 0;">${s.text}</p>`
-            ).join("");
-            subtitles = Array.from(container.querySelectorAll("p"));
-            loaded = true;
-          } catch(err) {
-            container.innerHTML = "<p style='color:red;'>加载字幕失败。</p>";
-            console.error("字幕加载失败：", err);
-          }
-        }
-
-      } else {
-        container.style.display = "none";
-        button.textContent = "显示字幕";
-        button.classList.remove("btn-secondary");
-        button.classList.add("btn-outline-secondary");
-      }
-    });
-
+    // 每次 timeupdate 都刷新高亮
+    audio.addEventListener("timeupdate", highlightSubtitles);
   });
 
 });
