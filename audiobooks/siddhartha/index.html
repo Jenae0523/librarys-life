@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20251107-0314">
+<meta name="version" content="20251107-0324">
 
 
 <meta charset="utf-8">
@@ -1242,9 +1242,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (idx === -1) return;
 
       if (idx !== currentIndex) {
-        subtitles.forEach(p => p.style.color = "#555");
-        subtitles[idx].style.color = "#6B77CC";
-        smoothScrollTo(subtitles[idx]);
+        smoothScrollTo(subtitles[idx]); // 只滚动，不改样式
         currentIndex = idx;
       }
     };
