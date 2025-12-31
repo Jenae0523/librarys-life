@@ -1,2 +1,12 @@
-/* Add here all your css styles (customizations) */
+html, body {
+  font-family:
+    "Microsoft YaHei",
+    "PingFang SC",
+    "Noto Sans SC",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 
+    <!-- 字距 -->
+   letter-spacing: 0.1em;
+}

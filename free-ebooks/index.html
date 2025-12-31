@@ -2,15 +2,15 @@
 <html lang="zh">
 <head>
   <head>
-  <title>免费电子书分享 生命之书 | librarys.life</title>
-  <meta name="description" content="">
+  <title>免费电子书 ・ 生命之书 | librarys.life</title>
+  <meta name="description" content="精选中英文电子书资源，与伟大思想精神共鸣，为你的阅读打开新的思维视野。">
 <meta name="keywords" content="">
 
 <meta name="robots" content="all">
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20251214-1602">
+<meta name="version" content="20251231-2356">
 
 
 <meta charset="utf-8">
@@ -48,42 +48,126 @@
 
 
 </head>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+
+    /* ---------- 灰底头部 ---------- */
+    .ebook-section {
+      background-color: #f5f5f5;
+      padding: 60px 20px;
+      text-align: center;
+      width: 100%;
+    }
+    .ebook-section .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .ebook-section h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .ebook-section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      color: #444;
+    }
+
+/* ---------- Tag ---------- */
+.tag-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 6px 18px;
+  margin: 0 8px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+/* 悬停状态 */
+.tag-btn:hover {
+  background-color: #eee;
+  border-color: #999;
+  color: #222;
+  text-decoration: none; /* 去掉下划线 */
+}
+
+/* 点击或选中状态 */
+.tag-btn:active,
+.tag-btn:focus {
+  border: 2px solid #000;    /* 黑色边框 */
+  color: #222;           /* 文字颜色加深 */
+  text-decoration: none; /* 去掉下划线 */
+  outline: none;         /* 去掉默认聚焦框 */
+}
+
+
+
+    /* ---------- 主体内容 ---------- */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-top: 60px; 
+    }
+
+    /* ---------- 电子书列表 ---------- */
+    /* 修复每行多余注释行问题，保持一行一个 */
+    .ebook-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+    }
+
+    /* ---------- Load More ---------- */
+    .load-more-wrap {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .load-more-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      color: #6281C8; /* 网站默认蓝紫色 */
+      padding: 10px 20px;
+      transition: opacity 0.2s;
+    }
+
+    .load-more-btn:hover {
+    color:#333;
+    text-decoration: underline;
+    }
+
+    .load-more-btn.disabled {
+      color: #bbb !important;
+	  text-decoration: none;
+      cursor: default;
+    }
+
+    .load-more-btn:focus,
+    .load-more-btn:active {
+      outline: none;
+      box-shadow: none;
+    }
+  </style>
 </head>
 
-<style>
-.article-body p {
-  margin-bottom: 2em;
-  line-height: 2.2;
-  font-size: 16px;
-}
-.article-body h2 {
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 1.6;
-  margin-top: 3em;
-  margin-bottom: 1.2em;
-}
-.article-body h3, .article-body h4 {
-  font-weight: 600;
-  font-size: 1.8rem;
-  line-height: 1.6;
-  margin-top: 2.5em;
-  margin-bottom: 1em;
-}
-.article-body img {
-  display: block;
-  margin: 2em auto;
-  max-width: 100%;
-  height: auto;
-}
-.article-body p + p {
-  margin-top: -1em;
-}
-</style>
-
 <body>
-  <main>
-    <!-- Header -->
+
+  <!-- Header -->
 <header id="js-header" class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance u-shadow-v19 g-px-100--lg g-bg-white" data-header-fix-moment="300">
 <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3" data-header-fix-moment-exclude="g-py-0" data-header-fix-moment-classes="u-shadow-v18 g-py-0">
 <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
@@ -100,7 +184,7 @@
 <!-- End Responsive Toggle Button -->
 
 <!-- Logo -->
-<a href="http://librarys.life" class="navbar-brand d-flex">
+<a href="/" class="navbar-brand d-flex">
   <img src="https://img.librarys.life/site-img/logo.svg" alt="librarys.life" width="180" height="60" style="display:block;">
 </a>
 <!-- End Logo -->
@@ -111,16 +195,16 @@
 <ul class="navbar-nav g-pos-rel g-font-size-15 g-font-weight-500 ml-auto text-capitalize">
 
 <li class="nav-item g-mr-50">
-  <a href="https://librarys.life/articles-list/0/" class="nav-link g-py-7 g-px-0">近期更新</a>
+  <a href="/new/" class="nav-link g-py-7 g-px-0">近期更新</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="https://librarys.life/articles-list/0/" class="nav-link g-py-7 g-px-0">所有文章</a>
+  <a href="/articles-list/0/" class="nav-link g-py-7 g-px-0">所有文章</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="https://readcafe.life/free-ebooks/index.html" class="nav-link g-py-7 g-px-0">免费电子书</a>
+  <a href="/free-ebooks/" class="nav-link g-py-7 g-px-0">免费电子书</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="https://librarys.life/audiobooks/siddhartha/" class="nav-link g-py-7 g-px-0">有声书</a>
+  <a href="/all-audiobooks/0/" class="nav-link g-py-7 g-px-0">有声书</a>
 </li>
 
 </ul>
@@ -132,149 +216,3524 @@
 </div>
 </header>
 <!-- End Header -->
-    <!-- 横幅图 -->
+  <!-- 横幅图 -->
 <section class="g-pt-90">
 <div class="container-fluid g-pt-100" style="background-image: url(/img/starnight.jpg);">
 <p class="g-py-20"></p>
 </div>
 </section>
-    <!-- 栏目介绍 -->
-<section class="g-bg-gray-light-v5 g-pb-40">
-<header class="text-center g-width-60x--md mx-auto g-mb-50">
-    
-    <!-- 栏目标题（支持两排）-->
-    
-    <h2 class="h1 g-color-gray-dark-v1 g-pt-80 g-font-weight-300">
-      免费电子书分享
+
+  
+  
+  
+
+  <!-- ---------- 总表页头部 ---------- -->
+  <section class="ebook-section">
+    <div class="container">
+      <h1>免费电子书</h1>
+      <p>精选中英文电子书资源，与伟大思想精神共鸣，为你的阅读打开新的思维视野。</p>
+
+      <!-- ---------- 所有 tag 链接（直接来自 ebookTagsCollection） ---------- -->
+      <div class="tag-filter">
+        
+          <a
+            class="tag-btn"
+            href="/free-ebooks/tag/eastern-wisdom-classics/"
+            target="_blank"
+          >
+            东方智慧经典
+          </a>
+        
+          <a
+            class="tag-btn"
+            href="/free-ebooks/tag/literary-classics/"
+            target="_blank"
+          >
+            文学经典
+          </a>
+        
+          <a
+            class="tag-btn"
+            href="/free-ebooks/tag/society-education/"
+            target="_blank"
+          >
+            社会心理与教育
+          </a>
+        
+          <a
+            class="tag-btn"
+            href="/free-ebooks/tag/spirituality/"
+            target="_blank"
+          >
+            灵性
+          </a>
+        
+      </div>
+    </div>
+  </section>
+  
+  <div id="search-section" class="g-pos-rel g-z-index-1 g-pt-50">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <input
+          id="ebookSearchInput"
+          class="form-control h-100 u-shadow-v19 g-brd-none g-bg-white g-font-size-15 g-rounded-30 g-px-25 g-py-10"
+          type="text"
+          placeholder="搜索作者、书名或关键词..."
+        >
+      </div>
+    </div>
+    <div id="searchResults" class="mt-5"></div>
+  </div>
+</div>
+
+<script>
+
+  let ebooks = [];
+  fetch('/ebooks-json.json')
+    .then(res => res.json())
+    .then(data => ebooks = data);
+
+  const input = document.getElementById('ebookSearchInput');
+  const resultsContainer = document.getElementById('searchResults');
+
+  /* 关键词高亮-搜索结果 */
+function highlight(text, keyword) {
+  if (!text || !keyword) return text;
+  const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(`(${escaped})`, 'gi');
+  return text.replace(regex, '<span class="search-highlight">$1</span>');
+}
+
+
+  input.addEventListener('input', function() {
+    const query = this.value.trim().toLowerCase();
+    if (!query) {
+      resultsContainer.innerHTML = '';
+      return;
+    }
+
+    const filtered = ebooks.filter(e =>
+      e.title.toLowerCase().includes(query) ||
+      (e.subtitle && e.subtitle.toLowerCase().includes(query)) ||
+      (e.description && e.description.toLowerCase().includes(query))
+    );
+
+resultsContainer.innerHTML = filtered.map(e => `
+  <article class="g-bg-white g-pt-10 g-pb-10"
+    style="text-align:left; max-width:1000px; margin:0 auto; padding: 20px; line-height:1.6; letter-spacing:0.5px;">
+
+    ${e.date ? `
+      <p class="g-font-size-12 g-color-gray-light-v1 mb-1">
+        ${e.date}
+      </p>
+    ` : ''}
+
+    <h2 class="mb-2" style="color:#6281C8; line-height:1.4;">
+      <span class="g-font-weight-600 g-font-size-22">
+        ${highlight(e.title, query)}
+      </span>
+      ${e.subtitle ? `
+        <span class="g-font-weight-600 g-font-size-22">
+          ${e.subtitle ? highlight(e.subtitle, query) : ''}
+        </span>
+      ` : ''}
     </h2>
+
+    ${e.description ? `
+      <p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8;">
+        ${e.description ? highlight(e.description, query) : ''}
+      </p>
+    ` : ''}
+
+    ${e.download_url ? `
+      <a href="${e.download_url}" target="_blank" class="ebook-download">
+        点击下载...
+      </a>
+    ` : ''}
+
+    <hr class="ebook-separator">
+  </article>
+`).join('');
+
+  });
+</script>
+
+<style>
+  /* 默认状态：细浅灰边框 */
+  #ebookSearchInput.form-control {
+    border: 1px solid #e6e6e6 !important;
+    box-shadow: none !important;
+    background-color: #fff;
+  }
+
+  /* 聚焦 / 输入时：禁止蓝色高亮 */
+  #ebookSearchInput.form-control:focus {
+    border: 1px solid #6281C8 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: #fff;
+  }
+  /* 关键词高亮-搜索结果 */
+.search-highlight {
+  background-color: rgba(98, 129, 200, 0.25);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+
+</style>
+
+
+
+  <!-- ---------- 电子书列表 ---------- -->
+  <main>
+    <div class="ebook-list">
+      
+      
+
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
     
 
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        这才是吸引力法则-精校珍藏版
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/zhe-cai-shi-xi-yin-li-fa-ze---jing-xiao-zhen-cang-ban.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
     
 
-    <!-- MP3有声书 -->
-    
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
 
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
 
-    
-  </header>
-</section>
-
-
-
-    <!-- 单栏布局 -->
-    <div class="container g-pt-100 g-pb-20">
-      <article class="g-mb-100">
-
-        <div class="article-body g-color-black" style="line-height: 2.5; font-size: 16px;">
-          <p style="font-size:15px; color: gray;">2025年10月16日更新</p><hr class="g-brd-gray-light-v4 g-pt-20">
-<h1 align="center" style="margin-top: 50px;">「作者」</h1> 
-<h4>朵洛莉丝·侃南</h4>
-<p>中文版：《生死之间》、《监护人》上下、《地球守护者》、《回旋宇宙1》、《回旋宇宙2》、《回旋宇宙序曲：光之灵》、《三波志愿者与新地球》</p>
-<p>英文版：《星陨传奇》、《与诺查丹玛斯的对话》两卷、《五世回忆》、《回旋宇宙3》、《回旋宇宙4》、《回旋宇宙5》、《来自星星的遗产》、《寻找隐藏的神圣知识》</p>
-<p><a href="https://pan.baidu.com/s/1A7_fKvlLz0mpgDIp5kkzyw?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1A7_fKvlLz0mpgDIp5kkzyw?pwd=muyu</a></p>
-<h4>汤姆·肯永</h4>
-<p>《抹大拉手稿》、《大角星人文摘》、《大脑状态》、《伟大的人类潜能在自己的光中行走-来自昴宿星和哈索尔的教导》……</p>
-<p><a href="https://readcafe.life/free-ebooks/authors/tom-kenyon/index.html" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://readcafe.life/free-ebooks/authors/tom-kenyon/index.html</a></p>
-<h4>帕梅拉·克里柏：灵性炼金术-约书亚传导系列</h4>
-<p>作者：帕梅拉·克里柏， 《灵魂的暗夜》、《灵性炼金术：约书亚的传导》、《灵性人生：给新时代的讯息》、《与指导灵沟通：约书亚的召唤》、《约书亚的传导3》、《生命之喜悦：约书亚&amp;玛利亚的灵讯》、《地球之赋：来自盖娅的灵讯》……</p>
-<p><a href="https://pan.baidu.com/s/1uxY0q1gJq_V9DHdO7El7_Q?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1uxY0q1gJq_V9DHdO7El7_Q?pwd=muyu</a></p>
-<h4>卡洛斯·卡斯塔尼达（唐望）</h4>
-<p>《巫士唐望的教诲》、《解离的真实》、《前住依斯特兰的旅程》、《力量的传奇》、《巫师的传承》、《巨鹰的赠与》、《内在的火焰》、《寂静的知识》、《做梦的艺术》、《无限的积极面-穿越生命之界》、《巫士的穿越》、《时间之轮》</p>
-<p><a href="https://pan.baidu.com/s/1qQiOFN99l7QDvDlDFIggHA?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1qQiOFN99l7QDvDlDFIggHA?pwd=muyu</a></p>
-<h4>赛斯口述书全18册</h4>
-<p>《灵魂永生》、《梦、进化与价值完成》、《健康之道》、《神奇之道》、《时空之外》、《未知的实相》、《心灵的本质》、《个人实相的本质》、《个人和群体事件的本质》、赛斯早期课1-7册</p>
-<p><a href="https://pan.baidu.com/s/1eiYfzxE3Ql1ch1wdH1RtoA?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1eiYfzxE3Ql1ch1wdH1RtoA?pwd=muyu</a></p>
-<h4>克里昂（Kryon）</h4>
-<p>克里昂通灵讯息1-6册，克里昂答问合集，《现世文明的最后时刻》，《不要以人类的方式思考》，《回家之旅》</p>
-<p><a href="https://pan.baidu.com/s/1foA_MWOrS62RknaoWGh8hA?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1foA_MWOrS62RknaoWGh8hA?pwd=muyu</a></p>
-<h4>芭芭拉·布伦南：光之手（3本）</h4>
-<p>1-光之手：通过人体能量场进行治疗的指南（Hands of Light）
-2-光之涌现-个人疗愈之旅（Light Emerging）
-3-核心光疗：我的个人旅程和创造你渴望的生活的高级疗愈理念（Core Light Healing）</p>
-<p><span>中文版：<a href="https://pan.baidu.com/s/1pPFAdtk616dyS3u0Tz36sw?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1pPFAdtk616dyS3u0Tz36sw?pwd=muyu</a></span></p>
-<p><span>英文版：<a href="https://pan.baidu.com/s/1MB3KgRRUFjPc7I4bjPVHFQ?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1MB3KgRRUFjPc7I4bjPVHFQ?pwd=muyu</a></span></p>
-<h4>德隆瓦洛·默基瑟德克</h4>
-<p>中文版：《生命之花的古老秘密》一二卷，《从心觉醒》，《地球大拙火》</p>
-<p>英文版：《光之蛇：超越2012——地球昆达里尼的移动与女性之光的兴起》，《玛雅的衔尾蛇：宇宙周期的完整循环》，《心灵之旅》</p>
-<p><a href="https://readcafe.life/free-ebooks/authors/drunvalo-melchizedek/index.html" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://readcafe.life/free-ebooks/authors/drunvalo-melchizedek/index.html</a></p>
-<h4>茂琳·圣哲曼</h4>
-<p>《重织你的实相纤维：灵体疗愈自学手册》,英文版+机器翻译</p>
-<p><a href="https://pan.baidu.com/s/1CRZtJZyf6JhvGrSYI8nLvg?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1CRZtJZyf6JhvGrSYI8nLvg?pwd=muyu</a></p>
-<p>《成为精灵 : 创造爱、成功与幸福的人生藏宝图》</p>
-<p><a href="https://pan.baidu.com/s/1abhbR_c-y6p9oKgvPKtxfw?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1abhbR_c-y6p9oKgvPKtxfw?pwd=muyu</a></p>
-<p>冥想音频专辑：“彩虹天使冥想”（Rainbow Angel Meditation）
-2003 年发布，包含 9 首曲目，总时长约 31 分钟，
-这些冥想旨在帮助听众与各位天使建立连接，释放负面情绪，提升灵性觉知。</p>
-<p>【Apple Music】<a href="https://music.apple.com/us/album/rainbow-angel-meditation/152538793" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://music.apple.com/us/album/rainbow-angel-meditation/152538793</a></p>
-<p>【Spotify】<a href="https://open.spotify.com/album/2rBhi3ExuEnp35iJYpRGUy?utm_source=chatgpt.com" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://open.spotify.com/album/2rBhi3ExuEnp35iJYpRGUy?utm_source=chatgpt.com</a></p>
-<h4>克里希那穆提</h4>
-<p><a href="https://pan.baidu.com/s/1aa9Y_z5DTDMxHeQdqOduoA?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1aa9Y_z5DTDMxHeQdqOduoA?pwd=muyu</a></p>
-<h4>沉睡的预言家：埃德加·凯西</h4>
-<p>《多世生命》/《灵魂转生的奥秘》、《埃德加凯西传记》、《凯西无药疗法保健手册》、《凯西星象研究》、《如何解梦-凯西之实用技巧》、《生命之书-阿卡西记录》、《探索上帝》、《耶稣神秘教导解码》……</p>
-<p><a href="https://readcafe.life/free-ebooks/authors/edgar-cayce/index.html" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://readcafe.life/free-ebooks/authors/edgar-cayce/index.html</a></p>
-<h4>朗达·拜恩：吸引力法则</h4>
-<p>《力量》、《秘密》、《秘密实践版》、《魔力》、《英雄》、《秘密副作用》、《这才是吸引力法则》</p>
-<p><a href="https://pan.baidu.com/s/1mXBT1xuF_zbRIxwVHUUYBg?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1mXBT1xuF_zbRIxwVHUUYBg?pwd=muyu</a></p>
-<h4>鸣响雪松-阿纳丝塔夏1-10合辑</h4>
-<p>作者：弗拉基米尔·梅格烈 （Vladimir Megre）</p>
-<p>《阿纳丝塔夏》、《鸣响雪松》、《爱的空间》、《共同的创造》、《我们到底是谁》、《家族之书》、《生命的能量》、《新的文明》、《爱的仪式》、《阿纳丝塔》/ 有的版本译为《谁在真正生活》</p>
-<p><a href="https://readcafe.life/free-ebooks/spirituality/ming-xiang-xue-song-1-10/index.html" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://readcafe.life/free-ebooks/spirituality/ming-xiang-xue-song-1-10/index.html</a></p>
-<h4>巴夏</h4>
-<p>《2027：来自巴夏的生命讯息》，《巴夏：来自未来的生命讯息》，巴夏《New Meta Physics》超物理学，巴夏视频文字合集1-194集</p>
-<p><a href="https://pan.baidu.com/s/1PgvxXLngyMQlw_zKx6z-Og?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1PgvxXLngyMQlw_zKx6z-Og?pwd=muyu</a></p>
-<h4>拜伦.凯蒂</h4>
-<p>《喜悦无处不在》《一念之转四句话改变你的人生》《没有你的故事，你是谁？》《我需要你的爱，这是真的吗？》</p>
-<p><a href="https://pan.baidu.com/s/1pzdUP894adBmWBYm4_snKw?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1pzdUP894adBmWBYm4_snKw?pwd=muyu</a></p>
-<h4>斯图尔特·斯瓦洛</h4>
-<p>《真实的世界史：人类传奇》，《蒙托克： 与外星人的联系》</p>
-<p><a href="https://readcafe.life/free-ebooks/authors/stewart-swerdlow/index.html" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://readcafe.life/free-ebooks/authors/stewart-swerdlow/index.html</a></p>
-<hr>
-<h1 align="center" style="margin-top: 50px;">「主题」</h1>
-<h4>第五维度相关资料</h4>
-<p>《扬升向第五次元的转变，大角星议会》第一二三卷，《在5D中醒来：多维转换实用指南》，《第五维度灵魂心理学》，《地心文明桃乐市 第一册 第五次元拉姆妮亚的扬升之道》……</p>
-<p><a href="https://readcafe.life/free-ebooks/spirituality/the-fifth-dimension/index.html" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://readcafe.life/free-ebooks/spirituality/the-fifth-dimension/index.html</a></p>
-<h4>一的法则系列，又称Ra资料</h4>
-<p>《一的法则》学者版、《选择之道》、《加速个人进化》、《流浪者手册》</p>
-<p><a href="https://readcafe.life/free-ebooks/spirituality/the-law-of-one/index.html" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://readcafe.life/free-ebooks/spirituality/the-law-of-one/index.html</a></p>
-<h4>《脉轮全书》, 安诺德·朱迪丝博士</h4>
-<p><a href="https://pan.baidu.com/s/1KV4Xik_b0jPcnXKSmD4vyg?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1KV4Xik_b0jPcnXKSmD4vyg?pwd=muyu</a></p>
-<h4>《脉轮能量书》（上下册），奥修</h4>
-<p><a href="https://pan.baidu.com/s/1p0Oi-HPP-JSQ0vA_cWOo1g?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1p0Oi-HPP-JSQ0vA_cWOo1g?pwd=muyu</a></p>
-<h4>《与神对话》系列</h4>
-<p><a href="https://pan.baidu.com/s/1Pe1cL3tfNqz8lDIKv_K31w?pwd=muyu " style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1Pe1cL3tfNqz8lDIKv_K31w?pwd=muyu </a></p>
-<h4>《奇迹课程》系列</h4>
-<p><a href="https://pan.baidu.com/s/1kWUAJ3R1QiDhUK3RDCQ1Kw?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1kWUAJ3R1QiDhUK3RDCQ1Kw?pwd=muyu</a></p>
-<h4>《源头：开启你的心智，改变你的人生》-激活大脑潜能</h4>
-<p>麻省理工学院的神经科学家，斯塔拉·斯瓦特 (Tara Swart)，英文原名《The Source- Open Your Mind, Change Your Life 》，中文版+英文版</p>
-<p><a href="https://pan.baidu.com/s/1KDT-0YObotO8deAQ6hiMXw?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1KDT-0YObotO8deAQ6hiMXw?pwd=muyu</a></p>
-<h4>秘密太空计划 / 揭露宇宙：地球内部编年史</h4>
-<p>大卫·威尔科克（David Wilcock），科里·古德（Corey Goode）</p>
-<p><a href="https://readcafe.life/free-ebooks/cosmic-disclosure/index.html" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://readcafe.life/free-ebooks/cosmic-disclosure/index.html</a></p>
-<h4>阿卡西记录</h4>
-<p>《阿卡西记录》爱德加·凯西，《阿卡西记录》茂琳·圣哲曼，《如何阅读阿卡西记录》和《透过阿卡西记录疗愈》琳达·皓，《科学与阿卡西场万物的整体理论》英文版</p>
-<p><a href="https://pan.baidu.com/s/14cGL6lQ2RL_om74vhnM5jg?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/14cGL6lQ2RL_om74vhnM5jg?pwd=muyu</a></p>
-<h4>《水知道答案》</h4>
-<p>作者：江本胜，通过水的结晶观察，发现水对外界信息极为敏感，包括文字、声音、情绪、意图等。积极的、充满爱与感激的能量，会使水的结晶完美；负面的、带有仇恨或愤怒的能量，会使水结晶杂乱或不完整。因此江本胜得出结论，人类的情绪和意识能直接影响水分子的结构，而我们摄入的水，也可能影响身体和意识状态。</p>
-<p>《水知道答案》全三册，百度网盘：<a href="https://pan.baidu.com/s/1S-s5HqhHszLWWHqvtCpLJA?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1S-s5HqhHszLWWHqvtCpLJA?pwd=muyu</a></p>
-<h4>海灵格全系列（全10册）</h4>
-<p>德国心理治疗师，伯特•海灵格（Bert Hellinger），epub格式</p>
-<p>《谁在我家（升级版）：海灵格新家庭系统排列》,《爱的序位：家庭系统排列个案集》，《在爱中升华》,《心灵之药》，《洞悉孩子的灵魂》,《幸福的修炼：家庭系统排列关键问题解析》，《爱，如其所是》,《成功的秘密：海灵格组织系统排列的隐秘力量》，《成功与定位：海灵格组织系统排列的隐秘力量》,《成功与生命：海灵格组织系统排列的隐秘力量》</p>
-<p><a href="https://pan.baidu.com/s/1VVkNNXizs4KdIPg4TSBo6w?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1VVkNNXizs4KdIPg4TSBo6w?pwd=muyu</a></p>
-<h4>《父母的觉醒》二册，沙法丽•萨巴瑞</h4>
-<p><a href="https://pan.baidu.com/s/1C_hA_fHMWmc0OZPj2FsOSQ?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1C_hA_fHMWmc0OZPj2FsOSQ?pwd=muyu</a></p>
-<h4>《别忘记生活：歌德与精神修炼的传统》</h4>
-<p><a href="https://pan.baidu.com/s/1SANCFeaLA3bV8KJiq_U_sw?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1SANCFeaLA3bV8KJiq_U_sw?pwd=muyu</a></p>
-<hr>
-<h1 align="center" style="margin-top: 50px;">「英文版」</h1>
-<h4>双生火焰系列-英文版</h4>
-<p><a href="https://pan.baidu.com/s/1yxQrDt3ofX4p02WXqcngFQ?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" target="_blank">https://pan.baidu.com/s/1yxQrDt3ofX4p02WXqcngFQ?pwd=muyu</a></p>
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
 
         </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
 
-      </article>
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        吸引力法则：秘密副作用
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/xi-yin-li-fa-ze---mi-mi-fu-zuo-yong.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        吸引力法则5：英雄
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/xi-yin-li-fa-ze-5--ying-xiong.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        吸引力法则4：魔力
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/xi-yin-li-fa-ze-4--mo-li.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        吸引力法则3：秘密实践版
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/xi-yin-li-fa-ze-3--mi-mi-shi-jian-ban.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        吸引力法则2：秘密
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/xi-yin-li-fa-ze-2--mi-mi.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        吸引力法则1：力量
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/xi-yin-li-fa-ze-1--li-liang.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        巴夏：超物理学 New Meta Physics
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/ba-xia---chao-wu-li-xue--New-Meta-Physics.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        巴夏：来自未来的生命讯息
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/ba-xia---lai-zi-wei-lai-de-sheng-ming-xun-xi.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        巴夏视问答集
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/ba-xia-shi-wen-da-ji.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        2027：来自巴夏的生命讯息
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/2027--lai-zi-ba-xia-de-sheng-ming-xun-xi.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        奇迹课程：宽恕就是爱
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/qi-ji-ke-cheng---kuan-shu-jiu-shi-ai.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,东方智慧经典，文学经典，社会心理与教育,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        奇迹课程辅导书：超越语言的旅程
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/qi-ji-ke-cheng-fu-dao-shu---chao-yue-yu-yan-de-lv-cheng.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,东方智慧经典，文学经典，社会心理与教育,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        奇迹课程新修订版：颠倒因果
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/qi-ji-ke-cheng-xin-xiu-ding-ban---dian-dao-yin-guo.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        原版奇迹课程
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/yuan-ban-qi-ji-ke-cheng.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        与神对话三
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/yu-shen-dui-hua-san.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        与神对话二
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/yu-shen-dui-hua-er.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        与神对话一
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/yu-shen-dui-hua-yi.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,东方智慧经典，文学经典，社会心理与教育,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        与神对话-荷光者
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/yu-shen-dui-hua---he-guang-zhe.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,东方智慧经典，文学经典，社会心理与教育,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        与神对话-神圣经验
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/yu-shen-dui-hua---shen-sheng-jing-yan.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,东方智慧经典，文学经典，社会心理与教育,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        与神对话-神之所欲
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/yu-shen-dui-hua---shen-zhi-suo-yu.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,东方智慧经典，文学经典，社会心理与教育,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        与神对话-比神更快乐
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/yu-shen-dui-hua---bi-shen-geng-kuai-le.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,东方智慧经典，文学经典，社会心理与教育,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        与神对话-明日之神
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/yu-shen-dui-hua---ming-ri-zhi-shen.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        与神对话-与神回家
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/yu-shen-dui-hua---yu-shen-hui-jia.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        与神对话-与神合一
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/yu-shen-dui-hua---yu-shen-he-yi.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        与神对话-与神为友
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/20251230/yu-shen-dui-hua---yu-shen-wei-you.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        扬升书 第二部
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/yang-sheng-shu---di-er-bu.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        扬升书 第三部 阿达姆谈话
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/yang-sheng-shu---di-san-bu---a-da-mu-tan-hua.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        扬升书 第一部
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/yang-sheng-shu---di-yi-bu.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        一的法则：流浪者手册
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：Carla Lisbeth Rueckert。我是一个星际流浪者吗？超自然体验；在清醒与睡梦状态经验UFOs；无归属感；不想来地球；来自家庭的分离；控制的议题；身体的疾病；心智游戏；内在良知的再三啃蚀:顽固的痛苦；自我怀疑；骄傲与臣服；精英主义；超心灵问候；绝望；灵性的枯竭；新时代的杂讯；基督教与星际流浪者；神话与传说；新时代的罪恶感；地球的收成期；转化；全球心智；充满能量的自我与我们如何演...
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/liu-lang-zhe-shou-ce.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        一的法则：加速个人演化
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：Don Elkins。这本书是对一的法则讯息的介绍。
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/jia-su-ge-ren-yan-hua.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        一的法则：选择之道
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：Carla Lisbeth Rueckert。服务无限造物主的星际联邦；一的法则前三种变貌（万物一体的大我纸上游戏、光与爱、自由意志、幻象与催化剂）；服务他人与服务自我的极性与选择；疗愈能量体；协调使用心智与意识；平衡脉轮的光芒；红色光芒能量中心（性欲、生存）；橙色光芒能量中心（责任、我们和自己、与他人、大自然的关系）；黄色光芒能量中心（原生家庭、婚姻、宠物）；绿色光芒能量中心（心的前院、信...
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/yi-de-fa-ze---xuan-ze-zhi-dao.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月30日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        一的法则学者版
+      </span>
+      
+      <span class="g-font-weight-600 g-font-size-22">
+        又名Ra资料
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者:Ra, 一的法则之谦卑使者。收录106场集会内容。主题索引：集会1:致意;Ra的身份;一的法则;集会2:Ra的历史;水晶治疗;金字塔;净化仪式;集会3:金字塔;集会4:金字塔;治疗;集会5:治疗;心智的锻炼(修为);集会6:心智的锻炼;地球和金星的历史;星际邦联;集会7:呼叫;议会;猎户;集会8:UFOs;集会9:地球的历史;大脚;集会10:地球的历史;大脚;毕业;寻求;灵性练习;集会11:...
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/yi-de-fa-ze-xue-zhe-ban.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月29日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        圣多纳释放法持久幸福、成功、平静的秘诀
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：海尔·德沃斯金（Hale Dwoskin）。圣多纳释放法课程：超越压抑与宣泄；成功的秘诀；情绪自由路线图；释放你的抗拒；获得平静的关键；让你的释放更深入；释放四个基本欲望；如何设定和实现你的目标；放下贪恋与厌恶；决策的智慧；清理程序；圣多纳法的原理；放下恐惧和焦虑的秘密；从内疚和羞愧中解脱；改掉那些坏习惯；实现你的财务自由；改善关系的魔法；身体健康；让组织更自由、更高效……
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/sheng-duo-na-shi-fang-fa.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月29日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        鸣响雪松-阿纳丝塔夏1-10合辑
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：弗拉狄米尔·米格烈（Vladimir Megre）。《阿纳丝塔夏》、《鸣响雪松》、《爱的空间》、《共同的创造》、《我们到底是谁》、《家族之书》、《生命的能量》、《新的文明》、《爱的仪式》、《阿纳丝塔》/ 有的版本译为《谁在真正生活》。
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/spirituality/ming-xiang-xue-song---a-na-si-ta-xia-1-10-he-ji.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月29日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        约书亚的传导：约书亚问答撷录
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：帕梅拉·克里柏（Pamela Kribbe)。约书亚解答：关于同性恋；如何才能认出自己的双生灵魂；身体不适与疾病；光之工作者的指导灵；与他/她相遇，灵魂的共振；光之工作者强烈的助人愿望；从过度敏感到高度敏感；成为通往地球的桥梁；在地球上找到归家的感觉；两种类型的黑暗；你是社会的导师……
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/authors/pamela-kribbe/yue-shu-ya-de-chuan-dao---yue-shu-ya-wen-da-xie-lu.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月29日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        灵魂的暗夜
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：帕梅拉·克里柏（Pamela Kribbe)。第一部分关于抑郁症与精神病；灵魂暗夜-灵性经历还是精神病史？关于深度抑郁症及精神病的建议；灵修上的赘疣；第二部分 关于灵魂暗夜的灵性讯息；灵魂暗夜时分的导师；面对自己的黑暗面；重生于新地球；超越时间的次元；走出迷雾；台风之眼；生命之河；恐惧-通往新事物的门户；光之工作者的使命；最高的给予；璞石成玉；内在法官；疗愈旧有创伤；高度敏感与男性能量；重获...
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/authors/pamela-kribbe/ling-hun-de-an-ye.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月27日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        约书亚的传导3
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：帕梅拉·克里柏（Pamela Kribbe)。与你的内在小男孩和小女孩连接；释放你生活中的斗争；灵性意义上的母亲；引导我们的孩子；让喜悦成为你们的引领；死亡及其之后；成为新时代的导师；恐惧--通往未知的门；最高的给予；璞石成玉；光之工作者的助人之道；黑暗中的光明……
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/authors/pamela-kribbe/yue-shu-ya-de-chuan-dao-3.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月27日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        生命之喜悦：约书亚 &amp; 玛利亚的灵讯
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：帕梅拉·克里柏（Pamela Kribbe)。破茧成蝶-女性能量的复苏；骑士精神-男性能量的实质；基督能量与“道”；拥有融洽自由的亲密关系：连接与放下；灵魂暗夜时分的导师；独处的艺术；人间天堂；解除束缚；以当下之光照耀过去与未来；直面恐惧；新地球的生活与工作；疗愈性的亲密关系；关于欲望；爱情关系；面对疾病；肉欲与爱；教导你的父母……
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/authors/pamela-kribbe/sheng-ming-zhi-xi-yue---yue-shu-ya---ma-li-ya-de-ling-xun.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月27日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        灵性炼金术：约书亚的传导
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：帕梅拉·克里柏（Pamela Kribbe)。所谓的灵性炼金术，就是邀请情绪完全到来，在我们身体的各个部分去体验它，但同时又站在很中立的角度观察。这样的意识状态就是疗愈——以理解拥抱自己的情绪。
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/authors/pamela-kribbe/ling-xing-lian-jin-shu---yue-shu-ya-de-chuan-dao.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月27日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        灵性人生：给新时代的讯息
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：帕梅拉·克里柏（Pamela Kribbe)。1，从天堂坠入人间：亚特兰蒂斯的传承；2，作为光之工作者：臣服与控制；3，灵性意义上的母亲：灵性意义上的母亲；4，养育新时代儿童：引导我们的孩子；5，男性与女性能量之间的平衡：与你的内在小男孩和小女孩连接。
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/authors/pamela-kribbe/ling-xing-ren-sheng---gei-xin-shi-dai-de-xun-xi.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月27日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        地球之赋：来自盖娅的灵讯
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：帕梅拉·克里柏（Pamela Kribbe)，地球母亲盖娅讲述了地球作为一颗行星的宇宙命运和目标，以及人类在其中所扮演的角色。主要内容：与伴侣建立灵魂上的连接；与动物的沟通与互动；享受与创造-与地球建立连接；回归天性，回归家园；臣服于心；拥抱内在小孩；四大元素之旅；大自然的疗愈力量；两性之舞；地球的灵性；恢复身体里的男性和女性能量……
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/authors/pamela-kribbe/di-qiu-zhi-fu---lai-zi-gai-ya-de-ling-xun.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,灵性" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月27日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        与指导灵沟通：约书亚的召唤
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：帕梅拉·克里柏（Pamela Kribbe)，谁是我们的指导灵？他们在我们的人生中执行的任务或扮演的角色又是什么？指导灵的类型？怎样才能‘听懂’他们的讯息？怎样才知道与我们沟通的是真正的指导灵，不会误导我们？轮回的意义，十字架的象征意义，与光之管道和光之天使建立沟通……
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/authors/pamela-kribbe/yu-zhi-dao-ling-gou-tong---yue-shu-ya-de-zhao-huan.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,社会心理与教育" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月27日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        父母的觉醒2：如何培养自觉的孩子
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：沙法丽·萨巴瑞（Shefali Tsabary）。如果说《父母的觉醒1》重点在父母的自我觉察与解构，那么《父母的觉醒2》比第一本更“落地”，当父母不再被情绪与控制欲驱动后，如何与孩子真实互动。这里的“如何”，不是技巧清单，而是关系状态的呈现方式。
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/society-education/fu-mu-de-jue-xing-2--ru-he-pei-yang-zi-jue-de-hai-zi---mei---sha-fa-li---sa-ba-rui--Z-Library.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,社会心理与教育" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月27日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        父母的觉醒1
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：沙法丽·萨巴瑞（Shefali Tsabary），受东方哲学与正念传统影响，同时具有临床心理学训练背景。作者认为，孩子不是需要被“塑造”的对象，而是用来唤醒父母未被觉察部分的镜子。大多数养育痛苦并非来自孩子本身，而是来自父母：未被处理的情绪；过往创伤；对控制、安全感、成功的执念。孩子的行为，只是把这些东西放大、显形。
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/society-education/fu-mu-de-jue-xing-1--mei---sha-fa-li---sa-ba-rui--Shefali-Tsabary--zhu---wang-zhen---yi--Z-Library.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,社会心理与教育" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月27日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        文凭社会：教育与分层的历史社会学
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：兰德尔·柯林斯（Randall Collins）。教育社会学经典，对“学历神话”的系统性解构之作。揭穿一个被现代社会普遍接受、却很少被认真质疑的信念：教育真的等于能力与公平吗？柯林斯的答案很明确：不完全是，甚至常常不是。他通过历史分析指出——现代教育制度的核心功能，并不是培养技能，而是发放“合法入场券”。
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/society-education/wen-ping-she-hui---jiao-yu-yu-fen-ceng-de-li-shi-she-hui-xue.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,文学经典" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月27日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        吉檀迦利（Gitanjali）
+      </span>
+      
+      <span class="g-font-weight-600 g-font-size-22">
+        诺贝尔文学奖
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：罗宾德拉纳特·泰戈尔（Rabindranath Tagore）。《吉檀迦利》的字面意思是“献歌”。但它献给的不是神祇本身，而是人如何在有限生命中，触碰无限。书中反复出现的主题包括：人与神 / 绝对者的关系；灵魂的谦卑、渴望与回归；爱、死亡、劳动、苦难；在日常生活中体验神性；这里的“神”，不是宗教教义里的神，而更接近一种：秩序、真理、爱与生命整体性的象征。
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/literary-classics/ji-tan-jia-li---tai-ge-er.epub"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,社会心理与教育" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月24日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        巨婴国
+      </span>
+      
+      <span class="g-font-weight-600 g-font-size-22">
+        心理学家透视中国国民性
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  作者：武志红。巨婴的意思是，一个个体，在身体上已经发育为成年人，而在精神上还保留着婴儿般的思想、情绪和行为。这些巨婴特点包括：自我意识狭窄，无法预知自己的言行对他人可能造成什么影响；人身依附，使自己成为他人或机构的一部分，丧失或出卖个人良知底线；在人际和社会层面，为了操控而操控，无法施与爱或享受爱。书中列举了很多例子，而作为读者，你也可以列举无数发生在你身边的例子。
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/cn/ju-ying-guo.pdf"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
+        <div class="ebook-item">
+          <div class="col-12 g-mx-10 g-mt-0">
+  <article class="g-bg-white g-pt-10 g-pb-10" data-tags="ebooks,东方智慧经典" 
+           style="text-align:left; max-width:1000px; margin:0 auto; line-height:1.6; letter-spacing:0.5px;">
+
+    <!-- 更新日期 -->
+    
+    <p class="g-font-size-12 g-color-gray-light-v1 mb-1" style="margin-bottom:2px;">
+      2025年12月24日
+    </p>
+    
+
+    <!-- 书名 + 副标题 -->
+    <h2 class="mb-2" style="color:#222; line-height:1.4; letter-spacing:0.5px;">
+      <span class="g-font-weight-600 g-font-size-22">
+        知行合一王阳明大全集
+      </span>
+      
+      <span class="g-font-weight-600 g-font-size-22">
+        （套装共5册）
+      </span>
+      
+    </h2>
+
+<!-- 描述只展示200字 -->
+
+<p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8; letter-spacing:0.05em; margin-top:1em;">
+  心学研究专家（度阴山）二十年阳明心学研究集大成之作。
+</p>
+
+
+
+
+
+    <!-- 下载链接 -->
+    
+    <a
+      href="https://readcafe.life/free-ebooks/cn/zhi-xing-he-yi-wang-yang-ming-quan-ji.epub"
+      class="ebook-download"
+	  target="_blank"
+    >
+      点击下载...
+    </a>
+    
+
+    <!-- 分割线 -->
+    <hr class="ebook-separator; margin-bottom:2px;">
+  </article>
+</div>
+
+<style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
+  /* 下载链接 hover 效果 */
+  .ebook-download:hover {
+    color:#333;
+    text-decoration: underline;
+  }
+
+  /* 分割线 */
+  .ebook-separator {
+    border:none;
+    border-top:1px solid #ddd;
+    margin-top:15px;
+    width:100%;
+  }
+</style>
+
+        </div>
+      
     </div>
 
-    <footer class="ebook-footer g-bg-light g-pt-50 g-pb-50">
+    <div class="load-more-wrap">
+      <button id="loadMoreBtn" class="load-more-btn">
+        加载更多...
+      </button>
+    </div>
+  </main>
+
+  <footer class="ebook-footer g-bg-light g-pt-50 g-pb-50">
 
     <div class="sharethis-inline-share-buttons"></div>
     <p class="g-mt-40 g-color-gray-dark">对你获取的信息，保持善意的怀疑和独立思考是明智的。</p>
@@ -322,8 +3781,6 @@
   color: #ff6600;
 }
 </style>
-  </main>
-
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>
 <script src="/css261/html/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
@@ -349,6 +3806,51 @@
 <script src="/css261/html/assets/js/custom.js"></script>
 
 <script>
+  // 加载更多逻辑
+(function () {
+  const ITEMS_PER_LOAD = 50; // ⭐默认 50，就改这里
+
+  function initLoadMore() {
+    const list = document.querySelector(".ebook-list");
+    const btn = document.getElementById("loadMoreBtn");
+
+    if (!list || !btn) return;
+
+    const items = Array.from(list.children);
+    let visibleCount = ITEMS_PER_LOAD;
+
+    function updateView() {
+      items.forEach((item, index) => {
+        item.style.display = index < visibleCount ? "block" : "none";
+      });
+
+      if (visibleCount >= items.length) {
+        btn.textContent = "我也是有底线的！";
+        btn.classList.add("disabled");
+        btn.disabled = true;
+      }
+    }
+
+    // 初始
+    updateView();
+
+    btn.addEventListener("click", function () {
+      if (btn.classList.contains("disabled")) return;
+      visibleCount += ITEMS_PER_LOAD;
+      updateView();
+    });
+  }
+
+  // DOM ready
+  document.addEventListener("DOMContentLoaded", initLoadMore);
+
+  // window load（解决 Masonry / CubePortfolio 复算）
+  window.addEventListener("load", initLoadMore);
+})();
+
+
+
+  // ===== ？？ =====
 $(document).on('ready', function () {
   $.HSCore.components.HSTabs.init('[role="tablist"]');
   $.HSCore.components.HSPopup.init('.js-fancybox');
@@ -417,6 +3919,7 @@ $(window).on('resize', function () {
   }, 200);
 });
 </script>
+
 
 </body>
 </html>

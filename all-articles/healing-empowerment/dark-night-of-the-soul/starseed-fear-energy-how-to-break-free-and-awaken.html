@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   <head>
-  <title>走出恐惧的迷雾：人类集体意识的海洋 │ 走出内在恐惧的4个阶段 生命之书 | librarys.life</title>
+  <title>走出恐惧的迷雾：人类集体意识的海洋 │ 走出内在恐惧的4个阶段 ・ 生命之书 | librarys.life</title>
   <meta name="description" content="星际种子们正在地球上开辟新的人类意识之路。本篇深入解析恐惧能量如何操控人类思维，以及如何通过四个阶段的灵性实践走出恐惧迷雾。帮助你识别内在的独裁者，重新聆听灵魂的声音，迈向觉醒与自由。">
 <meta name="keywords" content="星际种子, 灵性觉醒, 恐惧能量, 人类意识进化, 灵魂觉知, 内在疗愈">
 
@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20251214-1602">
+<meta name="version" content="20251231-2356">
 
 
 <meta charset="utf-8">
@@ -51,6 +51,12 @@
 </head>
 
 <style>
+     /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.1em;
+    }
+	
 .article-body p {
   margin-bottom: 2em;
   line-height: 2.2;
@@ -124,7 +130,7 @@
 <!-- End Responsive Toggle Button -->
 
 <!-- Logo -->
-<a href="http://librarys.life" class="navbar-brand d-flex">
+<a href="/" class="navbar-brand d-flex">
   <img src="https://img.librarys.life/site-img/logo.svg" alt="librarys.life" width="180" height="60" style="display:block;">
 </a>
 <!-- End Logo -->
@@ -135,16 +141,16 @@
 <ul class="navbar-nav g-pos-rel g-font-size-15 g-font-weight-500 ml-auto text-capitalize">
 
 <li class="nav-item g-mr-50">
-  <a href="https://librarys.life/articles-list/0/" class="nav-link g-py-7 g-px-0">近期更新</a>
+  <a href="/new/" class="nav-link g-py-7 g-px-0">近期更新</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="https://librarys.life/articles-list/0/" class="nav-link g-py-7 g-px-0">所有文章</a>
+  <a href="/articles-list/0/" class="nav-link g-py-7 g-px-0">所有文章</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="https://readcafe.life/free-ebooks/index.html" class="nav-link g-py-7 g-px-0">免费电子书</a>
+  <a href="/free-ebooks/" class="nav-link g-py-7 g-px-0">免费电子书</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="https://librarys.life/audiobooks/siddhartha/" class="nav-link g-py-7 g-px-0">有声书</a>
+  <a href="/all-audiobooks/0/" class="nav-link g-py-7 g-px-0">有声书</a>
 </li>
 
 </ul>
@@ -796,7 +802,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/audio"
+  href="/all-audiobooks/0"
   style="padding-left: 0px;">
   有声书
 </a>
@@ -817,9 +823,9 @@
     </div>
 
     <!-- Footer -->
-<footer class="g-pt-100 text-center">
+<footer class="g-pt-50 text-center">
   <div class="container-fluid g-py-15 g-brd-top g-brd-gray-light-v4">
-      <a href="http://librarys.life" class="navbar-brand">
+      <a href="/" class="navbar-brand">
          <img src="https://img.librarys.life/site-img/logo.svg" alt="librarys.life" width="180" height="60" style="display:block;">
       </a>
       <p class="g-font-size-12 g-color-gray-dark-v3">
@@ -855,6 +861,51 @@
 <script src="/css261/html/assets/js/custom.js"></script>
 
 <script>
+  // 加载更多逻辑
+(function () {
+  const ITEMS_PER_LOAD = 50; // ⭐默认 50，就改这里
+
+  function initLoadMore() {
+    const list = document.querySelector(".ebook-list");
+    const btn = document.getElementById("loadMoreBtn");
+
+    if (!list || !btn) return;
+
+    const items = Array.from(list.children);
+    let visibleCount = ITEMS_PER_LOAD;
+
+    function updateView() {
+      items.forEach((item, index) => {
+        item.style.display = index < visibleCount ? "block" : "none";
+      });
+
+      if (visibleCount >= items.length) {
+        btn.textContent = "我也是有底线的！";
+        btn.classList.add("disabled");
+        btn.disabled = true;
+      }
+    }
+
+    // 初始
+    updateView();
+
+    btn.addEventListener("click", function () {
+      if (btn.classList.contains("disabled")) return;
+      visibleCount += ITEMS_PER_LOAD;
+      updateView();
+    });
+  }
+
+  // DOM ready
+  document.addEventListener("DOMContentLoaded", initLoadMore);
+
+  // window load（解决 Masonry / CubePortfolio 复算）
+  window.addEventListener("load", initLoadMore);
+})();
+
+
+
+  // ===== ？？ =====
 $(document).on('ready', function () {
   $.HSCore.components.HSTabs.init('[role="tablist"]');
   $.HSCore.components.HSPopup.init('.js-fancybox');

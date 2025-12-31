@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   <head>
-  <title>斯图尔特·斯瓦洛（Stewart Swerdlow） 生命之书 | librarys.life</title>
+  <title>斯图尔特·斯瓦洛（Stewart Swerdlow） ・ 生命之书 | librarys.life</title>
   <meta name="description" content="">
 <meta name="keywords" content="">
 
@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20251214-1602">
+<meta name="version" content="20251231-2356">
 
 
 <meta charset="utf-8">
@@ -100,7 +100,7 @@
 <!-- End Responsive Toggle Button -->
 
 <!-- Logo -->
-<a href="http://librarys.life" class="navbar-brand d-flex">
+<a href="/" class="navbar-brand d-flex">
   <img src="https://img.librarys.life/site-img/logo.svg" alt="librarys.life" width="180" height="60" style="display:block;">
 </a>
 <!-- End Logo -->
@@ -111,16 +111,16 @@
 <ul class="navbar-nav g-pos-rel g-font-size-15 g-font-weight-500 ml-auto text-capitalize">
 
 <li class="nav-item g-mr-50">
-  <a href="https://librarys.life/articles-list/0/" class="nav-link g-py-7 g-px-0">近期更新</a>
+  <a href="/new/" class="nav-link g-py-7 g-px-0">近期更新</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="https://librarys.life/articles-list/0/" class="nav-link g-py-7 g-px-0">所有文章</a>
+  <a href="/articles-list/0/" class="nav-link g-py-7 g-px-0">所有文章</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="https://readcafe.life/free-ebooks/index.html" class="nav-link g-py-7 g-px-0">免费电子书</a>
+  <a href="/free-ebooks/" class="nav-link g-py-7 g-px-0">免费电子书</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="https://librarys.life/audiobooks/siddhartha/" class="nav-link g-py-7 g-px-0">有声书</a>
+  <a href="/all-audiobooks/0/" class="nav-link g-py-7 g-px-0">有声书</a>
 </li>
 
 </ul>
@@ -259,6 +259,51 @@
 <script src="/css261/html/assets/js/custom.js"></script>
 
 <script>
+  // 加载更多逻辑
+(function () {
+  const ITEMS_PER_LOAD = 50; // ⭐默认 50，就改这里
+
+  function initLoadMore() {
+    const list = document.querySelector(".ebook-list");
+    const btn = document.getElementById("loadMoreBtn");
+
+    if (!list || !btn) return;
+
+    const items = Array.from(list.children);
+    let visibleCount = ITEMS_PER_LOAD;
+
+    function updateView() {
+      items.forEach((item, index) => {
+        item.style.display = index < visibleCount ? "block" : "none";
+      });
+
+      if (visibleCount >= items.length) {
+        btn.textContent = "我也是有底线的！";
+        btn.classList.add("disabled");
+        btn.disabled = true;
+      }
+    }
+
+    // 初始
+    updateView();
+
+    btn.addEventListener("click", function () {
+      if (btn.classList.contains("disabled")) return;
+      visibleCount += ITEMS_PER_LOAD;
+      updateView();
+    });
+  }
+
+  // DOM ready
+  document.addEventListener("DOMContentLoaded", initLoadMore);
+
+  // window load（解决 Masonry / CubePortfolio 复算）
+  window.addEventListener("load", initLoadMore);
+})();
+
+
+
+  // ===== ？？ =====
 $(document).on('ready', function () {
   $.HSCore.components.HSTabs.init('[role="tablist"]');
   $.HSCore.components.HSPopup.init('.js-fancybox');

@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   <head>
-  <title>《悉达多》 生命之书 | librarys.life</title>
+  <title>《悉达多》 ・ 生命之书 | librarys.life</title>
   <meta name="description" content="《悉达多》（Siddhartha），也被译为《流浪者之歌》、《悉达求道记》，德国小说家赫尔曼·黑塞（Hermann Hesse）在1922年所著。Siddhartha一词是由两个梵语词𢑥所构成：Siddha（意为已获得）+artha（寻求之物），而这两个词连接在一起时，其意思便成了“已找寻到（存在的）意义之人”、“已完成目标之人”或“修行圆满之人”。这本书描述了主角悉达多追寻终极真理的过程中，经历了三个重要历程……">
 <meta name="keywords" content="">
 
@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20251214-1602">
+<meta name="version" content="20251231-2356">
 
 
 <meta charset="utf-8">
@@ -48,8 +48,75 @@
 
 
 </head>
+</head>
+
+<body>
+  <!-- Header -->
+<header id="js-header" class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance u-shadow-v19 g-px-100--lg g-bg-white" data-header-fix-moment="300">
+<div class="u-header__section u-header__section--light g-bg-white g-transition-0_3" data-header-fix-moment-exclude="g-py-0" data-header-fix-moment-classes="u-shadow-v18 g-py-0">
+<nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
+<div class="container-fluid g-px-100--lg">
+
+<!-- Responsive Toggle Button -->
+<button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+<span class="hamburger hamburger--slider">
+<span class="hamburger-box">
+<span class="hamburger-inner"></span>
+</span>
+</span>
+</button>
+<!-- End Responsive Toggle Button -->
+
+<!-- Logo -->
+<a href="/" class="navbar-brand d-flex">
+  <img src="https://img.librarys.life/site-img/logo.svg" alt="librarys.life" width="180" height="60" style="display:block;">
+</a>
+<!-- End Logo -->
+
+
+<!-- Navigation -->
+<div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-40--lg g-pl-100--lg" id="navBar">
+<ul class="navbar-nav g-pos-rel g-font-size-15 g-font-weight-500 ml-auto text-capitalize">
+
+<li class="nav-item g-mr-50">
+  <a href="/new/" class="nav-link g-py-7 g-px-0">近期更新</a>
+</li>
+<li class="nav-item g-mr-50">
+  <a href="/articles-list/0/" class="nav-link g-py-7 g-px-0">所有文章</a>
+</li>
+<li class="nav-item g-mr-50">
+  <a href="/free-ebooks/" class="nav-link g-py-7 g-px-0">免费电子书</a>
+</li>
+<li class="nav-item g-mr-50">
+  <a href="/all-audiobooks/0/" class="nav-link g-py-7 g-px-0">有声书</a>
+</li>
+
+</ul>
+</div>
+<!-- End Navigation -->
+
+</div>
+</nav>
+</div>
+</header>
+<!-- End Header -->
+
+  <main>
+    
+<!-- 横幅图 -->
+<section class="g-pt-90">
+<div class="container-fluid g-pt-100" style="background-image: url(/img/starnight.jpg);">
+<p class="g-py-20"></p>
+</div>
+</section>
 
   <style>
+       /* 全局字体 */
+    html, body {
+      font-family: "Microsoft YaHei", sans-serif;
+	  letter-spacing: 0.05em;
+    }
+	
     body {
       margin: 0;
       padding: 0;
@@ -92,151 +159,54 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
+    /* =========================
+       音频列表（关键修复）
+    ========================== */
+
     .audio-list {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5em;
+      flex-direction: column;   /* 强制单列 */
+      align-items: center;
+      gap: 3em;               /* ← 3em=50px，这里就是每个音频卡片之间的垂直间距 */
       margin: 2em auto;
       max-width: 1200px;
       background-color: #f0f0f0;
-      padding-top: 30px;
+      padding-top: 100px;      /* ← 这里就是顶部内边距 */
       padding-bottom: 100px;
     }
 
-    .audio-card {
-      display: flex;
-      align-items: flex-start;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 0.8em 1em;
+    /* 每一个音频卡片的外层包装 */
+    .audio-item {
       width: 100%;
-      max-width: 540px;
-      min-width: 300px;
+      max-width: 720px;   /* 统一宽度，想窄可改 640 / 600 */
+      box-sizing: border-box;
     }
 
-    .audio-card img.thumb {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-right: 1em;
-      flex-shrink: 0;
-    }
-
-    .audio-card .info {
-      flex: 1;
-    }
-
-    .audio-card .info h3 {
-      margin: 0;
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-
-    .audio-card .info p {
-      font-size: 0.95rem;
-      color: #555;
-      margin: 0.4em 0;
-      line-height: 1.5;
-    }
-
-    .audio-card .info .date {
-      font-size: 0.85rem;
-      color: #999;
-      margin-top: 0.4em;
-    }
-
-    .audio-card audio {
-      width: 100%;
-      margin-top: 0.5em;
-    }
-
+    /* 小屏下仍然保持单列，只是更贴边 */
     @media (max-width: 768px) {
-      .audio-card {
-        flex-direction: column;
-        align-items: center;
-      }
-      .audio-card img.thumb {
-        margin-right: 0;
-        margin-bottom: 0.8em;
-      }
-      .audio-card .info h3 {
-        text-align: center;
-      }
-      .audio-card .info p,
-      .audio-card .info .date {
-        text-align: center;
+      .audio-item {
+        max-width: 100%;
+        padding: 0 16px;
       }
     }
   </style>
-</head>
-
-<body>
-  <main class="article-body">
-    <!-- Header -->
-<header id="js-header" class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance u-shadow-v19 g-px-100--lg g-bg-white" data-header-fix-moment="300">
-<div class="u-header__section u-header__section--light g-bg-white g-transition-0_3" data-header-fix-moment-exclude="g-py-0" data-header-fix-moment-classes="u-shadow-v18 g-py-0">
-<nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
-<div class="container-fluid g-px-100--lg">
-
-<!-- Responsive Toggle Button -->
-<button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-<span class="hamburger hamburger--slider">
-<span class="hamburger-box">
-<span class="hamburger-inner"></span>
-</span>
-</span>
-</button>
-<!-- End Responsive Toggle Button -->
-
-<!-- Logo -->
-<a href="http://librarys.life" class="navbar-brand d-flex">
-  <img src="https://img.librarys.life/site-img/logo.svg" alt="librarys.life" width="180" height="60" style="display:block;">
-</a>
-<!-- End Logo -->
 
 
-<!-- Navigation -->
-<div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-40--lg g-pl-100--lg" id="navBar">
-<ul class="navbar-nav g-pos-rel g-font-size-15 g-font-weight-500 ml-auto text-capitalize">
 
-<li class="nav-item g-mr-50">
-  <a href="https://librarys.life/articles-list/0/" class="nav-link g-py-7 g-px-0">近期更新</a>
-</li>
-<li class="nav-item g-mr-50">
-  <a href="https://librarys.life/articles-list/0/" class="nav-link g-py-7 g-px-0">所有文章</a>
-</li>
-<li class="nav-item g-mr-50">
-  <a href="https://readcafe.life/free-ebooks/index.html" class="nav-link g-py-7 g-px-0">免费电子书</a>
-</li>
-<li class="nav-item g-mr-50">
-  <a href="https://librarys.life/audiobooks/siddhartha/" class="nav-link g-py-7 g-px-0">有声书</a>
-</li>
-
-</ul>
-</div>
-<!-- End Navigation -->
-
-</div>
-</nav>
-</div>
-</header>
-<!-- End Header -->
-    <!-- 横幅图 -->
-<section class="g-pt-90">
-<div class="container-fluid g-pt-100" style="background-image: url(/img/starnight.jpg);">
-<p class="g-py-20"></p>
-</div>
-</section>
-
+<div class="article-body">
     <h1>《悉达多》</h1>
     <div class="author">作者：[德] 赫尔曼·黑塞</div>
+
     <img src="https://img.librarys.life/img/books-covers/siddhartha.jpg" alt="《悉达多》" class="cover">
-    <div class="description" style="margin-top: 50px; padding-bottom: 50px;">《悉达多》（Siddhartha），也被译为《流浪者之歌》、《悉达求道记》，德国小说家赫尔曼·黑塞（Hermann Hesse）在1922年所著。Siddhartha一词是由两个梵语词𢑥所构成：Siddha（意为已获得）+artha（寻求之物），而这两个词连接在一起时，其意思便成了“已找寻到（存在的）意义之人”、“已完成目标之人”或“修行圆满之人”。这本书描述了主角悉达多追寻终极真理的过程中，经历了三个重要历程……</div>
+
+    <div class="description" style="margin-top: 50px; padding-bottom: 50px;">
+      《悉达多》（Siddhartha），也被译为《流浪者之歌》、《悉达求道记》，德国小说家赫尔曼·黑塞（Hermann Hesse）在1922年所著。Siddhartha一词是由两个梵语词𢑥所构成：Siddha（意为已获得）+artha（寻求之物），而这两个词连接在一起时，其意思便成了“已找寻到（存在的）意义之人”、“已完成目标之人”或“修行圆满之人”。这本书描述了主角悉达多追寻终极真理的过程中，经历了三个重要历程……
+    </div>
+</div>
+	
 
     
+
     
     
       
@@ -291,901 +261,1033 @@
 
     <div class="audio-list">
       
-        
-        <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-    
-    <!-- 上半部分：左右两列 -->
-    <div class="d-flex w-100 align-items-center mb-2">
-      <!-- 左侧：封面图 + 显示字幕按钮 -->
-      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+        <div class="audio-item">
+          
+          <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/siddhartha/">
         <img 
           class="rounded mb-2" 
           src="https://img.librarys.life/img/books-covers/siddhartha.jpg" 
           alt="第一章：婆罗门之子" 
           style="width:80px; height:80px; object-fit:cover;"
         >
-
-        
-        <button 
-          class="btn btn-sm show-subtitles" 
-          style="background:#fff; border:1px solid #ccc; color:#333;"
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha1.json">
-          显示字幕
-        </button>
-        
-      </div>
-
-      <!-- 右侧：文字 + 音频 + 更新日期 -->
-      <div class="flex-grow-1">
-        <h2 class="mb-2">
-          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-          <span class="g-font-weight-700 g-font-size-16"> 第一章：婆罗门之子</span>
-        </h2>
-
-        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-          天赋聪颖的悉达多，在祭祀与经文中成长，却开始质疑众神与知识的意义。
-        </p>
-
-        
-        <audio 
-          controls 
-          style="width: 100%; margin-top: 5px;" 
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha1.json">
-          <source src="https://audio.librarys.life/audio/siddhartha/audio1.mp3" type="audio/mpeg">
-          您的浏览器不支持音频播放。
-        </audio>
-        
-
-        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-          更新日期：2025年10月31日
-        </p>
-      </div>
-    </div>
-
-    <!-- 下半部分：拉通字幕容器 -->
-    
-    <div class="subtitle-box w-100" style="
-        display:none;
-        max-height: 200px;
-        overflow-y:auto;
-        margin-top:10px;
-        padding:8px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        font-size: 1.15rem;
-        line-height:1.6;
-        background:#f9f9f9;
-      ">
-    </div>
-    
-  </article>
-</div>
-
-
-
+      </a>
 
       
-        
-        <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-    
-    <!-- 上半部分：左右两列 -->
-    <div class="d-flex w-100 align-items-center mb-2">
-      <!-- 左侧：封面图 + 显示字幕按钮 -->
-      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha1.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+      <h2 class="mb-2">
+        <a 
+          href="/audiobooks/siddhartha/"
+          class="g-font-weight-700 g-font-size-16"
+          style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
+        >
+          《悉达多》
+        </a>
+        <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
+          第一章：婆罗门之子
+        </span>
+      </h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mb-2" style="letter-spacing: 0.05em;">
+        天赋聪颖的悉达多，在祭祀与经文中成长，却开始质疑众神与知识的意义。
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha1.json">
+        <source src="https://audio.librarys.life/audio/siddhartha/audio1.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2025年10月31日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+</article>
+
+
+
+        </div>
+      
+        <div class="audio-item">
+          
+          <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/siddhartha/">
         <img 
           class="rounded mb-2" 
           src="https://img.librarys.life/img/books-covers/siddhartha.jpg" 
           alt="第二章：沙门" 
           style="width:80px; height:80px; object-fit:cover;"
         >
-
-        
-        <button 
-          class="btn btn-sm show-subtitles" 
-          style="background:#fff; border:1px solid #ccc; color:#333;"
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha2.json">
-          显示字幕
-        </button>
-        
-      </div>
-
-      <!-- 右侧：文字 + 音频 + 更新日期 -->
-      <div class="flex-grow-1">
-        <h2 class="mb-2">
-          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-          <span class="g-font-weight-700 g-font-size-16"> 第二章：沙门</span>
-        </h2>
-
-        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-          他离开家乡，与苦行者为伴，试图在极端禁欲中找到心灵的自由。
-        </p>
-
-        
-        <audio 
-          controls 
-          style="width: 100%; margin-top: 5px;" 
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha2.json">
-          <source src="https://audio.librarys.life/audio/siddhartha/audio2.mp3" type="audio/mpeg">
-          您的浏览器不支持音频播放。
-        </audio>
-        
-
-        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-          更新日期：2025年10月31日
-        </p>
-      </div>
-    </div>
-
-    <!-- 下半部分：拉通字幕容器 -->
-    
-    <div class="subtitle-box w-100" style="
-        display:none;
-        max-height: 200px;
-        overflow-y:auto;
-        margin-top:10px;
-        padding:8px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        font-size: 1.15rem;
-        line-height:1.6;
-        background:#f9f9f9;
-      ">
-    </div>
-    
-  </article>
-</div>
-
-
-
+      </a>
 
       
-        
-        <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-    
-    <!-- 上半部分：左右两列 -->
-    <div class="d-flex w-100 align-items-center mb-2">
-      <!-- 左侧：封面图 + 显示字幕按钮 -->
-      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha2.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+      <h2 class="mb-2">
+        <a 
+          href="/audiobooks/siddhartha/"
+          class="g-font-weight-700 g-font-size-16"
+          style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
+        >
+          《悉达多》
+        </a>
+        <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
+          第二章：沙门
+        </span>
+      </h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mb-2" style="letter-spacing: 0.05em;">
+        他离开家乡，与苦行者为伴，试图在极端禁欲中找到心灵的自由。
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha2.json">
+        <source src="https://audio.librarys.life/audio/siddhartha/audio2.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2025年10月31日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+</article>
+
+
+
+        </div>
+      
+        <div class="audio-item">
+          
+          <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/siddhartha/">
         <img 
           class="rounded mb-2" 
           src="https://img.librarys.life/img/books-covers/siddhartha.jpg" 
           alt="第三章：乔达摩" 
           style="width:80px; height:80px; object-fit:cover;"
         >
-
-        
-        <button 
-          class="btn btn-sm show-subtitles" 
-          style="background:#fff; border:1px solid #ccc; color:#333;"
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha3.json">
-          显示字幕
-        </button>
-        
-      </div>
-
-      <!-- 右侧：文字 + 音频 + 更新日期 -->
-      <div class="flex-grow-1">
-        <h2 class="mb-2">
-          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-          <span class="g-font-weight-700 g-font-size-16"> 第三章：乔达摩</span>
-        </h2>
-
-        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-          悉达多遇见佛陀，却决定不做追随者，要亲自走出自己的觉悟之路。
-        </p>
-
-        
-        <audio 
-          controls 
-          style="width: 100%; margin-top: 5px;" 
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha3.json">
-          <source src="https://audio.librarys.life/audio/siddhartha/audio3.mp3" type="audio/mpeg">
-          您的浏览器不支持音频播放。
-        </audio>
-        
-
-        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-          更新日期：2025年10月31日
-        </p>
-      </div>
-    </div>
-
-    <!-- 下半部分：拉通字幕容器 -->
-    
-    <div class="subtitle-box w-100" style="
-        display:none;
-        max-height: 200px;
-        overflow-y:auto;
-        margin-top:10px;
-        padding:8px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        font-size: 1.15rem;
-        line-height:1.6;
-        background:#f9f9f9;
-      ">
-    </div>
-    
-  </article>
-</div>
-
-
-
+      </a>
 
       
-        
-        <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-    
-    <!-- 上半部分：左右两列 -->
-    <div class="d-flex w-100 align-items-center mb-2">
-      <!-- 左侧：封面图 + 显示字幕按钮 -->
-      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha3.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+      <h2 class="mb-2">
+        <a 
+          href="/audiobooks/siddhartha/"
+          class="g-font-weight-700 g-font-size-16"
+          style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
+        >
+          《悉达多》
+        </a>
+        <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
+          第三章：乔达摩
+        </span>
+      </h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mb-2" style="letter-spacing: 0.05em;">
+        悉达多遇见佛陀，却决定不做追随者，要亲自走出自己的觉悟之路。
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha3.json">
+        <source src="https://audio.librarys.life/audio/siddhartha/audio3.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2025年10月31日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+</article>
+
+
+
+        </div>
+      
+        <div class="audio-item">
+          
+          <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/siddhartha/">
         <img 
           class="rounded mb-2" 
           src="https://img.librarys.life/img/books-covers/siddhartha.jpg" 
           alt="第四章：觉醒" 
           style="width:80px; height:80px; object-fit:cover;"
         >
-
-        
-        <button 
-          class="btn btn-sm show-subtitles" 
-          style="background:#fff; border:1px solid #ccc; color:#333;"
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha4.json">
-          显示字幕
-        </button>
-        
-      </div>
-
-      <!-- 右侧：文字 + 音频 + 更新日期 -->
-      <div class="flex-grow-1">
-        <h2 class="mb-2">
-          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-          <span class="g-font-weight-700 g-font-size-16"> 第四章：觉醒</span>
-        </h2>
-
-        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-          当他离开信仰与师父，第一次真正看见世界的色彩与生命的呼吸。
-        </p>
-
-        
-        <audio 
-          controls 
-          style="width: 100%; margin-top: 5px;" 
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha4.json">
-          <source src="https://audio.librarys.life/audio/siddhartha/audio4.mp3" type="audio/mpeg">
-          您的浏览器不支持音频播放。
-        </audio>
-        
-
-        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-          更新日期：2025年10月31日
-        </p>
-      </div>
-    </div>
-
-    <!-- 下半部分：拉通字幕容器 -->
-    
-    <div class="subtitle-box w-100" style="
-        display:none;
-        max-height: 200px;
-        overflow-y:auto;
-        margin-top:10px;
-        padding:8px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        font-size: 1.15rem;
-        line-height:1.6;
-        background:#f9f9f9;
-      ">
-    </div>
-    
-  </article>
-</div>
-
-
-
+      </a>
 
       
-        
-        <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-    
-    <!-- 上半部分：左右两列 -->
-    <div class="d-flex w-100 align-items-center mb-2">
-      <!-- 左侧：封面图 + 显示字幕按钮 -->
-      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha4.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+      <h2 class="mb-2">
+        <a 
+          href="/audiobooks/siddhartha/"
+          class="g-font-weight-700 g-font-size-16"
+          style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
+        >
+          《悉达多》
+        </a>
+        <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
+          第四章：觉醒
+        </span>
+      </h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mb-2" style="letter-spacing: 0.05em;">
+        当他离开信仰与师父，第一次真正看见世界的色彩与生命的呼吸。
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha4.json">
+        <source src="https://audio.librarys.life/audio/siddhartha/audio4.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2025年10月31日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+</article>
+
+
+
+        </div>
+      
+        <div class="audio-item">
+          
+          <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/siddhartha/">
         <img 
           class="rounded mb-2" 
           src="https://img.librarys.life/img/books-covers/siddhartha.jpg" 
           alt="第五章：迦摩罗" 
           style="width:80px; height:80px; object-fit:cover;"
         >
-
-        
-        <button 
-          class="btn btn-sm show-subtitles" 
-          style="background:#fff; border:1px solid #ccc; color:#333;"
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha5.json">
-          显示字幕
-        </button>
-        
-      </div>
-
-      <!-- 右侧：文字 + 音频 + 更新日期 -->
-      <div class="flex-grow-1">
-        <h2 class="mb-2">
-          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-          <span class="g-font-weight-700 g-font-size-16"> 第五章：迦摩罗</span>
-        </h2>
-
-        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-          美人迦摩罗教会他欲望与感官的艺术，悉达多开始体验尘世的欢愉。
-        </p>
-
-        
-        <audio 
-          controls 
-          style="width: 100%; margin-top: 5px;" 
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha5.json">
-          <source src="https://audio.librarys.life/audio/siddhartha/audio5.mp3" type="audio/mpeg">
-          您的浏览器不支持音频播放。
-        </audio>
-        
-
-        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-          更新日期：2025年10月31日
-        </p>
-      </div>
-    </div>
-
-    <!-- 下半部分：拉通字幕容器 -->
-    
-    <div class="subtitle-box w-100" style="
-        display:none;
-        max-height: 200px;
-        overflow-y:auto;
-        margin-top:10px;
-        padding:8px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        font-size: 1.15rem;
-        line-height:1.6;
-        background:#f9f9f9;
-      ">
-    </div>
-    
-  </article>
-</div>
-
-
-
+      </a>
 
       
-        
-        <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-    
-    <!-- 上半部分：左右两列 -->
-    <div class="d-flex w-100 align-items-center mb-2">
-      <!-- 左侧：封面图 + 显示字幕按钮 -->
-      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha5.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+      <h2 class="mb-2">
+        <a 
+          href="/audiobooks/siddhartha/"
+          class="g-font-weight-700 g-font-size-16"
+          style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
+        >
+          《悉达多》
+        </a>
+        <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
+          第五章：迦摩罗
+        </span>
+      </h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mb-2" style="letter-spacing: 0.05em;">
+        美人迦摩罗教会他欲望与感官的艺术，悉达多开始体验尘世的欢愉。
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha5.json">
+        <source src="https://audio.librarys.life/audio/siddhartha/audio5.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2025年10月31日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+</article>
+
+
+
+        </div>
+      
+        <div class="audio-item">
+          
+          <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/siddhartha/">
         <img 
           class="rounded mb-2" 
           src="https://img.librarys.life/img/books-covers/siddhartha.jpg" 
           alt="第六章：尘世间" 
           style="width:80px; height:80px; object-fit:cover;"
         >
-
-        
-        <button 
-          class="btn btn-sm show-subtitles" 
-          style="background:#fff; border:1px solid #ccc; color:#333;"
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha6.json">
-          显示字幕
-        </button>
-        
-      </div>
-
-      <!-- 右侧：文字 + 音频 + 更新日期 -->
-      <div class="flex-grow-1">
-        <h2 class="mb-2">
-          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-          <span class="g-font-weight-700 g-font-size-16"> 第六章：尘世间</span>
-        </h2>
-
-        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-          他成为富有的商人，学习金钱与权力的游戏，却感到灵魂渐渐干涸。
-        </p>
-
-        
-        <audio 
-          controls 
-          style="width: 100%; margin-top: 5px;" 
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha6.json">
-          <source src="https://audio.librarys.life/audio/siddhartha/audio6.mp3" type="audio/mpeg">
-          您的浏览器不支持音频播放。
-        </audio>
-        
-
-        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-          更新日期：2025年10月31日
-        </p>
-      </div>
-    </div>
-
-    <!-- 下半部分：拉通字幕容器 -->
-    
-    <div class="subtitle-box w-100" style="
-        display:none;
-        max-height: 200px;
-        overflow-y:auto;
-        margin-top:10px;
-        padding:8px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        font-size: 1.15rem;
-        line-height:1.6;
-        background:#f9f9f9;
-      ">
-    </div>
-    
-  </article>
-</div>
-
-
-
+      </a>
 
       
-        
-        <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-    
-    <!-- 上半部分：左右两列 -->
-    <div class="d-flex w-100 align-items-center mb-2">
-      <!-- 左侧：封面图 + 显示字幕按钮 -->
-      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha6.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+      <h2 class="mb-2">
+        <a 
+          href="/audiobooks/siddhartha/"
+          class="g-font-weight-700 g-font-size-16"
+          style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
+        >
+          《悉达多》
+        </a>
+        <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
+          第六章：尘世间
+        </span>
+      </h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mb-2" style="letter-spacing: 0.05em;">
+        他成为富有的商人，学习金钱与权力的游戏，却感到灵魂渐渐干涸。
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha6.json">
+        <source src="https://audio.librarys.life/audio/siddhartha/audio6.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2025年10月31日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+</article>
+
+
+
+        </div>
+      
+        <div class="audio-item">
+          
+          <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/siddhartha/">
         <img 
           class="rounded mb-2" 
           src="https://img.librarys.life/img/books-covers/siddhartha.jpg" 
           alt="第七章：轮回" 
           style="width:80px; height:80px; object-fit:cover;"
         >
-
-        
-        <button 
-          class="btn btn-sm show-subtitles" 
-          style="background:#fff; border:1px solid #ccc; color:#333;"
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha7.json">
-          显示字幕
-        </button>
-        
-      </div>
-
-      <!-- 右侧：文字 + 音频 + 更新日期 -->
-      <div class="flex-grow-1">
-        <h2 class="mb-2">
-          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-          <span class="g-font-weight-700 g-font-size-16"> 第七章：轮回</span>
-        </h2>
-
-        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-          被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。
-        </p>
-
-        
-        <audio 
-          controls 
-          style="width: 100%; margin-top: 5px;" 
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha7.json">
-          <source src="https://audio.librarys.life/audio/siddhartha/audio7.mp3" type="audio/mpeg">
-          您的浏览器不支持音频播放。
-        </audio>
-        
-
-        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-          更新日期：2025年10月31日
-        </p>
-      </div>
-    </div>
-
-    <!-- 下半部分：拉通字幕容器 -->
-    
-    <div class="subtitle-box w-100" style="
-        display:none;
-        max-height: 200px;
-        overflow-y:auto;
-        margin-top:10px;
-        padding:8px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        font-size: 1.15rem;
-        line-height:1.6;
-        background:#f9f9f9;
-      ">
-    </div>
-    
-  </article>
-</div>
-
-
-
+      </a>
 
       
-        
-        <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-    
-    <!-- 上半部分：左右两列 -->
-    <div class="d-flex w-100 align-items-center mb-2">
-      <!-- 左侧：封面图 + 显示字幕按钮 -->
-      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha7.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+      <h2 class="mb-2">
+        <a 
+          href="/audiobooks/siddhartha/"
+          class="g-font-weight-700 g-font-size-16"
+          style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
+        >
+          《悉达多》
+        </a>
+        <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
+          第七章：轮回
+        </span>
+      </h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mb-2" style="letter-spacing: 0.05em;">
+        被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha7.json">
+        <source src="https://audio.librarys.life/audio/siddhartha/audio7.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2025年10月31日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+</article>
+
+
+
+        </div>
+      
+        <div class="audio-item">
+          
+          <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/siddhartha/">
         <img 
           class="rounded mb-2" 
           src="https://img.librarys.life/img/books-covers/siddhartha.jpg" 
           alt="第八章：在河边" 
           style="width:80px; height:80px; object-fit:cover;"
         >
-
-        
-        <button 
-          class="btn btn-sm show-subtitles" 
-          style="background:#fff; border:1px solid #ccc; color:#333;"
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha8.json">
-          显示字幕
-        </button>
-        
-      </div>
-
-      <!-- 右侧：文字 + 音频 + 更新日期 -->
-      <div class="flex-grow-1">
-        <h2 class="mb-2">
-          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-          <span class="g-font-weight-700 g-font-size-16"> 第八章：在河边</span>
-        </h2>
-
-        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-          在绝望中，他听见河流的声音，像一首永恒的诗，唤醒他沉睡的心。
-        </p>
-
-        
-        <audio 
-          controls 
-          style="width: 100%; margin-top: 5px;" 
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha8.json">
-          <source src="https://audio.librarys.life/audio/siddhartha/audio8.mp3" type="audio/mpeg">
-          您的浏览器不支持音频播放。
-        </audio>
-        
-
-        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-          更新日期：2025年10月31日
-        </p>
-      </div>
-    </div>
-
-    <!-- 下半部分：拉通字幕容器 -->
-    
-    <div class="subtitle-box w-100" style="
-        display:none;
-        max-height: 200px;
-        overflow-y:auto;
-        margin-top:10px;
-        padding:8px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        font-size: 1.15rem;
-        line-height:1.6;
-        background:#f9f9f9;
-      ">
-    </div>
-    
-  </article>
-</div>
-
-
-
+      </a>
 
       
-        
-        <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-    
-    <!-- 上半部分：左右两列 -->
-    <div class="d-flex w-100 align-items-center mb-2">
-      <!-- 左侧：封面图 + 显示字幕按钮 -->
-      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha8.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+      <h2 class="mb-2">
+        <a 
+          href="/audiobooks/siddhartha/"
+          class="g-font-weight-700 g-font-size-16"
+          style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
+        >
+          《悉达多》
+        </a>
+        <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
+          第八章：在河边
+        </span>
+      </h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mb-2" style="letter-spacing: 0.05em;">
+        在绝望中，他听见河流的声音，像一首永恒的诗，唤醒他沉睡的心。
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha8.json">
+        <source src="https://audio.librarys.life/audio/siddhartha/audio8.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2025年10月31日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+</article>
+
+
+
+        </div>
+      
+        <div class="audio-item">
+          
+          <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/siddhartha/">
         <img 
           class="rounded mb-2" 
           src="https://img.librarys.life/img/books-covers/siddhartha.jpg" 
           alt="第九章：船夫" 
           style="width:80px; height:80px; object-fit:cover;"
         >
-
-        
-        <button 
-          class="btn btn-sm show-subtitles" 
-          style="background:#fff; border:1px solid #ccc; color:#333;"
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha9.json">
-          显示字幕
-        </button>
-        
-      </div>
-
-      <!-- 右侧：文字 + 音频 + 更新日期 -->
-      <div class="flex-grow-1">
-        <h2 class="mb-2">
-          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-          <span class="g-font-weight-700 g-font-size-16"> 第九章：船夫</span>
-        </h2>
-
-        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-          悉达多与摆渡人一起生活，从河流中学习聆听与静观的智慧。
-        </p>
-
-        
-        <audio 
-          controls 
-          style="width: 100%; margin-top: 5px;" 
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha9.json">
-          <source src="https://audio.librarys.life/audio/siddhartha/audio9.mp3" type="audio/mpeg">
-          您的浏览器不支持音频播放。
-        </audio>
-        
-
-        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-          更新日期：2025年10月31日
-        </p>
-      </div>
-    </div>
-
-    <!-- 下半部分：拉通字幕容器 -->
-    
-    <div class="subtitle-box w-100" style="
-        display:none;
-        max-height: 200px;
-        overflow-y:auto;
-        margin-top:10px;
-        padding:8px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        font-size: 1.15rem;
-        line-height:1.6;
-        background:#f9f9f9;
-      ">
-    </div>
-    
-  </article>
-</div>
-
-
-
+      </a>
 
       
-        
-        <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-    
-    <!-- 上半部分：左右两列 -->
-    <div class="d-flex w-100 align-items-center mb-2">
-      <!-- 左侧：封面图 + 显示字幕按钮 -->
-      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha9.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+      <h2 class="mb-2">
+        <a 
+          href="/audiobooks/siddhartha/"
+          class="g-font-weight-700 g-font-size-16"
+          style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
+        >
+          《悉达多》
+        </a>
+        <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
+          第九章：船夫
+        </span>
+      </h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mb-2" style="letter-spacing: 0.05em;">
+        悉达多与摆渡人一起生活，从河流中学习聆听与静观的智慧。
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha9.json">
+        <source src="https://audio.librarys.life/audio/siddhartha/audio9.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2025年10月31日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+</article>
+
+
+
+        </div>
+      
+        <div class="audio-item">
+          
+          <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/siddhartha/">
         <img 
           class="rounded mb-2" 
           src="https://img.librarys.life/img/books-covers/siddhartha.jpg" 
           alt="第十章：儿子" 
           style="width:80px; height:80px; object-fit:cover;"
         >
-
-        
-        <button 
-          class="btn btn-sm show-subtitles" 
-          style="background:#fff; border:1px solid #ccc; color:#333;"
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha10.json">
-          显示字幕
-        </button>
-        
-      </div>
-
-      <!-- 右侧：文字 + 音频 + 更新日期 -->
-      <div class="flex-grow-1">
-        <h2 class="mb-2">
-          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-          <span class="g-font-weight-700 g-font-size-16"> 第十章：儿子</span>
-        </h2>
-
-        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-          他尝到为人父的痛与执着，领悟爱并非占有，而是放手。
-        </p>
-
-        
-        <audio 
-          controls 
-          style="width: 100%; margin-top: 5px;" 
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha10.json">
-          <source src="https://audio.librarys.life/audio/siddhartha/audio10.mp3" type="audio/mpeg">
-          您的浏览器不支持音频播放。
-        </audio>
-        
-
-        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-          更新日期：2025年10月31日
-        </p>
-      </div>
-    </div>
-
-    <!-- 下半部分：拉通字幕容器 -->
-    
-    <div class="subtitle-box w-100" style="
-        display:none;
-        max-height: 200px;
-        overflow-y:auto;
-        margin-top:10px;
-        padding:8px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        font-size: 1.15rem;
-        line-height:1.6;
-        background:#f9f9f9;
-      ">
-    </div>
-    
-  </article>
-</div>
-
-
-
+      </a>
 
       
-        
-        <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-    
-    <!-- 上半部分：左右两列 -->
-    <div class="d-flex w-100 align-items-center mb-2">
-      <!-- 左侧：封面图 + 显示字幕按钮 -->
-      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha10.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+      <h2 class="mb-2">
+        <a 
+          href="/audiobooks/siddhartha/"
+          class="g-font-weight-700 g-font-size-16"
+          style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
+        >
+          《悉达多》
+        </a>
+        <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
+          第十章：儿子
+        </span>
+      </h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mb-2" style="letter-spacing: 0.05em;">
+        他尝到为人父的痛与执着，领悟爱并非占有，而是放手。
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha10.json">
+        <source src="https://audio.librarys.life/audio/siddhartha/audio10.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2025年10月31日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+</article>
+
+
+
+        </div>
+      
+        <div class="audio-item">
+          
+          <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/siddhartha/">
         <img 
           class="rounded mb-2" 
           src="https://img.librarys.life/img/books-covers/siddhartha.jpg" 
           alt="第十一章：唵" 
           style="width:80px; height:80px; object-fit:cover;"
         >
-
-        
-        <button 
-          class="btn btn-sm show-subtitles" 
-          style="background:#fff; border:1px solid #ccc; color:#333;"
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha11.json">
-          显示字幕
-        </button>
-        
-      </div>
-
-      <!-- 右侧：文字 + 音频 + 更新日期 -->
-      <div class="flex-grow-1">
-        <h2 class="mb-2">
-          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-          <span class="g-font-weight-700 g-font-size-16"> 第十一章：唵</span>
-        </h2>
-
-        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-          万千声音汇成一体，悉达多听懂了生命的圆满与“一”的真谛。
-        </p>
-
-        
-        <audio 
-          controls 
-          style="width: 100%; margin-top: 5px;" 
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha11.json">
-          <source src="https://audio.librarys.life/audio/siddhartha/audio11.mp3" type="audio/mpeg">
-          您的浏览器不支持音频播放。
-        </audio>
-        
-
-        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-          更新日期：2025年10月31日
-        </p>
-      </div>
-    </div>
-
-    <!-- 下半部分：拉通字幕容器 -->
-    
-    <div class="subtitle-box w-100" style="
-        display:none;
-        max-height: 200px;
-        overflow-y:auto;
-        margin-top:10px;
-        padding:8px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        font-size: 1.15rem;
-        line-height:1.6;
-        background:#f9f9f9;
-      ">
-    </div>
-    
-  </article>
-</div>
-
-
-
+      </a>
 
       
-        
-        <div class="col-md-6 g-mt-30">
-  <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-    
-    <!-- 上半部分：左右两列 -->
-    <div class="d-flex w-100 align-items-center mb-2">
-      <!-- 左侧：封面图 + 显示字幕按钮 -->
-      <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha11.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+      <h2 class="mb-2">
+        <a 
+          href="/audiobooks/siddhartha/"
+          class="g-font-weight-700 g-font-size-16"
+          style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
+        >
+          《悉达多》
+        </a>
+        <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
+          第十一章：唵
+        </span>
+      </h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mb-2" style="letter-spacing: 0.05em;">
+        万千声音汇成一体，悉达多听懂了生命的圆满与“一”的真谛。
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha11.json">
+        <source src="https://audio.librarys.life/audio/siddhartha/audio11.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2025年10月31日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+</article>
+
+
+
+        </div>
+      
+        <div class="audio-item">
+          
+          <article class="d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/siddhartha/">
         <img 
           class="rounded mb-2" 
           src="https://img.librarys.life/img/books-covers/siddhartha.jpg" 
           alt="第十二章（完结）：乔文达" 
           style="width:80px; height:80px; object-fit:cover;"
         >
+      </a>
 
-        
-        <button 
-          class="btn btn-sm show-subtitles" 
-          style="background:#fff; border:1px solid #ccc; color:#333;"
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha12.json">
-          显示字幕
-        </button>
-        
-      </div>
-
-      <!-- 右侧：文字 + 音频 + 更新日期 -->
-      <div class="flex-grow-1">
-        <h2 class="mb-2">
-          <span class="g-font-weight-700 g-font-size-16">《悉达多》</span>
-          <span class="g-font-weight-700 g-font-size-16"> 第十二章（完结）：乔文达</span>
-        </h2>
-
-        <p class="g-font-size-13 g-color-gray-dark-v4 mb-2">
-          昔日好友戈文达与悉达多重逢，在他宁静的微笑中，体悟到一切修行的终点其实是：爱与存在本身。
-        </p>
-
-        
-        <audio 
-          controls 
-          style="width: 100%; margin-top: 5px;" 
-          data-subtitle="/audiobooks/siddhartha/texts/siddhartha12.json">
-          <source src="https://audio.librarys.life/audio/siddhartha/audio12.mp3" type="audio/mpeg">
-          您的浏览器不支持音频播放。
-        </audio>
-        
-
-        <p class="g-font-size-12 g-color-gray-light-v1 mt-2">
-          更新日期：2025年10月31日
-        </p>
-      </div>
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha12.json">
+        显示字幕
+      </button>
+      
     </div>
 
-    <!-- 下半部分：拉通字幕容器 -->
-    
-    <div class="subtitle-box w-100" style="
-        display:none;
-        max-height: 200px;
-        overflow-y:auto;
-        margin-top:10px;
-        padding:8px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        font-size: 1.15rem;
-        line-height:1.6;
-        background:#f9f9f9;
-      ">
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+      <h2 class="mb-2">
+        <a 
+          href="/audiobooks/siddhartha/"
+          class="g-font-weight-700 g-font-size-16"
+          style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
+        >
+          《悉达多》
+        </a>
+        <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
+          第十二章（完结）：乔文达
+        </span>
+      </h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mb-2" style="letter-spacing: 0.05em;">
+        昔日好友戈文达与悉达多重逢，在他宁静的微笑中，体悟到一切修行的终点其实是：爱与存在本身。
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha12.json">
+        <source src="https://audio.librarys.life/audio/siddhartha/audio12.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2025年10月31日
+      </p>
     </div>
-    
-  </article>
-</div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+</article>
 
 
 <script>
@@ -1198,7 +1300,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = -1;
     let isLoaded = false;
 
-    // 平滑滚动函数（修正版）
     const smoothScrollTo = (target) => {
       if (!target) return;
       const targetTop = target.offsetTop - container.offsetTop;
@@ -1207,7 +1308,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const distance = end - start;
       const duration = 400;
       const startTime = performance.now();
-
       const step = (now) => {
         const progress = Math.min((now - startTime) / duration, 1);
         const ease = 0.5 - Math.cos(progress * Math.PI) / 2;
@@ -1217,7 +1317,6 @@ document.addEventListener("DOMContentLoaded", () => {
       requestAnimationFrame(step);
     };
 
-    // 加载字幕文件
     const loadSubtitles = async () => {
       try {
         const res = await fetch(button.dataset.subtitle);
@@ -1234,20 +1333,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    // 高亮并滚动同步
     const highlightSubtitles = () => {
       if (!isLoaded || !subtitles.length) return;
       const t = audio.currentTime;
       let idx = subtitles.findIndex(p => t >= parseFloat(p.dataset.start) && t <= parseFloat(p.dataset.end));
       if (idx === -1) return;
-
       if (idx !== currentIndex) {
-        smoothScrollTo(subtitles[idx]); // 只滚动，不改样式
+        smoothScrollTo(subtitles[idx]);
         currentIndex = idx;
       }
     };
 
-    // 按钮点击事件
     button.addEventListener("click", async () => {
       const isHidden = container.style.display === "none";
       if (isHidden) {
@@ -1267,11 +1363,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // 音频事件监听（关键改进点）
     audio.addEventListener("timeupdate", highlightSubtitles);
     audio.addEventListener("seeked", () => {
-      currentIndex = -1; // 重置索引
-      highlightSubtitles(); // 马上刷新字幕位置
+      currentIndex = -1;
+      highlightSubtitles();
     });
     audio.addEventListener("play", highlightSubtitles);
     audio.addEventListener("loadedmetadata", highlightSubtitles);
@@ -1280,59 +1375,81 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-
+        </div>
       
     </div>
 
-    <footer class="ebook-footer g-bg-light g-pt-50 g-pb-50">
+<!-- 给最新文章上方增加 50px 空间 -->
+<div style="height:50px;"></div>
 
-    <div class="sharethis-inline-share-buttons"></div>
-    <p class="g-mt-40 g-color-gray-dark">对你获取的信息，保持善意的怀疑和独立思考是明智的。</p>
+<!-- ✅ 居中对齐-保留首页一致的结构 -->
+<div class="container g-pt-50">
+  <div class="row justify-content-center">
+  <div class="col-lg-9 text-center">
+    <blockquote class="g-color-primary g-font-weight-600 g-font-size-30 g-line-height-1_8 mb-5">
+      “ 让我们回归纯真，认识事物的本质，看见生命之美 ”
+    </blockquote>
+    <h4 class="h4 g-mb-4">网站创办人, 暮雨</h4>
+  </div>
+</div>
+
+
+
+<!-- 给最新文章上方增加 空间 -->
+<div style="height:100px;"></div>
+
+<!-- 打赏二维码 -->
+<img class="img-fluid" src="https://img.librarys.life/site-img/juanzeng-1920x700.jpg">
+
+<div class="text-center g-pt-100">
+  <h2 class="g-color-black g-font-weight-700 mb-1">所有内容，永久免费！扫赞赏码，支持暮雨！</h2>    
+</div>
+
+<!-- 给最新文章上方增加空间 -->
+<div style="height:50px;"></div>
+
+<div class="text-center g-pb-100">
+  <p class="lead mb-2">如果暮雨的作品，像朋友一样，静静陪伴你成长。</p>
+  <p class="lead mb-2">欢迎透过打赏、点赞分享，支持我继续创作。</p>        
+  <p class="lead mb-2">你的陪伴与支持，也同样温暖着我，</p>    
+  <p class="lead mb-2">激励我继续耕耘，把丰盛的能量延伸至更多生命。</p>            
+  <p class="lead mb-2">愿我们彼此点亮，彼此丰盈，共同成长。</p>            
+</div>  
+
+<img class="img-fluid" src="https://img.librarys.life/site-img/img1-1920x700.jpg">
+
+  <div class="u-heading-v2 u-heading-v2-3--bottom text-center g-pt-100">
+  <h2 class="u-heading-v2__title g-font-weight-700 g-color-black">我们珍视每一种声音存在!</h2>
+</div>
+
+
+<p class="lead mb-2 text-center g-mt-10">
+  解答疑问、指正错误、获取电子书…
+</p>
+
+<div class="text-center g-pb-50">
+  <a href="mailto:librarys.life@gmail.com" class="site-link">
+    librarys.life@gmail.com
+  </a>
+</div>
+</div>
+
+
+
+  </main>
+
+  <!-- Footer -->
+<footer class="g-pt-50 text-center">
+  <div class="container-fluid g-py-15 g-brd-top g-brd-gray-light-v4">
+      <a href="/" class="navbar-brand">
+         <img src="https://img.librarys.life/site-img/logo.svg" alt="librarys.life" width="180" height="60" style="display:block;">
+      </a>
+      <p class="g-font-size-12 g-color-gray-dark-v3">
+        © librarys.life | 生命之书 版权所有
+      </p>
   </div>
 </footer>
-
-<style>
-.ebook-footer {
-  border-top: 1px solid #e0e0e0;
-  text-align: center;
-}
-
-/* 标题样式 */
-.ebook-footer h3 {
-  font-size: 1.6rem;
-  margin-bottom: 1.8em;
-}
-
-/* 网格布局：默认两列 */
-.ebook-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2em 2em;
-  justify-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* 小屏幕时变成一列 */
-@media (max-width: 600px) {
-  .ebook-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* 链接样式 */
-.ebook-link {
-  font-size: 1rem;
-  color: #6B77CC;
-  text-decoration: underline;  /* 始终显示下划线 */
-  transition: color 0.3s;
-}
-
-.ebook-link:hover {
-  color: #ff6600;
-}
-</style>
-  </main>
+<!-- End Footer -->
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>
@@ -1359,6 +1476,51 @@ document.addEventListener("DOMContentLoaded", () => {
 <script src="/css261/html/assets/js/custom.js"></script>
 
 <script>
+  // 加载更多逻辑
+(function () {
+  const ITEMS_PER_LOAD = 50; // ⭐默认 50，就改这里
+
+  function initLoadMore() {
+    const list = document.querySelector(".ebook-list");
+    const btn = document.getElementById("loadMoreBtn");
+
+    if (!list || !btn) return;
+
+    const items = Array.from(list.children);
+    let visibleCount = ITEMS_PER_LOAD;
+
+    function updateView() {
+      items.forEach((item, index) => {
+        item.style.display = index < visibleCount ? "block" : "none";
+      });
+
+      if (visibleCount >= items.length) {
+        btn.textContent = "我也是有底线的！";
+        btn.classList.add("disabled");
+        btn.disabled = true;
+      }
+    }
+
+    // 初始
+    updateView();
+
+    btn.addEventListener("click", function () {
+      if (btn.classList.contains("disabled")) return;
+      visibleCount += ITEMS_PER_LOAD;
+      updateView();
+    });
+  }
+
+  // DOM ready
+  document.addEventListener("DOMContentLoaded", initLoadMore);
+
+  // window load（解决 Masonry / CubePortfolio 复算）
+  window.addEventListener("load", initLoadMore);
+})();
+
+
+
+  // ===== ？？ =====
 $(document).on('ready', function () {
   $.HSCore.components.HSTabs.init('[role="tablist"]');
   $.HSCore.components.HSPopup.init('.js-fancybox');
