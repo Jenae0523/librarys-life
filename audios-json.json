@@ -24,14 +24,6 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio11.mp3"
   },
   {
-    "title": "第十二章（完结）：乔文达",
-    "subtitle": "",
-    "description": "昔日好友戈文达与悉达多重逢，在他宁静的微笑中，体悟到一切修行的终点其实是：爱与存在本身。",
-    "slug": "/audiobooks/siddhartha/audio12/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio12.mp3"
-  },
-  {
     "title": "第二章：沙门",
     "subtitle": "",
     "description": "他离开家乡，与苦行者为伴，试图在极端禁欲中找到心灵的自由。",
@@ -40,12 +32,12 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio2.mp3"
   },
   {
-    "title": "第三章：乔达摩",
+    "title": "第十二章（完结）：乔文达",
     "subtitle": "",
-    "description": "悉达多遇见佛陀，却决定不做追随者，要亲自走出自己的觉悟之路。",
-    "slug": "/audiobooks/siddhartha/audio3/",
+    "description": "昔日好友戈文达与悉达多重逢，在他宁静的微笑中，体悟到一切修行的终点其实是：爱与存在本身。",
+    "slug": "/audiobooks/siddhartha/audio12/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio3.mp3"
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio12.mp3"
   },
   {
     "title": "第四章：觉醒",
@@ -54,6 +46,14 @@
     "slug": "/audiobooks/siddhartha/audio4/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio4.mp3"
+  },
+  {
+    "title": "第三章：乔达摩",
+    "subtitle": "",
+    "description": "悉达多遇见佛陀，却决定不做追随者，要亲自走出自己的觉悟之路。",
+    "slug": "/audiobooks/siddhartha/audio3/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio3.mp3"
   },
   {
     "title": "第五章：迦摩罗",
@@ -72,14 +72,6 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio6.mp3"
   },
   {
-    "title": "第七章：轮回",
-    "subtitle": "",
-    "description": "被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。",
-    "slug": "/audiobooks/siddhartha/audio7/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio7.mp3"
-  },
-  {
     "title": "第八章：在河边",
     "subtitle": "",
     "description": "在绝望中，他听见河流的声音，像一首永恒的诗，唤醒他沉睡的心。",
@@ -94,6 +86,14 @@
     "slug": "/audiobooks/siddhartha/audio9/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio9.mp3"
+  },
+  {
+    "title": "第七章：轮回",
+    "subtitle": "",
+    "description": "被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。",
+    "slug": "/audiobooks/siddhartha/audio7/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio7.mp3"
   },
   {
     "title": "《悉达多》",
