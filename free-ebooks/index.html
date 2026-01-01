@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260101-2154">
+<meta name="version" content="20260101-2304">
 
 
 <meta charset="utf-8">
@@ -298,6 +298,31 @@
   </div>
 </div>
 
+
+<!-- Google Analytics: track internal search keywords -->
+<script>
+let lastSearch = '';
+let searchTimer = null;
+
+function trackSearchDebounced(term, hasResults) {
+  if (!window.gtag || !term || term.length < 2) return;
+  if (term === lastSearch) return;
+
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    gtag('event', 'search', {
+      search_term: term,
+      has_results: hasResults // true / false
+    });
+    lastSearch = term;
+  }, 800);
+}
+
+</script>
+
+
+
+
 <script>
 let ebooks = [];
 fetch('/ebooks-json.json')
@@ -372,6 +397,7 @@ function showSuggestions(suggestions) {
 
 input.addEventListener('input', function() {
   const query = this.value.trim().toLowerCase();
+  
   if (!query) {
     resultsContainer.innerHTML = '';
     suggestionBox.style.display = 'none';
@@ -481,6 +507,9 @@ input.addEventListener('input', function() {
       <hr class="ebook-separator">
     </article>
   `).join('');
+  
+  // ---------- GA 埋点：搜索结果生成后、建议生成前 ----------
+  trackSearchDebounced(query, filtered.length > 0); // hasResults: true / false
 
 
 // ---------- 搜索建议生成（包含 title + description snippet 按关键词前后句子片段） ----------
@@ -518,13 +547,13 @@ ebooks.forEach(e => {
         let start = 0, end = snippet.length;
 
         for (let i = idx; i >= 0; i--) {
-          if (/[，。！？；：（）《》,.!?;:\s]/.test(snippet[i])) {
+          if (/[，。！？；：（）《》,.!?;:s]/.test(snippet[i])) {
             start = i + 1;
             break;
           }
         }
         for (let i = idx + queryLower.length; i < snippet.length; i++) {
-          if (/[，。！？；：（）《》,.!?;:\s]/.test(snippet[i])) {
+          if (/[，。！？；：（）《》,.!?;:s]/.test(snippet[i])) {
             end = i;
             break;
           }
