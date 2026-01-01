@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260101-1539">
+<meta name="version" content="20260101-1818">
 
 
 <meta charset="utf-8">
@@ -289,76 +289,268 @@
 </div>
 
 <script>
+let ebooks = [];
+fetch('/ebooks-json.json')
+  .then(res => res.json())
+  .then(data => ebooks = data);
 
-  let ebooks = [];
-  fetch('/ebooks-json.json')
-    .then(res => res.json())
-    .then(data => ebooks = data);
+const input = document.getElementById('ebookSearchInput');
+const resultsContainer = document.getElementById('searchResults');
 
-  const input = document.getElementById('ebookSearchInput');
-  const resultsContainer = document.getElementById('searchResults');
+/* 关键词高亮-搜索结果（支持多个关键词） */
+function highlight(text, keywords) {
+  if (!text || !keywords || keywords.length === 0) return text;
 
-  /* 关键词高亮-搜索结果 */
-function highlight(text, keyword) {
-  if (!text || !keyword) return text;
-  const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const regex = new RegExp(`(${escaped})`, 'gi');
-  return text.replace(regex, '<span class="search-highlight">$1</span>');
+  let highlighted = text;
+  keywords.forEach(kw => {
+    if (!kw) return;
+    const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    // 去掉空格匹配，但显示原文本
+    const regex = new RegExp(`(${escaped.split('').join('\\s*')})`, 'gi');
+    highlighted = highlighted.replace(regex, '<span class="search-highlight">$1</span>');
+  });
+  return highlighted;
 }
 
+// ---------- 生成所有连续子词组合 ----------
+function generateSubKeywords(word) {
+  const result = new Set();
+  if (word.length >= 2) {
+    result.add(word); // 完整词
+    result.add(word.slice(0,2)); // 前两字
+    result.add(word.slice(-2));  // 后两字
+  }
+  return Array.from(result);
+}
 
-  input.addEventListener('input', function() {
-    const query = this.value.trim().toLowerCase();
-    if (!query) {
-      resultsContainer.innerHTML = '';
-      return;
-    }
+// ---------- 创建搜索建议容器 ----------
+let suggestionBox = document.createElement('div');
+suggestionBox.id = 'suggestionBox';
+suggestionBox.style.position = 'absolute';
+suggestionBox.style.background = '#fff';
+suggestionBox.style.border = '1px solid #ccc';
+suggestionBox.style.width = input.offsetWidth + 'px';
+suggestionBox.style.maxHeight = '200px';
+suggestionBox.style.overflowY = 'auto';
+suggestionBox.style.zIndex = '999';
+suggestionBox.style.display = 'none';
+input.parentNode.appendChild(suggestionBox);
 
-    const filtered = ebooks.filter(e =>
-      e.title.toLowerCase().includes(query) ||
-      (e.subtitle && e.subtitle.toLowerCase().includes(query)) ||
-      (e.description && e.description.toLowerCase().includes(query))
-    );
-
-resultsContainer.innerHTML = filtered.map(e => `
-  <article class="g-bg-white g-pt-10 g-pb-10"
-    style="text-align:left; max-width:1000px; margin:0 auto; padding: 20px; line-height:1.6; letter-spacing:0.5px;">
-
-    ${e.date ? `
-      <p class="g-font-size-12 g-color-gray-light-v1 mb-1">
-        ${e.date}
-      </p>
-    ` : ''}
-
-    <h2 class="mb-2" style="color:#6281C8; line-height:1.4;">
-      <span class="g-font-weight-600 g-font-size-22">
-        ${highlight(e.title, query)}
-      </span>
-      ${e.subtitle ? `
-        <span class="g-font-weight-600 g-font-size-22">
-          ${e.subtitle ? highlight(e.subtitle, query) : ''}
-        </span>
-      ` : ''}
-    </h2>
-
-    ${e.description ? `
-      <p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8;">
-        ${e.description ? highlight(e.description, query) : ''}
-      </p>
-    ` : ''}
-
-    ${e.download_url ? `
-      <a href="${e.download_url}" target="_blank" class="ebook-download">
-        点击下载...
-      </a>
-    ` : ''}
-
-    <hr class="ebook-separator">
-  </article>
+// ---------- 显示搜索建议 ----------
+function showSuggestions(suggestions) {
+  if (suggestions.length === 0) {
+    suggestionBox.style.display = 'none';
+    return;
+  }
+  suggestionBox.innerHTML = suggestions.map((s, i) => `
+  <div class="suggestion-item" style="padding:5px 10px; cursor:pointer; border-bottom:${i < suggestions.length - 1 ? '1px dashed #ccc' : 'none'};">
+    ${s}
+  </div>
 `).join('');
 
+  suggestionBox.style.display = 'block';
+
+  // 点击建议填入输入框
+  Array.from(suggestionBox.children).forEach(item => {
+    item.addEventListener('click', function() {
+      input.value = this.textContent;
+      suggestionBox.style.display = 'none';
+      input.dispatchEvent(new Event('input'));
+    });
   });
+}
+
+input.addEventListener('input', function() {
+  const query = this.value.trim().toLowerCase();
+  if (!query) {
+    resultsContainer.innerHTML = '';
+    suggestionBox.style.display = 'none';
+    return;
+  }
+
+  // ---------- 将输入拆分成多个关键词 ----------
+  const rawKeywords = query.split(/\s+/).filter(k => k);
+  let keywords = [];
+
+  rawKeywords.forEach(k => {
+    // 中文连续字符拆分
+    const chars = k.match(/[\u4e00-\u9fff]+|[^\u4e00-\u9fff]+/g);
+    if (chars) {
+      chars.forEach(c => {
+        // 对每个词生成连续子词
+        const subWords = generateSubKeywords(c);
+        keywords.push(...subWords);
+      });
+    }
+  });
+
+  // 去重
+  keywords = [...new Set(keywords)];
+
+  // ---------- 多关键词 + 字段权重 + 出现次数 + 匹配位置 ----------
+  const scored = ebooks.map(e => {
+    let score = 0;
+
+    const titleText = e.title.toLowerCase().replace(/\s+/g, '');
+    const subtitleText = e.subtitle ? e.subtitle.toLowerCase().replace(/\s+/g, '') : '';
+    const descriptionText = e.description ? e.description.toLowerCase().replace(/\s+/g, '') : '';
+
+    // ---------- 全文字匹配加权 ----------
+    const fullQuery = query.replace(/\s+/g, '');
+    if (titleText.includes(fullQuery) || subtitleText.includes(fullQuery) || descriptionText.includes(fullQuery)) {
+      score += 50; // 给完整匹配最高权重
+    }
+
+    keywords.forEach(kw => {
+      if (!kw) return;
+
+      // title 权重 5
+      if (titleText.includes(kw)) {
+        let times = titleText.split(kw).length - 1;
+        score += times * 5;
+        if (titleText.startsWith(kw)) score += 2;
+        else if (titleText.endsWith(kw)) score += 1;
+      }
+
+      // subtitle 权重 3
+      if (subtitleText.includes(kw)) {
+        let times = subtitleText.split(kw).length - 1;
+        score += times * 3;
+        if (subtitleText.startsWith(kw)) score += 1;
+        else if (subtitleText.endsWith(kw)) score += 0.5;
+      }
+
+      // description 权重 1
+      if (descriptionText.includes(kw)) {
+        let times = descriptionText.split(kw).length - 1;
+        score += times * 1;
+      }
+    });
+
+    return { e, score };
+  });
+
+  const filtered = scored
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .map(item => item.e);
+
+  resultsContainer.innerHTML = filtered.map(e => `
+    <article class="g-bg-white g-pt-10 g-pb-10"
+      style="text-align:left; max-width:1000px; margin:0 auto; padding: 20px; line-height:1.6; letter-spacing:0.5px;">
+
+      ${e.date ? `
+        <p class="g-font-size-12 g-color-gray-light-v1 mb-1">
+          ${e.date}
+        </p>
+      ` : ''}
+
+      <h2 class="mb-2" style="color:#6281C8; line-height:1.4;">
+        <span class="g-font-weight-600 g-font-size-22">
+          ${highlight(e.title, keywords)}
+        </span>
+        ${e.subtitle ? `
+          <span class="g-font-weight-600 g-font-size-22">
+            ${highlight(e.subtitle, keywords)}
+          </span>
+        ` : ''}
+      </h2>
+
+      ${e.description ? `
+        <p class="g-font-size-15 g-color-gray-dark-v4 mb-2" style="line-height:1.8;">
+          ${highlight(e.description, keywords)}
+        </p>
+      ` : ''}
+
+      ${e.download_url ? `
+        <a href="${e.download_url}" target="_blank" class="ebook-download">
+          点击下载...
+        </a>
+      ` : ''}
+
+      <hr class="ebook-separator">
+    </article>
+  `).join('');
+
+
+// ---------- 搜索建议生成（包含 title + description snippet 按关键词前后句子片段） ----------
+let suggestions = [];
+const queryLower = query.toLowerCase(); // 用于比较
+// const maxSuggestions = 5; // 去掉这个限制
+
+
+ebooks.forEach(e => {
+  const titleText = e.title.toLowerCase();
+  const descriptionText = e.description ? e.description : '';
+
+  if (titleText.includes(queryLower) && titleText !== queryLower) {
+    suggestions.push(e.title);
+  } else if (descriptionText.toLowerCase().includes(queryLower)) {
+    // 按标点分割成句子片段
+    const splitRegex = /[。！？；,.!?;:]/g;
+    let lastIndex = 0;
+    let match;
+    const sentences = [];
+
+    while ((match = splitRegex.exec(descriptionText)) !== null) {
+      sentences.push({ start: lastIndex, end: match.index });
+      lastIndex = match.index + 1;
+    }
+    if (lastIndex < descriptionText.length) {
+      sentences.push({ start: lastIndex, end: descriptionText.length });
+    }
+
+    // 找出包含 query 的句子片段
+    for (let s of sentences) {
+      const snippet = descriptionText.substring(s.start, s.end).trim();
+      if (snippet.toLowerCase().includes(queryLower)) {
+        const idx = snippet.toLowerCase().indexOf(queryLower);
+        let start = 0, end = snippet.length;
+
+        for (let i = idx; i >= 0; i--) {
+          if (/[，。！？；：（）《》,.!?;:\s]/.test(snippet[i])) {
+            start = i + 1;
+            break;
+          }
+        }
+        for (let i = idx + queryLower.length; i < snippet.length; i++) {
+          if (/[，。！？；：（）《》,.!?;:\s]/.test(snippet[i])) {
+            end = i;
+            break;
+          }
+        }
+
+        let finalSnippet = snippet.substring(start, end).trim();
+
+        // 去掉与输入完全相同的条目
+        if (finalSnippet.toLowerCase() !== queryLower) {
+          suggestions.push(finalSnippet);
+        }
+      }
+    }
+  }
+});
+
+// 去掉重复的建议
+suggestions = [...new Set(suggestions)];
+
+showSuggestions(suggestions);
+
+
+
+
+});
+
+// 点击页面其他地方隐藏建议
+document.addEventListener('click', function(e) {
+  if (!input.contains(e.target) && !suggestionBox.contains(e.target)) {
+    suggestionBox.style.display = 'none';
+  }
+});
 </script>
+
+
+
 
 <style>
   /* 默认状态：细浅灰边框 */
@@ -375,16 +567,14 @@ resultsContainer.innerHTML = filtered.map(e => `
     outline: none !important;
     background-color: #fff;
   }
+
   /* 关键词高亮-搜索结果 */
-.search-highlight {
-  background-color: rgba(98, 129, 200, 0.25);
-  padding: 0 2px;
-  border-radius: 2px;
-}
-
-
+  .search-highlight {
+    background-color: rgba(98, 129, 200, 0.25);
+    padding: 0 2px;
+    border-radius: 2px;
+  }
 </style>
-
 
 
   <!-- ---------- 电子书列表 ---------- -->
