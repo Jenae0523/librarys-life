@@ -56,14 +56,6 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio15.MP3"
   },
   {
-    "title": "第16集：恐龙的灭绝",
-    "subtitle": "",
-    "description": "恐龙的消失来自地轴倾斜引发的气候剧变；地球生命不是随机进化，而是在早期被引导。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio16/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio16.MP3"
-  },
-  {
     "title": "第17集：人类智能的由来",
     "subtitle": "",
     "description": "神话人物并非神，而是传递知识的使者，在保证自由意志的前提下，参与人类意识的培育。",
@@ -80,12 +72,12 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio18.MP3"
   },
   {
-    "title": "第19集：其他形态的存在体",
+    "title": "第16集：恐龙的灭绝",
     "subtitle": "",
-    "description": "一个远超人类想象的宇宙生命谱系，而意识的高度，决定你能看见多少世界。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio19/",
+    "description": "恐龙的消失来自地轴倾斜引发的气候剧变；地球生命不是随机进化，而是在早期被引导。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio16/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio19.MP3"
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio16.MP3"
   },
   {
     "title": "第2集：外星记忆苏醒",
@@ -94,6 +86,14 @@
     "slug": "/audiobooks/keepers-of-the-garden/audio2/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio2.MP3"
+  },
+  {
+    "title": "第19集：其他形态的存在体",
+    "subtitle": "",
+    "description": "一个远超人类想象的宇宙生命谱系，而意识的高度，决定你能看见多少世界。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio19/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio19.MP3"
   },
   {
     "title": "第20集：地底文明与人类起源",
@@ -128,20 +128,20 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio23.MP3"
   },
   {
-    "title": "第24集：神秘的黑盒子",
-    "subtitle": "",
-    "description": "代表前世记忆、星际血缘、传承的黑盒子，提醒菲尔“你是谁、你来自哪里”。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio24/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio24.MP3"
-  },
-  {
     "title": "第25集：与现实失联",
     "subtitle": "",
     "description": "外星接触记忆被唤醒后，菲尔在心理、现实感与自我认知方面经历了强烈冲突。",
     "slug": "/audiobooks/keepers-of-the-garden/audio25/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio25.MP3"
+  },
+  {
+    "title": "第24集：神秘的黑盒子",
+    "subtitle": "",
+    "description": "代表前世记忆、星际血缘、传承的黑盒子，提醒菲尔“你是谁、你来自哪里”。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio24/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio24.MP3"
   },
   {
     "title": "第26集：潜意识的保护机制",
@@ -152,20 +152,20 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio26.MP3"
   },
   {
-    "title": "第27集：最终的讯息（完结）",
-    "subtitle": "",
-    "description": "时机成熟的记忆回归；来自宇宙高阶意识的直接讯息：外星人不是入侵者，而是地球守护者。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio27/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio27.MP3"
-  },
-  {
     "title": "第3集：外星飞船科技",
     "subtitle": "",
     "description": "菲尔回溯外星前世，揭示宇宙飞船、水晶动力与宇宙能量流的奥秘。",
     "slug": "/audiobooks/keepers-of-the-garden/audio3/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio3.MP3"
+  },
+  {
+    "title": "第27集：最终的讯息（完结）",
+    "subtitle": "",
+    "description": "时机成熟的记忆回归；来自宇宙高阶意识的直接讯息：外星人不是入侵者，而是地球守护者。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio27/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio27.MP3"
   },
   {
     "title": "第4集：记忆中的外星星球",
@@ -216,14 +216,6 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio9.MP3"
   },
   {
-    "title": "第一章：婆罗门之子",
-    "subtitle": "",
-    "description": "天赋聪颖的悉达多，在祭祀与经文中成长，却开始质疑众神与知识的意义。",
-    "slug": "/audiobooks/siddhartha/audio1/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio1.mp3"
-  },
-  {
     "title": "第十章：儿子",
     "subtitle": "",
     "description": "他尝到为人父的痛与执着，领悟爱并非占有，而是放手。",
@@ -232,12 +224,12 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio10.mp3"
   },
   {
-    "title": "第十一章：唵",
+    "title": "第一章：婆罗门之子",
     "subtitle": "",
-    "description": "万千声音汇成一体，悉达多听懂了生命的圆满与“一”的真谛。",
-    "slug": "/audiobooks/siddhartha/audio11/",
+    "description": "天赋聪颖的悉达多，在祭祀与经文中成长，却开始质疑众神与知识的意义。",
+    "slug": "/audiobooks/siddhartha/audio1/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio11.mp3"
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio1.mp3"
   },
   {
     "title": "第十二章（完结）：乔文达",
@@ -254,6 +246,14 @@
     "slug": "/audiobooks/siddhartha/audio2/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio2.mp3"
+  },
+  {
+    "title": "第十一章：唵",
+    "subtitle": "",
+    "description": "万千声音汇成一体，悉达多听懂了生命的圆满与“一”的真谛。",
+    "slug": "/audiobooks/siddhartha/audio11/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio11.mp3"
   },
   {
     "title": "第三章：乔达摩",
@@ -280,20 +280,20 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio5.mp3"
   },
   {
-    "title": "第六章：尘世间",
-    "subtitle": "",
-    "description": "他成为富有的商人，学习金钱与权力的游戏，却感到灵魂渐渐干涸。",
-    "slug": "/audiobooks/siddhartha/audio6/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio6.mp3"
-  },
-  {
     "title": "第七章：轮回",
     "subtitle": "",
     "description": "被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。",
     "slug": "/audiobooks/siddhartha/audio7/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio7.mp3"
+  },
+  {
+    "title": "第六章：尘世间",
+    "subtitle": "",
+    "description": "他成为富有的商人，学习金钱与权力的游戏，却感到灵魂渐渐干涸。",
+    "slug": "/audiobooks/siddhartha/audio6/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio6.mp3"
   },
   {
     "title": "第八章：在河边",
