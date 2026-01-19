@@ -8,14 +8,6 @@
     "download_url": "https://readcafe.life/free-ebooks/cn/zhi-xing-he-yi-wang-yang-ming-quan-ji.epub"
   },
   {
-    "title": "1984",
-    "subtitle": "反乌托邦三部曲",
-    "description": "作者：乔治·奥威尔（George Orwell），反乌托邦小说/政治寓言。《1984》构建了一个极端集权监控社会——大洋国。在这里：全体公民时时接受国家监视，“老大哥”无处不在；“真理部”负责改写历史、篡改现实；思想警察监控每一个人的心理和行为；主角温斯顿·史密斯在复制、伪造历史档案中逐渐产生反叛念头，试图寻求爱情与自由，但最终被捕入友爱部洗脑，彻底失去自我。这不仅是故事，更是对极权主义、控制、语言与思想压制的深刻预言性批判。\n\n《1984》不是一般意义上的小说，它是对权力侵蚀个体的深刻剖析，是对语言、真理与思想控制的警示。即便现在读，它依旧透视现代社会中的监控、宣传和制度控制问题。\n",
-    "slug": "/free-ebooks/literary-classics/51-1984-george-orwell/",
-    "image": "",
-    "download_url": "https://readcafe.life/free-ebooks/literary-classics/1984-george-orwell.epub"
-  },
-  {
     "title": "吉檀迦利（Gitanjali）",
     "subtitle": "诺贝尔文学奖",
     "description": "作者：罗宾德拉纳特·泰戈尔（Rabindranath Tagore）。《吉檀迦利》的字面意思是“献歌”。但它献给的不是神祇本身，而是人如何在有限生命中，触碰无限。书中反复出现的主题包括：人与神 / 绝对者的关系；灵魂的谦卑、渴望与回归；爱、死亡、劳动、苦难；在日常生活中体验神性；这里的“神”，不是宗教教义里的神，而更接近一种：秩序、真理、爱与生命整体性的象征。",
@@ -136,6 +128,14 @@
     "download_url": "https://readcafe.life/free-ebooks/spirituality/yang-sheng-shu---di-san-bu---a-da-mu-tan-hua.pdf"
   },
   {
+    "title": "灵性炼金术：约书亚的传导",
+    "subtitle": "",
+    "description": "作者：帕梅拉·克里柏（Pamela Kribbe)。所谓的灵性炼金术，就是邀请情绪完全到来，在我们身体的各个部分去体验它，但同时又站在很中立的角度观察。这样的意识状态就是疗愈——以理解拥抱自己的情绪。",
+    "slug": "/free-ebooks/authors/pamela-kribbe/10-ling-xing-lian-jin-shu-yue-shu-ya-de-chuan-dao/",
+    "image": "",
+    "download_url": "https://readcafe.life/free-ebooks/authors/pamela-kribbe/ling-xing-lian-jin-shu---yue-shu-ya-de-chuan-dao.pdf"
+  },
+  {
     "title": "生命之喜悦：约书亚 & 玛利亚的灵讯",
     "subtitle": "",
     "description": "作者：帕梅拉·克里柏（Pamela Kribbe)。破茧成蝶-女性能量的复苏；骑士精神-男性能量的实质；基督能量与“道”；拥有融洽自由的亲密关系：连接与放下；灵魂暗夜时分的导师；独处的艺术；人间天堂；解除束缚；以当下之光照耀过去与未来；直面恐惧；新地球的生活与工作；疗愈性的亲密关系；关于欲望；爱情关系；面对疾病；肉欲与爱；教导你的父母……",
@@ -150,14 +150,6 @@
     "slug": "/free-ebooks/authors/pamela-kribbe/12-yue-shu-ya-de-chuan-dao-3/",
     "image": "",
     "download_url": "https://readcafe.life/free-ebooks/authors/pamela-kribbe/yue-shu-ya-de-chuan-dao-3.pdf"
-  },
-  {
-    "title": "灵性炼金术：约书亚的传导",
-    "subtitle": "",
-    "description": "作者：帕梅拉·克里柏（Pamela Kribbe)。所谓的灵性炼金术，就是邀请情绪完全到来，在我们身体的各个部分去体验它，但同时又站在很中立的角度观察。这样的意识状态就是疗愈——以理解拥抱自己的情绪。",
-    "slug": "/free-ebooks/authors/pamela-kribbe/10-ling-xing-lian-jin-shu-yue-shu-ya-de-chuan-dao/",
-    "image": "",
-    "download_url": "https://readcafe.life/free-ebooks/authors/pamela-kribbe/ling-xing-lian-jin-shu---yue-shu-ya-de-chuan-dao.pdf"
   },
   {
     "title": "灵魂的暗夜",
@@ -406,5 +398,13 @@
     "slug": "/free-ebooks/spirituality/20251230/49-zhe-cai-shi-xi-yin-li-fa-ze-jing-xiao-zhen-cang-ban/",
     "image": "",
     "download_url": "https://readcafe.life/free-ebooks/spirituality/20251230/zhe-cai-shi-xi-yin-li-fa-ze---jing-xiao-zhen-cang-ban.pdf"
+  },
+  {
+    "title": "《1984》",
+    "subtitle": "反乌托邦三部曲",
+    "description": "作者：乔治·奥威尔（George Orwell），反乌托邦小说/政治寓言。《1984》构建了一个极端集权监控社会——大洋国。在这里：全体公民时时接受国家监视，“老大哥”无处不在；“真理部”负责改写历史、篡改现实；思想警察监控每一个人的心理和行为；主角温斯顿·史密斯在复制、伪造历史档案中逐渐产生反叛念头，试图寻求爱情与自由，但最终被捕入友爱部洗脑，彻底失去自我。这不仅是故事，更是对极权主义、控制、语言与思想压制的深刻预言性批判。\n\n《1984》不是一般意义上的小说，它是对权力侵蚀个体的深刻剖析，是对语言、真理与思想控制的警示。即便现在读，它依旧透视现代社会中的监控、宣传和制度控制问题。\n",
+    "slug": "/free-ebooks/literary-classics/51-1984-george-orwell/",
+    "image": "",
+    "download_url": "https://readcafe.life/free-ebooks/literary-classics/1984-george-orwell.epub"
   }
 ]
