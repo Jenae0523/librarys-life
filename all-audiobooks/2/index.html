@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260127-2218">
+<meta name="version" content="20260209-2221">
 
 
 <meta charset="utf-8">
@@ -1373,6 +1373,50 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const audios = Array.from(document.querySelectorAll("article audio"));
+  let currentIndex = -1;
+
+  audios.forEach((audio, index) => {
+
+    // 当用户点击播放某一集
+    audio.addEventListener("play", () => {
+      // 暂停其他音频
+      audios.forEach((a, i) => {
+        if (i !== index && !a.paused) {
+          a.pause();
+        }
+      });
+	  
+      currentIndex = index;
+	  
+	  // 新增：滚动到当前播放的卡片
+  audio.closest("article")?.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+	  
+    });
+
+    // 当前音频播放结束 → 播放下一集
+    audio.addEventListener("ended", () => {
+  // 极端情况防护
+  if (audio.currentTime === 0) return;
+
+  const nextIndex = index + 1;
+  if (audios[nextIndex]) {
+    audios[nextIndex].play();
+  }
+});
+
+  });
+
+});
+</script>
+
 
 
     </div>
