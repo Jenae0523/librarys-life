@@ -16,20 +16,20 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio10.MP3"
   },
   {
-    "title": "第12集：投生地球的使命",
-    "subtitle": "",
-    "description": "菲尔自愿来到地球协助觉醒，外星人一直透过华盛顿纪念碑，监测地球能量变化。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio12/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio12.MP3"
-  },
-  {
     "title": "第11集：三尖塔的突破",
     "subtitle": "",
     "description": "催眠释放更多信息：菲尔回到灵魂真正的故乡，意识到自己来自非地球的能量族群。",
     "slug": "/audiobooks/keepers-of-the-garden/audio11/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio11.MP3"
+  },
+  {
+    "title": "第12集：投生地球的使命",
+    "subtitle": "",
+    "description": "菲尔自愿来到地球协助觉醒，外星人一直透过华盛顿纪念碑，监测地球能量变化。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio12/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio12.MP3"
   },
   {
     "title": "第13集：星际播种的秘密",
@@ -72,14 +72,6 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio17.MP3"
   },
   {
-    "title": "第2集：外星记忆苏醒",
-    "subtitle": "",
-    "description": "荒芜的探矿星球隐藏的悲伤秘密，七名外星科学家命运浮现记忆深处。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio2/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio2.MP3"
-  },
-  {
     "title": "第18集：星际文明联盟",
     "subtitle": "",
     "description": "一个由多个星球、多个星际种族组成的联盟，类似宇宙层级的联合国。",
@@ -94,6 +86,14 @@
     "slug": "/audiobooks/keepers-of-the-garden/audio19/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio19.MP3"
+  },
+  {
+    "title": "第2集：外星记忆苏醒",
+    "subtitle": "",
+    "description": "荒芜的探矿星球隐藏的悲伤秘密，七名外星科学家命运浮现记忆深处。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio2/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio2.MP3"
   },
   {
     "title": "第20集：地底文明与人类起源",
@@ -144,20 +144,20 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio25.MP3"
   },
   {
-    "title": "第27集：最终的讯息（完结）",
-    "subtitle": "",
-    "description": "时机成熟的记忆回归；来自宇宙高阶意识的直接讯息：外星人不是入侵者，而是地球守护者。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio27/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio27.MP3"
-  },
-  {
     "title": "第26集：潜意识的保护机制",
     "subtitle": "",
     "description": "知识不是被封锁，当内在冲突还未被整合、意识尚未成熟时，潜意识拒绝进入。",
     "slug": "/audiobooks/keepers-of-the-garden/audio26/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio26.MP3"
+  },
+  {
+    "title": "第27集：最终的讯息（完结）",
+    "subtitle": "",
+    "description": "时机成熟的记忆回归；来自宇宙高阶意识的直接讯息：外星人不是入侵者，而是地球守护者。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio27/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio27.MP3"
   },
   {
     "title": "第3集：外星飞船科技",
@@ -232,20 +232,20 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio10.mp3"
   },
   {
-    "title": "第十二章（完结）：乔文达",
-    "subtitle": "",
-    "description": "昔日好友戈文达与悉达多重逢，在他宁静的微笑中，体悟到一切修行的终点其实是：爱与存在本身。",
-    "slug": "/audiobooks/siddhartha/audio12/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio12.mp3"
-  },
-  {
     "title": "第十一章：唵",
     "subtitle": "",
     "description": "万千声音汇成一体，悉达多听懂了生命的圆满与“一”的真谛。",
     "slug": "/audiobooks/siddhartha/audio11/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio11.mp3"
+  },
+  {
+    "title": "第十二章（完结）：乔文达",
+    "subtitle": "",
+    "description": "昔日好友戈文达与悉达多重逢，在他宁静的微笑中，体悟到一切修行的终点其实是：爱与存在本身。",
+    "slug": "/audiobooks/siddhartha/audio12/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio12.mp3"
   },
   {
     "title": "第二章：沙门",
@@ -264,14 +264,6 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio3.mp3"
   },
   {
-    "title": "第五章：迦摩罗",
-    "subtitle": "",
-    "description": "美人迦摩罗教会他欲望与感官的艺术，悉达多开始体验尘世的欢愉。",
-    "slug": "/audiobooks/siddhartha/audio5/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio5.mp3"
-  },
-  {
     "title": "第四章：觉醒",
     "subtitle": "",
     "description": "当他离开信仰与师父，第一次真正看见世界的色彩与生命的呼吸。",
@@ -280,12 +272,12 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio4.mp3"
   },
   {
-    "title": "第七章：轮回",
+    "title": "第五章：迦摩罗",
     "subtitle": "",
-    "description": "被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。",
-    "slug": "/audiobooks/siddhartha/audio7/",
+    "description": "美人迦摩罗教会他欲望与感官的艺术，悉达多开始体验尘世的欢愉。",
+    "slug": "/audiobooks/siddhartha/audio5/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio7.mp3"
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio5.mp3"
   },
   {
     "title": "第六章：尘世间",
@@ -294,6 +286,14 @@
     "slug": "/audiobooks/siddhartha/audio6/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio6.mp3"
+  },
+  {
+    "title": "第七章：轮回",
+    "subtitle": "",
+    "description": "被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。",
+    "slug": "/audiobooks/siddhartha/audio7/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio7.mp3"
   },
   {
     "title": "第八章：在河边",
