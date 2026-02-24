@@ -1,11 +1,91 @@
 [
   {
-    "title": "第1集：外星人在我们中间",
+    "title": "第1集：作者序",
     "subtitle": "",
-    "description": "催眠意外揭开，外星灵魂初次转世地球的秘密，开启一段跨越星际的觉醒之旅。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio1/",
+    "description": "灵魂暗夜常会是“外在看似一切正常”时发生。",
+    "slug": "/audiobooks/dark-night-soul/audio1/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio1.MP3"
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio1.MP3"
+  },
+  {
+    "title": "第8章：关于深度抑郁症及精神病的建议",
+    "subtitle": "",
+    "description": "两者并非对立，而是互补：灵性提供意义与内在指引，医学提供生理支撑与安全保障。",
+    "slug": "/audiobooks/dark-night-soul/audio10/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio10.MP3"
+  },
+  {
+    "title": "第9章：成熟的灵修与理性并存",
+    "subtitle": "",
+    "description": "灵修圈中缺乏理性的人，可能会被荒诞观念误导；应信任并发展自身直觉，而不是单纯依赖外界通灵信息。",
+    "slug": "/audiobooks/dark-night-soul/audio11/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio11.MP3"
+  },
+  {
+    "title": "第一部分第1章：痛苦与恐惧",
+    "subtitle": "",
+    "description": "灵魂暗夜的起点：长期透支身体与心理的极限。",
+    "slug": "/audiobooks/dark-night-soul/audio2/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio2.MP3"
+  },
+  {
+    "title": "第2章：日记撷录2",
+    "subtitle": "",
+    "description": "与“高我”的对话：我对轮回心怀恐惧的缘由。",
+    "slug": "/audiobooks/dark-night-soul/audio4/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio4.MP3"
+  },
+  {
+    "title": "第2章：日记撷录1",
+    "subtitle": "",
+    "description": "自我牺牲的模式，源自童年缺乏信任，与抗拒轮回的抵触心理。",
+    "slug": "/audiobooks/dark-night-soul/audio3/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio3.MP3"
+  },
+  {
+    "title": "第3章：抑郁症与精神病",
+    "subtitle": "",
+    "description": "心理崩溃过程：情绪麻木、思维奔逸、关系妄想症、进食障碍及家庭关系恶化。",
+    "slug": "/audiobooks/dark-night-soul/audio5/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio5.MP3"
+  },
+  {
+    "title": "第5章：灵魂如是说",
+    "subtitle": "",
+    "description": "抑郁不是单纯的疾病，而是“拒绝生命”的极端表达。",
+    "slug": "/audiobooks/dark-night-soul/audio7/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio7.MP3"
+  },
+  {
+    "title": "第4章：康复与重生",
+    "subtitle": "",
+    "description": "医学干预不等于否定灵性，两者可以并存。",
+    "slug": "/audiobooks/dark-night-soul/audio6/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio6.MP3"
+  },
+  {
+    "title": "第6章：身边之人如是说",
+    "subtitle": "",
+    "description": "精神危机不是一个人的事，而是整个家庭的系统性震荡。",
+    "slug": "/audiobooks/dark-night-soul/audio8/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio8.MP3"
+  },
+  {
+    "title": "第7章：灵性经历？还是精神病史？",
+    "subtitle": "",
+    "description": "当人不再成长，生命不会停滞——要么上升，要么坠落。",
+    "slug": "/audiobooks/dark-night-soul/audio9/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio9.MP3"
   },
   {
     "title": "第10集：死亡之针",
@@ -16,6 +96,14 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio10.MP3"
   },
   {
+    "title": "第1集：外星人在我们中间",
+    "subtitle": "",
+    "description": "催眠意外揭开，外星灵魂初次转世地球的秘密，开启一段跨越星际的觉醒之旅。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio1/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio1.MP3"
+  },
+  {
     "title": "第11集：三尖塔的突破",
     "subtitle": "",
     "description": "催眠释放更多信息：菲尔回到灵魂真正的故乡，意识到自己来自非地球的能量族群。",
@@ -24,20 +112,20 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio11.MP3"
   },
   {
-    "title": "第12集：投生地球的使命",
-    "subtitle": "",
-    "description": "菲尔自愿来到地球协助觉醒，外星人一直透过华盛顿纪念碑，监测地球能量变化。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio12/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio12.MP3"
-  },
-  {
     "title": "第13集：星际播种的秘密",
     "subtitle": "",
     "description": "外星人在远古地球播下生命种子。揭示宇宙协作、自由意志与灵魂播种的深层关联。",
     "slug": "/audiobooks/keepers-of-the-garden/audio13/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio13.MP3"
+  },
+  {
+    "title": "第12集：投生地球的使命",
+    "subtitle": "",
+    "description": "菲尔自愿来到地球协助觉醒，外星人一直透过华盛顿纪念碑，监测地球能量变化。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio12/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio12.MP3"
   },
   {
     "title": "第14集：外星探索者",
@@ -64,20 +152,20 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio16.MP3"
   },
   {
-    "title": "第17集：人类智能的由来",
-    "subtitle": "",
-    "description": "神话人物并非神，而是传递知识的使者，在保证自由意志的前提下，参与人类意识的培育。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio17/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio17.MP3"
-  },
-  {
     "title": "第18集：星际文明联盟",
     "subtitle": "",
     "description": "一个由多个星球、多个星际种族组成的联盟，类似宇宙层级的联合国。",
     "slug": "/audiobooks/keepers-of-the-garden/audio18/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio18.MP3"
+  },
+  {
+    "title": "第17集：人类智能的由来",
+    "subtitle": "",
+    "description": "神话人物并非神，而是传递知识的使者，在保证自由意志的前提下，参与人类意识的培育。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio17/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio17.MP3"
   },
   {
     "title": "第19集：其他形态的存在体",
@@ -88,20 +176,20 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio19.MP3"
   },
   {
-    "title": "第2集：外星记忆苏醒",
-    "subtitle": "",
-    "description": "荒芜的探矿星球隐藏的悲伤秘密，七名外星科学家命运浮现记忆深处。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio2/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio2.MP3"
-  },
-  {
     "title": "第20集：地底文明与人类起源",
     "subtitle": "",
     "description": "外星人在地球有基地吗？地表之下确实存在高等文明？外星人为何还不公开现身？",
     "slug": "/audiobooks/keepers-of-the-garden/audio20/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio20.MP3"
+  },
+  {
+    "title": "第2集：外星记忆苏醒",
+    "subtitle": "",
+    "description": "荒芜的探矿星球隐藏的悲伤秘密，七名外星科学家命运浮现记忆深处。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio2/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio2.MP3"
   },
   {
     "title": "第21集：疑似外星人绑架案例",
@@ -128,20 +216,20 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio23.MP3"
   },
   {
-    "title": "第24集：神秘的黑盒子",
-    "subtitle": "",
-    "description": "代表前世记忆、星际血缘、传承的黑盒子，提醒菲尔“你是谁、你来自哪里”。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio24/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio24.MP3"
-  },
-  {
     "title": "第25集：与现实失联",
     "subtitle": "",
     "description": "外星接触记忆被唤醒后，菲尔在心理、现实感与自我认知方面经历了强烈冲突。",
     "slug": "/audiobooks/keepers-of-the-garden/audio25/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio25.MP3"
+  },
+  {
+    "title": "第24集：神秘的黑盒子",
+    "subtitle": "",
+    "description": "代表前世记忆、星际血缘、传承的黑盒子，提醒菲尔“你是谁、你来自哪里”。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio24/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio24.MP3"
   },
   {
     "title": "第26集：潜意识的保护机制",
@@ -152,20 +240,20 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio26.MP3"
   },
   {
-    "title": "第27集：最终的讯息（完结）",
-    "subtitle": "",
-    "description": "时机成熟的记忆回归；来自宇宙高阶意识的直接讯息：外星人不是入侵者，而是地球守护者。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio27/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio27.MP3"
-  },
-  {
     "title": "第3集：外星飞船科技",
     "subtitle": "",
     "description": "菲尔回溯外星前世，揭示宇宙飞船、水晶动力与宇宙能量流的奥秘。",
     "slug": "/audiobooks/keepers-of-the-garden/audio3/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio3.MP3"
+  },
+  {
+    "title": "第27集：最终的讯息（完结）",
+    "subtitle": "",
+    "description": "时机成熟的记忆回归；来自宇宙高阶意识的直接讯息：外星人不是入侵者，而是地球守护者。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio27/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio27.MP3"
   },
   {
     "title": "第4集：记忆中的外星星球",
@@ -192,20 +280,20 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio6.MP3"
   },
   {
-    "title": "第7集：能量引导者",
-    "subtitle": "",
-    "description": "菲尔的外星前世职责：在能量涡流中心引导星球能量，维系整个社会的运作。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio7/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio7.MP3"
-  },
-  {
     "title": "第8集：无时间的四次元星球",
     "subtitle": "",
     "description": "菲尔的另一次转世揭开：灵魂如何在不同次元学习，并以能量形态持续成长。",
     "slug": "/audiobooks/keepers-of-the-garden/audio8/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio8.MP3"
+  },
+  {
+    "title": "第7集：能量引导者",
+    "subtitle": "",
+    "description": "菲尔的外星前世职责：在能量涡流中心引导星球能量，维系整个社会的运作。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio7/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio7.MP3"
   },
   {
     "title": "第9集：转世印记",
@@ -224,20 +312,20 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio1.mp3"
   },
   {
-    "title": "第十章：儿子",
-    "subtitle": "",
-    "description": "他尝到为人父的痛与执着，领悟爱并非占有，而是放手。",
-    "slug": "/audiobooks/siddhartha/audio10/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio10.mp3"
-  },
-  {
     "title": "第十一章：唵",
     "subtitle": "",
     "description": "万千声音汇成一体，悉达多听懂了生命的圆满与“一”的真谛。",
     "slug": "/audiobooks/siddhartha/audio11/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio11.mp3"
+  },
+  {
+    "title": "第十章：儿子",
+    "subtitle": "",
+    "description": "他尝到为人父的痛与执着，领悟爱并非占有，而是放手。",
+    "slug": "/audiobooks/siddhartha/audio10/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio10.mp3"
   },
   {
     "title": "第十二章（完结）：乔文达",
@@ -248,20 +336,20 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio12.mp3"
   },
   {
-    "title": "第二章：沙门",
-    "subtitle": "",
-    "description": "他离开家乡，与苦行者为伴，试图在极端禁欲中找到心灵的自由。",
-    "slug": "/audiobooks/siddhartha/audio2/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio2.mp3"
-  },
-  {
     "title": "第三章：乔达摩",
     "subtitle": "",
     "description": "悉达多遇见佛陀，却决定不做追随者，要亲自走出自己的觉悟之路。",
     "slug": "/audiobooks/siddhartha/audio3/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio3.mp3"
+  },
+  {
+    "title": "第二章：沙门",
+    "subtitle": "",
+    "description": "他离开家乡，与苦行者为伴，试图在极端禁欲中找到心灵的自由。",
+    "slug": "/audiobooks/siddhartha/audio2/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio2.mp3"
   },
   {
     "title": "第四章：觉醒",
@@ -288,14 +376,6 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio6.mp3"
   },
   {
-    "title": "第七章：轮回",
-    "subtitle": "",
-    "description": "被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。",
-    "slug": "/audiobooks/siddhartha/audio7/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio7.mp3"
-  },
-  {
     "title": "第八章：在河边",
     "subtitle": "",
     "description": "在绝望中，他听见河流的声音，像一首永恒的诗，唤醒他沉睡的心。",
@@ -304,12 +384,28 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio8.mp3"
   },
   {
+    "title": "第七章：轮回",
+    "subtitle": "",
+    "description": "被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。",
+    "slug": "/audiobooks/siddhartha/audio7/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio7.mp3"
+  },
+  {
     "title": "第九章：船夫",
     "subtitle": "",
     "description": "悉达多与摆渡人一起生活，从河流中学习聆听与静观的智慧。",
     "slug": "/audiobooks/siddhartha/audio9/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio9.mp3"
+  },
+  {
+    "title": "《灵魂的暗夜》",
+    "subtitle": "",
+    "description": "《灵魂的暗夜》不是把精神危机浪漫化，而是诚实地呈现：当心理、身体与灵性同时崩塌时，人如何在现实支持与内在觉醒中，重新找回生命的根基。\n\n全书分为两部分。第一部分记录了作者的亲身经历：严重的精神崩溃、抑郁与恐惧，以及家人朋友如何陪伴与支持。在这部分中，作者探讨了精神疾病的本质、是否需要用药、如何结合医学与灵性来看待心理问题……等现实议题，为读者提供了理性而富有同理心的参考。作者坦诚地分享了自己在绝望中挣扎的经历，让家人、朋友以及心理工作者等，都能更好地理解和支持正在经历精神危机的人。\n\n第二部分则是来自灵性存在约书亚的通灵传导，为痛苦与黑暗提供全新的视角。书中强调，痛苦不仅是心理或生理失衡，也可能是灵魂成长的契机。这部分内容对灵性成长、心理觉察和自我探索具有很高参考价值，帮助读者学会与内在阴影共处，从而获得更深层的自我认知与疗愈。\n\n值得一提的是，本书最后附有作者的12次转世记录。通过这些记录，读者可以窥见灵魂在不同生命中如何学习与成长，以及前世积累的心理问题，如何深刻影响这一世的性格与挑战，为理解人格发展、心理困扰与灵性成长提供独特视角。\n",
+    "slug": "/audiobooks/dark-night-soul/",
+    "image": "",
+    "audio_url": ""
   },
   {
     "title": "《地球守护者》",
