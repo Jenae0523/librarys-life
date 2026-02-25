@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260225-0327">
+<meta name="version" content="20260226-0148">
 
 
 <meta charset="utf-8">
@@ -113,10 +113,6 @@
 
   <main>
     
-<!-- ---------------------------
-     starnight 区域，脱离 <main>，左右贴满屏，紧贴 header
---------------------------- -->
-
 <div class="starnight-full">
   <!-- 横幅图 -->
 <section class="g-pt-90">
@@ -127,146 +123,252 @@
 </div>
 
 <style>
-  /* 去掉 body margin/padding */
-  body {
-    margin: 0;
-    padding: 0;
-  }
 
-  /* 确保 header 在最上层 */
-  header.u-header {
-    z-index: 10;
-  }
+/* ===============================
+   基础修正
+================================= */
 
-  /* starnight 区域全屏，避免被 header 遮挡 */
-  .starnight-full {
-    width: 100vw;
-    margin: 0;
-    padding-top: 100px; /* ← header 高度，根据实际调整 */
-    padding-bottom: 0;
-    position: relative;
-    z-index: 1;
-  }
+body {
+  margin: 0;
+  padding: 0;
+}
 
-  /* 去掉 container-fluid 内边距，保证贴满屏 */
-  .starnight-full .container-fluid {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
+header.u-header {
+  z-index: 10;
+}
 
-  /* 去掉 section 默认顶部内边距 */
-  .starnight-full section {
-    padding-top: 0 !important;
-  }
+.starnight-full {
+  width: 100vw;
+  padding-top: 100px;
+}
 
-  /* ---------- 灰底头部 ---------- */
-  .ebook-section {
-    background-color: #f5f5f5;
-    padding: 60px 20px;
-    text-align: center;
-    width: 100%;
-  }
+/* ===============================
+   灰色头部区域
+================================= */
 
-  .ebook-section .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+.ebook-section {
+  background: #f5f5f5;
+  padding: 60px 20px 20px; /* 下间距减半 */
+  text-align: center;
+}
 
-  .ebook-section h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    margin-bottom: 20px;
-    color: #222;
-  }
+.ebook-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .ebook-section p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    color: #444;
-  }
+.ebook-section h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
 
-  .tag-filter {
-    text-align: center;
-    margin-top: 30px;
-  }
+.ebook-section p {
+  font-size: 1.1rem;
+  color: #555;
+}
 
-  .tag-btn {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    padding: 6px 18px;
-    margin: 0 8px 12px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    color: #666;
-  }
+/* 标签按钮 */
 
-  .tag-btn.active {
-    border-color: #6281c8;
-    background-color: #6281c8;
-    color: #fff;
-  }
+.tag-filter {
+  margin-top: 30px;
+}
 
-  .audio-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
+.tag-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 6px 18px;
+  margin: 0 8px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
 
-  .audio-list .col-audio {
-    width: 100%;
-    max-width: 800px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-  }
+.tag-btn.active {
+  background: #6281c8;
+  color: #fff;
+  border-color: #6281c8;
+}
 
-  .pagination {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 40px 0 0 0;
-  }
+/* ===============================
+   合集卡片区域
+================================= */
 
-  .pagination li {
-    margin: 0 5px;
-  }
+.audiobook-section {
+  background: #f5f5f5;
+  padding: 0px 20px 120px; /* 底部间距加倍 */
+}
 
-  .pagination a {
-    display: block;
-    padding: 8px 14px;
-    border: 1px solid #ddd;
-    border-radius: 9999px;
-    color: #333;
-    text-decoration: none;
-  }
+.audiobook-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .pagination a:hover {
-    background-color: #f5f5f5;
-  }
+.audiobook-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+}
 
-  .pagination .active a {
-    background-color: #6281c8;
-    color: #fff;
-    border-color: #6281c8;
-    font-weight: bold;
+@media (min-width: 768px) {
+  .audiobook-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  @media screen and (max-width: 768px) {
-    .audio-list .col-audio {
-      max-width: 100%;
-    }
+@media (min-width: 1200px) {
+  .audiobook-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
+}
+
+/* 关键：等高 */
+
+.audiobook-grid > div {
+  display: flex;
+}
+
+.audiobook-link {
+  display: flex;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.audiobook-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.audiobook-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+}
+
+/* ===============================
+   封面：425/250 + 只显示上半部分
+================================= */
+
+.cover-wrapper {
+  width: 100%;
+  aspect-ratio: 425 / 250;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.cover-img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+}
+
+/* ===============================
+   文字区域
+================================= */
+
+.book-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  margin-top: 15px;
+  margin-bottom: 8px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-author {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 10px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-summary {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-height: calc(1.6em * 2);
+}
+
+/* ===============================
+   白底音频列表
+================================= */
+
+.audio-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.audio-list .col-audio {
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+/* ===============================
+   分页
+================================= */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 40px 0;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination a {
+  display: block;
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  border-radius: 9999px;
+  text-decoration: none;
+  color: #333;
+}
+
+.pagination .active a {
+  background: #6281c8;
+  color: #fff;
+  border-color: #6281c8;
+}
+
 </style>
 
-<!-- 灰底标题 + 描述 + tag 过滤 -->
-<section class="ebook-section audio-section">
+<!-- ===== 灰底标题区域 ===== -->
+
+<section class="ebook-section">
   <div class="container">
-    <h1>有声书</h1>
+    <h1>有声书&#92;播客</h1>
     <p>《灵魂的暗夜》更新中！作者：帕梅拉·克里柏</p>
 
     <div class="tag-filter">
@@ -478,13 +580,236 @@
   </div>
 </section>
 
+<!-- ===== 合集卡片区域 ===== -->
 
+<section class="audiobook-section">
+  <div class="container">
+    <div class="audiobook-grid">
+      
+        
+          
+          <div>
+            <a href="/audiobooks/siddhartha/" class="audiobook-link">
 
+  <article class="audiobook-card">
 
-<!-- 上方增加 50px 空间 -->
+    <div class="cover-wrapper">
+      <img src="https://img.librarys.life/img/books-covers/siddhartha.jpg" alt="《悉达多》" class="cover-img">
+    </div>
+
+    <h4 class="book-title">
+      《悉达多》
+    </h4>
+
+    <p class="book-author">
+      赫尔曼·黑塞（Hermann Hesse）
+    </p>
+
+    <p class="book-summary">
+      悉达多在追寻终极真理的过程中，经历了三个重要历程……
+    </p>
+
+  </article>
+
+</a>
+          </div>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+          <div>
+            <a href="/audiobooks/keepers-of-the-garden/" class="audiobook-link">
+
+  <article class="audiobook-card">
+
+    <div class="cover-wrapper">
+      <img src="https://img.librarys.life/img/books-covers/keepers-of-the-garden.jpg" alt="《地球守护者》" class="cover-img">
+    </div>
+
+    <h4 class="book-title">
+      《地球守护者》
+    </h4>
+
+    <p class="book-author">
+      朵洛莉丝·侃南（Dolores Cannon）
+    </p>
+
+    <p class="book-summary">
+      地球并非孤立发展的文明，而是被长期观察保护的行星系统
+    </p>
+
+  </article>
+
+</a>
+          </div>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+          <div>
+            <a href="/audiobooks/dark-night-soul/" class="audiobook-link">
+
+  <article class="audiobook-card">
+
+    <div class="cover-wrapper">
+      <img src="https://img.librarys.life/img/books-covers/dark-night-soul.jpg" alt="《灵魂的暗夜》" class="cover-img">
+    </div>
+
+    <h4 class="book-title">
+      《灵魂的暗夜》
+    </h4>
+
+    <p class="book-author">
+      帕梅拉·克里柏（Pamela Kribbe）
+    </p>
+
+    <p class="book-summary">
+      精神危机不仅是心理生理失衡，也可能是灵魂成长的契机
+    </p>
+
+  </article>
+
+</a>
+          </div>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+          <div>
+            <a href="/audiobooks/three-waves-of-volunteers/" class="audiobook-link">
+
+  <article class="audiobook-card">
+
+    <div class="cover-wrapper">
+      <img src="https://img.librarys.life/img/books-covers/three-waves-of-volunteers.jpg" alt="《三波志愿者与新地球》" class="cover-img">
+    </div>
+
+    <h4 class="book-title">
+      《三波志愿者与新地球》
+    </h4>
+
+    <p class="book-author">
+      朵洛莉丝·侃南（Dolores Cannon）
+    </p>
+
+    <p class="book-summary">
+      即将更新！！！由于地球面临巨大的危机和转变，宇宙召唤……
+    </p>
+
+  </article>
+
+</a>
+          </div>
+        
+      
+    </div>
+  </div>
+</section>
+
 <div style="height:50px;"></div>
 
-<!-- 白底主体 -->
+<!-- ===== 白底音频列表 ===== -->
+
 <div class="audio-list">
   
     <div class="col-audio audio-card">
@@ -1467,46 +1792,60 @@ document.addEventListener("DOMContentLoaded", () => {
   
 </div>
 
-<!-- 分页导航 -->
+<!-- ===== 分页 ===== -->
+
 <nav>
   <ul class="pagination">
     
+
     
-      <li><a href="/all-audiobooks/0/">上一页</a></li>
+      <li>
+        <a href="/all-audiobooks/0/">上一页</a>
+      </li>
     
 
     
       <li class="">
-        <a href="/all-audiobooks/0/">1</a>
+        <a href="/all-audiobooks/0/">
+          1
+        </a>
       </li>
     
       <li class="active">
-        <a href="/all-audiobooks/1/">2</a>
+        <a href="/all-audiobooks/1/">
+          2
+        </a>
       </li>
     
       <li class="">
-        <a href="/all-audiobooks/2/">3</a>
+        <a href="/all-audiobooks/2/">
+          3
+        </a>
       </li>
     
       <li class="">
-        <a href="/all-audiobooks/3/">4</a>
+        <a href="/all-audiobooks/3/">
+          4
+        </a>
       </li>
     
       <li class="">
-        <a href="/all-audiobooks/4/">5</a>
+        <a href="/all-audiobooks/4/">
+          5
+        </a>
       </li>
     
 
     
-      <li><a href="/all-audiobooks/2/">下一页</a></li>
+      <li>
+        <a href="/all-audiobooks/2/">下一页</a>
+      </li>
     
   </ul>
 </nav>
 
-<!-- 灰线 -->
 <hr class="g-brd-gray-light-v4 g-my-50">
 
-<!-- 居中对齐 -->
 <div class="container g-pt-50">
   <div class="row justify-content-center">
   <div class="col-lg-9 text-center">
@@ -1559,23 +1898,22 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 
 <script>
-  const buttons = document.querySelectorAll('.tag-btn');
-  const audios = document.querySelectorAll('.audio-list .col-audio');
+const buttons = document.querySelectorAll('.tag-btn');
+const audios = document.querySelectorAll('.audio-list .col-audio');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tag = btn.dataset.tag;
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tag = btn.dataset.tag;
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-      audios.forEach(card => {
-        const tags = card.dataset.tags || "";
-        card.style.display = tags.includes(tag) ? '' : 'none';
-      });
+    audios.forEach(card => {
+      const tags = card.dataset.tags || "";
+      card.style.display = tags.includes(tag) ? '' : 'none';
     });
   });
+});
 </script>
-
   </main>
 
   <!-- Footer -->
