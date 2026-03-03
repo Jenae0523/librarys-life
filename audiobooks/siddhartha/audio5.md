@@ -1,0 +1,13 @@
+---
+title: "第五章：迦摩罗"
+book: "《悉达多》"
+audio_url: https://audio.librarys.life/audio/siddhartha/audio5.mp3
+cover: https://img.librarys.life/img/books-covers/siddhartha.jpg
+description: "美人迦摩罗教会他欲望与感官的艺术，悉达多开始体验尘世的欢愉。"
+date: 2025-10-31
+tags: ["audiobooks"]
+number: 5
+subtitle_url: "/audiobooks/siddhartha/texts/siddhartha5.json"
+book_slug: siddhartha
+is_audio_episode: true
+---

@@ -1,0 +1,14 @@
+---
+title: "第28集：守护天使、指导灵"
+book: "《生死之间》"
+audio_url: https://audio.librarys.life/audio/books/between-death-life/audio28.MP3
+cover: https://img.librarys.life/img/books-covers/between-death-life.jpg
+description: "每个人都有守护天使、指导灵吗？指导灵如何提供帮助？指导灵有名字吗？学会分辨，正面与负面的存有"
+date: 2026-03-03
+tags: ["audiobooks"]
+number: 28
+subtitle_url: "/audiobooks/between-death-life/texts/between-death-life28.json"
+book_slug: between-death-life
+is_audio_episode: true
+---
+

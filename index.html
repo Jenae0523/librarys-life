@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260226-2005">
+<meta name="version" content="20260303-2240">
 
 
 <meta charset="utf-8">
@@ -216,7 +216,20 @@ const banners = [
   { type: "video", webm: "https://img.librarys.life/site-img/banner-4.webm", mp4: "https://img.librarys.life/site-img/banner-4.mp4", poster: "https://img.librarys.life/site-img/banner-4.jpg" },
   { type: "image", src: "https://img.librarys.life/site-img/banner-5.jpg" },
   { type: "video", webm: "https://img.librarys.life/site-img/banner-6.webm", mp4: "https://img.librarys.life/site-img/banner-6.mp4", poster: "https://img.librarys.life/site-img/banner-6.jpg" },
-  { type: "image", src: "https://img.librarys.life/site-img/banner-7.jpg" }
+  { type: "image", src: "https://img.librarys.life/site-img/banner-7.jpg" },
+  { type: "image", src: "https://img.librarys.life/site-img/banner-8.jpg" },
+  { type: "image", src: "https://img.librarys.life/site-img/banner-9.jpg" },
+  { type: "video", webm: "https://img.librarys.life/site-img/banner-10.webm", mp4: "https://img.librarys.life/site-img/banner-10.mp4", poster: "https://img.librarys.life/site-img/banner-10.jpg" },  
+  { type: "image", src: "https://img.librarys.life/site-img/banner-11.jpg" },
+  { type: "image", src: "https://img.librarys.life/site-img/banner-12.jpg" },
+  { type: "video", webm: "https://img.librarys.life/site-img/banner-13.webm", mp4: "https://img.librarys.life/site-img/banner-13.mp4", poster: "https://img.librarys.life/site-img/banner-13.jpg" },  
+  { type: "image", src: "https://img.librarys.life/site-img/banner-14.jpg" }, 
+  { type: "video", webm: "https://img.librarys.life/site-img/banner-15.webm", mp4: "https://img.librarys.life/site-img/banner-15.mp4", poster: "https://img.librarys.life/site-img/banner-15.jpg" },
+  { type: "video", webm: "https://img.librarys.life/site-img/banner-16.webm", mp4: "https://img.librarys.life/site-img/banner-16.mp4", poster: "https://img.librarys.life/site-img/banner-16.jpg" },
+  { type: "video", webm: "https://img.librarys.life/site-img/banner-17.webm", mp4: "https://img.librarys.life/site-img/banner-17.mp4", poster: "https://img.librarys.life/site-img/banner-17.jpg" },
+  { type: "video", webm: "https://img.librarys.life/site-img/banner-18.webm", mp4: "https://img.librarys.life/site-img/banner-18.mp4", poster: "https://img.librarys.life/site-img/banner-18.jpg" },
+  { type: "video", webm: "https://img.librarys.life/site-img/banner-19.webm", mp4: "https://img.librarys.life/site-img/banner-19.mp4", poster: "https://img.librarys.life/site-img/banner-19.jpg" },
+  { type: "video", webm: "https://img.librarys.life/site-img/banner-20.webm", mp4: "https://img.librarys.life/site-img/banner-20.mp4", poster: "https://img.librarys.life/site-img/banner-20.jpg" }
 ];
 
 const randomBanner = banners[Math.floor(Math.random() * banners.length)];
@@ -337,11 +350,11 @@ if(randomBanner.type==="video"){
   <div class="d-flex w-100 align-items-center mb-2">
     <!-- 左侧：封面图 + 显示字幕按钮 -->
     <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <a href="/audiobooks/dark-night-soul/">
+      <a href="/audiobooks/between-death-life/">
         <img 
           class="rounded mb-2" 
-          src="https://img.librarys.life/img/books-covers/dark-night-soul.jpg" 
-          alt="前世的回溯12：耶稣的信徒（完结）" 
+          src="https://img.librarys.life/img/books-covers/between-death-life.jpg" 
+          alt="第41集：研究死亡，让我更能欣赏生命（完结）" 
           style="width:80px; height:80px; object-fit:cover;"
         >
       </a>
@@ -350,7 +363,7 @@ if(randomBanner.type==="video"){
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul42.json">
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life41.json">
         显示字幕
       </button>
       
@@ -360,34 +373,34 @@ if(randomBanner.type==="video"){
     <div class="flex-grow-1">
       <h2 class="mb-2">
         <a 
-          href="/audiobooks/dark-night-soul/"
+          href="/audiobooks/between-death-life/"
           class="g-font-weight-700 g-font-size-16"
           style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
         >
-          《灵魂的暗夜》
+          《生死之间》
         </a>
         <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
-          前世的回溯12：耶稣的信徒（完结）
+          第41集：研究死亡，让我更能欣赏生命（完结）
         </span>
       </h2>
 
       <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
-        灵性经验的实践与体悟来自：开放、专注地感受——坚定而柔和的爱的能量，而非仅停留在信仰或理性层面。
+        地球正处于哪个进化阶段？灵魂不断转世，要怎么解释人口数的增加？如何定义无条件的爱？地球的课题？
       </p>
 
       
       <audio 
         controls 
         style="width: 100%; margin-top: 5px;" 
-        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul42.json">
-        <source src="https://audio.librarys.life/audio/dark-night-soul/audio42.MP3" type="audio/mpeg">
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life41.json">
+        <source src="https://audio.librarys.life/audio/books/between-death-life/audio41.MP3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
       
 
     <!-- 更新日期 -->
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
-        2026年2月26日
+        2026年3月3日
       </p>
     </div>
   </div>
@@ -432,11 +445,11 @@ article.audio-card h2 span {
   <div class="d-flex w-100 align-items-center mb-2">
     <!-- 左侧：封面图 + 显示字幕按钮 -->
     <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <a href="/audiobooks/dark-night-soul/">
+      <a href="/audiobooks/between-death-life/">
         <img 
           class="rounded mb-2" 
-          src="https://img.librarys.life/img/books-covers/dark-night-soul.jpg" 
-          alt="前世的回溯11：为正义而献身的女战士" 
+          src="https://img.librarys.life/img/books-covers/between-death-life.jpg" 
+          alt="第40集：怀孕期，出生前和婴儿期的灵魂" 
           style="width:80px; height:80px; object-fit:cover;"
         >
       </a>
@@ -445,7 +458,7 @@ article.audio-card h2 span {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul41.json">
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life40.json">
         显示字幕
       </button>
       
@@ -455,34 +468,34 @@ article.audio-card h2 span {
     <div class="flex-grow-1">
       <h2 class="mb-2">
         <a 
-          href="/audiobooks/dark-night-soul/"
+          href="/audiobooks/between-death-life/"
           class="g-font-weight-700 g-font-size-16"
           style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
         >
-          《灵魂的暗夜》
+          《生死之间》
         </a>
         <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
-          前世的回溯11：为正义而献身的女战士
+          第40集：怀孕期，出生前和婴儿期的灵魂
         </span>
       </h2>
 
       <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
-        此生的经历带来洞见：光明并非必须通过牺牲或激烈行动获取，而在于自身内在的光明。
+        灵魂“出生”的方式，灵魂什么时候进入婴儿身体？堕胎与流产，有伤害任何生命吗？婴儿猝死的主因
       </p>
 
       
       <audio 
         controls 
         style="width: 100%; margin-top: 5px;" 
-        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul41.json">
-        <source src="https://audio.librarys.life/audio/dark-night-soul/audio41.MP3" type="audio/mpeg">
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life40.json">
+        <source src="https://audio.librarys.life/audio/books/between-death-life/audio40.MP3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
       
 
     <!-- 更新日期 -->
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
-        2026年2月26日
+        2026年3月3日
       </p>
     </div>
   </div>
@@ -527,11 +540,11 @@ article.audio-card h2 span {
   <div class="d-flex w-100 align-items-center mb-2">
     <!-- 左侧：封面图 + 显示字幕按钮 -->
     <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <a href="/audiobooks/dark-night-soul/">
+      <a href="/audiobooks/between-death-life/">
         <img 
           class="rounded mb-2" 
-          src="https://img.librarys.life/img/books-covers/dark-night-soul.jpg" 
-          alt="前世的回溯10：雪地女巫医" 
+          src="https://img.librarys.life/img/books-covers/between-death-life.jpg" 
+          alt="第39集：灵魂替换者，交换现象" 
           style="width:80px; height:80px; object-fit:cover;"
         >
       </a>
@@ -540,7 +553,7 @@ article.audio-card h2 span {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul40.json">
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life39.json">
         显示字幕
       </button>
       
@@ -550,34 +563,34 @@ article.audio-card h2 span {
     <div class="flex-grow-1">
       <h2 class="mb-2">
         <a 
-          href="/audiobooks/dark-night-soul/"
+          href="/audiobooks/between-death-life/"
           class="g-font-weight-700 g-font-size-16"
           style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
         >
-          《灵魂的暗夜》
+          《生死之间》
         </a>
         <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
-          前世的回溯10：雪地女巫医
+          第39集：灵魂替换者，交换现象
         </span>
       </h2>
 
       <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
-        谨小慎微，时刻警惕潜在危险的女巫医，这种特质可能源自另一个前世经验。
+        如何决定谁来接替身体？灵魂交换现象，并非附身 │ 许多重要的工作，就是透过灵魂替换完成的
       </p>
 
       
       <audio 
         controls 
         style="width: 100%; margin-top: 5px;" 
-        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul40.json">
-        <source src="https://audio.librarys.life/audio/dark-night-soul/audio40.MP3" type="audio/mpeg">
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life39.json">
+        <source src="https://audio.librarys.life/audio/books/between-death-life/audio39.MP3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
       
 
     <!-- 更新日期 -->
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
-        2026年2月26日
+        2026年3月3日
       </p>
     </div>
   </div>
@@ -622,11 +635,11 @@ article.audio-card h2 span {
   <div class="d-flex w-100 align-items-center mb-2">
     <!-- 左侧：封面图 + 显示字幕按钮 -->
     <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <a href="/audiobooks/dark-night-soul/">
+      <a href="/audiobooks/between-death-life/">
         <img 
           class="rounded mb-2" 
-          src="https://img.librarys.life/img/books-covers/dark-night-soul.jpg" 
-          alt="前世的回溯9：哥伦比亚妓女" 
+          src="https://img.librarys.life/img/books-covers/between-death-life.jpg" 
+          alt="第38集：转世的印记" 
           style="width:80px; height:80px; object-fit:cover;"
         >
       </a>
@@ -635,7 +648,7 @@ article.audio-card h2 span {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul39.json">
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life38.json">
         显示字幕
       </button>
       
@@ -645,34 +658,34 @@ article.audio-card h2 span {
     <div class="flex-grow-1">
       <h2 class="mb-2">
         <a 
-          href="/audiobooks/dark-night-soul/"
+          href="/audiobooks/between-death-life/"
           class="g-font-weight-700 g-font-size-16"
           style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
         >
-          《灵魂的暗夜》
+          《生死之间》
         </a>
         <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
-          前世的回溯9：哥伦比亚妓女
+          第38集：转世的印记
         </span>
       </h2>
 
       <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
-        此生经历造成后续轮回中出现长期的自卑、胆怯和消极依赖，影响自我价值感和主动性。
+        灵魂转世的秘密：转世的印记 │ 转世前，如何选择适合的印记？解释了多人声称是同一历史人物的现象 │ 耶稣的生命印记
       </p>
 
       
       <audio 
         controls 
         style="width: 100%; margin-top: 5px;" 
-        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul39.json">
-        <source src="https://audio.librarys.life/audio/dark-night-soul/audio39.MP3" type="audio/mpeg">
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life38.json">
+        <source src="https://audio.librarys.life/audio/books/between-death-life/audio38.MP3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
       
 
     <!-- 更新日期 -->
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
-        2026年2月26日
+        2026年3月3日
       </p>
     </div>
   </div>
@@ -717,11 +730,11 @@ article.audio-card h2 span {
   <div class="d-flex w-100 align-items-center mb-2">
     <!-- 左侧：封面图 + 显示字幕按钮 -->
     <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <a href="/audiobooks/dark-night-soul/">
+      <a href="/audiobooks/between-death-life/">
         <img 
           class="rounded mb-2" 
-          src="https://img.librarys.life/img/books-covers/dark-night-soul.jpg" 
-          alt="前世的回溯8：亚特兰蒂斯的大祭司" 
+          src="https://img.librarys.life/img/books-covers/between-death-life.jpg" 
+          alt="第37集：星光界的议会（下）" 
           style="width:80px; height:80px; object-fit:cover;"
         >
       </a>
@@ -730,7 +743,7 @@ article.audio-card h2 span {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul38.json">
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life37.json">
         显示字幕
       </button>
       
@@ -740,34 +753,34 @@ article.audio-card h2 span {
     <div class="flex-grow-1">
       <h2 class="mb-2">
         <a 
-          href="/audiobooks/dark-night-soul/"
+          href="/audiobooks/between-death-life/"
           class="g-font-weight-700 g-font-size-16"
           style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
         >
-          《灵魂的暗夜》
+          《生死之间》
         </a>
         <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
-          前世的回溯8：亚特兰蒂斯的大祭司
+          第37集：星光界的议会（下）
         </span>
       </h2>
 
       <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
-        失衡的求知欲，却带来了文明的毁灭。精神与第三眼高度发展，但情感、心轮与对生命的感受力严重不足。
+        议会可以看到未来吗？议会如何影响地球上的事件？议会如何将高层级的知识传递给人类？
       </p>
 
       
       <audio 
         controls 
         style="width: 100%; margin-top: 5px;" 
-        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul38.json">
-        <source src="https://audio.librarys.life/audio/dark-night-soul/audio38.MP3" type="audio/mpeg">
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life37.json">
+        <source src="https://audio.librarys.life/audio/books/between-death-life/audio37.MP3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
       
 
     <!-- 更新日期 -->
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
-        2026年2月26日
+        2026年3月3日
       </p>
     </div>
   </div>
@@ -812,11 +825,11 @@ article.audio-card h2 span {
   <div class="d-flex w-100 align-items-center mb-2">
     <!-- 左侧：封面图 + 显示字幕按钮 -->
     <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <a href="/audiobooks/dark-night-soul/">
+      <a href="/audiobooks/between-death-life/">
         <img 
           class="rounded mb-2" 
-          src="https://img.librarys.life/img/books-covers/dark-night-soul.jpg" 
-          alt="前世的回溯7：罗马王子" 
+          src="https://img.librarys.life/img/books-covers/between-death-life.jpg" 
+          alt="第36集：星光界的议会（上）" 
           style="width:80px; height:80px; object-fit:cover;"
         >
       </a>
@@ -825,7 +838,7 @@ article.audio-card h2 span {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul37.json">
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life36.json">
         显示字幕
       </button>
       
@@ -835,34 +848,34 @@ article.audio-card h2 span {
     <div class="flex-grow-1">
       <h2 class="mb-2">
         <a 
-          href="/audiobooks/dark-night-soul/"
+          href="/audiobooks/between-death-life/"
           class="g-font-weight-700 g-font-size-16"
           style="text-decoration:none; color:inherit; color:#333; letter-spacing: 0.03em;"
         >
-          《灵魂的暗夜》
+          《生死之间》
         </a>
         <span class="g-font-weight-700 g-font-size-16" style="color:#333; letter-spacing: 0.03em;">
-          前世的回溯7：罗马王子
+          第36集：星光界的议会（上）
         </span>
       </h2>
 
       <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
-        极度纵欲与特权，导致人格发展扭曲：外在富足掩盖不了内在空虚，暴力与权力欲成为情绪出口。
+        灵界议会 │ 宇宙有不同层级的议会，议会观察与推动地球整体业力的提升
       </p>
 
       
       <audio 
         controls 
         style="width: 100%; margin-top: 5px;" 
-        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul37.json">
-        <source src="https://audio.librarys.life/audio/dark-night-soul/audio37.MP3" type="audio/mpeg">
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life36.json">
+        <source src="https://audio.librarys.life/audio/books/between-death-life/audio36.MP3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
       
 
     <!-- 更新日期 -->
       <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
-        2026年2月26日
+        2026年3月3日
       </p>
     </div>
   </div>
