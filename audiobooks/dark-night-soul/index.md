@@ -14,6 +14,9 @@ description: |
   值得一提的是，本书最后附有作者的12次转世记录。通过这些记录，读者可以窥见灵魂在不同生命中如何学习与成长，以及前世积累的心理问题，如何深刻影响这一世的性格与挑战，为理解人格发展、心理困扰与灵性成长提供独特视角。
 
 tags: ["audiobooks"]
+
+download_url: https://readcafe.life/free-ebooks/authors/pamela-kribbe/ling-hun-de-an-ye.pdf
+
 book_slug: dark-night-soul
 is_book_index: true
 ---
