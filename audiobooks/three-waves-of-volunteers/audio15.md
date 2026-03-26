@@ -1,0 +1,14 @@
+---
+title: "第15集：议会 & 地球实验失控"
+book: "《三波志愿者与新地球》"
+audio_url: https://audio.librarys.life/audio/three-waves-of-volunteers/audio15.MP3
+cover: https://img.librarys.life/img/books-covers/three-waves-of-volunteers.jpg
+description: "地球和人类是被长期监控的宇宙实验，而她本是实验策划者却主动进入地球转世，尝试从内部修复失控的进化方向。"
+date: 2026-03-27
+tags: ["audiobooks"]
+number: 15
+subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers15.json"
+book_slug: three-waves-of-volunteers
+is_audio_episode: true
+---
+
