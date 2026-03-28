@@ -20,7 +20,7 @@ description: |
   英文原版官网：www.starquestmastery.com
 
 tags: ["audiobooks"]
-download_url: 
+download_url: https://readcafe.life/free-ebooks/spirituality/archangel-michael-20250316.pdf
 book_slug: messages-of-light-archangel-mike
 is_book_index: true
 ---
