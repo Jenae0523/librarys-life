@@ -1,7 +1,7 @@
 ---
 title_line: 有声书\播客
 layout: all-audiobooks.njk
-description: 《灵魂的暗夜》完结更新！作者：帕梅拉·克里柏
+description: 《三波志愿者与新地球》更新中！作者：朵洛莉丝·侃南
 
 pagination:
   data: collections.allAudiosSorted

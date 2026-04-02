@@ -2,7 +2,7 @@
 layout: audiobooks.njk
 title: "《三波志愿者与新地球》"
 author: "朵洛莉丝·侃南（Dolores Cannon）"
-summary: "即将更新！！！由于地球面临巨大的危机和转变，宇宙召唤……"
+summary: "由于地球面临巨大的危机和转变，宇宙召唤纯净、没有业力束缚的灵魂，协助人类与地球能量提升。"
 cover: https://img.librarys.life/img/books-covers/three-waves-of-volunteers.jpg
 description: |
   《三波志愿者与新地球》是美国催眠治疗师兼灵性研究者朵洛莉丝·侃南（Dolores Cannon）在多年深度催眠回溯工作中，收集到的灵性讯息与个案对话的成果。
