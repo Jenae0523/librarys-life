@@ -24,6 +24,46 @@
     "download_url": "https://readcafe.life/free-ebooks/literary-classics/1984-george-orwell.epub"
   },
   {
+    "title": "巨婴国",
+    "subtitle": "心理学家透视中国国民性",
+    "description": "作者：武志红。巨婴的意思是，一个个体，在身体上已经发育为成年人，而在精神上还保留着婴儿般的思想、情绪和行为。这些巨婴特点包括：自我意识狭窄，无法预知自己的言行对他人可能造成什么影响；人身依附，使自己成为他人或机构的一部分，丧失或出卖个人良知底线；在人际和社会层面，为了操控而操控，无法施与爱或享受爱。书中列举了很多例子，而作为读者，你也可以列举无数发生在你身边的例子。",
+    "slug": "/free-ebooks/society-education/2-ebook-ju-ying-guo/",
+    "image": "",
+    "download_url": "https://readcafe.life/free-ebooks/cn/ju-ying-guo.pdf"
+  },
+  {
+    "title": "文凭社会：教育与分层的历史社会学",
+    "subtitle": "",
+    "description": "作者：兰德尔·柯林斯（Randall Collins）。教育社会学经典，对“学历神话”的系统性解构之作。揭穿一个被现代社会普遍接受、却很少被认真质疑的信念：教育真的等于能力与公平吗？柯林斯的答案很明确：不完全是，甚至常常不是。他通过历史分析指出——现代教育制度的核心功能，并不是培养技能，而是发放“合法入场券”。",
+    "slug": "/free-ebooks/society-education/4-wen-ping-she-hui-jiao-yu-yu-fen-ceng-de-li-shi-she-hui-xue/",
+    "image": "",
+    "download_url": "https://readcafe.life/free-ebooks/society-education/wen-ping-she-hui---jiao-yu-yu-fen-ceng-de-li-shi-she-hui-xue.pdf"
+  },
+  {
+    "title": "父母的觉醒1",
+    "subtitle": "",
+    "description": "作者：沙法丽·萨巴瑞（Shefali Tsabary），受东方哲学与正念传统影响，同时具有临床心理学训练背景。作者认为，孩子不是需要被“塑造”的对象，而是用来唤醒父母未被觉察部分的镜子。大多数养育痛苦并非来自孩子本身，而是来自父母：未被处理的情绪；过往创伤；对控制、安全感、成功的执念。孩子的行为，只是把这些东西放大、显形。",
+    "slug": "/free-ebooks/society-education/5-fu-mu-de-jue-xing-1-mei-sha-fa-li-sa-ba-rui-shefali-tsabary-zhu-wang-zhen-yi-z-library/",
+    "image": "",
+    "download_url": "https://readcafe.life/free-ebooks/society-education/fu-mu-de-jue-xing-1--mei---sha-fa-li---sa-ba-rui--Shefali-Tsabary--zhu---wang-zhen---yi--Z-Library.pdf"
+  },
+  {
+    "title": "情感社会学",
+    "subtitle": "",
+    "description": "作者：（美）乔纳森·H·特纳（Jonathan H. Turner）, （美）简·E·斯戴兹（Jan E. Stets）。情感不是个人孤立的心理状态，而是深深嵌入社会互动结构中。本书系统呈现情感社会学的理论与实证研究，是该领域的经典教科书式作品：以社会学视角来理解和分析“情感”这一核心人类体验，探讨情感如何与社会结构、互动、文化、身份、交换等机制深度交织。内容分成多个理论传统下的情感研究：拟剧与文化、仪式理论、符号互动论、交换论、结构论、进化论等。书中还穿插心理学视角，与社会学理论相互对照，帮助理解情感如何在社会关系、个人身份与群体互动中运作。",
+    "slug": "/free-ebooks/society-education/50-qing-gan-she-hui-xue/",
+    "image": "",
+    "download_url": "https://readcafe.life/free-ebooks/society-education/qing-gan-she-hui-xue.pdf"
+  },
+  {
+    "title": "父母的觉醒2：如何培养自觉的孩子",
+    "subtitle": "",
+    "description": "作者：沙法丽·萨巴瑞（Shefali Tsabary）。如果说《父母的觉醒1》重点在父母的自我觉察与解构，那么《父母的觉醒2》比第一本更“落地”，当父母不再被情绪与控制欲驱动后，如何与孩子真实互动。这里的“如何”，不是技巧清单，而是关系状态的呈现方式。",
+    "slug": "/free-ebooks/society-education/6-fu-mu-de-jue-xing-2-ru-he-pei-yang-zi-jue-de-hai-zi-mei-sha-fa-li-sa-ba-rui-z-library/",
+    "image": "",
+    "download_url": "https://readcafe.life/free-ebooks/society-education/fu-mu-de-jue-xing-2--ru-he-pei-yang-zi-jue-de-hai-zi---mei---sha-fa-li---sa-ba-rui--Z-Library.pdf"
+  },
+  {
     "title": "鸣响雪松-阿纳丝塔夏1-10合辑",
     "subtitle": "",
     "description": "作者：弗拉狄米尔·米格烈（Vladimir Megre）。《阿纳丝塔夏》、《鸣响雪松》、《爱的空间》、《共同的创造》、《我们到底是谁》、《家族之书》、《生命的能量》、《新的文明》、《爱的仪式》、《阿纳丝塔》/ 有的版本译为《谁在真正生活》。",
@@ -94,46 +134,6 @@
     "slug": "/free-ebooks/spirituality/23-yang-sheng-shu-di-san-bu-a-da-mu-tan-hua/",
     "image": "",
     "download_url": "https://readcafe.life/free-ebooks/spirituality/yang-sheng-shu---di-san-bu---a-da-mu-tan-hua.pdf"
-  },
-  {
-    "title": "巨婴国",
-    "subtitle": "心理学家透视中国国民性",
-    "description": "作者：武志红。巨婴的意思是，一个个体，在身体上已经发育为成年人，而在精神上还保留着婴儿般的思想、情绪和行为。这些巨婴特点包括：自我意识狭窄，无法预知自己的言行对他人可能造成什么影响；人身依附，使自己成为他人或机构的一部分，丧失或出卖个人良知底线；在人际和社会层面，为了操控而操控，无法施与爱或享受爱。书中列举了很多例子，而作为读者，你也可以列举无数发生在你身边的例子。",
-    "slug": "/free-ebooks/society-education/2-ebook-ju-ying-guo/",
-    "image": "",
-    "download_url": "https://readcafe.life/free-ebooks/cn/ju-ying-guo.pdf"
-  },
-  {
-    "title": "文凭社会：教育与分层的历史社会学",
-    "subtitle": "",
-    "description": "作者：兰德尔·柯林斯（Randall Collins）。教育社会学经典，对“学历神话”的系统性解构之作。揭穿一个被现代社会普遍接受、却很少被认真质疑的信念：教育真的等于能力与公平吗？柯林斯的答案很明确：不完全是，甚至常常不是。他通过历史分析指出——现代教育制度的核心功能，并不是培养技能，而是发放“合法入场券”。",
-    "slug": "/free-ebooks/society-education/4-wen-ping-she-hui-jiao-yu-yu-fen-ceng-de-li-shi-she-hui-xue/",
-    "image": "",
-    "download_url": "https://readcafe.life/free-ebooks/society-education/wen-ping-she-hui---jiao-yu-yu-fen-ceng-de-li-shi-she-hui-xue.pdf"
-  },
-  {
-    "title": "父母的觉醒1",
-    "subtitle": "",
-    "description": "作者：沙法丽·萨巴瑞（Shefali Tsabary），受东方哲学与正念传统影响，同时具有临床心理学训练背景。作者认为，孩子不是需要被“塑造”的对象，而是用来唤醒父母未被觉察部分的镜子。大多数养育痛苦并非来自孩子本身，而是来自父母：未被处理的情绪；过往创伤；对控制、安全感、成功的执念。孩子的行为，只是把这些东西放大、显形。",
-    "slug": "/free-ebooks/society-education/5-fu-mu-de-jue-xing-1-mei-sha-fa-li-sa-ba-rui-shefali-tsabary-zhu-wang-zhen-yi-z-library/",
-    "image": "",
-    "download_url": "https://readcafe.life/free-ebooks/society-education/fu-mu-de-jue-xing-1--mei---sha-fa-li---sa-ba-rui--Shefali-Tsabary--zhu---wang-zhen---yi--Z-Library.pdf"
-  },
-  {
-    "title": "情感社会学",
-    "subtitle": "",
-    "description": "作者：（美）乔纳森·H·特纳（Jonathan H. Turner）, （美）简·E·斯戴兹（Jan E. Stets）。情感不是个人孤立的心理状态，而是深深嵌入社会互动结构中。本书系统呈现情感社会学的理论与实证研究，是该领域的经典教科书式作品：以社会学视角来理解和分析“情感”这一核心人类体验，探讨情感如何与社会结构、互动、文化、身份、交换等机制深度交织。内容分成多个理论传统下的情感研究：拟剧与文化、仪式理论、符号互动论、交换论、结构论、进化论等。书中还穿插心理学视角，与社会学理论相互对照，帮助理解情感如何在社会关系、个人身份与群体互动中运作。",
-    "slug": "/free-ebooks/society-education/50-qing-gan-she-hui-xue/",
-    "image": "",
-    "download_url": "https://readcafe.life/free-ebooks/society-education/qing-gan-she-hui-xue.pdf"
-  },
-  {
-    "title": "父母的觉醒2：如何培养自觉的孩子",
-    "subtitle": "",
-    "description": "作者：沙法丽·萨巴瑞（Shefali Tsabary）。如果说《父母的觉醒1》重点在父母的自我觉察与解构，那么《父母的觉醒2》比第一本更“落地”，当父母不再被情绪与控制欲驱动后，如何与孩子真实互动。这里的“如何”，不是技巧清单，而是关系状态的呈现方式。",
-    "slug": "/free-ebooks/society-education/6-fu-mu-de-jue-xing-2-ru-he-pei-yang-zi-jue-de-hai-zi-mei-sha-fa-li-sa-ba-rui-z-library/",
-    "image": "",
-    "download_url": "https://readcafe.life/free-ebooks/society-education/fu-mu-de-jue-xing-2--ru-he-pei-yang-zi-jue-de-hai-zi---mei---sha-fa-li---sa-ba-rui--Z-Library.pdf"
   },
   {
     "title": "灵性炼金术：约书亚的传导",
