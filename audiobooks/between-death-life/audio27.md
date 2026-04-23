@@ -10,5 +10,6 @@ number: 27
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life27.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/27-suicide-karma-soul-contract-reincarnation-learning-purpose-free-will.html"
 ---
 

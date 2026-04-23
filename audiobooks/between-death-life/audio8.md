@@ -10,5 +10,7 @@ number: 8
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life8.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/8-karma-rest-life-reincarnation-soul-resting-phase-explained.html"
+
 ---
 

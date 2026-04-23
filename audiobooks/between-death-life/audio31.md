@@ -10,5 +10,6 @@ number: 31
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life31.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/31-jesus-death-meaning-trinity-holy-spirit-divine-energy-spiritual-interpretation.html"
 ---
 

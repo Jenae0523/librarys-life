@@ -10,5 +10,7 @@ number: 12
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life12.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/12-spiritual-library-akashic-records-soul-evolution-viewing-room.html"
+
 ---
 

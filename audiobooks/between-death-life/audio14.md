@@ -10,5 +10,7 @@ number: 14
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life14.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/14-soul-reincarnation-system-astral-plane-evolution-heaven-hell-jesus-buddha.html"
+
 ---
 

@@ -10,5 +10,6 @@ number: 23
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life23.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/23-reincarnation-karma-life-suffering-soul-learning-no-punishment-law.html"
 ---
 

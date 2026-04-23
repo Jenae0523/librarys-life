@@ -10,5 +10,7 @@ number: 18
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life18.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/18-nature-spirits-elementals-earth-vibration-evolution-group-souls-fairies.html"
+
 ---
 

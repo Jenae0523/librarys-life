@@ -10,5 +10,6 @@ number: 41
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life41.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/41-soul-evolution-earth-cycle-reincarnation-consciousness-unconditional-love-stage.html"
 ---
 

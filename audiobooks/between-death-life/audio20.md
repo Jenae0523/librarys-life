@@ -10,5 +10,6 @@ number: 20
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life20.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/20-soul-levels-reincarnation-system-spiritual-schools-earth-classroom-bodhisattva.html"
 ---
 

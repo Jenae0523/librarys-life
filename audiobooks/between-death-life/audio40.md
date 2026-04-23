@@ -10,5 +10,6 @@ number: 40
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life40.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/40-soul-entry-birth-plan-reincarnation-hypnosis-family-choice-memory-loss.html"
 ---
 

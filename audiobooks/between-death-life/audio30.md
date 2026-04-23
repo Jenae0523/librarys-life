@@ -10,5 +10,6 @@ number: 30
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life30.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/30-cosmic-source-god-consciousness-energy-grid-multiverse-spiritual-councils.html"
 ---
 

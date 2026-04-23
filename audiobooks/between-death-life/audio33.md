@@ -10,5 +10,6 @@ number: 33
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life33.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/33-soul-echo-ghost-energy-reflection-astral-guide-spirit-phenomena-explained.html"
 ---
 

@@ -10,5 +10,6 @@ number: 21
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life21.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/21-how-supernatural-phenomena-work-multidimensional-reality-frequency-consciousness.html"
 ---
 

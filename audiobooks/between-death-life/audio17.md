@@ -10,5 +10,7 @@ number: 17
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life17.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/17-soul-hierarchy-elementals-fairies-earth-plane-astral-negative-entities.html"
+
 ---
 

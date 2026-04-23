@@ -10,5 +10,6 @@ number: 34
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life34.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/34-spirit-guides-soul-family-reincarnation-planning-communication-astral-guidance.html"
 ---
 

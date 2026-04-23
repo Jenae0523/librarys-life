@@ -10,5 +10,6 @@ number: 22
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life22.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/22-is-hell-created-by-mind-negative-energy-afterlife-near-death-experience-explained.html"
 ---
 

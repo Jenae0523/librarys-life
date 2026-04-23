@@ -10,5 +10,6 @@ number: 26
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life26.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/26-karma-reincarnation-hitler-jack-the-ripper-soul-contract-extreme-lives.html"
 ---
 

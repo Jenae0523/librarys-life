@@ -10,5 +10,6 @@ number: 2
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life2.json"
 book_slug: between-death-life
 is_audio_episode: true
----
+article_url: "/all-articles/books/between-death-life/2-death-experience-nde-soul-out-of-body-silver-cord-explained.html"
 
+---

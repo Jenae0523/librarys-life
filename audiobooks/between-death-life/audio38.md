@@ -10,5 +10,6 @@ number: 38
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life38.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/38-soul-imprints-akashic-records-reincarnation-christ-consciousness-evolution.html"
 ---
 

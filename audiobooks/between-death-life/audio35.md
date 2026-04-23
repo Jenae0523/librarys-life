@@ -10,5 +10,6 @@ number: 35
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life35.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/35-karma-law-universe-soul-learning-reincarnation-evolution-consciousness.html"
 ---
 

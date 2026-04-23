@@ -10,5 +10,7 @@ number: 7
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life7.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/7-akashic-records-soul-memory-energy-information-storage-mechanism.html"
+
 ---
 

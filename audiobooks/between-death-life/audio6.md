@@ -10,5 +10,7 @@ number: 6
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life6.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/6-soul-plan-before-birth-karma-free-will-reincarnation-purpose.html"
+
 ---
 

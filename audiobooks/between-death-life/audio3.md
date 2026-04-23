@@ -10,5 +10,7 @@ number: 3
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life3.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/3-what-happens-after-death-soul-journey-afterlife-reincarnation-guide.html"
+
 ---
 

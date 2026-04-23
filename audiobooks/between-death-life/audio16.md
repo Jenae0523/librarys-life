@@ -10,5 +10,7 @@ number: 16
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life16.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/16-spiritual-levels-soul-evolution-seventh-plane-creativity-ascension-pyramid-consciousness.html"
+
 ---
 

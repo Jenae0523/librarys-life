@@ -10,5 +10,6 @@ number: 39
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life39.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/39-soul-switching-reincarnation-hypnosis-case-study-earth-school-consciousness-transfer.html"
 ---
 

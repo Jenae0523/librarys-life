@@ -10,5 +10,6 @@ number: 19
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life19.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/19-soul-levels-group-soul-animal-consciousness-human-reincarnation-dual-worlds.html"
 ---
 

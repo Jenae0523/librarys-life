@@ -10,5 +10,7 @@ number: 4
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life4.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/4-near-death-experience-afterlife-soul-council-energy-consciousness.html"
+
 ---
 

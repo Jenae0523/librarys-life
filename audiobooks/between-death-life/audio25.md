@@ -10,5 +10,6 @@ number: 25
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life25.json"
 book_slug: between-death-life
 is_audio_episode: true
+article_url: "/all-articles/books/between-death-life/25-karma-reincarnation-school-soul-healing-violent-behavior-cycle-growth-system.html"
 ---
 
