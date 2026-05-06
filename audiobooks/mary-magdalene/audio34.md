@@ -1,0 +1,26 @@
+---
+title: "第27集：一个女人的故事【2】"
+book: "《抹大拉手稿》"
+
+audio_url: https://audio.librarys.life/audio/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.MP3
+
+cover: https://img.librarys.life/img/books-covers/mary-magdalene.jpg
+
+description: "死亡与重生：一个女人在死亡边缘选择活下去，另一个女人在死亡中成为自己"
+
+date: 2026-05-06
+tags: ["audiobooks"]
+number: 34
+
+subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene34.json"
+
+book_slug: mary-magdalene
+
+is_audio_episode: true
+
+article_url: "/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html"
+
+---
+
+
+
