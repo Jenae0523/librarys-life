@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260506-1537">
+<meta name="version" content="20260705-0004">
 
 
 <meta charset="utf-8">
@@ -387,6 +387,10 @@ header.u-header {
 
     <div class="tag-filter">
       
+      
+        
+          
+        
       
         
           
@@ -1982,6 +1986,8 @@ header.u-header {
       
         
       
+        
+      
     </div>
   </div>
 </section>
@@ -2000,6 +2006,128 @@ header.u-header {
 </section>
 	
 <div class="audio-list">
+  
+    <div class="col-audio audio-card">
+      <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/mary-magdalene/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/mary-magdalene.jpg" 
+          alt="第28集：一个女人的故事【3】（完结）" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene35.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/mary-magdalene/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《抹大拉手稿》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第28集：一个女人的故事【3】（完结）
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        在关系中选择爱与真实：如果一段关系要求你完全真实，你会逃走吗？你最害怕的是什么呢？
+      </p>
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene35.json">
+        <source src="https://audio.librarys.life/audio/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年7月4日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+</style>
+  
+</article>
+
+
+
+    </div>
   
     <div class="col-audio audio-card">
       <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -5398,125 +5526,6 @@ article.audio-card h2 span {
         style="width: 100%; margin-top: 5px;" 
         data-subtitle="/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers12.json">
         <source src="https://audio.librarys.life/audio/three-waves-of-volunteers/audio12.MP3" type="audio/mpeg">
-        您的浏览器不支持音频播放。
-      </audio>
-      
-
-    <!-- 更新日期 -->
-      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
-        2026年3月27日
-      </p>
-    </div>
-  </div>
-
-  <!-- 下半部分：拉通字幕容器 -->
-  
-  <div class="subtitle-box w-100" style="
-      display:none;
-      max-height: 200px;
-      overflow-y:auto;
-      margin-top:10px;
-      padding:8px;
-      border:1px solid #ccc;
-      border-radius:5px;
-      font-size: 1.15rem;
-      line-height:1.6;
-	  letter-spacing: 0.03em;
-      background:#f9f9f9;
-    ">
-  </div>
-  
-  
-<style>
-/* 仅作用于音频卡片标题 */
-article.audio-card h2 {
-  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
-}
-article.audio-card h2 a,
-article.audio-card h2 span {
-  line-height: inherit; /* 子元素继承 h2 的行高 */
-}
-
-/* 可点击标题（统一规则） */
-article.audio-card h2 a.audio-title-link {
-  color: #333;
-  text-decoration: underline;
-}
-
-/* 不可点击（span）保持黑色 */
-article.audio-card h2 span {
-  color: #333;
-}
-</style>
-  
-</article>
-
-
-
-    </div>
-  
-    <div class="col-audio audio-card">
-      <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
-  
-  <!-- 上半部分：左右两列 -->
-  <div class="d-flex w-100 align-items-center mb-2">
-    <!-- 左侧：封面图 + 显示字幕按钮 -->
-    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
-      <a href="/audiobooks/three-waves-of-volunteers/">
-        <img 
-          class="rounded mb-2" 
-          src="https://img.librarys.life/img/books-covers/three-waves-of-volunteers.jpg" 
-          alt="第11集：一个星球的毁灭" 
-          style="width:80px; height:80px; object-fit:cover;"
-        >
-      </a>
-
-      
-      <button 
-        class="btn btn-sm show-subtitles" 
-        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers11.json">
-        显示字幕
-      </button>
-      
-    </div>
-
-    <!-- 右侧：文字 + 音频 + 更新日期 -->
-    <div class="flex-grow-1">
-<h2 class="mb-2">
-
-  <!-- 书籍主页（保留） -->
-  <a 
-    href="/audiobooks/three-waves-of-volunteers/"
-    class="g-font-weight-700 g-font-size-16"
-    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
-  >
-    《三波志愿者与新地球》
-  </a>
-
-
-  <!-- 单集页面（新增：新开窗口） -->
-
-  <span 
-    class="g-font-weight-700 g-font-size-16"
-    style="color:#333; letter-spacing: 0.03em;"
-  >
-    第11集：一个星球的毁灭
-  </span>
-
-
-</h2>
-
-      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
-        一个因失去爱与觉知而灭亡的外星球，而人类正面临同样选择；提醒每个人的意识改变，都可能影响整体命运。
-      </p>
-
-      
-      <audio 
-        controls 
-        style="width: 100%; margin-top: 5px;" 
-        data-subtitle="/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers11.json">
-        <source src="https://audio.librarys.life/audio/three-waves-of-volunteers/audio11.MP3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
       
