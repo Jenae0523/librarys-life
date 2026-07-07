@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -239,17 +408,17 @@
 <p>《The Magdalen Manuscript》，2002年</p>
 <p>作者：朱迪·赛恩（Judi Sion）</p>
 <p>翻译：暮雨</p>
-<h2>本集内容</h2>
-<p>死亡与重生：成为自己</p>
-<p>​    ・遇见汤姆·肯永，哈索尔的邀请</p>
-<p>​    ・黑暗力量，擅于伪装成觉醒</p>
-<p>​    ・再次崩塌，开始看见问题根源</p>
-<p>​    ・追随召唤，一场向光而行的欧洲之旅</p>
-<p>​    ・重建意义，选择活下去</p>
-<p>​    ・面对癌症，穿越内在地狱</p>
-<p>​    ・死亡来临，她终于成为了自己</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：死亡与重生：成为自己">死亡与重生：成为自己</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：・遇见汤姆·肯永，哈索尔的邀请">​    ・遇见汤姆·肯永，哈索尔的邀请</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：・黑暗力量，擅于伪装成觉醒">​    ・黑暗力量，擅于伪装成觉醒</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：・再次崩塌，开始看见问题根源">​    ・再次崩塌，开始看见问题根源</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・追随召唤，一场向光而行的欧洲之旅">​    ・追随召唤，一场向光而行的欧洲之旅</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：・重建意义，选择活下去">​    ・重建意义，选择活下去</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・面对癌症，穿越内在地狱">​    ・面对癌症，穿越内在地狱</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="4" aria-label="跳转到：・死亡来临，她终于成为了自己">​    ・死亡来临，她终于成为了自己</a></p>
 <hr>
-<h2>引言：</h2>
+<h2 id="article-section-2" class="article-heading">引言：</h2>
 <p><strong>再深度的灵性体验，也无法替代现实人生的重量。</strong></p>
 <p>黑暗从不愚蠢。它只会越来越擅长——用我们的语言，伪装成光。它不再用“罪”与“内疚”来奴役无知的人，而是悄无声息地潜入我们之中，与我们并肩而立。让我们陷入分裂与混乱，在不知不觉中，再次远离觉醒。</p>
 <p>我曾多么渴望被爱、被理解、被接纳，希望有一个骑士将我从黑暗中拯救。直到有一天，我的世界又再次崩塌。我失去爱人，失去方向，失去活下去的意义。我开始渴望死亡。</p>
@@ -262,8 +431,8 @@
 <p>“所有人都希望成为那个‘治好我的人’”</p>
 <p>“但那是他们的期待，不是我的。”</p>
 <p>“现在，你终于允许我拥有，我自己的选择了。”</p>
-<h2>死亡与重生：成为自己</h2>
-<h4>・遇见汤姆·肯永，哈索尔的邀请</h4>
+<h2 id="article-section-3" class="article-heading">死亡与重生：成为自己</h2>
+<h4 id="article-section-4" class="article-heading">・遇见汤姆·肯永，哈索尔的邀请</h4>
 <p>有一个微小的声音在我脑海里说：“ <strong>你必须去找到那些音调。</strong> 把那些声音当作圣诞礼物送给他。”</p>
 <p>嗯？这到底是什么意思？</p>
 <p>我给所有专业唱歌的朋友打去电话，请他们为他在圣诞节“唱一首歌”，但他们不是在巡演，就是抽不开身。</p>
@@ -303,7 +472,7 @@
 <p>他笑了，说他相信会的。于是，我们又安排了一次会面，再次前往。</p>
 <p>在那次会面中，我了解到了关于我们与古埃及之间的联系。而在会面结束时，一切都变得非常清晰，那是一种久别重逢的感觉，老朋友们又重新找到了彼此。与此同时，我也终于明白，为什么我之前的伴侣会对Tom Kenyon 嗤之以鼻，坚决拒绝与他见面。</p>
 <p>他们向我展示了：我是如何走在一条悬于深渊之上的钢丝上，那深渊充满黑暗，意图将我吞噬。只要稍微偏离一小步，我的生命就可能轻易终结。</p>
-<h4>・黑暗力量，擅于伪装成觉醒</h4>
+<h4 id="article-section-5" class="article-heading">・黑暗力量，擅于伪装成觉醒</h4>
 <p>在我讲述的，这个被大量简化的人生经历中，我看起来也许并不那么理性。我没有把自己的逻辑推演过程，完整写出来。</p>
 <p>但事实上，我是一个极其务实的现实主义者。我讲逻辑，甚至可以说是到了偏执的地步；我也非常忠诚，同样到了“过头”的程度。我曾经也是那种过分乐观和天真的人，而我正在努力克服并迅速摆脱这一点。</p>
 <p>我是一个习惯用演绎推理来思考的人。</p>
@@ -317,7 +486,7 @@
 <p>黑暗——这种奴役的力量，已经无法再通过 <strong>向我们灌输“罪”与“内疚”，让人们处于无知中，</strong> 来阻止我们提升意识。</p>
 <p>于是，它学会了另一种方式：悄无声息地潜入我们中间，与我们并肩而立， <strong>伪装成我们的一员，引诱我们陷入混乱与分裂。</strong> 再一次把我们从“个体基督意识”的觉醒边缘，击退。</p>
 <p>或许我需要澄清一下，我所说的 <strong>“邪恶”是什么意思</strong> 。在我这里，“邪恶”指的是——任何阻碍“基督意识”在地球层面显现的事物，任何阻碍觉醒与开悟的力量。</p>
-<h4>・再次崩塌，开始看见问题根源</h4>
+<h4 id="article-section-6" class="article-heading">・再次崩塌，开始看见问题根源</h4>
 <p>那天晚上，我的朋友整夜未眠，一直守着我。他坐在床边，目不转睛地看着我，泪水顺着脸颊不断流下。我问他为什么哭，他说，他从未意识到自己曾经差一点就失去我，一想到我曾处在那样的危险中，他的心就像在被撕裂。</p>
 <p>当我醒来时，他依然坐在那里。他发誓，他会倾尽全力不让我再次陷入危险。</p>
 <p>我还记得第一次见到 Pam Kenyon（Tom的妻子）。她一走进来，某种光芒瞬间照亮了整个房间，那光仿佛从她的心中直射而出。Pam的笑容充满感染力，气质如同女神般纯净，她是我所认识的最美丽的人之一。</p>
@@ -379,7 +548,7 @@
 <p>于是，一个念头在我心中诞生。</p>
 <p><strong>既然没有人曾对我守住过承诺，那我必须为自己守一个承诺。</strong></p>
 <p>我一直答应自己，总有一天要带着女儿们去欧洲，来一场精神之旅。正如人们常说的——在绝境之中，才会做出非常之举。</p>
-<h4>・追随召唤，一场向光而行的欧洲之旅</h4>
+<h4 id="article-section-7" class="article-heading">・追随召唤，一场向光而行的欧洲之旅</h4>
 <p>我用尽所有积蓄，雇人照顾母亲，又在网上租了一辆车，然后带着Jennifer 和 Adrianne 飞往阿姆斯特丹。</p>
 <p>这也许是我们最后一个能一起度过的夏天。</p>
 <p>Jennifer 秋天就要独自去印度，而 Adrianne 也即将进入高中最后一年。但我决定，可以晚一个月再回学校。她在公立高中一个月能学到的全部知识，都远不及我们一起去欧洲旅行、寻找女神遗址所获得的体验。</p>
@@ -479,7 +648,7 @@
 <p>难道是：耶稣并非禁欲之人？抹大拉的玛丽亚并非妓女，而是耶稣的新娘？一位高级入门者，在伊西斯神庙中接受过最高层级的训练——为她与耶稣的“神圣结合”做好了充足的准备。</p>
 <p>他们是否有一个女儿？而这条血脉的家族，在某种意义上才是“王国”的真正继承者——至少，对于那些像教会一样相信王权、畏惧王权的人来说。</p>
 <p>尽管我在欧洲走过了那么多地方，攀登过多少山峰；尽管一路上，经历了许多异象与来访。但现实，最终还是把我们召回。</p>
-<h4>・重建意义，选择活下去</h4>
+<h4 id="article-section-8" class="article-heading">・重建意义，选择活下去</h4>
 <p>生活无法逃避。我们回到了家。</p>
 <p>欧洲的精神之旅，虽使我的内心深受触动。但那些触动，也只是暂时让我的失落，得以分散注意力。</p>
 <p>我对自己说，也许“亲密关系”并不是我这一生要完成的使命。也许，我该把自己一直举着的那把火炬，交给真正能把这件事走到底的人——显然，那个人不是我。我与童年时期那些“内在指引者”和解，也向自己曾经的所有梦想道别。</p>
@@ -527,7 +696,7 @@
 <p>我开始觉得，也许是时候让我的人生进入一个新的阶段。于是，我决定跟他们一起走。我们像“三个火枪手”一样，不可能因为失去出租屋这样平凡的小事，就把我们分开。像我们这样的朋友，一辈子也未必能遇到一次。</p>
 <p>我办了一场车库拍卖，把自己最心爱的东西都卖掉了。然后回到东部，去处理一些遗留下来的事务。母亲的护理已经超出了我的能力范围，我最终还是把她，送进了养老院。</p>
 <p>我的两个女儿，都已经上大学了。我可以搬去任何地方。</p>
-<h4>・面对癌症，穿越内在地狱</h4>
+<h4 id="article-section-9" class="article-heading">・面对癌症，穿越内在地狱</h4>
 <p>Pam 几年前曾与乳腺癌抗争，但她最终成功战胜了它。</p>
 <p>她选择了活下去。而现在，我也有了需要去完成的工作。那些让我感到真正重要的事。我不再整天想着死亡。</p>
 <p>我也做出了同样的选择——我要活下去！</p>
@@ -601,7 +770,7 @@
 <p>于是，我和 Tom 一起前往西雅图去接她。</p>
 <p>我们已经一个月没见到她了。当她走下飞机时那一刻的震惊，我至今都记得。Pam 已经无法行走，整个人也消瘦了许多。更糟的是，当时一艘渡轮撞上了 Orcas 岛的码头，码头被关闭了，车辆无法进出小岛。我们没有办法开车载她回家。我找到了一艘可以直接靠岸、无需坡道的私人驳船。</p>
 <p>我们就这样，把 Pam 带回了家。驳船缓缓靠岸，船头轻轻落在沙滩上，我们直接开车驶了下来。</p>
-<h4>・死亡来临，她终于成为了自己</h4>
+<h4 id="article-section-10" class="article-heading">・死亡来临，她终于成为了自己</h4>
 <p>接下来的几个月，我可以写上一千页纸，也无法真正把那段经历讲清楚。</p>
 <p>你知道，人这一生，你会通过一些零碎的片段去认识一个人。一杯咖啡，一滴眼泪，一点点亲密的瞬间。慢慢地，你以为，你已经了解他们，但那还不算真正的了解。真正的了解，是我们在接下来的那几个月里经历的种种。</p>
 <p>那时，我已经认识 Pam Kenyon 大约五年，我以为我了解她。我也自认为了解 Tom Kenyon 这个人。</p>
@@ -1142,7 +1311,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -1231,6 +1400,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

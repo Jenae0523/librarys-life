@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -239,22 +408,22 @@
 <p>《The Magdalen Manuscript》，2002年</p>
 <p>作者：朱迪·赛恩（Judi Sion）</p>
 <p>翻译：暮雨</p>
-<h2>本集内容</h2>
-<p>是什么塑造了我？</p>
-<p>・原生家庭</p>
-<p>・透过自然与直觉，建立认知世界的模型</p>
-<p>・质疑权威，信念冲突</p>
-<p>人生轨迹：压抑➟创伤➟事业成功➟母职压力➟情感空洞</p>
-<p>转折：在崩塌中重建自我</p>
-<p>・神秘造访开始</p>
-<p>・从情感崩塌，到内在觉醒</p>
-<p>・召唤与远行：开启精神之旅</p>
-<p>・梦想与现实：单身母亲的生存挑战</p>
-<p>・认知错位：陷入危险关系</p>
-<p>・从受害结构中觉醒</p>
-<p>・重建信任</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：是什么塑造了我？">是什么塑造了我？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：・原生家庭">・原生家庭</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：・透过自然与直觉，建立认知世界的模型">・透过自然与直觉，建立认知世界的模型</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：・质疑权威，信念冲突">・质疑权威，信念冲突</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="2" aria-label="跳转到：人生轨迹：压抑➟创伤➟事业成功➟母职压力➟情感空洞">人生轨迹：压抑➟创伤➟事业成功➟母职压力➟情感空洞</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="2" aria-label="跳转到：转折：在崩塌中重建自我">转折：在崩塌中重建自我</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・神秘造访开始">・神秘造访开始</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="4" aria-label="跳转到：・从情感崩塌，到内在觉醒">・从情感崩塌，到内在觉醒</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="4" aria-label="跳转到：・召唤与远行：开启精神之旅">・召唤与远行：开启精神之旅</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="4" aria-label="跳转到：・梦想与现实：单身母亲的生存挑战">・梦想与现实：单身母亲的生存挑战</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="4" aria-label="跳转到：・认知错位：陷入危险关系">・认知错位：陷入危险关系</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-14" class="article-toc-link" data-target-id="article-section-14" data-toc-level="4" aria-label="跳转到：・从受害结构中觉醒">・从受害结构中觉醒</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-15" class="article-toc-link" data-target-id="article-section-15" data-toc-level="4" aria-label="跳转到：・重建信任">・重建信任</a></p>
 <hr>
-<h2>引言：</h2>
+<h2 id="article-section-2" class="article-heading">引言：</h2>
 <p><strong>爱与被珍视，是无法衡量的。</strong> 没有任何尺子，足够长到能丈量它的重要性；没有任何秤，可以计算出它的分量。</p>
 <p>《一个女人的故事》作为《<a href="https://librarys.life/audiobooks/mary-magdalene/" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank"> 抹大拉手稿  </a>》第三部份，讲述了一个人在混乱、控制与信仰冲突中，逐渐形成自我意识的过程。这不只是关于作者的故事，也是关于所有女性的故事，关于修复两性关系长达千年的对立与失衡。</p>
@@ -264,8 +433,8 @@
 <p>如果你理解“完美中的不完美”，我们确实都得到了—— <strong>我们选择允许自己承受的结果</strong> ——即使这句话听起来，残酷得令人不适。</p>
 <p>只要我们允许，暴力就会发生。</p>
 <p>而当我们把自由看得高于一切时，我们也会选择自由。即使代价是，失去看似一切的东西。</p>
-<h2>是什么塑造了我？</h2>
-<h4>・原生家庭</h4>
+<h2 id="article-section-3" class="article-heading">是什么塑造了我？</h2>
+<h4 id="article-section-4" class="article-heading">・原生家庭</h4>
 <p>我出生在阿巴拉契亚山区（Appalachia）。因为母亲分娩时，身边没有任何人照料，没有温暖的双手接住我，只有冰冷的地板。</p>
 <p>那时，我们住在弗吉尼亚州彭宁顿峡（Pennington Gap）铁轨旁一间简陋的木板屋里。我出生时的名字叫菲利斯·伊丽莎白·锡安（Phyllis Elizabeth Zion），原本拼作 Sion。</p>
 <p>没过几个月，我就被抛入了另一个环境。母亲带着我和哥哥姐姐离开了家，她是在逃离一段充满暴力的婚姻，同时也在追逐她的梦想。她想成为一名乡村歌手。于是，在我大约一个月大的时候，趁父亲外出工作，她把我们全都带上了一辆公交车。我们穿越整个州，来到弗吉尼亚中南部，把我们交给了她的父母，然后她独自离开，去寻找唱歌的机会。</p>
@@ -309,7 +478,7 @@
 <p>“别乱动，”她经常这样对我说，“躺好。”</p>
 <p>夏天是无尽的，被闷热、凝滞的湿气彻底浸透。我一躺就是几个小时，热到无法入睡，也不被允许挪动身体，只有思想可以自由活动。</p>
 <p>冬天，我又被压在一层层旧棉被下面，无法动弹。那些像内战时期遗留下来的厚重棉被压住了我。它们像一种诅咒，把我困住。但即便如此，在弗吉尼亚的深冬，我依然感受到寒意。</p>
-<h4>・透过自然与直觉，建立认知世界的模型</h4>
+<h4 id="article-section-5" class="article-heading">・透过自然与直觉，建立认知世界的模型</h4>
 <p>但我有音乐和舞蹈，还有森林。</p>
 <p>森林教会我赤脚在它的裸露肌肤上起舞，直到我能在林地中旋转、穿行，而不发出任何声音。</p>
 <p>我还有一匹借来的马，一只深爱的圣伯纳犬，名字叫米奇（Micky）；一位坐在梨树上的“老师”，以及住在植物天蓝星（Jack-in-the-Pulpit）里的小伙伴，还有一位在粉红拖鞋兰（Pink Lady Slipper，也是一种植物）里的朋友。</p>
@@ -333,7 +502,7 @@
 <p>我曾经以为自己见过他一次。那是在1号公路（Route 1）上，一辆缓慢行驶的巴士经过我时，他的脸贴在窗边。在那短短一刻，巴士和我们的车速度一致，我们的目光相遇。我们在那一瞬间，连接到了某个神圣的地方。虽然那时，我们可能只有八岁、九岁或十岁左右。</p>
 <p>直到四十年后，我才再次触碰到类似的神圣感，而那是在与一个男人的相遇中。我知道他会弹吉他，会写歌，声音像天使一样。</p>
 <p>我一直相信，如果我听到他的声音，我一定会认出他。</p>
-<h4>・质疑权威，信念冲突</h4>
+<h4 id="article-section-6" class="article-heading">・质疑权威，信念冲突</h4>
 <p>关于是什么塑造了我，我能清楚地回想起那些关键时刻。正是它们，让我开始质疑：那些权威口中的真理，为什么和我看到的现实不一样。</p>
 <p>在我被迫参加的教会里，每到周日，讲道总是在谈爱与不评判。他们说，上帝不在乎你穿什么，只在乎你的内心。可讽刺的是，还没走出教堂，我就常常听见教徒和牧师彼此批评、贬低对方。</p>
 <p>“你能相信她穿成那样来教堂吗？”年幼的我听到这种话时，心里很清楚，那大概已经是那位可怜女人全部的衣物了。那时候，我仿佛能直接看见人的内在：在我眼里，那位老妇人是纯净的；而在他们眼里，只看见衣服。</p>
@@ -359,7 +528,7 @@
 <p>不过，我更倾向于另一个解释。</p>
 <p>大天使梅塔特隆（Metatron）说，这是来自三个不同维度“大师”的一次“启动仪式”（Initiation）。而这种体验，只有在我最终决定，继续留在这个身体里之后，才能给予。</p>
 <p>如果这种说法是对的，那么这个留下来的决定，在此后的很多年里，我都反复质疑过。</p>
-<h2>人生轨迹：压抑➟创伤➟事业成功➟母职压力➟情感空洞</h2>
+<h2 id="article-section-7" class="article-heading">人生轨迹：压抑➟创伤➟事业成功➟母职压力➟情感空洞</h2>
 <p>我想，也许正是因为母亲在我成长的这些年里，从未允许我体验“正常的生活”。所以父亲去世后，我18岁就离开家去上大学了，那时，我几乎是一头扎进了这个世界。</p>
 <p>我开始经历那些，那个“声音”曾告诉我的人生体验。</p>
 <p>我在爱情里跌跌撞撞，像刚学走路的孩子，一次次摔倒又爬起来。我渴望爱，渴望被触碰，渴望激情。这个“爱情新手”总是还能在跌倒后安然无恙。</p>
@@ -466,8 +635,8 @@
 <p>他的回答只有一句：“我已经不觉得你有吸引力了。”说完，他继续低头看书。而我，继续回到自己的角色，阻止孩子们去打扰他。因为他不喜欢听到孩子哭。</p>
 <p>这，就是我每天晚上的生活。</p>
 <p>然而，我的事业却异常成功。我们住在对的城市，开着对的车，一切看起来都“对”。而且，我又重新拥有了东方地毯和古董！孩子们也进入了最好的幼儿园，还参加了天才项目的测试。在北弗吉尼亚，如果你是那种“有身份、有追求”的人，这几乎是标配，哪怕只是为了培养“成功的幼儿”。</p>
-<h2>转折：在崩塌中重建自我</h2>
-<h4>・神秘造访开始</h4>
+<h2 id="article-section-8" class="article-heading">转折：在崩塌中重建自我</h2>
+<h4 id="article-section-9" class="article-heading">・神秘造访开始</h4>
 <p>就在这样的生活里，“造访”开始了。</p>
 <p>有一晚，我睡在自己的床上，突然感觉有人用手指轻轻戳我的手臂。我翻过身，睁开眼，以为是 Jennifer 站在床边找我。但让我震惊的是，那里一个人也没有。可当我低头看向自己的手臂时，皮肤却随着那种“被戳”的节奏起伏，仿佛真的有人在触碰我。</p>
 <p>我环顾房间，在床尾看到一个巨大的发光体，轮廓有点像人形，却没有实体，只有一个闪闪发光、脉动着的存在。</p>
@@ -487,7 +656,7 @@
 <p>编辑是我的朋友，他理解专栏作家的影响力。他对我制造出的争议，感到非常兴奋，还特意把那些仇恨信件刊登了出来。可我始终无法理解，人们怎么会因为一篇写女儿上幼儿园、充满爱与期待的文章而恨我？</p>
 <p>我反复读那篇文章，直到今天，我看到的依然只是感动，而不是仇恨。</p>
 <p>然而下一周报纸出来时，整整两页都是骂我的读者来信。我哭了一整周。再下一周，又出现了完全相反的内容，人们开始赞美我。</p>
-<h4>・从情感崩塌，到内在觉醒</h4>
+<h4 id="article-section-10" class="article-heading">・从情感崩塌，到内在觉醒</h4>
 <p>我再次被推回到那个 <strong>老问题：取悦他人。</strong></p>
 <p>为什么不能所有人都喜欢我？</p>
 <p>有一次我在超市签支票，收银员认出了我的名字，说她很喜欢我的专栏；后面排队的一位女士却说她讨厌我；再后面那位又说她非常喜欢我。我低着头快步离开商店，回家又哭了。</p>
@@ -539,7 +708,7 @@
 <p>回到家后，我再也无法回到从前的状态。我已经改变了。我爱我的丈夫，但他无法爱他自己。而我本该早一点明白，人生最重要的课程之一：</p>
 <p><strong>你无法用足够的爱，去让一个人爱你。如果一个人无法爱自己，他也无法真正爱别人。</strong></p>
 <p>但我没有从第一次婚姻中学会这一点，也同样没能从第二次尝试中学会。相反，我曾无数个夜晚躺在他身旁，泪水顺着脸颊流下，而他毫无察觉。十年之后，我终于明白：我一直在等待感情回温，但他的心早已冻结，也不会再融化。</p>
-<h4>・召唤与远行：开启精神之旅</h4>
+<h4 id="article-section-11" class="article-heading">・召唤与远行：开启精神之旅</h4>
 <p>于是我离开了。那时，我已经成长到一个阶段： <strong>生存，无法取代情感自由与真实性。</strong></p>
 <p>我拒绝让孩子们在一个虚假、充满谎言的环境中长大——那种靠社会契约维系的形式婚姻，那种“爸爸妈妈还在一起，只是为了孩子”的婚姻。如果他就是我的灵魂伴侣，显然他并不这么认为。</p>
 <p>而我正被北方天空中的某座岛屿召唤，也被风中的那位伟大导师呼唤。</p>
@@ -581,7 +750,7 @@
 <p>在那段重生前的处女期，我每天不断重复着一个咒语。在浴缸里、爬山时、去接孩子的路上…… 在那五年里，无处不在。我每天至少要说二十遍。</p>
 <p>“从我存在的主神，到内在的父母之源，我召唤我所有未完成的人生课题，把它们带到我面前；把我所有未曾面对的部分带到我面前；把我的恐惧、嫉妒、不安都带到我面前，让我现在就处理它们。就这样吧！”</p>
 <p>有时候，我会在结尾加上一句：“把所有未完成的课题都带出来，让我得以完成它们，如此我才能准备好迎接我的灵魂伴侣。”</p>
-<h4>・梦想与现实：单身母亲的生存挑战</h4>
+<h4 id="article-section-12" class="article-heading">・梦想与现实：单身母亲的生存挑战</h4>
 <p>那几年，我和两个女儿的关系非常亲密，几乎寸步不离。我们就是彼此全部的世界。</p>
 <p>大多数时间，我们靠每月900美元生活。有一次，我和 Jennifer、Adrianne 坐下来，一起讨论未来该怎么办。我始终在为钱焦虑。我向她们解释：</p>
 <p>我们可以搬回华盛顿特区，那样我可以重新赚很多钱，她们也可以重新穿上曾经拥有的 Bloomingdale’s的衣服。现在，她们的衣服都是从二手店买的。</p>
@@ -622,7 +791,7 @@
 <p>我一直不太理解，命运与因果业力究竟在哪里交汇。如果我们创造自己的现实，那么“宿命”又在其中扮演什么角色？</p>
 <p>也许这一生我都不会真正知道答案。</p>
 <p>我也永远无法理解：一个女人为了不让女儿在没有爱的家庭中长大，选择离开一个男人，后来怎么会卷入接下来发生的一切。</p>
-<h4>・认知错位：陷入危险关系</h4>
+<h4 id="article-section-13" class="article-heading">・认知错位：陷入危险关系</h4>
 <p>我在一次演讲活动中遇到一个男人，他声称自己具有某种非凡的身份，而事实上并不是。但我相信了他，因为我希望他真的是他所说的那种人，因为我希望这个世界真的拥有这样的可能性。我也希望，我自己的人生能拥有那样的可能性。</p>
 <p>他把自己塑造成一位伟大的导师。他会弹吉他，还会唱歌。他告诉我他是美洲原住民，是一位萨满巫医，曾与古老的祖父母学习。他进行仪式，吹长笛，写歌。他随身携带一支神圣的烟斗，并唤起了我潜意识中深藏的意象。</p>
 <p>就这样，我与鹰、熊、蜘蛛、渡鸦、白猫头鹰与黑鱼的时光开始了。我徒步深入森林，每周大约有两晚背着石头进入汗蒸房，一边祈祷一边唱歌。</p>
@@ -657,7 +826,7 @@
 <p>然后我去镇上找房子。一位显然疯了的房产中介，把一栋昂贵的老旧海滨农舍租给了我，那房子坐落在岛上最美的土地上，占地六英亩。</p>
 <p>我当时是一个没有工作、带着两个十几岁孩子的女人。直到今天，我都不知道我是怎么租到那栋农舍的，也不知道当时我哪里来的勇气租下它。</p>
 <p>我们慢慢搬了进去，并请求房东把旧家具留在屋里，不要拖去垃圾场。感谢女神！这至少让我们有了几张床、一个50年代的沙发，还有一张餐桌。</p>
-<h4>・从受害结构中觉醒</h4>
+<h4 id="article-section-14" class="article-heading">・从受害结构中觉醒</h4>
 <p>慢慢地，我从那种令人麻木的羞耻感中抬起头，开始联系老朋友，一个接一个找回他们的电话号码。我很快明白了，他为什么要偷走我的通讯录。</p>
 <p>他给很多人打过电话，说我偷走了他的一切，还让他一无所有。他告诉他们，是我拿走了所有的钱。甚至他还对一些人说我虐待他。而最令人震惊的是——很多人居然相信他！</p>
 <p>他说出了我这辈子听过最惊人的谎言。我差点忘了，他是一个多么彻头彻尾的骗子。毕竟，他欺骗了我好多年。而我几乎对所有人，隐瞒了他多年的虐待行为。</p>
@@ -681,7 +850,7 @@
 <p>只要我们允许，暴力就还会发生。</p>
 <p>而当我们把自由看得高于一切时，我们也会选择自由。即使代价是，失去看似一切的东西。</p>
 <p>他之所以在那时逃走，是因为随着我的怀疑与日俱增，我开始越来越大声地揭穿他的虚伪，哪怕冒着失去一切的风险。我甚至威胁，要让人们知道他的真面目。如果我继续顺从、卑躬屈膝听从他，他仍然会继续控制我的人生。</p>
-<h4>・重建信任</h4>
+<h4 id="article-section-15" class="article-heading">・重建信任</h4>
 <p>最后在逃离恐惧的过程中，我拉拢了一位朋友加入我的行动。</p>
 <p>一位非凡而美好的人，仿佛真的骑着白马从远方飞奔到我身边，在我最崩溃的时刻，帮助我度过了这场危机。</p>
 <p>他把他的“白马”从海外带到美国。他告诉我，无论我做什么，都不可能让他离开；无论我多么努力地把他推开，他都会留在我身边。最终，我向他的坚持屈服，将自己那一头长发从城堡的高墙上放了下来（译注：长发公主的童话故事）。</p>
@@ -1153,7 +1322,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -1242,6 +1411,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

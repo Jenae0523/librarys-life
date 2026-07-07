@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -242,7 +411,10 @@
 <hr>
 <p>有很多人不喜欢在地球，他们很气愤。许多反复在地球轮回的灵魂，他们被困在恶性循环里了。一切的运作是根据你和能量的契合。累积能量，因为要有能量才能突破阻碍。这只是一个能量流动的宇宙定律。一旦能量进入某种模式就必须完成，之后才能转化成其他东西。</p>
 <p></p>
-<h4>有谁在决定这一切吗？</h4>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="4" aria-label="跳转到：有谁在决定这一切吗？">有谁在决定这一切吗？</a></p>
+<hr>
+<h4 id="article-section-1" class="article-heading">有谁在决定这一切吗？</h4>
 <p>朵：好，他们总是説我们可以从教导別人中受益。是谁在做这些决定？你刚刚説错是错在下决定的人身上。</p>
 <p>S：我刚刚只是打比方。</p>
 <p>朵：我在想那上面是否会有人説：「好，是你该回去当指导灵的时候了。」这类的话。</p>
@@ -739,7 +911,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -828,6 +1000,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

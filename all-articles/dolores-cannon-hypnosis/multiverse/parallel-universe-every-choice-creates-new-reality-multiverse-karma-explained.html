@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -239,33 +408,33 @@
 <p>《The Convoluted Universe Book 1》，2001年</p>
 <p>作者：朵洛莉丝·侃南（Dolores Cannon）</p>
 <p>翻译/解读：暮雨</p>
-<h2>本集内容</h2>
-<p>引言：人生的每一个选择，都会在平行宇宙中被同时实现</p>
-<p>平行宇宙是否真实存在？</p>
-<p>・平行宇宙会发生交汇吗？</p>
-<p>・人们是否可能意识到，其他平行宇宙？</p>
-<p>・人有没有可能，穿越平行宇宙？</p>
-<p>・是否存在“另一个你”过着不同人生？</p>
-<p>・人生的每个选择，都会创造一个新宇宙吗？</p>
-<p>・为什么业力如此复杂？平行宇宙与业力的关系</p>
-<p>・为什么你不可能遇见“另一个自己”？解释分身现象</p>
-<p>・平行宇宙的你，性格和职业会完全不同吗？</p>
-<p>・平衡分布：所有选择都在不同宇宙中被实现</p>
-<p>・百慕大三角，是穿越平行宇宙的入口吗？</p>
-<p>・灵界，也是一种平行宇宙吗？两者有什么区别？</p>
-<p>・不同的平行宇宙，是如何共存运作的？</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：引言：人生的每一个选择，都会在平行宇宙中被同时实现">引言：人生的每一个选择，都会在平行宇宙中被同时实现</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：第一集 平行宇宙是否真实存在？">平行宇宙是否真实存在？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：・平行宇宙会发生交汇吗？">・平行宇宙会发生交汇吗？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：・人们是否可能意识到，其他平行宇宙？">・人们是否可能意识到，其他平行宇宙？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：・人有没有可能，穿越平行宇宙？">・人有没有可能，穿越平行宇宙？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・是否存在“另一个你”过着不同人生？">・是否存在“另一个你”过着不同人生？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：・人生的每个选择，都会创造一个新宇宙吗？">・人生的每个选择，都会创造一个新宇宙吗？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・为什么业力如此复杂？平行宇宙与业力的关系">・为什么业力如此复杂？平行宇宙与业力的关系</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="4" aria-label="跳转到：・为什么你不可能遇见“另一个自己”？解释分身现象">・为什么你不可能遇见“另一个自己”？解释分身现象</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="4" aria-label="跳转到：・平行宇宙的你，性格和职业会完全不同吗？">・平行宇宙的你，性格和职业会完全不同吗？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="4" aria-label="跳转到：・平衡分布：所有选择都在不同宇宙中被实现">・平衡分布：所有选择都在不同宇宙中被实现</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="4" aria-label="跳转到：・百慕大三角，是穿越平行宇宙的入口吗？">・百慕大三角，是穿越平行宇宙的入口吗？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-14" class="article-toc-link" data-target-id="article-section-14" data-toc-level="4" aria-label="跳转到：・灵界，也是一种平行宇宙吗？两者有什么区别？">・灵界，也是一种平行宇宙吗？两者有什么区别？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-15" class="article-toc-link" data-target-id="article-section-15" data-toc-level="4" aria-label="跳转到：・不同的平行宇宙，是如何共存运作的？">・不同的平行宇宙，是如何共存运作的？</a></p>
 <hr>
-<h2>引言：人生的每一个选择，都会在平行宇宙中被同时实现</h2>
+<h2 id="article-section-2" class="article-heading">引言：人生的每一个选择，都会在平行宇宙中被同时实现</h2>
 <p>平行宇宙是否真实存在？</p>
 <p>人们是否可能意识到，其他平行宇宙的存在，甚至无意中穿越过去？</p>
 <p>在这个世界之外，是否存在“另一个你”——由于做了完全不同的人生决定，因此过着不一样的人生？</p>
 <p>而你每时每刻都在面临的新决定，会不断地创造出一个个全新的现实吗？</p>
 <p>在这一集里，我们将通过朵洛莉丝·侃南的催眠报告，探索平行宇宙的奥秘：</p>
 <p>从人生选择、性格与职业的多种可能性，平行宇宙与业力的复杂关系，到解释分身、幽灵现象、再到百慕大三角的神秘入口——本文将带你一探究竟，了解平行宇宙是如何运作的，以及你自己的存在可能隐藏着怎样的无限可能性。</p>
-<h2>第一集 平行宇宙是否真实存在？</h2>
+<h2 id="article-section-3" class="article-heading">第一集 平行宇宙是否真实存在？</h2>
 <p>一个叫图因（Tuin）的猎人，在森林中意外猎杀了一种地球上从未存在过的动物，它的长相类似熊和独角兽的结合体。这段转世经历，被朵洛莉丝·侃南记录在《星陨传奇》（<em>The Legend of Starcrash</em>）这本书里。</p>
 <p>在图因去世并进入灵界后，朵洛莉丝详细询问了他的灵魂，有关那只奇怪动物的来历。因为当 <strong>灵魂处于转世之间</strong> 的状态，他能够接触到一种 <strong>生者无法获得的知识</strong>。而灵魂给出的回答和其中涉及的复杂理论，极其新奇而震撼。要知道在20世纪80年代，这些概念几乎是颠覆性的——因为它打破了我们对“自己身处之现实”的惯常认知。</p>
-<h4>・平行宇宙会发生交汇吗？</h4>
+<h4 id="article-section-4" class="article-heading">・平行宇宙会发生交汇吗？</h4>
 <p>D（朵洛莉丝·侃南）：你能否解释那只奇怪动物背后的真正谜团吗？</p>
 <p>B（贝丝，猎人图因的今生）： 那是一次非常罕见的事件。你必须明白， <strong>我们的宇宙并非唯一的宇宙。</strong> 无数个平行宇宙，与我们的宇宙并存。但由于它们的 <strong>振动速度不同</strong> ，这些世界对人类的眼睛来说是不可见的。</p>
 <p>这些 <strong>宇宙彼此之间会发生交汇</strong> ，但大多数情况下，这些 <strong>交汇点并不兼容</strong> 。因此，来自两个不同宇宙的生命，通常不会察觉到交汇点的存在。也许偶尔会有一两个人注意到一些细微变化，但通常不是什么重要的事情。</p>
@@ -291,7 +460,7 @@
 <p>而 <strong>要使两个宇宙之间出现一个兼容的交集</strong> （就像图因经历的那次事件），就必须有一组极其特殊的条件，在这一时刻同时成立。这种情况的发生非常罕见，以至于几乎无法用概率来表示——因为这个数字实在太小了。</p>
 <p>因此，从某种意义上说，那个宇宙仍然与这个宇宙并排存在。但现在它们之间的关系已经不同了，因为在与所有其他宇宙一起经历的漫长岁月中，这个巨大的宇宙整体一直在不断运动和变化。你能理解吗？</p>
 <p style="color: #6281C8;">「暮雨・注」是否宇宙之间的星门，就是这样一种兼容的交汇点。</p>
-<h4>・人们是否可能意识到，其他平行宇宙？</h4>
+<h4 id="article-section-5" class="article-heading">・人们是否可能意识到，其他平行宇宙？</h4>
 <p>D：但你刚才说，这种情况有时确实会发生，只是人们并没有意识到，对吗？</p>
 <p>B：是的。 <strong>这个宇宙一直在与其他宇宙发生交汇。</strong> 问题只在于 <strong>何时、何地</strong> 。</p>
 <p>何时？答案是 <strong>每时每刻</strong> ，这个宇宙总是与至少一个其他宇宙相交，甚至可能是多个宇宙。由于宇宙的数量是无限的，它们又总是彼此交汇。因此完全有可能，有一些交汇点出现在地球上，或在这颗星球附近，从而被人类观测到。</p>
@@ -311,7 +480,7 @@
 <p>D：之后很多年，那只动物的头骨和皮毛，都被部落的智者在仪式中使用，所以它显然是一个真实存在的、物质层面的东西。那么，当类似的事情发生时， <strong>它是不是很少会发生在人们附近？</strong></p>
 <p>B：其实，这类事情确实会发生在人们身边，只是大多数情况下变化都非常细微，以至于绝大多数人根本不会注意到。 <strong>人类往往只看到，自己想看到的东西。</strong>  如果某些事情发生了变化，但他们不想去看，他们就不会看到。或者他们只是太忙了，没有留意。</p>
 <p>D：或者他们会认为，那只是自己想象出来的。</p>
-<h4>・人有没有可能，穿越平行宇宙？</h4>
+<h4 id="article-section-6" class="article-heading">・人有没有可能，穿越平行宇宙？</h4>
 <p>D：那么，人类有没有可能跨越到另一个宇宙？</p>
 <p>B： <strong>这种事情其实一直都在发生。</strong> 很多时候，人们走在街上，可能就已经跨入了另一个宇宙。许多宇宙，尤其是那些与我们这个世界，最接近的那些宇宙——它们在结构上非常相似，几乎完全一样。</p>
 <p>因此，当这些宇宙发生重叠时，人们有时会 <strong>暂时跨入另一个宇宙</strong> ，然后再回来，而不会破坏他们自身的基本矩阵结构。真正罕见的是，那种 <strong>永久性的穿越</strong> ——就像那只被图因猎杀的动物一样。</p>
@@ -327,14 +496,14 @@
 <p>B：有时候他们甚至都没注意到；有时候他们只是察觉到一些东西发生了变化。</p>
 <p>比如，在他们原来的宇宙中原本有一栋建筑。某一天他们走在路上，却发现那里根本没有建筑，而且似乎从来就没存在过。几天后，当他们再次经过那里时，又发现那栋建筑重新出现了。</p>
 <p>通过这种情况，他们可能会意识到，自己曾经 <strong>暂时进入过另一个宇宙</strong> ——在那个宇宙里，那栋建筑从来没有被建造过，而在他们原来的宇宙，它确实存在。</p>
-<h4>・是否存在“另一个你”过着不同人生？</h4>
+<h4 id="article-section-7" class="article-heading">・是否存在“另一个你”过着不同人生？</h4>
 <p>D：如果两个宇宙里都有同样的人，那这些宇宙似乎是完全相同的？</p>
 <p>B：通常来说是的。不过一般会有少数几个细节略有不同。</p>
 <p>D：那这是否意味着， <strong>我们每个人在其他宇宙里，都有一个对应的自己？</strong> 甚至可能不止一个？</p>
 <p>B：是的。在大多数宇宙中，我们都会有一个 <strong>与自己完全相同的对应者</strong> ，而且他们的基本人生经历也会非常相似。 <strong>在某些宇宙中，我们可能没有对应者。</strong> 不过我们很少会遇到这种宇宙。</p>
 <p>但如果真的意外跨入了“没有我们的对应者的宇宙”，那会是一种非常震撼的体验。比如，当你走到一个你认识的人面前。你知道他是谁，也认为他应该认识你。于是你向他打招呼。但对方却用一种困惑的眼神看着你，仿佛在说：“你是谁？我不认识你。我从未见过你。”</p>
 <p>D：那确实会让人非常困惑。</p>
-<h4>・人生的每个选择，都会创造一个新宇宙吗？</h4>
+<h4 id="article-section-8" class="article-heading">・人生的每个选择，都会创造一个新宇宙吗？</h4>
 <p>D：换句话说，这些宇宙并不完全相同。</p>
 <p>B：对，它们从来不会完全相同，总有至少一件事不同。然而， <strong>只要有这一件事情的不同，就足以构成一个不同的宇宙。</strong> 有时候，这种差别可能微小到——海滩上一粒沙子的位置不同，就足以造就一个不同的宇宙。</p>
 <p>而更加复杂的是：<span style="border-bottom: 2px dashed #6281C8;"> <strong>新的宇宙一直在不断诞生</strong> 。因为每一个行动，都可能产生不止一种结果。</span></p>
@@ -370,7 +539,7 @@
 <p>B：是的。</p>
 <p>D：那么，那些不同版本的自己，是不是这个 <strong>物理身体的复制品</strong> ？我只是试着用人类的有限词汇，来理解这一点。（ 我紧张地笑了笑。事情已变得极其复杂，令人不安。）</p>
 <p>B：一开始它确实是完全一样的复制体，但一段时间后，各种不同的变化就会发生。比如，在一个宇宙里，你可能受了点伤；而在这个宇宙里，你没有受伤。这样就会让两个宇宙产生差异。事情确实非常复杂。</p>
-<h4>・为什么业力如此复杂？平行宇宙与业力的关系</h4>
+<h4 id="article-section-9" class="article-heading">・为什么业力如此复杂？平行宇宙与业力的关系</h4>
 <p>B：最困难的是，试图把平行宇宙中不同版本的你，与你的真实自我 ——也就是“你的灵魂”联系起来。这也是为什么 <strong>业力（karma）如此复杂的原因</strong> 之一。</p>
 <p><span style="border-bottom: 2px dashed #6281C8;">因为业力的牵引，你必须 <strong>至少体验一次所有的事情</strong> ，这样 <strong>你的经验才能完整</strong> ，最终达到你最真实、最高层次的自我。</span></p>
 <p>每一世，你几乎是在 <strong>同时经历所有不同的事情</strong> 。但你仍然需要以适当的比例，去经历那些不同的体验，这样你的成长才会完整，成为一个真正完整的人。因此，你必须经历多个生命轮回，多次回到世间。而每一次，你都会存在于多个平行宇宙中。事实就是这样。只是这种语言本身，不足以完全表达这一切。</p>
@@ -389,7 +558,7 @@
 <p>B：理解这些事情是很重要的。</p>
 <p>D：我感觉自己似乎被引导着，要把我接收到的这些信息，传递给很多人。</p>
 <p>B：是的。因此你必须在 <strong>有限的语言范围内，尽可能清晰地理解它</strong> 。这样，当这些信息被传播给其他人时，他们才能获得——清晰的理解，而不是一头雾水。因为这个概念，可能会冲击你们这个宇宙中的宗教机构，它可能引发许多不必要的动荡与混乱。</p>
-<h4>・为什么你不可能遇见“另一个自己”？解释分身现象</h4>
+<h4 id="article-section-10" class="article-heading">・为什么你不可能遇见“另一个自己”？解释分身现象</h4>
 <p>D：想到在另一个平行宇宙，还有一个你的对应体—— 一个真实存在的身体——正在做一些你完全不知道的事情，这听起来确实让人感到困惑。</p>
 <p>B：的确如此。你可能会想，当你穿越到另一个宇宙，与另一群人互动时， <strong>你平常接触的人，难道不会发现你不见了吗？</strong> 然而，当你跨越时，你在那个宇宙的对应体，也同时穿越到了你原本的宇宙，所以你并不会被人发现缺席。</p>
 <p>D：我刚才也在想这个问题。那你有没有可能遇见另一个自己？</p>
@@ -414,7 +583,7 @@
 <p>B：是的。我感觉由于这种语言表达的不足，我可能给你留下了不太准确的印象。而且这些类比，通常也非常不充分。它们往往会在你的头脑中，留下 <strong>过于简化的理解</strong> 。</p>
 <p>D：是的，但有时候这也是唯一能解释事情的方法，即使它并不完全准确。</p>
 <p>B：这倒是真的。</p>
-<h4>・平行宇宙的你，性格和职业会完全不同吗？</h4>
+<h4 id="article-section-11" class="article-heading">・平行宇宙的你，性格和职业会完全不同吗？</h4>
 <p>D：那另一个版本的我，会不会拥有完全不同的性格？</p>
 <p>B：不会。<strong>性格总体上是相同的。</strong></p>
 <p>有时候，因为经历的不同，性格的某些方面，可能会发展得略有不同。但总体来说，性格基本是相同的。因为 <strong>性格，是连接你的物理身体，与你真实自我（灵魂）之间的一种纽带。</strong></p>
@@ -434,7 +603,7 @@
 <p>举例来说，在这个宇宙中，你不满足于只是做家庭主妇，你希望拓展自己，去做让你更有成就感的事情，于是成为了一名作家。</p>
 <p>而在另一个宇宙里，你会有同样的 <strong>基本人格冲动</strong> ——不满足于仅仅做一个家庭主妇。你会想要扩展自己，去尝试做些别的事情。于是你可能选择去做义工。或者在另一个宇宙，你可能投身于手工艺之类的工作。</p>
 <p>又或者，我感受到你对 <strong>灵性和通灵</strong> 感兴趣。那么在另一个宇宙，你可能不是从事写作，而是直接从事与灵性相关的工作，而且你并不会想要去记录或写作，你只是去实践它们。</p>
-<h4>・平衡分布：所有选择都在不同宇宙中被实现</h4>
+<h4 id="article-section-12" class="article-heading">・平衡分布：所有选择都在不同宇宙中被实现</h4>
 <p>D：那么，当我想到这些不同的选择时，它们就会在其他平行宇宙，变成现实吗？</p>
 <p>B：是的，如果它们还未在其他宇宙中，成为现实的话。</p>
 <p>D：嗯……这听起来会变得非常复杂。</p>
@@ -452,7 +621,7 @@
 <p>因此，那些平行宇宙会沿着不同的方向发展，因为“另一些版本的你”做了不同的决定。结果就是：对应的家庭结构也会发生变化。所以， <strong>确实存在一些“你”，拥有完全不同的家庭、不同的祖先等等</strong> ，这一切都是由不同选择，所带来的结果。</p>
 <p>D：那如果你“穿越”到了一个拥有不同丈夫和家庭的平行宇宙，那一定会非常混乱吧。</p>
 <p>B：是的，确实会很混乱。不过这种情况并不常发生。因为那种宇宙差异太大，你很难成功“跨越”过去。通常来说，最容易发生“ <strong>无意识穿越</strong> ”的，是那些与你当前现实非常相似、几乎一模一样的平行宇宙。</p>
-<h4>・百慕大三角，是穿越平行宇宙的入口吗？</h4>
+<h4 id="article-section-13" class="article-heading">・百慕大三角，是穿越平行宇宙的入口吗？</h4>
 <p>D：差异太大的平行宇宙，很难穿越——是不是和 <strong>振动频率</strong> 有关？</p>
 <p>B：是的， <strong>互补的振动、互补的能量</strong> 。</p>
 <p><span style="border-bottom: 2px dashed #6281C8;">当一个宇宙在过去，做出了与另一个平行宇宙 <strong>相似的选择</strong> 时，它们之间的 <strong>振动就会更加接近</strong> 。</span></p>
@@ -475,7 +644,7 @@
 <p>这也可以解释你们记载的一些现象：比如有人走过一片田野时突然凭空消失。那是因为他们的 <strong>对应体刚刚跨越到这个宇宙</strong> ，而他们自己必须“去往某个地方”填补真空。当他们凭空消失时，通常意味着——他们要么跨越到了另一个宇宙，要么他们的矩阵结构已经解体。</p>
 <p>D：但这只是 <strong>物理身体的解体</strong> ，对吗？灵魂是不会受到任何伤害的，对吗？</p>
 <p>B：是的，是的。这只是 <strong>物理身体</strong> 而已。</p>
-<h4>・灵界，也是一种平行宇宙吗？两者有什么区别？</h4>
+<h4 id="article-section-14" class="article-heading">・灵界，也是一种平行宇宙吗？两者有什么区别？</h4>
 <p>D：精神层面<span style="color: #6281C8;">（ 指“灵界”）</span>，是不是也被看作平行宇宙中的一种？</p>
 <p>B：在 <strong>物质层面存在着，无限多个平行宇宙</strong> 。但在 <strong>精神层面，基本上只有一个宇宙</strong> 。在那里，我们可以与一切万有互动。</p>
 <p>在物质层面上，有些人通过在不同的平行宇宙中，经历着 <strong>多个不同的平行人生</strong> 来完成自己的 <strong>业力</strong> 。特别是当他们希望解决某一个业力的特定细节时。他们在这些不同的平行宇宙中，做出的各种决定，会以一种彼此平衡的方式发展，从而帮助他们化解业力。</p>
@@ -504,7 +673,7 @@
 <p>B：是的。然后他们就突然消失了。</p>
 <p>D：那这是不是属于同一类现象呢？</p>
 <p>B：是的。</p>
-<h4>・不同的平行宇宙，是如何共存运作的？</h4>
+<h4 id="article-section-15" class="article-heading">・不同的平行宇宙，是如何共存运作的？</h4>
 <p>当贝丝醒来，她唯一记得的只是一个奇怪的心理画面。她想在这个画面消失之前，告诉我。</p>
 <p>B：想象一下 <strong>电子原子模型图</strong> （Picture electronic models of the atom） ，上面画着不同的 <strong>电子层</strong> （electron shells），以及电子在各个方向上“呼呼呼”地绕着原子旋转的轨道。</p>
 <p>现在想象一下：这些电子轨道，不再是图中画的那种细细的电子线条，而是 <strong>银色的纽带</strong> 。而且是在非常微小的电子层面上，这些银色的能量带大约四分之一英寸宽。整个画面的直径大约六英寸左右。（她用手势比划着大小。）</p>
@@ -990,7 +1159,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -1079,6 +1248,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

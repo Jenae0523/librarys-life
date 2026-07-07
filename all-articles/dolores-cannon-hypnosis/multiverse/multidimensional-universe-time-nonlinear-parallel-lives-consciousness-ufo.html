@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -239,28 +408,28 @@
 <p>《The Convoluted Universe Book 1》，2001年</p>
 <p>作者：朵洛莉丝·侃南（Dolores Cannon）</p>
 <p>翻译/解读：暮雨</p>
-<h2>本集内容</h2>
-<p>第二集  感知不同的维度</p>
-<p>・为什么你感觉不完整？你只是“完整的你”的一个点</p>
-<p>・不同的维度 │ UFO来自哪里？为什么找不到外星文明？</p>
-<p>・时间：不是单一维度，它其实包含多个维度</p>
-<p>・什么是同时性？时间是一个闭环结构，并非线性流动</p>
-<p>・时间的本质：所有事物是同时存在，而非同时发生</p>
-<p>・如果一切同时存在，如何解释“从婴儿到成年人的变化”？</p>
-<p>・平行人生的本质：意识聚焦于不同的“存在点”</p>
-<p>・催眠的机制：转移意识焦点，读取“平行人生”</p>
-<p>・潜意识、灵魂与精神：它们其实是同一件事</p>
-<p>・如何感知其他维度？情绪是调节器，可以改变“感知带宽”</p>
-<p>・穿越的可能性：费城实验，打开了穿越维度的“窗口”</p>
-<p>・区分“窗口”与“通道”的不同 │ 外星人如何实现远距离移动？</p>
-<p>・金星，是否存在生命？光谱之外的隐藏世界</p>
-<p>・科学开始触碰“神学问题”：大爆炸之前发生了什么？</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：第二集  感知不同的维度">第二集  感知不同的维度</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：・为什么你感觉不完整？你只是“完整的你”的一个点">・为什么你感觉不完整？你只是“完整的你”的一个点</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：・不同的维度 │ UFO来自哪里？为什么找不到外星文明？">・不同的维度 │ UFO来自哪里？为什么找不到外星文明？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：・时间：不是单一维度，它其实包含多个维度">・时间：不是单一维度，它其实包含多个维度</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・什么是同时性？时间是一个闭环结构，并非线性流动">・什么是同时性？时间是一个闭环结构，并非线性流动</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：・时间的本质：所有事物是同时存在，而非同时发生">・时间的本质：所有事物是同时存在，而非同时发生</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・如果一切同时存在，如何解释“从婴儿到成年人的变化”？">・如果一切同时存在，如何解释“从婴儿到成年人的变化”？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="4" aria-label="跳转到：・平行人生的本质：意识聚焦于不同的“存在点”">・平行人生的本质：意识聚焦于不同的“存在点”</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="4" aria-label="跳转到：・催眠的机制：转移意识焦点，读取“平行人生”">・催眠的机制：转移意识焦点，读取“平行人生”</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="4" aria-label="跳转到：・潜意识、灵魂与精神：它们其实是同一件事">・潜意识、灵魂与精神：它们其实是同一件事</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="4" aria-label="跳转到：・如何感知其他维度？情绪是调节器，可以改变“感知带宽”">・如何感知其他维度？情绪是调节器，可以改变“感知带宽”</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-14" class="article-toc-link" data-target-id="article-section-14" data-toc-level="4" aria-label="跳转到：・穿越的可能性：费城实验，打开了穿越维度的“窗口”">・穿越的可能性：费城实验，打开了穿越维度的“窗口”</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-15" class="article-toc-link" data-target-id="article-section-15" data-toc-level="4" aria-label="跳转到：・区分“窗口”与“通道”的不同 │ 外星人如何实现远距离移动？">・区分“窗口”与“通道”的不同 │ 外星人如何实现远距离移动？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-16" class="article-toc-link" data-target-id="article-section-16" data-toc-level="4" aria-label="跳转到：・金星，是否存在生命？光谱之外的隐藏世界">・金星，是否存在生命？光谱之外的隐藏世界</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-17" class="article-toc-link" data-target-id="article-section-17" data-toc-level="4" aria-label="跳转到：・科学开始触碰“神学问题”：大爆炸之前发生了什么？">・科学开始触碰“神学问题”：大爆炸之前发生了什么？</a></p>
 <hr>
-<h2>引言：</h2>
+<h2 id="article-section-2" class="article-heading">引言：</h2>
 <p>“由于你的大脑和神经系统的运作，你相信你对世界的感官经验是现实的全部，但事实并非如此。你生活在一个比你想象的更广阔、更复杂、更神秘、更奇怪的宇宙中。如果能把你们的 <strong>智力感知</strong> 向前倾斜一点点，你们就会步入更大的自由—— <strong>创造新现实的自由。</strong> ”《<a href="https://librarys.life/audiobooks/the-arcturian-anthology/" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank">大角星人文摘</a>》</p>
-<h2>第二集  感知不同的维度</h2>
-<h4>・为什么你感觉不完整？你只是“完整的你”的一个点</h4>
+<h2 id="article-section-3" class="article-heading">第二集  感知不同的维度</h2>
+<h4 id="article-section-4" class="article-heading">・为什么你感觉不完整？你只是“完整的你”的一个点</h4>
 <p>D（朵洛莉丝·侃南）：如果我们每个人，同时生活在不同的存在层面，这是所谓的“平行人生”吗？</p>
 <p style="color:#6281C8;">
   📄相关文章：
@@ -277,7 +446,7 @@
 <p>P：在这个特定层面，会发生一些只属于这个维度的体验， <strong>这个层面的你</strong> 会体验这些经历。然而，从整体来看，这些 <strong>经验</strong> 会在一个更深的层次上 <strong>被共享</strong> ——既包括种族层面，也包括更深的宇宙层面。</p>
 <p>事实上，<span style="border-bottom: 2px dashed #6281C8;">即使是现在，你在其他星球以及宇宙其他区域的经历，也正被 <strong>你更深层的自我</strong> 所共享——那个处于“更高层次”上的你。</span></p>
 <p><strong>你们每一个人，都终将经历一种转变。</strong> 当那一刻到来时，你会发现——在其他存在层面，还有一些“存有”也经历过类似的转变。他们将能够给予你鼓励与能量，从而在你所需要进行的各种探索与行动中，给予你支持。</p>
-<h4>・不同的维度 │ UFO来自哪里？为什么找不到外星文明？</h4>
+<h4 id="article-section-5" class="article-heading">・不同的维度 │ UFO来自哪里？为什么找不到外星文明？</h4>
 <p>1986年的一次会谈中，当贝丝在“灵界图书馆”中访问时，又有更多信息被揭示出来。</p>
 <p>D：有一次我问你关于不明飞行物（UFO）和宇宙飞船的问题。</p>
 <p>当时你似乎对我有些不耐烦，因为我无法理解“维度”的概念。你说这些飞船来自许多不同的维度，还说我在这个问题上相当无知。你能再给我解释一下吗？</p>
@@ -304,7 +473,7 @@
 <p>B：它们确实来自物理空间，但并不是你们所理解的那种物理空间。它们通过改变自己对现实的感知，使其与你们的感知一致，从而出现在你们的空间中。</p>
 <p>它们能获得 <strong>惊人的速度用于时空旅行</strong> ，其中一个方法是：<span style="border-bottom: 2px dashed #6281C8;">它们通过同时感知两个宇宙，从而能够“压缩”两个点之间的距离。</span> 我知道这听起来很令人困惑，但在你们的语言体系中，这已经是最接近的表达了。</p>
 <p>当我在这个“灵界图书馆”中看到关于这些概念的“视觉影像”时，发现其中涉及的原理，非常优雅简洁——就像其他宇宙法则一样。但一旦我试图用语言去解释它们，这些概念听起来就会比实际的复杂得多。因为我不仅要描述“它是什么”，还要同时说明“它不是什么”，这样才能在你的脑海中建立一个尽可能准确的画面。</p>
-<h4>・时间：不是单一维度，它其实包含多个维度</h4>
+<h4 id="article-section-6" class="article-heading">・时间：不是单一维度，它其实包含多个维度</h4>
 <p>D：我明白了。但那些研究人员认为，不明飞行物是来自不同的星球。我不确定他们是否能理解这种概念。</p>
 <p>B：他们需要先把“ <strong>不同维度</strong> ”的概念彻底弄清楚。</p>
 <p>我刚才只是使用了你们现在所理解的“四个维度”。你们通过视觉所感知的三维空间，是你们五种感官所能感知的一切。对于其他维度，你们的大脑和语言中，根本没有相应的概念来描述。因此我也没有为它们命名。</p>
@@ -323,7 +492,7 @@
 <p>B：确实，甚至可以持续好几次会谈，录下很多盘磁带。</p>
 <p>D：最重要的是我可以把它写下来，让那些能看懂的人去理解，即使我自己不能完全明白。</p>
 <p>B：那些受过更高等教育的人，反而可能更难理解，因为 <strong>他们的观念往往更加固化。</strong></p>
-<h4>・什么是同时性？时间是一个闭环结构，并非线性流动</h4>
+<h4 id="article-section-7" class="article-heading">・什么是同时性？时间是一个闭环结构，并非线性流动</h4>
 <p>以下信息来自1996年，在好莱坞与Phil的一次会谈。</p>
 <p>P：你是一名记录者，现在也有一些存有愿意协助这项工作。你可以问任何你想知道的问题。</p>
 <p>D：我希望在场的，是那些能够用类比来提供信息的存有，这样就能让普通人更容易理解。</p>
@@ -345,14 +514,14 @@
 <p>D：因为我们觉得它是 <strong>按线性方式</strong> 前进的。</p>
 <p>P：没错。 <strong>这种感知仅仅来自于一种视角，而非来自现实。</strong></p>
 <p>我们发现，<span style="border-bottom: 2px dashed #6281C8;">你们这一平面上很多人，都试图以自己的视角去定义现实。而实际上， <strong>存在更广阔的现实</strong> ，只是因为人们 <strong>拒绝改变视角</strong> 而无法察觉。对于那些无法改变视角的人来说，这确实是不可能的。</span></p>
-<h4>・时间的本质：所有事物是同时存在，而非同时发生</h4>
+<h4 id="article-section-8" class="article-heading">・时间的本质：所有事物是同时存在，而非同时发生</h4>
 <p>D：我认为，我们在尝试理解“同时性时间”时遇到一个难题：我们习惯把时间看作以线性方式发展，而实际上，一切都是同时发生的。这就是我们对“同时性”的定义。</p>
 <p>P：这个概念并不完全准确。</p>
 <p><span style="border-bottom: 2px dashed #6281C8;">你们对 <strong>“发生”这一概念的定义</strong> ，本身就不足以理解 <strong>“存在”的真正本质</strong> 。当我们说“发生”时，实际上就是在做定义。“发生”意味着“此刻”，而“存在”是不确定的、它未被限定。</span></p>
 <p><span style="border-bottom: 2px dashed #6281C8;">对“发生”的感知本身带有一定的局限性，因为按照定义，“发生”必须有起点和终点。“发生”意味着某个事件的开始和结束。</span></p>
 <p><span style="border-bottom: 2px dashed #6281C8;">因此，我们建议你们 <strong>舍弃这两个界限，只需意识到“存在”本身。</strong></span></p>
 <p><span style="border-bottom: 2px dashed #6281C8;">所以，所有事物都是同时存在的，而不是同时发生。</span></p>
-<h4>・如果一切同时存在，如何解释“从婴儿到成年人的变化”？</h4>
+<h4 id="article-section-9" class="article-heading">・如果一切同时存在，如何解释“从婴儿到成年人的变化”？</h4>
 <p>D：我在理解这个概念时有一个困难。在我们所感知的现实中，一个人是从婴儿成长为儿童，再到成年人。这是一个线性过程。如果这一切都是同时存在的，那这种 <strong>成长过程该如何解释呢？</strong></p>
 <p>P：在你的一生中，实际上存在着许多不同的情境，而你却只以一种单一的方式，去有意识地感知它们。在这里，我们再次引用之前说过的：你们的心智运作方式，与普遍的“宇宙现实”有所不同，是经过某种调整的。</p>
 <p><strong>你们的心智过程</strong> 本身就在定义你所感知的一切。<span style="border-bottom: 2px dashed #6281C8;">它在任何一个时刻，只允许你接触到——现实中极其有限的一部分。</span> <span style="color: #6281C8;">（暮雨注：人类的心智系统，就像一个过滤器，自动屏蔽整体结构中的大部分现实，只允许很小一部分被感知到。）</span></p>
@@ -367,7 +536,7 @@
 <p>P：像“正在发生”、“开始与结束”这样的词，本身就带有定义和限制性， <strong>它们会让你以那种方式去思考</strong> 。我们会 <strong>建议你使用不同的词</strong> ，比如“存在”，因为这个词 <strong>不限定</strong> 开始或结束，它只是表达现实的存在状态。</p>
 <p>现实是存在的。它没有开始，也没有结束。你所谓的“同时性时间”，其实只是试图用一种二维的方式去理解整体图景，这自然会让人困惑。实际上，这种概念确实存在，但并不是以你目前所理解的方式存在。</p>
 <p>D：我们只能使用我们的大脑在英语语言中，能够理解的那些术语。</p>
-<h4>・平行人生的本质：意识聚焦于不同的“存在点”</h4>
+<h4 id="article-section-10" class="article-heading">・平行人生的本质：意识聚焦于不同的“存在点”</h4>
 <p>D：好吧，那我们换个话题。我想理解“平行人生”的概念，还有“平行宇宙”。也许这两者完全不同，不过我们先从平行人生说起。据说这些是我们在“同一时间”正在经历的不同人生。而这里又涉及到“时间”的概念。但它们又处在不  同的时间段，甚至可能彼此重叠。</p>
 <p>P：这确实是一个类似的概念。所谓的“平行时间”和“平行宇宙”，实际上正是我们之前所说的那种“同时存在的时间与宇宙”。这只是一个把 <strong>“意识”聚焦在</strong> “你所有经验总和”中的 <strong>某一个特定部分</strong> 的问题。</p>
 <p>我们再次借用“圆盘”的比喻：在一个圆盘上 <strong>任何一个点，即你的意识焦点</strong> ，都可以被定义为起点或终点。但它本身的性质，并不会决定它是开始还是结束，它只是“在那里”。</p>
@@ -377,7 +546,7 @@
 <p>P：你的现实——也就是你个人的现实——可以被定义为一个圆。你在清醒意识状态下，只能理解 <strong>你的心智能够感知到</strong> 的那个点或片段。作为人类，你的意识只能感知到“正处在你面前”的那部分。</p>
 <p>这并不是说你真的看不到更远的东西，而是我们用这个比喻来说明整体图景：<span style="border-bottom: 2px dashed #6281C8;">你的一切——你所是的、你曾经是的、以及你将成为的——都在这个圆上。</span>但你所感知到的，只是小到足以被你的意识所接收的那一部分。</p>
 <p>在更高层面的状态中，你其实是知道你整个存在的经验总和。然而，在你当前这个层面上的清醒意识，只能处理最直接、最当下的那一小部分。</p>
-<h4>・催眠的机制：转移意识焦点，读取“平行人生”</h4>
+<h4 id="article-section-11" class="article-heading">・催眠的机制：转移意识焦点，读取“平行人生”</h4>
 <p>D：我刚刚有个想法。当我在做 <strong>催眠</strong> ，把一个人带到“其他人生”时，这是不是一种 <strong>改变意识焦点的方式</strong> ？就像切换电视频道一样？</p>
 <p>P：完全正确。那确实是同一个人或同一种能量。意识只是在这个“圆盘”上移动。圆盘，即你的完整自我，它本身就是存在的，它没有开始，也没有结束，它只是存在。</p>
 <p>你所做的，仅仅是把你的焦点或视角，从这个存在的一个部分转移到另一个部分。存在本身没有任何中断。它是连续的，并且在两个方向上都是无限的。</p>
@@ -388,7 +557,7 @@
 <p>我们需要补充说明一点：正如你提到的，<span style="border-bottom: 2px dashed #6281C8;">在一些 <strong>精神异常</strong> 或 <strong>心理疾病</strong> 的情况下，如果感知本身是扭曲的，那么当意识移动到圆上的其他部分时，这种扭曲也会一同带过去，从而 <strong>导致对信息的错误感知</strong> 。</span></p>
 <p>我们这里的讨论是基于一个前提：现实以其本来的样子被真实呈现，而不是通过一种被扭曲的、错误印象的 <strong>滤镜</strong> 来看待。因为后者确实可能发生。</p>
 <p>因此，这个“镜头”——也就是意识焦点—— <strong>必须是清晰且不扭曲的</strong> ，这样来自这个圆上不同位置的信息，才能被正确地呈现并 <strong>被准确地感知。</strong></p>
-<h4>・潜意识、灵魂与精神：它们其实是同一件事</h4>
+<h4 id="article-section-12" class="article-heading">・潜意识、灵魂与精神：它们其实是同一件事</h4>
 <p>D：那听起来，我们对潜意识的理解是错误的。那么， <strong>潜意识更接近于“灵魂”还是“精神（灵性）”？</strong></p>
 <p>P：实际上，它们之间没有区别。灵魂与精神是相同的。</p>
 <p>所谓潜意识，在你的定义中，只不过是这个灵魂的“智能”或“意识”。换句话说，在你的概念里，你把“灵魂的意识”称为“潜意识”。但事实是：你的灵魂就是你的意识。</p>
@@ -400,7 +569,7 @@
 <p>D：很多时候，当我直接与潜意识沟通，并询问它关于身体的信息时，它似乎非常客观、抽离。</p>
 <p>P：<span style="border-bottom: 2px dashed #6281C8;">生活在你所处的环境中，情绪层面的体验，要求必须有某种“接口”，以便你能够在 <strong>围绕着你的各种现实流动中</strong> 正常运作。这些情绪，使你能够 <strong>接收</strong> 来自周围正在发生的一切信息，并将其 <strong>整合</strong> 进你灵魂的存在之中。它们的作用，是把你周围的各种存在状态， <strong>转译成</strong> 一种能够被你的意识 <strong>所感知和理解</strong> 的形式。</span></p>
 <p>D：我觉得这样理解起来稍微容易一些。</p>
-<h4>・如何感知其他维度？情绪是调节器，可以改变“感知带宽”</h4>
+<h4 id="article-section-13" class="article-heading">・如何感知其他维度？情绪是调节器，可以改变“感知带宽”</h4>
 <p>D：还有一个类似的问题。你能不能描述或定义一下，那些与我们非常接近、但我们却看不见的其他维度？</p>
 <p>P：在你所定义的现实领域周围，存在着许多维度。我们会建议你，选择那些你认为最相关的维度，并用你能够理解的方式去定义它们。确实存在许多维度，有些在你的感知范围之上，有些在之下。但这并不意味着某一个维度比另一个更高级或更低级。</p>
 <p>D：有人说，有很多维度其实离我们非常近，但我们看不见它们，而且它们和我们的世界非常相似。这种说法合理吗？</p>
@@ -438,7 +607,7 @@
 <p>D：他们会意识到发生了什么异常情况吗？</p>
 <p>P：也许会，也许不会。<span style="border-bottom: 2px dashed #6281C8;">不同维度之间只存在细微的差异。而随着维度逐渐递进，这些差异才会变得更加明显。</span></p>
 <p>因此，如果是跨越了多个维度的存在，且他们能够理解自己所看到的内容，那么他们可能会意识到确实发生了某种异常的情况。然而，由于相邻维度之间的差异非常微小，每一个维度与下一个维度之间只是略有不同，所以这个人一般不会意识到自己已经进入了另一个维度。</p>
-<h4>・穿越的可能性：费城实验，打开了穿越维度的“窗口”</h4>
+<h4 id="article-section-14" class="article-heading">・穿越的可能性：费城实验，打开了穿越维度的“窗口”</h4>
 <p>D： <strong>在这些维度之间来回移动，是可能的吗？</strong></p>
 <p>P：是的。</p>
 <p>D：我们听说有时候会存在一些“窗口”，可以让人从一个维度进入另一个维度变得更容易。这是真的吗？</p>
@@ -460,7 +629,7 @@
 <p>P：我们指的是“物质层面”的部分。有一些情况是，人的物质身体在灵魂仍然完整的情况下，被完全传送到了另一个维度。</p>
 <p>D：你的意思是，身体被困在另一个维度，无法返回？</p>
 <p>P：是的。你的理解是正确的。而且确实存在不同维度之间发生重叠的情况。不过，以你们当前的技术水平，还无法在你们这个层面上，实现这种操作的常规化应用。</p>
-<h4>・区分“窗口”与“通道”的不同 │ 外星人如何实现远距离移动？</h4>
+<h4 id="article-section-15" class="article-heading">・区分“窗口”与“通道”的不同 │ 外星人如何实现远距离移动？</h4>
 <p>P：事实上，这正是你们所称为“外星人”的存在，能够跨越巨大距离的一种方式。他们只是通过在不同维度之间穿行，并找到那些自然存在的“通道”。</p>
 <p>在这里，我们希望明确区分“窗口（window）”与“通道（portal）”之间的不同。</p>
 <p>D：是的，我想了解它们之间的区别。</p>
@@ -476,7 +645,7 @@
 <p>D：所以他们是在这个物质现实层面，而不是来自另一个维度。他们只是找到了这些“门”，可以更快地来回移动。</p>
 <p>P：是的。</p>
 <p style="color: #6281C8;">「暮雨・注」总结一下：外星人在宇宙中穿行，需要使用的两种方式：一种是通过调谐感知，穿越不同的维度；另一种是在同一个维度中寻找“通道”，实现远距离移动。</p>
-<h4>・金星，是否存在生命？光谱之外的隐藏世界</h4>
+<h4 id="article-section-16" class="article-heading">・金星，是否存在生命？光谱之外的隐藏世界</h4>
 <p>D：这一切对我来说有点困惑，但我刚刚有了一个想法。以金星为例，在我们的这个维度中，看起来那里似乎没有生命。那么有没有可能，在某个“替代现实”或不同维度中，金星其实存在着生命？</p>
 <p>P：<span style="border-bottom: 2px dashed #6281C8;">在你们当前所体验的这个现实层面，金星确实不存在生命。然而，在更高维度中，许多行星实际上存在着各种生命形式，只不过它们处于不同的表达层级。</span></p>
 <p>也就是说，在你们这个层面所呈现出来的状态，并不能体现或表达出你们所称为“生命”的本质。在较低层级的表现中，你们看到的只是气体和岩石。</p>
@@ -502,7 +671,7 @@
 <p style="color: #6281C8;">过冷水（Supercooled Water，低于0°C仍保持液态，受扰动会迅速结冰）
 <p style="color: #6281C8;">过热水（Superheated Water，高于100°C但未沸腾）
 <p style="color: #6281C8;">玻璃态水（Amorphous Ice，一种无晶体结构的固态，常见于太空环境）</p>
-<h4>・科学开始触碰“神学问题”：大爆炸之前发生了什么？</h4>
+<h4 id="article-section-17" class="article-heading">・科学开始触碰“神学问题”：大爆炸之前发生了什么？</h4>
 <p>一个围绕着“ <strong>量子宇宙学</strong> ”的显著共识正在逐渐形成。科学家们相信，将“量子理论”与“爱因斯坦的相对论”结合起来，可能有助于解决这些棘手的“神学问题”—— 一个既吸引人又令人震惊的新图景正在浮现，它甚至可能整合一些伟大的创世神话。</p>
 <hr>
 <p>下面是发表于伦敦《每日电讯报》The Daily Telegraph 的文章 —— 1995年10月11日</p>
@@ -1001,7 +1170,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -1090,6 +1259,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

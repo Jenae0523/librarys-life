@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -236,25 +405,37 @@
                 <!-- 正文内容 -->			
 <div class="article-body g-color-black" style="line-height: 2.5; font-size: 16px;">
   <p style="font-size:15px; color: gray;">对你获取的信息，保持善意的怀疑和独立思考是明智的。</p><hr class="g-brd-gray-light-v4 g-pt-20">
-<h2>引言：</h2>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="2" aria-label="跳转到：引言：">引言：</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：三大幻相：从灵魂成长视角看原生家庭">三大幻相：从灵魂成长视角看原生家庭</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：（1）丧失控制权">（1）丧失控制权</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：（2）丧失一体性">（2）丧失一体性</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：（3）缺乏爱">（3）缺乏爱</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：婴儿时期的灵魂冲突">婴儿时期的灵魂冲突</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="2" aria-label="跳转到：从顺从到遗忘：孩子如何误解“爱”？">从顺从到遗忘：孩子如何误解“爱”？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="2" aria-label="跳转到：父母的匮乏感，如何投射到孩子身上？">父母的匮乏感，如何投射到孩子身上？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="2" aria-label="跳转到：青春期的转变：自我意识开始苏醒">青春期的转变：自我意识开始苏醒</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="2" aria-label="跳转到：结语：">结语：</a></p>
+<hr>
+<h2 id="article-section-1" class="article-heading">引言：</h2>
 <p>你是否常常感觉，父母的存在方式，他们对生活的基本观点、他们对待自己的方式、以及对你寄托的期望，仿佛织成一张无形的网，将你困在其中？在孩童时期，我们透过原生家庭，接触到由父母编织的能量网。这些能量中往往夹杂着限制和恐惧。而它们在父母身上如何体现，将会深远地影响孩子的一生。</p>
 <p>如果你想要理解并修复原生家庭带来的创伤，挣脱那些从小困住你的心理模式，停止反复上演被灌输的情感剧本——那么本集将帮助你深入理解：</p>
 <p>如何辨识并走出原生家庭编织的三大“情感幻相”；为什么你总是在关系中感到压抑、愧疚或自我怀疑？为什么你总是过度努力、渴望证明自己的价值？这些情绪反应与信念系统，是如何在你的成长过程中塑造起来的？</p>
-<h2>三大幻相：从灵魂成长视角看原生家庭</h2>
+<h2 id="article-section-2" class="article-heading">三大幻相：从灵魂成长视角看原生家庭</h2>
 <p>接下来，我想先从灵魂成长的角度，谈谈每一个人在地球都将经历的旅程。</p>
 <p>来到地球之后，我们就进入了一个由“小我意识”主导的世界，而父母正是我们接触这种意识的最初媒介。当你来到这个家庭，进入父母构建的世界观时，随之而来的，是三大幻相的挑战：</p>
-<h4>（1）丧失控制权</h4>
+<h4 id="article-section-3" class="article-heading">（1）丧失控制权</h4>
 <p>这种幻相会使你忘记——自己才是生命中一切事件的创造者。大多数人直到成年后，仍认为有一个更高力量（不论是神，还是掌握权力的人或组织），在塑造或操控你的命运，这种信念导致你认为自己是“受害者”。这种情况就是丧失了控制权。</p>
-<h4>（2）丧失一体性</h4>
+<h4 id="article-section-4" class="article-heading">（2）丧失一体性</h4>
 <p>随着对父母意识的认同，我们渐渐忘却了自己与源头、与万物合一的感觉。对「与万物合一」的根本了解被慢慢地从意识中过滤掉了。从小你就被鼓励去建构小我，而根据小我意识的理解，我们在本质上是彼此分离的生命个体，要为自身的存在，为食物和认同感而抗争。我们似乎被局限在肉体里，被囚禁在自己的心理世界中，不能与别人真实而开放地交往。伴随其中的，就是分离的假像和可悲的孤独。</p>
-<h4>（3）缺乏爱</h4>
+<h4 id="article-section-5" class="article-heading">（3）缺乏爱</h4>
 <p>爱本是内在的自然状态——一种无条件的喜悦与平安。然而，当你进入地球后，爱的能量不再那么明显，我们开始混淆了爱和不是爱的各种能量，例如你可能把名声、财富或情感上的依赖与爱等同。这些被混淆的观念影响着你的人际关系，使你不断从外界寻找某些东西，来重新获得无条件的爱的感觉。但实际上，爱却一直蕴藏在你的内心深处。</p>
 <p>以上三大幻相，带来的匮乏感对我们的影响，取决于父母及家庭环境的能量场。一般来说，父母的意识实际上是小我与心灵的混合物，融合了恐惧与光。他们在某些方面可能被上面提到的幻相所羁绊，但在其它方面，也可能已经超越了幻相。例如，他们或许透过体验痛苦和内在的成长，已经打开了自己的心。总之，每个父母或家庭都有他们受困于小我意识幻相的特定方式。</p>
-<h2>婴儿时期的灵魂冲突</h2>
+<h2 id="article-section-6" class="article-heading">婴儿时期的灵魂冲突</h2>
 <p>刚出生时，我们的意识是开放的，没有明确的个人界限。因此，婴儿时期的你不懂得筛选父母的能量，完全地接收它。</p>
 <p>但婴儿的灵魂记忆仍然残留一丝“天堂”的印象，这种纯净的意识与他周围的小我能量发生了冲突，使孩子感到极度痛苦，想要转身「回家」，有些婴儿甚至从一开始就对生命产生严重抗拒。</p>
 <p>小孩子怎样处理这些能量冲突呢？一般的情况是，为了生存，孩子会本能地切断自己的一部分能量，隐藏一部分意识，选择顺从以适应父母的能量。因为身体柔弱，他们必须完全依赖父母，并强烈渴望父母的照顾和关爱。</p>
-<h2>从顺从到遗忘：孩子如何误解“爱”？</h2>
+<h2 id="article-section-7" class="article-heading">从顺从到遗忘：孩子如何误解“爱”？</h2>
 <p>随着年龄增长，大多数孩子会彻底适应父母的观念，与那些自己早期还可以觉察到的灵魂能量断了连系。在生命的第一个阶段（直到青春期），他们全心投入父母的爱与期待之中，渐渐遗忘了“自己是谁”。</p>
 <p>这会怎样影响一个孩子呢？小孩子对爱与安全的渴求无穷无尽。当他无意间感知到父母的能量中的恐惧与匮乏时，他被搞胡涂了——他体验到痛苦和被遗弃的感觉，却无法厘清这些情绪。因为在如此脆弱和敞开的状态中，想要透澈地了解这些情绪颇为不易，于是选择忽略或隐藏。</p>
 <p>所以，孩子会带上眼罩，对“爱”产生错误的认识。为了在情感上有保障，孩子允许自己被父母的错误观念蒙蔽。因为如果不能得到无条件的爱，那么有条件的爱总比没有爱好一些吧？小孩子竭力争取自己所需要的爱和安全感，因而会把非爱的能量当成爱，例如：</p>
@@ -263,16 +444,16 @@
 <p>如果父母的赞扬不是出于对孩子的真正了解，并非基于孩子的真实渴望，而是源于社会标准，那么这种赞美就成了毒药。孩子会被鼓励去按照外在的标准行事。</p>
 <p>然而，「爱」意味着应该和孩子自己内在的标准——也就是他今生想实现的成就——连结，当注意力集中于外在成就时，孩子会误以为那就等于爱。所以，如果孩子没有去做那些正确的、符合外在标准的事情，他们就会觉得内疚。</p>
 <p>而在成年后，这种错误认知会导致他们不知道自己的界线何时被跨越，或哪些时候努力过头了。他们只是发现自己每时每刻都迫切地想要成功，不明白自己为什么会像上瘾一样地努力工作，不断向外界证明自己值得被爱。</p>
-<h2>父母的匮乏感，如何投射到孩子身上？</h2>
+<h2 id="article-section-8" class="article-heading">父母的匮乏感，如何投射到孩子身上？</h2>
 <p>另一种对爱的误解，发生在孩子混淆了“爱”和“情感依赖”的时候。</p>
 <p>当父母需要孩子来填补内在空洞时，孩子会误以为那是“被爱”。当孩子踏入这个洞之后，便成为替代品，填补了这个缺口。他试图提供父母内在失去的爱和支持，希望以这种方式取悦父母，以获得梦寐以求的爱。这种“服务”当然不是爱，而是一种危险的能量纠缠，不但会导致父母与孩子的关系在日后出现诸多问题，也会让孩子在未来的亲密关系中，反复重演相同的问题。</p>
 <p>许多父母在童年时缺乏无条件的爱，未曾被他们自己的父母真正接纳。痛苦与被遗弃的感觉，深深根植于他们的内在。于是，当他们成为父母，对待孩子的方式就有双重特点：一方面确实怀有真诚的爱，但另一方面也无意识地将孩子当成疗愈自己童年创伤的对象，试图借由与孩子的关系来补偿自己的匮乏感。孩子成了他们曾经渴望的“理想父母”的替代者，孩子必须给予他们在童年时期极度缺乏的爱。</p>
 <p>这时，“我爱你”和“我需要你”的讯息完全交织在一起。孩子的能量不再是自己的，因为他的能量被父母的需求吸收了，而孩子却认为这种吸收很舒服！这会带来错误的安全感，导致孩子成年后，能量被人耗尽、被人拥有时，他却觉得自己被这个人深深地爱着。竭力付出的同时，他会有一种被爱、被重视的感觉。</p>
 <p>这会让他们把情感依赖、占有与嫉妒误认为是爱，然而这些能量和爱却恰恰相反。这种可悲的失去自我，就是源于把爱和“被需要”混为一谈了。</p>
-<h2>青春期的转变：自我意识开始苏醒</h2>
+<h2 id="article-section-9" class="article-heading">青春期的转变：自我意识开始苏醒</h2>
 <p>一开始，我们紧紧依附在父母的模式中。但到了青春期，才开始模糊地意识到你是你自己，我们才逐渐发展出自我意识，来思考和筛选那些能量——了解什么能量对你来说是好的、自然的？什么不是？当你开始寻找自己的身份感时，会开始质疑父母对事物的观点。这种心理上的成长过程，很像从小我意识转变为心灵意识。</p>
 <p>地球生命的自然阶段、生物与心理周期，以及季节的变换，都与灵性的自然成长阶段相互关连。而从小我意识转向心灵意识，意味着我们需要超越原生家庭的沉重能量——那些限制的、充满恐惧的能量。这不仅是每个人的生命课题，也是灵魂回归真实的必经之路。</p>
-<h2>结语：</h2>
+<h2 id="article-section-10" class="article-heading">结语：</h2>
 <p>在这一集中，我们初步揭开了原生家庭对你情感模式的深远影响。</p>
 <p>下一集，我们将陪你一起，从“受困的孩子”走向“觉醒的灵魂”。我们将回到最初的起点——那个你从灵魂之光跃入地球之初的时刻，去理解：为何你会选择这样的家庭？又该如何穿越童年留下的幻相，温柔而坚定地，找回真正的自己。</p>
 
@@ -723,7 +904,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -812,6 +993,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

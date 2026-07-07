@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -241,8 +410,20 @@
 <p>作者：朵洛莉丝·侃南（Dolores Cannon）</p>
 <hr>
 <p>每个曾经活过的人生在这个挂毯上就是一条丝线。这个挂毯是所有人类生命的丝线；所有投生为人类的灵魂都是连结的。它完美呈现每个生命是如何相互交织、交错并触及其他生命，直到最后所有人类都被影响。挂毯代表了人类的全然合一。它是由所有部份组成的一体，缺了彼此就无法生存，而且它们全都交织一起并相互影响。</p>
-<h2>挂毯室 │ 阿卡西纪录</h2>
-<h4>每一条线都代表着一个生命</h4>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="2" aria-label="跳转到：挂毯室 │ 阿卡西纪录">挂毯室 │ 阿卡西纪录</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="4" aria-label="跳转到：每一条线都代表着一个生命">每一条线都代表着一个生命</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：线的颜色、粗细代表灵魂的灵性能量">线的颜色、粗细代表灵魂的灵性能量</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：挂毯是给更进化灵魂读取的阿卡西纪录">挂毯是给更进化灵魂读取的阿卡西纪录</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：很多在世的人常去游览挂毯室">很多在世的人常去游览挂毯室</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：「灵性能力」与「精神失常」">「灵性能力」与「精神失常」</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：挂毯室与时间的关系">挂毯室与时间的关系</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：挂毯室的特殊事件">挂毯室的特殊事件</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：灵魂任务与成长">灵魂任务与成长</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="4" aria-label="跳转到：被禁止的事">被禁止的事</a></p>
+<hr>
+<h2 id="article-section-1" class="article-heading">挂毯室 │ 阿卡西纪录</h2>
+<h4 id="article-section-2" class="article-heading">每一条线都代表着一个生命</h4>
 <p>约翰：好的。指导灵说挂毯室很重要，所以我现在正走在这个有着青金石和大理石墙壁的走廊上。在尽头有扇很大的门。我现在正打开门。有道令人目眩的强光。</p>
 <p>朵：为什么会有强光？</p>
 <p>约翰：那是一个人或是一个灵魂的形式。他说他是挂毯室的看守者，他让我进去。（同样的挂毯室在《与诺斯特拉达姆斯对话》第二册有提到）。这是很受尊敬的地方。空气中有股芳香，闻起来像是清爽的微风混着些许来自花园的花香和盐的味道。很像香的味道。这个房间很美，非常非常高。往上可能有两百或三百尺高。哦，不，也许一百尺高比较正确。</p>
@@ -253,7 +434,7 @@
 <p>约翰：喔，<strong>有些线是很复杂，但它形成一个美丽的图案。而且我可以看到背后的世界。透过注视这个挂毯，我可以看到曾经发生过的任何事件。</strong></p>
 <p>朵：你的意思是……</p>
 <p>约翰：如果我看着它，我可以看到人们的平日生活，它们就像丝线一样跟挂毯连结。现在看守者在解释<strong>每个曾经活过的人生在这个挂毯上就是一条丝线。这个挂毯是所有人类生命的丝线；所有投生为人类的灵魂都是连结的。它完美呈现每个生命是如何相互交织、交错并触及其他生命，直到最后所有人类都被影响。挂毯代表了人类的全然合一</strong>。<strong>它是由所有部份组成的一体，缺了彼此就无法生存，而且它们全都交织一起并相互影响。</strong></p>
-<h4>线的颜色、粗细代表灵魂的灵性能量</h4>
+<h4 id="article-section-3" class="article-heading">线的颜色、粗细代表灵魂的灵性能量</h4>
 <p>朵：嗯，如果挂毯是由每个人的人生所构成，那它就是活的。看守者会在意我们观看吗？</p>
 <p>约翰：喔，他不在意，他知道我们这么做是有目的的。他说：「看吧，看一看，<strong>但不要看得太深入。我不想你看別人的生活，因为传播那样的资讯会对他们的发展有害。</strong>」（约翰继续描述挂毯）挂毯非常巨大。它大概有至少二十到二十五尺高。而且它好像就这样一直延续下去。我如果要沿着它走，需要花上好几个小时。它一定延伸了有一里路或更远吧。它沿着左手边的墙延伸。来自窗户的光照亮了挂毯。可是<strong>我到了某个点就没法继续了。</strong></p>
 <p>朵：你知道为什么吗？</p>
@@ -265,7 +446,7 @@
 <p>约翰：「较深的颜色，」他说：「没什么意义。<strong>黑色特別是因为他们选了不寻常的道路。</strong>」</p>
 <p>朵：我以为较深的颜色可能表示他们比较……嗯，我想的是负面的生活。</p>
 <p>约翰：不是的。他说在**这个挂毯里没有负面的东西。黑色的线只表示选了一个不寻常的显化方式。**但他说：「不要问这个。你在这时候不必知道。你来是为了其它的目的。」</p>
-<h4>挂毯是给更进化灵魂读取的阿卡西纪录</h4>
+<h4 id="article-section-4" class="article-heading">挂毯是给更进化灵魂读取的阿卡西纪录</h4>
 <p>朵：对，我想问几个问题。你说有老师教导学生关于这个挂毯的事。他们能不能看到他前世的模式？</p>
 <p>约翰：有。我现在看到一个团体。老师穿着一件好看的长袍，他有非常慈爱的面容。他在跟那些灵魂指出现在正在发生，还有曾经发生的事情。他在教他们跟挂毯有关的事，以及<strong>不同图案所代表的意义</strong>。他有一个会发亮的指针棒，棒子是金色的，有个看起来像水晶的东西在棒子上方，但那事实上是一个会发亮的钻石。他指着挂毯里的一条线，而那条线，或绳子，或缆线，不论你怎么称它，它似乎会自己发光。**老师指出不同人生的不同特点，关于人们怎么进步还有他们必须在哪方面成长。**大家都在记笔记，但不是用纸和笔，而是记在脑袋。</p>
 <p>朵：他在向这些学生解释他们的人生吗？这样他们就能决定未来的人世。</p>
@@ -274,7 +455,7 @@
 <p>约翰：不对，所有的生命都有线在这个挂毯上，但**只有进化的灵魂能够瞭解挂毯的概念并取得资料。比较没那么进化的灵魂有可以閲读的阿卡西纪录书。**挂毯室对没那么进化的灵魂来説，就像是一个小孩到了大学的园书馆。他们应该要去社区图书馆的孩童区才对。</p>
 <p>朵：那么即使他们来到这里，也不会瞭解看到的东西。</p>
 <p>约翰：没错。他们不会瞭解，因为<strong>挂毯有它的目的。它进入了更高的次元，甚至高过这里，而这里已经是非常复杂的地方。这个挂毯最后结束在一片光亮的神格里。挂毯里所有的线都通向这片美丽的光。</strong></p>
-<h4>很多在世的人常去游览挂毯室</h4>
+<h4 id="article-section-5" class="article-heading">很多在世的人常去游览挂毯室</h4>
 <p>朵：你能不能问这位看守者，是不是有很多还在世的人曾经来过这里看这个挂毯？还是説我们来这里是很不寻常的事？</p>
 <p>约翰：他説<strong>你会很惊讶有多少人是在身体里的时候就来过这个房间。很多人来这里欣赏它就像欣赏艺术品一样。<strong>他説这</strong>对那些善于画画、雕塑和织品艺术的艺术家是灵感的来源。他们有时会来这里</strong>，因为这是所有创作里最壮观辉煌的艺术作品。挂毯有很多不同的圆案，像是狂野的现代图样，东方的设计或美国原住民的图案。</p>
 <p>朵：他们是怎么去的？</p>
@@ -285,24 +466,24 @@
 <p>约翰：是的，他现在走在我旁边，他説<strong>他知道我还在身体里。他看到我身后的银线</strong></p>
 <p>朵：哦，<strong>他知道你仍跟身体连结</strong>，知道我们这么做是在实验。</p>
 <p>约翰：是的，他瞭解。这里的大多数灵魂并没有银线连接身体。</p>
-<h4>「灵性能力」与「精神失常」</h4>
+<h4 id="article-section-6" class="article-heading">「灵性能力」与「精神失常」</h4>
 <p>朵：嗯……有没有曾经还活着的人来到这里却被拒绝进入那个房间？</p>
 <p>约翰：他説：「你会很讶异。我们必须要求他们离开这一区。有个灵魂到了这里，企图把他的线扯出挂毯。他以为这是结束他的存在的最好方法。这个人在地球层面有某类失智，他并不知道他的灵魂到了灵界。他非常困惑。我们必须引导他回去。他现在在一个疗养院所，他们给他镇静剂，这样他才不会很容易就进入恍惚状态。**他来这里企图破坏挂毯，破坏他以为是他的那条线。**事实上，那根本不是他的线。</p>
 <p>朵：有很多人企图做同样的事吗？</p>
 <p>约翰：没有，那是很罕见的案例。**那个人被赋予了伟大的灵性力量，但他认为那是他的错觉。他的心智体也因此失衡。**结果，现在他的身体活动被控制，他也被施以化学药物。<strong>如果他容许自己发现他的灵性能力的模式，他对这个世界就能提供很棒的服务。但他让他天性里的智力面完全掌控了。</strong></p>
 <p></p>
-<h4>挂毯室与时间的关系</h4>
+<h4 id="article-section-7" class="article-heading">挂毯室与时间的关系</h4>
 <p>朵：我想这是为什么挂毯室有看守者的原因。</p>
 <p>约翰：嗯，<strong>必须要有看守者。有时这里会发生奇怪的事，因为这里跟「时间」有关，事物必须保持平衡。必须有制衡。</strong></p>
 <p>朵：你说有时候有的人会被要求离开？因为他们想看到不该看的东西吗？还是什么原因？</p>
 <p>约翰：他说：「你能够看到一些事，因为在<strong>挂毯后的是你们所谓的时间，你可以找到一个线然后穿越时间。大多数人在还活着时，并不需要知道他们的未来，除非他们是为了灵性的历程要使用那个资讯。</strong></p>
 <p></p>
-<h4>挂毯室的特殊事件</h4>
+<h4 id="article-section-8" class="article-heading">挂毯室的特殊事件</h4>
 <p>朵：被要求离开的人是因为这个情形吗？</p>
 <p>约翰：他说：「不是，**这里是爱的地方，没有人会被要求离开，除非他企图毁坏挂毯，或者他很暴力。**我们必须看顾挂毯，因为在很少见的情形下，确实会发生些事。**过去曾有很强大的力量穿过了挂毯。有一次你们有过核子爆炸，当时许多人很快就离开了地球（指死亡），他们穿过挂毯来到这里。**所以我们必须在这里帮助他们。」</p>
 <p>朵：我猜有各式各样的奇怪事情会在那里发生，谢谢你告诉我。我们很好奇。</p>
 <p></p>
-<h4>灵魂任务与成长</h4>
+<h4 id="article-section-9" class="article-heading">灵魂任务与成长</h4>
 <p>约翰：没错，他说：「我们瞭解。不用担心。**我们很清楚你的任务和你灵魂的成长。**我在这里是为了服务你们全体。</p>
 <p>朵：如果可以，我们会努力把这些资料用在非常正面的用途。假使我是要使用在负面用途，我会被允许来这里吗？</p>
 <p>约翰：不会。<strong>在这里没有什么可被隱藏或偽装。我们比你还清楚你自己的动机</strong>。</p>
@@ -312,7 +493,7 @@
 <p>约翰：嗯，<strong>透过瞭解宇宙法则和爱，我可以重新发出光芒。比起去其它次元，经历地球学校比较容易。这样比较快。</strong></p>
 <p>朵：你对他这么说有什么感觉？</p>
 <p>约翰：嗯，我不喜欢。事实上，我觉得尷尬。我觉得像被责备。我的意思是，他说得很对，是我的错。**我逃避了自己的责任，所以我必须转世为人。**可是他并不是用手指着我说，「不对，不对，不对，不对！」他是用很慈爱的方式。他现在抱着我，对我说：「祝你任务成功。」</p>
-<h4>被禁止的事</h4>
+<h4 id="article-section-10" class="article-heading">被禁止的事</h4>
 <p>我忍不住问，「我好奇我的线在哪里？」</p>
 <p>约翰：有，**你的线在这里。你的线是亮铜色，而且它越来越亮。它一开始有些小，然后越来越大，影响了许多其他的线。**这个挂毯很神奇。（突然地）他在要求我们离开。「<strong>你在看你自己的人生，这时候这么做并不好。</strong>」</p>
 <p>朵：对，可是这只是人性的好奇。</p>
@@ -782,7 +963,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -871,6 +1052,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

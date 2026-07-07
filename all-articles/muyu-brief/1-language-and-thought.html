@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -236,44 +405,53 @@
                 <!-- 正文内容 -->			
 <div class="article-body g-color-black" style="line-height: 2.5; font-size: 16px;">
   <p style="font-size:15px; color: gray;">对你获取的信息，保持善意的怀疑和独立思考是明智的。</p><hr class="g-brd-gray-light-v4 g-pt-20">
-<h2>引言</h2>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="2" aria-label="跳转到：引言">引言</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：语言如何塑造我们的思维方式？">语言如何塑造我们的思维方式？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：神经科学家让实验鼠观看《黑客帝国》与《星球大战》">神经科学家让实验鼠观看《黑客帝国》与《星球大战》</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：GPT-4.5 被称为首个通过“真实图灵测试”的 AI 模型，但仍存在争议">GPT-4.5 被称为首个通过“真实图灵测试”的 AI 模型，但仍存在争议</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：物理学家可能正在接近“万物理论”">物理学家可能正在接近“万物理论”</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：臭氧层正在恢复，预计数十年内完全修复">臭氧层正在恢复，预计数十年内完全修复</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="2" aria-label="跳转到：结语">结语</a></p>
+<hr>
+<h2 id="article-section-1" class="article-heading">引言</h2>
 <p>我们为什么会这样思考？语言如何塑造我们的意识？人类是否正逼近宇宙真理的核心？一场从大脑到宇宙的认知穿越，我们将一起追踪那些正在重写人类认知的线索：
 从语言如何影响我们看世界的方式，到科学家让老鼠看《黑客帝国》，进而重构出老鼠大脑中的观影画面；从GPT-4.5通过图灵测试带来的震撼与思考，到物理学界对 “万物理论” 的最新探索。最后，我们看到地球臭氧层正在恢复的希望讯号！</p>
-<h2>语言如何塑造我们的思维方式？</h2>
+<h2 id="article-section-2" class="article-heading">语言如何塑造我们的思维方式？</h2>
 <p>【认知科学】</p>
 <p>语言，不仅是我们表达思想的工具，它本身可能就是塑造思想的框架。</p>
 <p>20世纪30年代，语言学家爱德华·萨丕尔（Edward Sapir）与本杰明·李·沃尔夫（Benjamin Lee Whorf）提出了“语言相对论”（也称萨丕尔-沃尔夫假说）——认为人类对世界的理解，受其语言结构的影响。</p>
 <p>例如，澳大利亚北部的库塔语（Kuuk Thaayorre）中并没有“左”和“右”的概念，而是使用“东南西北”来描述方向，因此他们对空间有更强的绝对方位感。这种语言结构不仅反映了认知方式，甚至可能重塑大脑对现实的感知。</p>
 <p>近年来，神经科学的研究也发现，不同母语背景的人在处理颜色、时间和空间的方式上，大脑激活区域也存在差异。例如，俄语中对“浅蓝”（голубой）和“深蓝”（синий）有明确的词汇区分，俄语使用者在颜色辨识实验中，也表现出更敏锐的反应。这表明语言不仅影响思维，也可能改变我们看世界的方式本身。</p>
 <p>语言就像一副“认知眼镜”，不同的语言提供不同的镜片，有的让你看到更多色彩，有的帮助你分辨更细微的结构。你有没有想过，如果我们学会了另一种语言，我们的大脑也会“学会”另一种思维方式吗？那么，精通双语或多国语言的人，他们是否也拥有了更丰富、更立体的世界图景呢？</p>
-<h2>神经科学家让实验鼠观看《黑客帝国》与《星球大战》</h2>
+<h2 id="article-section-3" class="article-heading">神经科学家让实验鼠观看《黑客帝国》与《星球大战》</h2>
 <p>【脑科学 / 神经工程】</p>
 <p>最近，一项令人惊叹的神经科学实验，揭开了大脑处理视觉信息的全新线索：科学家让实验鼠观看《黑客帝国》和《星球大战》，并同步记录它们大脑中超过10万个神经元的活动。</p>
 <p>通过高密度电极阵列技术，研究团队能够实时追踪每个神经元在特定画面中的活跃状态，进而绘制出前所未有的“神经元感知与响应图谱”。这就像将一部电影接入超级精密的“神经成像系统”，观察哪些“神经灯泡”在特定画面下被点亮，从而拼凑出老鼠大脑中的“观影画面”。</p>
 <p>更令人惊叹的是，科学家结合人工智能模型，将这些神经信号数据反向重构，成功生成了与影片内容高度相关的“脑内图像”。换言之，AI正在尝试解码大脑中的视觉体验。这一过程，不仅为我们理解大脑如何处理复杂图像信息提供了全新思路，也为“类脑计算”、神经假体，乃至未来记忆重建技术打开了想象空间。</p>
 <p>如果我们真的能重建大脑中的“体验”，那是否也意味着：未来我们可以回放梦境？储存记忆？甚至——看见彼此的思想？</p>
 <p>说到神经模式和人工智能，我们无法不提近日最震撼的新闻：GPT-4.5 通过了真正的图灵测试。</p>
-<h2>GPT-4.5 被称为首个通过“真实图灵测试”的 AI 模型，但仍存在争议</h2>
+<h2 id="article-section-4" class="article-heading">GPT-4.5 被称为首个通过“真实图灵测试”的 AI 模型，但仍存在争议</h2>
 <p>【人工智能】</p>
 <p>2025年3月，OpenAI 的 GPT-4.5 在一项由加州大学圣地亚哥分校研究团队主导的实验中，被认为是首个在开放式环境中“通过图灵测试”的人工智能模型。在长达3小时的不间断自由对话中，多数评估者未能分辨出与他们交谈的是 AI，而非人类，其中将 GPT-4.5 误认为是人类的比例高达 73% ，远远超过50%的合格标准。研究人员表示，GPT-4.5 在语言理解、情感回应和社会暗示的识别上表现得高度拟人化，有评审甚至反馈称“感到自己被理解”。</p>
 <p>不过，也有专家指出，“通过图灵测试”并不等于拥有意识或理解能力。图灵测试原本只是评估机器能否在语言行为上“看起来像人类”，而非判断其是否具备自我意识或主观体验。此外，图灵测试本身也在不断被修订和反思，以更全面地检验 AI 的“智能”。</p>
 <p>一些评论认为，当前 GPT-4.5 的表现更多地体现了其对人类语言模式的模拟能力，因此也被称为“模仿游戏”，而非真正的“理解”或“共情”。毕竟，记住昨天你说过的话并不意味着它真的“关心”你。</p>
 <p>尽管如此，这一实验仍被视为人工智能发展的重要里程碑，也引发了关于 AI 伦理、机器意识和社会角色的深层讨论：当一个程序能与你开玩笑、安慰你、甚至记得你说过的话，我们是否应该用新的方式来看待人与AI的关系？它是工具、伙伴，还是某种正在演化中的“生命”？</p>
 <p>当AI朝“意识”逼近时，物理学家们也在追寻另一个更终极的问题：宇宙的起源与终极法则是什么？</p>
-<h2>物理学家可能正在接近“万物理论”</h2>
+<h2 id="article-section-5" class="article-heading">物理学家可能正在接近“万物理论”</h2>
 <p>【理论物理】</p>
 <p>如果说广义相对论是用几何描述了宇宙的宏观结构，比如恒星、黑洞和时间的弯曲；那么量子力学则是用概率论为基础，解释微观粒子世界，如电子和光子的不确定性和量子叠加等现象。</p>
 <p>尽管这两套理论都极为成功，但它们之间却难以兼容，因此科学家们一直在寻找一个统一的“万物理论”（Theory of Everything），希望找到一个终极公式，能够同时解释宏观宇宙和微观世界的规律。这一目标被视为现代物理学的“圣杯”。</p>
 <p>近期，美国与欧洲的多个研究团队在弦理论、圈量子引力以及引力全息原理等前沿领域中取得了值得关注的进展，这些理论试图从全新的数学框架出发，为连接广义相对论与量子力学，构建起一座桥梁。</p>
 <p>如果我们真的找到了“宇宙的终极法则”，这不仅会拓展我们对自然的理解，也可能在哲学层面，引发人们对生命、意识乃至自由意志等概念的重新思考：当我们更清楚宇宙的运行逻辑时，我们是否也会用新的视角看待自己每天的选择与挑战？</p>
 <p>回到地球本身，我们也迎来了一个鼓舞人心的消息：臭氧层正在恢复。</p>
-<h2>臭氧层正在恢复，预计数十年内完全修复</h2>
+<h2 id="article-section-6" class="article-heading">臭氧层正在恢复，预计数十年内完全修复</h2>
 <p>【气候 / 地球科学】</p>
 <p>臭氧层，就像地球的“防晒霜”，保护着我们免受有害紫外线的侵害。然而在上世纪末，科学家首次发现南极上空形成了一个巨大的臭氧空洞，其面积一度超过整个南极洲。</p>
 <p>但令人欣慰的是，根据联合国环境规划署（UNEP）2023年的评估报告，自1987年《蒙特利尔议定书》限制氟氯碳化物（CFCs）排放，地球臭氧层正在稳定恢复：预计2040年前全球大部分区域将恢复正常，2066年南极上空的臭氧层也将完全愈合。这是人类首次在全球范围内，成功逆转一场严重的环境危机。</p>
 <p>科学家指出，臭氧层的修复不仅将显著降低皮肤癌和白内障的发病率，还能改善农业产量和海洋浮游生物的生存状况。更值得反思的是，一些研究认为，若当年没有及时签署《蒙特利尔议定书》，到本世纪中叶，地球将变得“不宜居”：全球将面临更强烈的紫外线辐射，每年新增数百万人患癌，气温可能比现在高出超过1°C以上，因为CFCs同时也是强效温室气体。</p>
 <p>这项成果再次证明：当人类在科学共识和全球合作的基础上采取行动时，我们确实有能力扭转生态危机。关键在于意志与合作。</p>
-<h2>结语</h2>
+<h2 id="article-section-7" class="article-heading">结语</h2>
 <p>语言建构思维，大脑映射经验，AI挑战人性，科学寻求终极真理，而我们亲爱的地球，正在静静疗愈自己。愿我们在浩瀚宇宙与纷繁人心之间，持续探索、温柔思考。</p>
 
 </div>
@@ -723,7 +901,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -812,6 +990,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

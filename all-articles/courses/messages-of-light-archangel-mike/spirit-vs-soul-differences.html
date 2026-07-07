@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -238,27 +407,27 @@
   <p style="font-size:15px; color: gray;">对你获取的信息，保持善意的怀疑和独立思考是明智的。</p><hr class="g-brd-gray-light-v4 g-pt-20">
 <p>来自大天使迈克尔（MICHAEL）的光之信息，2015年7月1日</p>
 <p>作者：Ronna Vezane / 神圣抄写员</p>
-<p>www.starquestmastery.com</p>
+<p><a href="http://www.starquestmastery.com">www.starquestmastery.com</a></p>
 <p>翻译 / 解读：暮雨</p>
-<h2>本集内容</h2>
-<p>解密“灵”与“魂”的奥秘</p>
-<p>灵的本质：源头的多层次分化</p>
-<p>身体与灵魂的关系</p>
-<p>灵魂在分离与回归中循环</p>
-<p>灵魂重聚：群体觉醒时代</p>
-<p>灵魂的本质 │ 灵魂的沟通方式</p>
-<p>所谓“迷失的灵魂”真的存在吗？</p>
-<p>连接灵魂和超灵后，你会经历什么？</p>
-<p>扬升光柱：把高频能量带回人间</p>
-<p>「暮雨注」灵（Spirit）和魂（Soul）的词源解释</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：解密“灵”与“魂”的奥秘">解密“灵”与“魂”的奥秘</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：灵的本质：源头的多层次分化">灵的本质：源头的多层次分化</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：身体与灵魂的关系">身体与灵魂的关系</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：灵魂在分离与回归中循环">灵魂在分离与回归中循环</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：灵魂重聚：群体觉醒时代">灵魂重聚：群体觉醒时代</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="2" aria-label="跳转到：灵魂的本质 │ 灵魂的沟通方式">灵魂的本质 │ 灵魂的沟通方式</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="2" aria-label="跳转到：所谓“迷失的灵魂”真的存在吗？">所谓“迷失的灵魂”真的存在吗？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="2" aria-label="跳转到：连接灵魂和超灵后，你会经历什么？">连接灵魂和超灵后，你会经历什么？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="2" aria-label="跳转到：扬升光柱：把高频能量带回人间">扬升光柱：把高频能量带回人间</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="2" aria-label="跳转到：「暮雨注」灵（Spirit）和魂（Soul）的词源解释">「暮雨注」灵（Spirit）和魂（Soul）的词源解释</a></p>
 <hr>
 <p style="color: #6B77CC;">「暮雨·注」本文提到的“灵魂”均等同于“魂（Soul）这个单词”；而“Spirit”会根据语境翻译成“灵”或“精神”。</p>
-<h2>解密“灵”与“魂”的奥秘</h2>
+<h2 id="article-section-2" class="article-heading">解密“灵”与“魂”的奥秘</h2>
 <p>你是否曾思考过：你的灵（Spirit）与魂（Soul）之间究竟有什么不同？</p>
 <p>灵魂是什么？它由什么组成？它起源于哪里？当你死亡或超越进入更高境界时，你的灵魂会发生什么？它居于你身体的哪个位置？一个人会不会成为迷失的灵魂？灵魂是否必须因为过去的罪而需被救赎？</p>
 <p>这些问题，自人类出现在地球以来，就被不断追问与探讨。现在，请允许我们为你提供一些简明而清晰的答案，帮助你更深入、更完整地理解 <strong>宇宙的运作</strong>，以及<strong>你神圣的起源</strong>。</p>
 <p>至于是否接受这些解释，完全取决于你自己。一如既往，<span style="border-bottom: 1px dashed #3399FF;">我们邀请你保持分辨，只接受那些与你的心与灵魂产生深刻共鸣的部分，作为你的真理。</span></p>
-<h2>灵的本质：源头的多层次分化</h2>
+<h2 id="article-section-3" class="article-heading">灵的本质：源头的多层次分化</h2>
 <p>在**宇宙（cosmic）或全宇宙（Omniversal）**的层面上，你就是“灵/精神”（Spirit）——来自至高造物主核心的一道神圣本质的光线，或说是一个面向（Facet）。在那个层面上，你完全意识到自己是谁，也清楚自己与至高造物主的连接；你同样明白并觉知到你那宏伟的真实身份——“我是（I AM）”。</p>
 <p>**在宇宙层面，你是一位神圣的共同创造者。**你曾被一道巨大的折射光束派来，以父神/母神的名义去显化无穷无尽的世界。你知晓这个宇宙整体的神圣蓝图，也明白自己在其中所要扮演的角色；然而你或许会记得，也可能不记得自己在“宇宙/全宇宙”层面的起源与真实身份。随着你在无数时代，化身为各种形体与身份，这种情境在反复上演。</p>
 <p>我们将 <strong>灵/精神</strong>（Spirit），称为你的 <strong>神种原子</strong>（God Seed Atom）或 <strong>神之光线</strong>（God Ray）——你本是一位伟大的光之存有。</p>
@@ -269,20 +438,20 @@
 <p>当所有位于第三 / 第四维度的灵魂碎片完成整合时，这一转化循环便结束，从而使灵魂与物质人格得以融合为一体。</p>
 <p>此刻，<strong>正在地球化身的你</strong>，正是其中一束灵魂火花 /灵魂碎片。你曾经同意踏上这趟旅程，进入那伟大的未知虚空，携带着被编码的神圣使命：去协助创造无数丰富多样的世界——居住其中，并亲身体验你所协助创造的一切。</p>
 <p>如此一来，你独特的经历便能融入到 <strong>宇宙意识</strong> 之中，并最终汇入 <strong>宇宙心智</strong>（Cosmic Mind）。</p>
-<h2>身体与灵魂的关系</h2>
+<h2 id="article-section-4" class="article-heading">身体与灵魂的关系</h2>
 <p>你的肉体只是一个临时的容器，是你在物质世界短暂旅程中，为安置灵魂（Soul）而选择的居所。</p>
 <p><span style="border-bottom: 1px dashed #3399FF;"><strong>灵/精神</strong>（Spirit），也就是神圣意识，居住在你的 <strong>神圣之心</strong> 与 <strong>灵魂</strong> 之中。它是生命的本质。</span>无论你在三维或四维的稠密领域中沉沦得多深，那条与造物主的生命线始终未曾断绝（即便这种连接可能变得微弱或黯淡）。</p>
 <p><strong>你的灵魂（Soul）是不朽的</strong>，它是你更宏大的 <strong>神圣火花的一个面向</strong>。它曾穿越广阔的时空，游历无数地方，只为获得经验与对自身更深刻的认知。</p>
 <p>在你的灵魂之中，存放着你在无数时代、无数生命中所有积极的经验。你的灵魂与 DNA 中携带着 <strong>记忆种子原子</strong>（Memory Seed Atoms），其中编码着每一世的浓缩历史（无论是正面或负面）。同时也被记录在一份“记忆种子原子<strong>灵魂账本</strong>（Soul ledger）”里<span style="color: #6B77CC;">（暮雨注：似乎在指阿卡西记录）</span>，其中包含了一切需要被平衡与净化的内容——最终要转化为纯净神圣之光的部分。</p>
-<h2>灵魂在分离与回归中循环</h2>
+<h2 id="article-section-5" class="article-heading">灵魂在分离与回归中循环</h2>
 <p>当灵魂在分离旅程走到 <strong>极点</strong> 时，会触发 <strong>记忆种子原子</strong> 被点燃。那是一个信号，标志着是时候踏上新的旅程——重新回归与整合。</p>
 <p>灵魂会逐渐被注入一种神圣的不满足感，这种感觉会慢慢渗入人的意识。在那一刻，作为人类个体的“你”开始转向内在，学习如何驯服 <strong>自我欲望体</strong>，好让自己再次与灵魂、高我/超灵，以及神圣自我诸多面向重新连接——它们存在于这个子宇宙前四个维度的各个层面中。<span style="color: #6B77CC;">（相关文章：重新定义自我欲望体-身体/情感/心智/灵性）</span></p>
-<h2>灵魂重聚：群体觉醒时代</h2>
+<h2 id="article-section-6" class="article-heading">灵魂重聚：群体觉醒时代</h2>
 <p>在过去的生命与时代中，灵魂与其众多超灵的重聚，通常是一种非常个体化的经历——只有极少数人能亲历这一过程，而非大众普遍共有的体验。</p>
 <p>但现在情况已不同。如今正是 <strong>群体性觉醒的时代</strong>—— 这是一次在全球、在整个银河系、乃至这个子宇宙层面的重聚与扬升，一个向更高意识维度提升、充满爱与光的时代。</p>
 <p>此刻，你有潜能去重新连接：你灵魂家族的诸多面向、高我、众多超灵，以及位于 <strong>第五维度的第一子层级中的神圣三位一体</strong>（Sacred Triad）。</p>
 <p>在更宏观的宇宙层面，至高造物主正通过“伟大的中央太阳”持续释放自身的光芒，这光以“生命活火”的巨大能量，经由你们太阳系的太阳，层层过滤倾泻至地球。</p>
-<h2>灵魂的本质 │ 灵魂的沟通方式</h2>
+<h2 id="article-section-7" class="article-heading">灵魂的本质 │ 灵魂的沟通方式</h2>
 <p><strong>灵魂</strong>（Soul ） 既不是纯粹的“灵/精神（Spirit ）”，也不是单纯的“物质（matter）”。灵魂可以被描述为一个<strong>脉动的生命能量种子原子</strong>，它居住在你体内的<strong>钻石核心神细胞</strong>（Diamond Core God Cell）之中。<span style="color: #6B77CC;">（相关文章：<a href="https://librarys.life/all-articles/dolores-cannon-hypnosis/new-earth-ascension/cell-consciousness-healing-beyond-germs-self-exploration.html" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank">细胞的意识-细胞的上帝  </a>）</span></p>
 <p>对于仍被低维度幻象困住的人来说，他们依旧在集体意识的领域中运作，尚未完全整合他们此生的灵魂种子原子。他们的灵魂，可能只是心脏区域中一小束生命火花；然而，当它逐渐绽放并展现出完整的动态力量时，它会扩展并成为 <strong>太阳能量中心</strong>（Solar Power Center），覆盖你的太阳神经丛、心脏、胸腺和喉咙区域。<span style="color: #6B77CC;">（如下图）</span></p>
@@ -295,12 +464,12 @@
 <p>此外，<strong>安塔卡拉那</strong>（Antakarana）是一座由 <strong>心智之光</strong> （mental Light matter）构成的桥梁，它将物质人格与第五维度的神圣三位一体相连，并最终连通神之种子原子——也就是你在此子宇宙体验中的“我是临在（I AM Presence）”。</p>
 <p>当这种连接被完全激活时，肉体容器便开始获得回报：更健康、更有活力，并与你的 <strong>身体元素</strong>（Body Elemental）建立更深层的连接（它是你深层潜意识与 DNA 的一个重要面向）。<span style="color: #6B77CC;">（暮雨注：关于“身体元素”可以参考文章《<a href="https://librarys.life/all-articles/dolores-cannon-hypnosis/new-earth-ascension/cell-consciousness-healing-beyond-germs-self-exploration.html" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank">细胞的意识 </a>》）</span></p>
-<h2>所谓“迷失的灵魂”真的存在吗？</h2>
+<h2 id="article-section-8" class="article-heading">所谓“迷失的灵魂”真的存在吗？</h2>
 <p>我们郑重地告诉你，你不可能成为一个迷失的灵魂——如果你的意思是与造物主失去连接的话。</p>
 <p><span style="border-bottom: 1px dashed #3399FF;">你或许会迷失方向，可能会失去或被削弱创造之光，但你的灵魂是不朽的，永远不会迷失或被毁灭。你必须从痛苦、受难，以及与造物主分离的幻象中拯救自己，方法就是<strong>整合</strong>你的灵魂、多个更高自我，以及你内在的神圣火花。</span><span style="color: #6B77CC;">（相关文章：<a href="https://librarys.life/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank">什么是整合？自我整合指南  </a>）</span></p>
 <p>许多伟大的光之存有曾降临地球，为的就是成为活生生的榜样，向你们展示通向启蒙的多种道路。亲爱的，请选择一条与你内心产生深刻共鸣的道路。但请记住：这条道路必须包含——通过你在创造的多重维度中存在的——你的无数面向，来完成你 <strong>灵魂/精神自我</strong>（Soul/Spirit Self）与造物主的重新整合。</p>
-<h2>连接灵魂和超灵后，你会经历什么？</h2>
+<h2 id="article-section-9" class="article-heading">连接灵魂和超灵后，你会经历什么？</h2>
 <p>有人提出问题：当我们重新连接上灵魂和超灵的多个面向之后，会发生什么？</p>
 <p>在这个巨变的时代，你并不需要在这一过程中舍弃肉身。事实上，你们许多人此刻正快速地走在整合之路上。许多年前，我们曾告诉过你们 <strong>黄金承诺</strong> 的含义，而这份承诺就是：</p>
 <p><span style="border-bottom: 1px dashed #3399FF;">你能够吸引到你所能承载的全部神圣光线（即“我是临在”的本质）。然而，你必须将所吸引到的能量加以整合，并用于造福整体。</span>你们完全有潜力成为一个活生生的、会呼吸的、以肉身存在于尘世的扬升大师——这正是当下时代最伟大的奇迹之一。</p>
@@ -309,7 +478,7 @@
 <p>我们知道你们是谁，并因你们的伟大奉献与服务，向你们致敬。</p>
 <p>我们曾告诉过你们：你们就是造物主的“<strong>吸气</strong>（Inbreath ）”。在这个前所未有的时代，你们拥有化解所有过去业力的潜能，可以进入与更高自我达成和谐一致的状态，并成为父神/母神扩展这个子宇宙计划中不可或缺的一部分。</p>
 <p>你们是否已经准备好，放下那些残余的旧有束缚、信念与限制？它们正阻碍你们彻底走出痛苦、匮乏与受苦的泥潭。你们是否愿意让自己的心智与心灵敞开，去接纳你的 <strong>灵魂</strong>（Soul）与 <strong>精神</strong>（Spirit）的更高智慧？</p>
-<h2>扬升光柱：把高频能量带回人间</h2>
+<h2 id="article-section-10" class="article-heading">扬升光柱：把高频能量带回人间</h2>
 <p><strong>以太界（Ethers）</strong>，或者说更高振动频率的意识场，充满了无限潜能，只等待着你们去<strong>塑造，显化</strong>为你们最伟大的梦想与渴望。</p>
 <p><span style="border-bottom: 1px dashed #3399FF;">请记住：你吸引的造物主之光越多，你为众人的最高利益而整合的光越多，便有更多的创造之光吸引到你身上——这将带来看似神奇、积极的内在变化，与个人现实的改变。</span></p>
 <p>每一次，你造访位于第五维度的个人 <strong>光之金字塔</strong> ，你都会把更多高级、精炼的宇宙能量带回物质界。如果你能有意识地在你居住的区域，创造一根 <strong>扬升光柱</strong>，正如世界上许多挚爱的灵魂已经在做的那样。透过你的努力，爱与光的振动将通过你向外辐射，在你周围扩展得越来越远。<span style="color: #6B77CC;">（相关文章：创建你的个人光之金字塔）</span></p>
@@ -318,7 +487,7 @@
 <p>亲爱的，欢迎进入我们的世界。来吧，让我们携手前行。你被无限地爱着。</p>
 <p>我是大天使Michael。</p>
 <hr>
-<h2>「暮雨注」灵（Spirit）和魂（Soul）的词源解释</h2>
+<h2 id="article-section-11" class="article-heading">「暮雨注」灵（Spirit）和魂（Soul）的词源解释</h2>
 <p style="color: #6B77CC;"><b>Soul 魂，灵魂</b></p>   <p style="color: #6B77CC;">Soul 来自古英语 <i>sāwol / sāwel</i>，意为“活着的存在，个体的生命”。其词源可追溯到原始日耳曼语 <i>saiwalo</i>，意为“灵魂”；进一步可能与 <i>saiwaz</i>（湖、海，同源于 sea）相关。</p>   <p style="color: #6B77CC;">在日耳曼传说中，灵魂来自湖和海，最终也回归湖和海。这仿佛是一种隐喻：个体灵魂如同从大海中分离出的一滴水，虽有独特形态，却终将归于整体。</p>   <p style="color: #6B77CC;">在基督教传统中，Soul 指人的个体灵魂，是死亡后仍然延续的“个体核心”。</p>   <p style="color: #6B77CC;">由此，Soul 更偏向“个体化的灵魂核心”，是承载记忆、情感与人格特质的存在。</p>  
 <hr>
 <p style="color: #6B77CC;"><b>Spirit 灵，精神，神性本质</b></p>   <p style="color: #6B77CC;">Spirit 来自古法语 <i>espirit</i>（精神、精气），源自拉丁语 <i>spīritus</i>，意为“呼吸、气息、生命之气、神灵的呼吸”。</p>   <p style="color: #6B77CC;">在古罗马及基督教语境中，Spirit 常指超越个体的生命之气、神圣之灵或圣灵。</p>   <p style="color: #6B77CC;">因此，Spirit 更多代表“从源头吹来的生命之气、神火”，它是超越个体灵魂的存在，直接与宇宙源头或造物主相连。</p>
@@ -777,7 +946,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -866,6 +1035,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

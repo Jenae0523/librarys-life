@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -242,10 +411,20 @@
 <hr>
 <p>上帝的概念，就像宇宙的钢筋，宇宙的能量网格凝聚天地万物，一切都是能量，能量就是一切万有。能量来自哪里？有没有什么在主导这一切，像是创造宇宙、创造人类等等？每个宇宙都有不同的议会管理个体宇宙与集体宇宙。</p>
 <p></p>
-<h2>宇宙与一切万有</h2>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="2" aria-label="跳转到：宇宙与一切万有">宇宙与一切万有</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="4" aria-label="跳转到：上帝的概念">上帝的概念</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：宇宙的结构">宇宙的结构</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：能量来自哪里？">能量来自哪里？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：能量就是一切万有">能量就是一切万有</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：是什么在主导这一切？">是什么在主导这一切？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：议会-高阶灵魂协助低阶灵魂">议会-高阶灵魂协助低阶灵魂</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：我们是上帝的一部分，上帝是一切万有">我们是上帝的一部分，上帝是一切万有</a></p>
+<hr>
+<h2 id="article-section-1" class="article-heading">宇宙与一切万有</h2>
 <p>上帝的概念│有没有什么在主导这一切？│</p>
 <p>上帝的概念│宇宙的能量网格 能量来自哪里？│能量就是一切万有 有没有什么在主导这一切？ 宇宙的议会│无数个宇宙 我们是上帝的一部分│一切完美</p>
-<h4>上帝的概念</h4>
+<h4 id="article-section-2" class="article-heading">上帝的概念</h4>
 <p>当你要任何人描述他们对上帝的概念，你是在问一个非常复杂的问题，因为世界上有多少人，大概就有多少个定义。<strong>我们內心对上帝的想像，会受到成长过程中宗教与传统文化/教育的制约</strong>，而宗教经常是我们的精神寄托。不论是对上帝，还是本书讨论的其它棘手的议题，<strong>要人改变观念都会非常困难。观念的改变需要一颗开放的心，一个至少愿意倾听別的想法的心灵</strong>，就算有的观念乍听之下荒谬可笑。</p>
 <p>我认为早期教会必须以极简单的方式呈现上帝，是为了帮助当时的民众想像它的样貌。千百年来，大家就这样接受了上帝的早期形象，许多人毫不怀疑地相信教会灌输给他们的描述。过去曾有很少数的人愿意让自己对上帝有较为广阔的见解。<strong>如果我们把洗脑和制约的想法放一边，而以新的脑袋/心智来看待这些概念，就会发现它们并没有任何抵触，只是以不同的方式陈述同样的事。</strong></p>
 <p>首先我们要先脱离上帝是个老先生的概念。如果有性別，也会是女性，因为女性是代表创造的面向。然而，<strong>上帝不是男性也不是女性。它没有性別。它是巨大的能量，它的力量与范围都不可思议</strong>，令人难以置信。</p>
@@ -253,7 +432,7 @@
 <p>S：现在请你观想一个景象，<strong>从每个宇宙的边缘到中心，乃至后方的一切造物，都有一股力量，虽然看不见却存在，这个隱形的结构凝聚天地万物，就像水泥里的钢筋</strong>，虽然肉眼看不到，却支撑着水泥。你熟悉这个概念吗？</p>
 <p>朵：嗯，我瞭解你想表达的。</p>
 <p>S：这就是上帝的概念，就像宇宙的钢筋，凝聚天地万物，看不到却存在。**要是消失了，即使不到一秒，就会有绝对、完全、彻底的毁灭。**这就是上帝的概念，而你们的世界给了它人格。</p>
-<h4>宇宙的结构</h4>
+<h4 id="article-section-3" class="article-heading">宇宙的结构</h4>
 <p>S：我正在观察这个宇宙的结构。</p>
 <p>朵：可以跟我说你看见什么吗？</p>
 <p>S：我觉得语言恐怕无法形容。</p>
@@ -264,25 +443,25 @@
 <p>S：没错。声音远比你所说的「光」要来得慢许多，但它们全是振动与能量，我全都看得到；你们视为光的波长范围，甚至超出那个范围的，我都一览无遗，这简直无法言喻，因为我连乙太也看得见，实在太美了，就像欣赏北极光一样。想像一下，整个空间交织着北极光，所有缤纷的色彩交错综合。一片片、一块块的能量和颜色交互作用，改变彼此并带来多样变化。这真是错综复杂。</p>
 <p>朵：我们想像的太空是一片漆黑和空虚，但你的意思是<strong>太空其实充满了这些颜色及振动</strong>？</p>
 <p>S：一点也没错！**振动、色彩、能量，这些也能穿透一切。**虽然地球绕着太阳转，但那并不会阻挡或遮住能量，能量就是能够穿透。而所有会被影响的能量都会受到影响。<strong>整个宇宙和这个宇宙，以及其他宇宙，都是相连的。</strong></p>
-<h4>能量来自哪里？</h4>
+<h4 id="article-section-4" class="article-heading">能量来自哪里？</h4>
 <p>朵：这一切的能量来自哪里？</p>
 <p>S：<strong>能量始终都在</strong>，我不是很清楚来自哪里。<strong>或许从前有个能量的源头。然而宇宙是从这个能量打造出来的，当宇宙经历了它们的生命，便会分解回这个能量，然后新的宇宙再由这个能量打造出来。</strong></p>
 <p>这听起来像是巨大规模的转生，是一种从不间断、永无止境的循环，影响着最庞大甚至最渺小的一切造物。</p>
 <p>朵：我们太习惯认为光来自太阳的这一想法，所以我才以为这个能量也许源自某处。</p>
 <p>S：不，<strong>能量就是一切万有，而它也充满一切万有。一切都是能量，能量在作为一切万有的过程中，转化成各种结构，最后形成行星与恆星、能量与思想，以及许多不同的宇宙等等。</strong></p>
-<h4>能量就是一切万有</h4>
+<h4 id="article-section-5" class="article-heading">能量就是一切万有</h4>
 <p>朵：你觉得「一切万有」是怎样的概念？</p>
 <p>S：（叹了口气）这个概念实在太过浩瀚，连我也无法完全想像。我只能这么说：一切万有是永恆、是永远，一切万有就是能量。而<strong>能量会不断波动，各式各样的宇宙就随之产生</strong>。</p>
 <p>朵：我在想这是不是符合我们对上帝的概念。</p>
 <p>S：其实我说的概念相当狭隘，但考虑到你们受限的心智，就尽可能想像看看吧。我没有贬低你们的意思，只是陈述事实而已。你们对上帝可能有的最广大无尽的想像，跟一切万有比起来，仍然只是如线般细渺。你必须知道你们许多人对上帝的概念非常狭隘，这很令人遗憾，但事实就是如此。他们太害怕而不敢敞开自己的心，面对自己全部的潜能。</p>
-<h4>是什么在主导这一切？</h4>
+<h4 id="article-section-6" class="article-heading">是什么在主导这一切？</h4>
 <p>朵：我在想有没有什么在主导这一切，像是创造宇宙、创造人类等等。这又回到了我们对上帝的概念。</p>
 <p>S：<strong>能量是有组织的。它一向都有条理有组织，那是它的基本结构。就是这个可以小到不能再小的基本结构，让万物井然有序地出现。</strong></p>
 <p>朵：由于有这个秩序，人们才认为一定是有什么在主导。</p>
 <p>S：不是的，<strong>一切是以能量固定波动的条理来发展，并依此建构。有固定的波动在区域间来来回回，以特殊方式影响这个宇宙及其他宇宙。<strong>而且</strong>有极大的波动，也有极小的波动</strong>，你们的科学家绝对不会发现其中的极限。他们不断发现能量更细部的组成，但他们似乎没办法探究到能量最基本的结构。</p>
 <p>朵：我认为要大家不再去想上帝主导一切的想法非常困难。人们喜欢认为事情超出他们的掌控，有一个整体的力量在主宰一切。</p>
 <p>S：没错。<strong>人类发展的下个阶段有个重点，就是要意识到每个人都主掌自己的命运，他们渴望什么就会实现什么。看似突如其来的事情其实是来自过去的因，过去所发出的想法之类的。</strong></p>
-<h4>议会-高阶灵魂协助低阶灵魂</h4>
+<h4 id="article-section-7" class="article-heading">议会-高阶灵魂协助低阶灵魂</h4>
 <p>另一个存有用我比较容易接受的概念说明。他提到<strong>较高阶的灵魂来到我们的层级，在地球上协助我们。</strong></p>
 <p>S：有时候，回到这边帮助低层级是有用的。来自高次元的灵魂有时会回到你们的次元帮助实体世界的人提升意识。愿意回来的灵魂获得特许，也这么做了。</p>
 <p>朵：他们回来是由谁或什么准许的？</p>
@@ -299,7 +478,7 @@
 <p>S：是的，地方政府，就这么说吧。</p>
 <p>朵：我们的地球也是一样吗？我们也有一个议会在管理吗？</p>
 <p>S：没错。</p>
-<h4>我们是上帝的一部分，上帝是一切万有</h4>
+<h4 id="article-section-8" class="article-heading">我们是上帝的一部分，上帝是一切万有</h4>
 <p>朵：我很努力在瞭解。有这么多的宇宙，你是说每一个都有自己的上帝吗？</p>
 <p>S：<strong>所有宇宙合在一起就是上帝，每个宇宙的確都有上帝的意识，不过在不同的宇宙，甚至是同一个宇宙的不同区域，可能各有不同的意识，对上帝的概念可能不一样。在一切造物、所有宇宙中，上帝的实相不变。上帝存在，我们分別是它的一部分，而我们的整体就是它。</strong></p>
 <p>朵：就是这个力量创造了一切吗？</p>
@@ -775,7 +954,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -864,6 +1043,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

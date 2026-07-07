@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -239,21 +408,21 @@
 <p>引用自《The Convoluted Universe Book 1》，2001年</p>
 <p>作者：朵洛莉丝·侃南（Dolores Cannon）</p>
 <p>翻译/解读：暮雨</p>
-<h2>本集内容</h2>
-<p>・谁在与我们通灵？拒绝被定义的智慧</p>
-<p>・次元与维度 │ 意识如何在不同层级之间移动？</p>
-<p>・什么在阻碍我们抵达高维意识？</p>
-<p>・少数觉醒者：扬升大师 │ 瞬间转移的原理</p>
-<p>・扬升是逃避死亡吗？耶稣复活的真相</p>
-<p>・带着身体离开是否是一种执着？</p>
-<p>・超越心智的学习 │ 心智只是灵魂的工具</p>
-<p>・我们能采取哪些步骤“觉醒”？</p>
-<p>・如何思考“光”，专注于“光”？</p>
-<p>・“阿卡西记录”与“挂毯室”</p>
-<p>・超越业力之轮 │ 信念如何把人类困住，又如何带我们离开？</p>
-<p>・为什么现在才公布这些信息？</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：・谁在与我们通灵？拒绝被定义的智慧">・谁在与我们通灵？拒绝被定义的智慧</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：・次元与维度 │ 意识如何在不同层级之间移动？">・次元与维度 │ 意识如何在不同层级之间移动？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：・什么在阻碍我们抵达高维意识？">・什么在阻碍我们抵达高维意识？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：・少数觉醒者：扬升大师 │ 瞬间转移的原理">・少数觉醒者：扬升大师 │ 瞬间转移的原理</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・扬升是逃避死亡吗？耶稣复活的真相">・扬升是逃避死亡吗？耶稣复活的真相</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：・带着身体离开是否是一种执着？">・带着身体离开是否是一种执着？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・超越心智的学习 │ 心智只是灵魂的工具">・超越心智的学习 │ 心智只是灵魂的工具</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="4" aria-label="跳转到：・我们能采取哪些步骤“觉醒”？">・我们能采取哪些步骤“觉醒”？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="4" aria-label="跳转到：・如何思考“光”，专注于“光”？">・如何思考“光”，专注于“光”？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="4" aria-label="跳转到：・“阿卡西记录”与“挂毯室”">・“阿卡西记录”与“挂毯室”</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="4" aria-label="跳转到：・超越业力之轮 │ 信念如何把人类困住，又如何带我们离开？">・超越业力之轮 │ 信念如何把人类困住，又如何带我们离开？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-14" class="article-toc-link" data-target-id="article-section-14" data-toc-level="4" aria-label="跳转到：・为什么现在才公布这些信息？">・为什么现在才公布这些信息？</a></p>
 <hr>
-<h4>引言：</h4>
+<h4 id="article-section-2" class="article-heading">引言：</h4>
 <p>我们99%处于沉睡状态。我们自身很大一部分始终栖息在那光明与永恒的界域。而我们有责任将那一部分意识带入清醒的意识之中，即觉醒。</p>
 <p>每当你有意识地想着提升自己的振动频率时，那种想法本身就拥有力量、能量与清晰度。那一刻你聚焦了自己的意图，清楚知道自己要完成什么。这样的念头像一支笔直清明的箭，射出去后不会停止。所有察觉到这股清晰意念的其他意识体，都会为它增添力量。</p>
 <p>有些少数觉醒者已经做到，能让身体的每一个分子都调高能量频率，每个分子都化为光。当光被点亮，振动频率加速到极高程度时，身体与无限的意识就能一同超越这个层面。他们被称为扬升大师。那么，我们普通人能采取哪些步骤“觉醒”？如何去练习思考“光”，专注于“光”？如何超越地球的“业力之轮”？</p>
@@ -261,7 +430,7 @@
 <p>在1980年代，我进行了许多场催眠回溯的会谈，其中一部分内容后来被收录进我的书里。还有一些资料，我一直保留在档案中，等待着被纳入一个合适的主题。那段时间，我与帕姆（Pam）在深度催眠状态下探讨了许多话题。每一次会谈中，不同的存在体都会透过她传达信息，并解答我们的提问。</p>
 <p>在1988年的一次催眠回溯中，她看见了一个身披长袍的存在，让她联想到 <strong>时间之父</strong>（Father Time）。虽然她直觉上明白这个存在没有性别，但第一印象仍然让她想到男性。他身穿白色长袍，由内而外散发出强烈的能量，仿佛他本身就是光。</p>
 <p>我们问他来自哪里，他回答：“来自超越一切的地方。或者，如果你愿意，可以称之为‘永恒之殿’（the Hall of Always）。”</p>
-<h4>・谁在与我们通灵？拒绝被定义的智慧</h4>
+<h4 id="article-section-3" class="article-heading">・谁在与我们通灵？拒绝被定义的智慧</h4>
 <p><strong>D（朵洛莉丝·侃南）</strong>：你知道他是谁吗？</p>
 <p><strong>P（Pam）</strong>：不知道。他说，他是显化出来的本源意识之一，目的是让我们能更容易进行沟通。为了便于我理解，他选择让自己显化成一种密度更高的物质形态，因为相比对着空气中的一片空白，我更容易与一个“可见的存在”交谈。</p>
 <p>这并不是第一次了——他说，他曾在地球上和其他星球的不同时期显现过，其目的不仅是促进沟通，更是为了启发与慰藉。所以，这并不是一项被轻率对待的行动，也不是由某一个存在单独完成的。<span style="color: #6B77CC;">（暮雨注：人类的偶像崇拜倾向，常把这种显化误解为一个单一个体的神，一种英雄式的个人行为。但任何深度介入人类意识的行动；任何可能改变认知结构的影响；任何跨文化、跨时代的启发型信息传递，从来不是孤立的行为，而是一种更大层面的集体协作与共识。）</span></p>
@@ -277,7 +446,7 @@
 <p>P：没有。但他说，他与那些向他寻求帮助的地球生命有着极深的连结。他从未需要经历人类转世时所必然伴随的遗忘，也就是灵魂进入肉体后忘却自己真正本质的那种状态。</p>
 <p>D：那么，他从未想过要以肉体的形式体验生命吗？</p>
 <p>P：从未。他说，他只有一个使命——那就是 <strong>让爱的原则得以显化</strong>。如果他选择成为人类，就会被这种有限的经验分散注意力，反而延误他更宏大的任务。</p>
-<h4>・次元与维度 │ 意识如何在不同层级之间移动？</h4>
+<h4 id="article-section-4" class="article-heading">・次元与维度 │ 意识如何在不同层级之间移动？</h4>
 <p>D：我正试着理解不同的层次与维度，想在“空间上”找出他所处的位置。</p>
 <p>P：如果你把地球看作一个乒乓球，那在它的外层再扩展出一个更大的同心球体，假设大小像一个橙子。然后再往外扩展一层，可能就像一个篮球的大小。而后继续延伸出一层又一层，越来越大、越来越宽广的同心球体。你可以把这些圆球称为“<strong>平面（plane）</strong>”或“<strong>层级（level）</strong>”。<span style="color: #6B77CC;">（暮雨注：plane（平面）指同一状态、同一振动区间；level（层级）指振动频率由低到高的连续变化。对应我们的习惯说法就是次元和维度。）</span></p>
 <p>事实上，其中<strong>一些平面和层级的能量运动非常缓慢</strong>，几乎与地球这颗“乒乓球”的物质密度一样沉重、稠密和健忘。而他已经超越了这些层级。穿越这些层级本身并不容易——有些层面像是粘稠的糖浆，带有阻滞感，就像烘干机里衣服彼此黏在一起那样。</p>
@@ -294,14 +463,14 @@
   </a>）
 </p>
 但如果我们平时经常练习，让思想、情感与意愿对准<b>一切万有（All That Is）</b>——对准宇宙中最伟大的力量与爱（他纠正道，更准确地说是“多重宇宙中最伟大的力量与爱”）——那么我们就能像鱼儿在水中自由滑行那样，能轻盈地穿越许多层级。因为<b>思想本身是一种极其强大的振动</b>。强大的振动会被同样强大的振动所吸引，因此我们完全可以超越那些“黏稠沉重”的层面。
-<h4>・什么在阻碍我们抵达高维意识？</h4>
+<h4 id="article-section-5" class="article-heading">・什么在阻碍我们抵达高维意识？</h4>
 <p>D：那有没有什么障碍，会阻止我们前往某些层级？</p>
 <p>P：有的——<strong>我们的思想、恐惧、信念，以及意图</strong>。</p>
 <p>D：那我们是否能到达他所在的层面？</p>
 <p>P：此刻我们可以透过意识到达那里。事实上，我们的意识始终存在于那个层面，只是我们99%处于沉睡状态，自己并不知道。我们自身中有很大一部分始终栖息在那光明与永恒的界域。而我们有责任将那一部分意识带入清醒的意识之中——即<strong>觉醒</strong>。</p>
 <p>D：我在想，我们平时的注意力都太集中在肉体上了。所以当我们“死亡”、离开肉体之后，也许我们只会离开一小段距离，然后又会返回到物质层面。</p>
 <p>P：那完全是有可能的。这一切取决于你的<strong>专注点</strong>。你的意识思想，是你与所有人类所共有的能量来源。你意识中产生的想法，会在很大程度上决定你将前往何处，以及是否、何时、以何种方式再次以物质形态回到这颗星球。</p>
-<h4>・少数觉醒者：扬升大师 │ 瞬间转移的原理</h4>
+<h4 id="article-section-6" class="article-heading">・少数觉醒者：扬升大师 │ 瞬间转移的原理</h4>
 <p>D：你刚才说我们有99%处于沉睡状态？那是指所有人类吗？</p>
 <p>P：当然，有一些人例外——他们透过思想、爱的意图、以及对 <strong>永恒之光与爱的信念</strong> 而觉醒。他们确实能够超越沉重、黏稠的物质层面，而不是以你们所熟知的“死亡”方式离开世界。</p>
 <p>他们被称为“<strong>扬升大师</strong>（ascended masters）”，不过他说这个称呼颇具幽默意味——因为那只是指他们成功超越了许多“黏滞的能量层”，并不是真的“升上去”到某个地方。</p>
@@ -314,7 +483,7 @@
 <p>D：所以这就好像整个身体分解了。我不确定这个词是否恰当。消失了。</p>
 <p>P：是的，“消失”这个词很贴切。不过，这必须在一个非常受控的条件下进行，只是说这些振动被提升到一个超出你们肉眼可见范围的层次。这确实发生过，但不是由那些你们一般认为“正常”的人做到的。</p>
 <p>有些人类已经意识到，他们实际上是“源头能量”的一部分。当他们在意识层面上成为真正的光时，他们便具备分解自身分子结构的能力。某些更高层次的存在，甚至可以重新排列他们的分子结构。不过，这并不是常见或普遍之事。重新组装这些分子成密集的物质形态意义不大。一旦分解，再重新组合，就意味着必须以某种方式“返回”。</p>
-<h4>・扬升是逃避死亡吗？耶稣复活的真相</h4>
+<h4 id="article-section-7" class="article-heading">・扬升是逃避死亡吗？耶稣复活的真相</h4>
 <p>D：有些人认为这可能是一种逃避死亡的方法。</p>
 <p>P：根本<strong>没有必要逃避死亡</strong>。因为正如你所看到的，<span style="border-bottom: 2px dashed #6B77CC;">没有所谓“真正的死亡”，也就没有什么是你要逃避的。并不存在那种精神上的死亡。因此，肉体自然不需要被提升到另一个层面。</span>那就好比你死后还想带着你的外套——你根本不再需要它，那么为什么还要带上？没有必要将身体转化带入精神层面，在那个层级它根本起不了作用，也毫无用途。</p>
 <p>不过，如果在仍然活着、健康、具备正常机能时，为了探索更高层面的知识而尝试这种转化，那么可以说这是一种“工具”。因为那样的经历会远超出一般人所能想象的普通经验。但再次强调，这个行为本身并没有真正的价值。</p>
@@ -323,7 +492,7 @@
 <p>当耶稣在“死亡”之后显现在人们面前时，他能够调节自己的频率——更准确地说，是调节他灵魂或精神的振动频率——以便被特定的人看到。他可以将频率调整到让人群中只有一个人能看到他，也可以调整到让整个人群都能看到他。这种现象其实在许多不同的地方、许多不同的时代都曾经发生过，这并非耶稣独有的经历。</p>
 <p><span style="color: #6B77CC;">（相关文章：<a href="链接" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank">《抹大拉手稿》耶稣，施展神迹背后的真相-耶稣复活的意义</a>）</span></p>
-<h4>・带着身体离开是否是一种执着？</h4>
+<h4 id="article-section-8" class="article-heading">・带着身体离开是否是一种执着？</h4>
 <p>D：我遇到过许多案例中，外星存有也能做到这种事。他们不会死亡，除非他们决定要离开，通常是因为他们已准备好，以另一具身体去别处展开新的旅程。在这种情况下他们的身体会消失，或者用他们的话说是<strong>不再维持原有的物质形态</strong>（disformulate）。有时人们会看到他们的身体分解成闪光的物质，或极其细微的分子。</p>
 <p><span style="color: #6B77CC;">（相关内容：<a href="/audiobooks/keepers-of-the-garden/" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank">有声书《地球守护者》第8集-另一个星球四次元城市，其中就有提到这类外星存有</a>）</span></p>
@@ -334,7 +503,7 @@
 <p>D：如果他们想带着身体一起离开，那似乎表示他们仍对肉身有执着。</p>
 <p>P：你似乎也回答了自己的问题，那确实是一种对个体来说非常重要的执着。人类的身体有其特定的目的，那就是以这种形式来体验生命。他说过类似这样的话：你们曾经主动要求拥有物质形态，而每一个人类也都以这种方式显化出来——这就是身体的重要性所在。人类并不是唯一的物种（“物种”这个词，他带着幽默的口气加上了引号，她笑了），也不是唯一依附于物质形态的存在。</p>
 <p><span style="border-bottom: 2px dashed #6B77CC;">你必须明白，那些能够有意识地解构自己肉体的人，并不是那“99%沉睡”的人。如果你真的觉醒到这样的知识与信念，知道你能够超越这些存在层面，并且能够真正实现这种超越，那么你也就觉醒到了一个事实：你不再需要在这沉重、稠密的物质层面继续苦苦挣扎。</span></p>
-<h4>・超越心智的学习 │ 心智只是灵魂的工具</h4>
+<h4 id="article-section-9" class="article-heading">・超越心智的学习 │ 心智只是灵魂的工具</h4>
 <p>D：在我看来，能将心智控制到那种程度，应该算是在地球的最终课程吧？我这样理解对吗？</p>
 <p>P：课程（lesson）、学习（learning）——这似乎只是语义上的问题。而“最终（final）”这个词本身就是一种限制，因为当你说“最终的学习”时，就意味着“结束”。但事实上，这是一种我们在物质层面上所能达到的最高学习。但要注意，这必须伴随着内心的信念。也就是说，这个学习<strong>必须超越心智</strong>（理智层面）。因为<b>“心智”只是“灵魂”的工具</b>。</p>
 <p>D：但如果一个人能把心智与身体都控制到这种程度，那么他/她在物质层面的学习也就完成了，是吧？</p>
@@ -343,7 +512,7 @@
 <p>而你最初的那个想法，意味着你已经发射出一条条“能量线”——那是和谐与高频振动的“高速公路”。所以，每一次你有意识地这样去做时，你其实就在实现你的意图，因为你相信那是可能的。你完全可以在仍具肉身的时候做到这一点。</p>
 <p>如果你能真正让自己的心智，接受这样一个事实：<strong>一切分子、所有存在，皆是光，而光即是爱</strong>。</p>
 <p>当你将这种理解纳入自己的信念体系后，你就能与身体的每一个原子合作。<strong>你能增强能量</strong>，能让光照耀，能<strong>加速振动频率</strong>。当光能被完全开启，当振动提升到足够高的层次时，你甚至可以让你的肉身结构自行分解。</p>
-<h4>・我们能采取哪些步骤“觉醒”？</h4>
+<h4 id="article-section-10" class="article-heading">・我们能采取哪些步骤“觉醒”？</h4>
 <p>D：就像你说的，如果人类有99%都在沉睡，那么我们能采取哪些步骤来“觉醒”？</p>
 <p>P：他说，这是个极好的问题！这些信息当然早已被给予过，但确实值得再一次强调。如果我们的心智是最强大的工具，而我们又希望能让它发挥到最大的潜能，那么我们就要有意识地与光之领域中的存在建立连接。</p>
 <p>所以，我们要向外发出某种振动——<strong>主动练习去思考光，去思考那种无边的扩展感</strong>，让思想越过无数的星辰，不要去想哪里是尽头，或在尽头之外还有什么。就像发射一枚卫星探测器那样，把意念送出去——只需明白，它终将成为我们所意愿的那样。</p>
@@ -352,13 +521,13 @@
 <p>P：<span style="border-bottom: 2px dashed #6B77CC;">要<strong>有意识地把你的思想专注于“光”</strong>——不仅是外在的光，而是<strong>从你身体每个细胞中散发出的光</strong>；从地球本身、从每一株植物和动物，甚至空气与水中，都流淌着光。想象一下，每一个你接触到的事物，甚至仅仅是你的思想，其实本质上都是由光构成的。而光的核心、最根本的本质，就是爱。而“爱”是一种被人类严重误解的力量，人类把它装进一个又小又窄的思维盒子里。</span></p>
 <p><span style="color: #6B77CC;">（相关文章：<a href="https://librarys.life/all-articles/dolores-cannon-hypnosis/new-earth-ascension/cell-consciousness-healing-beyond-germs-self-exploration" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank">《细胞的意识》</a>）</span></p>
-<h4>・如何思考“光”，专注于“光”？</h4>
+<h4 id="article-section-11" class="article-heading">・如何思考“光”，专注于“光”？</h4>
 <p>D：那我们该如何思考光，或专注于光？</p>
 <p>P：人类该如何专注？他笑了，因为他意识到这个问题多么重要，也多么显而易见。他说，不要去视觉化——别像看电影那样去想象，而要去<strong>感受万物在发光</strong>。只要想象一切都在闪耀着微光，这样也许会更容易。</p>
 <p>D：像是在观察“<strong>灵气/光环</strong>（aura）”一样吗？</p>
 <p>P：当你问这个问题时，我所看到的景象，就像从万物中升起的烟雾——它在波动、旋转、形成图案、散开，又不断流动。所以，这种“光辉的烟雾”正是那种状态。许多美洲原住民的传说中提到的“<strong>发光的纤维</strong>”确实存在。你可以把它想象成发光的线，如果你真的能看见光环（aura），它其实是无限延伸的！大多数人以为光环只是包围在物体周围，但实际上它存在于万物之中、穿透万物、不断延展。它渗透在一切存在之内。</p>
 <p>D：这样的话，我们就可以彼此相连了。因为如果光是无限延展下去的，那么每个个体的光都会与他人的交织重叠在一起。</p>
-<h4>・“阿卡西记录”与“挂毯室”</h4>
+<h4 id="article-section-12" class="article-heading">・“阿卡西记录”与“挂毯室”</h4>
 <p>P：没错。你提到的“织锦/挂毯”的比喻并非偶然。</p>
 <p>D：那你能解释一下“挂毯”的比喻吗？</p>
 <p>P：恐怕并不像我们通常理解的挂毯那样简单。<span style="border-bottom: 2px dashed #6B77CC;">挂毯在我们看来似乎是平面的，虽然由许多纤维交织而成、在交叉处接触、形成图案和形状。但实际上，这幅 <strong>挂毯是全息的</strong>（holographic）——它具有深度，还拥有其他维度。</span></p>
@@ -369,7 +538,7 @@
 <p>P：请明白！信息是通过其他人类传递给你的，以他们所能最好理解和表达的方式来呈现。那些光之领域的存有充满爱的意图，尝试让人类理解“一切万有”的无比浩瀚。因此他们会使用许多不同的比喻，让信息以可见、可感的方式呈现给你，使它在你心中显得极为真实。换句话说，这些比喻被赋予了生命。所以，如果你真的相信“<strong>阿卡西记录</strong>”是以实体存在的，那是很美好的，那种感觉也是对的，这个比喻本身也非常恰当。</p>
 <p>D：很多相似的比喻，也从不同的人那里传递出来过。</p>
 <p>P：没错。</p>
-<h4>・超越业力之轮 │ 信念如何把人类困住，又如何带我们离开？</h4>
+<h4 id="article-section-13" class="article-heading">・超越业力之轮 │ 信念如何把人类困住，又如何带我们离开？</h4>
 <p>P：但他说，还有其他充满爱的意识体也在“读同一本书”。意思是，如果他们找到一种能够让人类打开自己、进入更高层次和不同领域的方法，使其能够理解并诠释这些讯息，那么他们就会用类似的技术来帮助不同的人。</p>
 <p>我们在与人类合作时遇到的一个问题是——<strong>人类总是试图去验证、确认，并用逻辑去理解一切</strong>。而这其实非常受限，也完全没有必要。<span style="border-bottom: 2px dashed #6B77CC;">觉醒才是目的。觉醒于这样一个事实：我们本质上就是光，我们就是爱。我们身体的每一个细胞、每一个分子，以及万物的每一个组成部分，都是由光所驱动的生命能量。</span></p>
 <p>所以，当一个人觉醒并意识到这一点，并且渴望在这种光的领域中运作，并相信这确实可能时，这些因素都会让他抵达那样的境界。</p>
@@ -384,7 +553,7 @@
 <p>“信念”这个词对人类来说其实很难真正理解。<span style="border-bottom: 2px dashed #6B77CC;"><b>什么是信念？</b>它并不只是你“认为某件事如何”的想法。它是你“既思考、又感受，并且内在深知”的某种东西。但它甚至比这些都更大、更深，几乎无法定义。</span></p>
 <p><span style="border-bottom: 2px dashed #6B77CC;">信念似乎就像高速公路，我们紧紧抓住这些“信念之路”。而作为渴望觉醒、追求启蒙的存在，我们的任务，就是让这些信念之路朝向“光”的方向延伸。</span></p>
 <p><span style="border-bottom: 2px dashed #6B77CC;">信念本质上是非常强大的思想。问题之一在于“语义”——我们为那些浩瀚、无限、没有边界的概念套上语言的外壳，一旦给它取了名字，就限制了它的广度与流动性。</span></p>
-<h4>・为什么现在才公布这些信息？</h4>
+<h4 id="article-section-14" class="article-heading">・为什么现在才公布这些信息？</h4>
 <p>D：为什么这些信息现在才变得可以被人们获得？</p>
 <p>P：首先，是人类发出了召唤。这很大程度上是因为在当今人类历史阶段，我们拥有了“即时的大众传播”手段，越来越多的人开始在理智上意识到——更高层次的领域可能存在。当人类在智识上觉察到这种可能性后，他们就会想要去尝试，于是便发出渴望（desire）、意图（intent），以及<strong>关键的一步：请求（asking）</strong>。</p>
 <p>因此，在当今地球上，确实有越来越多的人开始主动寻求与“无形界”的沟通。然而，这种“急迫感”似乎并不仅仅来自人类。事实上，天使界早已长期怀抱着与人类进行有意识交流的渴望。所以，这种 <strong>迫切沟通</strong> 的愿望并非近期才出现。</p>
@@ -859,7 +1028,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -948,6 +1117,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

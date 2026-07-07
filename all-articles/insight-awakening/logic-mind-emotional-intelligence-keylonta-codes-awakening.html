@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -240,61 +409,61 @@
 <p>材料来自多维度存有的“守护者联盟MCEO”，通过 Ashayana Deane（Anna Hayes）转译</p>
 <p>翻译/解读：暮雨</p>
 <hr>
-<h2>本集内容</h2>
-<p>逻辑心智：困在鱼缸里的青蛙</p>
-<p>进化的青蛙：情绪感知能力的觉醒</p>
-<p>拒绝跳出鱼缸的青蛙</p>
-<p>为什么我们必须整合“情绪智能”</p>
-<p>灵魂整合：逻辑与情感的共同进化</p>
-<p>情绪的逻辑：带来认知觉醒</p>
-<p>意识跃迁：一个全新人类的可能性</p>
-<p>封面：逻辑心智：困在鱼缸里的青蛙</p>
-<p>逻辑导向结论，情绪的逻辑则带来认知觉醒</p>
-<h2>逻辑心智：困在鱼缸里的青蛙</h2>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：逻辑心智：困在鱼缸里的青蛙">逻辑心智：困在鱼缸里的青蛙</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：进化的青蛙：情绪感知能力的觉醒">进化的青蛙：情绪感知能力的觉醒</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：拒绝跳出鱼缸的青蛙">拒绝跳出鱼缸的青蛙</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：为什么我们必须整合“情绪智能”">为什么我们必须整合“情绪智能”</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：灵魂整合：逻辑与情感的共同进化">灵魂整合：逻辑与情感的共同进化</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="2" aria-label="跳转到：情绪的逻辑：带来认知觉醒">情绪的逻辑：带来认知觉醒</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="2" aria-label="跳转到：意识跃迁：一个全新人类的可能性">意识跃迁：一个全新人类的可能性</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：逻辑心智：困在鱼缸里的青蛙">封面：逻辑心智：困在鱼缸里的青蛙</a></p>
+<p class="article-toc-item">逻辑导向结论，情绪的逻辑则带来认知觉醒</p>
+<h2 id="article-section-2" class="article-heading">逻辑心智：困在鱼缸里的青蛙</h2>
 <p>打个比方，人的<strong>逻辑意识</strong>就像“鱼缸里的青蛙”。</p>
 <p>年幼时，青蛙虽然可以在狭小的水域中不断绕圈游动，却始终无法跳出那道玻璃边界，去探索玻璃缸以外的世界。</p>
 <p>透过玻璃，它能模糊地看到一个全然陌生的世界——世界看起来很危险，因为我们的“青蛙”无法理解那些模糊的形状和轮廓，它还没有经验基础来将这些神秘莫测的事物，与熟悉的事物联系起来并加以理解。</p>
 <p>青蛙缺乏必要的感官，也没有能逃离鱼缸所需的身体结构，所以只能眼睁睁看着那个奇异世界，却无法真正接触。</p>
 <p>人类的处境亦如此。</p>
 <p>当身体尚未激活细胞中那些被称为<strong>科洛提代码（Keylonta Codes）<strong>的感知机制时，我们的认知便局限在</strong>五感的世界</strong>里。我们看不见更高频的维度，也听不懂情绪背后真正的信息。情绪就像陌生来客，突然闯入意识，我们却缺乏合适的语言去回应和理解。</p>
-<h2>进化的青蛙：情绪感知能力的觉醒</h2>
+<h2 id="article-section-3" class="article-heading">进化的青蛙：情绪感知能力的觉醒</h2>
 <p>随着青蛙渐渐长大，原本的尾巴区域开始长出了腿。于是，它终于具备跳出舒适的鱼缸、探索外部世界的能力。</p>
 <p>同样地，随着人类生理与神经系统的进化，那些沉睡在体内的<strong>科洛提代码被逐步激活</strong>，我们也开始发展出<strong>情绪感知的能力</strong>。这种感知不再只是通过逻辑、语言和理性运作，而是来自<strong>更深层的、非语言的，通过感觉、共鸣、直觉来认知的世界。</strong></p>
-<h2>拒绝跳出鱼缸的青蛙</h2>
+<h2 id="article-section-4" class="article-heading">拒绝跳出鱼缸的青蛙</h2>
 <p>理性的大门已然敞开，但青蛙却因为恐惧而退缩，选择继续在熟悉的小缸中打转。它闭上眼睛，假装看不到那闪现而过的奇异世界。</p>
 <p>人类也是如此——即使已经具备探索“情绪实相”的能力，我们却<strong>习惯性地逃回逻辑构建的小世界，用“合理化”来否认</strong>心中正在浮现的情绪感受。</p>
 <p>只要我们的“青蛙”拒绝跳出鱼缸，它就永远不会发现——自己<strong>早已具备在新世界生存的能力</strong>，也已经为理解未知做好了准备。但青蛙继续困在这狭窄的空间里，无法自由移动，更难以成长。那个鱼缸外的广阔世界，仍然不可触及。</p>
-<h2>为什么我们必须整合“情绪智能”</h2>
+<h2 id="article-section-5" class="article-heading">为什么我们必须整合“情绪智能”</h2>
 <p>如果人类依旧<strong>压抑与否认内在的情绪维度</strong>——哪怕我们已经具备整合情绪所必需的生理基础——那么我们的逻辑心智，将永远困于旧有框架，无法突破观念的边界，<strong>去发现超越其当前观念限制的自由</strong>。</p>
 <p>人类将继续被困在由“五感与二元对立”构成的认知鱼缸里，难以突破那堵由逻辑认知筑起的玻璃墙。只要我们仍将<strong>七种更高感官的现实与逻辑意识构建的世界割裂开</strong>，就永远无法成为一个完整的人。</p>
 <p>如果人类物种要进化，以履行其被创造时的印记和使命，它必须成为完整的人类。成为“<strong>完整的人</strong>”，意味着激活并整合体内潜藏的，那些被称为“情绪”的感知代码——那才是人类真正拥有<strong>多维感知能力</strong>的开始。</p>
-<h2>灵魂整合：逻辑与情感的共同进化</h2>
+<h2 id="article-section-6" class="article-heading">灵魂整合：逻辑与情感的共同进化</h2>
 <p>在人类智力发展的初期，意识被安置在一个**“简单观念的鱼缸”**里是恰当的。这个小小的思想容器，如同意识成长的温室，为早期意识的萌芽提供了安全的环境。</p>
 <p>但如今，“鱼鳍早已进化成了双腿”。即便如此，人类的逻辑心智依然紧闭双眼，不肯正视情感与直觉的世界。我们害怕迈出那一步，害怕探索“<strong>两极化感知的玻璃缸</strong>”之外的情绪认知领域。</p>
 <p>人类的逻辑心智在当前的发展阶段，仍试图用过往有限的经验，去理解那个“魔法般的世界”。然而，就像那只青蛙一样，人类的逻辑永远无法真正理解玻璃外的现实，除非我们<strong>愿意跳出那口名为“安全的信念小鱼缸”</strong>（即信念构建的舒适圈），从婴儿般的封闭认知中解放出来。</p>
 <p>逻辑与情绪，本该协同合作——因为只有两者结合，我们才能获得更接近真实的感知现实。</p>
 <p>逻辑心智的“五感视角”只能为我们提供<strong>图景的一半</strong>。如果你们不将这半张图，与你们<strong>情感遗产</strong>（emotional heritage）中存在的那部分图景拼凑在一起，人类就永远无法真正认识自身，也无法理解这个世界的本质。<span style="color: #6B77CC;">（暮雨注：情感遗产，是指你与生俱来的情绪感知力、情绪智能与情绪认知能力，是一种灵魂层级的遗产。本书认为这些能力被潜藏在人类的DNA中，有待激活。）</span></p>
 <p>而人类要继续作为“鱼缸中的青蛙”，困在那套<strong>残缺的逻辑系统</strong>中绕圈子游多久？完全取决于你自己的选择。</p>
-<h2>情绪的逻辑：带来认知觉醒</h2>
+<h2 id="article-section-7" class="article-heading">情绪的逻辑：带来认知觉醒</h2>
 <p>情绪，是无法单靠逻辑心智去理解的。情绪有它自己的逻辑，它以独特的方式整合能量与思想。</p>
 <p>逻辑心智会使你们导向结论，而情绪的逻辑能为你们带来认知的觉醒。如果没有这种源自情绪系统、由潜意识层面运作的认知能力，你的逻辑结论对你的意识来说，将毫无意义。当你们将<strong>情绪认知</strong>从<strong>逻辑感知</strong>中切除时，你们就在<strong>人格身份</strong>与<strong>意识觉知</strong>中，创造了一道<strong>人为的界限</strong>。</p>
-<h2>意识跃迁：一个全新人类的可能性</h2>
+<h2 id="article-section-8" class="article-heading">意识跃迁：一个全新人类的可能性</h2>
 <p>事实上，情绪密码早已储存在人类的细胞结构中，它们会在“灵魂矩阵”的推动下，被持续激活、重组与唤醒——只要你愿意成长。</p>
 <p>当这些代码逐渐整合，并重新编排入DNA中，你们的意识就能接收到<strong>更宏观的现实图景</strong>。</p>
 <p>那种“身体意识”与“灵魂身份”之间的幻觉性分裂，也会随之消融。从而允许更多的能量、自我身份<span style="color: #6B77CC;">（暮雨注：如其他化身的转世记忆）</span>与意识流<span style="color: #6B77CC;">（如其他维度的信息）</span>，开始渗入你们的身体与理性思维中。</p>
 <p>随着这些沉睡的代码被逐步唤醒，人类早期的“本能印记”将与新发展出的逻辑能力融合，进而诞生一种全新的感知能力—— <strong>一种能够在肉身中完整承载灵魂认知的状态</strong>。</p>
 <p>如果人类的进化之路，能依照灵魂矩阵的节奏展开，我们本可以实现肉体与灵魂意识的合一，成为拥有完全觉知的生命存在。</p>
 <p>但很遗憾，事情并未如原本计划那样发展，而且还出现了一些倒退。这其中一个关键的原因是：<strong>外星种族对人类基因的干预与操控</strong>。</p>
-<h2>下一集：</h2>
+<h2 id="article-section-9" class="article-heading">下一集：</h2>
 <p>我们将揭示这些<strong>异常能量冲击</strong>如何扭曲基因激活程序、制造失控情绪与暴力倾向，并探索<strong>直觉功能</strong>如何作为桥梁，重新整合失序的意识系统，引导人类走出进化的混乱迷局。</p>
-<h2>名词解释</h2>
-<h3>七种更高感官/高等感知（HSP）</h3>
+<h2 id="article-section-10" class="article-heading">名词解释</h2>
+<h3 id="article-section-11" class="article-heading">七种更高感官/高等感知（HSP）</h3>
 <p>高等感知（Higher Sensory Perception，简称 HSP）是指使用人类体内存在于 <strong>更高频率层面的七种感官</strong> ——它们超越了你们熟悉的五感。由于这些感官本身存在于人类生物能量场的高频带中。通过“ <strong>科洛提代码</strong> （Keylonta Codes）”，它们能够接收并翻译更高频率的信息（有些也可转译超低频信息）。连接人类与 <strong>灵魂矩阵</strong> （Soul Matrix）的能量，本质上就是高频能量。而 HSP 的“高阶感官”，正是让灵魂矩阵的信息通过身体被转译，进入人类意识觉知的工具。</p>
 <p>换句话说，高等感知HSP就是你与你的更高自我，你的内在直接沟通并获取信息的能力。</p>
-<h3>科洛提代码（Keylonta Codes）</h3>
+<h3 id="article-section-12" class="article-heading">科洛提代码（Keylonta Codes）</h3>
 <p>又称科洛提/科洛提科学（Keylontic Science），是 Ashayana Deane 教导的核心工具。是一种“宇宙能量语言”，由几何图形、音调和光频组成。它被描述为多维能量结构的原始程序码，可以：</p>
 <p>1.修复或解锁人类能量体与DNA（恢复 12 股 DNA 的潜能）。 2.可以修复和升级灵魂系统，帮助灵魂回归高维源头。 3.用于防护、扬升（Ascension）、跨维度旅行。</p>
-<h3>灵魂矩阵（Soul Matrix）</h3>
+<h3 id="article-section-13" class="article-heading">灵魂矩阵（Soul Matrix）</h3>
 <p>在守护者联盟MCEO体系中，人类并非单一存在，而是由灵魂多层结构（Soul Matrix）组成。其中包含：3D肉体意识（当前的我们）、灵魂身份（4D–6D层面）、超灵/高我（7D–9D 层面）、Avatar/基督体（10D–12D层面）。</p>
 <p>每一层都是能量体与意识体，层层相连。通过科罗提技术，据称人类能重新激活这些层面，与高维自我整合，从而摆脱外部操控、进入扬升路径。</p>
 
@@ -759,7 +928,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -848,6 +1017,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

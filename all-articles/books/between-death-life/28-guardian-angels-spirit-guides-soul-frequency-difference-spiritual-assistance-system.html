@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -242,7 +411,15 @@
 <hr>
 <p>每个人都有守护天使、指导灵吗？指导灵有名字吗？指导灵如何提供帮助？人的一生中可能有几个不同的指导灵，他们的功用隨我们人生的变化而不同。学会分辨，正面与负面的存有，有些灵体可能不在乎你们好不好。指导灵和辅导灵的区别。怎样的灵魂才能成为指导灵？</p>
 <p></p>
-<h4>每个人都有指导灵吗？</h4>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="4" aria-label="跳转到：每个人都有指导灵吗？">每个人都有指导灵吗？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="4" aria-label="跳转到：学会分辨正面与负面的存有">学会分辨正面与负面的存有</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：学会在何时提供帮助">学会在何时提供帮助</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：不同的指导灵和辅导灵">不同的指导灵和辅导灵</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：指导灵的名字">指导灵的名字</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：怎样才能成为指导灵">怎样才能成为指导灵</a></p>
+<hr>
+<h4 id="article-section-1" class="article-heading">每个人都有指导灵吗？</h4>
 <p>朵：世界上几乎每个文化都相信有<strong>守护天使</strong>或<strong>保护的神灵</strong>，他们真的存在吗？</p>
 <p>S：有守护灵。一般説来，<strong>他们是从前和你关系紧密，而现在在灵界进修的灵魂。他们在你们在地球的学习期间协助并保护你们。他们在灵魂的层面发挥作用。</strong></p>
 <p>朵：他们是被指派给特定的人吗？</p>
@@ -250,7 +427,7 @@
 <p>朵：所以当你的灵魂进入身体的时候，并不是孤独的。</p>
 <p>S：从来没有人是孤独的。孤独的感觉就像一面墙，区隔了自己和别人，只要你拆了墙，允许別人来帮助你，总会有人愿意分享经验。</p>
 <p></p>
-<h4>学会分辨正面与负面的存有</h4>
+<h4 id="article-section-2" class="article-heading">学会分辨正面与负面的存有</h4>
 <p>朵：他们是不是总是为我们着想？</p>
 <p>S：大部分的时候，在你们身边的指导灵的确是这样，没错。但<strong>你们必须学习保护自己不被那些可能不为你们着想的灵体影响，有些灵体可能不在乎你们好不好</strong>。</p>
 <p>朵：指导灵是否有足够强大的力量让其他影响力离开？</p>
@@ -267,7 +444,7 @@
 <p>S：这一点需要厘清。影响不是正确的字，指导灵和帮手并不会试图影响，比较正确的讲法应该是**「协助」或「启发」**，差别可能看似微妙却十分重要。**地球是「选择」的层面，你们有完全的自由选择你想要的一切。**如果你在选择过程中需要协助，这就是他们的功用。</p>
 <p>**他们只是帮助，并试图让你看到或澄清一些情况。**你们不是从「另一边」被操作的玩偶，你们的命运稳稳地掌握在你们自己手里。他们只是旁观者，在你需要的时候能够立刻协助，并随时等候你提出要求。他们不会让你以为有某种想像的命运；是你创造自己的命运。</p>
 <p></p>
-<h4>学会在何时提供帮助</h4>
+<h4 id="article-section-3" class="article-heading">学会在何时提供帮助</h4>
 <p>S：当你们在身体时也是同样道理，<strong>你们应该彼此无私地互助</strong>。有些人觉得不论自己喜不喜欢，都一定要帮助他人，但<strong>一个人不该不顾自己当下的情绪，觉得自己非帮忙不可。你应该在你想帮的时候帮，这样你才能给出最好品质的协助。</strong></p>
 <p>我们想説的是：<strong>请不要觉得自己隨时都必须帮助每一个人。当你想帮忙的时候才应该帮。强迫自己帮忙比完全不帮更糟糕。</strong></p>
 <p>朵：这就牵涉到自由意志了？</p>
@@ -283,17 +460,17 @@
 <p>朵：但知道在需要的时候，我们可以得到帮助是好的。</p>
 <p>S：没错，我们这边常对人类的冲动和没有耐性感到有趣，这是灵魂世界与实体世界不同的缘故。在灵魂的世界，一个念头，事情就完成了。只要用想的就有了想要的结果。</p>
 <p>**在实体世界，事情没有那么容易，因此人类一定要学习培养耐心。**由于在灵魂层面，一个念头就能让事情立即发生，<strong>在地球上，人们从起心动念到想法成真的时间比较久，这样我们才有机会改变心意。如果在实体界，心想就能马上事成，这会带来许多问题。因为人类天性的许多缺点（自私、羡慕、忌妒等等），恐怕会制造出混乱。我们的意图并没那么纯洁，而他们説过，对于我们想要显化成真的事，意图是最重要的了。</strong></p>
-<h4>不同的指导灵和辅导灵</h4>
+<h4 id="article-section-4" class="article-heading">不同的指导灵和辅导灵</h4>
 <p>S：指导灵和他指导对象的关系并不固定而且是可变的，每一世都不一样。如果有需要在单一世里也可以改变。并没有什么硬性的规定。方式是取决于需求。</p>
 <p>朵：指导灵是怎么安排给不同的人？</p>
 <p>S：他们是根据你们生命中某个时期的需求所选出来的。<strong>有的人可能是一个指导灵伴随一辈子，其他的可能只是暂时陪伴</strong>，或是依需要来来去去。<strong>人的一生中可能有几个不同的指导灵，他们的功用隨我们人生的变化而不同。</strong></p>
 <p>朵：指导灵、辅导灵和灵魂有差別吗？我听过不一样的用词。</p>
 <p>S：<strong>指导灵是灵魂，辅导灵的位阶比指导灵高</strong>，他们有更多的知识和经验可以让我们吸收，你可以说他们有非常丰富的历练。<strong>指导灵和人世的关系要密切的多，譬如有的指导灵才刚离开人世</strong>，所以比较熟悉实体世界的复杂，而<strong>辅导灵通常距离前次转世较久，他们是来提供资讯</strong>。相较于指导灵是近期才离开人世，辅导灵已经进展到不再需要转世为人，他们各有能力做好被指派的工作。</p>
 <p>这听起来像学校老师去见教授或校长，为学生寻求更进一步的建议。老师和学生天天都在一起，自然和学生比较亲近，也比较瞭解学生。相较之下，教授或校长可能对学生完全不熟悉，但因为有较多的知识与经验，所以可以提供咨询。此外，校长也有好一段时间没跟学生在教室互动，他们和实际情况较抽离，所以能给予客观的意见。</p>
-<h4>指导灵的名字</h4>
+<h4 id="article-section-5" class="article-heading">指导灵的名字</h4>
 <p>我问我们能不能知道指导灵的名字。</p>
 <p>S：如果有必要，他们就会和你説话。<strong>灵界并不使用名字，这里只有声音、振动和颜色。<strong>命名是人类特有的习惯，名字被用来指认身份。然而，你们给指导灵的名字多少有贬义或是会误导，因为</strong>名字具有振动，为指导灵取名可能会给出错误的振动，所以最好是以振动而不是名字来辨识指导灵。</strong></p>
-<h4>怎样才能成为指导灵</h4>
+<h4 id="article-section-6" class="article-heading">怎样才能成为指导灵</h4>
 <p>朵：你説谁都可能成为指导灵，要成为指导灵是不是要花上一些时间？</p>
 <p>S：这完全要看你如何发展你的业力，有些人能够发展正向的业，在经验过一、二次人生后，就能成为指导灵，但有些人则需较多的时间努力，一切要看个别的发展。<strong>这和达到特定的灵性层级有关，一旦到达了，你若不是担任指导灵，就是到议会</strong>（后面第13章会讲到议会），要看你在那个时候的成长方向而定。当你的灵性层级在这个层面以下，你仍然会以其他方式成长，以其他方法协助，只是不像指导灵的协助来得直接。</p>
 <p>朵：我听说有些人在转世间的过渡期会问：「我现在可以指导別人了吗？」得到的答案却是：「你自己都还需要指导，又怎么当指导灵呢？」</p>
@@ -766,7 +943,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -855,6 +1032,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

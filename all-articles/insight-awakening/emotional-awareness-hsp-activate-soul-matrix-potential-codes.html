@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -240,49 +409,63 @@
 <p>材料来自多维度存有的“守护者联盟MCEO”，通过 Ashayana Deane（Anna Hayes）转译</p>
 <p>翻译/解读：暮雨</p>
 <hr>
-<h2>本集目录</h2>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="2" aria-label="跳转到：本集目录">本集目录</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：感知偏见与被压抑的情绪">感知偏见与被压抑的情绪</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：情绪的力量与理性的恐惧">情绪的力量与理性的恐惧</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：情绪的本能机制与早期人类">情绪的本能机制与早期人类</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：超越恐惧：从“生存”走向“存在”">超越恐惧：从“生存”走向“存在”</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：激活潜能代码：情绪的炼金之路">激活潜能代码：情绪的炼金之路</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="2" aria-label="跳转到：突破理性的局限，让高感知能力回归">突破理性的局限，让高感知能力回归</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="2" aria-label="跳转到：下集预告">下集预告</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="2" aria-label="跳转到：名词解释">名词解释</a></p>
+<p class="article-toc-item article-toc-item--level-3"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="3" aria-label="跳转到：高等感知（HSP）">高等感知（HSP）</a></p>
+<p class="article-toc-item article-toc-item--level-3"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="3" aria-label="跳转到：科洛提代码（Keylonta Codes）">科洛提代码（Keylonta Codes）</a></p>
+<p class="article-toc-item article-toc-item--level-3"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="3" aria-label="跳转到：灵魂矩阵（Soul Matrix）">灵魂矩阵（Soul Matrix）</a></p>
+<hr>
+<h2 id="article-section-1" class="article-heading">本集目录</h2>
 <p>感知偏见与被压抑的情绪</p>
 <p>情绪的力量与理性的恐惧</p>
 <p>情绪的本能机制与早期人类</p>
 <p>超越恐惧：从“生存”走向“存在”</p>
 <p>激活潜能代码：情绪的炼金之路</p>
 <p>突破理性的局限，让高感知能力回归</p>
-<h2>感知偏见与被压抑的情绪</h2>
+<h2 id="article-section-2" class="article-heading">感知偏见与被压抑的情绪</h2>
 <p>开启<strong>高等感知</strong>（Higher Sensory Perception，简称 HSP）能力的第一步，是<strong>觉察情绪</strong>。</p>
 <p>然而，几个世纪以来，你们的文化不断教导人们压抑、否认，甚至排斥情绪的真实存在与体验。久而久之，人类逐渐形成一种“<strong>感知偏见</strong>”——你们更倾向于相信五感所传递的、能够在物质世界中被验证的经验；而对那些无法测量、无法被看见的感受，比如直觉（第六感）、模糊的感受（如感觉不对劲）、深层的情绪变化（如莫名的悲伤）等细腻情绪，则常常选择忽视，甚至压抑它们。</p>
-<h2>情绪的力量与理性的恐惧</h2>
+<h2 id="article-section-3" class="article-heading">情绪的力量与理性的恐惧</h2>
 <p>情绪本身蕴藏着力量，一种仿佛拥有“自身生命”的能量。</p>
 <p>长久以来，这种“情绪的力量”被视为对理性的威胁，因为<strong>情绪的产生</strong>——常常不是出于逻辑，而是源自潜意识的记忆、对能量场的变化感知、或灵魂层面的触动——这些都属于非理性的领域。</p>
 <p>这对<strong>理性的大脑</strong>而言，情绪的发生机制难以理解。因此，也就无法将这种神秘莫测的能量，纳入有意识的掌控之中。</p>
-<h2>情绪的本能机制与早期人类</h2>
+<h2 id="article-section-4" class="article-heading">情绪的本能机制与早期人类</h2>
 <p>在早期人类的发展阶段，也就是部落刚开始学习“如何建立理性视角”的年代，刻意阻断情绪感受，其实是一种有意为之的训练手段。它的目的是帮助当时的人类，把注意力集中在五感可感知的物质世界，而非内在的感受领域。</p>
 <p>在那时，情绪的运作更接近一种“<strong>本能反应</strong>”，类似你们在动物身上看到的反应方式。<strong>本能反应的用途</strong>，是让信息直接从<strong>灵魂矩阵</strong>传达至细胞意识，完全绕开大脑思维（即你们所称的“心智”），形成一种由灵魂直接发出指令的反应机制。这样，个体不需要“思考”或“选择”，就能立刻采取有助于生存的行动。</p>
 <p>只要是有机体（无论是动物、人类或其他生命形态），<strong>只要仍拥有强烈的本能冲动</strong>，它就会完全处于灵魂矩阵的控制与指挥之下。这类生命形式尚未发展出“自由意志”，也缺乏“自我意识”，它们更像是集体意识系统中的一个自动化单元，按既定模式运作。<span style="color: #6B77CC;">（暮雨注：这是否解释了为什么在群体性事件中，人们容易被集体感染、甚至失控？——当个体被本能驱动、丧失内在分辨力时，集体意识便取代了个体意识——此时，行动看似一致，其实并非理性的共识，而是一种被动的群体本能反应。）</span></p>
-<h2>超越恐惧：从“生存”走向“存在”</h2>
+<h2 id="article-section-5" class="article-heading">超越恐惧：从“生存”走向“存在”</h2>
 <p>但人类被设定为一种<strong>具有感知能力、能自我激励、拥有选择权的存在</strong>。人类的进化目标，是从灵魂矩阵中独立出来，发展出<strong>自我意识</strong>，并有意识地参与现实的<strong>共同创造</strong>，而不是成为灵魂矩阵的“无意识延伸”。</p>
 <p>为了实现这一目标，在人类早期的发展阶段，人类情绪感知中的本能反应机制被部分“关闭”了。</p>
 <p>这一过程涉及对人类DNA中某些称为「<strong>科洛提代码（Keylonta Codes）</strong>」的特定基因信息的暂时停用——这些基因代码原本是人类与其灵魂意识之间的通讯通道。它们的关闭，制造出一种“与灵魂分离”的感受，目的是让人类能将意识聚焦于时间与物质世界中，从而在有限与孤独中，发展出独立的智能，并逐步诞生具有“自我认知”的个体意识。</p>
-<h2>激活潜能代码：情绪的炼金之路</h2>
+<h2 id="article-section-6" class="article-heading">激活潜能代码：情绪的炼金之路</h2>
 <p>和许多其他“<strong>未启动的基因编码</strong>”一样，那些来自<strong>原始灵魂矩阵</strong>（即意识接入“<strong>人类宿主矩阵</strong>”前的灵魂结构）中所携带的“本能情绪代码”，至今仍储存在你们<strong>细胞结构</strong>和<strong>灵魂矩阵</strong>之中。其中一部分代码仍保持运作，使人类得以维持与灵魂的微弱连结，同时具备足够的本能反应来维持生存。这些残存的代码，便成为你们今天所谓“战斗或逃跑”反应的生理基础。</p>
 <p>随着人类的演化，这些被封存的情绪代码开始逐渐被激活，并重新整合进有意识的觉察中。每当人类发展到一定阶段，灵魂矩阵便会发送激活信号，引导意识进入下一个成长周期。正是借由这些潜能代码的逐步唤醒，你们物种才从早期较为简单的生命形式，演化为今日以理性思维为主导的复杂存在。</p>
 <p>而随着你们的成长，人类也逐渐拥有<strong>处理情绪频率</strong>的能力，更多沉睡的灵魂密码被唤醒，意识也随之扩展。这些被激活的潜能代码中，蕴藏着巨大的能量与觉知。正是这种能量，开始被日渐成熟的理性大脑所感知，并促使你们观察、辨识和界定，你们称之为“情绪”的感知状态。</p>
-<h2>突破理性的局限，让高感知能力回归</h2>
+<h2 id="article-section-7" class="article-heading">突破理性的局限，让高感知能力回归</h2>
 <p>但从理性的角度来看，情绪常被视为“混乱”、“不可靠”，并且“值得怀疑”。你们的逻辑系统——也就是你们用来解释现实的工具——本身就建立在<strong>信息严重受限</strong>的基础上：它只能处理来自你们五种已知感官输入的数据。</p>
 <p>而身体尚未发展出感知更高频率信息的器官，因此，那七种“高等感知感官”的数据始终被身体系统屏蔽。只有当潜藏的灵魂代码被激活后，人类的身体结构才会演化出那些器官。</p>
 <p>所以，你们所依赖的逻辑系统虽然发展成形，却始终处于劣势：它只能从极其有限的信息中推理世界。而由此得出的推理和结论，注定也是不完整和片面的。</p>
-<h2>下集预告</h2>
+<h2 id="article-section-8" class="article-heading">下集预告</h2>
 <p>接下来，本书将用“鱼缸中的青蛙”这个类比，详细说明理性心智如何被限制在狭窄的认知空间内。就像青蛙只能透过鱼缸的玻璃看世界，却无法跳出鱼缸一样，理性心智也受限于五感，难以理解更深层的情绪和直觉。</p>
 <p>人类只有跳出这个“鱼缸”，接受并整合情绪与潜意识的信息，理性和情感才能协同成长，实现更完整的自我认知和真正的进化。</p>
-<h2>名词解释</h2>
-<h3>高等感知（HSP）</h3>
+<h2 id="article-section-9" class="article-heading">名词解释</h2>
+<h3 id="article-section-10" class="article-heading">高等感知（HSP）</h3>
 <p>高等感知（Higher Sensory Perception，简称 HSP）是指使用人类体内存在于<strong>更高频率层面的七种感官</strong>——它们超越了你们熟悉的五感。由于这些感官本身存在于人类生物能量场的高频带中。通过“<strong>科洛提代码</strong>（Keylonta Codes）”，它们能够接收并翻译更高频率的信息（有些也可转译超低频信息）。连接人类与<strong>灵魂矩阵</strong>（Soul Matrix）的能量，本质上就是高频能量。而 HSP 的“高阶感官”，正是让灵魂矩阵的信息通过身体被转译，进入人类意识觉知的工具。</p>
 <p>换句话说，高等感知HSP就是你与你的更高自我，你的内在直接沟通并获取信息的能力。</p>
-<h3>科洛提代码（Keylonta Codes）</h3>
+<h3 id="article-section-11" class="article-heading">科洛提代码（Keylonta Codes）</h3>
 <p>又称科洛提/科洛提科学（Keylontic Science），是 Ashayana Deane 教导的核心工具。是一种“宇宙能量语言”，由几何图形、音调和光频组成。它被描述为多维能量结构的原始程序码，可以：</p>
 <p>1.修复或解锁人类能量体与DNA（恢复 12 股 DNA 的潜能）。
 2.可以修复和升级灵魂系统，帮助灵魂回归高维源头。
 3.用于防护、扬升（Ascension）、跨维度旅行。</p>
-<h3>灵魂矩阵（Soul Matrix）</h3>
+<h3 id="article-section-12" class="article-heading">灵魂矩阵（Soul Matrix）</h3>
 <p>在守护者联盟MCEO体系中，人类并非单一存在，而是由灵魂多层结构（Soul Matrix）组成。其中包含：3D肉体意识（当前的我们）、灵魂身份（4D–6D层面）、超灵/高我（7D–9D 层面）、Avatar/基督体（10D–12D层面）。</p>
 <p>每一层都是能量体与意识体，层层相连。通过科罗提技术，据称人类能重新激活这些层面，与高维自我整合，从而摆脱外部操控、进入扬升路径。</p>
 
@@ -754,7 +937,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -843,6 +1026,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -239,22 +408,22 @@
 <p>《伟大的人类潜能在自己的光中行走》，来自昴宿星的教导，2013年</p>
 <p>作者：Wendy Kennedy</p>
 <p>翻译/解读：暮雨</p>
-<h2>本集内容</h2>
-<p>我应该遵循什么样的饮食？</p>
-<p>​        · 关于吃素</p>
-<p>​        · 饮食有度</p>
-<p>​        · 有机食物</p>
-<p>​        · 维生素片和营养剂</p>
-<p>​        · 全碳水？还是全蛋白质？</p>
-<p>​        · 关于体重</p>
-<p>饮食与吸引力法则</p>
-<p>食物的频率：生命的印记</p>
-<p>为食物注入爱与祝福</p>
-<p>治愈身体</p>
-<p>​        · 你的身体是一组“能量密码”</p>
-<p>​        · 钻石光体：新的能量载体</p>
-<p>​        · 与你的身体对话</p>
-<h2>我应该遵循什么样的饮食？</h2>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：我应该遵循什么样的饮食？">我应该遵循什么样的饮食？</a></p>
+<p class="article-toc-item article-toc-item--level-3"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="3" aria-label="跳转到：・关于吃素">​        · 关于吃素</a></p>
+<p class="article-toc-item article-toc-item--level-3"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="3" aria-label="跳转到：・饮食有度">​        · 饮食有度</a></p>
+<p class="article-toc-item article-toc-item--level-3"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="3" aria-label="跳转到：・有机食物">​        · 有机食物</a></p>
+<p class="article-toc-item article-toc-item--level-3"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="3" aria-label="跳转到：・维生素片和营养剂">​        · 维生素片和营养剂</a></p>
+<p class="article-toc-item article-toc-item--level-3"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="3" aria-label="跳转到：・全碳水？还是全蛋白质？">​        · 全碳水？还是全蛋白质？</a></p>
+<p class="article-toc-item article-toc-item--level-3"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="3" aria-label="跳转到：・关于体重">​        · 关于体重</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="2" aria-label="跳转到：饮食与吸引力法则">饮食与吸引力法则</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="2" aria-label="跳转到：食物的频率：生命的印记">食物的频率：生命的印记</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="2" aria-label="跳转到：为食物注入爱与祝福">为食物注入爱与祝福</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="2" aria-label="跳转到：治愈身体">治愈身体</a></p>
+<p class="article-toc-item article-toc-item--level-3"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="3" aria-label="跳转到：・你的身体是一组“能量密码”">​        · 你的身体是一组“能量密码”</a></p>
+<p class="article-toc-item article-toc-item--level-3"><a href="#article-section-14" class="article-toc-link" data-target-id="article-section-14" data-toc-level="3" aria-label="跳转到：・钻石光体：新的能量载体">​        · 钻石光体：新的能量载体</a></p>
+<p class="article-toc-item article-toc-item--level-3"><a href="#article-section-15" class="article-toc-link" data-target-id="article-section-15" data-toc-level="3" aria-label="跳转到：・与你的身体对话">​        · 与你的身体对话</a></p>
+<h2 id="article-section-2" class="article-heading">我应该遵循什么样的饮食？</h2>
 <p>我们非常高兴能和你们谈论——饮食、健康与幸福感。</p>
 <p>因为在当下，你们正不断<strong>被各种饮食观念轰炸</strong>：有人说要多吃肉，有人说要完全素食，还有人说要低碳或只喝果汁……似乎每一种都在告诉你 “这是唯一的正确答案”。</p>
 <p>而事实是：<strong>没有一种饮食方式，可以适用于所有人</strong>。饮食，必须根据个人情况考虑。归根结底，它和营养学的“标准答案” 无关，而是取决于你的 <strong>能量水平与振动频率</strong>。关于这点，我们留在本集的后半部分，再作进一步说明。</p>
@@ -267,26 +436,26 @@
 <p>所以，让我们先从物质身体的角度谈起，再逐步进入我们对能量层面的理解。</p>
 <p>当你在考虑该吃什么、以及食物的品质时，比如有机的还是普通的？生食还是熟食？是否包含动物性食物？答案其实因人而异。</p>
 <p><strong>理想的情况是</strong>：你吃的应该是新鲜的、有机栽种的蔬果，以及那些在生命过程中被用 <strong>爱与尊重</strong> 对待过的动物。</p>
-<h3>・关于吃素</h3>
+<h3 id="article-section-3" class="article-heading">・关于吃素</h3>
 <p>许多人看到地球上动物被屠杀的景象，因而决定：绝不再食用任何动物性食物。对此，我们想说：这种信念，往往是由 <strong>评判</strong> 所驱动的。当然，我们也知道你们当中有人不会同意我们的观点，这完全没有问题。我们只是从另一个角度，来提供对这个话题的理解。</p>
 <p>在纯生理层面上，有时你们仍然需要<strong>偶尔摄取一些动物肉类</strong>。</p>
 <p>这是因为，当你们的 <strong>细胞结构正在重新校准、升级</strong> 时，身体确实需要某些 <strong>矿物质、蛋白质</strong>，以及一些 <strong>只存在于动物来源中的复杂分子链</strong>。</p>
 <p>无论你选择吃植物还是肉类，我们都建议你：怀着对自然的尊重，去珍惜你所食用的生命，并为它的存在表达感恩。因为当你进食时，你其实是在吸收另一个生命意识所承载的 <strong>生命力能量</strong>。</p>
 <p>关于这一点，我们会在接下来的 “能量层面” 再深入谈，好吗？</p>
-<h3>・饮食有度</h3>
+<h3 id="article-section-4" class="article-heading">・饮食有度</h3>
 <p>当你吃太多东西时，即使是最健康的食物，它也不再健康了。饮食的核心在于 <strong>整体的平衡与适度</strong>。这是我们希望你们能够关注的重点。</p>
-<h3>・有机食物</h3>
+<h3 id="article-section-5" class="article-heading">・有机食物</h3>
 <p>目前，许多进入主流市场的食物，都已经经过了基因改造。一旦食物被改变了基因，它们不仅会 <strong>丧失一部分原有的能量品质</strong>，同时也会 <strong>失去营养价值</strong>。</p>
 <p>你可以改变食物在能量层面的 “共振谐波”，但却无法真的把流失的营养，重新添加回去。</p>
 <p>因此最好的方式是，尽量选择 <strong>多样化的、天然的、未被基因改造的食物</strong>，并且确保它们来自 <strong>富含养分、未被有毒化学物质污染的土壤</strong>。这样，才能让你的身体获得更为平衡的滋养。</p>
-<h3>・维生素片和营养剂</h3>
+<h3 id="article-section-6" class="article-heading">・维生素片和营养剂</h3>
 <p>摄取包装好的维生素和矿物质，并不等同于食用高品质的天然食物。原因在于—— <strong>能量共振</strong>。</p>
 <p>由于提取与包装方式，大多数维生素和矿物质，都会在过程中丧失它们的 <strong>能量成分</strong>。虽然你在物理层面上仍能得到一些营养，但其 <strong>振动品质</strong> 永远无法与那些由 <strong>非转基因种子、在爱中培育出来的天然食物</strong> 相提并论。</p>
-<h3>・全碳水？还是全蛋白质？</h3>
+<h3 id="article-section-7" class="article-heading">・全碳水？还是全蛋白质？</h3>
 <p>你是否应该只吃碳水，或者只吃蛋白质呢？当然不是。</p>
 <p>正确的方式是：<strong>什么都吃一点，保持平衡</strong>。你需要学会倾听自己的身体。凭着直觉，你会知道自己需要什么营养，并会自然被那些食物吸引。</p>
 <p>当动物生病时，它们知道自己需要吃哪些食物来恢复，你们人类也是一样。</p>
-<h3>・关于体重</h3>
+<h3 id="article-section-8" class="article-heading">・关于体重</h3>
 <p>如今 “饮食” 这个词的含义，更多与 <strong>限制</strong> 和 <strong>体重管理</strong> 关联在一起，而不是指向 <strong>健康与活力</strong>。当我们谈论体重问题时，请记住，那是一个与 “健康” 完全不同的课题。</p>
 <p>出于多种原因，<strong>细胞会保留液体或其他生物物质</strong>——有时这是出于保护机制；也可能是因为细胞内部出现了失衡，缺乏它们正常运作所需的化学成分，因此无法顺利释放废物。</p>
 <p>除了暴饮暴食，还有许多因素会导致体重增加。这就把我们引向 <strong>情绪或能量层面</strong>。在我们看来，这一层面的影响远比其他层面都更重要，也更具决定性。</p>
@@ -297,7 +466,7 @@
 <p>因为，你其实并不想直面它们！</p>
 <p>所以在这种情况下，你必须去看看：**情绪层面到底发生了什么？**而且我们所说的，并不是仅仅与食物或饮食相关的问题。我们指的是你的整个生活 ——包括你的人际关系、你对自己的认知、以及你正在做的人生选择。</p>
 <p>这两者**（饮食与情绪）是无法分开的**。我们再次强调，这是我们希望传达给你们的一个非常重要的观念。</p>
-<h2>饮食与吸引力法则</h2>
+<h2 id="article-section-9" class="article-heading">饮食与吸引力法则</h2>
 <p>**你会吸引到的，正是你此刻所需要的。**这就是“吸引力法则”。</p>
 <p>当你准备好继续前进，并释放某个情绪问题时，你会 <strong>直觉地/潜意识地</strong> 开始选择更健康的食物。你之所以会开始吃得更健康，是因为你的心态或者情绪模式发生了改变。</p>
 <p>你的身体随之开始释放掉，那些它过去被要求保留的东西，以此让你的细胞频率提升。</p>
@@ -312,12 +481,12 @@
 <p>所以，你必须在其中找到一个平衡点。</p>
 <p><strong>否认自己，或长期处在“被剥夺”的心理状态中，可能带来的损害，比你实际吃下那些食物造成的影响更大。</strong></p>
 <p>这是非常重要的一点，你们需要理解和牢记。</p>
-<h2>食物的频率：生命的印记</h2>
+<h2 id="article-section-10" class="article-heading">食物的频率：生命的印记</h2>
 <p>以上只是关于你们饮食的一小部分说明。随着你们的改变与灵性成长，大多数人自然不会那么多地被动物性食品所吸引，因为它们的振动频率比植物稍低。</p>
 <p>对于动物来说，它们的生活方式和死亡方式，都被<strong>锁定在它们身体细胞的频率中</strong>。换句话说，<strong>当你吃动物时，你实际上是在吸收并体验它们的生命经历</strong>。这是你与地球建立亲密联系的少数途径之一。</p>
 <p>如果你食用的是，那些曾经受过折磨或死得十分痛苦的动物，它们的频率会非常低；而那些度过幸福一生的动物，其频率则相对较高。</p>
 <p>我们在这里绕了一圈，这也是我们喜欢与你们合作的方式。我们不希望你们以过于<strong>线性</strong>的方式思考。我们希望你们开始尝试<strong>多维思考</strong>，从更多角度理解事物。希望各位没有被我们的表达弄迷惑。</p>
-<h2>为食物注入爱与祝福</h2>
+<h2 id="article-section-11" class="article-heading">为食物注入爱与祝福</h2>
 <p>最后，我们想讨论的是：如果食物是转基因的，或者你不确定它的来源，该如何处理食物?</p>
 <p>你仍然可以通过<strong>向食物传递能量、爱与美好振动</strong>，来改变它的频率。这样做可以释放那些锁定在细胞中的负面情绪，从而避免它们随食物进入身体。</p>
 <p>这就是 “<strong>为食物祝福</strong>” 的概念。通过向食物表达感恩、传递能量，以及赋予它爱与感激的正面情感，<strong>你可以改变其分子和细胞的共振结构</strong>。</p>
@@ -327,8 +496,8 @@
 《水知道答案》全三册，百度网盘：<a href="https://pan.baidu.com/s/1S-s5HqhHszLWWHqvtCpLJA?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank">https://pan.baidu.com/s/1S-s5HqhHszLWWHqvtCpLJA?pwd=muyu
   </a></p>
-<h2>治愈身体</h2>
-<h3>・你的身体是一组“能量密码”</h3>
+<h2 id="article-section-12" class="article-heading">治愈身体</h2>
+<h3 id="article-section-13" class="article-heading">・你的身体是一组“能量密码”</h3>
 <p>你的身体，其实是一种 “<strong>振动签名</strong>”（Vibrational Signature）,它不断向外投射频率，再被物理世界反射回来。换句话说，你的身体是从“<strong>光环场（Auric Field）中的能量模版</strong>” 构建出来的。</p>
 <p>当你学会有意识地调整、重新校准自己的振动时，身体状态也会随之改变。你对能量模版的每一次微调，都会自动反映在肉体上。</p>
 <p>所有健康问题，无一例外，都起源于能量层面。哪怕你摄入了有毒的物质，或身处有害的环境，也是因为你的频率在振动层面上，与这种能量产生了共鸣。<strong>如果没有这种共振，只会出现两种情况</strong>：要么你根本不会遇到那个毒素，要么它即使出现，也无法对你产生影响。</p>
@@ -337,7 +506,7 @@
 <p style="color: #6B77CC;">「暮雨·注」什么是光环场？</p>
 <p style="color: #6B77CC;">即“人体的能量外壳”。许多灵性传统认为，除了物质身体外，人类还有一个 “能量身体”。这个能量体会向外辐射，形成一个 “能量场域”，围绕在肉体周围，就像一层光晕。</p>
 <p style="color: #6B77CC;">有些体系把光环场分成很多层，其中包括：物质身体、以太体（Etheric body）、情绪体（Emotional body）、心智体（Mental body）、星光体（Astral body）……等等，就像洋葱层一样，每一层代表不同的能量与意识层次。</p>
-<h3>・钻石光体：新的能量载体</h3>
+<h3 id="article-section-14" class="article-heading">・钻石光体：新的能量载体</h3>
 <p>自2010年以来，你就在自己的能量场中，开始孕育一个新的层级或能量模版。它对应的是你 “更高维度的身体”。当你开始在更高的频率或维度中运作时，你会让更高频的能量流经你的物质身体。</p>
 <p><strong>这就像升级一个电路系统</strong>：你需要一个全新的 “能量电路板” 来承载并运行这些新能量。同时，你的物质身体也必须随之调整，才能适应这种新的能量负荷。</p>
 <p>我们称 2011 年为 “启动之年”。在那段时期，你开始激活一个全新的能量层。这一新的能量模版有很多名字，有人称它为 <strong>钻石光体</strong>（Diamond Light Body），也有人叫它 <strong>晶体身体</strong>（Crystalline Body） —— 本质上都是指同一个东西。</p>
@@ -345,7 +514,7 @@
 <p>钻石的几何形状是 <strong>八面体</strong>（octahedron）：由两个四面体底部相连。这正是你新能量载体的形态。因此，它被赋予了 “钻石” 的名字。钻石被视为最完美的晶体，它象征着一种更持久、更稳定的与源头能量的连接。当你的光体被激活，你就与这种 “完美” 和谐共振。</p>
 <p>可以这么说，在你的人生旅途中，随着频率的不断提升，你会逐渐激活这个钻石光体。</p>
 <img class="img-fluid w-100 g-mb-1 g-pt-50 g-pb-50 " src="https://img.librarys.life/img/courses/Octahedron.jpg" alt="八面体Octahedron">
-<h3>・与你的身体对话</h3>
+<h3 id="article-section-15" class="article-heading">・与你的身体对话</h3>
 <p>此外，我们鼓励你与自己的身体说说话。它真的会喜欢这样的交流！</p>
 <p>可惜的是，大多数人并不会用正面的方式对待自己的身体。你们常常说：“我太胖了，我太丑了，我太矮了，太高了，我很多病，等等。” 这些都是旧的程序，它们早已对你没有帮助。</p>
 <p>当你开始给身体 <strong>新的指令</strong> 时，它会感到喜悦。换个角度想：你的<strong>每一个细胞都有独特的意识</strong>，它们共同组成了 “你”。就像你也希望被看见、被欣赏，你的身体同样渴望被认可。试着与它聊一聊，倾听内在的声音，你会发现它将为你带路。</p>
@@ -842,7 +1011,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -931,6 +1100,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

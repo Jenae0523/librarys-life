@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -237,26 +406,35 @@
 <div class="article-body g-color-black" style="line-height: 2.5; font-size: 16px;">
   <hr class="g-brd-gray-light-v4 g-pt-20">
 <p>对于大多数人来说，与他人沟通是一件非常困难的事。我们在沟通时，到底发生了什么，是什么在阻碍我们与他人建立连结？又是什么导致了沟通的终止？</p>
-<h2>是什么导致了沟通的终止？</h2>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="2" aria-label="跳转到：是什么导致了沟通的终止？">是什么导致了沟通的终止？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：沟通的屏障：固守个人结论">沟通的屏障：固守个人结论</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：倾听的关键：消除自我重要感">倾听的关键：消除自我重要感</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：沟通的屏障：不假思索的惰性">沟通的屏障：不假思索的惰性</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：超越语言的局限">超越语言的局限</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：沟通的品质">沟通的品质</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="2" aria-label="跳转到：暮雨的反省与思考：我的声音，成了她的噪音">暮雨的反省与思考：我的声音，成了她的噪音</a></p>
+<hr>
+<h2 id="article-section-1" class="article-heading">是什么导致了沟通的终止？</h2>
 <p>首先沟通意味着，当我想要告诉你某件事情，你开始倾听我的话，你可以同意或不同意。不管怎样，我们产生了一个共同的问题，然后我们进行讨论。只有当我们都看到了 这个问题的全部，而且我们对它的含义和描述都高度一致时，才能说我们已经相互理解了，这样才可以开始讨论这个问题。</p>
 <p>但我可能会告诉你一些 你会抗拒的事情。也许我的信息是不准确的，你有抗拒的权利，因为你有自己的判断和想法。这时，沟通就终止了。</p>
 <p>这引出了第一个在沟通中遇到的屏障：沟通双方都固守着自己的个人结论。</p>
-<h2>沟通的屏障：固守个人结论</h2>
+<h2 id="article-section-2" class="article-heading">沟通的屏障：固守个人结论</h2>
 <p>我们总是怀着个人的偏见与某种既定的观点，开始与他人沟通的。我们的心 充满着谴责、辩解、比较……头脑被各种分心之事所占据，使我们看不到真相，也无法如实地 觉察到自己的局限。这些头脑中的噪音，必然会成为阻挡 在我们与他人之间的屏障，让沟通变得很费力。</p>
 <p>当我们固守着自己的个人结论，并抗拒着 另一个结论，当在我和我不想听的那些观点之间树立起屏障时，阻碍就已经产生，这样的沟通 在一开始就是失败的，它是建立在矛盾，对持，分离的基础上。只会将双方推向互相指责、发泄自己的不满情绪和委屈……最终双方都认为自己是对的，完全无法理解对方的立场和观点。</p>
 <p>这样必定无法实现沟通想要达成的目的：即分享彼此的想法，并一起向未知探索共同的解决之道，而并非粗暴地强迫对方接受自己的观点。然而，这正是一直在发生的事。</p>
 <p>假如我们能处在一种 警醒而被动的状态里，以开放的心态，去完整地 了解对方的想法；对待我们暂时还无法 整合入自己信念系统的观点，我们是否可以 不接受地接受，即不臣服，也不抗拒；永远不觉得自己知道什么，也不会完全地否定或贬低自己。在这种状态中，我们才能倾听到 成见之外的东西，与对方一起看到 完整的事实，得到更好的结论，寻求更智慧、更适合大家的解决之道。</p>
-<h2>倾听的关键：消除自我重要感</h2>
+<h2 id="article-section-3" class="article-heading">倾听的关键：消除自我重要感</h2>
 <p>对大多数人来说“倾听”都是很难的。无可否认“倾听”是一门伟大的艺术，是一种非凡的能力。但很少人想过，在沟通中我们无法做到倾听，是因为人们无时无刻 不被自我形象，和自我的重要感所分心。</p>
 <p>回想一下在与别人的交谈过程中，你通常是以何种方式在听？是不是 透过你的企图、欲望、恐惧、焦虑和各种自我心理的滤镜在听？ 是不是只听自己想听的，和跟自己有关的话题？是否在听的过程中，很想打断对方，只为了把谈话内容带到你想表达的思想和见解上。人们总是 喋喋不休地重复谈论 那些有关自己的经历、幻想、传奇和抱负，向人表达自己所拥有的、想要的 或者希望拥有的，因此对他人 几乎不曾认真倾听过。</p>
 <p>自我重要感，导致人们 不仅几乎从不关注 他人说的话，对周遭的事物，正在发生的事 也常常表现得麻木 和视而不见，也几乎 从没有注视 或认真观察过他人。自我重要感耗损了我们大部分的能量，导致我们丧失了倾听的能力。</p>
 <p>因此，倾听意味着，你要完全放下你的自我形象，放下你的个人结论，放下你对他人的评判。你需要调动你全部的注意力和能量，以爱 和理解为出发点 去倾听。在这种状态中，你和对方 才能达到完全的 思想交融。</p>
-<h2>沟通的屏障：不假思索的惰性</h2>
+<h2 id="article-section-4" class="article-heading">沟通的屏障：不假思索的惰性</h2>
 <p>在与他人交谈过程中，由于人们很难做到 时刻保持 专注于当下正在发生的事，因此常常陷入 不假思索的互动模式中。</p>
 <p>人们一般透过复制模仿 和习惯性的复诵，从而形成 自己的思想习惯。习惯 就是一种不假思索的状态。人为什么会不假思索呢？因为深入地思考是一件很痛苦的事，它会给你的心带来纷扰，造成内心的挣扎。思考带来的新思想 会与人们既有的习惯，思维模式 形成冲突和对立。这也是人们一旦接纳了 某种思想信念之后，就很难改变的原因。所以从这个层面来看，所有人都是“固执”的，这是我们头脑的惰性造成的。</p>
 <p>仔细地探究，无差别地检视自己的每个思想 和行为习惯，必定会造成大脑的抗拒，大脑习惯于 不断从已知进入已知，从某个习惯进入另一个习惯，大脑会抗拒放弃已知 去探索未知。</p>
 <p>但现在当你意识到了：你过去持有的想法和习惯，都是你一点点加在自己身上的。若你已经完全意识到了你的创造者身份，你便知晓 你可以重新改变这一切！让自己从不假思索中解放！</p>
-<h2>超越语言的局限</h2>
+<h2 id="article-section-5" class="article-heading">超越语言的局限</h2>
 <p>你相信有一种沟通是在语言之外的吗？</p>
 <p>有时候会出现这种情况，你感到非常强烈地想要与他人沟通的事，并无法用语言文字去完整地表达。你发现只有部分可以被描述，而其他部分则无法用语言描述。你尽力地使用所有的词汇去表达，但对方只接受了你描述的部分，而拒绝超越 或进入文字未描述的界域，沟通就终止了。从某种意义上说，对方不知道你在谈论什么事情。甚至很多人觉得不存在不能用文字表达的事物。</p>
 <p>人们满足于文字的解释，喜欢使用各种花哨的流行词汇，或是不求甚解、断章取义地引经据典，这样的语言往往会造成困惑和误解，它让沟通浮于文字表面、变得肤浅。</p>
@@ -265,7 +443,7 @@
 <p>我们的头脑必须流动、必须变得纯净，以保证你的意识能自由地运动。你若执着于文字层面，受困于你通过多年积累、培养而形成的思想体系中，——你的思想就是你看事物的参考点，你便停在了那个点，你就无法与另一个人在另一点相遇。你们可以永无止境地讨论下去，但是两者永远不会相遇。</p>
 <p>那问题在于，我们要如何才能沟通 那些本身不是语言文字，然而却又和文字一样真实，一样具有意义的事情呢？事实上，在沟通中文字并不是那么重要，尽管词语与含义是必需的，但是两人的思想在同时、以同样的水平和强烈程度相遇，才是至关重要的。</p>
 <p>这就来到了我们要讨论的最后一点，若要不受困于 文字的描述和解释中，我们双方都需要具备：</p>
-<h2>沟通的品质</h2>
+<h2 id="article-section-6" class="article-heading">沟通的品质</h2>
 <p>当沟通的品质不存在时，你就无法进行沟通。</p>
 <p>其实这一点是最重要的，但我放在最后讲，是因为我认为沟通的品质存在于上面的每一点中，它是以上每一点的基石。认识这点，也会将你对前面几点的理解提升到一个更高的意识水平。</p>
 <p>什么是沟通的品质呢？它要求沟通双方，必须要有沟通某事的真切愿望。说话者与倾听者都必须调动起全部的注意力和热忱；在那种热忱中一定要有爱、关心、体贴和你必须去理解的态度，而不是我高高在上，对方不如我的感觉。</p>
@@ -276,7 +454,7 @@
 <p>自由的沟通 具有神奇的魔力，是灵魂与灵魂之间的交融，这是一种完全 完整的分享，双方的能量水平 会达到同频共振的状态，通常频率低的一方 会受到频率高的一方影响 而提升，在这样的能量空间中，沟通双方的整个身心都将彻底改变。频率较低的一方，在沟通完成后，会感觉自己能量充沛，看待事物的方式 也变得积极起来，消极的想法也一扫而空。</p>
 <p>而能量高的一方也会进入到更高的意识水平，意识觉知也得以扩展。绝不会有能量被对方耗尽而感到疲惫的感觉，如果你在与某人沟通以后 感到虚弱、疲惫，能量场好像在漏气似的，说明你们的沟通出现了问题，有待检视。</p>
 <p>这篇短短的文章无法为你完整揭示如何正确的沟通，暮雨只是提出一个问题，提供一个视角，让你有机会“看到”它，你可以选择 开始在你的生活中觉察和检视它。在这份觉知中，你会完善并丰富这个问题的答案，也许会否定我的部分观点（我也经常在推翻自己过去的观点），这都没有关系。愿真正的沟通为你带来明晰，扫清生活中的各种阻碍和牵绊，让疗愈在充满爱和理解的沟通中得以发生！</p>
-<h2>暮雨的反省与思考：我的声音，成了她的噪音</h2>
+<h2 id="article-section-7" class="article-heading">暮雨的反省与思考：我的声音，成了她的噪音</h2>
 <p>最后我要讲一个自己的故事，是这件事 启发了我更深入地反省与思考，我们的沟通到底出了什么问题。</p>
 <p>一天有个朋友向我表达她在生活中感受到的焦虑，我不假思索地用一套灵性的观点劝慰她，比如 “要听从内在的声音…… 不要让外界的噪音淹没自己的心声……我们可以超越集体意识的束缚，做自己认为对的事 等等……”，还给她举了各种例子。</p>
 <p>她告诉我，她其实内心知道应该怎么做，只是她周围人的想法影响了她，听多了就让她很是焦虑。在她表达完后，我又一次不假思索地对她说了一些自以为能鼓励她的话。</p>
@@ -733,7 +911,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -822,6 +1000,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

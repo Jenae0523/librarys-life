@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -239,28 +408,28 @@
 <p>引用自《The Convoluted Universe Book 1》，2001年</p>
 <p>作者：朵洛莉丝·侃南（Dolores Cannon）</p>
 <p>翻译/解读：暮雨</p>
-<h2>本集内容</h2>
-<p>​      · 好奇心：创造宇宙的原始动力</p>
-<p>​      · 人类认知的盲区 │ 生命力 ≠ 意识</p>
-<p>​      · 音乐，是宇宙通用语言</p>
-<p>​      · 生命，存在于等离子体中</p>
-<p>​      · 一次被“误判”的UFO经历</p>
-<p>​      · 善举，自会滋生更多善举</p>
-<p>​      · 地球援助计划 │ 被带走的人</p>
-<p>​      · 被留下的人类：进化失败，还是另一种开始？</p>
-<p>​      · 回归灵魂的家园</p>
-<p>​      · 新人类：回到地球的引导者</p>
-<p>​      · 忠告：己所不欲，勿施于人</p>
-<p>​      · 尚未写定的未来</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：・好奇心：创造宇宙的原始动力">​      · 好奇心：创造宇宙的原始动力</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：・人类认知的盲区 │ 生命力 ≠ 意识">​      · 人类认知的盲区 │ 生命力 ≠ 意识</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：・音乐，是宇宙通用语言">​      · 音乐，是宇宙通用语言</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：・生命，存在于等离子体中">​      · 生命，存在于等离子体中</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・一次被“误判”的UFO经历">​      · 一次被“误判”的UFO经历</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：・善举，自会滋生更多善举">​      · 善举，自会滋生更多善举</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・地球援助计划 │ 被带走的人">​      · 地球援助计划 │ 被带走的人</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="4" aria-label="跳转到：・被留下的人类：进化失败，还是另一种开始？">​      · 被留下的人类：进化失败，还是另一种开始？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="4" aria-label="跳转到：・回归灵魂的家园">​      · 回归灵魂的家园</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="4" aria-label="跳转到：・新人类：回到地球的引导者">​      · 新人类：回到地球的引导者</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="4" aria-label="跳转到：・忠告：己所不欲，勿施于人">​      · 忠告：己所不欲，勿施于人</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-14" class="article-toc-link" data-target-id="article-section-14" data-toc-level="4" aria-label="跳转到：・尚未写定的未来">​      · 尚未写定的未来</a></p>
 <hr>
-<h4>引言：</h4>
+<h4 id="article-section-2" class="article-heading">引言：</h4>
 <p>外星存有并不愿冒险，他们正在为任何最坏的情况做准备。也许，他们比我们更了解人性吧。</p>
 <p>虽然关于地球灾难的各种预言存在惊人的相似性，但我仍倾向于把这些灾难场景视为“另一种可能的未来”。也就是说，它们是潜在的“概率”与“可能性”，而非既定的“必然”。</p>
 <p>如果地球的振动频率发生改变，比如通过人们变得更加友善，或者人们开始认出每个人身上的神性——地球的振动频率就会提升。而当这个频率达到一定水平时，地球将会得到一定程度的治愈。那些原本因为人类破坏地球，而 <strong>必须发生的净化</strong> 就不一定非得发生。</p>
 <p>要感谢地球的恩赐与善良，因为我们与地球之间没有分离——不要制造这种分离。我们与地球、鸟儿、动物、万物之间都是一体的，只是不同的形态显化而已。如果人们能真正意识到这一点，那么我们就会在地球上“创造天堂”。</p>
 <hr>
 <p>以下内容，摘自朵洛莉丝·侃南不同催眠案例中的片段，它们共同呈现了一个截然不同的宇宙观：</p>
-<h4>・好奇心：创造宇宙的原始动力</h4>
+<h4 id="article-section-3" class="article-heading">・好奇心：创造宇宙的原始动力</h4>
 <p>Pam：看来上帝、也就是那股力量，一切万物存在的源动力——虽然有许多不同的名字来称呼它，但我们暂且称之为“上帝”吧。上帝本身，也充满了好奇心。</p>
 <p><b>“好奇心”是一种不可思议的能量。</b>当你利用这股最强大的力量，哪怕只是其中的一部分，这种好奇心便能 <b>将那股能量所专注的任何事物，在物质层面显化出来。</b>因此，宇宙中才会存在无数种生命形式，因为“上帝之力”本身就是一股充满好奇的能量。</p>
 <p>而任何思想的存在，不论思想的对象是什么，都会将其转化为具体的存在。<strong>思想创造了一切</strong>，而我们人类只是那无数、无数、无数个思想中的一个。</p>
@@ -270,24 +439,24 @@
      target="_blank">《哈索尔：面对混沌的过渡期，你能做什么？》
   </a>好奇心：奇迹显化的驱动力）
 </p>
-<h4>・人类认知的盲区 │ 生命力 ≠ 意识</h4>
+<h4 id="article-section-4" class="article-heading">・人类认知的盲区 │ 生命力 ≠ 意识</h4>
 <p>菲尔：万物皆有生命。当然，也存在你们所谓的“无生命之物”。然而这种区分——“有生命”与“无生命”，其实远非人类所能理解。从更高层面的角度来看，<strong>一切事物，都以某种形式处于觉知状态，即存在着“意识”</strong>。</p>
 <p>我们在这里要做一个区分：“意识（awareness）”与“生命（life）”。</p>
 <p>从你们的角度来看，很难察觉某些层面的意识。然而事实是：即便是岩石，也具备某种意识，只是它存在于你们无法感知的层面。因此，如果我们以“意识等同于生命”的标准来定义，那么确实可以说——<strong>连岩石都是有生命的。</strong></p>
 <p>存在着一种你们称为 <strong>生命力（life force）</strong> 的东西，它与我们所称的“意识/觉知”是分离且截然不同的。在你们人类的视角中，“生命”与“意识”似乎是相互关联的，因为它们看起来像是同一回事，然而事实并非如此。</p>
 <p style="color: #6281C8;">（暮雨注：“意识”是那个能够觉知到正在发生什么的“知道者”，是纯粹的知觉本身。“生命力”是驱动细胞运作的能量，维持生物结构的基本动力，类似“气”。人类的误解在于：认为意识是生命的副产品，一旦生命力消失，意识似乎也消失了。然而，从更高的层面来看，生命更像是意识在某一层级的载体，而意识不等于必须依附于某种具体的生命形态。而且我们对“什么是有生命的”这一认知，本身就很狭隘。）</p>
-<h4>・音乐，是宇宙通用语言</h4>
+<h4 id="article-section-5" class="article-heading">・音乐，是宇宙通用语言</h4>
 <p>Pam：音乐，无疑是一种伟大的艺术形式。它不仅是行星之间的沟通方式，也是星际之间的交流语言。</p>
 <p>D（朵洛莉丝·侃南）：你能解释一下为什么它被称为“星际的”？</p>
 <p>P：正如你所知， <strong>声音是一种振动。振动并不会扩散到某个“X点”就停止；它会持续不断地向外传播。</strong> 我们很难理解这种永远向外传播的感觉，因为我们受限的人类大脑并不以“永恒”或“无尽”来思考。然而，鲸鱼的歌声是有规律的、和谐的、完全有计划的。这种振动以一种和谐、规律有序、精心设计的方式持续传播。因此，那些能够感知这种规律与和谐的存在，就能接收到它。</p>
 <p>D：这是不是意味着来自其他星际空间的存在，也能接收到并理解这些声音？</p>
 <p>P：当然可以。</p>
-<h4>・生命，存在于等离子体中</h4>
+<h4 id="article-section-6" class="article-heading">・生命，存在于等离子体中</h4>
 <p>菲尔：其实严格来说，我们根本不需要吃任何东西。我们赖以生存的地球，本身就处于一个 <strong>有生命的等离子体</strong>（living plasma）之中。在这种等离子体中，包含了维持生命所需的一切元素。这超越了我们所理解的空气、水、光。但可以简单地说，所有生命所需的养分，都以一种“看不见的形式”存在于地球各处。问题在于，<strong>这种等离子体会受到“思想”以及“物质污染”的影响</strong>。因此在世界上许多地方，它已经不再纯净。你们所称的外星生物，并不需要物理意义上的进食。他们能够从宇宙中直接吸收未被污染、未被扭曲的生命能量（即等离子体）。（这个主题在《监护人》（The Custodians）一书中有探讨。）</p>
 <p>D：许多外星存有告诉我，他们不像人类那样需要食物。这似乎是人类特有的特性。那些外星生命能够依靠空气、大气与光来生存。</p>
 <hr>
 <p>外星人一直说，为了逃离我们这个维度的物质密度，我们的身体正在变得越来越轻，我们的饮食也正在随之改变。那么，我们真的会进化到依靠光生存的状态吗？这是计划的一部分吗？</p>
-<h4>・一次被“误判”的UFO经历</h4>
+<h4 id="article-section-7" class="article-heading">・一次被“误判”的UFO经历</h4>
 <p>以下是1989年与LeeAnn的一次催眠会谈节选。我们原以为那会是一次UFO经历，因为那是我们当时研究的主题。但经验表明，人们常常不会得到自己所预期的结果。经验还表明，许多人其实并非被带上飞船，而是去了某个并非地球的地方。</p>
 <p>LeeAnn 清醒地记得，当她正要入睡时，看见一道美丽的金色光芒。那道光让她感到非常温暖、平静、安宁，仿佛被轻柔地安抚着进入梦乡。</p>
 <p>房间里本是漆黑一片，所以这光不可能来自普通的光源。那一晚，她只依稀记得一些梦的片段——梦里她似乎身处一个非常洁白、极为无菌的房间。在梦境中，她看见火山或熔岩的视觉影像，而当她醒来时，“全息图（hologram）”这个词出现在她的脑海中。</p>
@@ -305,12 +474,12 @@
 <p>L：他们是这么说的。嗯，肉体并不在那里。（长时间停顿）我想这是一种……我其实不太明白，但我想要如实表达——<span style="border-bottom: 2px dashed #6281C8;">你的灵魂能量是一种力量，它是如此强大，能够穿越维度与空间，而你并不一定知道具体怎么做。当你准备好了，你就准备好了。这不是凭意志或选择可以达成的。你不能靠意志去实现，它只是自然而然地发生了。你越是刻意努力让它发生，你反而越是把自己逼到墙角。</span></p>
 <p>D：所以，除非它自己准备好了，否则这种事不会发生。</p>
 <p>L：对。所以你需要区分那种心智状态——“<strong>客观的意识</strong>”与 <strong>想让事情发生的那个“主观自我”</strong>。</p>
-<h4>・善举，自会滋生更多善举</h4>
+<h4 id="article-section-8" class="article-heading">・善举，自会滋生更多善举</h4>
 <p>D：这些存在和这件事有关系吗？</p>
 <p>L：我想是的。我们来这里是为了学习、为了服务，因为他们带给我们启迪与指引方向。而我们学习的目的，是为了能更好地服务他人。</p>
 <p>D：这些都是很好的事。那他们为什么要你来这里呢？</p>
 <p>L：因为会有变化发生。<span style="border-bottom: 2px dashed #6281C8;">改变正在发生。在地球的演化过程中，这一切都是为了地球的改善。随着我们进入这个时代，人们必须以你的榜样，去理解他们与宇宙、与天父是一体的。当人类意识到这一点，地球就会恢复健康。我们从地球身上过度索取、也造成了太多伤害，现在她需要净化。而我们来到这里，是为了以身作则来帮助她，而不是去说教，宣讲什么。<strong>善举，自会滋生更多善举。</strong></span></p>
-<h4>・地球援助计划 │ 被带走的人</h4>
+<h4 id="article-section-9" class="article-heading">・地球援助计划 │ 被带走的人</h4>
 <p>D：但他们告诉你，现在正在发生一些变化？</p>
 <p>L：是的。我其实并不想知道这些，但看来我应该知道。</p>
 <p>她停顿了一下，似乎在“看”什么。接着她开始描述：<strong>火山爆发与地震频发</strong>；还有<strong>由地底气体造成的爆炸与火灾</strong>。许多人因此丧生。但在这一切混乱之中，她看见穿梭飞船正在将人们疏散，带往天空中更大的飞船。随后，他们将被运送到其他星系的行星上。</p>
@@ -325,7 +494,7 @@
 <p>所以我想，如果有一个更高等的种族，或者说更恰当地讲，是“更高的存在”，他们就能够帮助我们激活那些我们本就已经知道的知识——因为我们天生就知道一切。而当我们的振动频率提升后，其实也就无所谓了，因为即便肉体真的死亡，也只是前往另一个地方而已。</p>
 <p>D：但在这种情况下，他们是连同肉体一起被带走的，对吗？</p>
 <p>L：是的，但他们<strong>重新排列了粒子结构，以便进行这种“转移”</strong>。</p>
-<h4>・被留下的人类：进化失败，还是另一种开始？</h4>
+<h4 id="article-section-10" class="article-heading">・被留下的人类：进化失败，还是另一种开始？</h4>
 <p>D：他们会带走地球上所有的幸存者吗？</p>
 <p>L：（语气悲伤）不，我想不会。我希望他们能带走所有人……但在那场毁灭中，许多肉体都失去了生命。他们没有带走所有人。</p>
 <p>D：为什么？</p>
@@ -340,7 +509,7 @@
 <p>L：我不想说“所有”。因为如果全部都发生那样的变化，会花很长时间……但不，只有部分人，是的，就是部分人。理性上讲，这就像是“<strong>出生缺陷</strong>”，是因为那些<strong>灾变造成的大气变化</strong>。但仍然必须会有更高级的人类形态存在。</p>
 <p>D：所以你认为，他们是在让你看到一些幸存者的未来？</p>
 <p>L：不，不是幸存者。我想，这些是幸存者的后代。</p>
-<h4>・回归灵魂的家园</h4>
+<h4 id="article-section-11" class="article-heading">・回归灵魂的家园</h4>
 <p>D：让他们给你看看，那些没有朝那个方向进化的人。</p>
 <p>L：（停顿）我无法理解这样的两个极端怎么能同时存在。我想我已经不在地球上了。那些人太轻盈了——他们的身体结构非常轻，几乎像“灵魂的精神”（spirit of a spirit）。他们的密度并不高，无法居住在地球上。不过，也许当地球改变之后，地球会变成天堂，对吧？</p>
 <p>D：你现在看到的这些人，是那些被带走的人吗？他们现在生活在别的地方？</p>
@@ -360,7 +529,7 @@
 <p>L：是的，他们的“家”。每个人都会这样，因为他们是以集体形式旅行的，所以每个人会再次与亲人团聚。家庭成员的连结是永恒的。</p>
 <p>D：但这种状态并不是我们所谓的“死亡”状态，对吗？</p>
 <p>L：哦，不，这是一种物理存在状态。只是它不像地球身体那样致密的物质状态。</p>
-<h4>・新人类：回到地球的引导者</h4>
+<h4 id="article-section-12" class="article-heading">・新人类：回到地球的引导者</h4>
 <p>D：我试着理解这一点。所有被带上飞船的人，他们被某种方式“转化”了，也许是分解了分子结构，被带上飞船，对吗？</p>
 <p>L：是的。但并不是所有人都这样。那些被带上飞船的人，会被送回他们原本的家园。</p>
 <p>D：他们来地球是为了帮助人类进化？</p>
@@ -380,7 +549,7 @@
 <p>L：这是在某个未来的时间。就在……让我看看，我看到地球上<strong>水变得更多了</strong>，或者说，<strong>更多的陆地被水淹没</strong>。</p>
 <p>接着，我请她描述地球上哪些大陆仍然露出水面。令人惊讶的是，她的描述<strong>几乎与我在《与诺查丹玛斯的对话》第二卷</strong>中所写的内容完全相同。而她不可能从那本书中获得这些信息，因为这场回溯是在1989年进行的，而那本书当时还未出版。</p>
 <p>D：这些都可能只是一种可能性，不一定是确凿的事实。</p>
-<h4>・忠告：己所不欲，勿施于人</h4>
+<h4 id="article-section-13" class="article-heading">・忠告：己所不欲，勿施于人</h4>
 <p>D：那么，他们有没有给出什么忠告？</p>
 <p>L：忠告其实非常简单——而且在数个世纪以来都被不断传授：<strong>己所不欲，勿施于人。</strong></p>
 <p>这条“黄金法则”可以在地球上七大主要宗教中找到：</p>
@@ -410,7 +579,7 @@
 （《圣训 Sunnah》）</p>
 <p>D：有时候，最简单的忠告往往蕴含着最深的智慧。</p>
 <p>L：<span style="border-bottom: 2px dashed #6281C8;">如果地球的振动频率发生改变，比如通过人们变得更加友善，或者人们开始认出每个人身上的神性——地球的振动频率就会提升。而当这个频率达到一定水平时，地球将会得到一定程度的治愈。那些原本因为人类破坏地球，而 <strong>必须发生的净化</strong> 就不一定非得发生。要感谢地球的恩赐与善良，因为我们与地球之间没有分离——不要制造这种分离。我们与地球、鸟儿、狗、万物之间都是一体的，只是不同的形态显化而已。如果人们能真正意识到这一点，那么我们就会在地球上“创造天堂”。</span></p>
-<h4>・尚未写定的未来</h4>
+<h4 id="article-section-14" class="article-heading">・尚未写定的未来</h4>
 <p>当LeeAnn醒来时，她描述了自己入睡后所看到的那个地方。</p>
 <p>L：那里看起来像是一个“镜厅”，但不是玻璃做的。就像你照镜子时看到无止境的反射，不过这更像一条隧道，可以一直望下去，而且它被分成不同的区域。房间是圆形或弧形的，有模压般的台阶，那条走廊就从我面前这样延伸出去。</p>
 <p>因为她之前提到过“全息图（hologram）”的概念，我想知道这个“镜厅”是否与她所看到的灾难影像有关。
@@ -893,7 +1062,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -982,6 +1151,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

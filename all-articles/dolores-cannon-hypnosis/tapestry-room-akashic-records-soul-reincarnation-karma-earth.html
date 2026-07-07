@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -239,23 +408,23 @@
 <p>《The Convoluted Universe Book 1》，2001年</p>
 <p>作者：朵洛莉丝·侃南（Dolores Cannon）</p>
 <p>翻译/解读：暮雨</p>
-<h2>本集内容</h2>
-<p>第三集：重返挂毯室</p>
-<p>・灵界挂毯室 │ 生命彼此交织</p>
-<p>・挂毯是活的 │ 每一根丝线代表什么？</p>
-<p>・如果一切都已编织：命运是否注定？</p>
-<p>・业力 │ 为什么灵魂选择成为人类？为什么被困在地球？</p>
-<p>・其他生命形态 │ 制造业力，是灵魂旅程的一部分</p>
-<p>・星际种子 │ 来自银河系的灵魂</p>
-<p>・体验限制 │ 灵魂的伟大与人类的局限</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：第三集：重返挂毯室">第三集：重返挂毯室</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：・灵界挂毯室 │ 生命彼此交织">・灵界挂毯室 │ 生命彼此交织</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：・挂毯是活的 │ 每一根丝线代表什么？">・挂毯是活的 │ 每一根丝线代表什么？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：・如果一切都已编织：命运是否注定？">・如果一切都已编织：命运是否注定？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・业力 │ 为什么灵魂选择成为人类？为什么被困在地球？">・业力 │ 为什么灵魂选择成为人类？为什么被困在地球？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：・其他生命形态 │ 制造业力，是灵魂旅程的一部分">・其他生命形态 │ 制造业力，是灵魂旅程的一部分</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・星际种子 │ 来自银河系的灵魂">・星际种子 │ 来自银河系的灵魂</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="4" aria-label="跳转到：・体验限制 │ 灵魂的伟大与人类的局限">・体验限制 │ 灵魂的伟大与人类的局限</a></p>
 <hr>
-<h2>引言：</h2>
+<h2 id="article-section-2" class="article-heading">引言：</h2>
 <p>每个人的一生如同一根丝线。丝线彼此交织成一幅生命的挂毯，它也被称为“阿卡西纪录”。</p>
 <p>“挂毯”生动地呈现出—— 每个人的生命如何影响着其他所有人。也证明了一个事实，我们既是一个整体，同时又彼此相连、相互依存。</p>
 <p>但如果灵魂的旅程，在挂毯上早已编织好，这是否意味着 <strong>所有事情都是注定的？</strong> 挂毯是否也限制了灵魂必须以线性的方式，先经历较低的生命形式，才能进入人类生命？</p>
 <p>然而潜意识说，灵魂的旅程并不总是从低到高的发展。但无论灵魂选择的路径是什么，都为这幅生命挂毯增添、赋予、充实了内容，也会丰富灵魂本身的复杂性，让灵魂变得更加完整。</p>
 <p>此外，本文也解答了灵魂为什么选择来到地球体验人类生命？为什么有些灵魂被锁定在地球层面反复轮回，而有些灵魂却可以自由来去地球？我们的文化中，人们常把轮回视为一种“惩罚”，但潜意识给出了另一种解释。</p>
-<h2>第三集：重返挂毯室</h2>
+<h2 id="article-section-3" class="article-heading">第三集：重返挂毯室</h2>
 <p>2000年3月，我在澳大利亚巡回演讲时，为诺玛安排了一次私人咨询。她有许多个人问题和身体上的困扰，希望能通过前世催眠回溯找到原因与解释。</p>
 <p>此外，她被我在《<span style="color:#6281C8;">
 <a href="https://librarys.life/audiobooks/between-death-life/" 
@@ -266,7 +435,7 @@
 <p>她很快进入了深度恍惚状态，并重温了一个发生在维多利亚时代英国的前世。那段前世经历，解释了她在今生所牵涉的许多个人业力关系。</p>
 <p>过程中出现了大量细节：如日期、姓名，以及伦敦的具体地点，这些内容都可以被查证与核实。我已经做过无数次回溯治疗，这类细节如今已不再让我感到惊讶。 <strong>我更关注的是，通过重新经历那一世的创伤与情感，所带来的疗愈效果。</strong> 至于是否要去调查和验证这些细节，我通常会交由当事人自行决定。</p>
 <p>我早已不再需要“证明”，除非这些证据本身对我的写作有价值，否则我不会特意去查证。<span style="border-bottom: 2px dashed #6281C8;">世界上永远不会有足够的证据，去说服一个彻底的怀疑论者；而一个相信的人，也并不需要证明。</span>在我目前的工作阶段，<span style="border-bottom: 2px dashed #6281C8;">我更着迷于——本就 <strong>无法被证实的未知领域</strong> 。</span></p>
-<h4>・灵界挂毯室 │ 生命彼此交织</h4>
+<h4 id="article-section-4" class="article-heading">・灵界挂毯室 │ 生命彼此交织</h4>
 <p>当我带领诺玛来到那一世的终点时，她以一位老妇人的形象，在家人的陪伴中平静离世。随着她逐渐脱离肉身，我请她描述正在发生的事。</p>
 <p><strong>N（诺玛）</strong> ：有一道光。有个穿着长袍的身影，还有爱与和谐。他们把她带到一个非常安宁、祥和的地方。那里没有别人，四周只有宁静与薄雾弥漫。</p>
 <p>这听起来像是其他个案曾描述过的 <strong>“灵界休息地”</strong> ，一种灵魂的庇护所。灵魂可以在那里暂时修整，然后再前往下一个地点：要么继续留在灵界，要么在新的生命中回到另一个身体。</p>
@@ -312,7 +481,7 @@
 <p>N：她知道，但她并不相信。</p>
 <p>D：你能带她看看那个房间是什么样子吗？</p>
 <p>N：这是一个充满光的房间。没有天花板，因为挂毯高得无法想象，而且它很长很长，一直延伸下去，没有尽头。它在动，它是活的。</p>
-<h4>・挂毯是活的 │ 每一根丝线代表什么？</h4>
+<h4 id="article-section-5" class="article-heading">・挂毯是活的 │ 每一根丝线代表什么？</h4>
 <p>D：你说 <strong>“挂毯是活的”</strong> ，是什么意思？</p>
 <p>N：它在光中活着，那些 <strong>丝线本身就是活的存在</strong> 。它们 <strong>并不是物质性的。它们有感受，有思想，有颜色，有生命。</strong></p>
 <p>D：你是指组成挂毯的那些丝线吗？</p>
@@ -331,7 +500,7 @@
 <p>N：哦，是的。它非常非常复杂，远远超出我们所有的想象。<span style="border-bottom: 2px dashed #6281C8;">每一段生命、每一种存在、每一个思想、每一个行动、我们所是的一切、将要成为的一切、曾经成为的一切，全都体现在每一根丝线之中。而我们本身，也正是 <strong>所有这些的总和。</strong> </span></p>
 <p>D：它只代表今生，还是说这根丝线包含了灵魂的全部历史？</p>
 <p>N：还有未来，还有……嗯，灵魂本身。就是这样。</p>
-<h4>・如果一切都已编织：命运是否注定？</h4>
+<h4 id="article-section-6" class="article-heading">・如果一切都已编织：命运是否注定？</h4>
 <p>D：但如果一切都已经编织好了，这是否意味着 <strong>所有事情都是注定的？</strong></p>
 <p>N：哦，不是的。丝线的某些部分，灵魂的命运是固定的。这取决于灵魂在那个阶段经历的旅程，因为 <strong>有些生命形态并不存在自由意志。</strong></p>
 <p>D：不存在？还是说它们并不知道自己拥有自由意志？</p>
@@ -340,7 +509,7 @@
 <p>N：没错。这取决于它选择了怎样的生命形态。如果它选择的是人类生命，它就拥有自由意志；但如果它选择的是其他形式的存在方式，在某些情况下，它并不拥有自由意志。因此，那根丝线的质感、亮度、颜色、粗细，以及它与其他丝线的连接方式，都会发生变化。这是一个极其复杂的系统。</p>
 <p>D：所以，这一切都取决于灵魂在那个阶段正在学习的课题。</p>
 <p>N：我们不会把它称为“课题（lesson）”。我们更愿意称之为…… <strong>忆起（remembrance）</strong> 。<span style="border-bottom: 2px dashed #6281C8;">因为灵魂本来就知道一切，它无所不知。它知道所有需要知道的。只是它并不总是记得。而且，根据灵魂所选择经历的生命形式不同，有时候它会记得，有时候则不会记得。</span></p>
-<h4>・业力 │ 为什么灵魂选择成为人类？为什么被困在地球？</h4>
+<h4 id="article-section-7" class="article-heading">・业力 │ 为什么灵魂选择成为人类？为什么被困在地球？</h4>
 <p>D：如果灵魂选择的是人类的生命，而我们又记得所有这些事情，就会感到困惑和混乱，是吗？</p>
 <p>N： <strong>当灵魂希望清理很多东西时</strong> ，它才会选择人类这种生命。否则它通常不会选择做人，因为在许多层面上，这是一种相当困难的存在形式。但与此同时，人类生命也是一种非常令人兴奋的体验。因为这种人生极其丰富与充实——充满了各种情感、感受、层次与活力。</p>
 <p>在灵魂所选择的许多其他生命形式中，并没有太多变化，也没有这么丰富、细腻的体验。有时甚至连“第三维度”的存在都没有，因此它们也无法与第三维度产生任何关联。它们根本不了解第三维度是什么。</p>
@@ -353,7 +522,7 @@
 <p>D：但如果他们失去了连结的时机，就需要等待很长时间，才能再次遇到这样的机缘。而那些业力最终还是必须偿还、必须清理完毕。你是这个意思吗？</p>
 <p>N：是的。诺玛对此非常清楚。那些 <strong>被困在第三维度的灵魂</strong> ，并没有真正意识到这一点。他们在某个层面上——尤其是在转世之间——他们知道自己还能体验其他生命。但他们也知道，自己必须留在地球维度，去偿还业债。否则，他们就会错失良机，不得不以灵体形式停留很长一段时间。</p>
 <p>他们当然可以去经历其他外星生命、其他维度的生命，但他们知道那样做会限制自己，因为这将错过那些与地球生命相关、必须完成的连结，而这些连结正是他们必须去履行的。</p>
-<h4>・其他生命形态 │ 制造业力，是灵魂旅程的一部分</h4>
+<h4 id="article-section-8" class="article-heading">・其他生命形态 │ 制造业力，是灵魂旅程的一部分</h4>
 <p>D：但在那些并不知道第三维度存在的其他生命形态中，他们也会制造业力吗？</p>
 <p>N：哦，会的！（语气非常肯定）当然会！ <strong>制造业力本来就是灵魂旅程的一部分。</strong></p>
 <p>D：然后解决它。</p>
@@ -385,7 +554,7 @@
   三波志愿者与新地球</a>》第十四章议会，提到一个有趣的案例，与上述描述非常相似。</p>
 <p style="color: #6281C8;">一个处于创造者层级的灵魂，为了研究并修复失败的“地球实验”，主动下降到地球层面。他进入动物、人类、岩石、树木、海洋、细胞核、甚至电子、粒子与光波等不同形式中，亲自体验了全部生命。</p>
 <p style="color: #6281C8;">因为他想弄清楚：这场实验失败的原因。线路哪里出了错？细菌是如何造成干扰的？又该如何修复？而他认为，唯一可能的修复方式只能从内部进行，而无法从议会层面，以观察者的身份去干预。他也提到，在体验这些生命形态“漫长时间”的同时，他也可以随时回到自己原本所在的议会层级。</p>
-<h4>・星际种子 │ 来自银河系的灵魂</h4>
+<h4 id="article-section-9" class="article-heading">・星际种子 │ 来自银河系的灵魂</h4>
 <p>D：诺玛想知道，她是否与银河系层面的存在有关联。</p>
 <p>N：哦，是的！她知道自己曾经是某些银河系生命的一部分，但在显意识层面，她并不知道具体细节。她对自己了解得很多，而在这一世中，她也正在学习很多东西。除非她真的想再次回到第三维度，否则她将不需要再回到这里。</p>
 <p>D：所以，可以说她在这里的任务差不多完成了？</p>
@@ -411,7 +580,7 @@
 <p>N：当然。</p>
 <p>D：这是很多人没有意识到的。</p>
 <p>N：是的，而且她必须与这个星系的其他行星互动，当然，也不仅仅局限于这个星系。这一切比你想象的更宏大。</p>
-<h4>・体验限制 │ 灵魂的伟大与人类的局限</h4>
+<h4 id="article-section-10" class="article-heading">・体验限制 │ 灵魂的伟大与人类的局限</h4>
 <p>D：我听说，不只有一个代表灵魂的挂毯室，而且结构比这要复杂得多，对吗？</p>
 <p>N：哦，是的。挂毯室只代表那些正在这个宇宙，以及更远的多重宇宙中工作的灵魂。但还不止这些。</p>
 <p>D：是否还存在其他挂毯，可以举例说明吗？</p>
@@ -451,7 +620,7 @@
 <p>N：她曾做出过许多重要的决定，而这些决定影响了许多灵魂。</p>
 <p>D：在其他的生命中吗？</p>
 <p>N：这已经超越了“许多前世”的层次，进入了她作为“真正的我们是谁”的层面。她明白，自己并不需要处在某一种生命形态中，才能做出决定。她曾以灵魂形态，为许多灵魂做出过重要的决定。</p>
-<h4>结语：</h4>
+<h4 id="article-section-11" class="article-heading">结语：</h4>
 <p>显然，当我们进入地球，也就是第三维度的现实中时，我们会穿上一层“外壳”，就像演员一样扮演着各种角色。对有些人来说，这是一次冒险，是一种体验，是一段旅程；而对另一些人来说，这却是一种被困在幻象中的状态，而这种幻象又具备了所有“真实”的特征。</p>
 <p>无论我们如何看待这一切，只要生活在这个维度中，我们就会 <strong>自动地产生业力</strong> ，并因此被困在这个现实中，直到偿还完这些债务为止。</p>
 <p>在幕后发生的事，远远超出我们所能意识到的范围。</p>
@@ -926,7 +1095,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -1015,6 +1184,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -245,31 +414,31 @@
      target="_blank">https://tomkenyon.com/transition-states-of-consciousness  </a></p>
 <p>作者：汤姆·肯永 (Tom Kenyon)</p>
 <p>翻译/解读：暮雨</p>
-<h2>本集内容</h2>
-<p>死亡的两种形式</p>
-<p>・心理与精神的蜕变</p>
-<p>・身体的死亡</p>
-<p>死亡的意识过渡状态</p>
-<p>死后的三个选择</p>
-<p>・上师 / 救世主的天堂</p>
-<p>・光之隧道</p>
-<p>・黑暗虚空之门</p>
-<p>死亡：新潜在现实的开始</p>
-<p>延伸阅读 │ 一个关于死亡过渡的故事</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：死亡的两种形式">死亡的两种形式</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：・心理与精神的蜕变">・心理与精神的蜕变</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：・身体的死亡">・身体的死亡</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：死亡的意识过渡状态">死亡的意识过渡状态</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：死后的三个选择">死后的三个选择</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・上师 / 救世主的天堂">・上师 / 救世主的天堂</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：・光之隧道">・光之隧道</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・黑暗虚空之门">・黑暗虚空之门</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="2" aria-label="跳转到：死亡：新潜在现实的开始">死亡：新潜在现实的开始</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="2" aria-label="跳转到：延伸阅读 │ 一个关于死亡过渡的故事">延伸阅读 │ 一个关于死亡过渡的故事</a></p>
 <hr>
 <p><span style="color: #6B77CC;">你是现实的创造者，这句话意味着，你不仅创造了你的人世生活，你也创造了你的死后世界，以及来世的体验。——暮雨</span></p>
-<h2>死亡的两种形式</h2>
+<h2 id="article-section-2" class="article-heading">死亡的两种形式</h2>
 <p>当你将 <strong>自我认同</strong> 从当下的现实中抽离时，你今生的个人历史仿佛一场梦。因为你已经超越了肉身生命的 <strong>感官锚点</strong>，于是无论是你自己的过往，还是整个宇宙的历史，都如同一种梦境般的体验。</p>
 <p>在某些深度扩展的意识状态中，人们能直接感受到生命的这种“梦幻性”。但对大多数人来说，这种体验只有在你们称之为“死亡”的通道中才会出现。</p>
 <p>在这里，我们想讨论两种类型的死亡。</p>
-<h4>・心理与精神的蜕变</h4>
+<h4 id="article-section-3" class="article-heading">・心理与精神的蜕变</h4>
 <p>**第一种死亡 **是当你进入第五维度（或更高维度）的现实时，发生的心理和精神上的蜕变。这种转变常常让人感觉像是一种死亡，因为你原本习惯依赖的、以感官为基础的现实框架已消失。</p>
 <p>你是谁？你的生命意义是什么？这些根本性的存在主义问题，都会在进入第五维度及更高维度的过程中，被深刻地触动和改变。</p>
 <p>因此，对于那些正在阅读本文，并正在过渡到第五维度或更高维度的读者，我们要说：别被 <strong>死亡的预感</strong> 吓到。那种对死亡正在临近的感受，可能并不是身体即将死亡的预兆，而是你正在过渡到更高维度现实时，所必然产生的内在反应。</p>
-<h4>・身体的死亡</h4>
+<h4 id="article-section-4" class="article-heading">・身体的死亡</h4>
 <p>我们要讨论的 <strong>第二种死亡</strong>，是你生物现实的终结（也就是你的肉体死亡）。当死亡过程彻底完成时，你将不再接收来自外部世界的感官输入，而你目前对空间与时间的体验，也将被彻底抹去。如果你毫无准备，这可能会让你感到相当迷茫。但如果你理解正在发生的事情的本质，这也可能让你感到相当兴奋与解放。</p>
 <p>如果你完全把自己视为一个有机生物体，那么在死亡的那一刻，你会感到恐惧。然而，如果你已经体验过进入第五维度或更高维度的自由，那么你的死亡过渡将会轻松得多。</p>
-<h2>死亡的意识过渡状态</h2>
+<h2 id="article-section-5" class="article-heading">死亡的意识过渡状态</h2>
 <p>对于有形生命来说，“死亡的意识过渡状态”是极其困难的过程。</p>
 <p>这是因为包括五种感官在内的 <strong>所有感知标记</strong> 都消失了。如果一个人完全把自己认同为物质性的存在，那么他/她将会发现这个过渡状态极其困难。因为他/她所认同的一切，已经不复存在。</p>
 <p><strong>感知标记</strong>（Perceptual markers）是哈索尔用来描述，我们如何通过五种感官，理解世界并驾驭我们的生活的一个术语。当“感知标记”消失时，“意识的过渡状态”就会出现。</p>
@@ -281,10 +450,10 @@
 </a>）</span></p>
 <p style="color: #6B77CC;">「暮雨·注」什么是“超验意识”？</p>
 <p style="color: #6B77CC;">指的是一种超越日常感官、理性思维与自我身份局限的意识状态。在这种状态中，个体会感受到与更高维度的实相、宇宙整体性或神圣存在的连接。想象一下：<b>普通意识</b> 就像你在黑暗的房间里开着一盏小灯，只能看见被灯光照亮的部分。<b>超验意识</b> 则像你走到山顶，突然能看见整个城市的灯火。它让人跳出“局部的小舞台”，去看到更广阔、更本质的整体。很多人形容这种状态像是和宇宙对话、融入无限的海洋；或者像从故事里，突然跳出自己的角色，看到整个剧本。</p>
-<h2>死后的三个选择</h2>
+<h2 id="article-section-6" class="article-heading">死后的三个选择</h2>
 <p>从我们的经验和视角来看，当一个人穿越你们称为“死亡的意识过渡状态”时，即肉体死亡结束后，将面临三个入口/门户：</p>
 <p><span style="border-bottom: 1px dashed #3399FF;">1）由某位上师或救世主的的个人意志，所开启的能量入口；2）光之隧道；3）一条通往黑暗虚空的入口或隧道。</span></p>
-<h4>・上师 / 救世主的天堂</h4>
+<h4 id="article-section-7" class="article-heading">・上师 / 救世主的天堂</h4>
 <p>如果你身处一个灵性传统中，与你有着深厚个人联系的上师或救世主，你可以选择跟随这位存在的道路，进入其意识的振动场。在某些宗教中，这被称为“天堂”。</p>
 <p>对于走在这条道路上的人，我们需要提醒你的是：</p>
 <p>进入这个意识维度，意味着实现了你心中渴望已久的愿望——与这位存在合一。</p>
@@ -296,11 +465,11 @@
 <p>如果在你与上师/化身/救世主相遇的那一刻，他/她认为你值得，他/她就会带你进入他/她的天堂领域。</p>
 <p>对于那些来自东方灵性传统的人来说，有一些 <strong>咒语</strong> 与特定的神灵相关。在临终时或在冥界，默念这些咒语，也会产生同样的效果。</p>
 <p>对于那些没有宗教信仰，并不追随某位上师、化身或救世主的人来说，在面对死亡的意识过渡状态时，提供了其他可能性。</p>
-<h4>・光之隧道</h4>
+<h4 id="article-section-8" class="article-heading">・光之隧道</h4>
 <p>所谓光之隧道，源自贯穿你身体中央的 <strong>普拉纳能量通道</strong>，它是从你的会阴延伸至头顶顶轮的一条“气脉管道”。在死亡的那一刻，你的意识会沿着这条通道向上移动，并通过你的顶轮进入另一个意识维度。</p>
 <p>在这条隧道的另一端，是一片耀眼的光芒。你可能会感觉自己正走在一座桥上，跨越一条溪流或河流。在桥的另一侧，会出现你刚刚结束的这一生中的亲人朋友。你也可能感应到那些在你之前去世的人，甚至包括你曾经养过的宠物，因为动物的灵魂也同样栖息在这个领域。</p>
 <p>如果你与这些人或生物之间，还有未完成的关系或未解决的问题，你可能会产生强烈的渴望，想要进入这道光芒。一旦进入，你就会重新回到生死轮回之中，并再次转世——而且最有可能是回到地球。</p>
-<h4>・黑暗虚空之门</h4>
+<h4 id="article-section-9" class="article-heading">・黑暗虚空之门</h4>
 <p>死亡领域中有一个黑暗的空区—— <strong>虚空点</strong>（Void Point）——那个万物由此诞生的创造之源。<span style="border-bottom: 1px dashed #3399FF;">在虚空中，存在所有可能性，但不存在任何现实。它就像一颗橡树的橡子。整棵巨大的橡树都潜藏在这粒橡子里，但它尚未显现。</span></p>
 <p>这就是第三种选择，停留在虚空点。当你发现自己身处虚空中时，你会通过一个特征认出它——那就是你在 <strong>黑暗和绝对的寂静</strong> 中，<strong>彻底的孤独</strong>。</p>
 <p>但你需要明白，当你栖居于虚空之中，如果你能在这种意识状态中停留足够长的时间，而不急于去创造什么，你就会发现“你的真实身份”是纯粹的意识——那个超越一切现象的伟大存在。</p>
@@ -311,10 +480,10 @@
 <p>许多被黑暗吓坏的人，在面对虚空的浩瀚时会感到眩晕。他们会匆忙地转向光明，选择一个新的现实，而不是花时间在万物的潜能与寂静中休憩。他们没有意识到的是，<strong>这种渴望本身创造了光</strong>。</p>
 <p>于是，他们面前出现一个门户，如同一条隧道。他们可以进入我们前面提到的第二个选择：光之隧道，遇见那些他们曾经认识的人。从而在没有完全理解，这样选择的后果的情况下，重新进入化身，或进入其他的振动领域。</p>
 <p>当然，这确实是向你开放的一种选择，也是许多人常常选择的道路。</p>
-<h2>死亡：新潜在现实的开始</h2>
+<h2 id="article-section-10" class="article-heading">死亡：新潜在现实的开始</h2>
 <p>对于你们在称为 <strong>死亡的维度转变</strong> 中选择进入哪个入口，我们并没有评判。但我们认为，如果你能事先了解等待着你们的事情，对你是有益的。这样你就能为即将到来的选择，做好准备。而这些选择，是你在结束尘世旅程时必须去面对的。</p>
 <p>死亡并不是结束。它只是一次穿越时空旅程的完成。死亡预示着 <strong>新的潜在现实</strong> 的开始，而<span style="border-bottom: 1px dashed #3399FF;">你将根据你在生前所做的选择，以及你在死亡时刻所做的选择，去 <strong>创造</strong> 新的现实。</span></p>
-<h2>延伸阅读 │ 一个关于死亡过渡的故事</h2>
+<h2 id="article-section-11" class="article-heading">延伸阅读 │ 一个关于死亡过渡的故事</h2>
 <p>引用自《第十种洞察力》，塞莱斯庭预言系列第2本</p>
 <p>作者：詹姆士‧莱德菲尔德（James Redfield）</p>
 <p><span style="color: #6B77CC;">（暮雨注：这个故事极其形象生动地描述了，一个人经历死亡时的意识过渡细节。虽然这是一部虚构的灵性小说，但却无比“真实”地诉说着我们每一个灵魂的历史，以及整个人类集体的历史。）</span></p>
@@ -823,7 +992,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -912,6 +1081,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

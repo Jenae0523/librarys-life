@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -239,36 +408,36 @@
 <p>引用自《The Convoluted Universe Book 3》，2008年</p>
 <p>作者：朵洛莉丝·侃南（Dolores Cannon）</p>
 <p>翻译/解读：暮雨</p>
-<h2>本集内容</h2>
-<p>引言：万物皆有生命与意识</p>
-<p>疗愈的目的</p>
-<p>每一个细胞都有独立意识</p>
-<p>细胞的上帝：理想细胞</p>
-<p>细胞有智力吗？</p>
-<p>与身体对话：自我探索疗愈法</p>
-<p>远距离治疗如何发生的？</p>
-<p>病菌，并非疾病的根源</p>
-<p>情绪与疾病</p>
-<p>死亡的过程</p>
-<p>细胞的轮回转世</p>
-<p>地球的意识</p>
-<p>二十年的回响</p>
-<h2>引言</h2>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：引言">引言：万物皆有生命与意识</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：疗愈的目的">疗愈的目的</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：每一个细胞都有独立意识">每一个细胞都有独立意识</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：细胞的上帝：理想细胞">细胞的上帝：理想细胞</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：细胞有智力吗？">细胞有智力吗？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="2" aria-label="跳转到：与身体对话：自我探索疗愈法">与身体对话：自我探索疗愈法</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="2" aria-label="跳转到：远距离治疗如何发生的？">远距离治疗如何发生的？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="2" aria-label="跳转到：病菌，并非疾病的根源">病菌，并非疾病的根源</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="2" aria-label="跳转到：情绪与疾病">情绪与疾病</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="2" aria-label="跳转到：死亡的过程">死亡的过程</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="2" aria-label="跳转到：细胞的轮回转世">细胞的轮回转世</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="2" aria-label="跳转到：地球的意识">地球的意识</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-14" class="article-toc-link" data-target-id="article-section-14" data-toc-level="2" aria-label="跳转到：二十年的回响">二十年的回响</a></p>
+<h2 id="article-section-2" class="article-heading">引言</h2>
 <p>万物皆有生命与意识。</p>
 <p>美国著名回溯催眠师 <strong>朵洛莉丝·侃南（Dolores Cannon）</strong> 在其《错综复杂的宇宙》The Convoluted Universe Book 五部曲中，汇总了大量催眠案例。这些案例不仅涉及人类的前世今生<span style="color: #6B77CC;">（参见电子书《<a href="https://pan.baidu.com/s/1wfz9qKSfeubo64qn4-YpYg?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank">生死之间  </a>》）</span>，也触及到来自其他生命形式的转世经历。换句话说，在她的研究视野中，<strong>“意识”早已超越了人类的范围，它存在于每一棵树、每一粒细胞、乃至整个宇宙的万物之中。</strong></p>
 <p>本集的主题，就是从一个极为细微的角度出发——探讨**“细胞的意识”<strong>与</strong>“疗愈”**。当你明白细胞并非冰冷无情的微粒，而是会回应你的生命体；你就会更懂得如何倾听身体的声音，并学会与自己的身体对话。</p>
 <p>时间回到 1985 年，在阿肯色州的尤里卡温泉（Eureka Springs），朵洛莉丝与一群志同道合的探索者，定期聚会、交流未知的发现。那是一个既充满好奇心，又洋溢着友谊与陪伴的年代。每次聚会，他们会先选定一个共同感兴趣的主题，然后由一位志愿者进入出神状态，让其潜意识来回答大家的问题。</p>
-<h2>疗愈的目的</h2>
+<h2 id="article-section-3" class="article-heading">疗愈的目的</h2>
 <p><strong>S（潜意识 Subconscious）</strong>：我们认识到今晚主题的重要性，也很渴望与你们讨论“疗愈”的各个方面。疗愈是一项至关重要的努力。世间万物，要么正处于疗愈状态，要么正走向毁灭。</p>
 <p>毁灭是一种自然现象，它本身并不像表面看起来那样——总是负面的。</p>
 <p>然而，任何实体或意识、任何生命体，如果遭遇<strong>过早的毁灭</strong>，则是需要避免的。因此，所有生命都必须去实践疗愈。<strong>疗愈的目的</strong>，是确保自己能够在当下的时空维度中，顺利地走完自己本该有的生命旅程。</p>
-<h2>每一个细胞都有独立意识</h2>
+<h2 id="article-section-4" class="article-heading">每一个细胞都有独立意识</h2>
 <p><strong>提问者</strong>：你能解释一下身体康复的实际过程吗？ 在细胞层面，它是如何发生的？</p>
 <p><strong>S（潜意识）</strong>：每一个细胞都对自身的存在负责，就像每一个完整的生命体，都要对其整体存在负责一样。</p>
 <p>细胞既有独立的意识，也与周围的细胞保持着联结，尤其是那些共同组成某个更大系统（比如心脏等器官）的细胞。细胞会从周围的能量场中，汲取与自身发育和生长相适应的养分；它会监测自己的功能，保留所需的营养，并将不需要的部分输送给整个机体。</p>
 <p>细胞能够感知到功能出现异常，就像人类能感觉到身体某处的不适一样。细胞会从与它相关的“<strong>思维池</strong>（Thought Pool）”中获取信息，就像人类也从思维池中获取信息一样，动物也从思维池中获得有关自身行为的指令。</p>
-<h2>细胞的上帝：理想细胞</h2>
+<h2 id="article-section-5" class="article-heading">细胞的上帝：理想细胞</h2>
 <p>每个细胞都能参照一个“<strong>理想细胞</strong>”的原型，从而知道自己该如何运作。当偏离这个理想状态时，细胞就会被警示提醒。此时，它们会向外请求有关疗愈的信息。</p>
 <p>所有过程都发生在<strong>瞬息之间</strong>、并在<strong>极其微观的层面</strong>完成。细胞拥有与生俱来的智慧与信息能力，同时，它们也会从体内较年长的细胞那里，以及整个身体能量的感知中，获得额外的指导。</p>
 <p><strong>问</strong>：你提到“理想细胞”，细胞会以它为模板来调整自己，对吗？</p>
@@ -280,7 +449,7 @@
 <p><strong>小组成员问：</strong> 顺着这个思路，那么细胞的理想自我，是否和我们人类所谓的“高我”之间存在某种对应关系？</p>
 <p><strong>S：</strong> 并不是你所理解的那样。细胞没有“更高自我”，不像你们理解的那种和高我的关系。
 确实存在一个东西，但它更像是一种“模式”或“范本”，而不是一个直接指挥活动的引导者。</p>
-<h2>细胞有智力吗？</h2>
+<h2 id="article-section-6" class="article-heading">细胞有智力吗？</h2>
 <p><strong>问：</strong> 这是否意味着细胞具有智力？</p>
 <p><strong>S：</strong> 是的。每个生物体都有意识，也就是智力。</p>
 <p><strong>问：</strong> 我在想，人类有大脑，那么细胞是否也能像人类一样用大脑思考？</p>
@@ -289,7 +458,7 @@
 <p><strong>S：</strong> 细胞并不认为自己“很基础”。（笑声）</p>
 <p><strong>问：</strong> 我的意思是，它们不可能拥有像人类一样的智力吧？还是说……它们有？！</p>
 <p><strong>S：</strong> 在它们的角度，每一个意识单元都拥有与人类相当的智力。有些甚至在服务它们所属的生命体时，比人类的智力对人类的运作更为有效。</p>
-<h2>与身体对话：自我探索疗愈法</h2>
+<h2 id="article-section-7" class="article-heading">与身体对话：自我探索疗愈法</h2>
 <p><strong>问：</strong> 那么，在疗愈过程中，我们必须与细胞内部的这种智慧进行沟通？</p>
 <p><strong>S：</strong> 没错。</p>
 <p><strong>问：</strong> 就我们人类的理解而言，疗愈往往意味着要接触到自己最根本的问题，要弄清楚造成痛苦或疾病的原因。你能否建议一种更有效的方法？</p>
@@ -299,7 +468,7 @@
 <p>不过，这种复杂性并不是必须的。<u>疗愈并不总是需要你完全弄清楚，到底是什么在阻碍疗愈。只要你能承认确实存在阻碍，并透过<strong>心念的请求</strong>，或者<strong>视觉化地观想阻碍正在被溶解</strong>，就已经足够了。即使你并不知道阻碍的具体内容是什么。</u></p>
 <p>如果你相信阻碍可以被消除，而不必费心去理解它是如何形成的，这对大多数人来说已经足够了。请牢记一点：<strong>真正起决定作用的，是你的信念</strong>。</p>
 <p>如果你相信，自己可以消除障碍并走向疗愈，而无需花上成千上万的钱去看心理咨询师，那么你就这样做。那会轻松得多。</p>
-<h2>远距离治疗如何发生的？</h2>
+<h2 id="article-section-8" class="article-heading">远距离治疗如何发生的？</h2>
 <p><strong>问：</strong> 那么，远距离治疗的过程是如何发生的呢？</p>
 <p><strong>S：</strong> 一个人传递“疗愈能量”到另一个人，在你们的<strong>时空观念</strong>里似乎是“远距离”的，但事实上，这个距离非常近。疗愈者能够在<strong>更直接的层面</strong>上接触到被疗愈者的能量。</p>
 <p>疗愈者通过扩展自己的光环（aura），伸展出去触碰另一个个体，这使得两者之间似乎跨越了时空的距离，完成能量的对接。因此，这种远距疗愈与“实际在身边、用双手触碰身体”或“近距离的接触光环场”所发生的疗愈，本质上是相同的。</p>
@@ -313,7 +482,7 @@
 <p>疗愈者愿意“牺牲”掉自己的一部分能量（不过他们生成能量的能力通常比普通人更强），然后，他们将其传送到被疗愈者身体的某个部位或整体。</p>
 <p>这种能量本身似乎拥有自己的意识和智慧——事实也确实如此<span style="color: #6B77CC;">（暮雨注：下一集《<a href="https://librarys.life/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank">疗愈能量在说话  </a>》将会揭开它们的面纱）</span>。这些疗愈能量会自动寻找问题所在并解决它们，溶解阻塞并帮助身体和光环场恢复本来的健康状态。</p>
-<h2>病菌，并非疾病的根源</h2>
+<h2 id="article-section-9" class="article-heading">病菌，并非疾病的根源</h2>
 <p><strong>问：</strong> 当我周围的人都生病了，我有时会在心里设置一道屏障，防止那些病菌进入我的身体。这样真的有帮助吗？</p>
 <p><strong>S：</strong> 你真的这么做了吗？</p>
 <p><strong>问：</strong> 我尝试去练习。我相信它，但我想知道这是不是事实？</p>
@@ -336,7 +505,7 @@
 <p><strong>S：</strong> 老鼠和跳蚤只是“背了锅”。</p>
 <p><strong>问：</strong> 你是说，因为人们相信这种解释，所以疾病才会扩散吗？</p>
 <p><strong>S：</strong> 是的。这是一方面。另一方面，当时的人们也有他们特定的原因，选择要去经历这样一个群体性事件。</p>
-<h2>情绪与疾病</h2>
+<h2 id="article-section-10" class="article-heading">情绪与疾病</h2>
 <p><strong>问：</strong> 我们听说过“笑是最好的良药”，你能解释为什么吗？</p>
 <p><strong>S：</strong> 笑之所以是最好的良药，是因为它至少在当下，会让你体验到积极的喜悦与幸福感。它会立即带来疗愈。</p>
 <p><strong>问：</strong> 那么，这是否意味着悲伤或忧愁对身体有害呢？</p>
@@ -348,7 +517,7 @@
 <p><strong>S：</strong> 这是一个比较简化的说法，但从某种程度上说是准确的。</p>
 <p><strong>问：<strong>那么，即使是</strong>愤怒</strong>，这种情绪的体验也是有益的？</p>
 <p><strong>S：</strong> 是的。<span style="color: #6B77CC;">（暮雨注：这里的表达愤怒，应该是对某个事件的自然情绪反应。正如之前提到的，过度的、长期的、不适当的情绪，这里指愤怒，则需要我们去觉察它在向我们诉说什么。）</span></p>
-<h2>死亡的过程</h2>
+<h2 id="article-section-11" class="article-heading">死亡的过程</h2>
 <p><strong>问：</strong> 下面这个问题不完全是关于疗愈的主题，但我觉得还是有关联。当“更大的自我”离开身体，肉体开始分解时，身体里的细胞在转化成其他物质之前，是否依然具有生命？</p>
 <p><strong>S：</strong> 你是想知道<strong>死亡过程</strong>中究竟发生了什么吗？</p>
 <p><strong>问：</strong> 是的。我想知道，如果每个细胞都有生命，那么当灵魂离开身体的那一刻，这些细胞是否依旧还活着？它们是不是也会自己选择进入分解的状态？</p>
@@ -359,7 +528,7 @@
 <p>然而，大多数细胞在肉体死亡后，就不再具备一些关键的生命功能：它们不会再繁殖，不会再吸收营养物质，也不会再进行废物的代谢。不过，正如你们所知，有些细胞还会“病态地”继续生长一段时间。</p>
 <p>所以，就像一棵树木一样，人体的各个部分也是以不同的速度逐渐消亡。只要这些组织还未彻底分解，它们就仍然保持着某种形式的“生命”。</p>
 <p>当然，它们最终分解为其他物质时，它们依旧继续以不同的形式活着——就像<strong>尘埃和天空中飞翔的鸟儿</strong>，都是一样的鲜活，只是它们的存在形态不同而已。</p>
-<h2>细胞的轮回转世</h2>
+<h2 id="article-section-12" class="article-heading">细胞的轮回转世</h2>
 <p><strong>问：</strong> 那么，这是否可以说是一种“轮回”。也就是说轮回的概念，不仅适用于人类的灵魂，它甚至可以精细化到单个细胞层面？</p>
 <p>因为沿着这个思路，我看到的是：当我们经历死亡（或者说，身体逐渐变化直到被称作“死亡”），然后我们会进入另一个维度。那么，对细胞中的那股智能来说，是否也会发生类似的事情？</p>
 <p><strong>S：</strong> 没错。</p>
@@ -372,7 +541,7 @@
 <p><strong>S：</strong> 它们没有批判或评判，只是单纯接受这个生物的运作方式。</p>
 <p>**问：**我原本以为，它们可能会把大脑当成它们的“上帝”，或者说是它们宇宙的主宰，不是这样吗？</p>
 <p><strong>S：</strong> 那是你把人类喜欢“寻找上帝”的倾向投射到细胞身上了。细胞不会那样想，它们只是自然地接受自己就是“神”的一部分。</p>
-<h2>地球的意识</h2>
+<h2 id="article-section-13" class="article-heading">地球的意识</h2>
 <p>**问：**地球有没有自己的“大脑”或“意识”？</p>
 <p><strong>S：</strong> <strong>行星确实有整体的意识</strong>，就像一种弥漫性的、覆盖式的“毯子效应”）。</p>
 <p>然而，在任何一颗行星上，如果存在某种生命形式，它们能够改变行星的环境，创造新的实体（如建筑、制度、科技），还能改造自身的生命周期（如生存及繁衍方式、社会延续方式），并且这些改变能代代延续（不像一般动物只能在有限的范围内进行调整）；那么，这种生命形式（在地球就是人类）就会成为行星的<strong>意识</strong>，甚至是<strong>良知</strong>。</p>
@@ -380,7 +549,7 @@
 <p>按照宇宙的设计，即使行星本身确实拥有意识和智能，它依然必须与那些能改造行星表面的智慧生命<strong>协同合作</strong>，才能继续进化。</p>
 <p><strong>问：</strong> 这是否意味着，如果地球上的人类都死去了，地球的大脑也随之死亡？</p>
 <p><strong>答：</strong> 不会。地球的意识依然会与其他智慧生物共同协作，其中包括所有动物、植物、岩石，以及各种生命形式。如果在行星上，没有哪种生命能够像人类那样，去改变行星的物理形态，那么这颗行星就不再需要进行这种有意识的、智慧的共生关系合作；而只会单纯地允许一种<strong>更自然、无须有意识干预的进程</strong>发生。</p>
-<h2>二十年的回响</h2>
+<h2 id="article-section-14" class="article-heading">二十年的回响</h2>
 <p>这份资料在我的档案里沉睡了二十多年。前阵子我在整理旧文件，销毁了一些早在 1985 年小组聚会时留下的记录。那时候，我们常常在尤里卡温泉镇定期相聚。那真是一段美好的时光——充满探索的兴奋与同伴的温暖。能和志同道合的人一起讨论未知，对我来说意义重大。</p>
 <p>虽然小组早已解散，但我依然怀着深厚的情感，感激那些曾在我生命中如此重要的人们。他们可能永远不会知道，当时我有多需要他们的陪伴与理解。那段时期，我不断接触到全新的发现，一切都陌生而不同寻常，而他们的存在让我不至于孤单。</p>
 <p>在我们的聚会里，我们通常会先选定一个感兴趣的话题，然后由自愿者进入出神状态，回答大家提出的问题。前不久，我无意间找回了这份被遗忘的记录，仿佛它在等待着。沉睡二十多年，只为了在今天重新出现，成为我工作的一部分。</p>
@@ -876,7 +1045,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -965,6 +1134,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

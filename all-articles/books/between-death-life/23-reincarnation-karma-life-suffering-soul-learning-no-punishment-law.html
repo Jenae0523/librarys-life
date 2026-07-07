@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -241,26 +410,36 @@
 <p>作者：朵洛莉丝·侃南（Dolores Cannon）</p>
 <hr>
 <p>何有些人的一生好像很顺遂，有的人却那么多混乱与冲突吗？轮回的目的是什么？是要改正从前犯的错吗？有惩罚存在吗？负面体验，是为偿还前世业债吗？人们有时候会被困在负面经验和情势里，应该透过面对问题，摆脱不利的处境。灵魂透过体验不完美，来学习完美。</p>
-<h2>第七章 所谓的歹命 │ 顺利的人生和辛苦的人生</h2>
-<h4>用长远的眼光看待灵魂的发展</h4>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="2" aria-label="跳转到：第七章 所谓的歹命 │ 顺利的人生和辛苦的人生">第七章 所谓的歹命 │ 顺利的人生和辛苦的人生</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="4" aria-label="跳转到：用长远的眼光看待灵魂的发展">用长远的眼光看待灵魂的发展</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：轮回的目的">轮回的目的</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：透过面对问题，摆脱不利的处境">透过面对问题，摆脱不利的处境</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：透过体验不完美，来学习完美">透过体验不完美，来学习完美</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：负面的体验，是为了偿还前世的业债吗？">负面的体验，是为了偿还前世的业债吗？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：关于惩罚">关于惩罚</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：受困于负面经验的情况">受困于负面经验的情况</a></p>
+<hr>
+<h2 id="article-section-1" class="article-heading">第七章 所谓的歹命 │ 顺利的人生和辛苦的人生</h2>
+<h4 id="article-section-2" class="article-heading">用长远的眼光看待灵魂的发展</h4>
 <p>S：唯一绝对真实且慈爱的上帝，身为所有宇宙的主宰，不爱复仇也不心怀怨恨；不论在哪个宇宙，都没有那样的上帝。上帝用不着报复，在它的生命计划里不需要惩罚。</p>
 <p>今天你们地球上的处罚不用增加就已够多了。我们说<strong>业的概念是果而不是因</strong>。这个概念是经过仔细思考后，我们用来解释事情发生的原因。</p>
 <p>朵：我们很难瞭解为何有些人好像比其他人更墮落邪恶。把它看作纯粹是来自另一世的业/因果会是个容易的答案。你能解释<strong>为何有些人的一生好像很顺遂，有的人却那么多混乱与冲突吗？</strong></p>
 <p>S：或许是因为你一次只看一世吧。假使你是<strong>用较长远的眼光来看待灵魂的发展历程</strong>，或许说，看一百世而不是一世，也许你就会发现<strong>没有谁是每一世都轻松，也不是谁每一生都辛苦。</strong></p>
 <p>在灵魂的成长过程当中，不论轻松或辛苦，<strong>每一世所安排的都是适合的经验</strong>。那一世的经历不代表其中真谛，学会的课题才算得上数，而真谛就在其中。<strong>那一生的成果是在于所学到的课题，不在于课题有多困难或简单</strong>。你们要是用长远的眼光来看，就会知道有些世比较轻松，有些比较辛苦。说一个人这生过得非常艰辛，只表示他们的课题需要花上一辈子的时间，相对来说是比其他人辛苦。</p>
 <p></p>
-<h4>轮回的目的</h4>
+<h4 id="article-section-3" class="article-heading">轮回的目的</h4>
 <p>朵：那么轮迴的目的是什么？是要改正从前犯的错吗？</p>
 <p>S：轮迴的目的是要学习更多，不断学更多东西，因为你不可能在一次简单的人世就把一切通通学会。<strong>重生的主要目的并不是为了改正</strong>，而是去增加学习和体验。你们的知识不可能只在简单的一世就变得完整。你必须活过许多人世，才能完全明瞭你给自己指定的课题。</p>
 <p>灵界并没有手拿鞭子和铲子的严厉工头，准备埋了你的身体再处罚你，然后把你送回这个令人不快的地球。<strong>生命与转世重生的经验应该要以更正面的态度看待，也就是以学习与爱的角度，而不是惩罚与悲伤。一切都取决于态度。境由心造，你活在自己创造的生活里。</strong></p>
-<h4>透过面对问题，摆脱不利的处境</h4>
+<h4 id="article-section-4" class="article-heading">透过面对问题，摆脱不利的处境</h4>
 <p>朵：你现在所在的地方只有好的、善良的灵魂吗？</p>
 <p>S：<strong>是进化中的灵魂。没有好或坏。</strong></p>
 <p>朵：但的确是有不顺利的人生，这你怎么看呢？</p>
 <p>S：**人之所以经历不顺遂的一生，是因为他们不去处理冒出来的问题，那些他们自己选择要面对的问题。**他们认为既无法掌握自己的遭遇，又何必下任何功夫。然而人生就是要努力面对，不能日复一日得过且过。</p>
 <p>朵：有些人在所过的一生里做了很坏的事。这会有什么目的吗？</p>
 <p>S：<strong>有时坏事不全是那个人做的，还有其他的力量参与。<strong>除了能让別人看到一个人可以墮落到什么程度外，并没有意义可言，在这种情形，这就是目的。不过，不论那个人或灵魂有多墮落，他</strong>总是有让自己摆脱那种处境的机会——透过努力和准备，透过面对问题</strong>，这些都是该做的事。</p>
-<h4>透过体验不完美，来学习完美</h4>
+<h4 id="article-section-5" class="article-heading">透过体验不完美，来学习完美</h4>
 <p>朵：《圣经》说我们必须学习做到完美。</p>
 <p>S：人类没有一定要变得完美，虽然有些人已达到完美。当然，这种事是例外而不是规定。努力成为完美就是课题。</p>
 <p>朵：我在想，要达到完美的唯一方式就是学会所有的课题，但在地球层面这很困难。</p>
@@ -275,7 +454,7 @@
 <p>S：很多人是。他们发现自己在这样的境遇……你可以説他们得到了一份礼物，为的是更充分完整地体验这些课题。</p>
 <p>朵：如果能够选择，似乎没有人会希望有负面经验。</p>
 <p>S：没错。<strong>一个人的眼光要超越经验本身，着眼在所学到的课题</strong>，才能瞭解为何当初选择这样的经验。如果要从「糟糕」的经验里得到快乐，那样的人格就不太健全。不和谐本身就是课题，这是为了让人能更充分体会和欣赏和谐的本质。课题就是这么学到的。</p>
-<h4>负面的体验，是为了偿还前世的业债吗？</h4>
+<h4 id="article-section-6" class="article-heading">负面的体验，是为了偿还前世的业债吗？</h4>
 <p>朵：我在想，要转世的人可能会决定面对负面的体验以便偿还他在前世的行为？</p>
 <p>S：我们不会说是「偿还」，因为<strong>这不是宇宙法则的正确观念</strong>。为了<strong>教育或启发</strong>那个人，<strong>让他不再有同样行为而阻碍进展</strong>，有可能有必要<strong>让他瞭解行为背后的道理</strong>。<strong>为了有这样的觉知</strong>，<strong>那个灵魂体验相对的实相，也就是体验相反的情境便是必要的。</strong></p>
 <p>朵：这就是我的意思，他们会刻意选择这些经验，只是他们会被告诫和提醒，一旦进了肉体，回到了实体世界，他们可能会做得过头。</p>
@@ -284,7 +463,7 @@
 <p>S：这是一开始之所以体验的原因和理由。</p>
 <p>朵：但有些人好像没学到东西，他们就是不断犯同样错误。</p>
 <p>S：直到他们最终学会。之后就没必要重蹈覆辙了。</p>
-<h4>关于惩罚</h4>
+<h4 id="article-section-7" class="article-heading">关于惩罚</h4>
 <p>朵：有人曾跟我説不论做什么都不会有惩罚。</p>
 <p>S：当然有惩罚，而最可怕的惩罚就是面对自己。我们就是自己的法官和陪审团，<strong>我们裁定自己的行为是否恰当</strong>。当我们发现自己<strong>违反了宇宙法则或个人行为的准则，我们就必须决定补赎的方式。</strong></p>
 <p>朵：所以是我们自己决定，并没有上帝或更高的审判来决定对我们的惩罚，对吗？</p>
@@ -293,7 +472,7 @@
 <p>S：当有人立下绝对的法则，难免就会有矛盾，因为一定会有抵触的情形。</p>
 <p>朵：也有人説这证明了她无法处理自己的事。</p>
 <p>S：这么説并没有错。</p>
-<h4>受困于负面经验的情况</h4>
+<h4 id="article-section-8" class="article-heading">受困于负面经验的情况</h4>
 <p>朵：你会不会觉得人有时候被困在负面经验和情势里，却不试着去改变？</p>
 <p>S：没错，许多人在前往既定目标的路上<strong>迷失了方向</strong>，好似<strong>还停留在那些负面经验</strong>。转世时的确有这种可能，这也是风险之一。由于<strong>沉溺于肉体界的能量而忘了自己的路</strong>，这样的可能性在每次转世前都会提醒。</p>
 <p>朵：大师会说：「你可以这么做，但你有可能会失去自制力。」然后由他们自己选择。</p>
@@ -760,7 +939,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -849,6 +1028,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

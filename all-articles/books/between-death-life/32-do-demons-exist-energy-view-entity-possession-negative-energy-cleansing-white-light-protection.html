@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -243,7 +412,15 @@
 <p>世上真的有邪恶的妖魔鬼怪存在吗？ 它们的真实面目又是什么呢？你相信我们都是能量吗？人类习惯用灵魂来看待，但你的灵魂就是能量。一切事物都是能量，思想、感情和行为也都是能量的事件。能量被人类的情绪吸引，滋养着。可以说人类问题的根源就是能量的问题。</p>
 <p>这篇文章将从能量的角度来解答上述问题。本文并非原文，为方便读者的理解，暮雨重新做了编辑，并加入了自己的解读。请大家与自己的内在智慧共振，找到属于自己的真理。暮雨的角度仅供启发，切勿盲目相信。</p>
 <p></p>
-<h4>邪恶的魔鬼真的存在吗？</h4>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="4" aria-label="跳转到：邪恶的魔鬼真的存在吗？">邪恶的魔鬼真的存在吗？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="4" aria-label="跳转到：邪恶只是能量被扭曲/误导">邪恶只是能量被扭曲/误导</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：思想就是对能量的操控">思想就是对能量的操控</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：没有演化的元素能量">没有演化的元素能量</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：附身与邪气入侵">附身与邪气入侵</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：如何去除负面能量/让自己恢复平衡">如何去除负面能量/让自己恢复平衡</a></p>
+<hr>
+<h4 id="article-section-1" class="article-heading">邪恶的魔鬼真的存在吗？</h4>
 <p></p>
 <p>朵：我们问过你上帝的概念了，那恶魔和撒旦呢？我听说一定要有个魔鬼是为了平衡的缘故。如果有善就必须有恶。</p>
 <p>S：恶魔和撒旦，**只是一个概念、一个比喻。是人类理性思维想要合理化的一种说法或是努力想要理解而给出的解释。**人类用了很多合理化的说法来诠释周遭看见的、感受到的、观察到的一切。合理化能让人安心，这样我们才觉得自己明白了。大家要瞭解，这些东西仅仅是理性思维合理化的结果，而不是真实独立存在的实体。</p>
@@ -252,7 +429,7 @@
 <p>朵：那么很多人这样合理化魔鬼的存在，究竟是好是坏？</p>
 <p>S：达到合理化的目的，心理就会有安全感，但这么做会阻止成长，因为不肯放弃合理化，仅仅满足于合理化的解释，便无法瞭解较为复杂的领域。这不是好或坏，是中立的，也无关是与非。</p>
 <p></p>
-<h4>邪恶只是能量被扭曲/误导</h4>
+<h4 id="article-section-2" class="article-heading">邪恶只是能量被扭曲/误导</h4>
 <p>朵：可是这世上有很多我们称为「邪恶」的东西。</p>
 <p>S：**邪恶这个词並不准确，这又回到什么是善、什么是恶的问题。<strong>其实它只是能量被误导，误导这个词比较恰当。在我们看来，你们所说的</strong>「邪恶」纯粹是能量被误导或导至错误方向。这些能量只是没有演化，並不是邪恶的化身，也不能说是存在的生命实体。**並没有那种坐在人类肩膀上的恶魔。</p>
 <p>在我们这边並没有邪恶的概念，**因为邪恶只是两种力量的不和谐，「邪恶」这个说法是为了让人类心智能够理解这种能量的不和谐。**请瞭解，並没有魔鬼投生为人，也没有撒旦获取人类灵魂这种事。</p>
@@ -263,13 +440,13 @@
 <p>S：会，因为它们会运用这种误解来达成自己的目的。</p>
 <p>朵：所以人们想着邪恶就会给了它们力量？</p>
 <p>S：不光是想，人的所作所为也会给它们力量，这会给负面的元素更多能量。</p>
-<h4>思想就是对能量的操控</h4>
+<h4 id="article-section-3" class="article-heading">思想就是对能量的操控</h4>
 <p>朵：你的意思是，**人只要去想世界会发生不好的事，实际上就会创造出不好的事吗？**人们想着这些事並因此感到恐惧，这就会创造出一股强大的思想能量，足以让这些事发生。这样说对吗？</p>
 <p>S：完全没错。思想就是能量，思想会真实的显化。你的灵魂能操纵能量，你的每一个思想就是对能量的操控。思想就像是一个磁力结构，不停地吸引更多能量汇集，而这个过程非常有力量。汇聚了的能量可以用在正面，也可以制造伤害，但不会创造出任何生命实体。当思想的磁力结构瓦解时，所有能量会逸散，再次回归到元素里。决定能量导向何处的关键是每一个起心动念背后的意图，如果你传送爱给某人，爱就是你的意图，但如果你希望因此得到回馈，你的意图便不是爱了。这完全取决于你期望什么。</p>
 <p>当下，我们的目标是要透过带进新的能量、新想法、新方向和希望，来中和地球能量的不和谐。</p>
 <p>朵：所以，我们没有必要害怕那样的东西？</p>
 <p>S：没错。长久以来，人类一直受制于恐惧，是时候打破这个枷锁，让人类接受自己的责任了。有些生命体可被视为邪恶，有些只是元素，因为与人类接触而变得乖戾，也有一些元素透过与人类接触而提升，这都发生在接触过程中。力量和权力的能量也是一样的，要看它是如何被使用。並没有绝对的对错。</p>
-<h4>没有演化的元素能量</h4>
+<h4 id="article-section-4" class="article-heading">没有演化的元素能量</h4>
 <p>朵：这些没有演化的能量是从別的地方来到这里的吗？</p>
 <p>S：它们是住在这个星球的能量，是元素（elementals），是大地之灵，通常不同的地理位置会聚集不同的能量元素。它们由纯粹的情绪与能量组成，它们都是初级的能量，且非常有力量。元素能量比较像是有感受、有知觉的灵，没有太多的思考或念头。</p>
 <p></p>
@@ -277,7 +454,7 @@
 <hr>
 <p><strong>「暮雨·注」</strong></p>
 <p>暮雨认为元素能量的概念，正好与我们传承千年的风水学异途同归。在作者卡洛斯•卡斯塔尼达所著的唐望系列中，也记载了更丰富更完整的，有关印第安巫士对元素能量的理解和运用。人类可以从这些能量中获取力量和知识，也同样会因对元素能量缺乏觉察力和无知，导致身体和情绪易被侵扰。</p>
-<h4>附身与邪气入侵</h4>
+<h4 id="article-section-5" class="article-heading">附身与邪气入侵</h4>
 <p>朵：当有人被附身，那个附在他身上的东西真的是灵魂吗？</p>
 <p>S：有些人所认知的附身，其实他们说的是被元素能量突然侵袭。元素是受到吸引，而不是入侵者。元素能被引导，所以相当容易被影响和支配。它们由于和特定生命体，甚至人接触而被扭曲，因此並不老实而且乖戾。</p>
 <p>所谓的「附身」，通常是有人让自己的业力变得严重不平衡，业力能量因而出现部份真空，其他能量才能趁虚而入，而那些通常是紊乱的能量，是组织松散的能量。它们通常和地球特定的物理特质有关。由于本身的能量类型，它们会受到特定环境的吸引。</p>
@@ -292,7 +469,7 @@
 <p>S：它们不管怎样都会附上去的。</p>
 <p>朵：能解读气场的人可能在別人身上察觉这种状况吗？</p>
 <p>S：可能。</p>
-<h4>如何去除负面能量/让自己恢复平衡</h4>
+<h4 id="article-section-6" class="article-heading">如何去除负面能量/让自己恢复平衡</h4>
 <p>朵：那人们怎么会让这样的东西进来？</p>
 <p>S：不保护自己就可能发生这种事。但只要身体的主人希望结束，它就一定会被摆脱。但问题在于，大部分的时候人们没有意识到自己被能量入侵。</p>
 <p>朵：这么说来，它们没有身体真正的主人那么强大。如果一个人喝烈酒、使用毒品，他的身体会因此对元素更开放而无法抵抗吗？</p>
@@ -777,7 +954,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -866,6 +1043,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -242,25 +411,25 @@
 <p>作者：Zingdad（官网：<a href="http://Zingdad.com" 
      style="color:#6281C8; text-decoration: underline;" 
      target="_blank">Zingdad.com</a>）</p>
-<h2>本集内容</h2>
-<p>引言：当真相不止一个</p>
-<p>多重真相：你以为在寻找真相，其实在选择叙事</p>
-<p>・寻找“911袭击事件”背后的真相</p>
-<p>・掉进兔子洞的“阴谋论者”</p>
-<p>・绝对真相并不存在：你只是选择相信一个故事版本</p>
-<p>・为什么有“多个真相”同时存在？</p>
-<p>・你如何在多重真相中，创造自己的现实？</p>
-<p>・你只看到一种选择：深入游戏，成为受害者</p>
-<p>共同创造的真相：是谁在操控？还是你在参与创造？</p>
-<p>超权者</p>
-<p>・什么是超权者？国家总统？首富？财团？</p>
-<p>・超权者是“光明会”吗？</p>
-<p>・如果你是超权者，你想做什么？</p>
-<p>・超权者维持游戏运转的方法：债务、战争与宗教</p>
-<p>・如果你想反击超权者，会发生什么？</p>
-<p>・灵魂契约：如此不快乐，你为什么要转世到地球？</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：引言：当真相不止一个">引言：当真相不止一个</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：多重真相：你以为在寻找真相，其实在选择叙事">多重真相：你以为在寻找真相，其实在选择叙事</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：・寻找“911袭击事件”背后的真相">・寻找“911袭击事件”背后的真相</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：・掉进兔子洞的“阴谋论者”">・掉进兔子洞的“阴谋论者”</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：・绝对真相并不存在：你只是选择相信一个故事版本">・绝对真相并不存在：你只是选择相信一个故事版本</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・为什么有“多个真相”同时存在？">・为什么有“多个真相”同时存在？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：・你如何在多重真相中，创造自己的现实？">・你如何在多重真相中，创造自己的现实？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・你只看到一种选择：深入游戏，成为受害者">・你只看到一种选择：深入游戏，成为受害者</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="2" aria-label="跳转到：共同创造的真相：是谁在操控？还是你在参与创造？">共同创造的真相：是谁在操控？还是你在参与创造？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="2" aria-label="跳转到：超权者">超权者</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="4" aria-label="跳转到：・什么是超权者？国家总统？首富？财团？">・什么是超权者？国家总统？首富？财团？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="4" aria-label="跳转到：・超权者是“光明会”吗？">・超权者是“光明会”吗？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-14" class="article-toc-link" data-target-id="article-section-14" data-toc-level="4" aria-label="跳转到：・如果你是超权者，你想做什么？">・如果你是超权者，你想做什么？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-15" class="article-toc-link" data-target-id="article-section-15" data-toc-level="4" aria-label="跳转到：・超权者维持游戏运转的方法：债务、战争与宗教">・超权者维持游戏运转的方法：债务、战争与宗教</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-16" class="article-toc-link" data-target-id="article-section-16" data-toc-level="4" aria-label="跳转到：・如果你想反击超权者，会发生什么？">・如果你想反击超权者，会发生什么？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-17" class="article-toc-link" data-target-id="article-section-17" data-toc-level="4" aria-label="跳转到：・灵魂契约：如此不快乐，你为什么要转世到地球？">・灵魂契约：如此不快乐，你为什么要转世到地球？</a></p>
 <hr>
-<h2>引言：当真相不止一个</h2>
+<h2 id="article-section-2" class="article-heading">引言：当真相不止一个</h2>
 <p>你永远无法追查到某件事的“真相”。你找到的，只是支持你感受的证据。</p>
 <p>换句话说，你并没有接近客观事实，你只是在选择一个 <strong>你愿意相信的故事版本</strong> 。这，就是“多重真相”。</p>
 <p>我们在上一次的内容谈了—— <strong>平行宇宙的运作机制</strong></p>
@@ -274,12 +443,12 @@
 <p>那么，是什么决定了你进入哪一个版本的现实？是随机的吗？还是，有某种你尚未察觉的游戏机制，在引导你的选择？如果把它看成是一个系统，它是怎么运作的？它又如何影响你创造和体验自己的人生？</p>
 <p>今天，暮雨要带你认识一个颠覆性的视角。你可以把它当作一种假说，一种思考模型，而不是必须立刻接受的结论。然后如果有机会，我们可以用时间和科学去验证它。</p>
 <p>现在，让我们从一个故事开始。</p>
-<h2>多重真相：你以为在寻找真相，其实在选择叙事</h2>
-<h4>・寻找“911袭击事件”背后的真相</h4>
+<h2 id="article-section-3" class="article-heading">多重真相：你以为在寻找真相，其实在选择叙事</h2>
+<h4 id="article-section-4" class="article-heading">・寻找“911袭击事件”背后的真相</h4>
 <p>以下内容引用自《扬升书》，作者Zingdad。本书是作者与其高我“8”的对话。</p>
 <p>让我们从一个极具代表性的例子开始——世贸中心9-11袭击事件。这是一个高度情绪化、充满争议的议题，也非常符合当前人类的 <strong>行星意识</strong> 。</p>
 <p>（作者注：写作本书时，9-11事件已过去多年。但围绕它的争论依然激烈。所谓的“官方说法”不断被质疑，其中存在大量漏洞与未被解释的空白。尽管时间流逝、新的热门话题来来去去。而关于9-11事件的关键问题从未有过接近圆满的回答：三座建筑如何倒塌？谁是幕后主使？）</p>
-<h4>・掉进兔子洞的“阴谋论者”</h4>
+<h4 id="article-section-5" class="article-heading">・掉进兔子洞的“阴谋论者”</h4>
 <p>这个故事的主角，我们称他为 John。</p>
 <p>他在所谓的“9-11袭击事件”中失去了家人。这很可能是人类历史上最著名的恐怖袭击。它从各个角度被拍摄，并在世界各地的电视上反复播放。</p>
 <p>John不仅承受着丧亲之痛，而这种邪恶行为一次又一次地呈现给他的方式，也将他的悲痛推向极度愤怒的地步。</p>
@@ -310,7 +479,7 @@
 <p>John 发现了越来越多关于历史与现实的“ <strong>隐藏叙事</strong> ”，充满诡计和欺骗的故事在全球各地展开着。看起来，在他的国家领导人的庇佑下：可耻的秘密行动，谋杀与暗杀，在外国煽动的战争，供应给暴君和狂热分子的武器和装备（以对付他们自己的人民），以毒品换取枪支……这一切都在看不见的地方进行着。</p>
 <p>John 视线所及之处，几乎都能找到类似的故事——详细描述着关于当权者滥用公信力，以及谎言和被掩盖的真相。而 <strong>这些阴谋论都捆绑在一起，一个引向另一个。</strong> 所有这一切，都以一种非常令人厌恶的方式 <strong>叠加</strong> 起来，解释了为什么世界会变成这样。它也非常有助于解释，为什么世界上有这么多的仇恨。</p>
 <p>好了，John 的故事先暂时讲到这里。</p>
-<h4>・绝对真相并不存在：你只是选择相信一个故事版本</h4>
+<h4 id="article-section-6" class="article-heading">・绝对真相并不存在：你只是选择相信一个故事版本</h4>
 <p>你可能会问，这些“阴谋论”都是真的吗？</p>
 <p>让我们看看John的主观经历——他是如何一步步创造自己的经验的？ 你最终会看到， <strong>阴谋论是否真实，其实并不重要</strong> 。但从John的角度来看，这是高于一切的重要议题。</p>
 <p>如果他愿意 <strong>诚实地对待自己</strong> ，他会承认一件不太舒服的事实：<span style="border-bottom: 2px dashed #6281C8;">没有任何一个故事版本，拥有绝对、不可争议的完美证据。</span></p>
@@ -324,7 +493,7 @@
      style="color:#6281C8; text-decoration: underline;" 
      target="_blank">1984</a>》中的那句经典名言：</p>
 <p><span style="border-bottom: 2px dashed #6281C8;">谁控制了过去，谁就控制了未来。谁控制了现在，谁就控制了过去。</span></p>
-<h4>・为什么有“多个真相”同时存在？</h4>
+<h4 id="article-section-7" class="article-heading">・为什么有“多个真相”同时存在？</h4>
 <p>请你尝试着理解：</p>
 <p><span style="border-bottom: 2px dashed #6281C8;">在你之外没有“客观真理”——这个故事并不存在一个绝对的“客观真相”；或者任何其他的故事版本，根本就不存在。宇宙不是这样运作的。</span></p>
 <p>在这个“地球游戏”中，人类一直在忙于 <strong>共同创造“概率和视角”</strong> 。但注意：没有一个故事版本是固定的。没有一个版本是永久有效的。</p>
@@ -344,7 +513,7 @@
 <p>我再强调一遍……</p>
 <p>先有故事，故事是情节线，重点在于你从故事中获得了什么启发？你对此感觉如何？这才是你的真相——因为那正是你“发现自我”和“重新创造自我”的时刻。</p>
 <p>最后，再看另一个有趣的词， <strong>Dis-cover（发现）</strong> ——本意是，移开遮蔽之物（Removing the cover），即，你不是发现了新的东西，你只是看见了原本就存在的 <strong>真实自我</strong> 。</p>
-<h4>・你如何在多重真相中，创造自己的现实？</h4>
+<h4 id="article-section-8" class="article-heading">・你如何在多重真相中，创造自己的现实？</h4>
 <p>在John的例子，他非常相信事件的外部真相。而且，鉴于他“收寻真相”的旅程，他认为“阴谋论”更接近真实。那些证据和结论，对他具有意义，John认为它们准确地反映了他身处的现实。</p>
 <p>所以鉴于此，他该选择如何回应？如何行动呢？</p>
 <p>当然，答案完全取决于 <strong>他真正想要什么</strong> 。<span style="border-bottom: 2px dashed #6281C8;">他必须做出选择。而每一个选择，都在塑造他是谁。</span></p>
@@ -365,7 +534,7 @@
 <p>他会失去足够的信心，开始变得愤怒和不信任；并与其他相似的人群秘密会面吗？</p>
 <p>或者他会再次相信这个系统，相信它会自我修复？下一次再为“正确”的候选人投票？</p>
 <p>你看，<span style="border-bottom: 2px dashed #6281C8;"> <strong>他一直在被提供各种选择</strong> 。而似乎每一个选择的节点，都有无数种可能性供他挑选。</span></p>
-<h4>・你只看到一种选择：深入游戏，成为受害者</h4>
+<h4 id="article-section-9" class="article-heading">・你只看到一种选择：深入游戏，成为受害者</h4>
 <p>但看似John有如此多的选择。实际上，呈现给他的只有一种选择：继续深入这个“受害者游戏”。</p>
 <p>这个系统，从来没有向你展示另一种选项。它绝不会告诉你，你可以“ <strong>退出游戏</strong> ”。相反，它会用“魔术师的舞台灯光”晃得你眼花缭乱。用错综复杂的信息、情绪与冲突的话题，吸引你的注意力， <strong>让你以为自己在“自由选择”</strong> 。</p>
 <p>但实际上，所有呈现给你的路径，本质上都通向同一条道路。无论选择：对抗、揭露、参与、愤怒、不信任……</p>
@@ -379,7 +548,7 @@
   </a>
 </p>
 <p><span style="color: #6281C8;">「暮雨・注」至于这个“受害者游戏”的具体运作细节，我们将在下面有关“超权者”的故事中详细阐释。如果你还能坚持读到这里，让我们先揭示一个更加颠覆性的概念：</span></p>
-<h2>共同创造的真相：是谁在操控？还是你在参与创造？</h2>
+<h2 id="article-section-10" class="article-heading">共同创造的真相：是谁在操控？还是你在参与创造？</h2>
 <p>当你们越相信一个东西，它就越显得“真实”；</p>
 <p>当有越多的人将注意力集中在某个事物上，它成为“真实”的概率就越高；</p>
 <p>反之，当人们投入的能量越少，它就越容易消失。</p>
@@ -419,8 +588,8 @@
 <p>这正是你们现实中正在发生的事情。尽管很少有人知道超权者的存在，但当你持续关注他们呈现给你的内容时，你依然在参与——并强化他们的现实。</p>
 <p>所以，我要你看清：他们在做什么？这个系统是如何运作的？这样你才能觉察到，然后 <strong>你可以决定把能量，从他们的圈套中释放出来</strong> 。你能够停止为自己创造这种“受害者现实”。</p>
 <p>当然，除非你喜欢继续体验它…… 这将取决于你的选择。</p>
-<h2>超权者</h2>
-<h4>・什么是超权者？国家总统？首富？财团？</h4>
+<h2 id="article-section-11" class="article-heading">超权者</h2>
+<h4 id="article-section-12" class="article-heading">・什么是超权者？国家总统？首富？财团？</h4>
 <p>超权者，他们像是一个国家的总统，或大型企业的拥有者吗？</p>
 <p>都不是！</p>
 <p>超权者属于极少数人。尽管，他们在你的世界中拥有巨大的权力，却在很大程度上是隐形、未知、不可见的。所以，Max 不会认为自己是某个国家的公民。相反，他把国家及其政治领导人视为管理资产的工具。</p>
@@ -433,7 +602,7 @@
 <p>当你控制全球资本流动时，你可以决定让一个地区变得繁荣，另一个地区衰退。</p>
 <p>你可以制造经济增长，也可以引发全球金融危机。</p>
 <p>你可以发动战争，也可以阻止战争。你有这种力量。</p>
-<h4>・超权者是“光明会”吗？</h4>
+<h4 id="article-section-13" class="article-heading">・超权者是“光明会”吗？</h4>
 <p>我不想使用“光明会”这个词，因为这会引起误解。</p>
 <p>在人类的 <strong>集体意识中有一个文化基因</strong> ，一种根深蒂固的设想：存在一个隐秘的组织，一个有凝聚力的阴暗地下集团，在你们的星球上暗中操控着世界——这是不正确的理解。</p>
 <p>这些超权者，并不是为了一个共同目标而协同运作的存有。他们之间，并不存在一个统一的“全球组织”。似乎唯一能将他们团结在一起的单位——就是 <strong>家族</strong> 。</p>
@@ -444,7 +613,7 @@
 <p><span style="border-bottom: 2px dashed #6281C8;">你若妄想所有超权者坐在一起密谋合作，作为一个整体来工作，这样就会从根本上误解他们是谁，他们是什么。</span></p>
 <p>他们都是极其强大的个体， <strong>每个人都首先关注自己的个人利益</strong> 。因此，纪律严格的严密等级制度，是维持凝聚力的唯一途径。即使如此，在这样的组织结构中，内部依然充满了无尽的阴谋，背叛与欺骗。</p>
 <p>所以你明白了，这不是你想象的那种横跨整个星球的统一组织。相反，这是一些家族，每个家族都沿袭封建制度运作，并拥有领导家族的最高人物。</p>
-<h4>・如果你是超权者，你想做什么？</h4>
+<h4 id="article-section-14" class="article-heading">・如果你是超权者，你想做什么？</h4>
 <p>现在，换一个角度——如果你是 Max，你会想要什么？你想做什么？想达成什么？想体验什么？</p>
 <p>如果你说：“我已经拥有所需要的一切物质了。那我会想找到各种帮助他人的方式。我要去奉献。”</p>
 <p>对此，我甚至不愿详细叙述，有责任地将钱奉献出去有多复杂。避免因此造成的伤害，比解决的问题还要多。而且更关键的是，一旦你开始这样做，你很快就不再强大了。这又是另一个话题了。</p>
@@ -456,7 +625,7 @@
 <p>但也只不过是一场游戏。</p>
 <p>回到最初的问题，当你是超权者时，你想要什么？你最有可能想的就是——赢得这场游戏。</p>
 <p>即使你已经拥有巨大的财富和权力，你仍然会想要更多。事实上，你想要一切。就像其他“塔尖”上的人一样。所以你的愿望就是成为游戏中的佼佼者，在谋略上超越所有其他超权者，并获得更多的权力与控制权，粉碎每个拦路人。</p>
-<h4>・超权者维持游戏运转的方法：债务、战争与宗教</h4>
+<h4 id="article-section-15" class="article-heading">・超权者维持游戏运转的方法：债务、战争与宗教</h4>
 <p>现在请告诉我，如果你是 Max，俯视所有“底层”的小人物：工人、白领、店员、职业经理人、士兵，以及其他无数普通人……你最希望他们做什么？</p>
 <p>你一定希望他们继续工作，继续埋头苦干。在你需要他们的时候，按照你的想法行事。最好听话，保持安静，别质疑，别反抗。</p>
 <p>但如果他们不服从呢？如果他们中的一些人停止服务于你呢？如果有人突然说：“我不喜欢这份工作。我想去做我真正热爱的事情。我想找到让我真正快乐的表达方式，活出我的真实本性，然后从这个系统中扬升。”</p>
@@ -485,7 +654,7 @@
 <p><strong>战争，让你主动投入；</strong></p>
 <p><strong>宗教，让你在精神上认同。</strong></p>
 <p><span style="border-bottom: 2px dashed #6281C8;">这是一个完整的系统设计，目的只有一个：让你留下。不断给你压力、恐惧、责任、身份、意义……促使你觉得：你必须留在游戏中。否则，你会失去一切。</span></p>
-<h4>・如果你想反击超权者，会发生什么？</h4>
+<h4 id="article-section-16" class="article-heading">・如果你想反击超权者，会发生什么？</h4>
 <p>现在，你了解了超权者的故事，也许你会认为他们是邪恶的。如果你真的觉得，似乎有一群极其邪恶的人，正在对你施加卑鄙的手段，让你沦为受害者。</p>
 <p>那么……这意味着他们赢了。</p>
 <p>即使你憎恨和反击的对象是超权者，本质上也还是他们赢了。因为只要你仍然留在这个系统里，你就依然在为他们的议程服务。</p>
@@ -512,7 +681,7 @@
 <p>直到你完全输掉时，你还会输掉更多更多。</p>
 <p>这就是如果你尝试在他们的游戏里，与他们对抗时会发生的事情。<span style="border-bottom: 2px dashed #6281C8;">这是他们的游戏。你无法通过战争来战胜他们或这个系统。这场游戏的规则，设置成让你拥有一手烂牌，而他们拥有所有的A。而且，以防万一，他们在袖子里还藏了一套所有可能需要的牌。</span></p>
 <p>如果这还不够，<span style="border-bottom: 2px dashed #6281C8;">他们可以随时改变规则。</span></p>
-<h4>・灵魂契约：如此不快乐，你为什么要转世到地球？</h4>
+<h4 id="article-section-17" class="article-heading">・灵魂契约：如此不快乐，你为什么要转世到地球？</h4>
 <p>还记得我说过吗？这对他们来说只是一场游戏。一场恶毒而残酷的游戏，但仍然只是一场游戏。在游戏中，他们有自己的角色要去扮演。只要他们继续为你提供 <strong>使你留在游戏中的强大诱因</strong> ，他们就正在完成自己的任务。</p>
 <p>是的，这是一个 <strong>灵魂层面的任务</strong> 。</p>
 <p>他们大多数的“化身人格”并不知道这一点。但在更深的灵魂层面，这一切正是他们与每一个进入这个游戏的人之间订立的—— <strong>灵魂契约</strong> 。</p>
@@ -1027,7 +1196,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -1116,6 +1285,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

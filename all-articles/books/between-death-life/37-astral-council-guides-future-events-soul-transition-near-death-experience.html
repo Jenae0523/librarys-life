@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -242,7 +411,13 @@
 <hr>
 <p>星光界的议会可以看到未来吗？议会如何影响地球上的事件？议会如何将高层级的知识传递给人类？议会与指导灵密切合作，帮助在世的人降低负面影响，控制大型悲剧发生。议会如何协助，物质层面较开悟的灵魂？</p>
 <p></p>
-<h4>议会与指导灵密切合作，帮助在世的人</h4>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="4" aria-label="跳转到：议会与指导灵密切合作，帮助在世的人">议会与指导灵密切合作，帮助在世的人</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="4" aria-label="跳转到：帮助在灵界的灵魂处理他们的业">帮助在灵界的灵魂处理他们的业</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：频死经验，物质层面和灵魂层面的界线">频死经验，物质层面和灵魂层面的界线</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：议会协助物质层面较开悟的灵魂">议会协助物质层面较开悟的灵魂</a></p>
+<hr>
+<h4 id="article-section-1" class="article-heading">议会与指导灵密切合作，帮助在世的人</h4>
 <p>朵：这些人有指导灵吗？</p>
 <p>S：有，但我在的这个地方处理的是一般的事件，不是特定的人。</p>
 <p>朵：如果説你们比一般的指导灵更高阶，正确吗？有这样的等级制度或层级关系吗？</p>
@@ -272,14 +447,14 @@
 <p>S：如果我们看来像是要出错了，来自更高层级的灵魂会给我们建议，就像我们给较低层级建议一样。</p>
 <p>朵：历史上有很多大型悲剧，似乎完全不受控制。我说的是战争之类的事件。</p>
 <p>S：是的，<strong>参与这个议会的灵魂已经尽全力去控制跟那些大型悲剧有关的决定。很多时候这些事可以追潮到少数几人，他们被困在自己的负面业力，没有任何人能跟他们沟通。我们能做的就是去控制他们决定的后果，让伤害或破坏在可控制的范围内。</strong></p>
-<h4>帮助在灵界的灵魂处理他们的业</h4>
+<h4 id="article-section-2" class="article-heading">帮助在灵界的灵魂处理他们的业</h4>
 <p>朵：但你说你们都看着这一切发生。从你那个地方看得到地球发生的事吗？我希望可以得到一些有关我们未来事件的资料。</p>
 <p>S：现在不行。我们现在的会议正在讨论会影响別的层面的事，不是地球层面。</p>
 <p>朵：但你说你们现在在议会讨论的是其他层面的事？</p>
 <p>S：对。有些灵魂最近来到灵界，它们才刚离开地球，现在正在调整的过程。<strong>每个灵魂从物质层面回到灵魂层面，或从灵魂层面到物质层面，都需要一段时间进行调整。他们要先习惯新的环境，才能开始继续处理自己的业。<strong>所以在这些</strong>灵魂调整的期间，顾问或委员就会开会讨论他们的状况和需要。看是要如何最能帮助他们在新阶段的业力进展。<strong>有些灵魂正在特定的灵魂层面经历这个过渡期，我们在收集最后的细节，这样</strong>当他们准备好时，我们就能接触、引导和帮助他们，让他们好好利用这段转世的期间，然后再回到物质层面。</strong></p>
 <p>朵：当他们刚到灵界时，会不会有一个特定的环境帮助他们适应？</p>
 <p>S：会，这要看他们的灵性发展程度而定。我们会跟他们的指导灵配合，而且我们**透过观看这些灵魂的能量振动与业的发展，就知道他们的灵性发展到什么程度。**他们刚到这里时，首先感知到的会是他们的能力可以处理的事。通常，可能的话，如果跟他们最近这世有关联的灵魂还在灵界，我们会请他们来协助过渡，帮助灵魂做最初的调整，因为最初的调整总是最困难的。但在他们接受已经来到灵界，到了新层面的事实之后，就只需要给他们时间来适应新环境。那时候，<strong>物质层面的经验在记忆中已不再那么清晰，灵魂可以从灵魂的角度来思考事情。然后，我们就能帮助他们继续成长，直到他们准备好再次进入物质层面。</strong></p>
-<h4>频死经验，物质层面和灵魂层面的界线</h4>
+<h4 id="article-section-3" class="article-heading">频死经验，物质层面和灵魂层面的界线</h4>
 <p>朵：这样的话，他们对来到灵界就不会那么惊吓了，是这样吗？</p>
 <p>S：对，过渡期一定是吓人的，但我们会试着减低惊吓程度，才不会让灵魂有很大的挫折感。</p>
 <p>朵：所以环境可能会是各种样子。我一直对这点很好奇，有濒死经验的人常常描述差不多的场景。</p>
@@ -302,7 +477,7 @@
 <p>S：当通过界线的时候，他们只会看到明亮的能量。他们会有焕然一新的感觉，因为能量正在调整他们的灵魂振动频率，使它跟抵达的新阶层相容。这就跟「被约旦河洗净」这个比喻相呼应。一旦到达「另一边」，<strong>一开始在调整期的时候，他们会看到跟他们记忆里或想像中的物质层面事物相像的东西</strong>，但是更完美和美丽。**随着他们逐渐习惯后，他们发觉其实那都是自己的心理建构，自此才会真正看到这个层级的真貌。**但这是非常平缓的转变，因为是以他们心理准备的程度来进行。他们的心理建构出这些视觉影像，直到他们准备好看见事物的真貌。</p>
 <p>朵：真貌到底是什么样子？</p>
 <p>S：要看你在哪个层级。很难解释事物的真貌到底是什么样子，因为**在地球适用的物理定律在这里并不适用。**比方説，通常我们想像自己在某个地方的时候，会想像自己是在一个星球上面，还有想像周遭的景物。但在灵魂层面就不一定如此了。<strong>你可能在一个有不同性质的特定能量场。依据你跟这个能量场的互动，还有你跟能量场其他灵魂的互动，会有各种的情形。所以要看是在哪个层级</strong>，这很难解释。<strong>有时候你会看到视觉的类比，帮助你连结现在看到和以前体验过的东西。</strong></p>
-<h4>议会协助物质层面较开悟的灵魂</h4>
+<h4 id="article-section-4" class="article-heading">议会协助物质层面较开悟的灵魂</h4>
 <p>朵：你必须回去议会吗？我没有打扰到你吧？</p>
 <p>S：没有。因为<strong>属于议会的我们，还有在这个层面的灵魂，只要被你们的层面比较开悟的灵魂联系上，我们就会尽可能提供清楚的答案协助你们，这是我们业的一部分。而协助将较高层面的知识传递到你们的层面，帮助其他灵魂在业力上进步，也是你和这个个案的业。这都是（宇宙）模式里的一部份。</strong></p>
 <p>朵：就是因为这样，我才希望写成人们能够瞭解的文字，因为这非常复杂。我必须以他们能够理解的方式呈现，这很重要，但也很困难。</p>
@@ -773,7 +948,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -862,6 +1037,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

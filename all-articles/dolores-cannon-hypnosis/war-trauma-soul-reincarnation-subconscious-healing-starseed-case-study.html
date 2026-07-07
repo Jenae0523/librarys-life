@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -239,31 +408,31 @@
 <p>《The Convoluted Universe Book 1》，2001年</p>
 <p>作者：朵洛莉丝·侃南（Dolores Cannon）</p>
 <p>翻译/解读：暮雨</p>
-<h2>本集内容</h2>
-<p>面对战争创伤的星际种子</p>
-<p>・转世之间 │ 灵魂中转站</p>
-<p>・对上帝的理解 │ 灵魂的成长规划</p>
-<p>・另一个世界 │ 灵魂的家</p>
-<p>・编程 │ 灵魂记忆</p>
-<p>・光的能量体 │ 灵魂的守护天使</p>
-<p>・另一个星球 │ 灵魂休整地</p>
-<p>・生命的永恒课题：学习与教导</p>
-<p>・疼痛的课题 │ 恐惧的挑战</p>
-<p>・人类的共同课题：战争与冲突</p>
-<p>・潜意识的疗愈前提</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：第二集：面对战争创伤的星际种子">面对战争创伤的星际种子</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：・转世之间 │ 灵魂中转站">・转世之间 │ 灵魂中转站</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：・对上帝的理解 │ 灵魂的成长规划">・对上帝的理解 │ 灵魂的成长规划</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：・另一个世界 │ 灵魂的家">・另一个世界 │ 灵魂的家</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・编程 │ 灵魂记忆">・编程 │ 灵魂记忆</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：・光的能量体 │ 灵魂的守护天使">・光的能量体 │ 灵魂的守护天使</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・另一个星球 │ 灵魂休整地">・另一个星球 │ 灵魂休整地</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="4" aria-label="跳转到：・生命的永恒课题：学习与教导">・生命的永恒课题：学习与教导</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="4" aria-label="跳转到：・疼痛的课题 │ 恐惧的挑战">・疼痛的课题 │ 恐惧的挑战</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="4" aria-label="跳转到：・人类的共同课题：战争与冲突">・人类的共同课题：战争与冲突</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="4" aria-label="跳转到：・潜意识的疗愈前提">・潜意识的疗愈前提</a></p>
 <hr>
-<h2>引言：</h2>
+<h2 id="article-section-2" class="article-heading">引言：</h2>
 <p>在你的所有转世生命中，你一直都生活在地球上吗？人死后，灵魂会再次回到地球吗？</p>
 <p>潜意识说，在离开这个世界之后，生命依然存在，只是不一定在地球。有不同的世界存在。有成百上千、成千上万的世界可以去。地球，只是其中一个非常小的世界。如果你回到地球，那是你自己选择回来的；或者说，你在某种程度上被要求回来，因为你还没有完成学业、也没有学会应对这个世界所带来的知识与挑战。</p>
 <p>在地球上生活本身就是一种挑战，每个人都需要挑战。我们总以为自己可以应付这些挑战，可一旦真正来到这里，就会感到极度沮丧。因为现实中的挑战，远比我们预想的要大。俯视地球……它是如此渺小的一颗行星，却承载着如此多的混乱，以至于一个人根本无法真正改变它。</p>
 <p>然而，我们每个人都会面对不同的道路选择。但你必须确保“神性之爱”的本质存在于你内心，并且你选择的就是那条道路。因为每一次做出这样的选择，都会强化我们内在本就存在的善。</p>
-<h2>第二集：面对战争创伤的星际种子</h2>
+<h2 id="article-section-3" class="article-heading">第二集：面对战争创伤的星际种子</h2>
 <p>在翻阅我的档案，寻找适合收入本书的案例时，我发现了完成于1990年的一例个案。当时我并未意识到它的重要性，但现在我明白了，它是“来自星星的孩子”（简称，星孩 Star-Children）这一整体拼图中的另一块。我的许多资料往往需要等待多年，才能找到它们真正合适的位置。</p>
 <p>罗伯特是一位相貌英俊的男子，看起来像是三十多岁到四十岁出头。他是一名越南战争退伍军人，长期饱受战争经历带来的身心困扰。自从退伍归来后，他一直无法稳定地工作，只能依靠伤残补助生活。他经常出入退伍军人医院，医生们发现 <strong>他的身体问题（主要是胃部、肠道以及神经紧张）其实是由心理问题引起的</strong> 。</p>
 <p>他们试图追溯这些症状的来源，想找出是否因在越南战争期间发生的某些事件，导致了他的状况。然而这些努力都失败了，因为罗伯特拒绝谈论战争期间发生的一切。他们也尝试过催眠治疗，同样没有成功。最终，医生们唯一能做的，就是给他开药。</p>
 <p>他的女友事先提醒我，说我很可能也会遇到同样的障碍，因为他对“越南”这个话题始终持封闭态度。我告诉他这并没有关系，因为我们甚至不需要触及那一段经历。我们可以转而探索他的前世，看看是否能在那里找到线索。我相信，这种说法让他放松了下来，因为他并不把我视为威胁。无论如何，最终出现的解释，本来就不是退伍军人医院的医生们，能够理解的。</p>
 <p>因此，可以说是他的 <strong>潜意识在明智地保护着他</strong> ，没有让这个故事暴露给不合适的人。否则，他很可能会被送进精神病院。也许正因为如此，他的潜意识才允许他把这一切告诉我，因为在我这里，他是安全的。不论真正原因是什么，可以确定的是——尽管多年来，他一直接受退伍军人医院医生的治疗和干预，然而这是第一次，有关 <strong>战争创伤</strong> 的问题，真正得到一个完整的解释。</p>
-<h4>・转世之间 │ 灵魂中转站</h4>
+<h4 id="article-section-4" class="article-heading">・转世之间 │ 灵魂中转站</h4>
 <p>我们的催眠会谈是在罗伯特的家里进行的。</p>
 <p>当罗伯特进入深度恍惚状态后，他进入了一个十分奇异的场景，听起来并不像是地球。我花了不少时间才确认他身在何处。随后我才意识到，他并没有按照第一次回溯时的正常流程那样，进入某一段前世生命。显然，他跳过了具体的前世经历，来到了一个听起来更像是，灵魂在两世之间停留的精神领域。</p>
 <p>更准确地说，那似乎是“ <strong>灵界学校</strong> ”所在的区域。也许他的潜意识认为，与其去探索某一段特定的前世，不如从这个地方获得答案会更容易。</p>
@@ -292,7 +461,7 @@
 <p>也许他们看起来像我现在这个样子。他们坐在上方，可以俯瞰整个地方，包括所有的走廊。他们身上都有灵光。有黄色的灵光、蓝色的、绿色的，还有白色的。在角落里有一个人身上的灵光特别白。</p>
 <p>D：他们穿着衣服吗？</p>
 <p>R：没有。和我一样。他们不需要衣服。就好像那里是一个“ <strong>信息服务中心</strong> ”，他们坐在所有人之上，能够看到谁来了、谁走了。而你也能看到他们。那地方就像一个接待区。我在问自己该做什么。（停顿）他们说：“别担心。等到你该走的时候，你自然会走。你将回到学校。”</p>
-<h4>・对上帝的理解 │ 灵魂的成长规划</h4>
+<h4 id="article-section-5" class="article-heading">・对上帝的理解 │ 灵魂的成长规划</h4>
 <p>D：你明白他们所说的是什么意思吗？</p>
 <p>R：我感觉每个人都在接受训练、 <strong>去学校学习更多关于什么是爱、什么是生命、什么是上帝</strong> 。但我对上帝的理解，和他们的不一样。</p>
 <p>D：你是什么意思？</p>
@@ -337,7 +506,7 @@
 <p>D：也许这就是人们被送到这里的原因。</p>
 <p>R：每个人都需要挑战，而地球正是其中之一。<span style="border-bottom: 2px dashed #6281C8;">我们总以为自己可以应付这个挑战，可一旦真正来到这里，就会感到极度沮丧，因为现实中的挑战远比我们预想的要大。俯视地球……它是如此渺小的一颗行星，却承载着如此多的混乱，以至于一个人根本无法真正改变它。</span></p>
 <p>D：一个人有时候也能创造奇迹。你不去尝试，永远不会知道。</p>
-<h4>・另一个世界 │ 灵魂的家</h4>
+<h4 id="article-section-6" class="article-heading">・另一个世界 │ 灵魂的家</h4>
 <p>D：你是否觉得，相比生活在地球上，你更多是生活在别的地方？</p>
 <p>R：我已经多次探索过地球，但下一次我不会再回到地球。我会前往别的地方。</p>
 <p>D：那你以前居住过的那些地方怎么样？有没有最喜欢的一个？</p>
@@ -355,7 +524,7 @@
 <p>D：那个世界也有挑战吗？</p>
 <p>R：<span style="border-bottom: 2px dashed #6281C8;">所有世界都有挑战。有些挑战并不一定像地球上的那样带有“邪恶”的性质。其他世界的挑战在于，你必须知道什么是对的，什么是错的。你会面对不同的道路选择，但你必须确保“神性之爱”的本质存在于你内心，并且你选择的就是那条道路。因为 <strong>每一次做出这样的选择，都会强化我们内在本就存在的善</strong> 。</span></p>
 <p>D：这确实非常重要。</p>
-<h4>・编程 │ 灵魂记忆</h4>
+<h4 id="article-section-7" class="article-heading">・编程 │ 灵魂记忆</h4>
 <p>D：你刚才说，在那个房间里的那些存在正在帮助你。</p>
 <p>R：是的。这就是他们的任务，他们的工作是负责帮助安置人员。办公桌区域上有一些显示器。我不应该去看那些显示器。</p>
 <p>我有一种感觉，他们好像正在查看某些东西。就好像<span style="border-bottom: 2px dashed #6281C8;">我正在被“ <strong>编程</strong> ”一样。他们正在处理我所有的记忆数据——我曾经想过的一切，以及“我是谁”。他们会把不好的部分抹除，只保留好的。我已经不需要再记住那些不好的经历，因为那些是属于物质层面的东西。</span></p>
@@ -368,7 +537,7 @@
 <p>R：是的。我现在接收到的信息是：我也许很擅长与人交谈、安抚他人，以及探讨具有灵性层面的哲学问题。而这些能力可以通过我的科学背景、教育经历，以及我对灵性知识的渴求来发挥作用。</p>
 <p>D：那接下来会发生什么？</p>
 <p>R：他们会给我一个任务。在那之前，我会有一段休息时间，用来调整一下状态。</p>
-<h4>・光的能量体 │ 灵魂的守护天使</h4>
+<h4 id="article-section-8" class="article-heading">・光的能量体 │ 灵魂的守护天使</h4>
 <p>D：知道有人在帮助你，感觉挺好。</p>
 <p>R：一直都有人在帮助我。现在就有人在帮我。他们是不同的能量形态，就在我身边。他们和我的能量不一样。严格来说，他们并非真正意义上的能量，但又确实是能量。他们让我感到非常安心，在我还在地球的时候，就一直陪着我。</p>
 <p>D：这些能量和刚才那些存在，是一样的吗？</p>
@@ -384,7 +553,7 @@
 <p>（这是他自己的感觉吗？因为灵体本身不会受伤。）</p>
 <p>D：从人类的角度来看，人们可能会觉得它们没有经历过那些情绪，反而更幸运。所以很难理解它们为什么会嫉妒。</p>
 <p>R：也许它们更具慈悲心，而我感受到的正是这一点。</p>
-<h4>・另一个星球 │ 灵魂休整地</h4>
+<h4 id="article-section-9" class="article-heading">・另一个星球 │ 灵魂休整地</h4>
 <p>D：那你是在太空旅行，还是别的什么？</p>
 <p>R：我随时都可以走。我在等你。</p>
 <p>D：在等我吗？为什么？</p>
@@ -424,7 +593,7 @@
      target="_blank">《生死之间》星光层的不同界域（较低层、中间层和较高层）
   </a>
 </p>
-<h4>・生命的永恒课题：学习与教导</h4>
+<h4 id="article-section-10" class="article-heading">・生命的永恒课题：学习与教导</h4>
 <p>我意识到，如果他要在那个地方停留一段时间，我们可能无法再得到更多信息。催眠会谈也接近尾声，而我们仍然没有找出他在这一世身体问题的原因。于是我请他离开那个场景，好让我与他的潜意识对话，也许能得到更明确的答案。</p>
 <p>D：我想向你的潜意识询问，一些与你目前在地球生活有关的问题，可以吗？</p>
 <p>R：让我回到地球。</p>
@@ -445,7 +614,7 @@
 <p><strong>有些人拒绝学习。</strong> 这就像一句老话说的：你可以把驴牵到水槽边，甚至把它的鼻子和嘴按进水里，但你无法强迫它喝水——除非它自己意识到，水可以解渴。</p>
 <p>D：有时候， <strong>人们就是不断重复同样的错误。</strong></p>
 <p>R：是的。你就算把他们的头往墙上撞，也没用。在罗伯特的情况中，他在其他世界经历过的生命次数，比在地球上的还要多。他之所以来到地球，是因为这里充满挑战，而且他很容易感到无聊。</p>
-<h4>・疼痛的课题 │ 恐惧的挑战</h4>
+<h4 id="article-section-11" class="article-heading">・疼痛的课题 │ 恐惧的挑战</h4>
 <p>D：你觉得这是否和他的身体问题有关？因为他并不习惯拥有一个肉身。</p>
 <p>R：有这种可能吧。天哪，说实话，我根本不想待在这里。（笑）我某种程度上也同意，因为我也不想要这个身体。但我被困在这里了。</p>
 <p>D：是的，就目前而言是这样。而且你必须学会适应这个身体、接纳它。不过好像在其他生命中，他没有这样的身体需要操心。</p>
@@ -469,7 +638,7 @@
 <p>R：是的。但那是他自己想去的，也是被“告知”要去的。他知道自己不会死，但又并非真正知道。死亡就在他周围。</p>
 <p>D：这带来了恐惧。</p>
 <p>R：对，<span style="border-bottom: 2px dashed #6281C8;">但正是恐惧，让他撑了下去。正是 <b>恐惧的挑战</b>，促使他去做他所做的一切。</span></p>
-<h4>・人类的共同课题：战争与冲突</h4>
+<h4 id="article-section-12" class="article-heading">・人类的共同课题：战争与冲突</h4>
 <p>R：在宇宙中，并没有太多地方存在战争。地球几乎是唯一 一个，人类能够以“人”的身份去体验战争的地方。很久以前，当整个世界失序时，战争就发生在了人类身上。</p>
 <p>D：你说“整个世界失序”是什么意思？</p>
 <p>R：有其他存在曾经降临，尝试帮助人类。但他们试图与人类交配，试图胡来，试图扮演上帝。</p>
@@ -489,7 +658,7 @@
 <p>D：但显然你从中学到了一个教训，一个对你来说很有价值的教训。</p>
 <p>R：是的，因为 <strong>我知道了战争是什么样的，我知道战斗是什么感觉。</strong> 所以当我再前往另一个世界时，如果有人变得 <strong>愤怒</strong> ，或者开始表现出某种——你可以称之为“隐性的”潜在特质——我就会明白那是什么状态。而且我可以帮助那些人走出那种状态。</p>
 <p>D：那确实非常宝贵。</p>
-<h4>・潜意识的疗愈前提</h4>
+<h4 id="article-section-13" class="article-heading">・潜意识的疗愈前提</h4>
 <p>D：但你真的认为，罗伯特来到这一世，就是为了体验他现在正在经历的这些不适吗？</p>
 <p>R：是的。</p>
 <p>D：可如果我们能帮助他，更好地与这些不适共处，不是会更容易一些吗？</p>
@@ -506,7 +675,7 @@
 <p>于是，我向他植入了一个暗示：当他需要 <strong>缓解疼痛</strong> 时，可以放松下来，向潜意识请求释放天然的内啡肽。</p>
 <p>潜意识试图和我争辩：“是啊，可是罗伯特对别人的痛苦太敏感了。”</p>
 <p>我能理解这一点，因为罗伯特是一个非常敏感、且富有同情心的人。经过一番讨论，潜意识同意履行它的职责，前提是罗伯特愿意配合。<span style="border-bottom: 2px dashed #6281C8;">最终的结果，始终取决于当事人自己。如果一个人并不真正想治愈自己，无论出于什么原因，那么我所做的一切，都无法真正帮助他。</span></p>
-<h4>结语：</h4>
+<h4 id="article-section-14" class="article-heading">结语：</h4>
 <p>我后来再也没有和罗伯特一起合作过。只是偶尔听到一些关于他的消息。他仍然在经历着各种困难，反复进出退伍军人医院。看起来，他其实并不真的想放下“疼痛”这堂课，尽管他的潜意识，愿意在这个问题上与他合作。</p>
 <p>我还是愿意相信，这次经历在某些时候确实帮到了他——在他需要的时候，释放了天然的内啡肽，从而让他不至于对药物产生那么强的依赖。至少，现在他已经知道了，自己为什么会经历生命中的这一段。</p>
 <p>也许他的潜意识是对的：这种疼痛，在他死亡之前都不会真正离开他。如果真是这样，我希望他正在学习这堂课，同时也在教会他人——关于疼痛，以及 <strong>如何与一个长期承受慢性疼痛的人一起生活</strong> 。</p>
@@ -981,7 +1150,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -1070,6 +1239,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

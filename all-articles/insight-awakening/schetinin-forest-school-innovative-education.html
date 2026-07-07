@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -233,10 +402,17 @@
 <p><em><strong>节选自《鸣响雪松系列3：爱的空间》  作者：弗拉迪米尔</strong></em></p>
 <p>这不是不切实际的幻想。这是一所真实的坐落于森林里的学校——谢琴宁学校隶属于俄国教育部，不收任何学费。即使不打广告，学校仍是一位难求，而且已经有两千五百人在等待不知何时会突然空出的名额。</p>
 <p>谢琴宁认为，<strong>更重要的是不要让孩子为生活做好准备，而是活在当下，让他们有机会在没有任何重大限制的情况下，充分度过童年和青年时期，并从中获得关于这个世界的知识和与之互动的经验。</strong></p>
-<h4>与谢琴宁的教育理念相对立的现有教育体制的特征又是怎样的呢？</h4>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="4" aria-label="跳转到：与谢琴宁的教育理念相对立的现有教育体制的特征又是怎样的呢？">与谢琴宁的教育理念相对立的现有教育体制的特征又是怎样的呢？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="4" aria-label="跳转到：1. 谢琴宁森林学校：人类的新未来">1. 谢琴宁森林学校：人类的新未来</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：2.谢琴宁院士他是谁？">2.谢琴宁院士他是谁？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：3.认同什么？相信什么？反省我们的现状">3.认同什么？相信什么？反省我们的现状</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：4.谢琴宁去世，他在与俄罗斯官僚/宗教裁判的斗争中倒下">4.谢琴宁去世，他在与俄罗斯官僚/宗教裁判的斗争中倒下</a></p>
+<hr>
+<h4 id="article-section-1" class="article-heading">与谢琴宁的教育理念相对立的现有教育体制的特征又是怎样的呢？</h4>
 <p>学生对于学习充满了心理抗拒，非自发性的想要学习；学校灌输标准统一的答案，教导对既有制度/规则的服从，学校输出的是一批批欠缺思考的机器；学生，老师和家长都追求快速看到成果；在竞争性的教育环境中，培养出的是孩子对立与分裂的思维和心理模式……这些对一个人的一生具有怎样的影响，我相信每个人心中有自己的答案。</p>
 <p>现代教育的本质是以培养各种专业的工匠为目标的教育，这套现代教育诞生于工业革命以后， 当时的目的是为了填补工业革命产生的，大量具有专业能力人才的需求，所以这种教育重视的是知识和技术的传授，它对于人之所以为人的道理，对于你如何解决人生的难题，基本上是不关心的，只是要求大量地背诵来记忆知识，可从来不会告诉你这些和你的人生有什么关系。</p>
-<h4><em><strong>1.</strong></em> <strong>谢琴宁森林学校：人类的新未来</strong></h4>
+<h4 id="article-section-2" class="article-heading"><em><strong>1.</strong></em> <strong>谢琴宁森林学校：人类的新未来</strong></h4>
 <p>一条狭窄的碎石路从干道岔入森林，通往隐于群山之间的小山谷。小路很快就到了尽头，眼前是一幢没盖好的奇特双层建筑。其中一扇没有窗框的窗户，传出孩童的歌声，唱着俄罗斯民谣。</p>
 <p>我没有和任何人打招呼，而是径自绕过各种建材，想亲手接触这栋建筑。当我正要靠近时，我看到一位年约十岁的小女孩，敏捷地爬下梯子，走向溪石堆，挑着石子放进沙丁鱼罐头。我随后跟着她爬上梯子，朝着乐声悠扬的方向走去。</p>
 <p>我在二楼看到一群年纪与她相仿的孩子，还有一些年纪大一些的。他们从盒中拿出光滑的石子，贴上水泥墙面，构成一幅令人惊艳的图案。两个小女孩随后拿起湿抹布，小心翼翼地擦试贴在墙上的石子。他们非常投入，还一边哼着歌儿。我后来才知道，这里没有大人。</p>
@@ -294,7 +470,7 @@
 <p>『要是您现在没办法提问，那就由我们自己跟您说吧……。』</p>
 <p>她们走在草原上，脸上挂着笑容，一边摸小草，一边说话。她们渊博的宇宙知识、从心中散发出的纯真，以及闪耀着善意光芒的眼神，让我们内心感到平静与自信。摄影师没有变换镜头，直接从远处拍摄。我事后经常看着这卷录影带，看着这两位淡棕色头发的小小魔术师走在草原上。她们终将长大成人！学校里还有三百位像她们这样的人！</p>
 <p>谢琴宁院士是位伟大的魔术师，不停地创造爱的空间，让它成长茁壮。她们现在是棕发辫子的小阿纳丝塔夏，但有一天会长大！她们会散布在世界各地，打造这样的绿洲，直到遍布整个地球。我带着尽一份责任的心态走进教堂，开始祈求上天：『主啊，请你保佑。』然而，我们不会得到眷顾，因为这时神会把注意力放在这些孩子身上，看着他们盖着有如教堂的房子。她会担心孩子的水泥没了，还是砖头或板子不够铺地板。她也会带着爱保佑帮助这些孩子的每一个人。</p>
-<h4>***2.***谢琴宁院士他是谁？</h4>
+<h4 id="article-section-3" class="article-heading">***2.***谢琴宁院士他是谁？</h4>
 <p><strong>谢琴宁</strong>（全名为米哈伊尔.彼得罗维奇.谢琴宁「Mikhail Petrovich Schetinin.1944」，俄罗斯教育学院院士，一九九四年在克拉斯诺达尔边疆区「Krasnodar Krai」泰克斯村「Tckos」创办实验寄宿森林学校）。</p>
 <p>圣经说：『……凭着果实就能认出他们来。』</p>
 <p>谢琴宁的果实就是那些脸上洋溢幸福的学童和家长。他究竟是何方神圣？在列里赫协会（联合国非政府组织）担任理事的俄国荣誉演员娜塔莉亚，就曾这样说过：『我曾和各国许多知名的传道者和导师交流，却从未像在这里这样让我难以忘怀。我们接触的或许是一位伟大的贤者，但这不是因为他懂古老的吠陀经，而是因为他知道许多我们不懂的。』</p>
@@ -317,7 +493,7 @@
 <p>听着谢琴宁院士的言论，观察他与孩子之间的互动，我发现他们和阿纳丝塔夏所说的很相似，这让我相当惊讶：一个独自在西伯利亚泰加林隐居的女人，和这位头发灰白的院士，为什么两人的思维会如此神似。</p>
 <p>离开的时候，孩子们站在小路尽头，在屋旁的路灯下向我道别，我在车上看着她们越来越小的身影，直到车辆转弯为止。她们道别时不是挥手，而是举手并将掌心朝着驶离的车辆。谢琴宁曾和我解释过，所以我知道这个手势代表『我们送你善意之光，愿它与你如影随形』。</p>
 <p>我又开始反复思索：我该做些什么，才能配得上你们的光线？</p>
-<h4>***3.***认同什么？相信什么？反省我们的现状</h4>
+<h4 id="article-section-4" class="article-heading">***3.***认同什么？相信什么？反省我们的现状</h4>
 <p>我是第二次见到阿纳丝塔夏之后，才认识谢琴宁院士，并参观他那所与众不同的学校。从那之后，我几乎没有再怀疑她对抚养小孩的看法，以及她与儿子的沟通方式。</p>
 <p>但亲爱的读者，我实在忍不住与她争辩、质疑她所说的话，因为我不愿觉得自己或整个社会都是笨蛋，更不愿相信我们</p>
 <p>正在走回头路，所以我才会想办法为我们的行为辩解，或是想要证明她的世界观不适用现代社会。只要我还有力气，我就会继续这样。毕竟如果不这么做，就得承认她是对的，而且还必须接受我们现在处境悲惨的事实。</p>
@@ -361,7 +537,7 @@
 <p>阿纳丝塔夏说，**我们得用缓和一点的方式——改变众人的意识。**我们要保护这些新的幼苗。<strong>我们应将孩子当作成人来对待。孩子和我们成人相比，体能上当然比较弱势，但他们却比我们好太多了，他们纯洁又没有教条的束缚。我们想对孩子说理之前，自己要先明白这个世界。重新认识我们自己！我们要自己思考！至少暂时忘记他人的教条。</strong></p>
 <p>此外，我还想谢谢那些尽管在现有体制下，还是能让孩子接触至少一点点美好事物的老师，就像谢琴宁说的『让孩子参与自然的宇宙进程』。</p>
 <p>至于我们这些企业家，应该要在每座城市寻找真正的老师，为我们孩子、孙子的教育基础尽一份心力。</p>
-<h4>***4.***谢琴宁去世，他在与俄罗斯官僚/宗教裁判的斗争中倒下</h4>
+<h4 id="article-section-5" class="article-heading">***4.***谢琴宁去世，他在与俄罗斯官僚/宗教裁判的斗争中倒下</h4>
 <p>【原文链接】<a href="https://pedsovet.org/article/pal-v-borbe-s-rossijskoj-burokraticeskoj-inkviziciej">https://pedsovet.org/article/pal-v-borbe-s-rossijskoj-burokraticeskoj-inkviziciej</a></p>
 <p>2019年11 月 10 日，米哈伊尔·彼得罗维奇·谢琴宁去世。苏联时代最后一位伟大的教育创新者，世界著名的复杂人格形成教育学的创造者，已经去世。我心痛不已：在75岁的时候，您离开了我们。您白手起家，创办并为之努力了25年的学校，也被关闭了。真是荒谬和牵强主张的结果。</p>
 <p>谢琴宁Shchetinin的一生是一场持续不断的实验活动。他在以青少年与教育并行的人文教育和工作活动的基础上，**寻找培养男孩和女孩和谐人格的方法。**谢琴宁认为，<strong>更重要的是不要让孩子为生活做好准备，而是让他们有机会在没有任何重大限制的情况下，充分度过童年和青年时期，并从中获得关于这个世界的知识和与之互动的经验。</strong></p>
@@ -821,7 +997,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -910,6 +1086,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

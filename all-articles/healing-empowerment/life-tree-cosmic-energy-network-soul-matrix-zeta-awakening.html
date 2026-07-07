@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -240,33 +409,33 @@
 <p>材料来自多维度存有的“守护者联盟MCEO”，通过 Ashayana Deane（Anna Hayes）转译</p>
 <p>翻译/解读：暮雨</p>
 <hr>
-<h2>## 本集内容</h2>
-<p>生命之树：宇宙能量网络</p>
-<p>灵魂的结构：树芽与叶子</p>
-<p>如何理解化身，在时间与空间的分布？</p>
-<p>人类与能量矩阵：你并不孤立</p>
-<p>基因突变：断网失联的灵魂枝干</p>
-<p>基因嫁接尝试：泽塔的生存之道</p>
-<p>泽塔的觉醒：从伤害到合作</p>
-<h2>生命之树：宇宙能量网络</h2>
+<h2 id="article-section-1" class="article-heading article-toc-heading">## 本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：生命之树：宇宙能量网络">生命之树：宇宙能量网络</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：灵魂的结构：树芽与叶子">灵魂的结构：树芽与叶子</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：如何理解化身，在时间与空间的分布？">如何理解化身，在时间与空间的分布？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：人类与能量矩阵：你并不孤立">人类与能量矩阵：你并不孤立</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：基因突变：断网失联的灵魂枝干">基因突变：断网失联的灵魂枝干</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="2" aria-label="跳转到：基因嫁接尝试：泽塔的生存之道">基因嫁接尝试：泽塔的生存之道</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="2" aria-label="跳转到：泽塔的觉醒：从伤害到合作">泽塔的觉醒：从伤害到合作</a></p>
+<h2 id="article-section-2" class="article-heading">生命之树：宇宙能量网络</h2>
 <p>在这个多维宇宙中，所有生命都是通过一张<strong>彼此交织的能量网络</strong>，进入系统的。就像电脑必须运行正确的登入程序，生命的诞生也同样遵循一套有序的能量路径。</p>
 <p>你可以想象一棵<strong>树的结构</strong>：枝干从主干延展，细小的新芽通过枝条与整棵树连接。这种分布模式，正是宇宙能量网络的一个直观比喻。每一个树芽，都是经由复杂精密的分支系统，从整棵树中获取滋养。这个能量网络不仅维系着它的生长，也维系着整棵树上所有新芽的生命。</p>
 <p style="color:#6B77CC;">「暮雨·注」<b>什么是树芽（Bud）？</b></p>
 <p style="color:#6B77CC;">树芽，是一种未发育完全的生长点，包含着未来会长成枝条、叶子或花朵的组织。它是植物的生长起点，通常位于枝条的顶端或“腋窝”处。</p>
-<h2><strong>灵魂的结构</strong>：树芽与叶子</h2>
+<h2 id="article-section-3" class="article-heading"><strong>灵魂的结构</strong>：树芽与叶子</h2>
 <p>灵魂，也处在类似的能量网络中。它不仅连接着更高维度的生命系统，同时也与自身所有的“<strong>化身</strong>”连接在一起——也就是我们常说的“<strong>前世今生</strong>”或“人格化经验”。</p>
 <p>如果说灵魂是一个树芽，那不同的<strong>人格化身</strong>就像从这<strong>树芽中长出的叶子</strong>。它们经历出生、成长、凋零与再生，如同季节更替中的树叶一般。这正是我们所说的轮回。</p>
-<h2>如何理解化身，在时间与空间的分布？</h2>
+<h2 id="article-section-4" class="article-heading">如何理解化身，在时间与空间的分布？</h2>
 <p>树枝上的叶子虽然位置各异，却共同存在于同一棵树上，并遵循着统一的季节节律。灵魂的不同人格化身也是如此，同时存在于时间的不同“节点”。</p>
 <p>我们通常以“空间”来理解树叶的位置，若你能以同样的方式理解“时间”中的人格位置，就能更深入地理解<strong>时间的本质</strong>和<strong>灵魂身份的多重性</strong>，也更能看清我们<strong>对“轮回”的片面理解</strong>。</p>
-<h2>人类与<strong>能量矩阵</strong>：你并不孤立</h2>
+<h2 id="article-section-5" class="article-heading">人类与<strong>能量矩阵</strong>：你并不孤立</h2>
 <p>人类并非孤立存在的个体，而是连接在一个更庞大系统中的一部分。我们称这个系统为能量矩阵（Energy Matrix），它是“生命之树”赖以生长的“世界”。</p>
 <p>在这个比喻中，</p>
 <p>整棵树：象征“<strong>时间矩阵</strong>”（Time Matrix），一个承载生命演化的能量结构；</p>
 <p>树芽：代表“<strong>灵魂矩阵</strong>”（Soul Matrix）；</p>
 <p>每一片叶子：则是作为人格化身的你我——是灵魂的经验片段。</p>
 <p>就像一片叶子的存在，暗示着树芽和整棵树的必然存在。你的存在，也意味着在你背后有一个完整的灵魂矩阵，以及更宏大的能量矩阵系统。</p>
-<h2>基因突变：断网失联的灵魂枝干</h2>
+<h2 id="article-section-6" class="article-heading">基因突变：断网失联的灵魂枝干</h2>
 <p style="color: #6B77CC;">「暮雨·注」下面从泽塔族的故事中，我们可以看到：当个体与灵魂，或与更大的系统失去连接时，会发生什么？</p>
 <p>泽塔族（Zeta）也属于这棵“生命之树”的一部分。他们的种族就像你们人类一样，是宇宙之树上的一个树芽。</p>
 <p>然而，泽塔族在某个时间点上，不慎导致围绕其母星的“时间传送门系统”崩溃。你可以把这些<strong>时间门户</strong>，想象成树上的一根枝干。当枝干从整棵树上被截断时，其后果不仅是这根枝干的枯萎，还包括其上的所有树芽与叶子也会随之凋零——它们失去了来自整棵生命之树的能量滋养。</p>
@@ -274,12 +443,12 @@
 <p><u>他们在很大程度上失去了体验情感的能力，而<strong>情绪系统</strong>正如同生命之树上的枝干，是能量传导与连接的重要通道。他们依然能够从灵魂中汲取部分能量，但他们的灵魂却再也无法连接更高的源头——无论是时间矩阵、能量矩阵，还是宇宙本源（Source）。</u></p>
 <p>一旦叶子凋落、枝干枯竭，树芽（即灵魂）就无法再汲取养分，自然也无法在下一个“季节”重生。泽塔族如今，就像长在一根已被截断树枝上的树芽和叶子——发育受阻、能量枯竭。</p>
 <p>除非他们能够再次改变自身的生物基因系统，使其重新整合/接入“时间矩阵”与“能量矩阵系统”中。否则，他们的种族将逐步走向灭亡。</p>
-<h2>基因嫁接尝试：泽塔的生存之道</h2>
+<h2 id="article-section-7" class="article-heading">基因嫁接尝试：泽塔的生存之道</h2>
 <p>为了生存，泽塔族正在尝试通过<strong>基因工程</strong>制造一种类似“嫁接”的行为：试图将那根已经“掉落”的枝条，重新接到另一棵树上（指其他种族），寄希望于这次嫁接可以“成功生根”，重新恢复能量流动。</p>
 <p>他们原本的“母树”（home tree）位于另一个“森林”中，也就是银河系中一个他们再也无法返回的区域，因为通往那里的能量通道已经被毁。</p>
 <p>如果你能多了解一些自己所处现实的本质，以及我们所提到的这些“多维矩阵系统”（如时间矩阵、能量矩阵等），你就会更容易理解泽塔族所面临的困境，以及他们<strong>为什么会对人类感兴趣</strong>。</p>
 <p>你也许会因此宽恕，他们对人类的“侵犯行为”（比如基因实验、心灵控制等）并非出于邪恶，而是因为他们在“种族灭绝”的边缘挣扎，在极度<strong>渴望生存</strong>又<strong>不理解宇宙法则</strong>的状态下，做出了对人类不公的行为。正如我们面对伤害他人的人类同胞时，更倾向于使用“教育与疗愈”的方式来帮助这些人，泽塔族的情形也应如此。</p>
-<h2>泽塔的觉醒：<strong>从伤害到合作</strong></h2>
+<h2 id="article-section-8" class="article-heading">泽塔的觉醒：<strong>从伤害到合作</strong></h2>
 <p>所有的“侵犯行为”，归根结底都源于<strong>对宇宙法则的无知</strong>。——这才是重点！而真正有效的解决办法，只有一个：就是<strong>意识的成长与觉醒</strong>。</p>
 <p>并不是所有泽塔族都停留在旧的认知模式中，有一部分已经开始醒悟、学习、转化，借助其他更高文明的引导走向觉醒。他们承诺以<strong>兄弟情谊</strong>为基础，在<strong>不侵犯的政策</strong>下展开合作，致力于服务<strong>所有物种的共同进化与繁荣</strong>，而不仅仅是自己的族群。</p>
 <p>这些已觉醒的泽塔族开始明白“<strong>互惠法则（因果/宇宙回响法则/吸引力法则）</strong>”是如何运作的。当他们越是以公正、同理心与合作的意愿，真诚地面对其他生命时，他们也收获了同样的回馈。</p>
@@ -758,7 +927,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -847,6 +1016,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

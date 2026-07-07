@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -241,32 +410,32 @@
      target="_blank">https://tomkenyon.com/transition-states-of-consciousness  </a></p>
 <p>作者：汤姆·肯永 (Tom Kenyon)</p>
 <p>翻译/解读：暮雨</p>
-<h2>本集内容</h2>
-<p>理论定义 │ 混沌节点、意识的过渡状态、感知标记、虚空点</p>
-<p>个人的意识过渡状态</p>
-<p>​    ・混沌节点，加速个人旧有现实崩塌</p>
-<p>​    ・心理上的放纵 │ 错置的责任</p>
-<p>​    ・面对个人的过渡状态，你能做什么？</p>
-<p>集体的意识过渡状态</p>
-<p>​    ・如何面对危机？</p>
-<p>​    ・如何识别机会之门？</p>
-<p>​    ・好奇心：奇迹显化的驱动力</p>
-<p>死亡的意识过渡状态</p>
-<p>汤姆·肯永的想法与观察</p>
-<p>​    ・文化的集体方舟</p>
-<p>​    ・两极分化的船员</p>
-<p>​    ・人类的抉择：寻找新的星辰</p>
-<h2>引言</h2>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：理论定义 │ 混沌节点、意识的过渡状态、感知标记、虚空点">理论定义 │ 混沌节点、意识的过渡状态、感知标记、虚空点</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：个人的意识过渡状态">个人的意识过渡状态</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：・混沌节点，加速个人旧有现实崩塌">​    ・混沌节点，加速个人旧有现实崩塌</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：・心理上的放纵 │ 错置的责任">​    ・心理上的放纵 │ 错置的责任</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・面对个人的过渡状态，你能做什么？">​    ・面对个人的过渡状态，你能做什么？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="2" aria-label="跳转到：集体的意识过渡状态">集体的意识过渡状态</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・如何面对危机？">​    ・如何面对危机？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="4" aria-label="跳转到：・如何识别机会之门？">​    ・如何识别机会之门？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="4" aria-label="跳转到：・好奇心：奇迹显化的驱动力">​    ・好奇心：奇迹显化的驱动力</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="2" aria-label="跳转到：死亡的意识过渡状态">死亡的意识过渡状态</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-14" class="article-toc-link" data-target-id="article-section-14" data-toc-level="2" aria-label="跳转到：汤姆·肯永的想法与观察">汤姆·肯永的想法与观察</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-15" class="article-toc-link" data-target-id="article-section-15" data-toc-level="4" aria-label="跳转到：・文化的集体方舟">​    ・文化的集体方舟</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-16" class="article-toc-link" data-target-id="article-section-16" data-toc-level="4" aria-label="跳转到：・两极分化的船员">​    ・两极分化的船员</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-17" class="article-toc-link" data-target-id="article-section-17" data-toc-level="4" aria-label="跳转到：・人类的抉择：寻找新的星辰">​    ・人类的抉择：寻找新的星辰</a></p>
+<h2 id="article-section-2" class="article-heading">引言</h2>
 <p>如果你发现自己被困在 <strong>尘世生活</strong> 与 <strong>多维度现实</strong> 之间，那么说明——你已经进入了一种意识的过渡状态。然而，就我们的经验和角度而言，<span style="border-bottom: 1px dashed #3399FF;">“意识的过渡状态”其实可以分为三个主要类别：1）个人过渡状态，2）集体过渡状态，3）身体死亡的过渡状态。</span></p>
 <p>由于你们已经进入“混沌节点”的一个更加激烈的阶段，我们希望与你分享我们关于 **过渡状态 **的看法。我们分享这些信息的目的，是为你在意识过渡的阶段中，提出切实可行的行动方案。</p>
-<h2>理论定义 │ 混沌节点、意识的过渡状态、感知标记、虚空点</h2>
+<h2 id="article-section-3" class="article-heading">理论定义 │ 混沌节点、意识的过渡状态、感知标记、虚空点</h2>
 <p><strong>混沌节点</strong>（Chaotic Nodes） 是混沌事件的集群。根据哈索尔（Hathors）的说法，地球已经进入了一个混乱集合点。因此，我们可以预期混乱的程度会不断加剧——这包括但不限于地震、火山活动、异常天气模式、生态困境，以及经济、社会和政治动荡。</p>
 <p><strong>意识的过渡状态</strong>（Transition States of Consciousness）是哈索尔所称的“中间地带（in-between places）”，指的是当发生重大损失时，我们暂时停留在一个“旧的现实已消逝，而新的现实尚未完全成形”的状态。</p>
 <p><strong>感知标记</strong>（Perceptual markers）是哈索尔用来描述，我们如何通过五种感官，理解世界并驾驭我们个人生活的基础。</p>
 <p><strong>总结</strong>：就其本质而言，“混沌节点”倾向于触发“意识的过渡状态” 。当“感知标记”消失时，“意识的过渡状态”就会出现。</p>
 <p>当你发现自己正处于意识的过渡状态时，你就进入了一个<strong>空区 / 虚空点</strong> （Void Point），在这里，你的旧现实不再存在，或已经发生了根本性的变化，而你的新现实尚未出现。然而此时，你<strong>正处于自己创造力的中心。</strong></p>
 <p><span style="color: #6B77CC;">相关文章：类似的主题，我们在《灵魂的暗夜》和《臣服于危机》中也谈过。</span></p>
-<h2>个人的意识过渡状态</h2>
+<h2 id="article-section-4" class="article-heading">个人的意识过渡状态</h2>
 <p>让我们先将注意力转向个人的意识过渡状态，因为你的个人感知，是你感知现实运作的核心关键。</p>
 <p><strong>你对现实的感知，本质上是一种个人创造</strong>。它受到文化、时代、地点和环境等<strong>集体感知的影响</strong>。但归根结底，你认为什么是真实、什么是不真实，都是一种创造——是你自己的创造。</p>
 <p>如果你和大多数人一样，对现实的感知取决于感知的习惯。你习惯于体验生活中某些固定的现实，这些现实在某种意义上告诉你“正身处何处”。</p>
@@ -277,14 +446,14 @@
 <p>如果这份工作突然、意外地被中断，那么建立于之上的所有感知标记就会消失。你将不再需要在某个特定时间起床、进食或回家。而你清醒时的大部分时间里，平日所接触的人们，也不再出现在你的生活中。</p>
 <p>同样的现象也会出现在，你个人生活中任何一次剧烈的变化。如果一段对你来说，非常重要的关系突然结束，那段关系的感知标记就会消失；如果你遭遇严重的健康危机，你的身体活动被彻底改变，那么感知标记也会消失。</p>
 <p>以上这些情况对大多数人来说，本质上是迷失了方向和失衡的。这就代表你已经进入了，一种意识的过渡状态。</p>
-<h4>・混沌节点，加速个人旧有现实崩塌</h4>
+<h4 id="article-section-5" class="article-heading">・混沌节点，加速个人旧有现实崩塌</h4>
 <p>随着 <strong>混沌节点</strong> 的强度不断增加，越来越多的人会经历，他们旧有现实崩塌带来的冲击。</p>
 <p>过去，在他们生命中被视为确定的东西；如今，变得不再确定。过去看似坚固的地基，现在被发现已不再稳固。我们的意思既是一种比喻，也指字面意义。</p>
 <p>此刻，另有一股 <strong>新的过渡状态浪潮</strong>，正在从这个混沌节点中浮现。它已经影响了许多人，但它的影响将会如同海啸般，在意识中扩散及蔓延。</p>
 <p>这种特殊的过渡状态，与 <strong>文化中集体谎言</strong> 的崩塌有关。越来越多的人将会看穿和感知到，藏在皮影戏背后的幕后操控者，尽管他们的身份可能让人难以捉摸。但你会越来越清晰地看到，你的文化中有一些层面，其实是一种操纵，一种限制。甚至在许多情况下，是彻头彻尾的谎言。</p>
 <p>我们在此所谈论的 <strong>谎言</strong>，并不是经济的谎言、战争的谎言，也不是局限性的宗教谎言，而是关于你自身身份的谎言—— 一个确保你被囚禁的谎言。<strong>这个谎言是一种信念和文化断言</strong>：即你只不过是一个拥有肉体生命的人类，除了你的尘世经验之外，并不存在超越物质的其他存在领域。</p>
 <p><strong>识破这个谎言</strong>，是个人自由的预兆。但在最初阶段，它可能会带给你相当大的迷惘与混乱感。这是因为，多维度体验与尘世的日常经验，完全不同。<span style="border-bottom: 1px dashed #3399FF;">如果你发现自己被困在尘世生活与多维度现实之间，那么说明——你已经进入了一种意识的过渡状态。</span></p>
-<h4>・心理上的放纵 │ 错置的责任</h4>
+<h4 id="article-section-6" class="article-heading">・心理上的放纵 │ 错置的责任</h4>
 <p>当你个人进入一个强烈的过渡状态时，你可能会像许多人一样，被困在巨大的冲击和压倒性的情绪中。很多人发现，当他们意识到自己的感知标记消失时，自己原以为真实的现实也会随之消散，这往往令人极度不安。</p>
 <p>由于时间正在加速——我们的意思是，越来越多的事件在更短的时间内发生。因此，停留在震惊或不堪重负的状态里，其实是一种 <strong>心理上的放纵</strong>，而你已无力承受。</p>
 <p>我们在这里想传达的核心要点是：无论过渡状态的性质如何，无论是来自个人生活的巨大变动，还是源于你觉察到的文化操纵，你都要记住——<strong>你才是你现实的创造者。</strong></p>
@@ -292,25 +461,25 @@
 <p>但<span style="border-bottom: 1px dashed #3399FF;">当你进入意识的过渡状态时，你就站在一个强大的创造过程的中心漩涡之中。</span></p>
 <p>正如你们的一句俗语所说：“不要为打翻的牛奶哭泣。”失去的已经失去了，消逝的已经消逝了。现在的核心问题变成了：“接下来，你会怎么做？”</p>
 <p>你会继续停留在震惊、打击、困惑、愤怒和悲伤之中吗？还是会站出来，进入你作为自己人生创造者的身份？</p>
-<h4>・面对个人的过渡状态，你能做什么？</h4>
+<h4 id="article-section-7" class="article-heading">・面对个人的过渡状态，你能做什么？</h4>
 <p>对于那些选择停留在较低意识层次的人们，我们没有任何评论。</p>
 <p>我们的话，是说给那些勇敢无畏、愿意踏入 <strong>创造者身份</strong> 的人。如果你是其中之一，以下是我们的建议。</p>
 <p>当一切都消失时，也就是说，<span style="border-bottom: 1px dashed #3399FF;">你旧有现实的感知标记都消失了，要明白——你进入了一个虚空点。</span></p>
 <p><span style="border-bottom: 1px dashed #3399FF;"><strong>虚空点</strong> 是从旧现实过渡到新现实的关键节点。</span>过去的已经结束，与其为失去的后悔，不如去<strong>接受虚空</strong>。对许多人来说，这是一件极具挑战的事，因为在虚空点中，没有任何事情可以做。你只能作为它的见证者，见证它，也见证你自己。因为在这片无人之地，完全没有任何感知的参照。</p>
 <p>接下来，<strong>谨慎选择你要放入的新标记</strong>，因为这些新的观念和信念，将会成为你心灵新天空中的星辰。而你将通过这些星辰（新的思想与信念），在新时期中找到航向。所以，当你创造这些新星辰时，请保持明智。</p>
-<h2>集体的意识过渡状态</h2>
+<h2 id="article-section-8" class="article-heading">集体的意识过渡状态</h2>
 <p>从我们的视角来看，人类集体目前就像一条庞大的宇宙巨蛇，正在蜕掉它的旧皮，扭动、挣扎着，摩擦掉旧有的束缚。</p>
 <p>其中一些表现为经济动荡，一些是政治性质的，一些则体现为文化、制度的崩塌与转变。而这种扭动与挣扎的另一方面，则与地震和火山活动，以及异常的天气模式相关。</p>
 <p>随着 <strong>自然灾害</strong> 和 <strong>人为灾害</strong> 的增加，越来越多的人会发现自己进入了意识的过渡状态。显然，那些直接经历地震、火山或破坏性天气的人，最容易进入这种过渡状态。但那些天生具有高度 <strong>共情</strong> 能力的人，也可能如身临其境般，切身体验到自然或人为灾害所带来的冲击。</p>
 <p>事实上，随着人类意识之间的隔阂（帷幕）逐渐消散，越来越多的人将在内在层面上，切身感受到世界正在发生的变化。</p>
 <p>接下来，我们希望探讨这样一个问题：当你们处在自然或人为灾害的余波之中，比如地震、火山爆发或破坏性的天气时，该<strong>如何开启新的创造</strong>。</p>
-<h4>・如何面对危机？</h4>
+<h4 id="article-section-9" class="article-heading">・如何面对危机？</h4>
 <p>如果破坏性的力量足够强大，你原本现实中的 <strong>感知标记</strong> 可能将不复存在。</p>
 <p>你的家或工作场所可能已经不在那里。你也许会发现自己要应对食物和水的短缺，而各种因素都有可能汇聚在一起，给你造成极大的震惊与不堪重负的状态。</p>
 <p>我们希望接下来说的话能够非常清晰地说明：</p>
 <p>在灾难面前，震惊与不堪重负是一种自然的 <strong>哺乳动物本能反应</strong>。如果你要超越并转变这一情况，你必须向上伸展，进入你自身更高维度的存在，到达那个超越时间和空间的意识领域。</p>
 <p>只要你能够将自身存在的超验方面，纳入你 <strong>生存方程式</strong> 的一部分，你就能够减轻震惊与不堪重负的影响。</p>
-<h4>・如何识别机会之门？</h4>
+<h4 id="article-section-10" class="article-heading">・如何识别机会之门？</h4>
 <p>在混乱之中，无论是哪种形式的混乱，都需要辨识的核心特征就是——机会之门。</p>
 <p>生存或重建新生活的机会，可能会以你意想不到的方式出现。原因在于，<span style="border-bottom: 1px dashed #3399FF;">旧有的感知标记已经不复存在，而你的意识可能无法在机会出现时，立刻识别它。</span></p>
 <p><strong>人类有一种根深蒂固的习惯或倾向</strong>，总是想把新的现实套入旧有的模式，希望新的现实与过去的现实保持一致。在这种情境中，如果还继续维持这种旧习惯，将会是一种<strong>不幸的选择</strong>。</p>
@@ -318,7 +487,7 @@
 <p>也许在未来的某个时刻，我们会与你分享更多，关于你无限本质以及你体内蕴含的无限可能性的哲学性思考。然而此刻，我们宁愿保持简单，给出一个公式，帮助你在机会出现时，能够识别并创造——新的生命与新的命运。</p>
 <p>假设你已经进入了意识的过渡状态，并且你已经与 <strong>虚空点</strong> 成为朋友，能够或多或少地 <strong>安住</strong> 在当前巨大的不确定性中，那么我们建议如下：</p>
 <p>保持好奇心，并期待奇迹。</p>
-<h4>・好奇心：奇迹显化的驱动力</h4>
+<h4 id="article-section-11" class="article-heading">・好奇心：奇迹显化的驱动力</h4>
 <p><span style="border-bottom: 1px dashed #3399FF;">当你进入一种好奇的状态时，你激活了心智中一个不受期待所束缚、能够自由流动的面向。</span></p>
 <p>它变得非常像一个孩童的心智，然而这与幼稚不同。正是这种 <strong>纯真</strong>，让你能够进入一种振动性的意识状态，这对你极为有益。</p>
 <p>于此同时，当你怀抱着 <strong>对奇迹的期待</strong>，你开始释放 <strong>内在的创造力量</strong>。随着你越来越能熟练地做到这一点，你就会在生活中遇到更多的偶然事件、对你有益的机缘巧合，以及意想不到的珍宝——无论它们是物质上的，还是精神与情感方面的。</p>
@@ -326,21 +495,21 @@
 <p>在集体的意识过渡状态中，请记住，<strong>每个人都是自己现实的创造者</strong>。</p>
 <p><span style="border-bottom: 1px dashed #3399FF;">在混乱之中，不同的人会做出不同的选择，进入不同的个人现实。不要被那些进入低振动领域的人所动摇。你无法替他们拯救自己。</span></p>
 <p>抬头向上看，带着好奇心和对奇迹的期待去生活，即便在最严峻的处境中，奇迹也能（而且一定会）为你发生！</p>
-<h2><strong>死亡的意识过渡状态</strong></h2>
+<h2 id="article-section-12" class="article-heading"><strong>死亡的意识过渡状态</strong></h2>
 <p>对于有形生命来说，最大的困难之一就是你们所称的 <strong>死亡的意识过渡状态</strong>。当一个人穿越你们称为“死亡的意识过渡”时会发生什么？灵魂会面临哪些选择？我们已经在上一章，揭秘了死后世界可能为灵魂开启的三个门户。<span style="color: #6B77CC;">（相关文章：<a href="https://librarys.life/all-articles/philosophy-consciousness/death-transition-three-choices-light-void-spiritual-guide.html" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank">死亡的意识过渡状态-哈索尔  </a>）</span></p>
 <p>死亡不是终点，而是一次跨越意识维度的旅程。在死亡的维度转变中，你会比在肉身时更接近自己 <strong>创造力的中心</strong>。你接下来选择创造什么，将决定你未来想投生的环境，以及你想要居住在怎样的世界，或是你将安住的意识领域。这是一个关键的十字路口。</p>
 <p>死亡预示着 <strong>新的潜在现实</strong> 的开始，而<span style="border-bottom: 1px dashed #3399FF;">你将根据你在生前所做的选择，以及你在死亡时刻所做的选择，去<strong>创造</strong> 新的现实。</span></p>
-<h2>结语</h2>
+<h2 id="article-section-13" class="article-heading">结语</h2>
 <p>总而言之，由于 <strong>混沌节点</strong> 的阶段不断加剧，你们许多人将发现自己正处于各种意识的过渡状态。无论你所经历的是哪个层次——你的个人生活、群体的集体经验，还是你们所称的“死亡的过渡期”——你都要明白，<strong>你是自己现实的创造者</strong>。</p>
 <hr>
-<h2>汤姆·肯永的想法与观察</h2>
-<h4>・文化的集体方舟</h4>
+<h2 id="article-section-14" class="article-heading">汤姆·肯永的想法与观察</h2>
+<h4 id="article-section-15" class="article-heading">・文化的集体方舟</h4>
 <p>在我们的集体思想层面，我认为我们的神话性现实正在发生变化。那些古老的星辰——指引我们文化几千年的思想、信念与对现实的假设——似乎正在逐渐黯淡。更不用说，它们曾经带领我们去往的方向，已不再是许多人所渴望的。</p>
 <p>我们文化的集体之船，似乎正航行在“大奥秘”的海洋中，却很少顾及地球或居住在这个星球其他生命的神圣性。</p>
 <p>但即使在这艘集体方舟，看似无意识地穿越“大奥秘”的同时，这艘船以及我们的存在，也都归功于奥秘本身。对我而言，这种奇怪的二元性有时显得有趣，有时却是悲剧，这取决于我当下的心境，以及我和奥秘本身之间的联结感，是紧密还是疏离。</p>
 <p>我们所处境遇的讽刺之一在于，这艘船的船员——让它得以前行的人——正是你、我，以及这个美丽星球上近七十亿的所有人类。我们投入了自己的生命力、创造力，甚至在某些情况下是血汗与泪水，来让它继续航行。无论我们的个人处境、人生位置或我们的信仰如何，我们每个人都在为这艘船出力。</p>
-<h4>・两极分化的船员</h4>
+<h4 id="article-section-16" class="article-heading">・两极分化的船员</h4>
 <p>新时代社群里有些人一直在说，并且多年来始终在说，我们已经接近“合一”，黄金时代即将来临。但我并不认同这种看法。</p>
 <p>无论喜欢与否，我们都在同一条船上。然而在我看来，我们的船员是两极分化的。许多人坚持认为 <strong>贪婪、傲慢与篡夺的丛林法则</strong>，才是我们六分仪上的真正参照点。</p>
 <p>然而，也有人意识到<span style="border-bottom: 1px dashed #3399FF;">我们正驶向错误的方向——我们再也不能继续肆意破坏这颗星球，与其上的生命（无论是人类还是其他生物）。对我们来说，在心灵的天空中，出现了新的星辰。而我们正在明确地将六分仪对准这些宇宙的灯塔。</span></p>
@@ -348,7 +517,7 @@
 <p><span style="border-bottom: 1px dashed #3399FF;">我们当中的许多船员（而我怀疑，如果你能读到这里，你也许就是其中之一 ）正在<strong>默默采取行动</strong>，试图扭转我们这艘集体方舟（即我们的文化疯狂），或者至少让它减速。</span></p>
 <p><span style="border-bottom: 1px dashed #3399FF;">我们中的一些人正拿出六分仪，向我们周围的人，指出新的星辰。我们通过活出 <strong>我们希望看到的改变</strong> 来做到这一点。我们通过有<strong>勇气</strong>，按照我们所感知的、一个可能存在的 <strong>新地球现实</strong> 去生活，来做到这一点。我们通过向彼此伸出<strong>善意</strong>之手，来做到这一点。</span></p>
 <p><span style="border-bottom: 1px dashed #3399FF;">在必要时，我们通过 <strong>坚持自己的立场</strong> 来做到这一点。</span></p>
-<h4>・人类的抉择：寻找新的星辰</h4>
+<h4 id="article-section-17" class="article-heading">・人类的抉择：寻找新的星辰</h4>
 <p>这让我想起，在世界上一些最贫困的国家里，有一场草根运动，致力于保存 **非杂交种子（non-hybrid seeds）  **——这种种子在农作物收获后还能再生出新种子。</p>
 <p>相比之下，国际经济利益集团希望这些最贫穷的人们，如果想养活自己和家人，每次都必须购买新种子，从而确保他们被彻底奴役。</p>
 <p>当我写下这些时，我几乎因他们的勇气而落泪。他们勇敢地站出来对抗那些由贪婪、傲慢和完全漠视生命的神圣性、那些为我们的集体方舟设定航向的巨头。</p>
@@ -820,7 +989,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -909,6 +1078,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

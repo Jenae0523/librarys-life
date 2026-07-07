@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -241,8 +410,17 @@
 <p>作者：朵洛莉丝·侃南（Dolores Cannon）</p>
 <hr>
 <p>低阶灵魂的振频非常低，是很沉重的频率，无法到更高的层面，因此被吸附在地球的黑暗层级。这些灵魂怎样才能离开较低星光层？中阶灵魂喜欢与已逝亲友在一起等待转世。只有高度进化的灵魂会在图书馆和智慧殿堂。为什么地球将不再接收低阶灵魂转世？</p>
-<h2>星光层的不同界域 │ 低层、中间层和较高层</h2>
-<h4>低阶灵魂被吸附在地球的黑暗层级</h4>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="2" aria-label="跳转到：星光层的不同界域 │ 低层、中间层和较高层">星光层的不同界域 │ 低层、中间层和较高层</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="4" aria-label="跳转到：低阶灵魂被吸附在地球的黑暗层级">低阶灵魂被吸附在地球的黑暗层级</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：并没有地狱，贪欲/执念/恶习的能量将灵魂困住">并没有地狱，贪欲/执念/恶习的能量将灵魂困住</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：怎样离开较低层级？">怎样离开较低层级？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：地球将不再接收低阶灵魂转世">地球将不再接收低阶灵魂转世</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：中阶灵魂与已逝亲友在一起，等待转世">中阶灵魂与已逝亲友在一起，等待转世</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：高阶灵魂的界域">高阶灵魂的界域</a></p>
+<hr>
+<h2 id="article-section-1" class="article-heading">星光层的不同界域 │ 低层、中间层和较高层</h2>
+<h4 id="article-section-2" class="article-heading">低阶灵魂被吸附在地球的黑暗层级</h4>
 <p>约翰：他説<strong>星光层分成三部分：较低、中间和较高的星光层。</strong></p>
 <p>朵：首先，我对较低层面好奇，所以让我们从那里开始。他可以告诉我们那里是什么样子，哪类型的人或灵魂会在那里？</p>
 <p>约翰：好。我们已经走进<strong>观看室</strong>，他现在在让我看。他説：「<strong>只要把注意力放在你想看的东西，各类影像就会出现</strong>。」它们现在在墙壁上。</p>
@@ -255,7 +433,7 @@
 <p>朵：你是説在他们死后，灵魂就是停留在这些地方吗？</p>
 <p>约翰：<strong>他们的灵魂是被迫的。灵魂没辨法到更高的地方。<strong>你瞧，他们的振频，<strong>这些灵魂的振频是非常低的</strong>，是</strong>很沉重的频率</strong>，<strong>无法到任何更高的层面，所以必须观看肉体世界。他们跟这个世界互动。</strong></p>
 <p></p>
-<h4>并没有地狱，贪欲/执念/恶习的能量将灵魂困住</h4>
+<h4 id="article-section-3" class="article-heading">并没有地狱，贪欲/执念/恶习的能量将灵魂困住</h4>
 <p>朵：我在想，这听起来有点像我们对地狱的描述。</p>
 <p>约翰：<strong>地狱是一种説法</strong>。而那也就是地狱了。因为<strong>直到这些灵魂轮迥转世，并在灵性上进步之前，有时他们会一次又一次地重复类似情况</strong>。他说<strong>他们有的很野蛮残暴</strong>，他用这个字：「残暴」。</p>
 <p>朵：我一直认为并不是真的有地狱这个地方。</p>
@@ -263,17 +441,17 @@
 <p>朵：你的意思是这些<strong>灵魂藉此得到同样的感官刺激</strong>？</p>
 <p>约翰：是的，他们试着这么做，所以在这些人身边聚集。<strong>那些在世时被欲念控制的灵体会聚集在众人进行那类欲念的地方</strong>，像是妓院之类的。他说：「这些是星光界较低阶的居民。」</p>
 <p></p>
-<h4>怎样离开较低层级？</h4>
+<h4 id="article-section-4" class="article-heading">怎样离开较低层级？</h4>
 <p>朵：听起来像是恶性循环，好像他们哪里也去不了。他们要怎样才能离开那个地方？</p>
 <p>约翰：他说这是为什么**大家需要为已逝的挚爱亲友祈祷，因为这会帮助他们看到光。他们就像是住在自己的地狱。<strong>可是，他説</strong>当他们觉得自己受够了的时候，指导灵就会前来。**在他们知道要説，譬如，「我受够了一直看这些人做我没办法做的事。」</p>
 <p>指导者就会来<strong>引导他们，并让他们看到能够转变的方式。<strong>他说：「当他们转世的时候到了，我们就会处理。」他説他们都</strong>会去电脑室</strong>，那是<strong>他们可以重新评估的地方</strong>。<strong>电脑室会设定并寻找符合某个转世时间和那世将教导的课题型态。<strong>他们</strong>会看到可以如何使用那次人世</strong>。</p>
-<h4>地球将不再接收低阶灵魂转世</h4>
+<h4 id="article-section-5" class="article-heading">地球将不再接收低阶灵魂转世</h4>
 <p>约翰：可是他説：「这些很快就会改变，因为<strong>地球将会变得……对这些灵魂来説，过于高度进化</strong>。所以我们将把这些灵魂送到一个……」（约翰突然笑了）你知道，就像「好吧，你曾经在这里有过机会。下艘船是开往大角星。」（滑稽的语气）事实上这有点好笑。这个指导灵很有幽默感。（笑声）他很开心。他有点矮胖，他在説：「对啊！你在这里曾经有过机会。现在<strong>我们必须把你送到那些靠近大角星的星球去了</strong>。」</p>
 <p>朵：那些星球会有负面事物吗？</p>
 <p>约翰：是的，<strong>那些是还在进化的星球。<strong>可是这些灵魂不会再回到这里，因为这个地球行星在变化中。我们现在在看的这些是低阶、频率沉重的灵魂。他説：<strong>较高阶频率的灵魂</strong>不一样。当他们的身体死去，他们</strong>通常是前往智慧和知识殿堂</strong>，因为他们以前曾经在那里。这里可能就是学校所在的地方。</p>
 <p>朵：他们避开所有的负面。</p>
 <p></p>
-<h4>中阶灵魂与已逝亲友在一起，等待转世</h4>
+<h4 id="article-section-6" class="article-heading">中阶灵魂与已逝亲友在一起，等待转世</h4>
 <p>约翰：他接着说：「然后还有中阶的灵魂。<strong>他们喜欢出现在跟已逝亲友的开心情境中。他们有房子、湖边的度假胜地和船只等等</strong>。」</p>
 <p>朵：你是说跟他们在世时的生活形态很像？</p>
 <p>约翰：沿着湖岸边有建造各种不同样式的屋子。其中一个陡坡全都是漂亮的房子。如果他们选择，他们可以住在这里，尤其是<strong>那些有困难适应星光层的灵魂。他们大多数时间都会在这里。</strong></p>
@@ -291,7 +469,7 @@
 <p>朵：他们想留在熟悉的地方。</p>
 <p>约翰：没错，他们不喜欢再去别处。他们能够显化美好的事物，而且很开心。</p>
 <p></p>
-<h4>高阶灵魂的界域</h4>
+<h4 id="article-section-7" class="article-heading">高阶灵魂的界域</h4>
 <p>约翰：接着我们来到更高的星光层。他説这就像你们有不同的社会阶层一样。中阶星光层不错，就像到了一个很好的郊区。上层星光界的美丽景色很壮观，这里有花园和所有美丽山峦、海洋河流、湖和瀑布的原型。它们都在那里，好美。智慧殿堂就位于此处一个像宝石的美丽城市里。</p>
 <p>有些上层星光的灵魂的住所被群山环绕，但他们会到殿堂来。他们是喜欢家庭生活舒適感的灵魂。他説许多高度进化的灵魂喜欢这种生活。这是为什么他们有小别墅在山坡上。很美。</p>
 <p>朵：听起来灵魂是去他们觉得熟悉的地区。而且**除非他们准备好，他们不会继续到下一个层面。**是这样吗？</p>
@@ -760,7 +938,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -849,6 +1027,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

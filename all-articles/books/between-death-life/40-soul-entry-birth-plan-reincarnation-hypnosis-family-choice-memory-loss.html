@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -265,7 +434,14 @@
 <p>S：（打断我的话）对，这么一来，这个载具就可以让別的灵魂进入。灵魂也可以替换。在这种状况，婴儿会像是奇迹似的复活。这完全由相关的个体决定。其中往往牵涉到复杂的业，是你现在没有办法理解的。</p>
 <p></p>
 <p></p>
-<h4>处于婴儿期的灵魂</h4>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="4" aria-label="跳转到：处于婴儿期的灵魂">处于婴儿期的灵魂</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="4" aria-label="跳转到：灵魂会选择出生的家庭">灵魂会选择出生的家庭</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：灵魂转世的功课">灵魂转世的功课</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：另一个选择出生家庭的个案">另一个选择出生家庭的个案</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：灵魂经历出生的经验">灵魂经历出生的经验</a></p>
+<hr>
+<h4 id="article-section-1" class="article-heading">处于婴儿期的灵魂</h4>
 <p>朵：我在想，如果身体有时根本不知道发生了任何事，这是否表示身体是另一个不同的、分开的实体？</p>
 <p>S：不是这样的吗？如果你出生在某个身体，就算没有灵魂在里面，这个身体也可以持续一些时间。所以是可以分开的。</p>
 <p>朵：你是说当身体是小婴儿的时候，灵魂可以来来去去？</p>
@@ -281,7 +457,7 @@
 <p>我从回潮催眠的研究里，发展了一套关于儿童和前世记忆的理论。<strong>当灵魂进入身体，它的记忆还很清晰。<strong>突然间发现自己被困在无法与人沟通的婴儿身体里，灵魂一定很挫折，也</strong>难怪婴儿那么爱哭。他们其实想要告诉人们，他们是有智慧的成年灵魂，知道的比你能想像到的还要多。</strong></p>
 <p><strong>刚开始的两年，灵魂专注在学习运作这个新身体，学习沟通，于是这些记忆就被「静音」</strong>，退到了背景里。当少数还记得的 孩子想告诉別人这些事情，就会被批评或嘲笑，直到他们不再这么做并且表现正常。我相信，<strong>如果这些孩子能被鼓励，而不是让他们觉得自己跟別人不一样的话，他们会学习善用这些能力。</strong></p>
 <p></p>
-<h4>灵魂会选择出生的家庭</h4>
+<h4 id="article-section-2" class="article-heading">灵魂会选择出生的家庭</h4>
 <p>灵魂在踏上回到物质层面的旅程之前，不但会跟老师和大师一起开会计划，还会跟有业力关联，要一起解决业力的灵魂討论，更会去了解他们即將出生的那个家庭。</p>
 <p>我跟一名女性説了这个概念，她觉得听起来很怪异。她问，「你的意思是，在我怀孕的期间， 我的宝宝其实一直在观察我吗？」她的眼睛因为惊讶睁得好大。这个概念虽然让人有点毛骨悚然，但这是计划的一部分，显示灵魂对出生的环境有完全的控制。</p>
 <p>从以下的几个例子， 我们可以看到<strong>灵魂出生到某个家庭之前，是如何先去明瞭情况。</strong></p>
@@ -311,7 +487,7 @@
 <p>S：如果可以的话，是**希望一岁时就停止离开。但也有些例子是到了三岁、五岁都还继续这样做。**这些例子通常是对灵魂层面记忆较久的灵体。</p>
 <p>朵：但身体並不知道发生什么事，对不对？</p>
 <p>S：对。身体在灵魂离开的时间还是会继续自行运作。</p>
-<h4>灵魂转世的功课</h4>
+<h4 id="article-section-3" class="article-heading">灵魂转世的功课</h4>
 <p>朵：你知道你这一生是要学习什么吗？</p>
 <p>S：我必须学习……不要有太多欲望，学习怎么跟他人一对一相处，学习不要贪求，就像有本书里写的。</p>
 <p>朵：有本书？什么意思？</p>
@@ -333,7 +509,7 @@
 <p>**讽刺的是，他的人生並没有照这个灵魂在进入身体前所计划的一样。他的主要课题应该是要学习不贪求，但实际生活时，肉体和物质的力量过于强大，而当然，他也不记得灵魂在「另一边」小心规划好的计划。**他成了一个非常狡猾的中国商人。我认为他是个小偷， 或能言善道的「骗子」。他则认为自己是个聪明的商人。他最后因为垂涎一颗黑珍珠，虽然也成功到手，但这颗珍珠让他被逮捕并被鞭刑处死。</p>
 <p><strong>就如另一个灵魂曾经说的，当你在灵魂层面时，事情看起来都很简单，但一且进入了身体，事情就变得复杂，你会忘记你的目标。</strong></p>
 <p></p>
-<h4>另一个选择出生家庭的个案</h4>
+<h4 id="article-section-4" class="article-heading">另一个选择出生家庭的个案</h4>
 <p>S：我在观察即将成为我母亲的女性，这样我心里才有个底。她形容了那个家庭和房子。</p>
 <p>朵：你觉得这个家庭怎么样？</p>
 <p>S：我很没把握。他们很严苛，他们对自己想做什么有很明确的想法。我还没有做最后的决定。</p>
@@ -365,7 +541,7 @@
 <p>S：<strong>你不能只有「希望」，你必须「相信」。希望没有力量，但是相信有。有了信念，我们就可以朝我们最终的命运努力。</strong></p>
 <p>又一次，很讽刺的，这个人生计划做起来比说起来复杂许多。他的确成为一名神父，但不是他自己的选择。在他生活的时代，如果一个家庭有太多孩子，儿子会被送去修道院成为神父，这样就少了一张嘴要喂。当时教堂的很多神职人员都是这样，而由于他们不是因为想帮助世人才进入宗教的世界，上级神职人员往往很刻薄，对待修道士的方式几近残忍。因此这个个案虽然成为神父，却没有帮助人的能力。他过着贫困、孤单、不快乐的生活，直到早发的心脏病让他解脱。又一次，规划再好的计划也可能出错。</p>
 <p></p>
-<h4>灵魂经历出生的经验</h4>
+<h4 id="article-section-5" class="article-heading">灵魂经历出生的经验</h4>
 <p>有几次的回溯经验很令人感伤；母亲並不想要这个孩子，而灵魂也深深了解，但灵魂觉得已经没有退路，也许出生后可以改变这个情况。他们还是因为某种原因，可能是因为业吧，觉得自己必须出生在那个家庭。</p>
 <p>看着个案经历实际的出生过程是很奇怪的事。他们常常在肩膀和头部的地方感受到强大的压力。有时他们会上气不接下气，好像呼吸困难一样。每在这个时候，我都会努力减缓他们生理上的不适感。直到他们从产道出来，暴露在明亮的灯光之前，他们什么都看不到。出来后，他们会觉得很冷，很困惑。</p>
 <p>其中一位个案看到那些人穿着白色的衣服，但是跟「家里」穿白色衣服的人不一样（这里的家指灵魂世界）。他们会意识到现场所有人的想法，他们也不喜欢跟母亲分离。他们第一次的哭声是因为没有办法跟这个新环境里的奇怪生物沟通，因而感到挫折。然后，<strong>遗忘袭来，他们的反应变得迟缓，其他层面与存在的回忆都逐渐消逝。</strong></p>
@@ -831,7 +1007,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -920,6 +1096,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

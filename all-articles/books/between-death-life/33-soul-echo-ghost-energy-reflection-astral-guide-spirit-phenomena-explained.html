@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -245,7 +414,18 @@
 <p>这些资料来自朵洛莉丝·侃南早期透过独特的催眠技巧，从不同个案的潜意识获取的信息，所有个案都有着非常高度的相似性，这间接证明了在人类的潜意识中埋藏着深具启发性的智慧。</p>
 <p>固执地认为自己的科学思想或是宗教信仰一定是对的人，往往看不见事情的真相。一个人无论是相信科学，还是笃信某个宗教，若无法通过自己去探索真相，都是一种迷信。</p>
 <p>一直关注我们的朋友，经常会听到暮雨谈能量。看完这篇文章，你们会越来越了解，能量是如何发挥作用，如何影响着我们。无论你是有所觉知，还是无知无觉，它都存在并深刻地影响着你。</p>
-<h4>鬼魂与骚扰灵</h4>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="4" aria-label="跳转到：鬼魂与骚扰灵">鬼魂与骚扰灵</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="4" aria-label="跳转到：人类自身能量的投射">人类自身能量的投射</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：为什么有些鬼魂被困在那个当下">为什么有些鬼魂被困在那个当下</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：青春期的能量变化">青春期的能量变化</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：地缚灵：被地球能量困住的灵魂">地缚灵：被地球能量困住的灵魂</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：另一个版本">另一个版本</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：过渡期，不想放弃感官享受的灵魂">过渡期，不想放弃感官享受的灵魂</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：人们所见的鬼魂，是灵魂能量的反射波">人们所见的鬼魂，是灵魂能量的反射波</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：指导灵/ 去世的亲人">指导灵/ 去世的亲人</a></p>
+<hr>
+<h4 id="article-section-1" class="article-heading">鬼魂与骚扰灵</h4>
 <p>朵：常听许多人谈到鬼魂与骚扰灵，你对这个现象有没有什么解释？</p>
 <p>S：当然有，因为如果是我们让家具飘浮在空中，或是让电灯开开关关，我们也会被认为是骚扰灵。这个词不过是用来形容那些意念非常专注的灵体，专注到可以让想法显化在物质层面。只要意念够专注，很多灵体都能做到。生气、愤怒或是忌妒等等强烈的情绪，往往能让它们将全部的意识聚集到产生上述现象的程度。</p>
 <p>朵：它们这么做的时候，是想传达讯息还是有什么別的意思吗？</p>
@@ -257,10 +437,10 @@
 <p>朵：但这些东西有时候会吓到人。</p>
 <p>S：这些东西有时候也会被人类吓到（笑声），因为我们从来不知道人类接下来会做什么。</p>
 <p></p>
-<h4>人类自身能量的投射</h4>
+<h4 id="article-section-2" class="article-heading">人类自身能量的投射</h4>
 <p>朵：那鬼魂呢？</p>
 <p>S：很多被看到的鬼魂，往往只是看到这些幻影的人自身能量的投射。这些个体投射出的能量或许是他们本身的前世映象，或是对其他灵魂层面的觉察；这些能量被投射到了物质层面。我们并不是要说所有鬼魂都是这种投射，但你必须体认到确实有这个可能性。也就是说，有时看到的并不是真正的灵体，而只是感知到这个现象的人自身的能量投射。</p>
-<h4>为什么有些鬼魂被困在那个当下</h4>
+<h4 id="article-section-3" class="article-heading">为什么有些鬼魂被困在那个当下</h4>
 <p>朵：有些人曾经看过他们认为是鬼魂的东西在各个地方重演一些事件，就好像鬼魂被困在那个当下。</p>
 <p>S：这个比喻非常好，它们确实是被困在那个当下。它们是被困在自己所做的事的地缚灵，找不到解脱。因为它们太过专注于自己的能量，无法觉察到专注的那个事物之外的任何东西。它们被困在恶性循环里，注定不断重复当初导致它们困在那里的事件，直到醒来。</p>
 <p>比起在星光界的我们，在肉体／物质层面的你们更能帮助到这些被困住的灵魂。虽然鬼魂也是灵魂，但它们的意识与觉察被困在肉体／物质层面，因此就只看得到物质层面的东西。它们看不见环绕在身边试图引导它们看到事实，试图启发它们，让它们从悲惨中解脱的指导灵或天使。在这样的情况，肉体层面的人反而最能帮上忙。</p>
@@ -273,7 +453,7 @@
 <p>朵：但有时候骚扰灵的行为会伤害到人类。我听说它们会纵火。</p>
 <p>S：没错，我们并不是要说所有骚扰灵都只有高尚的意图，因为并不是这样。它们想得到的可能不只是注意，举例来说，也有可能是想报复。</p>
 <p></p>
-<h4>青春期的能量变化</h4>
+<h4 id="article-section-4" class="article-heading">青春期的能量变化</h4>
 <p>朵：通常骚扰灵现象会发生在有幼童或青春期孩子的家庭，而有个理论是认为这些灵体会在某种程度上使用这些孩子的能量。这个说法还没被清楚解释，只是理论而已。</p>
 <p>S：我们会说，就是这些进入青春期的个体产生骚扰灵的行为，因为他们使用了自己没有察觉到的能量。所以这些现象通常是他们自己造成的，但也并不都是如此。</p>
 <p>朵：可是他们并没有意识到自己在这么做吗？</p>
@@ -282,13 +462,13 @@
 <p>S：没错，这只是释放能量的一个方式，导出被压抑的情绪，透过骚扰灵的行为释放能量。</p>
 <p>朵：可以向大家这样解释很好，因为许多人害怕这种现象。</p>
 <p>S：可以理解他们为什么害怕，因为这代表附近有想要伤害他们的灵体。我们之前说过，有时候是这样没错，但并不都是如此。</p>
-<h4>地缚灵：被地球能量困住的灵魂</h4>
+<h4 id="article-section-5" class="article-heading">地缚灵：被地球能量困住的灵魂</h4>
 <p>朵：有没有被困在地球上的灵魂，所谓的地缚灵？</p>
 <p>S：有，但它的意义或许比一般以为的更深入。地缚灵是有很多问题但不愿意承认自己能够解脱的灵体。</p>
 <p>朵：你的意思是这些灵魂很喜欢人世，所以不愿意离开地球？</p>
 <p>S：有可能如此，也可能是地球上有人牵绊了它们，以致它们无法离开。每次你为去世的人哀伤，你就是把他们的灵魂更绑在地球，让它们更可能是地缚灵。哀伤有它的意义，但是过度哀伤对哀悼者与往生者都不好。没有理由为往生者哀伤，他们大多很喜欢在星光界。</p>
 <p>朵：所以你如果哀伤并牵掛他们，你其实是把往生者牵绊在地球，而这是不好的。大多数人可能都不明白这点。</p>
-<h4>另一个版本</h4>
+<h4 id="article-section-6" class="article-heading">另一个版本</h4>
 <p>朵：我听说有些灵体会被困在地球，这是怎么回事？</p>
 <p>S：这是因为困惑。通常这些灵魂是在梦游。这些灵魂对物质层面仍有意识，也注意到有些东西不一样，但又说不出是哪里改变了。在灵魂层面看起来，这些灵魂在梦游。它们可能以地缚灵或鬼魂等形式梦游了一段对你们来说很长的时间，但过一阵子它们就会醒来，它们会意识到自己已经到了星光界，而且有必须要做的事。</p>
 <p>朵：它们为什么会搞不清楚？是因为突然的死亡或类似的情况吗？</p>
@@ -299,7 +479,7 @@
 <p>S：不太会。它们偶尔会尝试，但在身体里的灵魂会挡住它们，它们就知道没有办法。那就像是走在路上撞到路人一样。发生过几次之后，它们就会醒来，不再梦游。</p>
 <p>朵：当它们在这种状态时，有没有办法帮助它们瞭解到底发生了什么事？</p>
 <p>S：当它们深陷在这种灵魂的梦游状态，你很难跟它们有任何沟通。有时候它们就是需要一些时间，才会意识到外界并接受帮助而早些醒来。</p>
-<h4>过渡期，不想放弃感官享受的灵魂</h4>
+<h4 id="article-section-7" class="article-heading">过渡期，不想放弃感官享受的灵魂</h4>
 <p>朵：我听过有些灵体会在小酒馆游荡，靠近喝酒或吸毒的人。我想是因为它们想要体验那种感觉。你听说过这样的事吗？</p>
 <p>S：我先前提到过渡期。对某些灵魂来说，尤其是吸引了许多负面能量的灵魂，它们的过渡期会是辛苦的，因为它们不想放弃生理上的感觉。通常是那些强烈、奇异的感受，像是你们社会里所使用的酒精、尼古丁、海洛因等等。这些处于过渡期的灵魂会靠近经常使用这些东西的人类，试着吸收他们的感觉，他们生理上的感受。这些灵体想间接地体验和享受这种感觉。</p>
 <p>「间接（体验）」是很有趣的字，在这个情况中尤其适用。它的定义是：「替代他人的位置；取代另一个人去感受或做出某个行为；藉由想像参与另一人的经验，获得同样的刺激感。」</p>
@@ -309,7 +489,7 @@
 <p>S：是的。</p>
 <p>朵：这些想待在地球的灵魂会怎么样呢？</p>
 <p>S：在这样的情况下，这些灵魂会被拉回地球。它们需要较久的时间才能适应它们已来到的星光界。这些灵魂会心理建构出自己熟悉的场景，它们依赖这样的心理建构（思想形式），不愿跨出这个舒适区。因此它们会很靠近物质层面。这些灵魂需要帮助。它们大都是不小心做了对业有负面作用的事而不愿面对这个事实。它们害怕丢掉所依靠的心理建构之后会看到的景象。</p>
-<h4>人们所见的鬼魂，是灵魂能量的反射波</h4>
+<h4 id="article-section-8" class="article-heading">人们所见的鬼魂，是灵魂能量的反射波</h4>
 <p>朵：所以它们想留在熟悉的地方？</p>
 <p>S：对，因为出于恐惧。它们如果持续靠近物质层面，有时它们的振动就会跟物质层面共鸣，甚至产生回音（echo）。回音讲的是声音，而这里是指能量的迴响（一种反射波）。这可以解释某些出现在你们层面的灵魂能量，也就是你们称为鬼魂之类的现象。</p>
 <p>朵：所以那些并不是真的灵魂？只是那个逗留在屋子或附近的灵魂的回音或反射波？</p>
@@ -323,7 +503,7 @@
 <p>朵：如果那个情境是负面的，这会让负面的力量更大吗？</p>
 <p>S：会发生这种情况通常是因为灵魂不适应过渡期，把它看成是负面的经验。这是出于恐惧的缘故。一般来说，如果灵魂到了星光界，发现它们生前那世累积的业是偏向负面的话，它们就不会想完成整个过程，因为害怕將看到的景象。同时，它们的心灵也会锁定恐惧的源头，而那个场景很可能就是在那世使得它们的业往负面发展的原因。</p>
 <p>它们的注意力只能集中在这上面。它们不瞭解在灵魂层面一切都是平衡的。虽然它们可能会到达比原本低阶的层级，但这样的设计并不是要带给它们痛苦或折磨，这只是因为那里跟它们的能量最相容，它们可以从那里继续发展。</p>
-<h4>指导灵/ 去世的亲人</h4>
+<h4 id="article-section-9" class="article-heading">指导灵/ 去世的亲人</h4>
 <p>朵：但有些人确实有看到已过世者的「灵魂」的经验。它们会来跟他们讲话，并且给他们讯息。这是一样的事吗？</p>
 <p>S：不是。通常这些跟他们互动并提供讯息的灵魂，大都是他们的指导灵。如果这个人已进化到能够接受生命的这个面向，他们的指导灵就会以这样的方式跟他们接触，以比较直接的方式帮助他并提供建议。</p>
 <p>朵：你的意思是，那并不是他们过世亲人的灵魂？</p>
@@ -800,7 +980,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -889,6 +1069,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

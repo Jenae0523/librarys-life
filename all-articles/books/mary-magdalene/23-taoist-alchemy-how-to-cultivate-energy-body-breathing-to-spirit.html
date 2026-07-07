@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -236,7 +405,16 @@
                 <!-- 正文内容 -->			
 <div class="article-body g-color-black" style="line-height: 2.5; font-size: 16px;">
   <p style="font-size:15px; color: gray;">对你获取的信息，保持善意的怀疑和独立思考是明智的。</p><hr class="g-brd-gray-light-v4 g-pt-20">
-<h2>道家炼气术：强化气体身，炼气化神</h2>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="2" aria-label="跳转到：道家炼气术：强化气体身，炼气化神">道家炼气术：强化气体身，炼气化神</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：丹田 │ 三个关键能量中心">丹田 │ 三个关键能量中心</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：经络 │ 人体能量通道的科学证据">经络 │ 人体能量通道的科学证据</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：小周天 │ 气的循环通道">小周天 │ 气的循环通道</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：性之精气，转化为灵性力量">性之精气，转化为灵性力量</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：靠精气维生的隐修者 │ 植物的炼金术">靠精气维生的隐修者 │ 植物的炼金术</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="2" aria-label="跳转到：结语：">结语：</a></p>
+<hr>
+<h2 id="article-section-1" class="article-heading">道家炼气术：强化气体身，炼气化神</h2>
 <p>首先，道家修行者会在日常生活中不断采集充足的“气”（chi）。“<strong>采气</strong>”是指有意识地引导自然界或天地间的生命能量，将其吸入体内，以此来滋养五脏六腑、调理整个身体系统。</p>
 <p>采气的方式有很多种。近年来，中国的气功大师开始在西方传授“气功”，这是采气与修炼气的一种典型形式。但在道家的修炼体系中，还有许多其他法门。</p>
 <p>随着修行的逐渐深入，道教修行者便将注意力转向“气体身”（Chi Body）的修炼。“<strong>气体身</strong>”是一个与肉身形状相同的能量体，它完全包覆并渗透于肉身的每一个部位。不同文化对此有类似概念，例如：</p>
@@ -245,7 +423,7 @@
 <p>而在道教中，我们称其为“气体身”。</p>
 <p>气体身的修炼，是道教内丹术的核心。这是因为：只有具备一个强大而稳定的气体身，才能进行更高级的能量转化和灵性炼金术。</p>
 <p>如果身体或气体身（任意一方）出现能量枯竭或虚弱，一些重要的炼金术实践就难以推进。因此，在道教信仰体系中，强化气体身被视为迈向“长生不老”与“得道成仙”的关键前提。</p>
-<h2>丹田 │ 三个关键能量中心</h2>
+<h2 id="article-section-2" class="article-heading">丹田 │ 三个关键能量中心</h2>
 <p>道家修炼“气”以及强化“气体身”的一种颇为有趣的方法，涉及他们所称的“丹田”（Elixir Fields）。</p>
 <p>所谓“丹田”，意为“炼丹的田地”，是气体身中储藏气、炼化气、转化能量的三个关键能量中心。当这些区域被气充满后，便会自然释放出一种高频能量。由于这种能量具有滋养身心、转化意识、提升能量状态的作用，因此它被称为“内丹”或“灵丹妙药”。</p>
 <p>道家所说的三个“丹田”，分别分布于身体不同部位，功能也各异：</p>
@@ -254,7 +432,7 @@
 <p><strong>上丹田</strong>：位于头部，主要作用在于强化大脑、松果体等神经系统的运作。</p>
 <p>在某些道家内丹术体系中，修行者首先将“气”引至三个丹田（即“采气”），然后再循着特定路径，引导气在脏器间流动，并逐步引向头部（即“<strong>炼气</strong>”）。在这个循环过程中，气被不断提炼与升华，变得更加纯净和精微，每个丹田所对应的脏器也被进一步滋养与强化。</p>
 <img class="img-fluid w-100 g-mb-1 g-pt-50 g-pb-50 " src="https://img.librarys.life/img/mary-magdalene/Elixir-Fields.jpg" alt="Image Description">
-<h2>经络 │ 人体能量通道的科学证据</h2>
+<h2 id="article-section-3" class="article-heading">经络 │ 人体能量通道的科学证据</h2>
 <p>古代道家修行者还深入探索了人体内的微妙能量通道，并详细绘制出人体能量通道图谱，即针灸所使用的“经络”系统。这些经络与瑜伽体系中的“<strong>脉</strong>”（Nadis）概念相似。现代科学，中国与日本的相关研究，已经证实：<strong>经络是真实存在的能量现象。</strong></p>
 <div style="color: #6B77CC;">
 <h3>「暮雨·注」现代科学对经络的理解</h3>
@@ -274,12 +452,12 @@
 <p><b>2. 费伦教授团队的“经络分子结构假说”</b></p>
 <p>在1990年代，由复旦大学牵头的研究团队，在政府资助下由分子物理学家费伦教授带领，尝试以分子生物学与组织解剖的方法揭示经络的物质基础。他们在活体实验中对人体腿部“胃经”进行核磁共振成像与解剖研究，发现所有穴位停针点都位于胫骨与腓骨之间的“骨间膜”上，且该部位分布着呈类“光纤”的螺旋线状纤维束，被认为可能是气的传导介质之一。进一步实验发现，穴位区的钙、锌、铁、钾等金属离子含量远高于非穴位区域（其浓度高出40至200倍），初步验证了穴位处存在“离子能量富集”的物质特征。</p>
 </div>
-<h2>小周天 │ 气的循环通道</h2>
+<h2 id="article-section-4" class="article-heading">小周天 │ 气的循环通道</h2>
 <p>除了经络之外，道家内丹术中还描述了一条至关重要的能量通道，他们称之为“小周天”。这条路径引导气，从会阴沿着脊柱上升至头部，然后沿着身体前侧向下回到会阴，形成一个闭合循环。</p>
 <p>当气在小周天中循环时，它会依次经过“三个丹田”。通过推动气在小周天中流动，修炼者能够激活更高层次的大脑中枢，并极大提升所循环之气的精微度。</p>
 <p>在道家内丹术中，气的精炼是至关重要的，因为只有高度纯净的气，才能进入“神”的境界，即精神或灵性的世界。</p>
 <p>一些道教中更神秘的流派还指出，修炼小周天可以消除负面业力，即由过去行为所产生的负面影响。</p>
-<h2>性之精气，转化为灵性力量</h2>
+<h2 id="article-section-5" class="article-heading">性之精气，转化为灵性力量</h2>
 <p>如果用道家的比喻来看待意识的转变，我们可以说——这个过程就像是将水变成雾。生命的能量通过炼金术被不断提炼，最终变得如雾般轻盈而精微。当一个人达到这种高度精炼的状态时，其“本质”已不再是单纯的男性或女性，而更趋近于“神”，一种灵性存在。</p>
 <p>而这场从肉体生物向灵性存在的非凡转变，其关键始于“性”。在许多道教修炼体系中，将性之精气转化为灵性力量，是内丹术中一个核心环节。</p>
 <p>在道家体系中，<strong>男性的性能量被称为“精”，而人的灵性本质被称为“神”</strong>。 通过“小周天”运行，修炼者将精气沿脊柱向上引导，使这股性能量逐步被炼化，最终升华为神。</p>
@@ -289,13 +467,13 @@
 <p>在某些道家炼金术中，修炼者首先专注于将气汇聚于下丹田。当这个区域中的气，充盈到超出五脏六腑所需时，炼金术士将启动第一个炼丹炉，开始提炼气中的杂质与沉滓，使之转化为更为纯净的精气。</p>
 <p>随后，这股被提纯的气会依次流向中丹田与上丹田。在这个过程中，气的性质也愈加纯粹与精微。当它运行至头部的上丹田时，便完成了从“气”到“神”的转化，从而使修炼者接通更高层次的灵性境界。</p>
 <p>当一位道教炼金术士成功地将性精气转化为神时，他/她便达到了极高的修为境界。</p>
-<h2>靠精气维生的隐修者 │ 植物的炼金术</h2>
+<h2 id="article-section-6" class="article-heading">靠精气维生的隐修者 │ 植物的炼金术</h2>
 <p>古代中国有许多关于这些道教圣人的神话与传说。传说中，这些得道高人常隐居于山中灵地（被称为“<strong>龙穴</strong>”的高山之巅），靠露水与山中草药为食，悠然自足。</p>
 <p>从炼金术的角度来看，植物叶片上所凝结的晨露，蕴含着极为纯净而浓缩的气。对于那些已将性精气转化为神的修行者而言，这类精微之物已足以维持生命。他们的消化系统也因修行而高度精炼，能轻松将露水中的气化为可用能量，维系身体与精神的运作。</p>
 <p>在基克拉泽斯（Cyclades）群岛的一座小岛上，生长着一种奇妙的瓜类，它是哈密瓜的近亲。但不同于其他需要灌溉的瓜，这种瓜能在干燥贫瘠、常年受海风吹拂的土壤中自然生长，完全无需人工浇水。令人惊奇的是，它能从空气中汲取水分。而它的味道，也是我尝过最非凡的瓜类之一。你能感受到其中异常浓郁的“气”，它的甜味也格外纯粹迷人。</p>
 <p>岛上还有另一种植物奇迹，也拥有类似的本领。它的外形类似地球西北部的雪松，但就像那些瓜类一样，它同样不需要水分灌溉就能生长——这也正好，因为岛上的淡水资源极为稀缺。这些树多生长在海岸附近，从含盐的海风中吸取水分，叶片会将水分提取出来后，将干燥的盐分留在表面。</p>
 <p>我从未想过植物也可以是炼金术士（除了光合作用这种显而易见的过程之外），但这两种植物显然已经达到了相当高超的炼金层次。</p>
-<h2>结语：</h2>
+<h2 id="article-section-7" class="article-heading">结语：</h2>
 <p>不过，让我们回到人类炼金术士的世界。当一位道家修炼者通过“炼精化神”完成内在转化后，他们便成为一种截然不同的生命形态。而这场奇妙转化的关键，在于调和两种宇宙间的对立力量：<strong>阴与阳</strong>。</p>
 <p>我们将在下一期继续探讨这一核心主题。</p>
 
@@ -753,7 +931,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -842,6 +1020,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

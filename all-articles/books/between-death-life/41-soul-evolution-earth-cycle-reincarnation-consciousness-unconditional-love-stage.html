@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -242,7 +411,16 @@
 <hr>
 <p>如果这些人只是同样的灵魂不断转世，那要怎么解释人口数的增加？地球正处于哪个进化阶段？ 地球上有很多课题可以学习：无条件的爱，容忍和耐心。地球上总是有许多混乱动荡，这在地球注定要发生的事件循环里是很自然的。我们会建议，听从自己的直觉引导。</p>
 <p></p>
-<h4>灵魂的数量，远多于可使用的身体</h4>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="4" aria-label="跳转到：灵魂的数量，远多于可使用的身体">灵魂的数量，远多于可使用的身体</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="4" aria-label="跳转到：地球的课题：无条件的爱">地球的课题：无条件的爱</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：地球的课题：容忍和耐心">地球的课题：容忍和耐心</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：影响其他人，促使改变发生">影响其他人，促使改变发生</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：地球正处于哪个进化阶段？">地球正处于哪个进化阶段？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：全书结语：研究死亡，让我更能欣赏生命">全书结语：研究死亡，让我更能欣赏生命</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：朵洛莉丝·侃南完成了她的地球之旅">朵洛莉丝·侃南完成了她的地球之旅</a></p>
+<hr>
+<h4 id="article-section-1" class="article-heading">灵魂的数量，远多于可使用的身体</h4>
 <p>**很多人对所谓的「人口问题」感到疑惑。**他们说现在地球上的人口比以往的总和都多， 但还是不断在增加。如果这些人只是同样的灵魂不断转世，那要怎么解释人口数的增加？问这些问题的人显然是受困于狭隘的视野。他们认为从以前就开始转世的灵魂就是所有的灵魂了。</p>
 <p>S：我们了解你的问题。这些新的灵魂是从哪里来的？我们希望你们能瞭解，<strong>灵魂的数量比可用的载具（指身体）多出很多很多</strong>，如果情形相反的话，你能想像没有灵魂的身体四处乱走吗？那肯定会很有趣。然而，像我刚刚说过的，<strong>等待转世的灵魂比可以进驻灵魂的身体多上许多。所以会有一个等待的过程，等待最合适的载具出现。</strong></p>
 <p>朵：我想那些人的论点是，我们的人口现在前所未有的多，如果这就是所有曾经活过的人……</p>
@@ -251,7 +429,7 @@
 <p>S：这是正确的。地球上从未出现过所有的灵魂。如果发生这种情况，整个地球就会挤满肩并肩的人群，动弹不得。</p>
 <p>朵：我们不想这样。</p>
 <p>S：我们也不想，所以我们会説现在灵魂转世的速度就是最适合现有载具的速度。</p>
-<h4>地球的课题：无条件的爱</h4>
+<h4 id="article-section-2" class="article-heading">地球的课题：无条件的爱</h4>
 <p>S：**地球上有很多课题可以学习，学会某些之后，其它的课题学起来就会容易些了。**现在我要和你谈的是无条件的爱。我们会说要体验这个概念，**必须要先体验缺乏无条件的爱的情境。**所以从整体计划来看，某个灵魂可能会发现自己回到的人世是黑暗、缺乏爱和缺乏理解的环境，而再次回到光的这一边后，它被许多给予无条件的爱的灵魂环绕。这么一来，它就能很容易地记起缺乏爱是什么感觉，並且自然地联想到充满无条件的爱的感受。这是现在这个星球应该学习的事。</p>
 <p><strong>地球上的混乱和不和谐已经把爱蒙蔽和扭曲到几乎无法辨认的程度了</strong>。<strong>你们在从有条件的爱转变到无条件的爱，现在是在后期阶段。</strong></p>
 <p>朵：你可以定义无条件的爱吗？</p>
@@ -260,7 +438,7 @@
 <p>S：没错。这就是把无条件的爱当作学习课题的智慧，因为这非常难学。</p>
 <p>朵：这不就是耶稣来到世上想要教导大家的吗？</p>
 <p>S：确实如此，毫无疑问。**耶稣的生命就是无条件的爱的化身。**现在很多人理解到这个事实，也更能觉察耶稣基督教诲的微妙，他的教导比字面上的意思来得丰富和微妙得多。</p>
-<h4>地球的课题：容忍和耐心</h4>
+<h4 id="article-section-3" class="article-heading">地球的课题：容忍和耐心</h4>
 <p>朵：还有別的课题吗？</p>
 <p>S：我们会说容忍和耐心就像连体婴，彼此相辅相成，缺一不可。</p>
 <p>朵：这些是当我们来到地球，应该努力学习的课题吗？</p>
@@ -268,14 +446,14 @@
 <p>**你在物质层面的最终目标其实就是认识自己。你们会得到很多学习认识自己的机会和挑战。这个过程常常是痛苦的。**我们请你去看看玫瑰，看看那样的美丽总是带着痛。因为要享受玫瑰的美，你就必须將它从梗上摘下，而当你摘的时候，手指就有被刺到的可能。这也可以用来比喻物质层面的人生。</p>
 <p>无论如何，<strong>在不幸和紧迫的时候，我们希望你一定要记得，这些经验都是你自己给自己的，是你在灵魂层面规划好要发生的事。是你选择了要体验什么，这样你才能学到你需要的课题。因此，透过这些痛苦的经验，你將会开始认识自己。如果你能从中学到什么，那么这些经验就都没有白费。</strong></p>
 <p><strong>你们确实是自己命运的主宰。你完全控制自己的人生要怎么过。是你在做决定，决定什么时候、什么地方，以及怎么做。从我们所在的维度，我们可以看到你面前所有的人生选项。但是，是你，是你自己必须做出最后的决定。</strong></p>
-<h4>影响其他人，促使改变发生</h4>
+<h4 id="article-section-4" class="article-heading">影响其他人，促使改变发生</h4>
 <p>S：你在地球的时候也一定会影响其他人，这无法避免。<strong>你们不断地在影响其他人。</strong></p>
 <p>朵：我以为我们不应该影响別的个体。</p>
 <p>S：**控制別人是一回事，但影响是完全不同的。**如果不影响別人，又要怎么教导別人？影响不是坏事。<strong>每个人都有能力分辨什么是好，什么是不好。你只是把你有的东西放上台面，让他们去选择要什么。</strong></p>
 <p><strong>地球上总是有许多混乱动荡，这在地球注定要发生的事件循环里是很自然的。<strong>然而，从你们的观点来看，这並不自然，因为你们好像比较喜欢一切都是原貌的时候。但是，如果一切如此，就永远不会有改变，它会一直维持原样。这不是地球的目的，<strong>地球是尝试新事物的地方</strong>，是战场，是游乐场，当然还有更多更多的概念。为了容纳这些众多不同的实验性的表现，虽然没有更好的字眼可以説明，但</strong>必须偶尔变换这些实相，好让重心不是只在其中一项。</strong></p>
 <p>比如説，可能比较不像游乐场，而较像战场等等。只要有需要，就会变换优先的顺序。**你们认为是动乱的时期，其实只是重组优先显化或表现的顺序。我们会建议，你在地球的时候应该听从自己的直觉引导。**这会是最恰当的。因为某个人很不想要的东西，也许正是另一个人非常渴望的。</p>
 <p>**没有什么是固定不变的实相，没有真正的真相，因为一切都是相对的。所以当认定真理和实相的时候，必须非常小心，不要让它们侵犯到別人的真理与实相。当创造实相时，重要的是记得要放弃只有最恰当的才会显化成真的期望。**我们会説，<strong>会实现的就是最必要的。</strong></p>
-<h4>地球正处于哪个进化阶段？</h4>
+<h4 id="article-section-5" class="article-heading">地球正处于哪个进化阶段？</h4>
 <p>朵：对在地球上的我们来说，实在很难看着他人的苦恼、心痛和痛苦，然后说这是进化。</p>
 <p>S：以凡人经验的角度来看，这是真的。我们觉得这是许多现在在你们地球层面的人常常不太理解的地方。<strong>要描述现在地球进行到哪个进化阶段並没有益处。因为如果说是开始而已，大家的心就会很沉重，但不该这样的。而如果说是接近结束了，大家又会太过于期待可能还要一阵子才会发生的事。</strong></p>
 <p>所以，不论现在到底是在哪个阶段，<strong>最适当的就是接受我们正处于动荡混乱的阶段。我们应该在现处的阶段努力，让循环继续自行运作。最需要努力的阶段就是当下。如果你的实相现在只在清洗或扭转阶段，这都无关紧要，因为最后衣服总是会洗完。</strong></p>
@@ -287,7 +465,7 @@
 <p>S：没错，但<strong>最终所有的路都会碰头，在同一处聚合。</strong></p>
 <p>朵：只是这一路上会有许多波折。</p>
 <p>S：没错。</p>
-<h4>全书结语：研究死亡，让我更能欣赏生命</h4>
+<h4 id="article-section-6" class="article-heading">全书结语：研究死亡，让我更能欣赏生命</h4>
 <p>这本书里的所有资讯都是由互不相识的个案身上取得，这真的很令人惊讶，因为他们属于不同宗教，工作也不相同，但即使有这些差异，他们在催眠状态下所提供的资料不但不互相矛盾，反而还相互印证。</p>
 <p>有很多内容放在一起的时候，听起来就像是从一个人口中説出，而不是好几个人。这本身就是很特別的现象，而且將这些资料全部集中，就成了一本内容前后呼应的书。</p>
 <p>对我来説，当不同个案回溯到所谓的「死亡」状态，但看到和讲述的都是同样的场景，这就是证据了。如果他们看到的东西都一样，那**我相信死后世界一定是一个非常真实且可以确认的地方，那里有着明确的规则、规范与层级关系，使一切井然有序地运作。**我不宣称自己拥有所有的答案；生死这个主题的问题实在太深，太复杂了。读者可能会想到许多他们要问，而我却没有想到的问题。但当你开启知识的门户，去搜寻人们认为根本不存在的问题的答案时，就会是这个情形。</p>
@@ -298,7 +476,7 @@
 <p>因此，直到我们离开这个身体，朝向分隔这个世界和下一个世界的亮光前进之前，我们都不会真正知道会是怎么回事。即使我有了研究所得的知识，我也不急着踏上那个旅程。至少现在还不急。我觉得自己在这个世界还可以做很多事。研究死亡，让我更能欣赏生命。但我想，当我的时辰到来，我不会像以前那么害怕了。因为我知道我不是前往一个陌生、黑暗和可怕的未知领域。</p>
 <p>我只是回家，而且在那边遇到的人事物都会像这个世界里的一样熟悉和亲切。也许我得到的资讯让我们稍稍掀开了帷幕，得以一窥幕后的世界；这些资料让我们透过玻璃看到重重阴影，而这些阴影並不似想像的黑暗。</p>
 <p>埋藏已久的记忆渐渐被唤醒了，而这些记忆是美好的，因为我们看到的是如此美好的景象。我很感激能与这些灵魂对话。他们告诉我的事，鼓励了我们摆脱恐惧与怀疑，並让我们领悟到，在那个界线之后的，只是喜悦的返家之旅。</p>
-<h4>朵洛莉丝·侃南完成了她的地球之旅</h4>
+<h4 id="article-section-7" class="article-heading">朵洛莉丝·侃南完成了她的地球之旅</h4>
 <p>作者朵洛莉丝·侃南在2014年10月，完成了她这次精彩的地球之旅，回到了光的世界。她是我很尊敬和喜爱的作者，她以旺盛的好奇心，坚持不解的探索精神，最重要的，是无私的动机、正直和爱，带给大家珍贵无比的讯息和教导。她的多本著作和量子疗愈催眠疗法 （QHHT）是她留给这个世界的珍贵遗产。</p>
 <p>「全书完结」</p>
 
@@ -763,7 +941,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -852,6 +1030,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

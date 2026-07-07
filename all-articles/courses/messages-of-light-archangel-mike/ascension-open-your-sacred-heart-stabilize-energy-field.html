@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -238,30 +407,30 @@
   <p style="font-size:15px; color: gray;">对你获取的信息，保持善意的怀疑和独立思考是明智的。</p><hr class="g-brd-gray-light-v4 g-pt-20">
 <p>来自大天使迈克尔（MICHAEL）的光之信息，2022年1月1日</p>
 <p>作者：Ronna Vezane / 神圣抄写员</p>
-<p>www.starquestmastery.com</p>
+<p><a href="http://www.starquestmastery.com">www.starquestmastery.com</a></p>
 <p>翻译 / 解读：暮雨</p>
-<h2>本集内容</h2>
-<p>扬升是什么？获取更清晰的自我觉知</p>
-<p>能量如何运作？如何获得充足的能量？</p>
-<p>灵性破产：为什么受困负面的循环?</p>
-<p>灵魂伴侣与关系的转化：放手与整合</p>
-<p>接入超意识心智：显化与创造的磁石</p>
-<p>自我掌握：共同创造者与观察者</p>
-<p>如何完善你的心灵感应能力？</p>
-<p>你正在创造的现实：因果显化的机制</p>
-<h2>扬升是什么？获取更清晰的自我觉知</h2>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：扬升是什么？获取更清晰的自我觉知">扬升是什么？获取更清晰的自我觉知</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：能量如何运作？如何获得充足的能量？">能量如何运作？如何获得充足的能量？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：灵性破产：为什么受困负面的循环?">灵性破产：为什么受困负面的循环?</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：灵魂伴侣与关系的转化：放手与整合">灵魂伴侣与关系的转化：放手与整合</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：接入超意识心智：显化与创造的磁石">接入超意识心智：显化与创造的磁石</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="2" aria-label="跳转到：自我掌握：共同创造者与观察者">自我掌握：共同创造者与观察者</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="2" aria-label="跳转到：如何完善你的心灵感应能力？">如何完善你的心灵感应能力？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="2" aria-label="跳转到：你正在创造的现实：因果显化的机制">你正在创造的现实：因果显化的机制</a></p>
+<h2 id="article-section-2" class="article-heading">扬升是什么？获取更清晰的自我觉知</h2>
 <p>所谓“<strong>扬升</strong>（Ascension）”，就是获得<strong>更清晰的自我觉知</strong>，并接纳这样一个事实：你是光之碎片，来自源头的一粒白火种子原子（White Fire Seed Atom Facet），我们每个人都是源头的一个微小表达单元。</p>
 <p>当你不断向内探索，你会逐渐意识到，自己与一切万有之间有着亲密、不可分割的联系。</p>
 <p>一旦你体验过与源头<strong>心心相印</strong>的至高喜悦，并能从容汲取那<strong>爱与光的金刚粒子</strong>，你对爱的渴望便会逐渐得到满足；你对生命滋养的饥渴也将被充盈，你会获得所需的力量、意志与决心，去喜悦地完成你在尘世的使命。</p>
 <p>那么，现在是什么在阻碍你，去体验生命的丰盛与喜悦？是什么在削弱你的生命力？</p>
-<h2>能量如何运作？如何获得充足的能量？</h2>
+<h2 id="article-section-3" class="article-heading">能量如何运作？如何获得充足的能量？</h2>
 <p>能量的产生，并非来自抗拒与摩擦，而是源于<strong>吸引的频率模式</strong>。</p>
 <p><strong>思想、言语与情绪</strong>，要么滋养你的肉身，要么削弱它；同时，它们也会在你的能量场及更广阔的层面上，<strong>形成特定的频率带</strong>。由此，你在物质世界的现实便被创造出来。宇宙的法则说：“你必须亲身经历你所创造的。”</p>
 <p>请记住：在物质世界里，<strong>语言</strong>是交流的工具；而在灵性世界里，语言由<strong>光、神圣几何、意象</strong><span style="color: #6B77CC;">（暮雨注：带有意图的内在观想）</span>、<strong>声音与色彩</strong>构成。当你向外辐射出精纯的爱与光的频率时，负面的力量将无法触及你。</p>
 <p>我勇敢的伙伴们，你们必须成为生命之河的支流，化身为神圣力量的创造通道。一旦你停止让爱与光的金刚粒子，流入并穿越你的<strong>神圣之心</strong><span style="color: #6B77CC;">（相关文章：打开你神圣之心的门户）</span>，停滞就会立即出现。当你成为光的守护者，<strong>你的能量场将不断扩展</strong>、熠熠生辉，因为你正被灵性的光辉点亮。</p>
 <p><strong>万物皆有光环</strong>，造物主的神圣力量存在于一切之中。</p>
 <p>无论是<strong>你自己、你的家、你的社区、城市、省份、国家</strong>，都拥有一个能量场——或明亮、或黯淡。每个国家的心与魂都需要被唤醒。当合一意识消失，一个国家的精神活力便开始衰退。</p>
-<h2>灵性破产：为什么受困负面的循环?</h2>
+<h2 id="article-section-4" class="article-heading">灵性破产：为什么受困负面的循环?</h2>
 <p><span style="color: #6B77CC;">（相关文章：灵商与智商 │ 提升你的灵性光商）</span></p>
 <p>许多灵魂在灵性层面上可以说是“破产”的：</p>
 <p>要么他们已经耗尽了属于自己的<strong>生命/光的金刚粒子</strong>，沉溺在三维与四维世界的低频带中，失去了接入宇宙生命之河、汲取造物主<strong>全光谱</strong>的能力；要么从幼年开始，就未曾达到那种和谐的频率模式，无法点燃储存在神圣之心的那份金刚粒子。</p>
@@ -269,7 +438,7 @@
 <p>许多珍贵的灵魂，选择在人生舞台上走一条<strong>光与影的低频谱之路</strong>。在灵魂层面上，他们为自己的人生故事设定了特定的蓝图，因为他们希望借此化解过往某些失衡的频率模式。然而，很多时候，这条道路的挑战超出了他们的承受力，于是他们又回到了那些在<strong>无数轮回中反复出现的负面模式。</strong></p>
 <p>而那些最缺乏自由选择的人，往往被<strong>执念、成瘾和无意识的冲动</strong>所驱使，受制于过去深层的负面影响——这些影响极难扭转。</p>
 <p>请记住，亲爱的，没有任何外在力量在审判你，唯一的审判者只有你自己。而你总会被给予机会去超越过去的错误。而自我宽恕是疗愈过去、重拾内在力量的第一步。</p>
-<h2>灵魂伴侣与关系的转化：放手与整合</h2>
+<h2 id="article-section-5" class="article-heading">灵魂伴侣与关系的转化：放手与整合</h2>
 <p><strong>真正的自我掌握者</strong>，会逐渐结束那些已不再与自己和谐共振的关系，这听起来或许有些冷漠。</p>
 <p>这其中不带任何评判，只是温柔地放手，慢慢收回、切断那些彼此间的能量纠缠。通常，是对方先选择结束关系，因为他们已无法从觉醒者身上，汲取曾经依赖的“<strong>情绪能量</strong>”。</p>
 <p>无数孤独的灵魂，正在寻找属于自己的<strong>灵魂伴侣</strong>。这是全球范围内正在发生的事，因为越来越多的灵魂已经抵达一定的<strong>内在和谐</strong>。对于数以百万计的你们来说，这是一个特殊的时刻——你的灵魂已经走到<strong>分离旅程的最远端</strong>，如今正处于<strong>回归与整合</strong>的过程之中。<span style="color: #6B77CC;">（相关文章：<a href="https://librarys.life/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html" style="color:#6B77CC; text-decoration: underline;" 
@@ -278,7 +447,7 @@
 <p>另一方面，许多灵魂伴侣在<strong>灵魂频率</strong>上相似，却未必在<strong>肉体能量场</strong>上契合。这是因为，灵魂的频率力量要比肉体频率更强，尤其当你处于<strong>情感真切、心灵敞开</strong>的状态时，这种力量会更加明显。</p>
 <p>如果这种光辉足够强大，灵魂的美会透显出来；然而，<strong>它未必能</strong>完全跨越那些在身体、情绪与思想层面上<strong>彼此不协调的特质</strong>，去创造一个持久而令人满足的关系。</p>
 <p>在尘世中，<strong>亲密关系本就充满挑战</strong>，尤其当你正走在<strong>自我掌控</strong>与<strong>认识自我</strong>的道路上——这条路意味着，你内外都在不断经历转化与蜕变。</p>
-<h2>接入超意识心智：显化与创造的磁石</h2>
+<h2 id="article-section-6" class="article-heading">接入超意识心智：显化与创造的磁石</h2>
 <p>我勇敢的伙伴们，请永远不要忘记：<strong>你是永恒的，也是不朽的</strong>。你的肉身，只是造物主暂时居住的圣殿。而<strong>神圣之心</strong>，才是灵魂的殿堂；其中蕴藏着生命的本质，那里是真爱的栖息之所，那个空间就是你开始感知到“<strong>无限存在</strong>”的起点。</p>
 <p>在神圣之心的深处，安放着一颗<strong>钻石核心神细胞</strong>（Diamond Core God Cell）<span style="color: #6B77CC;">（相关文章：<a href="https://librarys.life/all-articles/dolores-cannon-hypnosis/new-earth-ascension/cell-consciousness-healing-beyond-germs-self-exploration.html" style="color:#6B77CC; text-decoration: underline;" 
      target="_blank">细胞的意识，细胞的上帝：理想细胞
@@ -292,11 +461,11 @@
 <p>这些有害的思想形态被一再重复，直至它们深深扎根在每个人的潜意识中，同时也<strong>固化在集体意识的信念结构</strong>中，最终成为大众所接受的“现实”。</p>
 <p>然而，<u>你的神圣心智永远知晓真理，并最终会 <strong>超越与纠正</strong> 显意识心智的误解。当你努力清理潜意识中的负面影响时，显意识心智是可以被重新编程的</u>。</p>
 <p>你的神圣之心是通向“神的心智”的直接通道。在一切事物中<strong>保持适度</strong>，你便会为自己创造平衡、和谐与安宁的状态。</p>
-<h2>自我掌握：共同创造者与观察者</h2>
+<h2 id="article-section-7" class="article-heading">自我掌握：共同创造者与观察者</h2>
 <p><strong>自我掌握</strong>（Self-mastery）：意味着你能驾驭<strong>肉体的情绪</strong>与<strong>低阶心智的思维过程</strong>。一位真正的自我掌握者，即便身处混乱与变动之中，依然能稳稳扎根于神圣之心，紧握“神之心智”的智慧——从父母神（Father/Mother God）那里不断汲取力量与指引——并始终以<strong>觉察的观察者</strong>，注视着一切幻象逐渐消散。</p>
 <p>当你开始整合更高自我的诸多面向时，你也将触及<strong>更高层次的创造潜力</strong>。你必须学会培养一种<strong>警觉的放松状态</strong>，在这种状态下，你既是共同创造者，也是整个过程的观察者。</p>
 <p>你必须保持耐心，因为在启动更高意识的力量与天赋之前，必须经历一个<strong>必要的准备阶段</strong>。</p>
-<h2>如何完善你的心灵感应能力？</h2>
+<h2 id="article-section-8" class="article-heading">如何完善你的心灵感应能力？</h2>
 <p><strong>无意识和潜意识</strong>的主要语言是“<strong>意象</strong>”。通过有意识地练习，与不断完善你的意象与观想能力；会极大加速<strong>潜意识、显意识和超意识</strong>的激活与整合过程。而意象与观想是一种更高层次的心智沟通能力，也称“心灵感应（Tele-thought）”。要完善这种潜能，你需要强烈的成功意志，以及坚定的决心与专注力。</p>
 <p>你进入更高层次意识领域的过程，是一个逐渐觉醒的过程。随着时间的推移，你将学会倾听灵魂自我（Soul Self）与更高自我-超灵（Higher Self-OverSoul）的低语与智慧。</p>
 <p>当你踏上启蒙（en-Lighten-ment）之路，你便开启了<strong>有意识的、正念觉察</strong>的过程。</p>
@@ -307,7 +476,7 @@
 <p>随着这一进程，你会逐渐进入<strong>神圣之心</strong>的中心，你的<strong>钻石核心神细胞</strong>将开始炽烈燃烧，从而更加有力地放射出<strong>神性意识之光</strong>（Rays of God Consciousness）。</p>
 <p>这是你独一无二的代码程序，这是你的<strong>灵魂之歌</strong>（Soul Song），它早在你进入物质世界之前，便已被编码进你的晶体结构中。</p>
 <p><strong>你的任务</strong>，就是在不断扩展的神性意识中，让“灵魂的光之印记”不断放大、增强，并为其增添新的光辉。</p>
-<h2>你正在创造的现实：因果显化的机制</h2>
+<h2 id="article-section-9" class="article-heading">你正在创造的现实：因果显化的机制</h2>
 <p>你必须意识到，<strong>你存在于一个由你自己创造的振动漩涡之中</strong>——它由你强烈的<strong>思想、行动和意图</strong>所编织而成。</p>
 <p>当你身处第三维度与第四维度的低频环境中时，你所能接触到的能量，仅仅是由<strong>原初生命力物质</strong>（Primal Life Force Substance）所构成的，这是物质层面中一种不和谐的<strong>半光谱之光</strong>。<span style="color: #6B77CC;">（暮雨注：合一意识是全光谱，意味着完全的觉知。）</span></p>
 <p>这些振动频率会回应你的思想与行为——无论是积极的还是消极的——并最终在物质层面显化出来，其程度取决于你思想的力量与重复的频次。</p>
@@ -319,7 +488,7 @@
 <p>当你逐渐调谐到更高的领域，并清理掉你个人<strong>光柱</strong>（personal column of Light）中<strong>过往的扭曲</strong>时，这条光柱将你连接到**“我是临在”**（你的神性自我）以及源头。</p>
 <p>在这个过程中，你会慢慢学会维持稳定的<strong>阿尔法脑波状态</strong>（Alpha State）。届时，你将会享受到与<strong>更高自我/多重自我、你的向导、导师、宇宙光之议会（Cosmic Council of Light）以及天使领域</strong>的持续联系。</p>
 <p>而这，就是你完善心灵感应能力的最终目标。</p>
-<h2>结语</h2>
+<h2 id="article-section-10" class="article-heading">结语</h2>
 <p>我勇敢的孩子们，</p>
 <p>我们知道，在你们经历这些加速的蜕变过程时，可能会感到巨大的痛苦、不适与恐惧。请相信，我们将会携手克服一切逆境。</p>
 <p>我们的使命，是为任何渴望回归和谐的灵魂，开启回家的道路。</p>
@@ -781,7 +950,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -870,6 +1039,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

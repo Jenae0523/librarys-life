@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -238,20 +407,20 @@
      target="_blank">https://tomkenyon.com/the-fifth-perspective-transcending-space-and-time </a></span></p>
 <p>作者：汤姆·肯永 (Tom Kenyon)</p>
 <p>翻译/解读：暮雨</p>
-<h2>本集内容</h2>
-<p>我们如何被“引力场”和“社会信念系统”制约？</p>
-<p>第五维度是什么？</p>
-<p>一场不可避免的维度进化</p>
-<p>人类进入第五维度，面临的三大挑战</p>
-<p>​    ・自然发生的挑战</p>
-<p>​    ・人为影响 │ 文明幻象、生态危机、权力操控者</p>
-<p>​    ・外星人基因干预</p>
-<p>声音冥想 │ 跨越意识门槛，感知转变练习</p>
-<p>​    ・第五视角：激活右脑的空间掌控力</p>
-<p>​    ・冥想音频介绍：连接世界的桥梁</p>
-<p>​    ・汤姆·肯永的聆听建议</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：我们如何被“引力场”和“社会信念系统”制约？">我们如何被“引力场”和“社会信念系统”制约？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：第五维度是什么？">第五维度是什么？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：一场不可避免的维度进化">一场不可避免的维度进化</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：人类进入第五维度，面临的三大挑战">人类进入第五维度，面临的三大挑战</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・自然发生的挑战">​    ・自然发生的挑战</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：・人为影响 │ 文明幻象、生态危机、权力操控者">​    ・人为影响 │ 文明幻象、生态危机、权力操控者</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・外星人基因干预">​    ・外星人基因干预</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="2" aria-label="跳转到：声音冥想 │ 跨越意识门槛，感知转变练习">声音冥想 │ 跨越意识门槛，感知转变练习</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="4" aria-label="跳转到：・第五视角：激活右脑的空间掌控力">​    ・第五视角：激活右脑的空间掌控力</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="4" aria-label="跳转到：・冥想音频介绍：连接世界的桥梁">​    ・冥想音频介绍：连接世界的桥梁</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="4" aria-label="跳转到：・汤姆·肯永的聆听建议">​    ・汤姆·肯永的聆听建议</a></p>
 <hr>
-<h2>引言：</h2>
+<h2 id="article-section-2" class="article-heading">引言：</h2>
 <p>——透过汤姆·肯永传递的哈索尔星际讯息</p>
 <p>想让意识提升到更高维度，需要你对 **时间与空间的感知 **进行根本性的转变。<span style="color:#6B77CC;">（相关文章：
 <a href="https://librarys.life/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html" style="color:#6B77CC; text-decoration: underline;" 
@@ -259,7 +428,7 @@
 </span></p>
 <p>这是一个至关重要的 <strong>感知转变</strong>，我们希望通过一个 <strong>理论视角</strong> 与 <strong>实践技术</strong> 来解决这个问题，其中包括我们哈索尔专门为此目的，创造的一段声音冥想。<span style="color: #6B77CC;">（在文章最后附有音频的下载链接）</span></p>
 <p><span style="border-bottom: 2px dashed #6B77CC;">当你在生活中面对困境时，如果能够将你的意识焦点，提升至不受空间或时间约束的第五视角。那么，困境所带来的压力就会减轻。这是因为你的意识，不再受外在环境的束缚。可以说，你拥有了一点“回旋余地”，在这种内在自由中，<strong>新的创造性洞见</strong> 和 <strong>解决问题的能力</strong> 会自发地在你内心涌现。</span></p>
-<h2>我们如何被“引力场”和“社会信念系统”制约？</h2>
+<h2 id="article-section-3" class="article-heading">我们如何被“引力场”和“社会信念系统”制约？</h2>
 <p>观察更高维度的方式有很多。我们希望与您分享的是，一个关于我们 **如何看待维度 **的基本概念，以及当你过渡到更高维度现实时，所面临的挑战。</p>
 <p>从我们的角度来看，你所显化的生物现实（即你的身体）锚定在 <strong>第三和第四维度的意识</strong> 中。</p>
 <p>你对第三维度的世界已经非常熟悉。你的 <strong>神经系统</strong> 对这个现实高度敏锐，你的 **大脑/心智/身体复合体 **与这个物理世界的现实，保持同步。你的身体能否安全存活，完全依赖于你如何感知、理解并应对外部空间环境。此外，你的身体、心智与意识都牢牢地锚定在，你对时间的感知之中。</p>
@@ -273,7 +442,7 @@
 <p>但当你只认同于你的三维现实时，无论出于何种目的，你都会被困在有限的空间和时间里。</p>
 <p>在这则讯息中，我们将介绍一种方法，帮助你将 <strong>个人身份认同</strong> 从感知的时间与空间的限制中，转移到更高维度的自由中。同时你依然能够，在目前的文明与维度中过日常生活。</p>
 <p>但在传授这个方法之前，我们需要进一步深入探讨该理论。</p>
-<h2>第五维度是什么？</h2>
+<h2 id="article-section-4" class="article-heading">第五维度是什么？</h2>
 <p>在我们的理解中，<strong>时间是第四维度</strong>。</p>
 <p>对我们而言，空间与时间紧密相连。你们的科学家已经证实了<strong>爱因斯坦的理论</strong>：<span style="border-bottom: 2px dashed #6B77CC;">具有质量的大型物体会产生引力场，而这种引力场会改变空间与时间。</span><span style="color: #6B77CC;">（暮雨注：如行星、恒星、黑洞）</span></p>
 <p>对我们来说，<span style="border-bottom: 2px dashed #6B77CC;"><strong>第五维度</strong>是第一个超越空间与时间限制的意识维度。而在第五维度中的生物没有质量，因此不受引力场的影响。</span></p>
@@ -281,7 +450,7 @@
 <p>但当你进入第五维度时，你仍然会体验到自己拥有某种形态（即，一个身体）。在第五维度中的事物，在你看来，会显得和你在当下现实中，所体验到的形式一样坚实。但你对空间的体验，将会更加流动，而时间作为参照点，将不复存在。</p>
 <p>有些人说，当你进入更高维度时，你所有的问题都会神奇地、瞬间得到解决。</p>
 <p>但这并非我们的经验。只是说，第五维度的挑战会有所不同，机遇也不同。因为你不再受限于当下时间与空间的约束。这为你带来了 <strong>更大的创造力</strong>，以及我们所称的 <strong>维度进化</strong> 的机会。</p>
-<h2>一场不可避免的维度进化</h2>
+<h2 id="article-section-5" class="article-heading">一场不可避免的维度进化</h2>
 <p>所谓维度进化（Dimensional Evolution），是指能同时感知并在多个维度中运作的能力——这需要通过直接体验、生活在某个特定维度来锻炼。而要达到精通的境界，需要经历漫长而曲折的旅程。</p>
 <p>从维度进化的角度来看，你目前的肉身生活，是一个掌握第三与第四维度的机会；这也是，让你拥有肉身存在的同时，也能体验一部分更高维度的机会。以这种方式度过你的人生，会快速加速你的维度进化。而对于那些已经进入这种激进存在方式的人来说，<strong>这则讯息包含了多重层次的编码</strong>。</p>
 <p>从我们的视角来看，一直到 <strong>第九维度</strong>，你们都拥有类似人类的形态。随着意识进入更高维度，每一层级都比前一层更加精微（密度更低）。当进入 <strong>第十维度</strong> 时，你们所理解的形态将完全消失，你们的本质将变得更接近几何结构。</p>
@@ -310,8 +479,8 @@
 <p>1）<strong>意识转变中自然发生的挑战</strong>，</p>
 <p>2）<strong>人为影响</strong>，</p>
 <p>3）<strong>外星干预</strong>。</p>
-<h2>人类进入第五维度，面临的三大挑战</h2>
-<h4>・自然发生的挑战</h4>
+<h2 id="article-section-6" class="article-heading">人类进入第五维度，面临的三大挑战</h2>
+<h4 id="article-section-7" class="article-heading">・自然发生的挑战</h4>
 <p>进入更高维度的转变之所以困难重重，是因为受重力束缚的生物，与不受重力束缚的生物之间，在感知上存在巨大的差异。换句话说，当你处于第三、第四维度的现实，与第五维度现实之间的 <strong>临界点</strong> 时，你会遭遇一道 <strong>感知的墙</strong> 。</p>
 <p style="color:#6B77CC;">
   （相关文章：
@@ -339,7 +508,7 @@
     图：钟形曲线（Bell Curve）
   </figcaption>
 </figure>
-<h4>・人为影响 │ 文明幻象、生态危机、权力操控者</h4>
+<h4 id="article-section-8" class="article-heading">・人为影响 │ 文明幻象、生态危机、权力操控者</h4>
 <p>你们从第三、第四维度现实向第五维度及更高维度的过渡，被人为或文化的影响进一步加剧了难度。</p>
 <p>从维度进化的角度来看，你们整个文明的根基建立在一个幻象之上。这个 <strong>幻象</strong> 就是：你们的世界是坚固的，而空间与时间是不可动摇的现实，它们不会受到你们的意识影响。</p>
 <p>虽然在日常生活中，你们在生理上被迫去关注第三、第四维度的需求，但关注感知到的空间与时间，与相信它们是唯一现实，其实是两回事。<span style="color: #6B77CC;">（暮雨注：就像 <a href="https://pan.baidu.com/s/1qQiOFN99l7QDvDlDFIggHA?pwd=muyu" style="color:#6B77CC; text-decoration: underline;" 
@@ -350,7 +519,7 @@
 <p>我们不会花时间或篇幅来进一步讨论这个问题，因为问题极其复杂。但任何认为你们星球的生态现状一切安好的观点，都是在自欺欺人。</p>
 <p>这就引出了另一个问题“<strong>权力操控者</strong>”，他们通过剥夺他人的权力（力量），来强化自身的权力（力量）。在这里，我们特别指的是某些企业实体，它们传播关于生态系统的错误信息，他们这样做是为了，以牺牲你们星球上的其他生命为代价，来为自己获取利润。</p>
 <p><span style="border-bottom: 2px dashed #6B77CC;"><strong>这是对人类的一次智力测试</strong>。如果你们不能集体觉醒，认清自己被这些权力操控者（无论是你们看得见的，还是隐形的）所操纵和利用的事实，你们的生态系统将继续恶化，而你们将面对一个不值得生存的未来。</span></p>
-<h4>・外星人基因干预</h4>
+<h4 id="article-section-9" class="article-heading">・外星人基因干预</h4>
 <p>我们所谓的外星干扰，部分源于基因层面，与早期阿努纳奇（Annunaki）的 <strong>基因篡改</strong> 有关。</p>
 <p style="color:#6B77CC;">
   （相关文章：
@@ -376,7 +545,7 @@
 </p>
 <p>我们信息的核心：是关于 <strong>个人赋权与自由</strong>。因此，当你进入第五维度和更高维度的现实时，我们提醒你，务必 <strong>避免被外星人植入的幻觉</strong> 所迷惑，认为还有其他生命值得你们跪拜、臣服。</p>
 <p>如果他们真值得尊重，就尊重他们。但要跪拜臣服于任何人？绝不！</p>
-<h2>声音冥想 │ 跨越意识门槛，感知转变练习</h2>
+<h2 id="article-section-10" class="article-heading">声音冥想 │ 跨越意识门槛，感知转变练习</h2>
 <p>接下来，我们要把注意力转向一个简单的方法，帮助训练你的意识进入更高维度，并进入超越现实的自由。在那里，你将不再受空间与时间的感知限制。这个方法是基于一种简单的“声音冥想练习”。通过它，你可以探索——当自我身份认同转向更高维度时，意识所展现出的自由。</p>
 <p>当你开始尝试这种“跨越意识门槛”的练习——我们称之为“第五视角”时，我们要提醒你：**务必避免把它当作逃避现实的工具。**我们提供这种方法，并不是为了让你逃离肉身存在的现实，而是希望借由进入第五维度及更高的境界，让你能够提升与丰富你的生命体验。</p>
 <p>更高维度的现实，不受你所感知的时间与空间的限制，然而，当它与肉体存在的现实结合时，就会形成一种 <strong>强有力的催化剂</strong>，推动意识的维度进化。在我们看来，这种融合值得被庆祝，而不是被回避。</p>
@@ -388,7 +557,7 @@
 肉身死亡后，灵魂将面对的3个选择是什么？
   </a>）
 </p>
-<h4>・第五视角：激活右脑的空间掌控力</h4>
+<h4 id="article-section-11" class="article-heading">・第五视角：激活右脑的空间掌控力</h4>
 <p>第五视角，简单来说就是认知到：你并不受空间或时间的约束。它就像一个门户，是通往第五维度的入口，也可以从这里进入更高维度。</p>
 <p>这是一种直接的感知，而不仅仅是一个想法或概念。它是一种<span style="border-bottom: 2px dashed #6B77CC;">通过 <strong>激活你右脑半球</strong> 的空间掌控能力，而产生的内在体验。</span></p>
 <p><span style="border-bottom: 2px dashed #6B77CC;">当你通过直接体验进入一种 <strong>更扩展的空间感</strong> 时，意识就会发生转变。你将见证自己的生命、历史以及周围一切现象“如梦似幻”的本质。这种自由感，这种对感知时空的超越，可以让你更有创造性、更灵活地应对你肉身存在的现实，这正是我们传授这种方法的原因。</span></p>
@@ -399,7 +568,7 @@
 <p>当你进行这个声音冥想练习时，你的大脑/心智，将被训练进入第五视角。声音模式的空间特性，会在你的大脑/心智/身体中产生反应，从而开启通向第五视角的通道，最终你会发现自己处于一种扩展的意识觉知状态。</p>
 <p>你越多地练习这个声音冥想，这种能力就越强。最终，你将达到一种境界，<strong>在日常活动中也能进入第五视角——这正是你练习的目标</strong>。</p>
 <p><span style="border-bottom: 2px dashed #6B77CC;">当你在生活中面对困境时，如果能够同时安住于第五视角中，情境所带来的压力就会减轻。这是因为你的意识，不再受外在环境的束缚。可以说，你拥有了一点“回旋余地”，在这种内在自由中，<strong>新的创造性洞见</strong> 和 <strong>解决问题的能力</strong> 会自发地在你内心涌现。</span></p>
-<h4>・冥想音频介绍：连接世界的桥梁</h4>
+<h4 id="article-section-12" class="article-heading">・冥想音频介绍：连接世界的桥梁</h4>
 <p>我们称这次声音冥想为《连接世界的桥梁》。它能够激发一种意识状态，让你体验到第五视角的自由。</p>
 <p>我们建议你使用耳机或入耳式耳机，来聆听这段音频。这样，声音信息可以更直接地传送到你的大脑，而不会受到环境中其他声音的干扰。</p>
 <p>当你聆听时，你只需回忆被无限空间包围的感觉。正是这种被空间包围的感受，激活了大脑右半球的功能。单靠想象自己被浩瀚空间包围，并不能激活这种潜能。你必须通过身体的感知或直觉，去直接体验自己被广阔空间包围。</p>
@@ -408,7 +577,7 @@
 <p>当冥想结束时，我们建议你花几分钟感受一下你内在正在发生的变化。</p>
 <p>当你开始掌握运用这段声音冥想，进入第五视角的能力后，你就可以毕业，并在日常生活的情境中，进一步探索使用这一能力。</p>
 <p>将你肉身生活的约束，与更高维度现实的自由结合，会产生一个极其有趣的悖论，而通过进入这个悖论，你将大幅加速自己的维度进化。</p>
-<h4>・汤姆·肯永的聆听建议</h4>
+<h4 id="article-section-13" class="article-heading">・汤姆·肯永的聆听建议</h4>
 <p>这段声音冥想《连接世界的桥梁》大约12分钟，但你不必一定要完整听完全部时长。有些人会发现自己只能“承受”几分钟，如果你也是这样的人，我建议按照自己的舒适程度，慢慢延长冥想时间即可。</p>
 <p>相反地，也有人会希望这段声音冥想能更长。如果你是这样的人，我的建议是根据自己的需求，反复播放这段音频——但要注意适度。</p>
 <p>如果你因为沉迷于冥想，而逃避去做生活中必须做的事，比如洗衣服和洗碗，那我觉得你可能已经做得过头了，需要稍微调整一下。<strong>关键在于平衡</strong>。</p>
@@ -894,7 +1063,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -983,6 +1152,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

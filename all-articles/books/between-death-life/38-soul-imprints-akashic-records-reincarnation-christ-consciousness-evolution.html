@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -245,7 +414,15 @@
 <p>你可以想像有那么一台万能电脑，它拥有每个人的每一次人世记录。当某个灵魂要转世时，它所设计的人生和它对这次生命的期望，都会被输入这个电脑，接着适当的印记被挑选出来并铭刻在这个灵魂里。</p>
 <p>以帮助它在即将到来的地球之旅中，更轻松地完成它的功课。</p>
 <p></p>
-<h4>印记来源于阿卡西记录</h4>
+<h2 id="article-auto-toc" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-1" class="article-toc-link" data-target-id="article-section-1" data-toc-level="4" aria-label="跳转到：印记来源于阿卡西记录">印记来源于阿卡西记录</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="4" aria-label="跳转到：印记的作用">印记的作用</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="4" aria-label="跳转到：能否分辨是印记？还是真实的转世经历？">能否分辨是印记？还是真实的转世经历？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：多人同时携带同一个人生印记">多人同时携带同一个人生印记</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：转世前如何挑选适合的印记">转世前如何挑选适合的印记</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：基督意识的印记">基督意识的印记</a></p>
+<hr>
+<h4 id="article-section-1" class="article-heading">印记来源于阿卡西记录</h4>
 <p>印记这个极端的概念是在我无意中问了一位男性个案一个问题时，意外提到的。</p>
 <p>朵：你在地球经历过许多转世吗？</p>
 <p>S：这是第一次，是<strong>我第一次真正投生在地球。我有许多来自他人经验的印记</strong>，也曾帮助过很多人。然而，这是我第一次真正在地球的肉体转世。</p>
@@ -257,14 +434,14 @@
 <p>S：<strong>他们可以从阿卡西纪录提取资料，將这些资料铭印在灵魂里，所铭印的资料就成为他们的经验。</strong></p>
 <p>曾有研究者提到<strong>阿卡西记录，它记载着宇宙无始无终，一切事件、情绪和所学到的课题</strong>。</p>
 <p></p>
-<h4>印记的作用</h4>
+<h4 id="article-section-2" class="article-heading">印记的作用</h4>
 <p>朵：印记是为了什么原因呢？</p>
 <p>S：<strong>如果一个灵魂从来没有在地球生活过，或是离上次的地球人世已经很久了，他会没有东西可以参考、使用或联想。如果灵魂来到这个星球而没有印记的协助，他会完全的迷失，无所适从。他不会瞭解这里的习俗、宗教、政治，或是如何在这个社会环境下生存和互动。这就是印记的必要，如果来到这里的灵魂的潜意识里不曾有过先前的地球人世经验，就必须要有印记。</strong></p>
 <p>**为了让这个个体适应地球生活，一定要有某些他可以获取，以便和日常生活经验对照或比较的基础。**如不然，他会生活在失衡和不对劲的情绪里，等到他累积了足够的类似经验来回顾和理解他的遭遇时，这时也已过了大半人生。</p>
 <p>**个体所经验的困惑与不和谐感会逐渐消磨掉他所学习的课程：由于他总是处于不和谐的状态，学习的一切会因此被扭曲而变得毫无成效。**这是为什么必须要有「印记」来协助他适应这个新环境，并在全然陌生的经验里感到自在的原因。对他来説，即使是小到像与人爭论这种事都会让他不知如何应对。<strong>这些单纯的灵魂不曾经历你们所知的愤怒或恐惧，这种负面情绪会令他们无力，会瘫痪他们，使他们受创。</strong></p>
 <p>许多人相信，人类的各种经验、思考模式和应对事物的方式，这一切都是被环境塑造或制约而成。一个刚出生婴儿的心智是空白无暇的，所有的资讯都是在成长过程中透过学习而来。<strong>人类依頼潜意识记忆的程度，显然比我们所知道和察觉到的还要多。潜意识就像电脑资料库，我们每天不断地从中提取资料比对。</strong></p>
 <p>据这个新的概念，<strong>第一次进入肉体，面对陌生全新文化的灵魂，必须要有某些过去的记忆以适应新环境，让他们有参考的依据</strong>。这个説法令我惊讶，也开启了我全新的思考方式。它可以改变我向来对轮回转世的看法。</p>
-<h4>能否分辨是印记？还是真实的转世经历？</h4>
+<h4 id="article-section-3" class="article-heading">能否分辨是印记？还是真实的转世经历？</h4>
 <p>朵：但是，有没有任何方法能让我分辨个案所忆起的前世，究竟是他確曾活过的人生或印记？</p>
 <p>S：不能，因为连我都无法分辨。假如我是使用印记，<strong>那个印记会真实无比，一如我亲身实际的经历。所有的情绪、记忆和感受，所有关于那一世的经验都存在于那个印记里</strong>，因此，就我的观点来看，我无从分辨，因为我全然地沉浸在那个经验里头。这就是印记的作用。<strong>它可以让未曾去过某个星球的灵魂「经历」好几千、几万年在那个星球的经验</strong>。</p>
 <p>S：你为什么想分辨呢？</p>
@@ -281,7 +458,7 @@
 <p>S：**在出生的时候，所需的印记便已铭刻在灵魂里。然而，只要有需要，你也可以随时取用额外的印记。**这就像出外旅行，打包了行李出发，但在途中你发现忘了携带某样东西。沿路会有些商店，于是，你到商店购买所需的物品。……你对叠层式地图熟悉吗？</p>
 <p>举例来説，你可能有一个没有标示出各州轮廊的美国地图。叠层图是由许多连续透明片层层置放上去，你因此可以看出地图全貌。这也可以用来比喻印记。<strong>印记以不同的方式层叠，有的可能出现在梦里，有的可能是某种实际经验。<strong>你或许经历一个创伤事件，例如家人死亡或失业，或任何能开启你内心情感的经验。不论这经验是愉快，是悲伤，或介于两者之间，关键都在于开放自己的心。而</strong>那个必要的额外印记会在个体没有丝毫察觉下，完美的「潜入」</strong>。</p>
 <p>但事实上，<strong>你也可以实际去经验许多人世，而不使用任何印记。印记只是辅助工具，不是每个人都需要。</strong></p>
-<h4>多人同时携带同一个人生印记</h4>
+<h4 id="article-section-4" class="article-heading">多人同时携带同一个人生印记</h4>
 <p>朵：有时候，不只一个人敘述同样的前世。印记是不是可以用来解释这种现象？例如，有好几个人宣称他们曾经是埃及艳后，拿破仑也有好几位。印记和这种情形有关吗？我没有遇过这种情况，但这是怀疑论者会提出的质疑之一。</p>
 <p>S：绝对是的。因为没有……（他找不到适合的用语）这些印记不专属任何人，每个人都可以使用，因此试图找出谁才是真正的那个当事人是白费力气，因为毫无意义。</p>
 <p>朵：这正是人们爭议轮回真实性的其中一个原因。他们认为，如果我们发现许多人都自称曾经是历史上的某人，那么轮回便不可能是真的了。</p>
@@ -298,7 +475,7 @@
 <p>S：没错。证明的意义何在？我们可以费尽心血去查证某人的所谓前世，但就印证的角度来看，它完全没有助益。然而，<strong>从这些回溯的记忆里，我们却可以学到许多，这不仅对回溯的个案有帮助，读到或听到的人也可以有所学习。许多知识可因此被分享，因而对每个人都有益。</strong></p>
 <p>朵：透过回溯重新经历前世，有些人確实获益良多，譬如更瞭解他们现世的人际关系。</p>
 <p>S：没错，是这样的。</p>
-<h4>转世前如何挑选适合的印记</h4>
+<h4 id="article-section-5" class="article-heading">转世前如何挑选适合的印记</h4>
 <p>朵：那么是如何决定你或別人会有怎样的印记？特定的印记挑给特定的人吗？</p>
 <p>S：**个体转世的目的决定了他所使用的印记。**如果某人要成为一位领导者，例如总统，他就有可能拥有由部落酋长到历任总统，或市长，甚或小偷头头等各种不同层次领导人的印记。<strong>如果强调的是领导力，许多与领导本质相关的印记就会派上用场，如此一来，这个存在体才会熟悉领导工作的各个面向和观念。</strong></p>
 <p>印记的好处还包括因此学到的人性、耐性、乐趣及消遣娱乐。多种面向的人生经验都包含在这些印记里。印记产生的方法超乎我的瞭解范围，但它的作用是经验多个或许是同时性，也或许是连续性的转世，以达到<strong>透过他人经验学习的效果。所有学到的课题因此都是共享的</strong>。</p>
@@ -318,7 +495,7 @@
 <p>朵：没错，因为一段时间过后，灵魂会比较喜欢利用印记这个捷径，而不去真正经验和创造。</p>
 <p>S：对某些灵魂来説，这个捷径是合适的，对其他灵魂则不然。这个载具（指个案）现在所经历的人生，正符合他的需要，因此印记这个捷径就不适合他。我们也可以説，他只要等待另一个灵魂在此时经历转世，然后他再接收这个印记就可以了，不是吗？然而，这么一来，他就学不到实际的经验了。</p>
 <p>灵魂的自由意志的意义正在于此：是这个灵魂的自由意志，而不是其他人的意志决定那个特定的印记。在转世之前，所有相关资料都被输进电脑，然后那些适合的前世经验便被提供作为印记。电脑选出适合的印记，但却是由那个个体作出最后的决定。**不论什么原因，如果灵魂觉得无法接受某个印记，他绝对有权利拒绝。**如果灵魂决定「我不想要那个印记」，那么，就会如他所愿。</p>
-<h4>基督意识的印记</h4>
+<h4 id="article-section-6" class="article-heading">基督意识的印记</h4>
 <p>朵：我刚想到一件事，耶稣的生命也可以让一般人作为印记吗？</p>
 <p>S：耶稣的人生是可以使用的，历史上也有人用过。这是提供的印记里非常特殊的生命，它拥有所有人类追求的理想特质。</p>
 <p>朵：你是说那稣的生命原则吗？</p>
@@ -805,7 +982,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -894,6 +1071,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

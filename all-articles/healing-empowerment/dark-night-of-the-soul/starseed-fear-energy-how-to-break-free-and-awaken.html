@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -234,21 +403,21 @@
   <p style="font-size:15px; color: gray;">对你获取的信息，保持善意的怀疑和独立思考是明智的。</p><hr class="g-brd-gray-light-v4 g-pt-20">
 <p>引用自《灵魂的暗夜》，2014年</p>
 <p>作者：帕梅拉·克里柏（Pamela Kribbe）</p>
-<h2>本集内容</h2>
-<p>星际种子的两难之局</p>
-<p>恐惧能量，如何操控你？</p>
-<p>解放你内在的“施权者”与“懦弱者”</p>
-<p>走出内在恐惧的4个阶段</p>
-<p>​      ・觉察与认知：内在的恐惧与内在的独裁者</p>
-<p>​      ・敢于与自己的灵感，建立全然的联结</p>
-<p>​      ・将灵感付诸行动，彰显自己的能量</p>
-<p>​      ・直面由此而生的恐惧，回到第一步</p>
-<p>走出恐惧的迷雾</p>
-<p>​      ・你是否感到气馁，丧失了勇气？</p>
-<p>​      ・分辨恐惧与灵魂的声音</p>
-<p>​      ・洞察笼罩人类集体的迷雾</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-2" class="article-toc-link" data-target-id="article-section-2" data-toc-level="2" aria-label="跳转到：星际种子的两难之局">星际种子的两难之局</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：恐惧能量，如何操控你？">恐惧能量，如何操控你？</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：解放你内在的“施权者”与“懦弱者”">解放你内在的“施权者”与“懦弱者”</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：走出内在恐惧的4个阶段">走出内在恐惧的4个阶段</a></p>
+<p class="article-toc-item">​      ・觉察与认知：内在的恐惧与内在的独裁者</p>
+<p class="article-toc-item">​      ・敢于与自己的灵感，建立全然的联结</p>
+<p class="article-toc-item">​      ・将灵感付诸行动，彰显自己的能量</p>
+<p class="article-toc-item">​      ・直面由此而生的恐惧，回到第一步</p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="2" aria-label="跳转到：走出恐惧的迷雾">走出恐惧的迷雾</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="4" aria-label="跳转到：・你是否感到气馁，丧失了勇气？">​      ・你是否感到气馁，丧失了勇气？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="4" aria-label="跳转到：・分辨恐惧与灵魂的声音">​      ・分辨恐惧与灵魂的声音</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="4" aria-label="跳转到：・洞察笼罩人类集体的迷雾">​      ・洞察笼罩人类集体的迷雾</a></p>
 <hr>
-<h2>星际种子的两难之局</h2>
+<h2 id="article-section-2" class="article-heading">星际种子的两难之局</h2>
 <p>作为星际种子，你们正在地球上开拓一条崭新的道途，一条人类意识的新路。你们借由 <strong>面对与转化旧有恐惧</strong> 来开辟新的疆域。他人也会紧随你们，踏上你们拓展的道路，沿着既成之路行走毕竟容易一些。</p>
 <p>而你们则是披荆斩棘、开辟这些新路的先锋。这是你们的工作，你们的灵魂决定来地球轮回之际，就做出了这一抉择。这一工作使你备感充实。虽然面临着艰巨的挑战，你却不会放弃这一使命。</p>
 <p>只有当你看到自己确实正在开创新路时，才会于内心深处感到安宁。</p>
@@ -257,49 +426,49 @@
 <p>许多星际种子都处于这一两难之局。</p>
 <p>你们一只脚站在新的意识实相中，渴望探索新的疆域；而另一只脚依然站在旧世界中，因 <strong>恐惧、缺乏信任以及对自己、对这个世界的苛刻评判</strong> 而踟蹰不前。这种充满恐惧的生活使你们备受折磨。</p>
 <p>我看到你们的困惑，你们中的一些人甚至丧失了勇气。</p>
-<h2>恐惧能量，如何操控你？</h2>
+<h2 id="article-section-3" class="article-heading">恐惧能量，如何操控你？</h2>
 <p>因此，我想谈一谈恐惧的能量，以及摆脱其桎梏的方法。</p>
 <p>恐惧是一种极具<strong>穿透力的能量</strong>，它能够<strong>掌控你的大脑</strong>，并由此<strong>操纵你所有的情绪</strong>。</p>
 <p>你们生长在一个看重恐惧，甚至不断滋育恐惧的次元，也因此，<strong>缺乏能够借以正确看待恐惧的参考框架</strong>。你们的意识中并不存在认清恐惧的自由空间，所以恐惧才能如此猖獗。正因为你未能看清恐惧，它才能够随心所欲地操纵你。</p>
 <p>恐惧能够自我装扮成，仿佛与其没有任何干系的想法与念头。遮掩恐惧最狡猾的方法就是，将其<strong>粉饰成崇高的理想</strong>：“积极参与，努力适应，这样你就会成为一个至善至美的人。”</p>
 <p>恐惧会用甜言蜜语督促你，用美丽的承诺诱引你，并用严肃认真的警告 <strong>击破你的自发性</strong>。公开恐吓使人心生怯意，这是一个<strong>施展权威</strong>的方法。更能施威的则是，<strong>隐瞒自己想要操控他人的意图</strong>，让对方以为自己都是为了他好。这使得对方心甘情愿地俯首帖耳，言听计从。</p>
-<h2>解放你内在的“施权者”与“懦弱者”</h2>
+<h2 id="article-section-4" class="article-heading">解放你内在的“施权者”与“懦弱者”</h2>
 <p>你们都曾屈服于恐惧。从某种程度上讲，借由强迫、阿谀或误导对你施威的那个人，正是你自己。</p>
 <p>施权者和懦弱者都同时存在于你之内，你已将他们的能量内化。这甚至成了你的第二天性，你已经无法再识别出他们。而脱离恐惧的第一步就是：认识到 <strong>你之内存在着一位独裁者</strong>，一位掌控与操纵你的催眠师。</p>
 <p><span style="color: #6B77CC;">相关文章：内在法官-如何停止精神内耗？消除恐惧&amp;自我评判的内在噪音</span></p>
 <p>作为一个星际种子，这意味着认知自身的恐惧，重新解放与唤醒自己本初的感受与理想。冲破旧有体制 <strong>并非与外在世界抗争</strong>，这是一条内在之路——<strong>直面内在那些基于权力与恐惧的能量。</strong></p>
 <p>借由<strong>从催眠性的旧有能量中解脱出来</strong>，你就会开创出一条人类意识的新道途。他人也会紧跟着踏上这条探索之路。原因很简单，你们彼此相连，是一体的。</p>
-<h2>走出内在恐惧的4个阶段</h2>
+<h2 id="article-section-5" class="article-heading">走出内在恐惧的4个阶段</h2>
 <p>走出内在恐惧，并非一蹴而就之举，这是一个循序渐进的过程。</p>
 <p>大致可分为如下四步：1.觉察与认知内在的恐惧与内在的独裁者；2.与自己的灵感，与灵魂的呢喃建立联结；3.将灵感转译为行动，彰显自己的能量；4.直面由此而生的恐惧，回到第一步，开始新的循环。</p>
-<h4>1.觉察与认知：内在的恐惧与内在的独裁者</h4>
+<h4 id="article-section-6" class="article-heading">1.觉察与认知：内在的恐惧与内在的独裁者</h4>
 <p>那些并不受控于恐惧的人和事物，往往能够带给你启迪，激励你认知自身的恐惧。</p>
 <p>比如一位真挚的演讲者、一件使你深受触动的艺术品、一次助你清空大脑的沙滩散步，或者一场颠覆你既有生活的爱情。生命会带给你各种各样的情境将你唤醒，助你超越 <strong>基于恐惧与权力的思维模式</strong>。</p>
 <p>使你备受启迪的人与事正在呼唤你，邀请你去<strong>面对与接纳，自己尚未认知的事物</strong>。通常，你所需要面对的正是惯于说“不”的内在恐惧：“这样不可以，不要飞得过高，不要做这种疯事！”</p>
 <p>请记住至关重要的是，这时你要认识到，诸如此类的声音并非基于真相，而是基于恐惧的声音。<strong>要认知这一声音背后的恐惧情绪。</strong></p>
-<h4>2.敢于与自己的灵感，建立全然的联结</h4>
+<h4 id="article-section-7" class="article-heading">2.敢于与自己的灵感，建立全然的联结</h4>
 <p>允许自己去感受真正的灵感，所带来的喜悦与兴奋。</p>
 <p>泛泛而言，所有使你备感激励、深受触动的事物都直接来自你的灵魂，是你之灵魂的呢喃。让<strong>灵魂带给你的讯息</strong> 顺畅地进入你的心田。敢于梦想，不受既有条件的羁绊，不要轻易就说：“这样不可以，那样不行。”</p>
 <p>让灵感的能量自由流动，享受这一流动。</p>
-<h4>3.将灵感付诸行动，彰显自己的能量</h4>
+<h4 id="article-section-8" class="article-heading">3.将灵感付诸行动，彰显自己的能量</h4>
 <p>第三步：付诸行动，将灵感具体彰显在地球实相之中。**从简单的事情做起。**采取具体的措施，以展示你对这一灵感的认真态度。</p>
 <p>比如，写下或告诉他人自己所获得的灵感；制作或购买一样能够代表这一灵感的象征物，借此时时提醒自己，诸如一首小诗、一张画或者一件木制品，任何能够起到这一作用的物品都可以。</p>
 <p>当你这样做的时候，你会发现，**恐惧又会浮出水面。**一旦你想要将，并不受限于恐惧的灵感，彰显于地球实相，你内在充满恐惧的那一部分，就会跳出来抗议。</p>
-<h4>4.直面由此而生的恐惧，回到第一步</h4>
+<h4 id="article-section-9" class="article-heading">4.直面由此而生的恐惧，回到第一步</h4>
 <p>觉察与认知自身的恐惧，不要评判它们。静观它们，并同时与自己内心深处，真正的愿望与感受建立联结。</p>
 <p>让此时此刻触动你，感染你，将你带回最初灵感的那些人和事物，重新带给你激励与启迪。依循自己的灵感而行，进行第二步。按照这些步骤不断地进行这一循环，你就能够将自己的灵魂能量，逐渐彰显于地球实相。</p>
 <p>尽管你最初举步谨慎，一点点地将自己的<strong>灵感具体化</strong>，但是，随着过程的进行，你的步伐将越来越大，越来越勇往直前。</p>
-<h2>走出恐惧的迷雾</h2>
+<h2 id="article-section-10" class="article-heading">走出恐惧的迷雾</h2>
 <p>随着你熟练掌握以上4个步骤，你这把迷雾中的火炬也会变得越来越明亮。</p>
 <p>你可以将恐惧的能量比作迷雾，它确实像迷雾一样将整个人类笼罩其中，几乎无人能够将自己置身迷雾之外。若干世纪以来，<strong>人类的思维、感受与运作方式</strong> 都深受这一迷雾的影响。</p>
 <p>走出迷雾并非轻而易举之事。它具有一种 <strong>侵蚀与催眠</strong> 的作用，人们<strong>互相滋育彼此的恐惧模式</strong>。冲出恐惧的迷雾，对世代沿袭的集体模式说“不”，这需要勇敢、明晰与振奋的精神。</p>
 <p>希望你们知道，走出迷雾的每一步都验证了，你们内在的力量与勇气。不要轻视自己，你们所有人都已在人生中做出了许多积极正向的选择——<strong>基于灵感，遵循灵魂愿望的选择</strong>。</p>
-<h4>・你是否感到气馁，丧失了勇气？</h4>
+<h4 id="article-section-11" class="article-heading">・你是否感到气馁，丧失了勇气？</h4>
 <p>尽管如此，我也看到你们中的许多人感到气馁，丧失了勇气，因为恐惧与犹疑依然在折磨你。</p>
 <p>此处，我想强调一下：<strong>你们越脱离基于恐惧的集体思维模式，你内在的独裁者与懦弱者的抗议就越强烈</strong>。</p>
 <p>摆脱他们的纠缠并非一日之功，他们会竭尽一切努力将你困在迷雾之中。你越走向光，他们阻止你的呼喊声就越高：“你不能这样，不可以这样，这样做是不负责的行为，你会遭报应”。</p>
 <p>诸如此类的事情并不鲜见，比如父母、老师与领导的警告与处罚，再比如前世中对异见者的残酷打压与迫害。</p>
-<h4>・分辨恐惧与灵魂的声音</h4>
+<h4 id="article-section-12" class="article-heading">・分辨恐惧与灵魂的声音</h4>
 <p>恐惧对你的脆弱之处了如指掌——它十分了解你那些 <strong>尚未疗愈的旧有创伤</strong>。</p>
 <p>身陷迷雾之中的你，可能难以意识到自己已被恐惧催眠。此时，最重要的就是觉察这一恐惧的能量。不要去留意脑中那个声音正在说些什么，要注意其声调。它的<strong>声调中充满了焦躁、强迫与威胁</strong>，这使得你的身体感到紧张，<strong>意识则完全退居于头部</strong>。要知道带有此种腔调的声音，绝非来自传播真相的信使。</p>
 <p>你之 <strong>灵魂的声音</strong> 既柔和又令人心安，它邀请你、激励你，并深深地触动你，没有一丝一毫的强迫。与灵魂沟通时，你的身体会感到轻安与放松。</p>
@@ -307,14 +476,14 @@
 <p><strong>走出幻境的最快方法</strong>是：认知恐惧的声音，认出其充满威胁与强迫的黑暗基调；温柔地对待自己；原谅自己有时呈现出的脆弱，但不被脆弱主宰；放下恐惧，接纳灵感。</p>
 <p>要知道，需要一次又一次地重复这一过程，并不意味着失败！这是本属于你的探索之旅。</p>
 <p>此外，有时你可能会感受到前所未有的恐惧，但这并不能说明你退步了；恰恰相反，这意味着你即将获得更大的突破！</p>
-<h4>・洞察笼罩人类集体的迷雾</h4>
+<h4 id="article-section-13" class="article-heading">・洞察笼罩人类集体的迷雾</h4>
 <p>最后，我想与你们一起进行一个简单的练习，以觉察内在的恐惧迷雾。</p>
 <p>这一练习的目的是：通过观察自己的生物能量场，来看一看恐惧对你的影响程度，以及你容纳光与灵感，来自灵魂的激励与启迪的 <strong>内在空间</strong> 有多大。</p>
 <p>1、观想这一迷雾将全体人类笼罩在其中。感受一下其氛围、温度与颜色。感受蕴含其中的恐惧、<strong>不信任、孤寂与敌意</strong>。静静地观察它。<strong>你洞察这一迷雾的勇气越大，对此的免疫力就越强</strong>。</p>
 <p>2、现在开始静观自己。你看到自己站在那里，看一看自己身体内部及周围的哪些地方有迷雾环绕。像猫头鹰那样观察：目光犀利，洞察一切，没有一丝含糊。</p>
 <p>3、问一问你的身体或生命能量场中这些有迷雾缭绕的部位，是什么羁绊了它们，为什么你的灵魂之光尚无法照亮它们，它们<strong>受控于何种恐惧</strong>？</p>
 <p>观想一轮红日磅礴而出，阳光洒在那些被迷雾笼罩的部位上。要以充满嬉戏性的温柔方式进行光的疗愈，不要强迫，不要急于求成，轻松自在地享受太阳的温暖与光芒。</p>
-<h2>结语</h2>
+<h2 id="article-section-14" class="article-heading">结语</h2>
 <p>当前这一时期，越来越多的人挣脱枷锁，走出充满恐惧与压抑的旧有意识场。地球上的集体意识正在发生巨大的转变。你们的每一次解脱，从恐惧或压迫中解脱，都在为这一大蜕变添砖加瓦。你们所进行的工作——在迷雾中开创了一条条崭新的通道，使绚丽的阳光能够照亮地球上更多的地方。</p>
 
 </div>
@@ -771,7 +940,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -860,6 +1029,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

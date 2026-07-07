@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -238,45 +407,45 @@
   <p style="font-size:15px; color: gray;">对你获取的信息，保持善意的怀疑和独立思考是明智的。</p><hr class="g-brd-gray-light-v4 g-pt-20">
 <p>引用自《灵性炼金术》</p>
 <p>作者：帕梅拉·克里柏 Pamela Kribbe</p>
-<h2>本集内容</h2>
-<p>出生：是灵魂主动选择的“跃入黑暗”</p>
-<p>遗忘：精神与身体的双重创伤</p>
-<p>你的使命：是穿越幻相，把光与爱带给世界</p>
-<p>灵魂的觉醒：重新检视一切、放下旧有认同</p>
-<p>洞察力之剑：区分你与父母的能量</p>
-<p>向内看：松开与父母的能量纽带</p>
-<p>真正的原谅，来自内在的自由</p>
-<p>克服受害者心态，不再抗争，也不再顺从</p>
-<h2>引言</h2>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：出生：是灵魂主动选择的“跃入黑暗”">出生：是灵魂主动选择的“跃入黑暗”</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="2" aria-label="跳转到：遗忘：精神与身体的双重创伤">遗忘：精神与身体的双重创伤</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="2" aria-label="跳转到：你的使命：是穿越幻相，把光与爱带给世界">你的使命：是穿越幻相，把光与爱带给世界</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：灵魂的觉醒：重新检视一切、放下旧有认同">灵魂的觉醒：重新检视一切、放下旧有认同</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="2" aria-label="跳转到：洞察力之剑：区分你与父母的能量">洞察力之剑：区分你与父母的能量</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="2" aria-label="跳转到：向内看：松开与父母的能量纽带">向内看：松开与父母的能量纽带</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="2" aria-label="跳转到：真正的原谅，来自内在的自由">真正的原谅，来自内在的自由</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="2" aria-label="跳转到：克服受害者心态，不再抗争，也不再顺从">克服受害者心态，不再抗争，也不再顺从</a></p>
+<h2 id="article-section-2" class="article-heading">引言</h2>
 <p>当你踏上<strong>灵魂觉醒</strong>的道路，迟早都会面临一个<strong>重要课题</strong>：你与父母、原生家庭的关系。这并非只是心理层面的疗愈，而是来自你灵魂深处的召唤。</p>
-<h2>出生：是灵魂主动选择的“跃入黑暗”</h2>
+<h2 id="article-section-3" class="article-heading">出生：是灵魂主动选择的“跃入黑暗”</h2>
 <p>从灵魂的角度来看，肉体的出生就像从光明跃入黑暗。但这并不是被动的堕落，而是灵魂自觉的选择。你的灵魂选择了这次人生，带着完成使命所需的信念与勇气。</p>
 <p>在纵身一跃的那一刻，你就陷入了暂时的无知状态。你的意识被地球物质世界的“幻相”所蒙蔽与催眠——而这些幻相，正是大多数地球人习以为常的社会规范、情感模式与集体信念。它们就像一张细密的无形之网，笼罩住你原本清明的意识。</p>
-<h2>遗忘：精神与身体的双重创伤</h2>
+<h2 id="article-section-4" class="article-heading">遗忘：精神与身体的双重创伤</h2>
 <p>刚出生的你，还清晰记得“另一边”的感受——那是无条件的爱、安宁与归属感。但你无法用言语表达，也无法传达它所代表的真理，只能在内心寻找那熟悉的“家”的感觉，犹如鱼对水的本能渴望。</p>
 <p>于是，你向父母伸出手，试图延续那股“家的能量”。但现实是，你被一张无形的网隔开了，困在父母构建的物质世界与心理实相之中。就这样，你开始经历一种精神与身体的双重创伤。</p>
-<h2>你的使命：是穿越幻相，把光与爱带给世界</h2>
+<h2 id="article-section-5" class="article-heading">你的使命：是穿越幻相，把光与爱带给世界</h2>
 <p>尽管被幻相包围，你的灵魂始终坚信：你会找到解决问题的办法和出路。而你的使命，就是要找到冲出幻相的路，把解决问题以及爱与清明的能量带给世界，让他人也能受益。</p>
 <p>于是，<strong>你生命中的某些关键时刻</strong>，会出现一些机会和可能性，以协助你完成使命。你会遇见某些人、经历某些情境，它们对你发出邀请或挑战，<strong>让你重新忆起“自己是谁”</strong>。</p>
 <p>生命会温柔地催促你前行；但如果你很顽固、充满抗拒，它也可能以更猛烈的方式，推着你去面对问题。</p>
-<h2>灵魂的觉醒：重新检视一切、放下旧有认同</h2>
+<h2 id="article-section-6" class="article-heading">灵魂的觉醒：重新检视一切、放下旧有认同</h2>
 <p>要冲破幻相，你必须先放下那些自童年起内化的观念，以及对爱的误解。这往往会<strong>导致你经历一场认同危机</strong>：好像没有什么东西是确定的，你开始质疑过去相信的一切。这其实是灵魂在叩响你的心门，它正想方设法引你回家，带你从小我走向真我，从地球幻相中醒来。</p>
 <p>发生在生活中的事件，并非阻碍，而是促使你成长和回归真我的机会。你能否彻底地认清这一点，并重获刚出生时的能量，而不再被地球幻相污染，则取决于你的勇气与决心。</p>
 <p>觉醒的过程中，你可能会发现自己的选择，常常与原生家庭或社会观念背道而驰。你的灵魂简直是个“任性”的向导，它不允许你安于现状，它总是带你偏离“主路”，迫使你走出自己的舒适区。</p>
-<h2>洞察力之剑：区分你与父母的能量</h2>
+<h2 id="article-section-7" class="article-heading">洞察力之剑：区分你与父母的能量</h2>
 <p>是的，灵魂觉醒之路并不轻松。它意味着，你要将自己从“小我意识”中解放出来，这既需要女性能量的爱与理解，也需要男性能量的洞察力。</p>
 <p>人无法仅凭“爱与慈悲”超越恐惧与现实的幻相。这些偏女性能量的特质，需要男性能量的清明与洞察力来平衡与补足。洞察力是一种“剑的能量”，帮助你设立界限，辨明方向，找到自己的路。若想知道自己是谁，就必须释放“你所不是的”。而洞察力，正是那把<strong>帮助你识别与释放</strong>的力量之剑。</p>
 <p>让我们回到与父母的关系。洞察力意味着，你需要从他们投射给你的恐惧与限制中剥离，辨别出：哪些能量是属于他们的，哪些才是真正的你。你必须学会用洞察力之剑，割断那些束缚和限制你的绳索。否则，你会始终活在父母的信念与恐惧之中。</p>
 <p>这<strong>并不是要你对父母表达愤怒和挫折感</strong>，或指责他们对你的误解。有时候，让他们知道你对事情的立场或你的感受，可能是件好事；但多数情况下，他们不会理解你想告诉他们的东西，更无法与之共鸣。</p>
-<h2>向内看：松开与父母的能量纽带</h2>
+<h2 id="article-section-8" class="article-heading">向内看：松开与父母的能量纽带</h2>
 <p>真正的释放，并非从外在关系开始，而是从内在能量纽带的松动开始。放下与父母的能量连结，意味着首先要松开你头脑与情绪中，那些属于他们的能量印记。</p>
 <p><strong>真正的转化，始终发生在你心中</strong>。当你开始觉察到，自己是如何按照父母的期待与恐惧生活时，你就冲破了父母为你编织的幻相，开启了转化之路。</p>
-<h2>真正的原谅，来自内在的自由</h2>
+<h2 id="article-section-9" class="article-heading">真正的原谅，来自内在的自由</h2>
 <p>一旦你了解这一点并让自己放手，一种对父母温柔的理解，便会在你心中悄然升起。你开始原谅——不是因为你“应该”原谅，而是因为你终于自由了。</p>
 <p>唯有切断那些无形的绳索，从此为自己的生命负责，你才能走出原生家庭的阴影，才能真正对父母释怀。</p>
 <p>同时你也将看到，<strong>父母并不等于他们的恐惧与幻相</strong>。他们，也是被困在幻相中的人；他们，也有未完成的灵魂课题。</p>
 <p>当你看清这一点，你会明白他们的无辜，心中自然生出深深的同情、宽恕与爱。</p>
-<h2>克服受害者心态，不再抗争，也不再顺从</h2>
+<h2 id="article-section-10" class="article-heading">克服受害者心态，不再抗争，也不再顺从</h2>
 <p>的确，从某种角度来看，你曾是父母的“受害者”——你曾别无选择地接受，他们投射给你的信念与恐惧，依附在他们的幻相中生存。</p>
 <p>然而，克服受害者的感觉，正是你此生能够拥有的最伟大成就之一。</p>
 <p>当你识别出那些童年时代留下的深刻印记，并开始有意识地筛选：哪些对你有益，可以继续保留；哪些已经不适合，需要放下时，你就是在从受害者转变为，真正的创造者。</p>
@@ -739,7 +908,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -828,6 +997,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

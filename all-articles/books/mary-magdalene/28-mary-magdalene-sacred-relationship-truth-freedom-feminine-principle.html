@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -239,22 +408,22 @@
 <p>《The Magdalen Manuscript》，2002年</p>
 <p>作者：朱迪·赛恩（Judi Sion）</p>
 <p>翻译：暮雨</p>
-<h2>本集内容</h2>
-<p>在关系中，选择爱与真实</p>
-<p>​    ・召唤命运的力量</p>
-<p>​    ・回归真实</p>
-<p>​    ・听见众生的故事</p>
-<p>​    ・选择爱，选择真实</p>
-<p>《抹大拉手稿》完成后的日记</p>
-<p>​     日记 1：飞行的阻碍</p>
-<p>​     日记 2：女性能量的第二次崛起</p>
-<p>​     日记 3：去他的圣诞节</p>
-<p>​     日记 4：萦绕心头</p>
-<p>​     日记 5：沉思</p>
-<p>​     日记 6：恐惧飞行障碍</p>
-<p>​     后记：事后反思</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：在关系中，选择爱与真实">在关系中，选择爱与真实</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：・召唤命运的力量">​    ・召唤命运的力量</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：・回归真实">​    ・回归真实</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="4" aria-label="跳转到：・听见众生的故事">​    ・听见众生的故事</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・选择爱，选择真实">​    ・选择爱，选择真实</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="2" aria-label="跳转到：《抹大拉手稿》完成后的日记">《抹大拉手稿》完成后的日记</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：日记 1：飞行的阻碍">​     日记 1：飞行的阻碍</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="4" aria-label="跳转到：日记 2：女性能量的第二次崛起">​     日记 2：女性能量的第二次崛起</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="4" aria-label="跳转到：日记 3：去他的圣诞节">​     日记 3：去他的圣诞节</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="4" aria-label="跳转到：日记 4：萦绕心头">​     日记 4：萦绕心头</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="4" aria-label="跳转到：日记 5：沉思">​     日记 5：沉思</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-14" class="article-toc-link" data-target-id="article-section-14" data-toc-level="4" aria-label="跳转到：日记 6：恐惧飞行障碍">​     日记 6：恐惧飞行障碍</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-15" class="article-toc-link" data-target-id="article-section-15" data-toc-level="4" aria-label="跳转到：后记：事后反思">​     后记：事后反思</a></p>
 <hr>
-<h2>引言：</h2>
+<h2 id="article-section-2" class="article-heading">引言：</h2>
 <p>再活二十年，还是二十分钟，其实并不重要。</p>
 <p>重要的是，你如何度过每一天？你如何使用自己的时间？也许，这就是你真正拥有的一切。</p>
 <p>这是一个关于“ <strong>活出真实</strong> ”的故事。</p>
@@ -262,8 +431,8 @@
 <p>我的故事里，并不存在什么残酷真相。它也没有某种炼金术般的步骤。不是只要按照固定的方式修行，你就能获得一生的真爱，或者得到开悟。</p>
 <p>后来我才明白：其实每一个瞬间、每一种处境。从最微不足道的小事，到最崇高的事情——归根到底，都只是“选择”。在未来的岁月里，人类将面临前所未有的选择—— <strong>选择自由，选择爱。</strong> 如果你有任何办法，能让自己的人生在各个层面都活得真实、完整而平衡——请一定这样去做！</p>
 <p>因为 <strong>真实，会让人自由。没有自由，就没有一切。</strong></p>
-<h2>在关系中，选择爱与真实</h2>
-<h4>・召唤命运的力量</h4>
+<h2 id="article-section-3" class="article-heading">在关系中，选择爱与真实</h2>
+<h4 id="article-section-4" class="article-heading">・召唤命运的力量</h4>
 <p>人们从四面八方赶来，我却不知道自己还能做什么。</p>
 <p>过去几个月里，我每天都很清楚自己的任务。我总是很早起床，去 Tom 和 Pam 家帮忙照顾 Pam。可她离开后，我忽然失去了方向和目标。</p>
 <p>在 Tom 开始的新生活里，已经没有我的位置。没有人再需要我。</p>
@@ -307,7 +476,7 @@
 <p style="color: #6281C8;">「暮雨・注」莫比乌斯环（Möbius Strip）常被用来讨论无限循环，内外统一，二元性的消失。比如：自我与他人的边界消失，命运的闭环，无法分清“开始”与“结束”。</p>
 <p style="color: #6281C8;">因为莫比乌斯环只有一个面、一条边。通常，一个纸环有内外两面。但如果你把纸条扭转半圈（180度），再把两端粘起来，它就会变成莫比乌斯环。你可以想象：一个小蚂蚁如果沿着环一直往前爬，最后会发现自己居然回到了原点，而且过程中“走遍了纸条的正反两面”，却从来没有跨越边界。也就是说“里面”和“外面”消失了，它们变成了同一个面。</p>
 <p>我没有把伊西斯和“她那些朋友”每晚的来访，告诉任何人。</p>
-<h4>・回归真实</h4>
+<h4 id="article-section-5" class="article-heading">・回归真实</h4>
 <p>不久我开始发现，当 Tom Kenyon 打电话来时，我变得不一样了。我会无意识地扭着电话线，对着空气发呆。有一次，我甚至莫名其妙地脸红，傻笑起来。</p>
 <p>那些总在告诉 Tom Kenyon 应该如何度过人生的朋友，开始让我感到烦躁。在他们身边时，我会变得焦躁不安。我不信任他们。我能感觉到他们各自的盘算。与此同时，我也开始担心自己是否同样怀着某种目的。于是，我拼命想守住和他的朋友关系。不惜任何代价，不带偏见，也不带任何私心。</p>
 <p>离开小岛，回到东部，是我当时唯一能想到的办法。那些翻涌不止的情绪在我体内冲撞。而我早已学会，如果可以，就在受伤之前先离开。于是，我打了许多电话，通知东部那些朋友为自己的归来做准备。</p>
@@ -366,7 +535,7 @@
 <p>我也找到了我的女神，那位属于所有时间与空间的母亲。</p>
 <p>她正在归来，在时间终结的起点回归。</p>
 <p>如果你真的听懂了这些话，那就足够了。</p>
-<h4>・听见众生的故事</h4>
+<h4 id="article-section-6" class="article-heading">・听见众生的故事</h4>
 <p>几年前，参加一次工作坊，我坐在后排负责操作摄像机。Tom 让每个人找一个搭档，在五分钟内讲述自己的故事。不能互相讨论。</p>
 <p>五分钟内自然脱口而出的内容，就是你的人生。</p>
 <p>因为我没有搭档，于是我关掉摄像机，一个人坐下来，尽可能离所有人远一点。我不想让任何人觉得，我在偷听他们那些私密的故事。事实上，我几乎想把自己藏进墙里。我感觉自己在那里格外显眼，也格外孤独。可无论我退得多远，依然能听见周围人正在讲述的故事。于是我转过身，把头埋进双手里，希望这样就能听不见。</p>
@@ -427,7 +596,7 @@
      target="_blank">《抹大拉手稿》的炼金术部分
   </a>
 </p>
-<h4>・选择爱，选择真实</h4>
+<h4 id="article-section-7" class="article-heading">・选择爱，选择真实</h4>
 <p>一天晚上。那时，一切都才刚刚开始，我们小心翼翼地呵护着这段新的爱情。与此同时，周围依然充满了其他人的干预、意图与牵扯。</p>
 <p>那天，Tom 和我站在另一座岛屿的海堤边。那是混乱的一天，某些东西正在追逐他。那些诱惑的声音越来越调高了音量。太刺耳，我几乎无法听见海浪拍打岸边的声音。</p>
 <p>它们不断拉扯着他，引诱他走向更深的地方，走向一种远超他所能掌控的状态。而 Tom 被那些刺眼的“光芒”干扰得几乎失去了判断。</p>
@@ -460,14 +629,14 @@
 <p>在他大概八九岁的时候，他们一家曾经搭巴士，沿着弗吉尼亚州的 1 号公路旅行。就在路上，他曾看见一个坐在汽车里的小女孩。那辆汽车与巴士并排行驶了一段路。而他与那个女孩，就那样彼此凝视着对方，直到两辆车终于分开。</p>
 <p>他，从未忘记过她。</p>
 <p>这也许，只是一个微乎其微的巧合。但我相信这种巧合。</p>
-<h2>《抹大拉手稿》完成后的日记</h2>
+<h2 id="article-section-8" class="article-heading">《抹大拉手稿》完成后的日记</h2>
 <p>以下日记，写于我们收到手稿后的第二年，直至本书出版前。记录的是，当我尽自己所能去实践手稿中的内容时，生命里真实发生的一切。</p>
 <p>当时，在那座美丽的小岛乌迪什（Oudish） 上，就在抹大拉即将完成手稿传讯的时候，我经历了一段极其痛苦的过程。而我和 Tom 觉得，有必要把它分享出来。因为这些内容展现了—— <strong>我们对“真实”的坚持，究竟在现实生活中带来了什么改变。</strong></p>
 <p>请记住！这一切，并非总是美好。但它是真实的。它也能让人明白：幸福并不总是最先到来。首先，当男人与女人决定走到一起，在他们的爱中，一个“孩子”将会诞生。</p>
 <p>在“神圣关系”中，总会有创造发生，总会有 <strong>第三种能量被孕育出来。</strong> 而诞生，本身就是痛苦的。但痛苦之后，也会收获礼物。一个新的生命会被创造，无论那是一个孩子，还是一种新的能量。在我们的情况里，诞生于这个世界的，是我们的工作。</p>
 <p>恐怕，爱情本就如此。它是一种过程，如同生命本身一样。就像 Patrick 常说的：</p>
 <p><strong>真正重要的，是过程。</strong></p>
-<h4>日记 1：飞行的阻碍</h4>
+<h4 id="article-section-9" class="article-heading">日记 1：飞行的阻碍</h4>
 <p style="color: #6281C8;">「暮雨・注」飞行障碍（Obstacles to Flight）：是抹大拉提到的一个术语，在我们的语言体系中，类似于“心理问题”。“飞行障碍”指的是阻碍一个人的荷鲁斯本性展现的障碍，特指能够飞升至更高意识状态的方面。人性中存在一些态度、信念和情感模式，对于意识的“飞升”或“提升”是不利的，这就是古埃及炼金术常说的飞行障碍。</p>
 <p>2000年12月，乌迪什岛（Oudish）</p>
 <p>暴风雨持续了至少五天，也许七天。而属于我的风暴，持续了将近十四天，也许更久。</p>
@@ -520,7 +689,7 @@
 <p>抹大拉，从她与挚爱 Yeshua 共同分享的灵魂深处被带了出来。伊西斯和大天使梅塔特隆邀请她来到这里，讲述她的故事。而我，则铺了一块小小的地毯迎接她。</p>
 <p>我这一生其实只做过两个承诺。一个是对 Tom 说实话。另一个，是审视自己所有尚未完成的事情。</p>
 <p>我已经这样做了将近二十年。只是我从未想到，自己竟然还有这么多事情没有完成。</p>
-<h4>日记 2：女性能量的第二次崛起</h4>
+<h4 id="article-section-10" class="article-heading">日记 2：女性能量的第二次崛起</h4>
 <p>2000年12月，乌迪什（Oudish）</p>
 <p>这些材料，是在 2000 年感恩节到圣诞节之间的一段时间里出现的。</p>
 <p>抹大拉的玛丽亚第一次来到这里，是在瑞士苏黎世老城区的一家小旅馆里。后来，我们穿过地中海，经过西西里岛那片三角形的海域，最后来到 乌迪什（Oudish），也就是马耳他较小的那座岛。她继续在那里讲述她的故事。</p>
@@ -531,7 +700,7 @@
 <p>于是，他完成了。然后，他离开了？</p>
 <p>我那道小小的裂缝，从震中裂开。到了圣诞节时，断层线已经露出地面，任何靠近的人都能看见。</p>
 <p>真是见鬼。</p>
-<h4>日记 3：去他的圣诞节</h4>
+<h4 id="article-section-11" class="article-heading">日记 3：去他的圣诞节</h4>
 <p>2000 年 12 月，乌迪什（Oudish）</p>
 <p>十二月继续在乌迪什（Oudish）树木稀疏的田野上呼啸。寒意不只在空气里。</p>
 <p>我仍然被那封无辜的电子邮件困扰着。那只是一封写给 Tom 的普通邮件。简单，无害，像老朋友之间的往来。只是，这位“老朋友”对 Tom 的兴趣，显然并不止于友谊。这个人曾经伤害过我，也几乎毁掉我们的关系。我无法理解，为什么这样一个人还会继续出现在我们的生活里。最初那次经历带来的痛苦，实在太强烈。</p>
@@ -576,7 +745,7 @@
 <p>没有任何人像 Tom 那样，让我的心跳停下来。他会学会看见人心，而我也会学会看见其他维度。但如果我永远无法看见其他维度，也没关系。因为我有 Tom 告诉我那些世界里的真相。如果他完全没有注意到身边其他人的动机，也没关系。因为他有我。</p>
 <p>只要他欣赏我的能力，并愿意听我说话；只要我也欣赏他的能力，并愿意听他说话，我们之间就能彼此相通。</p>
 <p>抹大拉是对的。至少欣赏是必需的。</p>
-<h4>日记 4：萦绕心头</h4>
+<h4 id="article-section-12" class="article-heading">日记 4：萦绕心头</h4>
 <p>2001 年 7 月，希腊基克拉泽斯群岛（Cyclades），帕罗斯岛（Paros）</p>
 <p>当我考虑是否要把这些资料公之于众时，许多事情一直萦绕在我心头。</p>
 <p>就在这个夜晚，把这些信息付印出版的责任感沉重得让我无法入睡。于是，我发现自己坐在厨房的小桌旁，手里拿着掌上电脑，勇敢地对抗基克拉泽斯群岛的蚊子。它们很小，却带着一种令人不安的掠食性。它们安静，却危险。它们确实属于生命中那些“小小的东西”之一 ——体积不大，却足以产生影响。</p>
@@ -603,7 +772,7 @@
 <p>这是一个关于抹大拉的玛丽亚所说的“神圣关系”的故事。也是一个关于在神圣婚姻的安全、信任与虔诚之中，人内在可能发生何种炼金转化的故事。</p>
 <p>在选择这些词语时，我们已经尽可能谨慎，也认真考虑过它们在未来可能产生的意义。我们尽量避免使用某些形而上学圈子里常见的词语或俚语，希望这些内容不会再次被误解。至少，在我们有生之年不要如此。</p>
 <p>除此之外，我们所能做的，也只有追求真理与启蒙。</p>
-<h4>日记 5：沉思</h4>
+<h4 id="article-section-13" class="article-heading">日记 5：沉思</h4>
 <p>2001 年 12 月，奥卡斯岛（Orcas Island）</p>
 <p>距离抹大拉把这份手稿交给我们，已经过去一年。她只用了两个月，便完成了这一切。</p>
 <p>在那两个月里，她讲述了自己愿意分享的个人故事，也讲述了她作为伊西斯神庙入门者所愿意分享的经历。在这本篇幅不长、字句精妙的手稿中，她也教导了那些可以传授、可被分享的内容，给那些已经准备好聆听的人。她向我们揭示了伊西斯神庙中一些最深层的秘密，也揭示了那些曾经从我们身上被窃取的狂喜秘诀。</p>
@@ -619,7 +788,7 @@
 <p>所以，抹大拉的玛利亚那句话，现在看来格外讽刺：</p>
 <p>“……他们惊讶于，大师竟然会帮助这样一个人<span style="color: #6281C8;">（指抹大拉）</span>。”</p>
 <p>既然这就是我对基督教的真实体验，那么这些材料最后竟然落到了“像我这样的人”手里，又是多么讽刺？</p>
-<h4>日记 6：恐惧飞行障碍</h4>
+<h4 id="article-section-14" class="article-heading">日记 6：恐惧飞行障碍</h4>
 <p>2001 年 12 月 31 日，奥卡斯岛</p>
 <p>就在这本书进入最后编辑阶段时，Tom 和我又一次遭遇了“飞行障碍”。由于这次经历带来了非常重大的转变，也最终让我们获得了许多理解，所以我们觉得有责任把它分享出来。</p>
 <p>首先你需要意识到，当你进入神圣关系时，美丽的玫瑰之下也可能隐藏着刺。你也需要知道，我们每天都在为此努力，我们生活在炼金术的熔炉里。我越是理解并亲身经历抹大拉所说的真正的神圣关系，我越是去实践它，就越对这个过程心生敬畏，也越尊重那些有勇气深入这个过程深渊的人。</p>
@@ -680,7 +849,7 @@
 <p>永远处于真相中。过程必定会变得炽热，但不要放弃。买一个离合器踏板盖，放在你的祭坛上。牵着彼此的手，走过燃烧的炭火。</p>
 <p>我向你保证——你会以为自己快要死了。</p>
 <p>但你不会。</p>
-<h4>后记：事后反思</h4>
+<h4 id="article-section-15" class="article-heading">后记：事后反思</h4>
 <p>这是一个关于抹大拉的玛利亚所说的“神圣关系”的故事，也是一个关于在神圣婚姻的安全与奉献中，一个人内在可能发生的炼金转化。</p>
 <p>我们并非生活在一个光明的时代。正如抹大拉所说：“我们正处于时间终结的开始。”时间紧迫，秘密正在被揭示。希望更多人能够觉醒，做出必要的改变，从而带来真正的转变。</p>
 <p>这让我想起一个故事。</p>
@@ -1153,7 +1322,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -1242,6 +1411,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>

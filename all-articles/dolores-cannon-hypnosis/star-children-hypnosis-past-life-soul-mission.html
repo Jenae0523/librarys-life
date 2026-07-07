@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260705-0004">
+<meta name="version" content="20260707-1905">
 
 
 <meta charset="utf-8">
@@ -72,6 +72,10 @@
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
     }
+
+html {
+  scroll-padding-top: var(--article-scroll-offset, 96px);
+}
 	
 .article-body p {
   margin-bottom: 2em;
@@ -103,6 +107,30 @@
   margin-bottom: 1em;
 }
 
+.article-body h2[id],
+.article-body h3[id],
+.article-body h4[id] {
+  scroll-margin-top: var(--article-scroll-offset, 96px);
+}
+
+.article-body .article-toc-item {
+  margin-bottom: 0.85em;
+  line-height: 1.8;
+}
+
+.article-body .article-toc-link {
+  color: #6B77CC;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.35);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-body .article-toc-link:hover,
+.article-body .article-toc-link.is-active {
+  color: #3647B7;
+  border-color: rgba(54, 71, 183, 0.7);
+}
+
 .article-body .tags {
   margin-top: 3.5em;
   padding-top: 1.2em;
@@ -122,6 +150,147 @@
 /* 如果 p 后面还是 p（比如加粗段落标题 + 正文），缩小间距 */
 .article-body p + p {
   margin-top: -1em; /* 或者 0em，看你实际视觉效果 */
+}
+
+.article-body .article-toc-item,
+.article-body p.article-toc-item + p.article-toc-item {
+  margin-top: 0;
+  margin-bottom: 1.05em;
+  line-height: 1.95;
+}
+
+.article-body .article-toc-item--level-3,
+.article-body .article-toc-item--level-4 {
+  padding-left: 2em;
+}
+
+.article-body .article-toc-item + hr {
+  margin-top: 100px;
+}
+
+.floating-episode-toc {
+  --toc-toggle-width: 44px;
+  --toc-panel-width: 300px;
+  position: fixed;
+  top: auto;
+  bottom: 96px;
+  right: var(--floating-toc-right, 0px);
+  z-index: 1001;
+  display: none;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  width: var(--toc-toggle-width);
+  max-width: calc(100vw - 18px);
+  overflow: hidden;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+}
+
+.floating-episode-toc.is-visible {
+  display: flex;
+}
+
+.floating-episode-toc.is-open {
+  align-items: stretch;
+  width: calc(var(--toc-toggle-width) + var(--toc-panel-width));
+}
+
+.floating-episode-toc__toggle {
+  flex: 0 0 var(--toc-toggle-width);
+  width: var(--toc-toggle-width);
+  min-height: 118px;
+  padding: 10px 7px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: #ffffff;
+  color: #4f5fc5;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
+  background: rgba(255, 255, 255, 0.36);
+  border-color: rgba(216, 220, 244, 0.5);
+}
+
+.floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
+  display: none;
+}
+
+.floating-episode-toc__toggle-label {
+  display: block;
+  line-height: 1.38;
+}
+
+.floating-episode-toc__toggle:focus {
+  outline: 2px solid rgba(107, 119, 204, 0.45);
+  outline-offset: 2px;
+}
+
+.floating-episode-toc__panel {
+  flex: 0 0 var(--toc-panel-width);
+  width: var(--toc-panel-width);
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 18px 18px 16px;
+  border: 1px solid #d8dcf4;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.floating-episode-toc__title {
+  margin: 0 0 12px;
+  color: #3f3f46;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.floating-episode-toc__link {
+  display: block;
+  padding: 8px 0;
+  color: #575f75;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  border-bottom: 1px solid #eef0f7;
+}
+
+.floating-episode-toc__link[data-toc-level="3"],
+.floating-episode-toc__link[data-toc-level="4"] {
+  padding-left: 2em;
+}
+
+.floating-episode-toc__link:hover,
+.floating-episode-toc__link.is-active {
+  color: #3647B7;
+}
+
+@media (max-width: 767px) {
+  .floating-episode-toc {
+    --toc-toggle-width: 36px;
+    --toc-panel-width: calc(100vw - 48px);
+    top: auto;
+    bottom: 48px;
+  }
+
+  .floating-episode-toc__toggle {
+    min-height: 0;
+    padding: 9px 5px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .floating-episode-toc__panel {
+    max-height: 62vh;
+  }
+
+  .floating-episode-toc__toggle-label {
+    line-height: 1.22;
+  }
 }
 
 </style>
@@ -239,27 +408,27 @@
 <p>《The Convoluted Universe Book 1》，2001年</p>
 <p>作者：朵洛莉丝·侃南（Dolores Cannon）</p>
 <p>翻译/解读：暮雨</p>
-<h2>本集内容</h2>
-<p>来自星星的孩子</p>
-<p>・为什么会出现，全球范围的“星孩现象”？</p>
-<p>・星际种子来地球的各种奇怪案例</p>
-<p>Dan的前世回溯，一个迷茫的星际流浪者</p>
-<p>・回家 │ 没有身体的纯能量存在</p>
-<p>・改变 │ 无法缓解的分离之痛</p>
-<p>・转世 │ 住在金字塔里的祭司</p>
-<p>・冲突 │ 被当成“神”的大祭司</p>
-<p>・幻象 │ 物质、能量、时间与意识</p>
-<p>・成长 │ 为什么离开“家”？</p>
-<p>・课题与教训 │ 我本可以做得更好</p>
+<h2 id="article-section-1" class="article-heading article-toc-heading">本集内容</h2>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-3" class="article-toc-link" data-target-id="article-section-3" data-toc-level="2" aria-label="跳转到：来自星星的孩子">来自星星的孩子</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-4" class="article-toc-link" data-target-id="article-section-4" data-toc-level="4" aria-label="跳转到：・为什么会出现，全球范围的“星孩现象”？">・为什么会出现，全球范围的“星孩现象”？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-5" class="article-toc-link" data-target-id="article-section-5" data-toc-level="4" aria-label="跳转到：・星际种子来地球的各种奇怪案例">・星际种子来地球的各种奇怪案例</a></p>
+<p class="article-toc-item article-toc-item--level-2"><a href="#article-section-6" class="article-toc-link" data-target-id="article-section-6" data-toc-level="2" aria-label="跳转到：Dan的前世回溯，一个迷茫的星际流浪者">Dan的前世回溯，一个迷茫的星际流浪者</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-7" class="article-toc-link" data-target-id="article-section-7" data-toc-level="4" aria-label="跳转到：・回家 │ 没有身体的纯能量存在">・回家 │ 没有身体的纯能量存在</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-8" class="article-toc-link" data-target-id="article-section-8" data-toc-level="4" aria-label="跳转到：・改变 │ 无法缓解的分离之痛">・改变 │ 无法缓解的分离之痛</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-9" class="article-toc-link" data-target-id="article-section-9" data-toc-level="4" aria-label="跳转到：・转世 │ 住在金字塔里的祭司">・转世 │ 住在金字塔里的祭司</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-10" class="article-toc-link" data-target-id="article-section-10" data-toc-level="4" aria-label="跳转到：・冲突 │ 被当成“神”的大祭司">・冲突 │ 被当成“神”的大祭司</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-11" class="article-toc-link" data-target-id="article-section-11" data-toc-level="4" aria-label="跳转到：・幻象 │ 物质、能量、时间与意识">・幻象 │ 物质、能量、时间与意识</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-12" class="article-toc-link" data-target-id="article-section-12" data-toc-level="4" aria-label="跳转到：・成长 │ 为什么离开“家”？">・成长 │ 为什么离开“家”？</a></p>
+<p class="article-toc-item article-toc-item--level-4"><a href="#article-section-13" class="article-toc-link" data-target-id="article-section-13" data-toc-level="4" aria-label="跳转到：・课题与教训 │ 我本可以做得更好">・课题与教训 │ 我本可以做得更好</a></p>
 <hr>
-<h2>引言：</h2>
+<h2 id="article-section-2" class="article-heading">引言：</h2>
 <p>一个迷茫的星际流浪者，始终无法对新的转世产生归属感。这种抗拒前行的心理阻力，造成的停滞，使他感到深层的孤独与无意义感。</p>
 <p>在与朵洛莉丝·侃南的一次催眠回溯中，他终于看清了自己人生的课题与教训：</p>
 <p>去做点什么。把你所创造的任何处境，都尽量发挥到最大价值。人们会成为他们注定要成为的样子。</p>
 <p>而你要成为什么样的人，是你自己的责任。所以，你可以为自己的人生负责，也可以什么都不做。而什么都不做，只会让你一无所获。</p>
 <p>更糟糕的是什么？是在你明明知道自己有能力的时候，却什么也没有完成。</p>
 <p>每个人都必须去做自己该做的事。你可以被这些事击倒，从此什么都不做；但就算你清楚地看到自己身上的每一个缺点，你依然还有你的那一份贡献可以付出，还有你能给予他人的帮助。如果你连尝试都不去尝试，什么都不做，那反而是更糟的选择。</p>
-<h2>来自星星的孩子</h2>
+<h2 id="article-section-3" class="article-heading">来自星星的孩子</h2>
 <p>在进行这种催眠疗愈时，有些受试者并没有如预期那样，进入某一段前世记忆，而是意外地“去了另一个地方”。那绝对不是地球，但他们每个人在情感上却毫不犹豫地，把那里视为自己的“家”。</p>
 <p>奇怪的是，那往往是一个看起来相当恶劣的环境，以至于“家”这个说法本身，显得难以理解。然而，当受试者再次看到那个地方时，所涌现出的强烈情感却是不容否认的。</p>
 <p>这种情况最早出现在《<span style="color: #6B77CC;">📄<a href="https://librarys.life/audiobooks/keepers-of-the-garden/" style="color:#6B77CC; text-decoration: underline;" 
@@ -269,7 +438,7 @@
 <p><span style="border-bottom: 2px dashed #6281C8;">对星际种子而言，那颗星球才是真正的“家”；而地球，反倒是他们不想待的“异乡”。这些人通常性格温和，无法理解人们为何如此冷漠地对待彼此，也无法理解这个世界为何充满暴力。他们内心深处始终怀着一种想要回家的渴望，尽管他们并不真正知道“家”究竟在哪里。</span></p>
 <p>在大多数案例中，当他们进入深度催眠状态时，会说自己正在经历第一次地球人生，或仅仅经历过少数几次。</p>
 <p>每一位“星孩”都表示，他们是自愿来到地球体验生命的，希望自己那 <strong>从未经历过暴力的生命力，能够对地球产生积极的影响</strong> 。他们被形容为一种“ <strong>新鲜血液的注入者</strong> ”。他们确实是自愿而来，却并未在显意识层面记得这一点，因此在地球上的生活让他们感到极度不快乐。许多人甚至试图通过自杀，来逃离他们所认为的、无法忍受的处境。</p>
-<h4>・为什么会出现，全球范围的“星孩现象”？</h4>
+<h4 id="article-section-4" class="article-heading">・为什么会出现，全球范围的“星孩现象”？</h4>
 <p>自从我的书被翻译成多种语言，我开始收到来自世界各地的来信。写信的人都有着相同的情绪体验。他们原以为，世界上只有自己一个人有这种感受；因为这些感受在他们的家人和朋友看来毫无道理，他们也因此深深地感到孤独。</p>
 <p>而当他们读到我的书，发现原来并不只有自己这样——事实上，还有许多人正在经历同样的内在动荡——那种震撼与释然，对他们来说真是一种奇妙的启示。</p>
 <p>自从我在20世纪80年代末与菲尔合作以来，我在世界各地发现了许多这样的“星孩”。其中一些人，正经历着与菲尔极为相似的情绪状态。也有一些人似乎已经适应了这里，并且相当满意地球生活。后者通常更年轻，也许可以说是，那些“更高维度的力量”正在越来越擅长帮助他们适应地球的能量。</p>
@@ -281,7 +450,7 @@
      target="_blank">觉醒（下）新人类：回到地球的引导者
   </a>
 </p>
-<h4>・星际种子来地球的各种奇怪案例</h4>
+<h4 id="article-section-5" class="article-heading">・星际种子来地球的各种奇怪案例</h4>
 <p>在一个案例中，有一名男子表示他已经偿还完了自己所有的业力，本不需要再来到这里；但他是 <strong>源头</strong> （Source）所派遣的集体成员之一。</p>
 <p>还有一些人，则扮演着“ <strong>信息收集者</strong> ”的角色，只是这一点并未被他们的显意识层面所察觉。一个典型的案例，是我在2000年于伦敦遇到的一位女性个案。她是一名性工作者，她讲述了自己极其痛苦的童年与人生经历。她明确表示，自己并不想待在这个物质世界，甚至曾试图通过自杀来逃离。然而，在催眠状态下，她却说自己被派来，是为了收集有关人类行为的信息。若想了解与观察人性的这一面，还有什么身份能比性工作者更好的方式呢？</p>
 <p>另一个女性个案，则是以 <strong>一种更隐秘的方式试图结束生命</strong> 。她的身体正在慢慢“自我毁灭”——几乎所有器官都出现了严重问题。在催眠中她描述说，这里并不是她的家。随后，她回到了自己所认知的“家”：一个美丽的水世界，她可以在其中无忧无虑、自在地畅游。当她被送到这个世界，被迫居住在一个沉重而稠密的肉身中时，她对这一切产生了强烈的抗拒，并试图摧毁自己的身体，徒劳地想借此回到她原本的“家”。</p>
@@ -296,10 +465,10 @@
 <p>当他与大型飞船对接时，情绪已经完全崩溃，失声痛哭。他一时甚至忘记了该如何进入飞船——很可能正是情绪失控所致。直到他慢慢放松下来，才发现自己已经身在其中。原来，他本应该通过“意念”进入飞船，而不是依靠任何物理方式。</p>
 <p>精疲力竭、情绪耗尽的他回到自己的舱室，躺在一个类似窗边座椅的地方。他只想睡一觉，逃离眼前景象所带来的巨大焦虑。故事到这里无法继续下去，因为他陷入了昏睡与遗忘。随后，我们转而探讨与来访者现实问题相关的其他主题。</p>
 <p><span style="border-bottom: 2px dashed #6281C8;">这些案例显示，在宇宙极其漫长的历史中，母星的毁灭已发生过不只一次，而这种经历所带来的震撼，可能会在今生以极端悲伤、强烈的不归属感，或渴望“回家却不知道家在哪里”的形式延续下来。适应一个全新的世界，往往是极其艰难的过程，而这一切，通常被深深埋藏在潜意识的记录中。</span></p>
-<h2>Dan的前世回溯，一个迷茫的星际流浪者</h2>
+<h2 id="article-section-6" class="article-heading">Dan的前世回溯，一个迷茫的星际流浪者</h2>
 <p>丹（Dan）是一名来自澳大利亚的年轻男子，曾在伦敦一家大型公司获得了一份非常理想的平面设计师工作。起初一切进展顺利，但渐渐地，紧张的工作排期、大城市的生活压力等因素开始显现出负面影响，甚至危及了他的健康。他并没有选择回到澳大利亚，而是决定辞职、踏上了前往南美的旅途。他背着行囊，几乎走遍了整个大陆。</p>
 <p>这次催眠中，我们有好几个重要议题需要探索。按照我一贯的流程，来访者通常会从一朵云中下降，并发现自己进入了 <strong>某一段合适的前世，我们再由此展开探索，找出他们现实问题的根源</strong> 。但这一次，丹并没有进入任何一段地球人生，而是去了别的地方。</p>
-<h4>・回家 │ 没有身体的纯能量存在</h4>
+<h4 id="article-section-7" class="article-heading">・回家 │ 没有身体的纯能量存在</h4>
 <p>Dan：我离开了那朵云，但我没有下去。我看到一道巨大而明亮的光，上面有一个轮廓。光束穿过那个轮廓时，光线变得模糊，所以我看不清任何细节。我感觉自己是在太空中。</p>
 <p>朵（朵洛莉丝·侃南）：如果你愿意的话，你也可以在太空中漂浮前行。</p>
 <p>Dan：我好像在太空中想象出了一道门。所以，也许我应该朝那边过去。但我感觉自己像是在逆着一股能量流游动，才能接近那道门。就像是我的意识不允许我过去，或者说，我不知道该怎么过去。</p>
@@ -331,7 +500,7 @@
 <p>Dan：到我想去的任何地方。这就好像门廊前的灯。那些柱子就像我们给送披萨的人留的灯，意思是：你找对地方了，就是这里。</p>
 <p>朵：这些柱子用来标识一个地点。但它们是如何帮助你去往其他地方的呢？</p>
 <p>Dan：我并不认为它们真的帮助我旅行。它们更像是一种返回方式。</p>
-<h4>・改变 │ 无法缓解的分离之痛</h4>
+<h4 id="article-section-8" class="article-heading">・改变 │ 无法缓解的分离之痛</h4>
 <p>Dan：现在，我开始看到美丽的光。只是光。然后出现了另一个画面，所以我已经离开了那里。</p>
 <p>从一个旁观者的角度，我仿佛看到某种变化正在发生，但我觉得那可能只是我对其运作方式的一种“视觉化幻想”。<span style="border-bottom: 2px dashed #6281C8;">它有点像水母，因为整体呈现出一种球状。上面有一些细小、尖状的筋络或触须，让我与那个地方保持联系。</span> 并不是被绑住的那种联系。更像是潜水员下到深海洞穴或水下裂缝时，会留下一根绳索，用来指引他们回到水面——这就是它的作用。</p>
 <p>朵：听起来，那是一种示意性的画面。你没有身体，但你与那个地方是相连的。不过显然，在某个时间点，你一定离开了那个你称之为“家”的地方。现在我们离开那个场景，我希望你回到，你真正离开那个地方的时刻。</p>
@@ -346,7 +515,7 @@
 <p>朵：但我们知道那个地方依然存在，而且你随时都可以用意识去造访它。</p>
 <p>Dan：是的，但那并没有帮助。（抽泣）</p>
 <p>朵：你说过，那种感觉就像是你的能量、你自己被吸走了。而这一次，你清楚地知道自己不会再回去了。让我们顺着这个感觉走下去。</p>
-<h4>・转世 │ 住在金字塔里的祭司</h4>
+<h4 id="article-section-9" class="article-heading">・转世 │ 住在金字塔里的祭司</h4>
 <p>Dan 试图抗拒继续进入下一个阶段。他真的不想再一次离开那个地方，尤其是在与它分离了这么久之后。最终，在一些引导性指令的帮助下，他放松下来，发现自己进入了一段非同寻常的人生中。</p>
 <p>他一开始以为那是埃及，因为那里有 <strong>金字塔</strong> 形状的建筑，而且它们属于一座繁忙的城市。但也有可能是一个更加古老的文明。他住在一座巨大的金字塔式建筑中，里面有许多宽敞的大房间，以及通往地下的坡道和隧道。他独自生活在这诺大的地方，感到非常孤独和无聊。他只有偶尔会从窗户或门口向外眺望，观察人们的活动。</p>
 <p>虽然他并不是被囚禁在那里，但他在这种存在状态中感到被隔离、被困住。我引导他继续往前，看他具体在做什么工作。他只为一个人担任顾问，但由于那个人并不常出现，因此他感到极度无聊。其余时间里，他几乎无事可做。他感觉自己是在 <strong>与宇宙能量合作</strong> ，并 <strong>通过手势来聚焦自己的意识与思想</strong> 。</p>
@@ -369,7 +538,7 @@
 <p>Dan：是的。整个地方都给人一种被刻意设计过的感觉。</p>
 <p>朵：你说“被刻意设计”是什么意思？</p>
 <p>Dan： <strong>金字塔并不一定是用来居住的，更像是用来聚焦能量的堡垒，一个能量的汇聚点。</strong></p>
-<h4>・冲突 │ 被当成“神”的大祭司</h4>
+<h4 id="article-section-10" class="article-heading">・冲突 │ 被当成“神”的大祭司</h4>
 <p>Dan：我现在想起来了，我们之前提到的那个体型更大的男人，他能沿着能量移动。可以这么说，他有能力直接变成能量。</p>
 <p>现在我走出自己的房间，来到一个平台，感觉就像坐电梯一样。我能看到闪烁的光，然后这个平台迅速向下移动。</p>
 <p>朵：你之前说过，你是在给那个人提供信息。</p>
@@ -382,7 +551,7 @@
 <p>我试着去理解：也许他来自一个不同的地方。不过现在想来，与其说是不同的地方，不如说是不同的空间。更准确地说，他发展出了 <strong>一种对宇宙本质的理解</strong> ……这很难用语言表达。简单来说，<span style="border-bottom: 2px dashed #6281C8;">宇宙中存在着一种普遍的能量，就像一条河。你可以顺着这条河去运作，而且方式可以是好的、也可以是糟糕的，或者干脆什么都不做。</span>而他选择了一种糟糕的方式——他跳进了这条河。</p>
 <p>这让他获得了某些能力，从外人看来，人们会忍不住惊叹：“哇，这太不可思议了，只有神才能做到吧。”但问题在于，<span style="border-bottom: 2px dashed #6281C8;">他并没有把这种因自我觉察，而产生的力量用在正途上。这力量不仅仅是“做”的问题，而是“知晓与存在”的状态。可他并没有谦卑地对待这一切，反而完全沉溺于自我中心之中。</span></p>
 <p>而我呢，心里很清楚，我同样拥有类似的力量，或者至少曾经来自某个地方。我对另一种存在状态有着模糊的记忆，也对宇宙所蕴含的力量，以及 <strong>意识的力量</strong> 有所理解。我告诉他，这样做并不好。但他却因此贬低我，甚至乐在其中。对他来说，这根本不关我的事。一种“你又能拿我怎么样”的傲慢态度。</p>
-<h4>・幻象 │ 物质、能量、时间与意识</h4>
+<h4 id="article-section-11" class="article-heading">・幻象 │ 物质、能量、时间与意识</h4>
 <p>朵：但你说过，他并不是一直待在那里，他会来去自如。</p>
 <p>Dan：是的，他不需要一直待在那里。他可以去任何他想去的地方。这其实不算什么。 <strong>当你真正理解宇宙的原理时，根本没有任何东西能阻止你在任何时间、出现在任何地方。</strong> 这关乎最基本的 <strong>物质与能量</strong> 。而在我们的理解中，这两者之间本来就没有区别。</p>
 <p style="color:#6281C8;">
@@ -427,7 +596,7 @@
 <p>Dan：但其实未必非得如此……不过，是的，我想，确实是这样。</p>
 <p>朵：我们是受限的，但在另一种状态下就不是这样了吗？</p>
 <p>Dan：在 <strong>纯粹的意识状态下，没有任何限制</strong> 。这有点像——实在找不到更合适的词——一个“游戏小组”。我知道这样说，听起来很轻佻。但事实是 <strong>我们始终是完美的，只是仍然有课程需要去学习。</strong></p>
-<h4>・成长 │ 为什么离开“家”？</h4>
+<h4 id="article-section-12" class="article-heading">・成长 │ 为什么离开“家”？</h4>
 <p>Dan：<strong>意识会衍生出成长吗？</strong></p>
 <p>我觉得“成长”这个词，最接近我此刻接收到的感觉。当然也可以说是“显化”，但我认为介于这两者之间的含义，才是最准确的。<span style="border-bottom: 2px dashed #6281C8;">意识通过一种介于成长与显化之间的方式来发展——通过游戏性、创造性和能量的流动。而为了理解它自身，意识会创造出“不是它本身的东西”。</span></p>
 <p>现在，我又被直接带回到那个星球——就是我被像纸巾一样“吸离”的地方。而现在， <strong>我必须创造更多的东西，才能继续成长。</strong> 为了变得更具创造力，我在那里存在了……天知道多久的时间……我脑中不断浮现的词只有一个：亿万年（eons）。</p>
@@ -474,7 +643,7 @@
 <p>Dan：是的。</p>
 <p>朵：而你也被要求和其他人一样崇拜他。</p>
 <p>Dan：是的。他知道我懂一些事情。我想这也是为什么我会成为他的顾问，因为我本身也有一些超自然能力。我想，<span style="border-bottom: 2px dashed #6281C8;">当你达到他那个层级时，你能像看见任何事物一样看见人的灵光（气场） 。你能读懂人心，于是也就更容易掌控他们。而 <strong>这种能力，非常容易被滥用</strong> 。你不是去尊重一个人在他自己道路上的独特性，而是利用它。</span></p>
-<h4>・课题与教训 │ 我本可以做得更好</h4>
+<h4 id="article-section-13" class="article-heading">・课题与教训 │ 我本可以做得更好</h4>
 <p>过了一段时间，那个存在不再出现了。没有任何解释。Dan就那样被留在原地，坐着、等待着，无聊，又不知道下一步该做什么。人们开始转而向他寻求指引，但他什么也给不了他们。</p>
 <p>Dan：我很困惑。他离开了，而他们却开始把我当成那个神。我对他们说：“那你们自己来运作吧。”他们不喜欢这个答案。所以我基本上选择躲起来。我待在这座巨大的金字塔里，躲避这些人，因为我知道他们进不来。除非被引导进入这些建筑群，否则他们根本不知道如何进入这里。</p>
 <p><strong>他们需要一个神</strong> ，而我不想成为一个伪君子。</p>
@@ -967,7 +1136,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8"
-  href="/all-articles/hmuyu-brief/"
+  href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
 </a>
@@ -1056,6 +1225,218 @@
 </footer>
 <!-- End Footer -->
   </main>
+
+  <script>
+    (function () {
+      function onReady(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      onReady(function () {
+        var article = document.querySelector(".article-body");
+        var header = document.getElementById("js-header");
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function updateScrollOffset() {
+          var headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 78;
+          document.documentElement.style.setProperty("--article-scroll-offset", (headerHeight + 18) + "px");
+        }
+
+        function getTarget(hash) {
+          if (!hash || hash.charAt(0) !== "#") return null;
+          return document.getElementById(hash.slice(1));
+        }
+
+        function scrollToTarget(hash, smooth) {
+          var target = getTarget(hash);
+          if (!target) return false;
+          updateScrollOffset();
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var currentScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          var targetTop = target.getBoundingClientRect().top + currentScroll - offset;
+
+          window.scrollTo({
+            top: Math.max(targetTop, 0),
+            behavior: smooth && !reduceMotion ? "smooth" : "auto"
+          });
+          return true;
+        }
+
+        function updateFloatingTocPosition(toc) {
+          if (!toc) return;
+
+          if (window.innerWidth < 992) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebar = document.querySelector(".col-lg-3.g-brd-left--lg");
+          if (!sidebar) {
+            toc.style.setProperty("--floating-toc-right", "0px");
+            return;
+          }
+
+          var sidebarRect = sidebar.getBoundingClientRect();
+          var rightOffset = Math.max(window.innerWidth - sidebarRect.left, 0);
+          toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
+        }
+
+        updateScrollOffset();
+        window.addEventListener("resize", updateScrollOffset);
+
+        if (!article) return;
+
+        var sourceLinks = Array.prototype.slice.call(article.querySelectorAll(".article-toc-link"));
+        if (!sourceLinks.length) {
+          if (window.location.hash) {
+            window.setTimeout(function () {
+              scrollToTarget(window.location.hash, false);
+            }, 350);
+          }
+          return;
+        }
+
+        var toc = document.createElement("aside");
+        toc.className = "floating-episode-toc";
+        toc.setAttribute("aria-label", "本集内容");
+
+        var toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "floating-episode-toc__toggle";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "打开本集目录");
+        toggle.innerHTML = '<span class="floating-episode-toc__toggle-label" aria-hidden="true">本<br>集<br>目<br>录</span>';
+
+        var panel = document.createElement("div");
+        panel.className = "floating-episode-toc__panel";
+
+        var title = document.createElement("p");
+        title.className = "floating-episode-toc__title";
+        title.textContent = "本集目录";
+        panel.appendChild(title);
+
+        var nav = document.createElement("nav");
+        nav.setAttribute("aria-label", "本集内容目录");
+
+        sourceLinks.forEach(function (sourceLink) {
+          var link = document.createElement("a");
+          link.className = "floating-episode-toc__link";
+          link.href = sourceLink.getAttribute("href");
+          link.dataset.targetId = sourceLink.dataset.targetId || sourceLink.hash.slice(1);
+          if (sourceLink.dataset.tocLevel) {
+            link.dataset.tocLevel = sourceLink.dataset.tocLevel;
+          }
+          link.textContent = sourceLink.textContent.trim();
+          nav.appendChild(link);
+        });
+
+        panel.appendChild(nav);
+        toc.appendChild(toggle);
+        toc.appendChild(panel);
+        document.body.appendChild(toc);
+        updateFloatingTocPosition(toc);
+        window.requestAnimationFrame(function () {
+          toc.classList.add("is-visible");
+        });
+
+        var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
+        var allTocLinks = sourceLinks.concat(floatingLinks);
+        var headings = sourceLinks
+          .map(function (link) { return document.getElementById(link.dataset.targetId); })
+          .filter(Boolean);
+
+        function setOpen(isOpen) {
+          toc.classList.toggle("is-open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+
+        function setActive(id) {
+          allTocLinks.forEach(function (link) {
+            link.classList.toggle("is-active", (link.dataset.targetId || link.hash.slice(1)) === id);
+          });
+        }
+
+        function updateActiveLink() {
+          if (!headings.length) return;
+          var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--article-scroll-offset")) || 96;
+          var activeHeading = headings[0];
+
+          headings.forEach(function (heading) {
+            if (heading.getBoundingClientRect().top <= offset + 6) {
+              activeHeading = heading;
+            }
+          });
+
+          setActive(activeHeading.id);
+        }
+
+        function handleTocClick(event) {
+          var link = event.target.closest("a[href^='#']");
+          if (!link) return;
+
+          var targetId = link.dataset.targetId || link.hash.slice(1);
+          var target = document.getElementById(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToTarget("#" + targetId, true);
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, "", "#" + targetId);
+          }
+          setActive(targetId);
+
+          if (window.innerWidth < 992) {
+            setOpen(false);
+          }
+        }
+
+        var ticking = false;
+        function requestActiveUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveLink();
+            ticking = false;
+          });
+        }
+
+        article.addEventListener("click", handleTocClick);
+        toc.addEventListener("click", handleTocClick);
+        toggle.addEventListener("click", function (event) {
+          event.stopPropagation();
+          setOpen(!toc.classList.contains("is-open"));
+        });
+        document.addEventListener("click", function (event) {
+          if (!toc.contains(event.target)) {
+            setOpen(false);
+          }
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            setOpen(false);
+          }
+        });
+        window.addEventListener("scroll", requestActiveUpdate);
+        window.addEventListener("resize", function () {
+          updateFloatingTocPosition(toc);
+          requestActiveUpdate();
+        });
+
+        if (window.location.hash) {
+          window.setTimeout(function () {
+            scrollToTarget(window.location.hash, false);
+            updateActiveLink();
+          }, 350);
+        } else {
+          updateActiveLink();
+        }
+      });
+    })();
+  </script>
 
   <!-- JS Global -->
 <script src="/css261/html/assets/vendor/jquery/jquery.min.js"></script>
