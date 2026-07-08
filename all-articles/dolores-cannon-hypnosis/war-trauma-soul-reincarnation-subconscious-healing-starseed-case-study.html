@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260707-1905">
+<meta name="version" content="20260708-1300">
 
 
 <meta charset="utf-8">
@@ -125,10 +125,14 @@ html {
   transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.article-body .article-toc-link:hover,
-.article-body .article-toc-link.is-active {
+.article-body .article-toc-link:hover {
   color: #3647B7;
   border-color: rgba(54, 71, 183, 0.7);
+}
+
+.article-body .article-toc-link.is-active {
+  color: #6B77CC;
+  border-color: rgba(107, 119, 204, 0.35);
 }
 
 .article-body .tags {
@@ -139,6 +143,39 @@ html {
 .nav-link-hover-underline:hover {
   text-decoration: underline;
 }
+
+.article-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  color: #777f93;
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+
+.article-breadcrumb__link {
+  color: #6B77CC;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(107, 119, 204, 0.32);
+}
+
+.article-breadcrumb__link:hover {
+  color: #3647B7;
+  text-decoration: none !important;
+  border-color: rgba(54, 71, 183, 0.68);
+}
+
+.article-breadcrumb__separator {
+  color: #b4bac8;
+}
+
+.article-breadcrumb__current {
+  color: #555d73;
+}
+
 .article-body img {
   display: block;        /* 让图片变成块级元素 */
   margin: 2em auto;      /* 上下留空、左右自动居中 */
@@ -202,7 +239,7 @@ html {
   border: 1px solid #d8dcf4;
   border-right: 0;
   border-radius: 8px 0 0 8px;
-  background: #ffffff;
+  background: rgba(241, 243, 248, 0.9);
   color: #4f5fc5;
   font-size: 14px;
   font-weight: 600;
@@ -212,8 +249,8 @@ html {
 }
 
 .floating-episode-toc:not(.is-open) .floating-episode-toc__toggle {
-  background: rgba(255, 255, 255, 0.36);
-  border-color: rgba(216, 220, 244, 0.5);
+  background: rgba(241, 243, 248, 0.72);
+  border-color: rgba(216, 220, 244, 0.72);
 }
 
 .floating-episode-toc:not(.is-open) .floating-episode-toc__panel {
@@ -239,7 +276,7 @@ html {
   border: 1px solid #d8dcf4;
   border-right: 0;
   border-radius: 8px 0 0 8px;
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(244, 246, 250, 0.98);
 }
 
 .floating-episode-toc__title {
@@ -392,6 +429,28 @@ html {
           <div class="g-pr-20--lg">
             <article class="g-mb-100">
               <div class="g-mb-30 g-font-size-15">
+
+                
+
+<nav class="article-breadcrumb" aria-label="文章栏目路径">
+  
+    
+
+    
+      <a class="article-breadcrumb__link" href="/articles-list/0/">所有文章</a>
+    
+  
+    
+      <span class="article-breadcrumb__separator" aria-hidden="true">/</span>
+    
+
+    
+      <span class="article-breadcrumb__current">朵洛莉丝·侃南 / 催眠报告</span>
+    
+  
+</nav>
+
+
 
                 <!-- YouTube 视频（如果有） -->
                 
@@ -800,18 +859,32 @@ html {
 			  <!-- 加一条灰线 -->
               <hr class="g-brd-gray-light-v4 g-my-50">	
               <!-- 侧边文章目录 -->					  
-			  <div class="g-mb-0 g-mt-50">
+			  
+
+  
+
+
+<style>
+  .sidebar-nav__link.is-active {
+    color: #6281C8 !important;
+    font-weight: 700;
+  }
+</style>
+
+<div class="g-mb-0 g-mt-50">
   <h4 class="g-color-primary g-font-weight-600 mb-4" style="margin-left: 0;">所有文章</h4>
   <ul class="list-unstyled g-font-size-14 mb-0" style="margin-left: 0;">
     
     
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/new"
   style="padding-left: 0px;">
   最新发布
@@ -820,12 +893,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/alien-archives/"
   style="padding-left: 0px;">
   外星人档案
@@ -835,12 +910,14 @@ html {
             <ul class="list-unstyled" style="padding-left: 15px;">
               
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/alien-archives/arcturian/"
   style="padding-left: 15px;">
   大角星人
@@ -854,12 +931,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/books/mary-magdalene/"
   style="padding-left: 0px;">
   抹大拉手稿
@@ -868,12 +947,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/courses/"
   style="padding-left: 0px;">
   课程 / 创造奇迹生命
@@ -883,12 +964,14 @@ html {
             <ul class="list-unstyled" style="padding-left: 15px;">
               
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/courses/consciousness-alchemy/"
   style="padding-left: 15px;">
   意识炼金术
@@ -897,12 +980,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/courses/creation-manifestation/"
   style="padding-left: 15px;">
   创造与显化
@@ -911,12 +996,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/courses/human-body-healing/"
   style="padding-left: 15px;">
   人体 / 能量场 / 身体疗愈
@@ -925,12 +1012,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/courses/messages-of-light-archangel-mike/"
   style="padding-left: 15px;">
   光之信息 / 大天使迈克尔
@@ -944,12 +1033,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    is-active"
   href="/all-articles/dolores-cannon-hypnosis/"
   style="padding-left: 0px;">
   朵洛莉丝·侃南 / 催眠报告
@@ -959,12 +1050,14 @@ html {
             <ul class="list-unstyled" style="padding-left: 15px;">
               
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/dolores-cannon-hypnosis/earth-custodians-ufo/"
   style="padding-left: 15px;">
   地球监护人 / UFO调查
@@ -973,12 +1066,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/dolores-cannon-hypnosis/lost-history-knowledge/"
   style="padding-left: 15px;">
   寻找遗失的历史
@@ -987,12 +1082,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/dolores-cannon-hypnosis/multiverse/"
   style="padding-left: 15px;">
   多重宇宙
@@ -1001,12 +1098,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/"
   style="padding-left: 15px;">
   新地球 / 人类扬升
@@ -1015,12 +1114,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/"
   style="padding-left: 15px;">
   灵魂 / 多世生命
@@ -1034,12 +1135,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/energy-source-field/"
   style="padding-left: 0px;">
   物理学视角 / 探索宇宙与能量
@@ -1048,12 +1151,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/healing-empowerment/"
   style="padding-left: 0px;">
   生命的疗愈 / 自我赋权
@@ -1063,12 +1168,14 @@ html {
             <ul class="list-unstyled" style="padding-left: 15px;">
               
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/healing-empowerment/dark-night-of-the-soul/"
   style="padding-left: 15px;">
   灵魂暗夜
@@ -1082,12 +1189,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/history-wisdom/"
   style="padding-left: 0px;">
   读史明智 / 兼听则明
@@ -1096,12 +1205,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/insight-awakening/"
   style="padding-left: 0px;">
   洞察力 / 智慧的觉醒
@@ -1111,12 +1222,14 @@ html {
             <ul class="list-unstyled" style="padding-left: 15px;">
               
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/insight-awakening/jiddu-krishnamurti/"
   style="padding-left: 15px;">
   克里希那穆提
@@ -1125,12 +1238,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/insight-awakening/teachings-of-don-juan/"
   style="padding-left: 15px;">
   巫师唐望的智慧教导
@@ -1144,12 +1259,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/muyu-brief/"
   style="padding-left: 0px;">
   暮雨宇宙简报
@@ -1158,12 +1275,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/muyu-notes/"
   style="padding-left: 0px;">
   暮雨札记
@@ -1172,12 +1291,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-articles/philosophy-consciousness/"
   style="padding-left: 0px;">
   哲学视角 / 探索宇宙与意识
@@ -1186,12 +1307,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/free-ebooks"
   style="padding-left: 0px;">
   免费电子书
@@ -1200,12 +1323,14 @@ html {
           
         </li>
       
+        
         <li>
 <a
-  class="d-block u-link-v5 rounded 
+  class="sidebar-nav__link d-block u-link-v5 rounded
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
-    g-py-8"
+    g-py-8
+    "
   href="/all-audiobooks/0"
   style="padding-left: 0px;">
   有声书
