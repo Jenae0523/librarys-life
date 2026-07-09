@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260709-0250">
+<meta name="version" content="20260709-1424">
 
 
 <meta charset="utf-8">
@@ -212,6 +212,81 @@
 
 /* 区块间距 */
 .ebook-section { margin-bottom:100px; }
+
+/* 知识星图索引精选入口 */
+.knowledge-index-section {
+  margin: 0 auto 110px;
+  padding: 54px 48px 46px;
+  border: 1px solid #e8ebf3;
+  border-radius: 8px;
+  background: #fbfcff;
+}
+
+.knowledge-index-section header {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.knowledge-index-section header h1 {
+  margin: 0 0 14px;
+  color: #222;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.knowledge-index-section header p {
+  margin: 0;
+  color: #667085;
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.knowledge-index-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 26px;
+}
+
+.knowledge-index-group {
+  padding: 24px 26px;
+  border: 1px solid #edf0f6;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.knowledge-index-group h2 {
+  margin: 0 0 14px;
+  color: #4f65a5;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.knowledge-index-links {
+  color: #a2a9b8;
+  font-size: 15px;
+  line-height: 2.1;
+}
+
+.knowledge-index-links a {
+  color: #5f6f9f;
+  text-decoration: none !important;
+  transition: color 0.2s;
+}
+
+.knowledge-index-links a:hover {
+  color: #2f3f88;
+}
+
+@media screen and (max-width:768px){
+  .knowledge-index-section {
+    margin-bottom: 80px;
+    padding: 38px 22px 34px;
+  }
+
+  .knowledge-index-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 
 <script>
@@ -1616,6 +1691,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </div> <!-- page-inner 结束 -->
 
+<div class="page-inner">
+  <section class="knowledge-index-section" aria-labelledby="knowledge-index-title">
+    <header>
+      <div class="u-heading-v2-3--bottom g-brd-primary">
+        <h1 id="knowledge-index-title" class="u-heading-v2__title">知识星图索引</h1>
+      </div>
+      <p>从一个主题出发，进入生命之书正在生长的知识网络。</p>
+    </header>
+
+    <div class="knowledge-index-grid">
+      <section class="knowledge-index-group">
+        <h2>灵魂探索</h2>
+        <div class="knowledge-index-links">
+          <a href="/tags/afterlife/">死后世界</a>｜<a href="/tags/reincarnation/">灵魂转世</a>｜<a href="/tags/past-lives/">前世今生</a>｜<a href="/tags/karma-law/">业力法则</a>｜<a href="/tags/spirit-guides/">指导灵</a>｜<a href="/tags/akashic-records/">阿卡西记录</a>
+        </div>
+      </section>
+
+      <section class="knowledge-index-group">
+        <h2>意识觉醒</h2>
+        <div class="knowledge-index-links">
+          <a href="/tags/spiritual-awakening/">灵性觉醒</a>｜<a href="/tags/expanded-consciousness/">意识扩展</a>｜<a href="/tags/subconscious/">潜意识</a>｜<a href="/tags/self-knowledge/">自我认知</a>｜<a href="/tags/meditation/">冥想</a>｜<a href="/tags/dreams/">梦境</a>｜<a href="/tags/frequency-vibration/">频率</a>
+        </div>
+      </section>
+
+      <section class="knowledge-index-group">
+        <h2>疗愈与身体</h2>
+        <div class="knowledge-index-links">
+          <a href="/tags/body-healing/">身体疗愈</a>｜<a href="/tags/emotional-healing/">情绪疗愈</a>｜<a href="/tags/energy-field/">能量场</a>｜<a href="/tags/chakras/">脉轮</a>｜<a href="/tags/sound-healing/">声音疗愈</a>｜<a href="/tags/original-family/">原生家庭</a>
+        </div>
+      </section>
+
+      <section class="knowledge-index-group">
+        <h2>外星文明</h2>
+        <div class="knowledge-index-links">
+          <a href="/tags/extraterrestrial-civilization/">外星文明</a>｜<a href="/tags/arcturian/">大角星人</a>｜<a href="/tags/outsiders/">异邦者</a>｜<a href="/tags/ufo/">UFO</a>｜<a href="/tags/starseeds/">星际种子</a>｜<a href="/tags/higher-dimensional-civilization/">高维文明</a>｜<a href="/tags/channeling-information/">通灵信息</a>
+        </div>
+      </section>
+
+      <section class="knowledge-index-group">
+        <h2>现实与宇宙</h2>
+        <div class="knowledge-index-links">
+          <a href="/tags/reality-creation/">现实创造</a>｜<a href="/tags/law-of-attraction/">吸引力法则</a>｜<a href="/tags/parallel-universe/">平行宇宙</a>｜<a href="/tags/quantum-reality/">量子现实</a>｜<a href="/tags/collective-consciousness/">集体意识</a>｜<a href="/tags/language-and-thought/">语言与思维</a>
+        </div>
+      </section>
+
+      <section class="knowledge-index-group">
+        <h2>人物与作品</h2>
+        <div class="knowledge-index-links">
+          <a href="/tags/dolores-cannon/">朵洛莉丝·侃南</a>｜<a href="/tags/tom-kenyon/">汤姆肯永</a>｜<a href="/tags/jiddu-krishnamurti/">克里希那穆提</a>｜<a href="/tags/between-death-life/">《生死之间》</a>｜<a href="/tags/mary-magdalene-manuscript/">《抹大拉手稿》</a>｜<a href="/tags/arcturian-excerpts/">《大角星人文摘》</a>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>
+
 <!-- 统一的容器包裹 -->
 <div class="page-inner text-center">
   <div class="row justify-content-center">
@@ -1667,6 +1797,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </a>
 </div>
 </div>
+
   </main>
 
   <!-- Footer -->
