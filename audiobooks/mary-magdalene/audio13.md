@@ -8,8 +8,21 @@ cover: https://img.librarys.life/img/books-covers/mary-magdalene.jpg
 
 description: "内在炼金术的三个基本要素 │ 意识是炼金反应容器 │ 收集能量的建议、强化意识容器：专注力与洞察力 │ 用太阳光给Ka体充电（名词解释与延伸阅读）神经生理学 │腺体与脉轮 │ 突破知觉限制：洋葱皮的世界、知觉事物的能量本质"
 
+keywords:
+  - 脉轮
+  - 量子现实
+  - 《抹大拉手稿》
+  - 抹大拉的玛利亚
+  - 巫士唐望
+  - 能量场
+  - 身体疗愈
+  - 梦境
+  - 巫士
 date: 2026-03-02
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 量子现实
+  - 脉轮
 number: 13
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene13.json"

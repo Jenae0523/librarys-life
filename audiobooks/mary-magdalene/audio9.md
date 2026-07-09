@@ -8,8 +8,22 @@ cover: https://img.librarys.life/img/books-covers/mary-magdalene.jpg
 
 description: "显化的关键秘密：“激光意识”可以影响“量子领域”，从而改变外部现实 │ 磁性吸引体 │ 未来自我 │ 巧合 │ 同步性 │ 掌握产生连贯情绪的能力 │ 谐波 │ 相干光 │ 亚原子粒子"
 
+keywords:
+  - 显化
+  - 频率
+  - 量子现实
+  - 哈索尔人
+  - 《抹大拉手稿》
+  - 抹大拉的玛利亚
+  - 脉轮
+  - 能量场
+  - 时间线
+  - 意识扩展
 date: 2026-03-02
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 量子现实
+  - 哈索尔人
 number: 9
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene9.json"

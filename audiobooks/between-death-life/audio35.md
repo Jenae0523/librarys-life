@@ -4,8 +4,22 @@ book: "《生死之间》"
 audio_url: https://audio.librarys.life/audio/books/between-death-life/audio35.MP3
 cover: https://img.librarys.life/img/books-covers/between-death-life.jpg
 description: "什么是业？宇宙的因果法则 │“业力”连结着，宇宙所有的生命能量 │ 正面的业，负面的业"
+keywords:
+  - 业力法则
+  - 因果
+  - 灵魂转世
+  - 频率
+  - 潜意识
+  - 《生死之间》
+  - 朵洛莉丝·侃南
+  - 死后世界
 date: 2026-03-03
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 《生死之间》
+  - 业力法则
+  - 灵魂转世
+  - 前世今生
 number: 35
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life35.json"
 book_slug: between-death-life

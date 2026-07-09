@@ -4,8 +4,22 @@ book: "《地球守护者》"
 audio_url: https://audio.librarys.life/audio/keepers-of-the-garden/audio22.MP3
 cover: https://img.librarys.life/img/books-covers/keepers-of-the-garden.jpg
 description: "外星人对人类身体采样、检测的背后，是一个跨星球的人类延续计划。"
+keywords:
+  - 外星文明
+  - 梦境
+  - 飞船
+  - 潜意识
+  - 能量场
+  - 灵魂转世
+  - 通灵信息
+  - 创伤
 date: 2026-01-10
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 外星文明
+  - 灵魂转世
+  - 通灵信息
+  - 潜意识
 number: 22
 subtitle_url: "/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden22.json"
 book_slug: keepers-of-the-garden

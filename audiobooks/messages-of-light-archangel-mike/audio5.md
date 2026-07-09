@@ -8,8 +8,24 @@ cover: https://img.librarys.life/img/books-covers/messages-of-light-archangel-mi
 
 description: "扩展增强光能量 │ 太阳能量中心，零点能量 │ 光体化 │ 最有效的祈祷 │ 清理疗愈│ 赋能"
 
+keywords:
+  - 脉轮
+  - 冥想
+  - 频率
+  - 大角星人
+  - 呼吸
+  - 自我认知
+  - 朵洛莉丝·侃南
+  - 大天使迈克尔
+  - 《大角星人文摘》
+  - 神圣心
 date: 2026-03-01
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 《大角星人文摘》
+  - 冥想
+  - 脉轮
+  - 大角星人
 number: 5
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike5.json"

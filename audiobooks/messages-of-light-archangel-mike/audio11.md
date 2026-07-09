@@ -8,8 +8,22 @@ cover: https://img.librarys.life/img/books-covers/messages-of-light-archangel-mi
 
 description: "身体与灵魂的关系，灵魂是什么？它由什么组成？起源于哪里？灵魂的沟通方式 │ 连接灵魂和超灵后，你会经历什么？"
 
+keywords:
+  - 频率
+  - 灵性觉醒
+  - 自我认知
+  - 潜意识
+  - 扬升
+  - 大天使迈克尔
+  - 集体意识
+  - 业力法则
+  - 灵魂转世
+  - 显化
 date: 2026-03-01
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 业力法则
+  - 灵魂转世
 number: 11
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike11.json"

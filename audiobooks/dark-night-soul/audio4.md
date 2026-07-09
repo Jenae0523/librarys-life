@@ -4,8 +4,20 @@ book: "《灵魂的暗夜》"
 audio_url: https://audio.librarys.life/audio/dark-night-soul/audio4.MP3
 cover: https://img.librarys.life/img/books-covers/dark-night-soul.jpg
 description: "与“高我”的对话：我对轮回心怀恐惧的缘由。"
+keywords:
+  - 自我认知
+  - 灵魂转世
+  - 脉轮
+  - 《灵魂的暗夜》
+  - 指导灵
+  - 愤怒
+  - 冥想
 date: 2026-02-25
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 《灵魂的暗夜》
+  - 灵魂转世
+  - 自我认知
 number: 4
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul4.json"
 book_slug: dark-night-soul

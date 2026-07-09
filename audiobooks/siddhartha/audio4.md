@@ -4,8 +4,13 @@ book: "《悉达多》"
 audio_url: https://audio.librarys.life/audio/siddhartha/audio4.mp3
 cover: https://img.librarys.life/img/books-covers/siddhartha.jpg
 description: "当他离开信仰与师父，第一次真正看见世界的色彩与生命的呼吸。"
+keywords:
+  - 灵性觉醒
+  - 呼吸
+  - 梦境
 date: 2025-10-31
-tags: ["audiobooks"]
+tags:
+  - audiobooks
 number: 4
 subtitle_url: "/audiobooks/siddhartha/texts/siddhartha4.json"
 book_slug: siddhartha

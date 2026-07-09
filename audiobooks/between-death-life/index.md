@@ -11,7 +11,31 @@ description: |
 
   《生死之间》（Between Death and Life）是朵洛莉丝·侃南在1993年出版的作品，早于《地球守护者》，更早于《监护人》。从她一路的著作内容，我们清楚看到她获得的资料从地球的人世生活到死后的灵魂世界，再扩展到外星生命和宇宙的奥秘。
 
-tags: ["audiobooks"]
+keywords:
+  - 《生死之间》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - 潜意识
+  - 死后世界
+  - 灵魂转世
+  - 前世今生
+  - 业力法则
+  - 指导灵
+  - 阿卡西记录
+  - 梦境
+  - 频率
+  - 宗教神话
+  - 耶稣
+tags:
+  - audiobooks
+  - 《生死之间》
+  - 朵洛莉丝·侃南
+  - 潜意识
+  - 灵魂转世
+  - 前世今生
+  - 业力法则
+  - 催眠回溯
+  - 死后世界
 download_url: https://readcafe.life/free-ebooks/authors/dolores-cannon/sheng-si-zhi-jian--mu-yu-jie-du-ban.pdf
 book_slug: between-death-life
 is_book_index: true

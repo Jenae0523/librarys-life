@@ -8,8 +8,21 @@ cover: https://img.librarys.life/img/books-covers/mary-magdalene.jpg
 
 description: "唐望控梦的艺术：做梦是调整能量体的艺术 │ 为什么大多数人被困在普通梦中？做梦注意力 │ 改变知觉的关键：集合点 │ 人类能量体 "
 
+keywords:
+  - 梦境
+  - 《抹大拉手稿》
+  - 巫士唐望
+  - 能量场
+  - 量子现实
+  - 抹大拉的玛利亚
+  - 巫士
+  - 现实创造
 date: 2026-03-02
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 梦境
+  - 量子现实
+  - 巫士唐望
 number: 15
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene15.json"

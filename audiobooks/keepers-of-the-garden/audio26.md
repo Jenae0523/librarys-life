@@ -4,8 +4,20 @@ book: "《地球守护者》"
 audio_url: https://audio.librarys.life/audio/keepers-of-the-garden/audio26.MP3
 cover: https://img.librarys.life/img/books-covers/keepers-of-the-garden.jpg
 description: "知识不是被封锁，当内在冲突还未被整合、意识尚未成熟时，潜意识拒绝进入。"
+keywords:
+  - 潜意识
+  - 频率
+  - 外星文明
+  - 梦境
+  - 飞船
+  - 创伤
+  - 指导灵
+  - 灵魂转世
 date: 2026-01-10
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 潜意识
+  - 灵魂转世
 number: 26
 subtitle_url: "/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden26.json"
 book_slug: keepers-of-the-garden

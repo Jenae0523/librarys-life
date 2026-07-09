@@ -8,8 +8,21 @@ cover: https://img.librarys.life/img/books-covers/messages-of-light-archangel-mi
 
 description: "新神圣蓝图的承载者与传递者：光之主耶洛因、12位大天使、龙族 │ 光之金字塔"
 
+keywords:
+  - 频率
+  - 灵性觉醒
+  - 大角星人
+  - 大天使迈克尔
+  - UFO
+  - 冥想
+  - 现实创造
+  - 能量场
+  - 星际种子
+  - 光之信息
 date: 2026-03-01
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 大角星人
 number: 4
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike4.json"

@@ -8,8 +8,22 @@ cover: https://img.librarys.life/img/books-covers/mary-magdalene.jpg
 
 description: "一个女人如何被“看不见的系统”塑造？她如何在崩塌中，重建自我与人生？"
 
+keywords:
+  - 《抹大拉手稿》
+  - 抹大拉的玛利亚
+  - 潜意识
+  - 灵魂转世
+  - 创伤
+  - 耶稣
+  - 梦境
+  - 业力法则
+  - 崩塌
+  - 童年
 date: 2026-04-22
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 灵魂转世
+  - 业力法则
 number: 33
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene33.json"

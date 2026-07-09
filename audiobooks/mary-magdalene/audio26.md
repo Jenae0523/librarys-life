@@ -8,8 +8,20 @@ cover: https://img.librarys.life/img/books-covers/mary-magdalene.jpg
 
 description: "颠覆常识：如何将性能量转化为觉悟？性能量的循环与积累过程 │ 性修行的奥秘与警告！用三摩地冥想驾驭性能量 │ 与神合一：性修行中的仪式"
 
+keywords:
+  - 冥想
+  - 频率
+  - 《抹大拉手稿》
+  - 仪式
+  - 潜意识
+  - 抹大拉的玛利亚
+  - 灵性觉醒
+  - 脉轮
+  - 宗教神话
 date: 2026-03-02
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 冥想
 number: 26
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene26.json"

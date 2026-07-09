@@ -8,8 +8,23 @@ cover: https://img.librarys.life/img/books-covers/mary-magdalene.jpg
 
 description: "四大古老炼金术的神秘关联？男性主导的炼金术下，被忽视的女性能量 │ 基督教剥夺妇女权利的历史 │ 本土文化对宗教的影响"
 
+keywords:
+  - 《抹大拉手稿》
+  - 宗教神话
+  - 抹大拉的玛利亚
+  - 耶稣
+  - 能量场
+  - 女性灵性
+  - 灵魂转世
+  - 神圣关系
+  - 冥想
+  - 荷鲁斯
 date: 2026-03-02
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 宗教神话
+  - 耶稣
+  - 灵魂转世
 number: 23
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene23.json"

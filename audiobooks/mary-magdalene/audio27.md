@@ -8,8 +8,21 @@ cover: https://img.librarys.life/img/books-covers/mary-magdalene.jpg
 
 description: "能量生物：护法神的真实来历？佛教与苯教文化的碰撞  │ 藏密修行借助能量生物的力量？佛陀早已预言量子力学？ 佛性：唤醒我们内在的极乐本性"
 
+keywords:
+  - 量子现实
+  - 《抹大拉手稿》
+  - 抹大拉的玛利亚
+  - 冥想
+  - 灵性觉醒
+  - 宗教神话
+  - 梦境
+  - 能量场
+  - 灵魂转世
+  - 现实创造
 date: 2026-03-02
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 量子现实
 number: 27
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene27.json"

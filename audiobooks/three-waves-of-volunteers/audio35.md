@@ -4,8 +4,21 @@ book: "《三波志愿者与新地球》"
 audio_url: https://audio.librarys.life/audio/three-waves-of-volunteers/audio35.MP3
 cover: https://img.librarys.life/img/books-covers/three-waves-of-volunteers.jpg
 description: "某印第安群体曾整体“消失”，真相是集体提升频率进入另一次元。人类历史中早已有过“带着身体转移次元”的实验，而当下正在重演更大规模集体升维。"
+keywords:
+  - 频率
+  - 潜意识
+  - 死后世界
+  - 新地球
+  - 提升频率
+  - 扬升
+  - 冥想
+  - 显化
+  - 前世今生
 date: 2026-04-15
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 前世今生
+  - 频率
 number: 35
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers35.json"
 book_slug: three-waves-of-volunteers

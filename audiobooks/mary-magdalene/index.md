@@ -23,7 +23,32 @@ description: |
 
   作为一个有着20多年经验的通灵者，肯永先生是多维度存有哈索尔人、大角星人、抹大拉的玛利亚的通灵管道。他能“调谐自己的大脑”到任何频率，并获取到高质量的通灵信息。此外，他对藏传佛教、埃及高级炼金术、道教和印度教等内在炼金术（内丹术）有深入的研究和丰富的实践经验，并能将其与相关的现代科学结合在一起。暮雨将陆续翻译和解读肯永先生更多的作品和研究成果。
 
-tags: ["audiobooks"]
+keywords:
+  - 《抹大拉手稿》
+  - 汤姆肯永
+  - 抹大拉的玛利亚
+  - 哈索尔人
+  - 耶稣
+  - 神圣关系
+  - 女性灵性
+  - 频率
+  - 心理学
+  - 通灵信息
+  - 大角星人
+  - 量子现实
+  - 冥想
+  - 梦境
+  - 脉轮
+  - 能量场
+tags:
+  - audiobooks
+  - 《抹大拉手稿》
+  - 抹大拉的玛利亚
+  - 汤姆肯永
+  - 哈索尔人
+  - 通灵信息
+  - 耶稣
+  - 女性灵性
 download_url: https://readcafe.life/free-ebooks/authors/tom-kenyon/20250727--mo-da-la-shou-gao---mu-yu-fan-yi-jie-du.pdf
 book_slug: mary-magdalene
 is_book_index: true

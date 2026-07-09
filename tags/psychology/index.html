@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260709-1424">
+<meta name="version" content="20260710-0227">
 
 
 <meta charset="utf-8">
@@ -121,6 +121,9 @@
     
 
 
+
+
+
 <!-- 横幅图 -->
 <section class="g-pt-90">
 <div class="container-fluid g-pt-100" style="background-image: url(/img/starnight.jpg);">
@@ -213,6 +216,16 @@
     margin-bottom: 90px;
   }
 
+  .tag-node-resource-section--articles {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .tag-node-resource-divider {
+    margin: 0 calc(50% - 50vw);
+    border-top: 1px solid #e6e6e6;
+  }
+
   .tag-node-resource-section > header {
     margin: 0 0 42px;
     text-align: center;
@@ -241,8 +254,25 @@
     letter-spacing: 0;
   }
 
-  .tag-node-resource-section--audiobooks {
-    display: none;
+  .audiobook-section {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-bottom: 0;
+    padding: 60px 20px 90px;
+    background-color: #f5f5f5;
+  }
+
+  .audiobook-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .audiobook-section header {
+    margin: 0 0 42px;
+    text-align: center;
+  }
+
+  .tag-node-resource-section--audiobook-episodes {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     padding: 58px calc(50vw - 50%) 52px;
@@ -320,6 +350,93 @@
     letter-spacing: 0;
   }
 
+  .audiobook-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .audiobook-grid > div {
+    display: flex;
+  }
+
+  .audiobook-link {
+    display: flex;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .audiobook-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+
+  .audiobook-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+  }
+
+  .cover-wrapper {
+    width: 100%;
+    aspect-ratio: 425 / 250;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .cover-img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+
+  .book-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 15px;
+    margin-bottom: 8px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .book-author {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .book-summary {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    min-height: calc(1.6em * 2);
+  }
+
   .tag-node-audio-row {
     display: flex;
     flex-direction: column;
@@ -383,6 +500,18 @@
 
   .tag-node-directory__items a:hover {
     color: #3647B7;
+  }
+
+  @media (min-width: 768px) {
+    .audiobook-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .audiobook-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -1352,6 +1481,2832 @@
           
         </section>
 
+        
+        <div class="tag-node-resource-divider"></div>
+        
+
+        
+        <section class="audiobook-section">
+          <div class="container">
+            <header>
+              <div class="tag-node-resource-heading">
+                <h2 class="tag-node-section-title">相关有声书</h2>
+              </div>
+            </header>
+            <div class="audiobook-grid">
+              
+              <div>
+                
+                <a href="/audiobooks/dark-night-soul/" class="audiobook-link">
+
+  <article class="audiobook-card">
+
+    <div class="cover-wrapper">
+      <img src="https://img.librarys.life/img/books-covers/dark-night-soul.jpg" alt="《灵魂的暗夜》" class="cover-img">
+    </div>
+
+    <h4 class="book-title">
+      《灵魂的暗夜》
+    </h4>
+
+    <p class="book-author">
+      帕梅拉·克里柏（Pamela Kribbe）
+    </p>
+
+    <p class="book-summary">
+      精神危机不仅是心理生理失衡，也可能是灵魂成长的契机
+    </p>
+
+  </article>
+
+</a>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+        
+
+        
+        <div class="tag-node-resource-divider"></div>
+        
+
+        
+        <section class="tag-node-resource-section tag-node-resource-section--audiobook-episodes">
+          <header>
+            <div class="tag-node-resource-heading">
+              <h2 class="tag-node-section-title">相关音频</h2>
+            </div>
+          </header>
+          <div class="tag-node-audio-row">
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/dark-night-soul/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/dark-night-soul.jpg" 
+          alt="第一部分第1章：痛苦与恐惧" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul2.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/dark-night-soul/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《灵魂的暗夜》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <span 
+    class="g-font-weight-700 g-font-size-16"
+    style="color:#333; letter-spacing: 0.03em;"
+  >
+    第一部分第1章：痛苦与恐惧
+  </span>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        灵魂暗夜的起点：长期透支身体与心理的极限。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/dark-night-of-the-soul-work/">
+         《灵魂的暗夜》
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/channeling-information/">
+         通灵信息
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul2.json">
+        <source src="https://audio.librarys.life/audio/dark-night-soul/audio2.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月25日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/dark-night-soul/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/dark-night-soul.jpg" 
+          alt="第2章：日记撷录1" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul3.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/dark-night-soul/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《灵魂的暗夜》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <span 
+    class="g-font-weight-700 g-font-size-16"
+    style="color:#333; letter-spacing: 0.03em;"
+  >
+    第2章：日记撷录1
+  </span>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        自我牺牲的模式，源自童年缺乏信任，与抗拒轮回的抵触心理。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/dark-night-of-the-soul-work/">
+         《灵魂的暗夜》
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/reincarnation/">
+         灵魂转世
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul3.json">
+        <source src="https://audio.librarys.life/audio/dark-night-soul/audio3.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月25日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/dark-night-soul/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/dark-night-soul.jpg" 
+          alt="第3章：抑郁症与精神病" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul5.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/dark-night-soul/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《灵魂的暗夜》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <span 
+    class="g-font-weight-700 g-font-size-16"
+    style="color:#333; letter-spacing: 0.03em;"
+  >
+    第3章：抑郁症与精神病
+  </span>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        心理崩溃过程：情绪麻木、思维奔逸、关系妄想症、进食障碍及家庭关系恶化。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/dark-night-of-the-soul-work/">
+         《灵魂的暗夜》
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/original-family/">
+         原生家庭
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul5.json">
+        <source src="https://audio.librarys.life/audio/dark-night-soul/audio5.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月25日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/dark-night-soul/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/dark-night-soul.jpg" 
+          alt="前世的回溯3：遭受性侵的女子" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul33.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/dark-night-soul/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《灵魂的暗夜》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <span 
+    class="g-font-weight-700 g-font-size-16"
+    style="color:#333; letter-spacing: 0.03em;"
+  >
+    前世的回溯3：遭受性侵的女子
+  </span>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        灵魂在面对极端压迫和长期创伤后，如何在心理层面自我调适，这种调适可能带来的负面遗产。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/dark-night-of-the-soul-work/">
+         《灵魂的暗夜》
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/past-lives/">
+         前世今生
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/dark-night-soul/texts/dark-night-soul33.json">
+        <source src="https://audio.librarys.life/audio/dark-night-soul/audio33.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月26日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/keepers-of-the-garden/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/keepers-of-the-garden.jpg" 
+          alt="第25集：与现实失联" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden25.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/keepers-of-the-garden/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《地球守护者》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <span 
+    class="g-font-weight-700 g-font-size-16"
+    style="color:#333; letter-spacing: 0.03em;"
+  >
+    第25集：与现实失联
+  </span>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        外星接触记忆被唤醒后，菲尔在心理、现实感与自我认知方面经历了强烈冲突。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/self-knowledge/">
+         自我认知
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/past-lives/">
+         前世今生
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden25.json">
+        <source src="https://audio.librarys.life/audio/keepers-of-the-garden/audio25.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年1月10日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/mary-magdalene/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/mary-magdalene.jpg" 
+          alt="第2集：通灵信息真的可信吗？" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene2.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/mary-magdalene/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《抹大拉手稿》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <span 
+    class="g-font-weight-700 g-font-size-16"
+    style="color:#333; letter-spacing: 0.03em;"
+  >
+    第2集：通灵信息真的可信吗？
+  </span>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        一位心理治疗师20年通灵研究结论。揭秘“内在炼金术”与“关系炼金术”内在转化的奥秘。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/channeling-information/">
+         通灵信息
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/hathors/">
+         哈索尔人
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene2.json">
+        <source src="https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene2.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年3月2日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/mary-magdalene/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/mary-magdalene.jpg" 
+          alt="第12集：从量子物理学视角，揭秘古埃及炼金术【1】 " 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene14.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/mary-magdalene/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《抹大拉手稿》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <span 
+    class="g-font-weight-700 g-font-size-16"
+    style="color:#333; letter-spacing: 0.03em;"
+  >
+    第12集：从量子物理学视角，揭秘古埃及炼金术【1】 
+  </span>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        贝尔定律：光的波粒二象性 │ 量子世界与牛顿世界的神奇交汇处 │ 量子世界的奇怪现象 │ 止痛的案例 │ 梦境与量子世界、掌握量子现实（名词解释）心理神经免疫学、替代现实：通过情绪过滤器影响现实
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/quantum-reality/">
+         量子现实
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/dreams/">
+         梦境
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene14.json">
+        <source src="https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene14.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年3月2日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/mary-magdalene/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/mary-magdalene.jpg" 
+          alt="第14集：揭秘古埃及炼金术【3】" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene19.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/mary-magdalene/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《抹大拉手稿》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <span 
+    class="g-font-weight-700 g-font-size-16"
+    style="color:#333; letter-spacing: 0.03em;"
+  >
+    第14集：揭秘古埃及炼金术【3】
+  </span>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        脉轮如何过滤我们的感知？Ka体的能量建设，一个有关Ka的灵异故事 │ 身份认同的转变，进入第二注意力 │ 灵性力量与心理成熟度，未必相关 │ 方尖碑：塞赫姆-生命力能量 │ 乌拉埃乌斯：激活高级大脑中枢
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/chakras/">
+         脉轮
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/channeling-information/">
+         通灵信息
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene19.json">
+        <source src="https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene19.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年3月2日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/mary-magdalene/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/mary-magdalene.jpg" 
+          alt="第25集：神圣关系炼金术" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene32.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/mary-magdalene/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《抹大拉手稿》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <span 
+    class="g-font-weight-700 g-font-size-16"
+    style="color:#333; letter-spacing: 0.03em;"
+  >
+    第25集：神圣关系炼金术
+  </span>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        关系炼金术的真谛：使自我完整 │ 打破机械化的互动模式，走进关系的熔炉，重新锻造心理合金 │ 心理合金：童年的熔炉如何塑造我们
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/karma-law/">
+         业力法则
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/original-family/">
+         原生家庭
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene32.json">
+        <source src="https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene32.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年3月2日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/mary-magdalene/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/mary-magdalene.jpg" 
+          alt="第27集：一个女人的故事【2】" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene34.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/mary-magdalene/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《抹大拉手稿》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第27集：一个女人的故事【2】
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        死亡与重生：一个女人在死亡边缘选择活下去，另一个女人在死亡中成为自己
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/spiritual-awakening/">
+         灵性觉醒
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/expanded-consciousness/">
+         意识扩展
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene34.json">
+        <source src="https://audio.librarys.life/audio/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年5月6日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="第18集：心理咨询师关于通灵的忠告与建议（完结）" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology18.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <span 
+    class="g-font-weight-700 g-font-size-16"
+    style="color:#333; letter-spacing: 0.03em;"
+  >
+    第18集：心理咨询师关于通灵的忠告与建议（完结）
+  </span>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        你的情绪音调，你的心理，情绪状态……会影响你在意识状态改变期间，收到的信息类型和质量。有一整群存有把自己伪装成高维存有，而实际上并不是。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian-excerpts/">
+         《大角星人文摘》
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/channeling-information/">
+         通灵信息
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology18.json">
+        <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio18.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="延伸阅读 │ 汤姆·肯永：引发心理-精神排毒的四要素" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <span 
+    class="g-font-weight-700 g-font-size-16"
+    style="color:#333; letter-spacing: 0.03em;"
+  >
+    延伸阅读 │ 汤姆·肯永：引发心理-精神排毒的四要素
+  </span>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        引发心理-精神排毒的四要素：改变对时间和空间的感知，个人历史和情绪毒素，经络，气脉。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian-excerpts/">
+         《大角星人文摘》
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="">
+        <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio19.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".show-subtitles").forEach(button => {
+    const article = button.closest("article");
+    const audio = article.querySelector("audio");
+    const container = article.querySelector(".subtitle-box");
+    let subtitles = [];
+    let currentIndex = -1;
+    let isLoaded = false;
+
+    const smoothScrollTo = (target) => {
+      if (!target) return;
+      const targetTop = target.offsetTop - container.offsetTop;
+      const start = container.scrollTop;
+      const end = targetTop - container.clientHeight / 2 + target.clientHeight / 2;
+      const distance = end - start;
+      const duration = 400;
+      const startTime = performance.now();
+      const step = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const ease = 0.5 - Math.cos(progress * Math.PI) / 2;
+        container.scrollTop = start + distance * ease;
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    const loadSubtitles = async () => {
+      try {
+        const res = await fetch(button.dataset.subtitle);
+        const data = await res.json();
+        container.innerHTML = data.map(s => 
+          `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.4em 0;">${s.text}</p>`
+        ).join("");
+        subtitles = Array.from(container.querySelectorAll("p"));
+        isLoaded = true;
+        currentIndex = -1;
+      } catch (err) {
+        container.innerHTML = "<p style='color:red;'>加载字幕失败。</p>";
+        console.error("字幕加载失败：", err);
+      }
+    };
+
+    const highlightSubtitles = () => {
+      if (!isLoaded || !subtitles.length) return;
+      const t = audio.currentTime;
+      let idx = subtitles.findIndex(p => t >= parseFloat(p.dataset.start) && t <= parseFloat(p.dataset.end));
+      if (idx === -1) return;
+      if (idx !== currentIndex) {
+        smoothScrollTo(subtitles[idx]);
+        currentIndex = idx;
+      }
+    };
+
+    button.addEventListener("click", async () => {
+      const isHidden = container.style.display === "none";
+      if (isHidden) {
+        container.style.display = "block";
+        button.textContent = "关闭字幕";
+        button.style.border = "1px solid #6B77CC";
+        button.style.color = "#6B77CC";
+
+        if (!isLoaded) await loadSubtitles();
+        highlightSubtitles();
+      } else {
+        container.style.display = "none";
+        button.textContent = "显示字幕";
+        button.style.border = "1px solid #ccc";
+        button.style.color = "#333";
+        currentIndex = -1;
+      }
+    });
+
+    audio.addEventListener("timeupdate", highlightSubtitles);
+    audio.addEventListener("seeked", () => {
+      currentIndex = -1;
+      highlightSubtitles();
+    });
+    audio.addEventListener("play", highlightSubtitles);
+    audio.addEventListener("loadedmetadata", highlightSubtitles);
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const audios = Array.from(document.querySelectorAll("article audio"));
+  let currentIndex = -1;
+
+  audios.forEach((audio, index) => {
+
+    // 当用户点击播放某一集
+    audio.addEventListener("play", () => {
+      // 暂停其他音频
+      audios.forEach((a, i) => {
+        if (i !== index && !a.paused) {
+          a.pause();
+        }
+      });
+	  
+      currentIndex = index;
+	  
+	  // 新增：滚动到当前播放的卡片
+  audio.closest("article")?.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+	  
+    });
+
+    // 当前音频播放结束 → 播放下一集
+    audio.addEventListener("ended", () => {
+  // 极端情况防护
+  if (audio.currentTime === 0) return;
+
+  const nextIndex = index + 1;
+  if (audios[nextIndex]) {
+    audios[nextIndex].play();
+  }
+});
+
+  });
+
+});
+</script>
+
+
+
+            </div>
+            
+          </div>
+        </section>
         
 
         

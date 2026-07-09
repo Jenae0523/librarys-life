@@ -4,8 +4,24 @@ book: "《生死之间》"
 audio_url: https://audio.librarys.life/audio/books/between-death-life/audio41.MP3
 cover: https://img.librarys.life/img/books-covers/between-death-life.jpg
 description: "地球正处于哪个进化阶段？灵魂不断转世，要怎么解释人口数的增加？如何定义无条件的爱？地球的课题？"
+keywords:
+  - 灵魂转世
+  - 耶稣
+  - 潜意识
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 频率
+  - 死后世界
+  - 显化
+  - QHHT
+  - 宗教神话
 date: 2026-03-03
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 《生死之间》
+  - 灵魂转世
+  - 意识扩展
+  - 灵性觉醒
 number: 41
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life41.json"
 book_slug: between-death-life

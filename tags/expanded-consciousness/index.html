@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260709-1424">
+<meta name="version" content="20260710-0227">
 
 
 <meta charset="utf-8">
@@ -121,6 +121,9 @@
     
 
 
+
+
+
 <!-- 横幅图 -->
 <section class="g-pt-90">
 <div class="container-fluid g-pt-100" style="background-image: url(/img/starnight.jpg);">
@@ -213,6 +216,16 @@
     margin-bottom: 90px;
   }
 
+  .tag-node-resource-section--articles {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .tag-node-resource-divider {
+    margin: 0 calc(50% - 50vw);
+    border-top: 1px solid #e6e6e6;
+  }
+
   .tag-node-resource-section > header {
     margin: 0 0 42px;
     text-align: center;
@@ -241,8 +254,25 @@
     letter-spacing: 0;
   }
 
-  .tag-node-resource-section--audiobooks {
-    display: none;
+  .audiobook-section {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-bottom: 0;
+    padding: 60px 20px 90px;
+    background-color: #f5f5f5;
+  }
+
+  .audiobook-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .audiobook-section header {
+    margin: 0 0 42px;
+    text-align: center;
+  }
+
+  .tag-node-resource-section--audiobook-episodes {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     padding: 58px calc(50vw - 50%) 52px;
@@ -320,6 +350,93 @@
     letter-spacing: 0;
   }
 
+  .audiobook-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .audiobook-grid > div {
+    display: flex;
+  }
+
+  .audiobook-link {
+    display: flex;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .audiobook-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+
+  .audiobook-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+  }
+
+  .cover-wrapper {
+    width: 100%;
+    aspect-ratio: 425 / 250;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .cover-img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+
+  .book-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 15px;
+    margin-bottom: 8px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .book-author {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .book-summary {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    min-height: calc(1.6em * 2);
+  }
+
   .tag-node-audio-row {
     display: flex;
     flex-direction: column;
@@ -383,6 +500,18 @@
 
   .tag-node-directory__items a:hover {
     color: #3647B7;
+  }
+
+  @media (min-width: 768px) {
+    .audiobook-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .audiobook-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -1070,6 +1199,1480 @@
           
         </section>
 
+        
+
+        
+
+        
+
+        
+        <section class="tag-node-resource-section tag-node-resource-section--audiobook-episodes">
+          <header>
+            <div class="tag-node-resource-heading">
+              <h2 class="tag-node-section-title">相关音频</h2>
+            </div>
+          </header>
+          <div class="tag-node-audio-row">
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/between-death-life/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/between-death-life.jpg" 
+          alt="第16集：第七星光层，发明与音乐的灵感来源" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life16.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/between-death-life/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《生死之间》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/books/between-death-life/16-spiritual-levels-soul-evolution-seventh-plane-creativity-ascension-pyramid-consciousness.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第16集：第七星光层，发明与音乐的灵感来源
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        灵魂如何在灵性层级上进步？灵魂必须要化身为人类吗？天使：灵性层级中的协助者。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/between-death-life/">
+         《生死之间》
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/spirit-guides/">
+         指导灵
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/expanded-consciousness/">
+         意识扩展
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life16.json">
+        <source src="https://audio.librarys.life/audio/books/between-death-life/audio16.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年3月3日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/between-death-life/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/between-death-life.jpg" 
+          alt="第18集：自然灵协助，新地球扬升" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life18.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/between-death-life/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《生死之间》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/books/between-death-life/18-nature-spirits-elementals-earth-vibration-evolution-group-souls-fairies.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第18集：自然灵协助，新地球扬升
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        地球正在向高行星振动演化，大自然的灵正为此准备。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/between-death-life/">
+         《生死之间》
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/reincarnation/">
+         灵魂转世
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/expanded-consciousness/">
+         意识扩展
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life18.json">
+        <source src="https://audio.librarys.life/audio/books/between-death-life/audio18.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年3月3日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/between-death-life/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/between-death-life.jpg" 
+          alt="第19集：灵魂的演化过程" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life19.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/between-death-life/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《生死之间》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/books/between-death-life/19-soul-levels-group-soul-animal-consciousness-human-reincarnation-dual-worlds.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第19集：灵魂的演化过程
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        人类灵魂会降级为动物吗？有些人同时身处两个世界 │ 更高层级：星光层、大师层级、与神合一
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/between-death-life/">
+         《生死之间》
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/afterlife/">
+         死后世界
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/reincarnation/">
+         灵魂转世
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life19.json">
+        <source src="https://audio.librarys.life/audio/books/between-death-life/audio19.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年3月3日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/between-death-life/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/between-death-life.jpg" 
+          alt="第41集：研究死亡，让我更能欣赏生命（完结）" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life41.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/between-death-life/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《生死之间》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/books/between-death-life/41-soul-evolution-earth-cycle-reincarnation-consciousness-unconditional-love-stage.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第41集：研究死亡，让我更能欣赏生命（完结）
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        地球正处于哪个进化阶段？灵魂不断转世，要怎么解释人口数的增加？如何定义无条件的爱？地球的课题？
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/between-death-life/">
+         《生死之间》
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/reincarnation/">
+         灵魂转世
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/expanded-consciousness/">
+         意识扩展
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/between-death-life/texts/between-death-life41.json">
+        <source src="https://audio.librarys.life/audio/books/between-death-life/audio41.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年3月3日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/mary-magdalene/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/mary-magdalene.jpg" 
+          alt="第7集：耶稣，施展神迹背后的真相" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene8.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/mary-magdalene/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《抹大拉手稿》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <span 
+    class="g-font-weight-700 g-font-size-16"
+    style="color:#333; letter-spacing: 0.03em;"
+  >
+    第7集：耶稣，施展神迹背后的真相
+  </span>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        五饼二鱼的奇迹 │ 揭示神迹背后的真相。澄清对耶稣措辞的误解。耶稣受难的回忆、耶稣复活的意义、耶稣的教导已被扭曲。（延伸阅读）伟大的人类潜能 │ 显化的关键秘密。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/jesus/">
+         耶稣
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/expanded-consciousness/">
+         意识扩展
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene8.json">
+        <source src="https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene8.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年3月2日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio">
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/mary-magdalene/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/mary-magdalene.jpg" 
+          alt="第27集：一个女人的故事【2】" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene34.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/mary-magdalene/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《抹大拉手稿》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第27集：一个女人的故事【2】
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        死亡与重生：一个女人在死亡边缘选择活下去，另一个女人在死亡中成为自己
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/spiritual-awakening/">
+         灵性觉醒
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/expanded-consciousness/">
+         意识扩展
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene34.json">
+        <source src="https://audio.librarys.life/audio/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年5月6日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".show-subtitles").forEach(button => {
+    const article = button.closest("article");
+    const audio = article.querySelector("audio");
+    const container = article.querySelector(".subtitle-box");
+    let subtitles = [];
+    let currentIndex = -1;
+    let isLoaded = false;
+
+    const smoothScrollTo = (target) => {
+      if (!target) return;
+      const targetTop = target.offsetTop - container.offsetTop;
+      const start = container.scrollTop;
+      const end = targetTop - container.clientHeight / 2 + target.clientHeight / 2;
+      const distance = end - start;
+      const duration = 400;
+      const startTime = performance.now();
+      const step = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const ease = 0.5 - Math.cos(progress * Math.PI) / 2;
+        container.scrollTop = start + distance * ease;
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    const loadSubtitles = async () => {
+      try {
+        const res = await fetch(button.dataset.subtitle);
+        const data = await res.json();
+        container.innerHTML = data.map(s => 
+          `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.4em 0;">${s.text}</p>`
+        ).join("");
+        subtitles = Array.from(container.querySelectorAll("p"));
+        isLoaded = true;
+        currentIndex = -1;
+      } catch (err) {
+        container.innerHTML = "<p style='color:red;'>加载字幕失败。</p>";
+        console.error("字幕加载失败：", err);
+      }
+    };
+
+    const highlightSubtitles = () => {
+      if (!isLoaded || !subtitles.length) return;
+      const t = audio.currentTime;
+      let idx = subtitles.findIndex(p => t >= parseFloat(p.dataset.start) && t <= parseFloat(p.dataset.end));
+      if (idx === -1) return;
+      if (idx !== currentIndex) {
+        smoothScrollTo(subtitles[idx]);
+        currentIndex = idx;
+      }
+    };
+
+    button.addEventListener("click", async () => {
+      const isHidden = container.style.display === "none";
+      if (isHidden) {
+        container.style.display = "block";
+        button.textContent = "关闭字幕";
+        button.style.border = "1px solid #6B77CC";
+        button.style.color = "#6B77CC";
+
+        if (!isLoaded) await loadSubtitles();
+        highlightSubtitles();
+      } else {
+        container.style.display = "none";
+        button.textContent = "显示字幕";
+        button.style.border = "1px solid #ccc";
+        button.style.color = "#333";
+        currentIndex = -1;
+      }
+    });
+
+    audio.addEventListener("timeupdate", highlightSubtitles);
+    audio.addEventListener("seeked", () => {
+      currentIndex = -1;
+      highlightSubtitles();
+    });
+    audio.addEventListener("play", highlightSubtitles);
+    audio.addEventListener("loadedmetadata", highlightSubtitles);
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const audios = Array.from(document.querySelectorAll("article audio"));
+  let currentIndex = -1;
+
+  audios.forEach((audio, index) => {
+
+    // 当用户点击播放某一集
+    audio.addEventListener("play", () => {
+      // 暂停其他音频
+      audios.forEach((a, i) => {
+        if (i !== index && !a.paused) {
+          a.pause();
+        }
+      });
+	  
+      currentIndex = index;
+	  
+	  // 新增：滚动到当前播放的卡片
+  audio.closest("article")?.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+	  
+    });
+
+    // 当前音频播放结束 → 播放下一集
+    audio.addEventListener("ended", () => {
+  // 极端情况防护
+  if (audio.currentTime === 0) return;
+
+  const nextIndex = index + 1;
+  if (audios[nextIndex]) {
+    audios[nextIndex].play();
+  }
+});
+
+  });
+
+});
+</script>
+
+
+
+            </div>
+            
+          </div>
+        </section>
         
 
         

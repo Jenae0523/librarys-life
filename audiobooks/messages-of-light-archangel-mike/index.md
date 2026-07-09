@@ -19,7 +19,28 @@ description: |
   
   英文原版官网：www.starquestmastery.com
 
-tags: ["audiobooks"]
+keywords:
+  - 大天使迈克尔
+  - 光之信息
+  - 灵性觉醒
+  - 能量场
+  - 脉轮
+  - 频率
+  - 灵魂转世
+  - 潜意识
+  - 扬升
+  - 自我认知
+  - 业力法则
+  - 冥想
+  - 呼吸
+tags:
+  - audiobooks
+  - 大天使迈克尔
+  - 灵性觉醒
+  - 频率
+  - 能量场
+  - 脉轮
+  - 冥想
 download_url: https://readcafe.life/free-ebooks/spirituality/archangel-michael-20250316.pdf
 book_slug: messages-of-light-archangel-mike
 is_book_index: true

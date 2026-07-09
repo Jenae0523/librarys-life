@@ -4,8 +4,21 @@ book: "《生死之间》"
 audio_url: https://audio.librarys.life/audio/books/between-death-life/audio19.MP3
 cover: https://img.librarys.life/img/books-covers/between-death-life.jpg
 description: "人类灵魂会降级为动物吗？有些人同时身处两个世界 │ 更高层级：星光层、大师层级、与神合一"
+keywords:
+  - 频率
+  - 死后世界
+  - 灵魂转世
+  - 《生死之间》
+  - 朵洛莉丝·侃南
+  - 灵性觉醒
+  - 新地球
 date: 2026-03-03
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 《生死之间》
+  - 死后世界
+  - 灵魂转世
+  - 意识扩展
 number: 19
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life19.json"
 book_slug: between-death-life

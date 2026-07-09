@@ -8,8 +8,23 @@ cover: https://img.librarys.life/img/books-covers/messages-of-light-archangel-mi
 
 description: "唤醒你的生命之花 · 十二道光线创造之轮，成为有意识的共同创造者。"
 
+keywords:
+  - 脉轮
+  - 频率
+  - 现实创造
+  - 生命之花
+  - 灵性觉醒
+  - 大天使迈克尔
+  - 显化
+  - 灵魂转世
+  - 呼吸
+  - 心轮
 date: 2026-03-01
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 现实创造
+  - 灵魂转世
+  - 脉轮
 number: 9
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike9.json"

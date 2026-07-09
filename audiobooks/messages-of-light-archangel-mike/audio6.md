@@ -8,8 +8,22 @@ cover: https://img.librarys.life/img/books-covers/messages-of-light-archangel-mi
 
 description: "生命之气，无限呼吸冥想方法 │ 激活太阳力量中心 │ 神圣几何：鱼眼曼荼罗 │ 光过滤器：松果体 │ 辨别力：神圣心智 │ 成熟的灵性：自我掌握"
 
+keywords:
+  - 频率
+  - 冥想
+  - 脉轮
+  - 灵性觉醒
+  - 自我认知
+  - 抹大拉的玛利亚
+  - 呼吸
+  - 神圣心
+  - 《抹大拉手稿》
+  - 大天使迈克尔
 date: 2026-03-01
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 冥想
+  - 《抹大拉手稿》
 number: 6
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike6.json"

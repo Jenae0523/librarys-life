@@ -8,8 +8,23 @@ cover: https://img.librarys.life/img/books-covers/mary-magdalene.jpg
 
 description: "死亡与重生：一个女人在死亡边缘选择活下去，另一个女人在死亡中成为自己"
 
+keywords:
+  - 抹大拉的玛利亚
+  - 耶稣
+  - 哈索尔人
+  - 《抹大拉手稿》
+  - 身体疗愈
+  - 声音疗愈
+  - 梦境
+  - 汤姆肯永
+  - 频率
+  - 神圣关系
 date: 2026-05-06
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 灵性觉醒
+  - 意识扩展
+  - 心理学
 number: 34
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene34.json"

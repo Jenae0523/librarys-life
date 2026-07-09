@@ -25,7 +25,31 @@ description: |
 
   作为一个重视客观事实，坚守逻辑的人，我无法确定这个故事是否真实。这让我感到不安。但我可以肯定的是，她（指抹大拉的玛丽亚）分享的方法和洞见是非凡的。因此，对我而言，在整理手稿时，我把故事放回了河里，保留了其中的方法。我希望你们也这样做。”
 
-tags: ["audiobooks"]
+keywords:
+  - 《大角星人文摘》
+  - 大角星人
+  - 汤姆肯永
+  - 高维文明
+  - 通灵信息
+  - 哈索尔人
+  - 频率
+  - 外星文明
+  - 全息感应
+  - 心理学
+  - 宗教神话
+  - 冥想
+  - 量子现实
+  - 能量场
+tags:
+  - audiobooks
+  - 《大角星人文摘》
+  - 大角星人
+  - 汤姆肯永
+  - 哈索尔人
+  - 通灵信息
+  - 外星文明
+  - 频率
+  - 高维文明
 download_url: https://readcafe.life/free-ebooks/authors/tom-kenyon/da-jiao-xing-ren-wen-zhai---mu-yu-jie-du-ban.pdf
 book_slug: the-arcturian-anthology
 is_book_index: true

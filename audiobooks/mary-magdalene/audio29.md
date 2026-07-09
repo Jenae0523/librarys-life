@@ -8,8 +8,19 @@ cover: https://img.librarys.life/img/books-covers/mary-magdalene.jpg
 
 description: "何谓“道”? 如何通往“道”？激活人体龙穴：天门冥想法 │ 龙穴与龙脉：借天地之气修炼 │ 入静：思想与呼吸的微妙联系 │ 思想、时间与呼吸的悖论"
 
+keywords:
+  - 冥想
+  - 《抹大拉手稿》
+  - 频率
+  - 抹大拉的玛利亚
+  - 呼吸
+  - 脑波
+  - 能量场
+  - 心理学
 date: 2026-03-02
-tags: ["audiobooks"]
+tags:
+  - audiobooks
+  - 冥想
 number: 29
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene29.json"

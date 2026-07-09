@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260709-1424">
+<meta name="version" content="20260710-0227">
 
 
 <meta charset="utf-8">
@@ -121,6 +121,9 @@
     
 
 
+
+
+
 <!-- 横幅图 -->
 <section class="g-pt-90">
 <div class="container-fluid g-pt-100" style="background-image: url(/img/starnight.jpg);">
@@ -213,6 +216,16 @@
     margin-bottom: 90px;
   }
 
+  .tag-node-resource-section--articles {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .tag-node-resource-divider {
+    margin: 0 calc(50% - 50vw);
+    border-top: 1px solid #e6e6e6;
+  }
+
   .tag-node-resource-section > header {
     margin: 0 0 42px;
     text-align: center;
@@ -241,8 +254,25 @@
     letter-spacing: 0;
   }
 
-  .tag-node-resource-section--audiobooks {
-    display: none;
+  .audiobook-section {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-bottom: 0;
+    padding: 60px 20px 90px;
+    background-color: #f5f5f5;
+  }
+
+  .audiobook-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .audiobook-section header {
+    margin: 0 0 42px;
+    text-align: center;
+  }
+
+  .tag-node-resource-section--audiobook-episodes {
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     padding: 58px calc(50vw - 50%) 52px;
@@ -320,6 +350,93 @@
     letter-spacing: 0;
   }
 
+  .audiobook-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .audiobook-grid > div {
+    display: flex;
+  }
+
+  .audiobook-link {
+    display: flex;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .audiobook-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+
+  .audiobook-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+  }
+
+  .cover-wrapper {
+    width: 100%;
+    aspect-ratio: 425 / 250;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .cover-img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+
+  .book-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-top: 15px;
+    margin-bottom: 8px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .book-author {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .book-summary {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    min-height: calc(1.6em * 2);
+  }
+
   .tag-node-audio-row {
     display: flex;
     flex-direction: column;
@@ -383,6 +500,18 @@
 
   .tag-node-directory__items a:hover {
     color: #3647B7;
+  }
+
+  @media (min-width: 768px) {
+    .audiobook-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .audiobook-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -2221,6 +2350,108 @@
           </div>
           
         </section>
+
+        
+        <div class="tag-node-resource-divider"></div>
+        
+
+        
+        <section class="audiobook-section">
+          <div class="container">
+            <header>
+              <div class="tag-node-resource-heading">
+                <h2 class="tag-node-section-title">相关有声书</h2>
+              </div>
+            </header>
+            <div class="audiobook-grid">
+              
+              <div>
+                
+                <a href="/audiobooks/keepers-of-the-garden/" class="audiobook-link">
+
+  <article class="audiobook-card">
+
+    <div class="cover-wrapper">
+      <img src="https://img.librarys.life/img/books-covers/keepers-of-the-garden.jpg" alt="《地球守护者》" class="cover-img">
+    </div>
+
+    <h4 class="book-title">
+      《地球守护者》
+    </h4>
+
+    <p class="book-author">
+      朵洛莉丝·侃南（Dolores Cannon）
+    </p>
+
+    <p class="book-summary">
+      地球并非孤立发展的文明，而是被长期观察保护的行星系统
+    </p>
+
+  </article>
+
+</a>
+              </div>
+              
+              <div>
+                
+                <a href="/audiobooks/three-waves-of-volunteers/" class="audiobook-link">
+
+  <article class="audiobook-card">
+
+    <div class="cover-wrapper">
+      <img src="https://img.librarys.life/img/books-covers/three-waves-of-volunteers.jpg" alt="《三波志愿者与新地球》" class="cover-img">
+    </div>
+
+    <h4 class="book-title">
+      《三波志愿者与新地球》
+    </h4>
+
+    <p class="book-author">
+      朵洛莉丝·侃南（Dolores Cannon）
+    </p>
+
+    <p class="book-summary">
+      由于地球面临巨大的危机和转变，宇宙召唤纯净、没有业力束缚的灵魂，协助人类与地球能量提升。
+    </p>
+
+  </article>
+
+</a>
+              </div>
+              
+              <div>
+                
+                <a href="/audiobooks/between-death-life/" class="audiobook-link">
+
+  <article class="audiobook-card">
+
+    <div class="cover-wrapper">
+      <img src="https://img.librarys.life/img/books-covers/between-death-life.jpg" alt="《生死之间》" class="cover-img">
+    </div>
+
+    <h4 class="book-title">
+      《生死之间》
+    </h4>
+
+    <p class="book-author">
+      朵洛莉丝·侃南（Dolores Cannon）
+    </p>
+
+    <p class="book-summary">
+      通过催眠回溯探索死亡的真相，超越对死亡的恐惧，或助你放下对逝者的哀伤。
+    </p>
+
+  </article>
+
+</a>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+        
+
+        
 
         
 
