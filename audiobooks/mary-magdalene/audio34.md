@@ -25,6 +25,7 @@ tags:
   - 灵性觉醒
   - 意识扩展
   - 心理学
+  - 女性灵性
 number: 34
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene34.json"

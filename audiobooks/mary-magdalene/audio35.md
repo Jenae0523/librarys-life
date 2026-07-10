@@ -23,6 +23,7 @@ date: 2026-07-04
 tags:
   - audiobooks
   - 灵性觉醒
+  - 女性灵性
 number: 35
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene35.json"
