@@ -27,5 +27,6 @@ number: 11
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology11.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
+article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology11-mary-magdalene-isis-temple-arcturian-origin.html"
 ---
 

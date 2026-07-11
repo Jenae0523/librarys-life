@@ -25,5 +25,6 @@ number: 5
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology5.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
+article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology05-sanat-kumara-arcturian-commander.html"
 ---
 
