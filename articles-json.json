@@ -66,18 +66,6 @@
     "image": ""
   },
   {
-    "title": "从语言到AI与万物理论：人类认知重写之旅",
-    "description": "本文带你穿越语言、脑科学、人工智能与物理前沿：探讨语言如何塑造思维，科学家让实验鼠“看电影”重构大脑认知，GPT-4.5通过图灵测试的启示，以及物理学家对“万物理论”的最新探索。同时关注地球环境恢复的希望，呈现人类认知、科技与自然的全景视角。",
-    "slug": "/all-articles/muyu-brief/1-language-and-thought.html",
-    "image": ""
-  },
-  {
-    "title": "当“觉醒”成为商品：如何识别真正的灵性导师与安全实践",
-    "description": "本文探讨现代灵性市场中的现象：当“觉醒”课程被商品化，如何分辨真诚导师与潜在心理操控。通过真实案例分析灵性导师面对质疑、批评与自我反思的方式，提供理性与灵性结合的思考框架，帮助读者在追寻灵性成长时保持独立判断、内在主权与心理安全。",
-    "slug": "/all-articles/muyu-brief/2-awakening-as-commodity.html",
-    "image": ""
-  },
-  {
     "title": "无法正确的沟通，是因为缺乏沟通的品质，是什么导致沟通的终止？打破沟通障碍的5个关键点！",
     "description": "本篇深度解析沟通失败的根源，揭示为什么我们无法真正倾听和理解对方。探讨倾听的艺术、自我重要感、思维惰性、语言局限与沟通品质等5大关键问题，帮助你建立真实、开放、有品质的人际连结。",
     "slug": "/all-articles/insight-awakening/art-of-deep-listening-how-to-break-communication-barriers-and-connect-truly.html",
@@ -111,6 +99,18 @@
     "title": "《瓦尔登湖》反思生活/新闻的真相，现代人为何集体沉睡？隐居者的警钟：清醒地活着！",
     "description": "亨利·戴维·梭罗在《瓦尔登湖》中预言了现代人的迷失与困境：信息焦虑、无意义的忙碌、沉迷幻象的生活方式。本文深度剖析梭罗的隐居哲学，反思新闻真相、现代社会的陷阱，以及我们如何重新学习“清醒地活着”，找回生活的本质。",
     "slug": "/all-articles/insight-awakening/walden-rethinking-life-and-the-news-living-with-wakeful-clarity.html",
+    "image": ""
+  },
+  {
+    "title": "从语言到AI与万物理论：人类认知重写之旅",
+    "description": "本文带你穿越语言、脑科学、人工智能与物理前沿：探讨语言如何塑造思维，科学家让实验鼠“看电影”重构大脑认知，GPT-4.5通过图灵测试的启示，以及物理学家对“万物理论”的最新探索。同时关注地球环境恢复的希望，呈现人类认知、科技与自然的全景视角。",
+    "slug": "/all-articles/muyu-brief/1-language-and-thought.html",
+    "image": ""
+  },
+  {
+    "title": "当“觉醒”成为商品：如何识别真正的灵性导师与安全实践",
+    "description": "本文探讨现代灵性市场中的现象：当“觉醒”课程被商品化，如何分辨真诚导师与潜在心理操控。通过真实案例分析灵性导师面对质疑、批评与自我反思的方式，提供理性与灵性结合的思考框架，帮助读者在追寻灵性成长时保持独立判断、内在主权与心理安全。",
+    "slug": "/all-articles/muyu-brief/2-awakening-as-commodity.html",
     "image": ""
   },
   {
@@ -153,6 +153,120 @@
     "title": "死亡不是终点：死后世界的三大入口与“意识过渡”完整指南",
     "description": "本文深度解析死亡的两种形式、死后意识过渡状态以及三大入口：上师/救世主的意识领域、光之隧道与黑暗虚空点。结合灵性智慧与能量视角，提供你在死亡时刻做出最有力量选择的完整指南。",
     "slug": "/all-articles/philosophy-consciousness/death-transition-three-choices-light-void-spiritual-guide.html",
+    "image": ""
+  },
+  {
+    "title": "遇见大角星人：在通灵信息、直觉体验与逻辑判断之间保持清醒",
+    "description": "本文讲述汤姆·肯永第一次接触大角星人的经历，并围绕通灵信息、直觉洞察、认知边界与逻辑验证展开思考。文章提醒读者保持开放，也保持清醒，不轻信任何无法验证的信息。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology01-meeting-the-arcturians-consciousness.html",
+    "image": ""
+  },
+  {
+    "title": "大角星人飞船与高维文明：汤姆·肯永讲述他的第二次接触经历｜《大角星人文摘》2",
+    "description": "心理治疗师汤姆·肯永讲述自己被带上大角星飞船的奇异经历，并记录飞船的意识导航、多维空间、全息感应语言，以及大角星人对仁慈、时间和人类认知局限的不同理解。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology02-arcturian-spaceship-higher-dimensional-civilization.html",
+    "image": ""
+  },
+  {
+    "title": "安努纳奇创造人类？《大角星人文摘》中的人类起源、基因改造与意识潜能｜第3集",
+    "description": "本篇围绕安努纳奇创造人类、外星文明基因改造和人类起源展开，讨论宗教权威、奴役意识、思想控制与人类潜能。作者以《理性时代》为起点，提出力量并不等于意识，真正的进化来自独立思考与自我觉醒。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology03-anunnaki-human-origins.html",
+    "image": ""
+  },
+  {
+    "title": "哈索尔人是谁？古埃及哈索尔女神、平行宇宙与天狼星传说｜《大角星人文摘》第4集",
+    "description": "哈索尔人自称来自与我们相邻的平行宇宙，并通过天狼星进入这个宇宙。本篇介绍哈索尔人与古埃及哈索尔女神、萨纳特·库玛拉、大角星文明及声音疗愈之间的关系，也讨论多维时间与内在阴阳能量的平衡。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology04-hathors-ancient-egypt-parallel-universe.html",
+    "image": ""
+  },
+  {
+    "title": "萨纳特·库玛拉是谁？大角星指挥官、哈索尔联盟与人类沉睡的DNA｜《大角星人文摘》第5集",
+    "description": "本篇记录萨纳特·库玛拉对大角星文明使命的讲述，包括与哈索尔人的星际联盟、鞍马山传说、外星文明的干预方式，以及关于人类DNA、意识潜能、再生技术和高维身体的观点。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology05-sanat-kumara-arcturian-commander.html",
+    "image": ""
+  },
+  {
+    "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
+    "description": "萨纳特·库玛拉讲述松果体冥想、外星接触与信息接收的方法，并提醒读者辨别信息来源、拒绝权威命令和崇拜。本篇也涉及安努纳奇、人类起源、星际基因与集体潜意识等争议性观点。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
+    "image": ""
+  },
+  {
+    "title": "人类潜能如何被唤醒？大角星人谈行星意识、星际DNA与宇宙触发因素｜《大角星人文摘》第7集",
+    "description": "大角星科学官Ektara从行星意识、文明演化和星际血统的角度，讨论人类潜能如何被太阳与宇宙能量激活，以及宗教崇拜、权威服从和奴役意识为何成为人类进化的阻碍。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology07-planetary-consciousness-starseed-dna.html",
+    "image": ""
+  },
+  {
+    "title": "UFO可能来自哪里？大角星人谈未来人类、高维生命与感知局限｜《大角星人文摘》第8集",
+    "description": "大角星科学官Ektara从感知局限出发，讨论UFO的多种可能来源，包括外星文明、地球高电磁智能体与未来人类。本篇也涉及天使、精灵、灵魂、大角星走廊及跨维度接触等观点。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology08-ufo-future-humans-higher-dimensional-beings.html",
+    "image": ""
+  },
+  {
+    "title": "思维能塑造现实吗？大角星人谈平行现实、情绪过滤器与多维意识｜《大角星人文摘》第9集",
+    "description": "大角星科学官Ektara将人的经验分为基线现实、平行现实、替代现实与多维现实，讨论意图、专注力、思维模式和情绪过滤器如何影响人的选择、行动与生活结果",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology09-mind-parallel-reality-multidimensional-consciousness.html",
+    "image": ""
+  },
+  {
+    "title": "阿卡西记录能看见未来吗？大角星人谈可能时间线与集体意识｜《大角星人文摘》第10集",
+    "description": "大角星文明的阿卡西管理员Enandra介绍阿卡西记录、全息信息与未来可能时间线，并讨论大角星人帮助人类时面临的感知障碍，以及个人与集体观念如何改变历史进程。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology10-akashic-records-future-timelines.html",
+    "image": ""
+  },
+  {
+    "title": "抹大拉的玛利亚是耶稣的妻子吗？大角星起源、伊希斯神庙与内在炼金术｜《大角星人文摘》第11集",
+    "description": "本篇以抹大拉的玛利亚的口吻，讲述她在伊希斯神庙接受冥想、声音与内在炼金术训练，以及她与耶稣共同使命的另类叙事。文章也讨论星际血统、能量携带者与如何在现实生活中表达独特天赋。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology11-mary-magdalene-isis-temple-arcturian-origin.html",
+    "image": ""
+  },
+  {
+    "title": "耶稣是大角星人？复活、抹大拉的玛利亚与被改写的基督叙事｜《大角星人文摘》第12集",
+    "description": "本篇以耶稣自述的形式，提出关于其大角星起源、复活过程、抹大拉的玛利亚及早期基督教历史的另类叙事，并讨论耶稣信息如何被宗教制度改写，以及真正的拯救是否来自意识、智慧与自由的提升。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology12-jesus-resurrection-mary-magdalene.html",
+    "image": ""
+  },
+  {
+    "title": "睡眠如何帮助身体自我修复？大角星医疗官谈睡前意图与高维疗愈｜《大角星人文摘》第13集",
+    "description": "大角星医疗官Azuron讲述死亡后的意识转变，以及通过意图与光进行疗愈的经历。本篇重点探讨睡眠与身体修复、睡前疗愈意图、潜意识信念及接受帮助的能力，并提醒读者重视充分而自然的休息。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology13-sleep-self-healing-bedtime-intention.html",
+    "image": ""
+  },
+  {
+    "title": "如何训练非线性思维？大角星人谈全息感应、多维记忆与未来想象｜《大角星人文摘》第14集",
+    "description": "大角星冥想大师Esu介绍一种多感官意识训练：同时回忆前后左右上下的视觉、声音与身体感觉，尝试打破惯常的线性注意模式。本篇也讨论全息记忆、生命回顾、未来想象与多种可能性。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology14-nonlinear-thinking-holographic-perception.html",
+    "image": ""
+  },
+  {
+    "title": "Nakura冥想是什么？顶轮、净光与改变意识状态的练习｜《大角星人文摘》第15集",
+    "description": "大角星冥想大师Esu介绍Nakura冥想：将注意力轻柔地停留在顶轮上方，结合净光想象与自然呼吸，探索意识状态的变化。文章也说明练习前的心理准备，以及冥想结束后如何借助五感重新回到日常现实。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html",
+    "image": ""
+  },
+  {
+    "title": "与外星生命接触时如何辨别信息？意识主权、科技伦理与人类未来｜《大角星人文摘》第16集",
+    "description": "大角星战士Frephios讨论人类与外星生命接触时面临的信息干扰、信念过滤与主权问题，并进一步探讨语言如何限制认知、技术如何被权力利用，以及个人意识改变如何推动集体未来转向。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology16-alien-contact-discernment-consciousness-sovereignty.html",
+    "image": ""
+  },
+  {
+    "title": "共情力如何改变人类未来？大角星人谈生态危机、人与自然及集体意识｜《大角星人文摘》第17集",
+    "description": "萨纳特·库玛拉从生态危机与文明进化出发，讨论共情智力为何是人类生存的重要能力。文章提出通过植物、动物和自然重新连接内心，并思考个人意识、科技发展与集体未来之间的关系。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology17-empathy-intelligence-ecological-consciousness.html",
+    "image": ""
+  },
+  {
+    "title": "通灵信息如何辨别？高维沟通的心理风险与安全原则｜《大角星人文摘》第18集",
+    "description": "汤姆·肯永在全书后记中讨论改变意识状态与所谓高维沟通可能出现的风险，包括情绪干扰、个人幻想、信息扭曲与心理障碍，并提出保持自我诚实、记录验证、尊重自由意志及寻求专业支持等原则。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology18-channeling-discernment-psychological-safety.html",
+    "image": ""
+  },
+  {
+    "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
+    "description": "本篇整理汤姆·肯永关于心理声学、声音疗愈与改变意识状态的研究，包括《光船》、Nakura冥想、大角星再生技术及多种免费音频，并介绍鞍马山、灵气传说和作者的主要著作与文章。",
+    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
     "image": ""
   },
   {
@@ -438,114 +552,6 @@
     "image": ""
   },
   {
-    "title": "遇见大角星人：在通灵信息、直觉体验与逻辑判断之间保持清醒",
-    "description": "本文讲述汤姆·肯永第一次接触大角星人的经历，并围绕通灵信息、直觉洞察、认知边界与逻辑验证展开思考。文章提醒读者保持开放，也保持清醒，不轻信任何无法验证的信息。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology01-meeting-the-arcturians-consciousness.html",
-    "image": ""
-  },
-  {
-    "title": "大角星人飞船与高维文明：汤姆·肯永讲述他的第二次接触经历｜《大角星人文摘》2",
-    "description": "心理治疗师汤姆·肯永讲述自己被带上大角星飞船的奇异经历，并记录飞船的意识导航、多维空间、全息感应语言，以及大角星人对仁慈、时间和人类认知局限的不同理解。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology02-arcturian-spaceship-higher-dimensional-civilization.html",
-    "image": ""
-  },
-  {
-    "title": "安努纳奇创造人类？《大角星人文摘》中的人类起源、基因改造与意识潜能｜第3集",
-    "description": "本篇围绕安努纳奇创造人类、外星文明基因改造和人类起源展开，讨论宗教权威、奴役意识、思想控制与人类潜能。作者以《理性时代》为起点，提出力量并不等于意识，真正的进化来自独立思考与自我觉醒。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology03-anunnaki-human-origins.html",
-    "image": ""
-  },
-  {
-    "title": "哈索尔人是谁？古埃及哈索尔女神、平行宇宙与天狼星传说｜《大角星人文摘》第4集",
-    "description": "哈索尔人自称来自与我们相邻的平行宇宙，并通过天狼星进入这个宇宙。本篇介绍哈索尔人与古埃及哈索尔女神、萨纳特·库玛拉、大角星文明及声音疗愈之间的关系，也讨论多维时间与内在阴阳能量的平衡。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology04-hathors-ancient-egypt-parallel-universe.html",
-    "image": ""
-  },
-  {
-    "title": "萨纳特·库玛拉是谁？大角星指挥官、哈索尔联盟与人类沉睡的DNA｜《大角星人文摘》第5集",
-    "description": "本篇记录萨纳特·库玛拉对大角星文明使命的讲述，包括与哈索尔人的星际联盟、鞍马山传说、外星文明的干预方式，以及关于人类DNA、意识潜能、再生技术和高维身体的观点。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology05-sanat-kumara-arcturian-commander.html",
-    "image": ""
-  },
-  {
-    "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
-    "description": "萨纳特·库玛拉讲述松果体冥想、外星接触与信息接收的方法，并提醒读者辨别信息来源、拒绝权威命令和崇拜。本篇也涉及安努纳奇、人类起源、星际基因与集体潜意识等争议性观点。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
-    "image": ""
-  },
-  {
-    "title": "人类潜能如何被唤醒？大角星人谈行星意识、星际DNA与宇宙触发因素｜《大角星人文摘》第7集",
-    "description": "大角星科学官Ektara从行星意识、文明演化和星际血统的角度，讨论人类潜能如何被太阳与宇宙能量激活，以及宗教崇拜、权威服从和奴役意识为何成为人类进化的阻碍。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology07-planetary-consciousness-starseed-dna.html",
-    "image": ""
-  },
-  {
-    "title": "UFO可能来自哪里？大角星人谈未来人类、高维生命与感知局限｜《大角星人文摘》第8集",
-    "description": "大角星科学官Ektara从感知局限出发，讨论UFO的多种可能来源，包括外星文明、地球高电磁智能体与未来人类。本篇也涉及天使、精灵、灵魂、大角星走廊及跨维度接触等观点。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology08-ufo-future-humans-higher-dimensional-beings.html",
-    "image": ""
-  },
-  {
-    "title": "思维能塑造现实吗？大角星人谈平行现实、情绪过滤器与多维意识｜《大角星人文摘》第9集",
-    "description": "大角星科学官Ektara将人的经验分为基线现实、平行现实、替代现实与多维现实，讨论意图、专注力、思维模式和情绪过滤器如何影响人的选择、行动与生活结果",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology09-mind-parallel-reality-multidimensional-consciousness.html",
-    "image": ""
-  },
-  {
-    "title": "阿卡西记录能看见未来吗？大角星人谈可能时间线与集体意识｜《大角星人文摘》第10集",
-    "description": "大角星文明的阿卡西管理员Enandra介绍阿卡西记录、全息信息与未来可能时间线，并讨论大角星人帮助人类时面临的感知障碍，以及个人与集体观念如何改变历史进程。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology10-akashic-records-future-timelines.html",
-    "image": ""
-  },
-  {
-    "title": "抹大拉的玛利亚是耶稣的妻子吗？大角星起源、伊希斯神庙与内在炼金术｜《大角星人文摘》第11集",
-    "description": "本篇以抹大拉的玛利亚的口吻，讲述她在伊希斯神庙接受冥想、声音与内在炼金术训练，以及她与耶稣共同使命的另类叙事。文章也讨论星际血统、能量携带者与如何在现实生活中表达独特天赋。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology11-mary-magdalene-isis-temple-arcturian-origin.html",
-    "image": ""
-  },
-  {
-    "title": "耶稣是大角星人？复活、抹大拉的玛利亚与被改写的基督叙事｜《大角星人文摘》第12集",
-    "description": "本篇以耶稣自述的形式，提出关于其大角星起源、复活过程、抹大拉的玛利亚及早期基督教历史的另类叙事，并讨论耶稣信息如何被宗教制度改写，以及真正的拯救是否来自意识、智慧与自由的提升。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology12-jesus-resurrection-mary-magdalene.html",
-    "image": ""
-  },
-  {
-    "title": "睡眠如何帮助身体自我修复？大角星医疗官谈睡前意图与高维疗愈｜《大角星人文摘》第13集",
-    "description": "大角星医疗官Azuron讲述死亡后的意识转变，以及通过意图与光进行疗愈的经历。本篇重点探讨睡眠与身体修复、睡前疗愈意图、潜意识信念及接受帮助的能力，并提醒读者重视充分而自然的休息。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology13-sleep-self-healing-bedtime-intention.html",
-    "image": ""
-  },
-  {
-    "title": "如何训练非线性思维？大角星人谈全息感应、多维记忆与未来想象｜《大角星人文摘》第14集",
-    "description": "大角星冥想大师Esu介绍一种多感官意识训练：同时回忆前后左右上下的视觉、声音与身体感觉，尝试打破惯常的线性注意模式。本篇也讨论全息记忆、生命回顾、未来想象与多种可能性。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology14-nonlinear-thinking-holographic-perception.html",
-    "image": ""
-  },
-  {
-    "title": "Nakura冥想是什么？顶轮、净光与改变意识状态的练习｜《大角星人文摘》第15集",
-    "description": "大角星冥想大师Esu介绍Nakura冥想：将注意力轻柔地停留在顶轮上方，结合净光想象与自然呼吸，探索意识状态的变化。文章也说明练习前的心理准备，以及冥想结束后如何借助五感重新回到日常现实。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html",
-    "image": ""
-  },
-  {
-    "title": "与外星生命接触时如何辨别信息？意识主权、科技伦理与人类未来｜《大角星人文摘》第16集",
-    "description": "大角星战士Frephios讨论人类与外星生命接触时面临的信息干扰、信念过滤与主权问题，并进一步探讨语言如何限制认知、技术如何被权力利用，以及个人意识改变如何推动集体未来转向。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology16-alien-contact-discernment-consciousness-sovereignty.html",
-    "image": ""
-  },
-  {
-    "title": "共情力如何改变人类未来？大角星人谈生态危机、人与自然及集体意识｜《大角星人文摘》第17集",
-    "description": "萨纳特·库玛拉从生态危机与文明进化出发，讨论共情智力为何是人类生存的重要能力。文章提出通过植物、动物和自然重新连接内心，并思考个人意识、科技发展与集体未来之间的关系。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology17-empathy-intelligence-ecological-consciousness.html",
-    "image": ""
-  },
-  {
-    "title": "通灵信息如何辨别？高维沟通的心理风险与安全原则｜《大角星人文摘》第18集",
-    "description": "汤姆·肯永在全书后记中讨论改变意识状态与所谓高维沟通可能出现的风险，包括情绪干扰、个人幻想、信息扭曲与心理障碍，并提出保持自我诚实、记录验证、尊重自由意志及寻求专业支持等原则。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology18-channeling-discernment-psychological-safety.html",
-    "image": ""
-  },
-  {
     "title": "第五维度觉醒指南：哈索尔的讯息、意识进化与声音冥想练习",
     "description": "哈索尔星际讯息揭示：人类正迈向第五维度的意识进化。本文深入解析“时间与空间的幻象”、引力场与信念系统的制约，以及人类面临的三大挑战。并附上汤姆·肯永的《连接世界的桥梁》声音冥想指南，帮助你跨越意识门槛，激活右脑空间感知，体验第五视角的自由。",
     "slug": "/all-articles/courses/consciousness-alchemy/fifth-dimension-consciousness-evolution-sound-meditation.html",
@@ -588,6 +594,12 @@
     "image": ""
   },
   {
+    "title": "睡眠自愈力：第五维度、潜意识疗愈与高维治疗师的睡前观想",
+    "description": "本文结合《大角星人文摘》、朵洛莉丝·侃南的催眠案例与暮雨的亲身经历，讨论深度睡眠、梦境、潜意识和身体自我修复之间的关系，并整理睡前观想、减少环境干扰、缓慢醒来与记录身体变化等实践方法。",
+    "slug": "/all-articles/courses/human-body-healing/sleep-self-healing-fifth-dimension-higher-self-dreams.html",
+    "image": ""
+  },
+  {
     "title": "大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？",
     "description": "本篇深入解析“扬升（Ascension）”的本质：如何透过观想、潜意识清理与能量练习，点燃神圣之心、扩展能量场并进入更高层次的意识。包含实操步骤、常见阻碍以及关系与灵魂整合的建议，适合正在追求灵性觉醒的你。",
     "slug": "/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html",
@@ -627,54 +639,6 @@
     "title": "走出恐惧的迷雾：人类集体意识的海洋 │ 走出内在恐惧的4个阶段",
     "description": "星际种子们正在地球上开辟新的人类意识之路。本篇深入解析恐惧能量如何操控人类思维，以及如何通过四个阶段的灵性实践走出恐惧迷雾。帮助你识别内在的独裁者，重新聆听灵魂的声音，迈向觉醒与自由。",
     "slug": "/all-articles/healing-empowerment/dark-night-of-the-soul/starseed-fear-energy-how-to-break-free-and-awaken.html",
-    "image": ""
-  },
-  {
-    "title": "觉醒与地球未来：提升振动频率与灵性成长指南",
-    "description": "探索人类觉醒如何改变地球的未来，通过催眠案例揭示意识、生命力与灵性成长的关键。了解如何提升振动频率、善行与觉知，从而影响潜在的地球未来。本文提供实践建议与思维启发，引导你走向觉醒之路。",
-    "slug": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html",
-    "image": ""
-  },
-  {
-    "title": "超越业力之轮：高维意识、光的频率与人类觉醒的真实机制",
-    "description": "通过真实的催眠回溯对话，揭示高维存在、次元结构、业力之轮与人类觉醒之间的深层关系。本文系统解析意识振动、光的频率、扬升大师与信念如何塑造人类的轮回路径，帮助你理解“觉醒”究竟意味着什么，以及它为何正在发生。",
-    "slug": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/beyond-karma-wheel-human-consciousness-dimensions-light-awakening.html",
-    "image": ""
-  },
-  {
-    "title": "细胞的意识与疗愈：超越病菌理论的自愈智慧",
-    "description": "探索朵洛莉丝·侃南的潜意识对话，揭示细胞的独立意识、疗愈智慧与轮回观。理解为什么病菌并非疾病根源，如何通过与身体沟通激活自我疗愈力，改变你对生命、健康与死亡的认知。",
-    "slug": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/cell-consciousness-healing-beyond-germs-self-exploration.html",
-    "image": ""
-  },
-  {
-    "title": "光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告",
-    "description": "本集基于朵洛莉丝·侃南的催眠报告，梳理“光之灵”的存在方式与沟通机制：从“无法言说的真相”“回到光之故乡”“能量口袋与风箱原理”，到“形态自由进出”“负能量与意图法则”“潜意识如何完成疗愈”。结合 Patricia 个案，解析如何在高频状态下引导能量、提升频率与身心修复的路径与边界，强调出于最高意图的应用与自我疗愈之路。",
-    "slug": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html",
-    "image": ""
-  },
-  {
-    "title": "朵洛莉丝·侃南：光子波协助人类意识的转变 │ 我们正处于地球进化的关键时刻",
-    "description": "探索光子波如何协助人类意识转变，解读地球进化关键时期、大觉醒时代以及外星光体对灵性成长与DNA启动的作用。结合朵洛莉丝·侃南催眠个案记录，揭示光之灵与星际能量如何帮助人类扬升，提升振动频率，迈向更高维度的存在。",
-    "slug": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/photon-waves-human-consciousness-evolution-ascension-guide.html",
-    "image": ""
-  },
-  {
-    "title": "揭秘前世催眠回溯：潜意识身体信号解读与灵魂疗愈指南",
-    "description": "探索前世催眠回溯的奥秘，解析潜意识如何通过身体症状传递灵魂讯息。结合朵洛莉丝·侃南的催眠案例，揭示疾病背后的心理与前世因素，帮助你解读身体信号，理解情绪、行为与健康的深层联系，实现身心灵的疗愈与自我觉察。",
-    "slug": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-body-signs-soul-healing.html",
-    "image": ""
-  },
-  {
-    "title": "前世催眠回溯揭秘：潜意识、集体意识与宇宙意识探索指南",
-    "description": "深入解析潜意识的全知特性，探索前世催眠、冥想、控梦与星体投射等意识层次门户。结合催眠案例、脑波研究及历史实例，揭示如何通过控制专注力访问潜意识、获取失落知识与灵性启示。",
-    "slug": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-collective-consciousness-astral-projection.html",
-    "image": ""
-  },
-  {
-    "title": "前世催眠回溯揭秘：潜意识、业力与今生健康的深度案例分析",
-    "description": "探索朵洛莉丝·侃南前世催眠疗法，揭示前世经历如何影响今生的身体健康、心理状态及业力循环。通过真实案例解析关节炎、子宫纤维瘤、偏头痛、肥胖、哮喘等疾病的前世根源，探讨潜意识运作、因果业力平衡及转世计划，助你理解灵魂能量与生命课程的深层联系。",
-    "slug": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-karma-health-cases.html",
     "image": ""
   },
   {
@@ -732,9 +696,51 @@
     "image": ""
   },
   {
-    "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
-    "description": "本篇整理汤姆·肯永关于心理声学、声音疗愈与改变意识状态的研究，包括《光船》、Nakura冥想、大角星再生技术及多种免费音频，并介绍鞍马山、灵气传说和作者的主要著作与文章。",
-    "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
+    "title": "觉醒与地球未来：提升振动频率与灵性成长指南",
+    "description": "探索人类觉醒如何改变地球的未来，通过催眠案例揭示意识、生命力与灵性成长的关键。了解如何提升振动频率、善行与觉知，从而影响潜在的地球未来。本文提供实践建议与思维启发，引导你走向觉醒之路。",
+    "slug": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html",
+    "image": ""
+  },
+  {
+    "title": "超越业力之轮：高维意识、光的频率与人类觉醒的真实机制",
+    "description": "通过真实的催眠回溯对话，揭示高维存在、次元结构、业力之轮与人类觉醒之间的深层关系。本文系统解析意识振动、光的频率、扬升大师与信念如何塑造人类的轮回路径，帮助你理解“觉醒”究竟意味着什么，以及它为何正在发生。",
+    "slug": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/beyond-karma-wheel-human-consciousness-dimensions-light-awakening.html",
+    "image": ""
+  },
+  {
+    "title": "细胞的意识与疗愈：超越病菌理论的自愈智慧",
+    "description": "探索朵洛莉丝·侃南的潜意识对话，揭示细胞的独立意识、疗愈智慧与轮回观。理解为什么病菌并非疾病根源，如何通过与身体沟通激活自我疗愈力，改变你对生命、健康与死亡的认知。",
+    "slug": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/cell-consciousness-healing-beyond-germs-self-exploration.html",
+    "image": ""
+  },
+  {
+    "title": "光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告",
+    "description": "本集基于朵洛莉丝·侃南的催眠报告，梳理“光之灵”的存在方式与沟通机制：从“无法言说的真相”“回到光之故乡”“能量口袋与风箱原理”，到“形态自由进出”“负能量与意图法则”“潜意识如何完成疗愈”。结合 Patricia 个案，解析如何在高频状态下引导能量、提升频率与身心修复的路径与边界，强调出于最高意图的应用与自我疗愈之路。",
+    "slug": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html",
+    "image": ""
+  },
+  {
+    "title": "朵洛莉丝·侃南：光子波协助人类意识的转变 │ 我们正处于地球进化的关键时刻",
+    "description": "探索光子波如何协助人类意识转变，解读地球进化关键时期、大觉醒时代以及外星光体对灵性成长与DNA启动的作用。结合朵洛莉丝·侃南催眠个案记录，揭示光之灵与星际能量如何帮助人类扬升，提升振动频率，迈向更高维度的存在。",
+    "slug": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/photon-waves-human-consciousness-evolution-ascension-guide.html",
+    "image": ""
+  },
+  {
+    "title": "揭秘前世催眠回溯：潜意识身体信号解读与灵魂疗愈指南",
+    "description": "探索前世催眠回溯的奥秘，解析潜意识如何通过身体症状传递灵魂讯息。结合朵洛莉丝·侃南的催眠案例，揭示疾病背后的心理与前世因素，帮助你解读身体信号，理解情绪、行为与健康的深层联系，实现身心灵的疗愈与自我觉察。",
+    "slug": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-body-signs-soul-healing.html",
+    "image": ""
+  },
+  {
+    "title": "前世催眠回溯揭秘：潜意识、集体意识与宇宙意识探索指南",
+    "description": "深入解析潜意识的全知特性，探索前世催眠、冥想、控梦与星体投射等意识层次门户。结合催眠案例、脑波研究及历史实例，揭示如何通过控制专注力访问潜意识、获取失落知识与灵性启示。",
+    "slug": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-collective-consciousness-astral-projection.html",
+    "image": ""
+  },
+  {
+    "title": "前世催眠回溯揭秘：潜意识、业力与今生健康的深度案例分析",
+    "description": "探索朵洛莉丝·侃南前世催眠疗法，揭示前世经历如何影响今生的身体健康、心理状态及业力循环。通过真实案例解析关节炎、子宫纤维瘤、偏头痛、肥胖、哮喘等疾病的前世根源，探讨潜意识运作、因果业力平衡及转世计划，助你理解灵魂能量与生命课程的深层联系。",
+    "slug": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-karma-health-cases.html",
     "image": ""
   }
 ]

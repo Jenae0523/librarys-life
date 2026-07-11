@@ -21,5 +21,6 @@ number: 19
 subtitle_url: ""
 book_slug: the-arcturian-anthology
 is_audio_episode: true
+article_url: "/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html"
 ---
 
