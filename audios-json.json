@@ -1432,12 +1432,28 @@
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio18.MP3"
   },
   {
+    "title": "延伸阅读 │ 汤姆·肯永：引发心理-精神排毒的四要素",
+    "subtitle": "",
+    "description": "引发心理-精神排毒的四要素：改变对时间和空间的感知，个人历史和情绪毒素，经络，气脉。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio19/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.mp3"
+  },
+  {
     "title": "第2集：打开你的思维定式",
     "subtitle": "",
     "description": "有些想法本质上是激进的，这意味着它们有可能改变我们对现实的看法。不同于牛顿现实的可靠、可预测和逻辑，量子力学关注的是现实的亚原子领域，并指出它既不可预测，也不合逻辑。",
     "slug": "/audiobooks/the-arcturian-anthology/audio2/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio2.MP3"
+  },
+  {
+    "title": "延伸阅读 │ 为什么你无法维持在第五维度？",
+    "subtitle": "",
+    "description": "有效睡眠的强大自愈力，如何唤醒身体的自我疗愈机制？影响你睡眠质量的能量干扰。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio20/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio20.MP3"
   },
   {
     "title": "第3集：人类的潜能",
@@ -1862,21 +1878,5 @@
     "slug": "/audiobooks/three-waves-of-volunteers/",
     "image": "",
     "audio_url": ""
-  },
-  {
-    "title": "延伸阅读 │ 汤姆·肯永：引发心理-精神排毒的四要素",
-    "subtitle": "",
-    "description": "引发心理-精神排毒的四要素：改变对时间和空间的感知，个人历史和情绪毒素，经络，气脉。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio19/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio19.MP3"
-  },
-  {
-    "title": "延伸阅读 │ 为什么你无法维持在第五维度？",
-    "subtitle": "",
-    "description": "有效睡眠的强大自愈力，如何唤醒身体的自我疗愈机制？影响你睡眠质量的能量干扰。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio20/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio20.MP3"
   }
 ]
