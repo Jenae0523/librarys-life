@@ -168,14 +168,6 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio28.MP3"
   },
   {
-    "title": "第29集：谁在决定我们的命运？",
-    "subtitle": "",
-    "description": "什么在决定灵魂回到地球轮回？宇宙定律，如何引导灵魂的决定？被困恶性循环里：反复在地球轮回",
-    "slug": "/audiobooks/between-death-life/audio29/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio29.MP3"
-  },
-  {
     "title": "第3集：灵界的迎接者",
     "subtitle": "",
     "description": "死后灵魂会去哪儿？耶稣的能量，协助灵魂死亡跨界 │ 跨界后开启全部灵魂记忆 │ 为了进步，死亡是必要的 │ 圣经上被抹除的创造真相",
@@ -190,6 +182,14 @@
     "slug": "/audiobooks/between-death-life/audio30/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio30.MP3"
+  },
+  {
+    "title": "第29集：谁在决定我们的命运？",
+    "subtitle": "",
+    "description": "什么在决定灵魂回到地球轮回？宇宙定律，如何引导灵魂的决定？被困恶性循环里：反复在地球轮回",
+    "slug": "/audiobooks/between-death-life/audio29/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio29.MP3"
   },
   {
     "title": "第31集：耶稣的使命",
@@ -1376,14 +1376,6 @@
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio11.MP3"
   },
   {
-    "title": "第12集：耶稣复活的真相 │ 物理身体转换至更高维度",
-    "subtitle": "",
-    "description": "我的话有很多翻译版本，其中大多数不准确。本质上，我试图传达给那些跟随我道路的人的是，他们将因自己生命、 智力和自由的提升而得救。得救的意思是，从生命的低微中得救，从智力的衰退中得救，从灵魂的禁锢中得救。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio12/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio12.MP3"
-  },
-  {
     "title": "第13集：如何达到最高水平的身体疗愈？有效睡眠的自愈力",
     "subtitle": "",
     "description": "你可以召唤你自己更高维度的治疗师。你可以在入睡前请求他们的帮助。你必须请求，否则无法给出。第一，具体说出你希望得到的帮助，通过你头脑中的想法做到这一点；第二，你必须超越自己不值得，你不配拥有的信念系统。",
@@ -1400,12 +1392,12 @@
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio14.MP3"
   },
   {
-    "title": "第15集：Nakura冥想 │ 如何让你的意识在维度间自由移动？",
+    "title": "第12集：耶稣复活的真相 │ 物理身体转换至更高维度",
     "subtitle": "",
-    "description": "大角星冥想大师：呼吸的奥秘，改变脑波频率的方法；净光冥想保护，防止低振动存有的扰乱；Nakura冥想，穿越维度的通道；冥想结束，神经系统重新定位。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio15/",
+    "description": "我的话有很多翻译版本，其中大多数不准确。本质上，我试图传达给那些跟随我道路的人的是，他们将因自己生命、 智力和自由的提升而得救。得救的意思是，从生命的低微中得救，从智力的衰退中得救，从灵魂的禁锢中得救。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio12/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio15.MP3"
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio12.MP3"
   },
   {
     "title": "第16集：与外星生命接触时，人类面临的挑战和责任",
@@ -1416,36 +1408,20 @@
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio16.MP3"
   },
   {
+    "title": "第15集：Nakura冥想 │ 如何让你的意识在维度间自由移动？",
+    "subtitle": "",
+    "description": "大角星冥想大师：呼吸的奥秘，改变脑波频率的方法；净光冥想保护，防止低振动存有的扰乱；Nakura冥想，穿越维度的通道；冥想结束，神经系统重新定位。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio15/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio15.MP3"
+  },
+  {
     "title": "第17集：你的共情智力，在微观量子层面影响人类集体",
     "subtitle": "",
     "description": "你发展了自己的共情智力以后，你将以某种神秘的方式影响集体——你通过微观量子效应做到这一点。这不是神秘主义，这是物理学。一个原子中最微小的变化都能影响一个分子，而分子进而影响整个结构。",
     "slug": "/audiobooks/the-arcturian-anthology/audio17/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio17.MP3"
-  },
-  {
-    "title": "第18集：心理咨询师关于通灵的忠告与建议（完结）",
-    "subtitle": "",
-    "description": "你的情绪音调，你的心理，情绪状态……会影响你在意识状态改变期间，收到的信息类型和质量。有一整群存有把自己伪装成高维存有，而实际上并不是。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio18/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio18.MP3"
-  },
-  {
-    "title": "延伸阅读 │ 汤姆·肯永：引发心理-精神排毒的四要素",
-    "subtitle": "",
-    "description": "引发心理-精神排毒的四要素：改变对时间和空间的感知，个人历史和情绪毒素，经络，气脉。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio19/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.mp3"
-  },
-  {
-    "title": "第2集：打开你的思维定式",
-    "subtitle": "",
-    "description": "有些想法本质上是激进的，这意味着它们有可能改变我们对现实的看法。不同于牛顿现实的可靠、可预测和逻辑，量子力学关注的是现实的亚原子领域，并指出它既不可预测，也不合逻辑。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio2/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio2.MP3"
   },
   {
     "title": "延伸阅读 │ 为什么你无法维持在第五维度？",
@@ -1456,12 +1432,28 @@
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio20.MP3"
   },
   {
-    "title": "第3集：人类的潜能",
+    "title": "延伸阅读 │ 汤姆·肯永：引发心理-精神排毒的四要素",
     "subtitle": "",
-    "description": "托马斯·潘恩《理性时代》告诉我们质疑权威 │ 不一样的人类创世故事 │ 我的外星DNA链 │ 你可能不是地球人",
-    "slug": "/audiobooks/the-arcturian-anthology/audio3/",
+    "description": "引发心理-精神排毒的四要素：改变对时间和空间的感知，个人历史和情绪毒素，经络，气脉。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio19/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio3.MP3"
+    "audio_url": "https://audio.librarys.life/audio/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.mp3"
+  },
+  {
+    "title": "第18集：心理咨询师关于通灵的忠告与建议（完结）",
+    "subtitle": "",
+    "description": "你的情绪音调，你的心理，情绪状态……会影响你在意识状态改变期间，收到的信息类型和质量。有一整群存有把自己伪装成高维存有，而实际上并不是。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio18/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio18.MP3"
+  },
+  {
+    "title": "第2集：打开你的思维定式",
+    "subtitle": "",
+    "description": "有些想法本质上是激进的，这意味着它们有可能改变我们对现实的看法。不同于牛顿现实的可靠、可预测和逻辑，量子力学关注的是现实的亚原子领域，并指出它既不可预测，也不合逻辑。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio2/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio2.MP3"
   },
   {
     "title": "第4集：影响古埃及的外星种族-哈索尔人",
@@ -1472,12 +1464,12 @@
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio4.MP3"
   },
   {
-    "title": "第5集：地球监护人 │ 大角星人的使命",
+    "title": "第3集：人类的潜能",
     "subtitle": "",
-    "description": "这个宇宙充满了非凡的能量和存有。一些实体的意图是仁慈的，一些是恶毒的。我们大角星人主张生命、智力和仁慈的进步。我们相信众生应该是自由的，只要他们不限制他人的自由。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio5/",
+    "description": "托马斯·潘恩《理性时代》告诉我们质疑权威 │ 不一样的人类创世故事 │ 我的外星DNA链 │ 你可能不是地球人",
+    "slug": "/audiobooks/the-arcturian-anthology/audio3/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio5.MP3"
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio3.MP3"
   },
   {
     "title": "第6集：人类起源的历史 │ 激活松果体",
@@ -1502,14 +1494,6 @@
     "slug": "/audiobooks/the-arcturian-anthology/audio8/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio8.MP3"
-  },
-  {
-    "title": "第9集：如何塑造你的新现实？你是量子场活动的创造者",
-    "subtitle": "",
-    "description": "你是量子场活动的生产者。你可以通过你的意图，创造性思想和专注力影响量子领域。换句话说，你可以通过思维的力量塑造你的新现实。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio9/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio9.MP3"
   },
   {
     "title": "第1集：没有前世的人",
@@ -1616,6 +1600,14 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio20.MP3"
   },
   {
+    "title": "第5集：地球监护人 │ 大角星人的使命",
+    "subtitle": "",
+    "description": "这个宇宙充满了非凡的能量和存有。一些实体的意图是仁慈的，一些是恶毒的。我们大角星人主张生命、智力和仁慈的进步。我们相信众生应该是自由的，只要他们不限制他人的自由。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio5/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio5.MP3"
+  },
+  {
     "title": "第21集：离开族人的女王",
     "subtitle": "",
     "description": "一个外星种族的女王，为寻找缺失的片段以完成循环，进入地球转世为人类：遭受虐待，伤害与疾病……种种人生困境，正是她主动选择的成长路径。",
@@ -1630,6 +1622,14 @@
     "slug": "/audiobooks/three-waves-of-volunteers/audio22/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio22.MP3"
+  },
+  {
+    "title": "第9集：如何塑造你的新现实？你是量子场活动的创造者",
+    "subtitle": "",
+    "description": "你是量子场活动的生产者。你可以通过你的意图，创造性思想和专注力影响量子领域。换句话说，你可以通过思维的力量塑造你的新现实。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio9/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio9.MP3"
   },
   {
     "title": "第23集：跨星系的观察者",
@@ -1864,18 +1864,18 @@
     "audio_url": ""
   },
   {
-    "title": "《大角星人文摘》",
-    "subtitle": "",
-    "description": "本书初版于2013年9月，它从更高维度的视角，为人类提供了一种对现实的扩展看法。\n\n这不是一本科幻小说，这是一本可以启发你思考，非常实用且严谨的通灵报告。书中反复强调我们应认识到人类自身的潜能——可以扩展与高维度智慧存有的全息感应交流能力、如何用思维塑造全新的现实、身体疗愈等。书中不但解释了其本质，并提出了详细有效的训练方法。\n\n此外，他们多次提到人类进化的限制在于狭隘的历史观。从地球守护者大角星人的视角，介绍了人类起源的历史（有关远古基因篡改，人类包含20多种星际血统，安努纳奇议程等），并提出人类当下正面临的机遇（太阳风正激活沉睡的DNA和科技大爆发）与挑战（灭绝是规则，生存是例外）。\n\n这本书不是为了满足那些对外星人好奇的读者，它是暮雨献给那些对展现他们生活中更高，更进化的现实和状况感兴趣的朋友。学习控制和重塑你的思维模式，绝对是一个挑战！你在生活中如何应对这一挑战，将决定你的生活质量、你的智力水平，以及你经历多少自由或监禁。\n\n【关于作者】汤姆·肯永（Tom Kenyon）拥有二十多年的心理治疗师临床经验。他通过将催眠状态和声音治疗结合，于1987年独创了一种加速治疗和改变人类神经系统以及行为模式的方法。他将这部分工作称为“身体/心灵再教育”的治疗方式。他以这种快速心理治疗的形式和一种称为跨维度的大脑开发培训为治疗师和咨询师开展专业认证。他提出的方法可以通过具体的意识训练，刺激大脑/思维未使用的部分。 \n\n汤姆·肯永同时也是多维度存有哈索尔人、大角星人、抹大拉的玛利亚的通灵管道，并具有20多年的通灵经验。他可以“调谐自己的大脑”到任何频率，并带来最高质量的信息。\n\n在肯永先生的另一本通灵作品《抹大拉手稿-荷鲁斯炼金术和伊希斯性魔法》里他谈到自己对通灵的态度，“对我来说，通灵是一种值得怀疑的活动。它们携带着各种各样的东西，有些有趣，有些则毫无价值，还有些甚至非常奇怪。有时，通灵能够捕捉到毫无疑问具有价值的东西，但通常它们夹杂在一堆垃圾中。\n\n我对信息的准确性非常挑剔。我会寻找逻辑上的不一致。我设置陷阱。如果它们通过了这些测试，我更有可能考虑它们告诉我的内容。但我是最终的评判者。如果他们所说的对我来说毫无意义，我就会将其驳回。\n\n作为一个精神实用主义者，我总是亲身尝试一切。如果有效，我会保留下来继续使用，否则就放弃它。\n\n作为一个重视客观事实，坚守逻辑的人，我无法确定这个故事是否真实。这让我感到不安。但我可以肯定的是，她（指抹大拉的玛丽亚）分享的方法和洞见是非凡的。因此，对我而言，在整理手稿时，我把故事放回了河里，保留了其中的方法。我希望你们也这样做。”\n",
-    "slug": "/audiobooks/the-arcturian-anthology/",
-    "image": "",
-    "audio_url": ""
-  },
-  {
     "title": "《三波志愿者与新地球》",
     "subtitle": "",
     "description": "《三波志愿者与新地球》是美国催眠治疗师兼灵性研究者朵洛莉丝·侃南（Dolores Cannon）在多年深度催眠回溯工作中，收集到的灵性讯息与个案对话的成果。\n\n在20世纪中叶后，由于地球面临巨大的能量危机和可能的灾难性转变，宇宙中纯净、没有业力束缚的灵魂被召唤到地球，协助人类与地球能量提升。作者将这些灵魂称为三波志愿者，每波志愿者都有独特的特点和使命：\n\n**第一波志愿者**：出生于较早年代（约1940–1960年代），对地球的低频能量和暴力环境极度不适，是先驱者。\n\n**第二波志愿者**：较能适应地球生活的人，他们的能量像“天线”，自然影响周围人，但通常偏好独处。\n\n**第三波志愿者**：被描述为更高频率的灵魂（多为年轻一代），带有更进化的DNA和对地球新振动的适应能力，是未来的希望。\n\n书中不仅讲述了这些志愿者的身份和能量角色，还涉及外星文明、光体存在、维度转换、所谓的“新地球”，以及人类意识如何超越旧的业力模式。作者认为，志愿者在降生时回到地球前的记忆被抹去，因此在成长过程中常感到不属于这里或使命感模糊。\n",
     "slug": "/audiobooks/three-waves-of-volunteers/",
+    "image": "",
+    "audio_url": ""
+  },
+  {
+    "title": "《大角星人文摘》",
+    "subtitle": "",
+    "description": "本书初版于2013年9月，它从更高维度的视角，为人类提供了一种对现实的扩展看法。\n\n这不是一本科幻小说，这是一本可以启发你思考，非常实用且严谨的通灵报告。书中反复强调我们应认识到人类自身的潜能——可以扩展与高维度智慧存有的全息感应交流能力、如何用思维塑造全新的现实、身体疗愈等。书中不但解释了其本质，并提出了详细有效的训练方法。\n\n此外，他们多次提到人类进化的限制在于狭隘的历史观。从地球守护者大角星人的视角，介绍了人类起源的历史（有关远古基因篡改，人类包含20多种星际血统，安努纳奇议程等），并提出人类当下正面临的机遇（太阳风正激活沉睡的DNA和科技大爆发）与挑战（灭绝是规则，生存是例外）。\n\n这本书不是为了满足那些对外星人好奇的读者，它是暮雨献给那些对展现他们生活中更高，更进化的现实和状况感兴趣的朋友。学习控制和重塑你的思维模式，绝对是一个挑战！你在生活中如何应对这一挑战，将决定你的生活质量、你的智力水平，以及你经历多少自由或监禁。\n\n【关于作者】汤姆·肯永（Tom Kenyon）拥有二十多年的心理治疗师临床经验。他通过将催眠状态和声音治疗结合，于1987年独创了一种加速治疗和改变人类神经系统以及行为模式的方法。他将这部分工作称为“身体/心灵再教育”的治疗方式。他以这种快速心理治疗的形式和一种称为跨维度的大脑开发培训为治疗师和咨询师开展专业认证。他提出的方法可以通过具体的意识训练，刺激大脑/思维未使用的部分。 \n\n汤姆·肯永同时也是多维度存有哈索尔人、大角星人、抹大拉的玛利亚的通灵管道，并具有20多年的通灵经验。他可以“调谐自己的大脑”到任何频率，并带来最高质量的信息。\n\n在肯永先生的另一本通灵作品《抹大拉手稿-荷鲁斯炼金术和伊希斯性魔法》里他谈到自己对通灵的态度，“对我来说，通灵是一种值得怀疑的活动。它们携带着各种各样的东西，有些有趣，有些则毫无价值，还有些甚至非常奇怪。有时，通灵能够捕捉到毫无疑问具有价值的东西，但通常它们夹杂在一堆垃圾中。\n\n我对信息的准确性非常挑剔。我会寻找逻辑上的不一致。我设置陷阱。如果它们通过了这些测试，我更有可能考虑它们告诉我的内容。但我是最终的评判者。如果他们所说的对我来说毫无意义，我就会将其驳回。\n\n作为一个精神实用主义者，我总是亲身尝试一切。如果有效，我会保留下来继续使用，否则就放弃它。\n\n作为一个重视客观事实，坚守逻辑的人，我无法确定这个故事是否真实。这让我感到不安。但我可以肯定的是，她（指抹大拉的玛丽亚）分享的方法和洞见是非凡的。因此，对我而言，在整理手稿时，我把故事放回了河里，保留了其中的方法。我希望你们也这样做。”\n",
+    "slug": "/audiobooks/the-arcturian-anthology/",
     "image": "",
     "audio_url": ""
   }

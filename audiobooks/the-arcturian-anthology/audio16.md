@@ -16,7 +16,6 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
-  - 《大角星人文摘》
   - 大角星人
   - 外星文明
   - 哈索尔人

@@ -14,7 +14,6 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
-  - 《大角星人文摘》
   - 量子现实
   - 大角星人
 number: 9

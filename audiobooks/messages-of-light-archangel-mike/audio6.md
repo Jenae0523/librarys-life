@@ -23,7 +23,7 @@ date: 2026-03-01
 tags:
   - audiobooks
   - 冥想
-  - 《抹大拉手稿》
+
 number: 6
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike6.json"

@@ -22,7 +22,7 @@ keywords:
 date: 2026-03-01
 tags:
   - audiobooks
-  - 大角星人
+
 number: 4
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike4.json"

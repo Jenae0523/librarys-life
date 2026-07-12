@@ -13,7 +13,6 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
-  - 《生死之间》
   - 死后世界
 number: 15
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life15.json"

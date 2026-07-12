@@ -16,7 +16,6 @@ keywords:
 date: 2026-02-25
 tags:
   - audiobooks
-  - 《灵魂的暗夜》
   - 通灵信息
 number: 10
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul10.json"

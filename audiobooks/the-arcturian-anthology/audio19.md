@@ -13,7 +13,6 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
-  - 《大角星人文摘》
   - 大角星人
   - 心理学
   - 汤姆肯永

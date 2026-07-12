@@ -23,7 +23,6 @@ tags:
   - audiobooks
   - 能量场
   - 脉轮
-  - 大角星人
 number: 3
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike3.json"

@@ -23,7 +23,6 @@ date: 2026-03-01
 tags:
   - audiobooks
   - 星际种子
-  - 《抹大拉手稿》
 number: 1
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike1.json"

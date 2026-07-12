@@ -14,7 +14,6 @@ keywords:
 date: 2026-02-26
 tags:
   - audiobooks
-  - 《灵魂的暗夜》
   - 前世今生
 number: 31
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul31.json"

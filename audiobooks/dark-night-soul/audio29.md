@@ -12,7 +12,6 @@ keywords:
 date: 2026-02-26
 tags:
   - audiobooks
-  - 《灵魂的暗夜》
 number: 29
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul29.json"
 book_slug: dark-night-soul

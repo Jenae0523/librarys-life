@@ -14,7 +14,6 @@ keywords:
 date: 2026-02-25
 tags:
   - audiobooks
-  - 《灵魂的暗夜》
   - 灵魂转世
 number: 7
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul7.json"
