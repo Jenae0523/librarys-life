@@ -66,18 +66,6 @@
     "image": ""
   },
   {
-    "title": "从语言到AI与万物理论：人类认知重写之旅",
-    "description": "本文带你穿越语言、脑科学、人工智能与物理前沿：探讨语言如何塑造思维，科学家让实验鼠“看电影”重构大脑认知，GPT-4.5通过图灵测试的启示，以及物理学家对“万物理论”的最新探索。同时关注地球环境恢复的希望，呈现人类认知、科技与自然的全景视角。",
-    "slug": "/all-articles/muyu-brief/1-language-and-thought.html",
-    "image": ""
-  },
-  {
-    "title": "当“觉醒”成为商品：如何识别真正的灵性导师与安全实践",
-    "description": "本文探讨现代灵性市场中的现象：当“觉醒”课程被商品化，如何分辨真诚导师与潜在心理操控。通过真实案例分析灵性导师面对质疑、批评与自我反思的方式，提供理性与灵性结合的思考框架，帮助读者在追寻灵性成长时保持独立判断、内在主权与心理安全。",
-    "slug": "/all-articles/muyu-brief/2-awakening-as-commodity.html",
-    "image": ""
-  },
-  {
     "title": "无法正确的沟通，是因为缺乏沟通的品质，是什么导致沟通的终止？打破沟通障碍的5个关键点！",
     "description": "本篇深度解析沟通失败的根源，揭示为什么我们无法真正倾听和理解对方。探讨倾听的艺术、自我重要感、思维惰性、语言局限与沟通品质等5大关键问题，帮助你建立真实、开放、有品质的人际连结。",
     "slug": "/all-articles/insight-awakening/art-of-deep-listening-how-to-break-communication-barriers-and-connect-truly.html",
@@ -117,6 +105,18 @@
     "title": "《瓦尔登湖》反思生活/新闻的真相，现代人为何集体沉睡？隐居者的警钟：清醒地活着！",
     "description": "亨利·戴维·梭罗在《瓦尔登湖》中预言了现代人的迷失与困境：信息焦虑、无意义的忙碌、沉迷幻象的生活方式。本文深度剖析梭罗的隐居哲学，反思新闻真相、现代社会的陷阱，以及我们如何重新学习“清醒地活着”，找回生活的本质。",
     "slug": "/all-articles/insight-awakening/walden-rethinking-life-and-the-news-living-with-wakeful-clarity.html",
+    "image": ""
+  },
+  {
+    "title": "从语言到AI与万物理论：人类认知重写之旅",
+    "description": "本文带你穿越语言、脑科学、人工智能与物理前沿：探讨语言如何塑造思维，科学家让实验鼠“看电影”重构大脑认知，GPT-4.5通过图灵测试的启示，以及物理学家对“万物理论”的最新探索。同时关注地球环境恢复的希望，呈现人类认知、科技与自然的全景视角。",
+    "slug": "/all-articles/muyu-brief/1-language-and-thought.html",
+    "image": ""
+  },
+  {
+    "title": "当“觉醒”成为商品：如何识别真正的灵性导师与安全实践",
+    "description": "本文探讨现代灵性市场中的现象：当“觉醒”课程被商品化，如何分辨真诚导师与潜在心理操控。通过真实案例分析灵性导师面对质疑、批评与自我反思的方式，提供理性与灵性结合的思考框架，帮助读者在追寻灵性成长时保持独立判断、内在主权与心理安全。",
+    "slug": "/all-articles/muyu-brief/2-awakening-as-commodity.html",
     "image": ""
   },
   {
@@ -588,6 +588,12 @@
     "image": ""
   },
   {
+    "title": "你所专注的，会被你的能量喂养｜思想如何参与创造现实？",
+    "description": "当一个想法出现，它并不会立刻消失，而是成为一种能量，进入“可能性的能量球”。你反复专注什么，就会不断为它提供能量，使它更容易显化为现实。这不是简单的正能量口号，而是一种关于注意力、思想能量与现实创造的意识训练。",
+    "slug": "/all-articles/courses/creation-manifestation/focus-expands-thought-energy-possibility-sphere.html",
+    "image": ""
+  },
+  {
     "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
     "description": "很多人误以为“改变现状”就是对抗负面现实，其实这种抗拒只会持续为负面情境充能。本文揭示6个常见观念误区，带你了解频率法则，学会从接纳与感恩中转化现实，真正显化你想要的生活状态。",
     "slug": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
@@ -765,6 +771,12 @@
     "title": "唐望揭示：学习之路必经的四大考验！成为智者的修行指南",
     "description": "唐望提出：成为智者，必须战胜四个敌人——恐惧、明晰、力量与衰老。本篇深度解析每一阶段的心理陷阱，结合克里希那穆提的学习观，揭示成长的内在修炼路径。适合自我觉察、心灵成长、灵性追寻者参考。",
     "slug": "/all-articles/insight-awakening/teachings-of-don-juan/2-wisdom-warriors-path-overcoming-fear-clarity-power-aging.html",
+    "image": ""
+  },
+  {
+    "title": "为什么性别会成为身份认同的核心？朵洛莉丝·侃南谈身体认同、能量与真正的自我",
+    "description": "朵洛莉丝·侃南早期小组催眠资料中的一场对话，从男性与女性能量、同性吸引和前世经验，延伸到性别身份、身体认同与意识本质，并讨论非物质存在如何看待人类对肉身的过度认同。文中观点属于书中的灵性解释。",
+    "slug": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/gender-energy-soul-identity.html",
     "image": ""
   }
 ]
