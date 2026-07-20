@@ -66,6 +66,18 @@
     "image": ""
   },
   {
+    "title": "从语言到AI与万物理论：人类认知重写之旅",
+    "description": "本文带你穿越语言、脑科学、人工智能与物理前沿：探讨语言如何塑造思维，科学家让实验鼠“看电影”重构大脑认知，GPT-4.5通过图灵测试的启示，以及物理学家对“万物理论”的最新探索。同时关注地球环境恢复的希望，呈现人类认知、科技与自然的全景视角。",
+    "slug": "/all-articles/muyu-brief/1-language-and-thought.html",
+    "image": ""
+  },
+  {
+    "title": "当“觉醒”成为商品：如何识别真正的灵性导师与安全实践",
+    "description": "本文探讨现代灵性市场中的现象：当“觉醒”课程被商品化，如何分辨真诚导师与潜在心理操控。通过真实案例分析灵性导师面对质疑、批评与自我反思的方式，提供理性与灵性结合的思考框架，帮助读者在追寻灵性成长时保持独立判断、内在主权与心理安全。",
+    "slug": "/all-articles/muyu-brief/2-awakening-as-commodity.html",
+    "image": ""
+  },
+  {
     "title": "无法正确的沟通，是因为缺乏沟通的品质，是什么导致沟通的终止？打破沟通障碍的5个关键点！",
     "description": "本篇深度解析沟通失败的根源，揭示为什么我们无法真正倾听和理解对方。探讨倾听的艺术、自我重要感、思维惰性、语言局限与沟通品质等5大关键问题，帮助你建立真实、开放、有品质的人际连结。",
     "slug": "/all-articles/insight-awakening/art-of-deep-listening-how-to-break-communication-barriers-and-connect-truly.html",
@@ -105,18 +117,6 @@
     "title": "《瓦尔登湖》反思生活/新闻的真相，现代人为何集体沉睡？隐居者的警钟：清醒地活着！",
     "description": "亨利·戴维·梭罗在《瓦尔登湖》中预言了现代人的迷失与困境：信息焦虑、无意义的忙碌、沉迷幻象的生活方式。本文深度剖析梭罗的隐居哲学，反思新闻真相、现代社会的陷阱，以及我们如何重新学习“清醒地活着”，找回生活的本质。",
     "slug": "/all-articles/insight-awakening/walden-rethinking-life-and-the-news-living-with-wakeful-clarity.html",
-    "image": ""
-  },
-  {
-    "title": "从语言到AI与万物理论：人类认知重写之旅",
-    "description": "本文带你穿越语言、脑科学、人工智能与物理前沿：探讨语言如何塑造思维，科学家让实验鼠“看电影”重构大脑认知，GPT-4.5通过图灵测试的启示，以及物理学家对“万物理论”的最新探索。同时关注地球环境恢复的希望，呈现人类认知、科技与自然的全景视角。",
-    "slug": "/all-articles/muyu-brief/1-language-and-thought.html",
-    "image": ""
-  },
-  {
-    "title": "当“觉醒”成为商品：如何识别真正的灵性导师与安全实践",
-    "description": "本文探讨现代灵性市场中的现象：当“觉醒”课程被商品化，如何分辨真诚导师与潜在心理操控。通过真实案例分析灵性导师面对质疑、批评与自我反思的方式，提供理性与灵性结合的思考框架，帮助读者在追寻灵性成长时保持独立判断、内在主权与心理安全。",
-    "slug": "/all-articles/muyu-brief/2-awakening-as-commodity.html",
     "image": ""
   },
   {
@@ -279,6 +279,72 @@
     "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
     "description": "本篇整理汤姆·肯永关于心理声学、声音疗愈与改变意识状态的研究，包括《光船》、Nakura冥想、大角星再生技术及多种免费音频，并介绍鞍马山、灵气传说和作者的主要著作与文章。",
     "slug": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
+    "image": ""
+  },
+  {
+    "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
+    "description": "深入解析三维现实的本质与时间幻象的作用，揭示如何放下线性时间思维，进入多维感知，跨越四维过渡区，连接高我与源头能量。附7天频率对齐练习，帮助你提升振动状态，显化更高频的现实。",
+    "slug": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
+    "image": ""
+  },
+  {
+    "title": "疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈",
+    "description": "埃德加·凯西如何理解业力与疾病的关系？通过多发性硬化、失明与关节炎等真实解读案例，探讨心态改变、身体治疗、基督意识与恩典法则，并说明为什么疾病并非单纯惩罚，灵性疗愈也不能取代医学治疗。",
+    "slug": "/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html",
+    "image": ""
+  },
+  {
+    "title": "揭秘道教炼金术② 如何修炼“气体身”？从采气，到炼气化神 │ 现代科学已证明“经络”存在？│ 抹大拉手稿23集",
+    "description": "深入探讨道家内丹炼气术，解析丹田的三个能量中心、小周天气循环路径及经络科学证据。结合古老智慧与现代研究，指导如何采气炼气，强化气体身，迈向灵性升华与健康长寿。",
+    "slug": "/all-articles/books/mary-magdalene/23-taoist-alchemy-how-to-cultivate-energy-body-breathing-to-spirit.html",
+    "image": ""
+  },
+  {
+    "title": "一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化",
+    "description": "这是一个关于女性生命轨迹的深度叙事，从原生家庭的压抑与创伤，到事业成功、情感崩塌，再到精神觉醒与自我重建。通过多个关键人生转折点，呈现一个人在关系、信念与现实冲突中逐步解构旧身份、重建自我意识的全过程。",
+    "slug": "/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html",
+    "image": ""
+  },
+  {
+    "title": "一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生",
+    "description": "一位女性在经历黑暗、情感崩塌与生命危机后，踏上欧洲精神之旅，从灵性探索到面对朋友的癌症与死亡，在极限中看见自我本质。本文融合觉醒、心理创伤、亲密关系与生命意义，是一段关于“成为自己”的深度真实记录。",
+    "slug": "/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html",
+    "image": ""
+  },
+  {
+    "title": "真实会让人自由：抹大拉手稿中的神圣关系、女性原则与爱的炼金术",
+    "description": "在《抹大拉手稿》第28集中，一个女人通过爱、创伤、背叛、选择与真实，理解神圣关系的真正意义。本文探讨女性原则的回归、男性与女性能量的平衡，以及真实如何成为通往自由与灵性觉醒的道路。",
+    "slug": "/all-articles/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.html",
+    "image": ""
+  },
+  {
+    "title": "女性原则为何被从神话中抹去？索菲亚、逻各斯与宇宙之母的回归｜抹大拉手稿",
+    "description": "汤姆・肯永从《一个女人的故事》出发，探讨索菲亚与逻各斯、女性原则的失落、夏娃神话、诺斯替传统及宇宙之母的回归。当精神与物质、天空与大地被人为分离，女性、身体与自然也随之失去神圣位置。重新尊重一个女人的故事，或许正是恢复这种平衡的开始。",
+    "slug": "/all-articles/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.html",
+    "image": ""
+  },
+  {
+    "title": "当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验",
+    "description": "DATRE从神秘体验、出体探索与梦境出发，提出一个相反的方向：此生的功课不是离开身体，而是完全进入身体。文章探讨如何通过感官、专注与观察，减少机械反应，学会与身体合作，重新参与正在发生的物质生活。",
+    "slug": "/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html",
+    "image": ""
+  },
+  {
+    "title": "第五维度觉醒指南：哈索尔的讯息、意识进化与声音冥想练习",
+    "description": "哈索尔星际讯息揭示：人类正迈向第五维度的意识进化。本文深入解析“时间与空间的幻象”、引力场与信念系统的制约，以及人类面临的三大挑战。并附上汤姆·肯永的《连接世界的桥梁》声音冥想指南，帮助你跨越意识门槛，激活右脑空间感知，体验第五视角的自由。",
+    "slug": "/all-articles/courses/consciousness-alchemy/fifth-dimension-consciousness-evolution-sound-meditation.html",
+    "image": ""
+  },
+  {
+    "title": "为什么五感无法洞悉真相？情绪的感知扩展，是直通灵魂矩阵的天线",
+    "description": "探索人类情感与高等感知（HSP）的进化潜能，揭秘灵魂矩阵、科洛提代码及其激活方式，解析全息投射与外星频率屏障如何影响人类意识与自由选择。结合科学与灵性视角，揭示人类摆脱精神操控、加速进化的关键路径。",
+    "slug": "/all-articles/courses/consciousness-alchemy/hsp-soul-matrix-holographic-inserts-frequency-barrier.html",
+    "image": ""
+  },
+  {
+    "title": "混沌节点与意识的过渡状态：个人、集体与死亡的灵魂旅程",
+    "description": "探索意识过渡状态的三大层次：个人危机、集体转变与死亡的灵魂跨越。在混沌节点中，如何识别机会之门，如何创造新的现实？",
+    "slug": "/all-articles/courses/consciousness-alchemy/transition-states-consciousness-chaotic-nodes.html",
     "image": ""
   },
   {
@@ -528,66 +594,6 @@
     "image": ""
   },
   {
-    "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
-    "description": "深入解析三维现实的本质与时间幻象的作用，揭示如何放下线性时间思维，进入多维感知，跨越四维过渡区，连接高我与源头能量。附7天频率对齐练习，帮助你提升振动状态，显化更高频的现实。",
-    "slug": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
-    "image": ""
-  },
-  {
-    "title": "疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈",
-    "description": "埃德加·凯西如何理解业力与疾病的关系？通过多发性硬化、失明与关节炎等真实解读案例，探讨心态改变、身体治疗、基督意识与恩典法则，并说明为什么疾病并非单纯惩罚，灵性疗愈也不能取代医学治疗。",
-    "slug": "/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html",
-    "image": ""
-  },
-  {
-    "title": "揭秘道教炼金术② 如何修炼“气体身”？从采气，到炼气化神 │ 现代科学已证明“经络”存在？│ 抹大拉手稿23集",
-    "description": "深入探讨道家内丹炼气术，解析丹田的三个能量中心、小周天气循环路径及经络科学证据。结合古老智慧与现代研究，指导如何采气炼气，强化气体身，迈向灵性升华与健康长寿。",
-    "slug": "/all-articles/books/mary-magdalene/23-taoist-alchemy-how-to-cultivate-energy-body-breathing-to-spirit.html",
-    "image": ""
-  },
-  {
-    "title": "一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化",
-    "description": "这是一个关于女性生命轨迹的深度叙事，从原生家庭的压抑与创伤，到事业成功、情感崩塌，再到精神觉醒与自我重建。通过多个关键人生转折点，呈现一个人在关系、信念与现实冲突中逐步解构旧身份、重建自我意识的全过程。",
-    "slug": "/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html",
-    "image": ""
-  },
-  {
-    "title": "一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生",
-    "description": "一位女性在经历黑暗、情感崩塌与生命危机后，踏上欧洲精神之旅，从灵性探索到面对朋友的癌症与死亡，在极限中看见自我本质。本文融合觉醒、心理创伤、亲密关系与生命意义，是一段关于“成为自己”的深度真实记录。",
-    "slug": "/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html",
-    "image": ""
-  },
-  {
-    "title": "真实会让人自由：抹大拉手稿中的神圣关系、女性原则与爱的炼金术",
-    "description": "在《抹大拉手稿》第28集中，一个女人通过爱、创伤、背叛、选择与真实，理解神圣关系的真正意义。本文探讨女性原则的回归、男性与女性能量的平衡，以及真实如何成为通往自由与灵性觉醒的道路。",
-    "slug": "/all-articles/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.html",
-    "image": ""
-  },
-  {
-    "title": "女性原则为何被从神话中抹去？索菲亚、逻各斯与宇宙之母的回归｜抹大拉手稿",
-    "description": "汤姆・肯永从《一个女人的故事》出发，探讨索菲亚与逻各斯、女性原则的失落、夏娃神话、诺斯替传统及宇宙之母的回归。当精神与物质、天空与大地被人为分离，女性、身体与自然也随之失去神圣位置。重新尊重一个女人的故事，或许正是恢复这种平衡的开始。",
-    "slug": "/all-articles/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.html",
-    "image": ""
-  },
-  {
-    "title": "第五维度觉醒指南：哈索尔的讯息、意识进化与声音冥想练习",
-    "description": "哈索尔星际讯息揭示：人类正迈向第五维度的意识进化。本文深入解析“时间与空间的幻象”、引力场与信念系统的制约，以及人类面临的三大挑战。并附上汤姆·肯永的《连接世界的桥梁》声音冥想指南，帮助你跨越意识门槛，激活右脑空间感知，体验第五视角的自由。",
-    "slug": "/all-articles/courses/consciousness-alchemy/fifth-dimension-consciousness-evolution-sound-meditation.html",
-    "image": ""
-  },
-  {
-    "title": "为什么五感无法洞悉真相？情绪的感知扩展，是直通灵魂矩阵的天线",
-    "description": "探索人类情感与高等感知（HSP）的进化潜能，揭秘灵魂矩阵、科洛提代码及其激活方式，解析全息投射与外星频率屏障如何影响人类意识与自由选择。结合科学与灵性视角，揭示人类摆脱精神操控、加速进化的关键路径。",
-    "slug": "/all-articles/courses/consciousness-alchemy/hsp-soul-matrix-holographic-inserts-frequency-barrier.html",
-    "image": ""
-  },
-  {
-    "title": "混沌节点与意识的过渡状态：个人、集体与死亡的灵魂旅程",
-    "description": "探索意识过渡状态的三大层次：个人危机、集体转变与死亡的灵魂跨越。在混沌节点中，如何识别机会之门，如何创造新的现实？",
-    "slug": "/all-articles/courses/consciousness-alchemy/transition-states-consciousness-chaotic-nodes.html",
-    "image": ""
-  },
-  {
     "title": "你所专注的，会被你的能量喂养｜思想如何参与创造现实？",
     "description": "当一个想法出现，它并不会立刻消失，而是成为一种能量，进入“可能性的能量球”。你反复专注什么，就会不断为它提供能量，使它更容易显化为现实。这不是简单的正能量口号，而是一种关于注意力、思想能量与现实创造的意识训练。",
     "slug": "/all-articles/courses/creation-manifestation/focus-expands-thought-energy-possibility-sphere.html",
@@ -696,6 +702,12 @@
     "image": ""
   },
   {
+    "title": "为什么性别会成为身份认同的核心？朵洛莉丝·侃南谈身体认同、能量与真正的自我",
+    "description": "朵洛莉丝·侃南早期小组催眠资料中的一场对话，从男性与女性能量、同性吸引和前世经验，延伸到性别身份、身体认同与意识本质，并讨论非物质存在如何看待人类对肉身的过度认同。文中观点属于书中的灵性解释。",
+    "slug": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/gender-energy-soul-identity.html",
+    "image": ""
+  },
+  {
     "title": "揭秘前世催眠回溯：潜意识身体信号解读与灵魂疗愈指南",
     "description": "探索前世催眠回溯的奥秘，解析潜意识如何通过身体症状传递灵魂讯息。结合朵洛莉丝·侃南的催眠案例，揭示疾病背后的心理与前世因素，帮助你解读身体信号，理解情绪、行为与健康的深层联系，实现身心灵的疗愈与自我觉察。",
     "slug": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-body-signs-soul-healing.html",
@@ -771,12 +783,6 @@
     "title": "唐望揭示：学习之路必经的四大考验！成为智者的修行指南",
     "description": "唐望提出：成为智者，必须战胜四个敌人——恐惧、明晰、力量与衰老。本篇深度解析每一阶段的心理陷阱，结合克里希那穆提的学习观，揭示成长的内在修炼路径。适合自我觉察、心灵成长、灵性追寻者参考。",
     "slug": "/all-articles/insight-awakening/teachings-of-don-juan/2-wisdom-warriors-path-overcoming-fear-clarity-power-aging.html",
-    "image": ""
-  },
-  {
-    "title": "为什么性别会成为身份认同的核心？朵洛莉丝·侃南谈身体认同、能量与真正的自我",
-    "description": "朵洛莉丝·侃南早期小组催眠资料中的一场对话，从男性与女性能量、同性吸引和前世经验，延伸到性别身份、身体认同与意识本质，并讨论非物质存在如何看待人类对肉身的过度认同。文中观点属于书中的灵性解释。",
-    "slug": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/gender-energy-soul-identity.html",
     "image": ""
   }
 ]
