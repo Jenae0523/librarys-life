@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260724-1328">
+<meta name="version" content="20260724-1515">
 
 
 <meta charset="utf-8">
@@ -252,6 +252,10 @@
     font-size: 15px;
     line-height: 1.9;
     letter-spacing: 0;
+  }
+
+  .tag-node-share {
+    margin: 0 0 30px;
   }
 
   .audiobook-section {
@@ -502,6 +506,55 @@
     color: #3647B7;
   }
 
+  .tag-node-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+    letter-spacing: 0;
+  }
+
+  .tag-node-pagination[hidden] {
+    display: none;
+  }
+
+  .tag-node-pagination__button {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid #d8dcf4;
+    border-radius: 50%;
+    background: #fff;
+    color: #5966bd;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .tag-node-pagination__button:hover:not(:disabled),
+  .tag-node-pagination__button[aria-current="page"] {
+    border-color: #6281c8;
+    background: #6281c8;
+    color: #fff;
+  }
+
+  .tag-node-pagination__button:disabled {
+    cursor: default;
+    opacity: 0.42;
+  }
+
+  .tag-node-pagination__status {
+    width: 100%;
+    margin-top: 4px;
+    color: #777f93;
+    font-size: 13px;
+    text-align: center;
+  }
+
   @media (min-width: 768px) {
     .audiobook-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -538,6 +591,10 @@
               关于大角星人、星舰、高维文明、通灵信息与意识扩展的系列标签。
             
           </p>
+
+          <div class="tag-node-share">
+            <div class="sharethis-inline-share-buttons"></div>
+          </div>
 
           <div class="tag-node-info">
             <div class="tag-node-info__row">
@@ -622,9 +679,9 @@
           </header>
 
           
-          <div class="row">
+          <div class="row" data-tag-pagination-list>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/courses/human-body-healing/sleep-self-healing-fifth-dimension-higher-self-dreams.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -656,7 +713,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -688,7 +745,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology18-channeling-discernment-psychological-safety.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -720,7 +777,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology17-empathy-intelligence-ecological-consciousness.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -752,7 +809,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology16-alien-contact-discernment-consciousness-sovereignty.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -784,7 +841,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -816,7 +873,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology14-nonlinear-thinking-holographic-perception.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -848,7 +905,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology13-sleep-self-healing-bedtime-intention.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -880,7 +937,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology12-jesus-resurrection-mary-magdalene.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -912,7 +969,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology11-mary-magdalene-isis-temple-arcturian-origin.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -944,7 +1001,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology10-akashic-records-future-timelines.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -976,7 +1033,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology09-mind-parallel-reality-multidimensional-consciousness.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1008,7 +1065,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology08-ufo-future-humans-higher-dimensional-beings.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1040,7 +1097,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology07-planetary-consciousness-starseed-dna.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1072,7 +1129,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1104,7 +1161,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology05-sanat-kumara-arcturian-commander.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1136,7 +1193,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology04-hathors-ancient-egypt-parallel-universe.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1168,7 +1225,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology03-anunnaki-human-origins.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1200,7 +1257,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology02-arcturian-spaceship-higher-dimensional-civilization.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1232,7 +1289,7 @@
               </a>
             </div>
             
-            <div class="col-md-6 g-mb-40">
+            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology01-meeting-the-arcturians-consciousness.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1265,6 +1322,11 @@
             </div>
             
           </div>
+          <nav class="tag-node-pagination"
+               data-tag-pagination
+               data-page-size="20"
+               data-pagination-label="文章"
+               aria-label="相关文章分页"></nav>
           
         </section>
 
@@ -1325,9 +1387,9 @@
               <h2 class="tag-node-section-title">相关音频</h2>
             </div>
           </header>
-          <div class="tag-node-audio-row">
+          <div class="tag-node-audio-row" data-tag-pagination-list>
             
-            <div class="col-audio">
+            <div class="col-audio" data-tag-pagination-item>
               
               
               <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1546,7 +1608,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
             </div>
             
-            <div class="col-audio">
+            <div class="col-audio" data-tag-pagination-item>
               
               
               <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1765,7 +1827,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
             </div>
             
-            <div class="col-audio">
+            <div class="col-audio" data-tag-pagination-item>
               
               
               <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1984,7 +2046,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
             </div>
             
-            <div class="col-audio">
+            <div class="col-audio" data-tag-pagination-item>
               
               
               <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2210,7 +2272,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
             </div>
             
-            <div class="col-audio">
+            <div class="col-audio" data-tag-pagination-item>
               
               
               <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2432,7 +2494,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
             </div>
             
-            <div class="col-audio">
+            <div class="col-audio" data-tag-pagination-item>
               
               
               <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2638,7 +2700,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
             </div>
             
-            <div class="col-audio">
+            <div class="col-audio" data-tag-pagination-item>
               
               
               <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2864,7 +2926,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
             </div>
             
-            <div class="col-audio">
+            <div class="col-audio" data-tag-pagination-item>
               
               
               <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -3086,7 +3148,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
             </div>
             
-            <div class="col-audio">
+            <div class="col-audio" data-tag-pagination-item>
               
               
               <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -3292,7 +3354,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
             </div>
             
-            <div class="col-audio">
+            <div class="col-audio" data-tag-pagination-item>
               
               
               <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -3498,7 +3560,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
             </div>
             
-            <div class="col-audio">
+            <div class="col-audio" data-tag-pagination-item>
               
               
               <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -3720,7 +3782,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
             </div>
             
-            <div class="col-audio">
+            <div class="col-audio" data-tag-pagination-item>
               
               
               <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -3852,6 +3914,2412 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
         style="width: 100%; margin-top: 5px;" 
         data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology9.json">
         <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio9.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio" data-tag-pagination-item>
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="第10集：大角星文明的阿卡西管理员" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology10.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/alien-archives/arcturian/the-arcturian-anthology10-akashic-records-future-timelines.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第10集：大角星文明的阿卡西管理员
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        阿卡西场域是一个信息领域，可同时包含与过去、现在和未来的可能相关的任何事件。通过永存的量子现实，建立可能的时间线。当足够多的人改变自己的想法，历史进程就会改变。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/quantum-reality/">
+         量子现实
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/extraterrestrial-civilization/">
+         外星文明
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology10.json">
+        <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio10.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio" data-tag-pagination-item>
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="第11集：抹大拉的玛利亚，她是谁？" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology11.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/alien-archives/arcturian/the-arcturian-anthology11-mary-magdalene-isis-temple-arcturian-origin.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第11集：抹大拉的玛利亚，她是谁？
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        此时，许多化身进入人类的存有，携带着来自他们原生世界的能量。这是人类受到外星智力影响的最常见方式。怎样才能把你的独特礼物散发到人类生活中，而不引起太多错误的注意？
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/mary-magdalene-person/">
+         抹大拉的玛利亚
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/channeling-information/">
+         通灵信息
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology11.json">
+        <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio11.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio" data-tag-pagination-item>
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="第12集：耶稣复活的真相 │ 物理身体转换至更高维度" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology12.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/alien-archives/arcturian/the-arcturian-anthology12-jesus-resurrection-mary-magdalene.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第12集：耶稣复活的真相 │ 物理身体转换至更高维度
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        我的话有很多翻译版本，其中大多数不准确。本质上，我试图传达给那些跟随我道路的人的是，他们将因自己生命、 智力和自由的提升而得救。得救的意思是，从生命的低微中得救，从智力的衰退中得救，从灵魂的禁锢中得救。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/jesus/">
+         耶稣
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology12.json">
+        <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio12.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio" data-tag-pagination-item>
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="第13集：如何达到最高水平的身体疗愈？有效睡眠的自愈力" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology13.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/alien-archives/arcturian/the-arcturian-anthology13-sleep-self-healing-bedtime-intention.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第13集：如何达到最高水平的身体疗愈？有效睡眠的自愈力
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        你可以召唤你自己更高维度的治疗师。你可以在入睡前请求他们的帮助。你必须请求，否则无法给出。第一，具体说出你希望得到的帮助，通过你头脑中的想法做到这一点；第二，你必须超越自己不值得，你不配拥有的信念系统。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/body-healing/">
+         身体疗愈
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/reincarnation/">
+         灵魂转世
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology13.json">
+        <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio13.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio" data-tag-pagination-item>
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="第14集：如何让大脑神经系统，超越线性感知，直接体验多维？" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology14.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/alien-archives/arcturian/the-arcturian-anthology14-nonlinear-thinking-holographic-perception.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第14集：如何让大脑神经系统，超越线性感知，直接体验多维？
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        当你把记忆中的六个视觉区域和听觉区域结合在一起时，你将进入深度恍惚状态。你的大脑思维将被追踪这么多信息的任务淹没。神经系统的线性反射会崩溃，然后你将进入意识的改变状态，这个状态接近全息感应能力的基本原理。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology14.json">
+        <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio14.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio" data-tag-pagination-item>
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="第15集：Nakura冥想 │ 如何让你的意识在维度间自由移动？" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology15.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第15集：Nakura冥想 │ 如何让你的意识在维度间自由移动？
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        大角星冥想大师：呼吸的奥秘，改变脑波频率的方法；净光冥想保护，防止低振动存有的扰乱；Nakura冥想，穿越维度的通道；冥想结束，神经系统重新定位。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/meditation/">
+         冥想
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/quantum-reality/">
+         量子现实
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology15.json">
+        <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio15.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio" data-tag-pagination-item>
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="第16集：与外星生命接触时，人类面临的挑战和责任" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology16.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/alien-archives/arcturian/the-arcturian-anthology16-alien-contact-discernment-consciousness-sovereignty.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第16集：与外星生命接触时，人类面临的挑战和责任
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        宇宙的二元本质：任何行动都会产生相反的力量。你的责任：区分出真实且有价值的信息。人类语言的限制：线性感知和过滤现实。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/extraterrestrial-civilization/">
+         外星文明
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/hathors/">
+         哈索尔人
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology16.json">
+        <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio16.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio" data-tag-pagination-item>
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="第17集：你的共情智力，在微观量子层面影响人类集体" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology17.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/alien-archives/arcturian/the-arcturian-anthology17-empathy-intelligence-ecological-consciousness.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第17集：你的共情智力，在微观量子层面影响人类集体
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        你发展了自己的共情智力以后，你将以某种神秘的方式影响集体——你通过微观量子效应做到这一点。这不是神秘主义，这是物理学。一个原子中最微小的变化都能影响一个分子，而分子进而影响整个结构。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/quantum-reality/">
+         量子现实
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/collective-consciousness/">
+         集体意识
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology17.json">
+        <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio17.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio" data-tag-pagination-item>
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="第18集：心理咨询师关于通灵的忠告与建议（完结）" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology18.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/alien-archives/arcturian/the-arcturian-anthology18-channeling-discernment-psychological-safety.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    第18集：心理咨询师关于通灵的忠告与建议（完结）
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        你的情绪音调，你的心理，情绪状态……会影响你在意识状态改变期间，收到的信息类型和质量。有一整群存有把自己伪装成高维存有，而实际上并不是。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/channeling-information/">
+         通灵信息
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology18.json">
+        <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio18.MP3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio" data-tag-pagination-item>
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="延伸阅读 │ 汤姆·肯永：引发心理-精神排毒的四要素" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology19.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    延伸阅读 │ 汤姆·肯永：引发心理-精神排毒的四要素
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        引发心理-精神排毒的四要素：改变对时间和空间的感知，个人历史和情绪毒素，经络，气脉。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/psychology/">
+         心理学
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/tom-kenyon/">
+         汤姆肯永
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology19.json">
+        <source src="https://audio.librarys.life/audio/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      
+
+    <!-- 更新日期 -->
+      <p class="g-font-size-12 g-color-gray-light-v1 mt-2" style="letter-spacing: 0.03em;">
+        2026年2月27日
+      </p>
+    </div>
+  </div>
+
+  <!-- 下半部分：拉通字幕容器 -->
+  
+  <div class="subtitle-box w-100" style="
+      display:none;
+      max-height: 200px;
+      overflow-y:auto;
+      margin-top:10px;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size: 1.15rem;
+      line-height:1.6;
+	  letter-spacing: 0.03em;
+      background:#f9f9f9;
+    ">
+  </div>
+  
+  
+<style>
+/* 仅作用于音频卡片标题 */
+article.audio-card h2 {
+  line-height: 1.0 !important; /* 调整为紧凑行距，可试 1.15 / 1.2 / 1.25 */
+}
+article.audio-card h2 a,
+article.audio-card h2 span {
+  line-height: inherit; /* 子元素继承 h2 的行高 */
+}
+
+/* 可点击标题（统一规则） */
+article.audio-card h2 a.audio-title-link {
+  color: #333;
+  text-decoration: underline;
+}
+
+/* 不可点击（span）保持黑色 */
+article.audio-card h2 span {
+  color: #333;
+}
+
+/* 单集音频卡片小号描边标签 */
+article.audio-card .audio-card-tags .u-tags-v1 {
+  color: #6281C8 !important;
+  border: 1px solid #6281C8;
+  background: transparent !important;
+  font-size: 12px !important;
+  line-height: 1.2;
+  padding: 2px 9px !important;
+  font-weight: 400;
+}
+
+article.audio-card .audio-card-tags .u-tags-v1:hover {
+  color: #fff !important;
+  background: #6281C8 !important;
+  border-color: #6281C8;
+}
+</style>
+  
+</article>
+
+
+
+            </div>
+            
+            <div class="col-audio" data-tag-pagination-item>
+              
+              
+              <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
+  
+  <!-- 上半部分：左右两列 -->
+  <div class="d-flex w-100 align-items-center mb-2">
+    <!-- 左侧：封面图 + 显示字幕按钮 -->
+    <div class="d-flex flex-column align-items-center justify-content-center g-mr-30">
+      <a href="/audiobooks/the-arcturian-anthology/">
+        <img 
+          class="rounded mb-2" 
+          src="https://img.librarys.life/img/books-covers/the-arcturian-anthology.jpg" 
+          alt="延伸阅读 │ 为什么你无法维持在第五维度？" 
+          style="width:80px; height:80px; object-fit:cover;"
+        >
+      </a>
+
+      
+      <button 
+        class="btn btn-sm show-subtitles" 
+        style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology20.json">
+        显示字幕
+      </button>
+      
+    </div>
+
+    <!-- 右侧：文字 + 音频 + 更新日期 -->
+    <div class="flex-grow-1">
+<h2 class="mb-2">
+
+  <!-- 书籍主页（保留） -->
+  <a 
+    href="/audiobooks/the-arcturian-anthology/"
+    class="g-font-weight-700 g-font-size-16"
+    style="text-decoration:none; color:#333; letter-spacing: 0.03em;"
+  >
+    《大角星人文摘》
+  </a>
+
+
+  <!-- 单集页面（新增：新开窗口） -->
+
+  <a 
+    href="/all-articles/courses/human-body-healing/sleep-self-healing-fifth-dimension-higher-self-dreams.html"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="g-font-weight-700 g-font-size-16 audio-title-link"
+    style="letter-spacing: 0.03em;"
+  >
+    延伸阅读 │ 为什么你无法维持在第五维度？
+  </a>
+
+
+</h2>
+
+      <p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2" style="letter-spacing: 0.05em;">
+        有效睡眠的强大自愈力，如何唤醒身体的自我疗愈机制？影响你睡眠质量的能量干扰。
+      </p>
+
+      
+      
+      
+      
+      
+      
+        
+      
+      <!-- tag.njk -->
+
+
+
+
+
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+
+  
+  
+  
+  
+
+<div class="audio-card-tags g-mt-10 g-mb-10">
+  
+  <ul class="u-list-inline mb-0">
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/arcturian/">
+         大角星人
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/spiritual-awakening/">
+         灵性觉醒
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/subconscious/">
+         潜意识
+      </a>
+      
+    </li>
+    
+  </ul>
+</div>
+
+
+
+      
+      <audio 
+        controls 
+        style="width: 100%; margin-top: 5px;" 
+        data-subtitle="/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology20.json">
+        <source src="https://audio.librarys.life/audio/the-arcturian-anthology/audio20.MP3" type="audio/mpeg">
         您的浏览器不支持音频播放。
       </audio>
       
@@ -4055,6 +6523,11 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             
           </div>
+          <nav class="tag-node-pagination"
+               data-tag-pagination
+               data-page-size="20"
+               data-pagination-label="音频"
+               aria-label="相关音频分页"></nav>
         </section>
         
 
@@ -4217,6 +6690,85 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    function onReady(callback) {
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", callback);
+      } else {
+        callback();
+      }
+    }
+
+    onReady(function () {
+      Array.prototype.slice.call(document.querySelectorAll("[data-tag-pagination]")).forEach(function (controls) {
+        var section = controls.closest("section");
+        var list = section ? section.querySelector("[data-tag-pagination-list]") : null;
+        var items = list ? Array.prototype.slice.call(list.querySelectorAll("[data-tag-pagination-item]")) : [];
+        var pageSize = parseInt(controls.getAttribute("data-page-size"), 10) || 20;
+        var label = controls.getAttribute("data-pagination-label") || "内容";
+        var pageCount = Math.ceil(items.length / pageSize);
+        var currentPage = 1;
+
+        function makeButton(text, targetPage, disabled, current, accessibleLabel) {
+          var button = document.createElement("button");
+          button.type = "button";
+          button.className = "tag-node-pagination__button";
+          button.textContent = text;
+          button.disabled = disabled;
+          button.setAttribute("aria-label", accessibleLabel || label + "第 " + text + " 页");
+          if (current) button.setAttribute("aria-current", "page");
+          button.addEventListener("click", function () {
+            renderPage(targetPage, true);
+          });
+          return button;
+        }
+
+        function renderPage(page, shouldScroll) {
+          currentPage = Math.min(Math.max(page, 1), pageCount || 1);
+          var firstIndex = (currentPage - 1) * pageSize;
+          var lastIndex = firstIndex + pageSize;
+
+          items.forEach(function (item, index) {
+            item.hidden = index < firstIndex || index >= lastIndex;
+          });
+
+          controls.innerHTML = "";
+          if (pageCount <= 1) {
+            controls.hidden = true;
+            return;
+          }
+
+          controls.hidden = false;
+          controls.appendChild(makeButton("‹", currentPage - 1, currentPage === 1, false, label + "上一页"));
+          for (var pageNumber = 1; pageNumber <= pageCount; pageNumber += 1) {
+            controls.appendChild(makeButton(String(pageNumber), pageNumber, false, pageNumber === currentPage));
+          }
+          controls.appendChild(makeButton("›", currentPage + 1, currentPage === pageCount, false, label + "下一页"));
+
+          var status = document.createElement("span");
+          status.className = "tag-node-pagination__status";
+          status.setAttribute("aria-live", "polite");
+          status.textContent = "第 " + currentPage + " / " + pageCount + " 页，共 " + items.length + " 个" + label;
+          controls.appendChild(status);
+
+          if (shouldScroll) {
+            var heading = section.querySelector("header");
+            if (heading) {
+              heading.scrollIntoView({
+                behavior: window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+                block: "start"
+              });
+            }
+          }
+        }
+
+        renderPage(1, false);
+      });
+    });
+  })();
+</script>
 
 <div class="container">
   <div class="row justify-content-center">
