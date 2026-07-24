@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260724-1515">
+<meta name="version" content="20260724-2102">
 
 
 <meta charset="utf-8">
@@ -45,6 +45,8 @@
 
 <!-- CSS Customization -->
 <link rel="stylesheet" href="/css261/html/assets/css/custom.css">
+<link rel="stylesheet" href="/assets/css/site-pagination.css">
+<link rel="stylesheet" href="/assets/css/article-search-entry.css">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F990EFGHFK"></script>
@@ -64,6 +66,7 @@
 
 
 </head>
+
 </head>
 
 <body>
@@ -506,55 +509,6 @@
     color: #3647B7;
   }
 
-  .tag-node-pagination {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 16px;
-    letter-spacing: 0;
-  }
-
-  .tag-node-pagination[hidden] {
-    display: none;
-  }
-
-  .tag-node-pagination__button {
-    width: 42px;
-    min-width: 42px;
-    height: 42px;
-    padding: 0;
-    border: 1px solid #d8dcf4;
-    border-radius: 50%;
-    background: #fff;
-    color: #5966bd;
-    font-size: 14px;
-    line-height: 40px;
-    text-align: center;
-    cursor: pointer;
-  }
-
-  .tag-node-pagination__button:hover:not(:disabled),
-  .tag-node-pagination__button[aria-current="page"] {
-    border-color: #6281c8;
-    background: #6281c8;
-    color: #fff;
-  }
-
-  .tag-node-pagination__button:disabled {
-    cursor: default;
-    opacity: 0.42;
-  }
-
-  .tag-node-pagination__status {
-    width: 100%;
-    margin-top: 4px;
-    color: #777f93;
-    font-size: 13px;
-    text-align: center;
-  }
-
   @media (min-width: 768px) {
     .audiobook-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -933,7 +887,7 @@
             </div>
             
           </div>
-          <nav class="tag-node-pagination"
+          <nav class="site-pagination"
                data-tag-pagination
                data-page-size="20"
                data-pagination-label="文章"
@@ -1174,7 +1128,7 @@
         function makeButton(text, targetPage, disabled, current, accessibleLabel) {
           var button = document.createElement("button");
           button.type = "button";
-          button.className = "tag-node-pagination__button";
+          button.className = "site-pagination__button";
           button.textContent = text;
           button.disabled = disabled;
           button.setAttribute("aria-label", accessibleLabel || label + "第 " + text + " 页");
@@ -1202,13 +1156,16 @@
 
           controls.hidden = false;
           controls.appendChild(makeButton("‹", currentPage - 1, currentPage === 1, false, label + "上一页"));
-          for (var pageNumber = 1; pageNumber <= pageCount; pageNumber += 1) {
+          var firstVisiblePage = Math.max(1, currentPage - 2);
+          var lastVisiblePage = Math.min(pageCount, firstVisiblePage + 4);
+          firstVisiblePage = Math.max(1, lastVisiblePage - 4);
+          for (var pageNumber = firstVisiblePage; pageNumber <= lastVisiblePage; pageNumber += 1) {
             controls.appendChild(makeButton(String(pageNumber), pageNumber, false, pageNumber === currentPage));
           }
           controls.appendChild(makeButton("›", currentPage + 1, currentPage === pageCount, false, label + "下一页"));
 
           var status = document.createElement("span");
-          status.className = "tag-node-pagination__status";
+          status.className = "site-pagination__status";
           status.setAttribute("aria-live", "polite");
           status.textContent = "第 " + currentPage + " / " + pageCount + " 页，共 " + items.length + " 个" + label;
           controls.appendChild(status);

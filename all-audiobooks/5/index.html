@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260724-1515">
+<meta name="version" content="20260724-2102">
 
 
 <meta charset="utf-8">
@@ -45,6 +45,8 @@
 
 <!-- CSS Customization -->
 <link rel="stylesheet" href="/css261/html/assets/css/custom.css">
+<link rel="stylesheet" href="/assets/css/site-pagination.css">
+<link rel="stylesheet" href="/assets/css/article-search-entry.css">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F990EFGHFK"></script>
@@ -64,6 +66,7 @@
 
 
 </head>
+
 </head>
 
 <body>
@@ -343,37 +346,6 @@ header.u-header {
   max-width: 800px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-}
-
-/* ===============================
-   分页
-================================= */
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 40px 0;
-}
-
-.pagination li {
-  margin: 0 5px;
-}
-
-.pagination a {
-  display: block;
-  padding: 8px 14px;
-  border: 1px solid #ddd;
-  border-radius: 9999px;
-  text-decoration: none;
-  color: #333;
-}
-
-.pagination .active a {
-  background: #6281c8;
-  color: #fff;
-  border-color: #6281c8;
 }
 
 </style>
@@ -7195,72 +7167,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- ===== 分页 ===== -->
 
-<nav>
-  <ul class="pagination">
-    
+<nav class="site-pagination" aria-label="所有音频分页">
+  
+  
+  
+  
+  
+  
 
-    
-      <li>
-        <a href="/all-audiobooks/4/">上一页</a>
-      </li>
-    
+  
+    <a class="site-pagination__button"
+       href="/all-audiobooks/4/"
+       aria-label="音频上一页">‹</a>
+  
 
+  
     
-      <li class="">
-        <a href="/all-audiobooks/0/">
-          1
-        </a>
-      </li>
+  
     
-      <li class="">
-        <a href="/all-audiobooks/1/">
-          2
-        </a>
-      </li>
+  
     
-      <li class="">
-        <a href="/all-audiobooks/2/">
-          3
-        </a>
-      </li>
+  
     
-      <li class="">
-        <a href="/all-audiobooks/3/">
-          4
-        </a>
-      </li>
+    <a class="site-pagination__button"
+       href="/all-audiobooks/3/"
+       aria-label="音频第 4 页"
+       >4</a>
     
-      <li class="">
-        <a href="/all-audiobooks/4/">
-          5
-        </a>
-      </li>
+  
     
-      <li class="active">
-        <a href="/all-audiobooks/5/">
-          6
-        </a>
-      </li>
+    <a class="site-pagination__button"
+       href="/all-audiobooks/4/"
+       aria-label="音频第 5 页"
+       >5</a>
     
-      <li class="">
-        <a href="/all-audiobooks/6/">
-          7
-        </a>
-      </li>
+  
     
-      <li class="">
-        <a href="/all-audiobooks/7/">
-          8
-        </a>
-      </li>
+    <a class="site-pagination__button"
+       href="/all-audiobooks/5/"
+       aria-label="音频第 6 页"
+       aria-current="page">6</a>
     
+  
+    
+    <a class="site-pagination__button"
+       href="/all-audiobooks/6/"
+       aria-label="音频第 7 页"
+       >7</a>
+    
+  
+    
+    <a class="site-pagination__button"
+       href="/all-audiobooks/7/"
+       aria-label="音频第 8 页"
+       >8</a>
+    
+  
 
-    
-      <li>
-        <a href="/all-audiobooks/6/">下一页</a>
-      </li>
-    
-  </ul>
+  
+    <a class="site-pagination__button"
+       href="/all-audiobooks/6/"
+       aria-label="音频下一页">›</a>
+  
+
+  <span class="site-pagination__status">
+    第 6 / 8 页，共 227 个音频
+  </span>
 </nav>
 
 <hr class="g-brd-gray-light-v4 g-my-50">

@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260724-1515">
+<meta name="version" content="20260724-2102">
 
 
 <meta charset="utf-8">
@@ -45,6 +45,8 @@
 
 <!-- CSS Customization -->
 <link rel="stylesheet" href="/css261/html/assets/css/custom.css">
+<link rel="stylesheet" href="/assets/css/site-pagination.css">
+<link rel="stylesheet" href="/assets/css/article-search-entry.css">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F990EFGHFK"></script>
@@ -64,6 +66,7 @@
 
 
 </head>
+
 </head>
 
 <body>
@@ -125,8 +128,9 @@
 <p class="g-py-20"></p>
 </div>
 </section>
+
 <!-- 栏目介绍 -->
-<section class="g-bg-gray-light-v5 g-pb-40">
+<section class="g-bg-gray-light-v5 g-pb-40 article-intro--with-search">
 <header class="text-center g-width-60x--md mx-auto g-mb-50">
     
     <!-- 栏目标题（支持两排）-->
@@ -135,6 +139,65 @@
       所有文章
     </h2>
     
+
+    
+
+    
+      <section
+  class="article-search-panel article-search-panel--entry"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 132 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
 
     
 
@@ -201,34 +264,6 @@
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   }
 
-  /* 分页导航 */
-  .pagination {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 40px 0 0;
-  }
-  .pagination li {
-    margin: 0 5px;
-  }
-  .pagination a {
-    display: block;
-    padding: 8px 14px;
-    border: 1px solid #ddd;
-    border-radius: 9999px;
-    color: #333;
-    text-decoration: none;
-  }
-  .pagination a:hover {
-    background-color: #f5f5f5;
-  }
-  .pagination .active a {
-    background-color: var(--color-primary, #6281c8);
-    color: #fff;
-    border-color: var(--color-primary, #6281c8);
-    font-weight: bold;
-  }
 </style>
 
 <div class="container g-pt-100 g-pb-40">
@@ -730,62 +765,79 @@
         </div>
 
         <!-- 分页 -->
-        <nav>
-          <ul class="pagination">
-            
+        <nav class="site-pagination" aria-label="所有文章分页">
+          
+          
+          
+          
+          
+          
 
-            
-              <li>
-                <a href="/articles-list/1/">上一页</a>
-              </li>
-            
+          
+            <a class="site-pagination__button"
+               href="/articles-list/1/"
+               aria-label="文章上一页">‹</a>
+          
 
+          
             
-              
-              <li class="">
-                <a href="/articles-list/0/">1</a>
-              </li>
             
-              
-              <li class="">
-                <a href="/articles-list/1/">2</a>
-              </li>
+            <a class="site-pagination__button"
+               href="/articles-list/0/"
+               aria-label="文章第 1 页"
+               >1</a>
             
-              
-              <li class="active">
-                <a href="/articles-list/2/">3</a>
-              </li>
+          
             
-              
-              <li class="">
-                <a href="/articles-list/3/">4</a>
-              </li>
             
-              
-              <li class="">
-                <a href="/articles-list/4/">5</a>
-              </li>
+            <a class="site-pagination__button"
+               href="/articles-list/1/"
+               aria-label="文章第 2 页"
+               >2</a>
             
-              
-              <li class="">
-                <a href="/articles-list/5/">6</a>
-              </li>
+          
             
-              
-              <li class="">
-                <a href="/articles-list/6/">7</a>
-              </li>
             
+            <a class="site-pagination__button"
+               href="/articles-list/2/"
+               aria-label="文章第 3 页"
+               aria-current="page">3</a>
+            
+          
+            
+            
+            <a class="site-pagination__button"
+               href="/articles-list/3/"
+               aria-label="文章第 4 页"
+               >4</a>
+            
+          
+            
+            
+            <a class="site-pagination__button"
+               href="/articles-list/4/"
+               aria-label="文章第 5 页"
+               >5</a>
+            
+          
+            
+            
+          
+            
+            
+          
 
-            
-              <li>
-                <a href="/articles-list/3/">下一页</a>
-              </li>
-            
-          </ul>
+          
+            <a class="site-pagination__button"
+               href="/articles-list/3/"
+               aria-label="文章下一页">›</a>
+          
 
-          <hr class="g-brd-gray-light-v4 g-my-50">
+          <span class="site-pagination__status">
+            第 3 / 7 页，共 132 个文章
+          </span>
         </nav>
+        <hr class="g-brd-gray-light-v4 g-my-50">
 
       </div>
     </div>
