@@ -115,7 +115,15 @@
 
     function positionButton(selectionData) {
       var viewportPadding = 8;
-      var selectionGap = 10;
+      var visualViewport = window.visualViewport || null;
+      var viewportLeft = visualViewport ? visualViewport.offsetLeft : 0;
+      var viewportTop = visualViewport ? visualViewport.offsetTop : 0;
+      var viewportWidth = visualViewport ? visualViewport.width : window.innerWidth;
+      var viewportHeight = visualViewport ? visualViewport.height : window.innerHeight;
+      var viewportRight = viewportLeft + viewportWidth;
+      var viewportBottom = viewportTop + viewportHeight;
+      var preferBelow = Boolean(coarsePointerQuery && coarsePointerQuery.matches);
+      var selectionGap = preferBelow ? 20 : 10;
 
       button.hidden = false;
       button.style.visibility = "hidden";
@@ -126,32 +134,35 @@
       var left = selectionData.rect.left + (selectionData.rect.width - buttonWidth) / 2;
       var aboveTop = selectionData.rect.top - buttonHeight - selectionGap;
       var belowTop = selectionData.rect.bottom + selectionGap;
-      var preferBelow = Boolean(coarsePointerQuery && coarsePointerQuery.matches);
       var top = preferBelow ? belowTop : aboveTop;
 
       left = Math.max(
-        viewportPadding,
-        Math.min(left, window.innerWidth - buttonWidth - viewportPadding)
+        viewportLeft + viewportPadding,
+        Math.min(left, viewportRight - buttonWidth - viewportPadding)
       );
 
-      if (preferBelow && top + buttonHeight > window.innerHeight - viewportPadding) {
+      if (preferBelow && top + buttonHeight > viewportBottom - viewportPadding) {
         top = aboveTop;
-      } else if (!preferBelow && top < viewportPadding) {
+      } else if (!preferBelow && top < viewportTop + viewportPadding) {
         top = belowTop;
       }
 
       top = Math.max(
-        viewportPadding,
-        Math.min(top, window.innerHeight - buttonHeight - viewportPadding)
+        viewportTop + viewportPadding,
+        Math.min(top, viewportBottom - buttonHeight - viewportPadding)
       );
 
       button.style.left = Math.round(left) + "px";
       button.style.top = Math.round(top) + "px";
       button.style.visibility = "";
 
-      window.requestAnimationFrame(function () {
-        if (!button.hidden) button.classList.add("is-visible");
-      });
+      if (preferBelow) {
+        button.classList.add("is-visible");
+      } else {
+        window.requestAnimationFrame(function () {
+          if (!button.hidden) button.classList.add("is-visible");
+        });
+      }
     }
 
     function showForCurrentSelection() {
@@ -195,7 +206,7 @@
 
     article.addEventListener("touchend", function (event) {
       if (button.contains(event.target)) return;
-      scheduleShow(160);
+      scheduleShow(0);
     }, { passive: true });
 
     button.addEventListener("pointerdown", function (event) {
@@ -238,7 +249,7 @@
         return;
       }
 
-      scheduleShow(140);
+      scheduleShow(coarsePointerQuery && coarsePointerQuery.matches ? 0 : 40);
     });
 
     document.addEventListener("keydown", function (event) {
@@ -247,6 +258,10 @@
 
     window.addEventListener("scroll", hideButton, { passive: true });
     window.addEventListener("resize", hideButton);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("scroll", hideButton, { passive: true });
+      window.visualViewport.addEventListener("resize", hideButton);
+    }
   }
 
   if (document.readyState === "loading") {

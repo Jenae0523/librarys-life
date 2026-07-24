@@ -39,10 +39,12 @@
 
 @media (pointer: coarse), (hover: none) {
   .selection-search-button {
-    min-width: 64px;
-    min-height: 42px;
-    padding: 10px 16px;
-    font-size: 15px;
+    min-width: 58px;
+    min-height: 38px;
+    padding: 8px 13px;
+    font-size: 14px;
+    opacity: 1;
+    transition: none;
   }
 }
 
