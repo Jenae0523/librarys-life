@@ -6,7 +6,7 @@
   var MAX_SELECTION_LENGTH = 80;
   var MIN_MEANINGFUL_CHARACTERS = 2;
   var BLOCKED_SELECTOR = "input, textarea, button, select, pre, code, script, style";
-  var FINE_POINTER_QUERY = "(pointer: fine) and (hover: hover)";
+  var COARSE_POINTER_QUERY = "(pointer: coarse)";
 
   function normalizeSelectionText(value) {
     return String(value || "").replace(/\s+/g, " ").trim();
@@ -86,12 +86,12 @@
   }
 
   function initSelectionSearch() {
-    var pointerQuery = window.matchMedia ? window.matchMedia(FINE_POINTER_QUERY) : null;
-    if (!pointerQuery || !pointerQuery.matches) return;
-
     var article = document.querySelector(ARTICLE_SELECTOR);
     if (!article) return;
 
+    var coarsePointerQuery = window.matchMedia
+      ? window.matchMedia(COARSE_POINTER_QUERY)
+      : null;
     var button = document.createElement("button");
     button.type = "button";
     button.className = "selection-search-button";
@@ -102,10 +102,13 @@
 
     var savedSelectionText = "";
     var showTimer = 0;
+    var buttonInteraction = false;
+    var navigationStarted = false;
 
     function hideButton() {
       window.clearTimeout(showTimer);
       savedSelectionText = "";
+      buttonInteraction = false;
       button.classList.remove("is-visible");
       button.hidden = true;
     }
@@ -121,15 +124,20 @@
       var buttonWidth = button.offsetWidth;
       var buttonHeight = button.offsetHeight;
       var left = selectionData.rect.left + (selectionData.rect.width - buttonWidth) / 2;
-      var top = selectionData.rect.top - buttonHeight - selectionGap;
+      var aboveTop = selectionData.rect.top - buttonHeight - selectionGap;
+      var belowTop = selectionData.rect.bottom + selectionGap;
+      var preferBelow = Boolean(coarsePointerQuery && coarsePointerQuery.matches);
+      var top = preferBelow ? belowTop : aboveTop;
 
       left = Math.max(
         viewportPadding,
         Math.min(left, window.innerWidth - buttonWidth - viewportPadding)
       );
 
-      if (top < viewportPadding) {
-        top = selectionData.rect.bottom + selectionGap;
+      if (preferBelow && top + buttonHeight > window.innerHeight - viewportPadding) {
+        top = aboveTop;
+      } else if (!preferBelow && top < viewportPadding) {
+        top = belowTop;
       }
 
       top = Math.max(
@@ -157,20 +165,18 @@
       positionButton(selectionData);
     }
 
-    article.addEventListener("mouseup", function (event) {
-      if (button.contains(event.target)) return;
+    function scheduleShow(delay) {
       window.clearTimeout(showTimer);
-      showTimer = window.setTimeout(showForCurrentSelection, 0);
-    });
+      showTimer = window.setTimeout(showForCurrentSelection, delay);
+    }
 
-    button.addEventListener("mousedown", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    });
+    function openSearch(event) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
 
-    button.addEventListener("click", function (event) {
-      event.preventDefault();
-      event.stopPropagation();
+      if (navigationStarted) return;
 
       var query = savedSelectionText;
       if (!query) {
@@ -178,24 +184,61 @@
         return;
       }
 
+      navigationStarted = true;
       window.location.href = SEARCH_URL + "?q=" + encodeURIComponent(query);
+    }
+
+    article.addEventListener("mouseup", function (event) {
+      if (button.contains(event.target)) return;
+      scheduleShow(0);
     });
 
-    document.addEventListener("mousedown", function (event) {
-      if (!button.contains(event.target)) hideButton();
+    article.addEventListener("touchend", function (event) {
+      if (button.contains(event.target)) return;
+      scheduleShow(160);
+    }, { passive: true });
+
+    button.addEventListener("pointerdown", function (event) {
+      buttonInteraction = true;
+      event.stopPropagation();
+      if (event.pointerType === "mouse") event.preventDefault();
     });
+
+    button.addEventListener("mousedown", function (event) {
+      buttonInteraction = true;
+      event.preventDefault();
+      event.stopPropagation();
+    });
+
+    button.addEventListener("touchstart", function (event) {
+      buttonInteraction = true;
+      event.stopPropagation();
+    }, { passive: true });
+
+    button.addEventListener("touchend", openSearch, { passive: false });
+    button.addEventListener("click", openSearch);
+
+    function hideFromOutsideInteraction(event) {
+      if (!button.contains(event.target)) hideButton();
+    }
+
+    if (window.PointerEvent) {
+      document.addEventListener("pointerdown", hideFromOutsideInteraction);
+    } else {
+      document.addEventListener("mousedown", hideFromOutsideInteraction);
+      document.addEventListener("touchstart", hideFromOutsideInteraction, { passive: true });
+    }
 
     document.addEventListener("selectionchange", function () {
+      if (buttonInteraction || navigationStarted) return;
+
       var selection = window.getSelection ? window.getSelection() : null;
       if (!selection || selection.isCollapsed) {
         hideButton();
         return;
       }
 
-      if (!button.hidden) {
-        var selectionData = getValidSelection(article);
-        if (!selectionData || selectionData.text !== savedSelectionText) hideButton();
-      }
+      scheduleShow(140);
     });
 
     document.addEventListener("keydown", function (event) {
@@ -204,11 +247,6 @@
 
     window.addEventListener("scroll", hideButton, { passive: true });
     window.addEventListener("resize", hideButton);
-    if (pointerQuery.addEventListener) {
-      pointerQuery.addEventListener("change", hideButton);
-    } else if (pointerQuery.addListener) {
-      pointerQuery.addListener(hideButton);
-    }
   }
 
   if (document.readyState === "loading") {
