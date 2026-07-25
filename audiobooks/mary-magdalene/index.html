@@ -27,7 +27,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260725-0119">
+<meta name="version" content="20260725-1852">
 
 
 <meta charset="utf-8">
@@ -219,10 +219,72 @@
       box-sizing: border-box;
     }
 
+    .audio-list-toolbar {
+      width: 100%;
+      max-width: 720px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      transform: translateY(24px);
+    }
+
+    .audio-list-toolbar label {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      margin: 0;
+    }
+
+    .audio-list-toolbar select {
+      min-width: 132px;
+      height: 34px;
+      padding: 0 34px 0 13px;
+      border: 1px solid #dfe3e8;
+      border-radius: 9px;
+      background: #fff;
+      color: #3f4652;
+      font-family: inherit;
+      font-size: 0.86rem;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      box-shadow: 0 1px 2px rgba(38, 53, 84, 0.04);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .audio-list-toolbar label::after {
+      content: "";
+      position: absolute;
+      right: 14px;
+      width: 6px;
+      height: 6px;
+      margin-top: -3px;
+      border-right: 1.5px solid #7b8491;
+      border-bottom: 1.5px solid #7b8491;
+      transform: rotate(45deg);
+      pointer-events: none;
+    }
+
+    .audio-list-toolbar select:hover {
+      border-color: #cbd2dc;
+    }
+
+    .audio-list-toolbar select:focus-visible {
+      border-color: #9aabd0;
+      box-shadow: 0 0 0 3px rgba(98, 129, 200, 0.12);
+    }
+
     /* 小屏下仍然保持单列，只是更贴边 */
     @media (max-width: 768px) {
       .audio-item {
         max-width: 100%;
+        padding: 0 16px;
+      }
+
+      .audio-list-toolbar {
         padding: 0 16px;
       }
     }
@@ -981,9 +1043,25 @@
 
 
 
-    <div class="audio-list">
+
+
+    <div class="audio-list" data-audiobook-episode-list>
+      <div class="audio-list-toolbar">
+        <label>
+          <select data-audiobook-sort aria-label="音频排序">
+            <option value="number" selected>从第一集开始</option>
+            <option value="latest">按最新发布排序</option>
+          </select>
+        </label>
+      </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-1"
+          data-audio-episode
+          data-audio-number="1"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1005,7 +1083,8 @@
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene1.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene1.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -1081,7 +1160,7 @@
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -1142,7 +1221,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-2"
+          data-audio-episode
+          data-audio-number="2"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1164,7 +1249,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene2.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene2.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -1300,7 +1386,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -1361,7 +1447,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-3"
+          data-audio-episode
+          data-audio-number="3"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1383,7 +1475,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene3.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene3.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -1519,7 +1612,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -1580,7 +1673,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-4"
+          data-audio-episode
+          data-audio-number="4"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1602,7 +1701,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene4.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene4.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -1722,7 +1822,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -1783,7 +1883,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-5"
+          data-audio-episode
+          data-audio-number="5"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1805,7 +1911,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene5.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene5.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -1881,7 +1988,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -1942,7 +2049,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-6"
+          data-audio-episode
+          data-audio-number="6"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1964,7 +2077,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene6.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene6.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -2100,7 +2214,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -2161,7 +2275,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-7"
+          data-audio-episode
+          data-audio-number="7"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2183,7 +2303,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene7.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene7.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -2287,7 +2408,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -2348,7 +2469,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-8"
+          data-audio-episode
+          data-audio-number="8"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2370,7 +2497,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene8.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene8.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -2490,7 +2618,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -2551,7 +2679,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-9"
+          data-audio-episode
+          data-audio-number="9"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2573,7 +2707,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene9.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene9.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -2693,7 +2828,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -2754,7 +2889,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-10"
+          data-audio-episode
+          data-audio-number="10"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2776,7 +2917,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene10.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene10.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -2852,7 +2994,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -2913,7 +3055,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-11"
+          data-audio-episode
+          data-audio-number="11"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2935,7 +3083,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene11.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene11.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -3011,7 +3160,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -3072,7 +3221,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-12"
+          data-audio-episode
+          data-audio-number="12"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -3094,7 +3249,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene12.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene12.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -3230,7 +3386,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -3291,7 +3447,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-13"
+          data-audio-episode
+          data-audio-number="13"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -3313,7 +3475,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene13.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene13.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -3433,7 +3596,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -3494,7 +3657,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-14"
+          data-audio-episode
+          data-audio-number="14"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -3516,7 +3685,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene14.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene14.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -3652,7 +3822,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -3713,7 +3883,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-15"
+          data-audio-episode
+          data-audio-number="15"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -3735,7 +3911,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene15.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene15.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -3871,7 +4048,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -3932,7 +4109,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-16"
+          data-audio-episode
+          data-audio-number="16"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -3954,7 +4137,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene16.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene16.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -4090,7 +4274,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -4151,7 +4335,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-17"
+          data-audio-episode
+          data-audio-number="17"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -4173,7 +4363,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene17.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene17.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -4309,7 +4500,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -4370,7 +4561,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-18"
+          data-audio-episode
+          data-audio-number="18"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -4392,7 +4589,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene18.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene18.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -4528,7 +4726,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -4589,7 +4787,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-19"
+          data-audio-episode
+          data-audio-number="19"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -4611,7 +4815,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene19.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene19.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -4747,7 +4952,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -4808,7 +5013,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-20"
+          data-audio-episode
+          data-audio-number="20"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -4830,7 +5041,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene20.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene20.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -4934,7 +5146,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -4995,7 +5207,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-21"
+          data-audio-episode
+          data-audio-number="21"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -5017,7 +5235,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene21.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene21.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -5153,7 +5372,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -5214,7 +5433,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-22"
+          data-audio-episode
+          data-audio-number="22"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -5236,7 +5461,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene22.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene22.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -5340,7 +5566,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -5401,7 +5627,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-23"
+          data-audio-episode
+          data-audio-number="23"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -5423,7 +5655,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene23.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene23.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -5559,7 +5792,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -5620,7 +5853,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-24"
+          data-audio-episode
+          data-audio-number="24"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -5642,7 +5881,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene24.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene24.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -5762,7 +6002,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -5823,7 +6063,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-25"
+          data-audio-episode
+          data-audio-number="25"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -5845,7 +6091,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene25.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene25.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -5949,7 +6196,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -6010,7 +6257,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-26"
+          data-audio-episode
+          data-audio-number="26"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -6032,7 +6285,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene26.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene26.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -6136,7 +6390,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -6197,7 +6451,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-27"
+          data-audio-episode
+          data-audio-number="27"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -6219,7 +6479,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene27.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene27.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -6323,7 +6584,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -6384,7 +6645,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-28"
+          data-audio-episode
+          data-audio-number="28"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -6406,7 +6673,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene28.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene28.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -6526,7 +6794,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -6587,7 +6855,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-29"
+          data-audio-episode
+          data-audio-number="29"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -6609,7 +6883,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene29.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene29.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -6713,7 +6988,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -6774,7 +7049,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-30"
+          data-audio-episode
+          data-audio-number="30"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -6796,7 +7077,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene30.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene30.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -6916,7 +7198,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -6977,7 +7259,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-31"
+          data-audio-episode
+          data-audio-number="31"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -6999,7 +7287,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene31.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene31.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -7103,7 +7392,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -7164,7 +7453,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-32"
+          data-audio-episode
+          data-audio-number="32"
+          data-audio-date="2026-03-02"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -7186,7 +7481,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene32.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene32.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -7322,7 +7618,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -7383,7 +7679,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-33"
+          data-audio-episode
+          data-audio-number="33"
+          data-audio-date="2026-04-22"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -7405,7 +7707,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene33.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene33.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -7541,7 +7844,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -7602,7 +7905,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-34"
+          data-audio-episode
+          data-audio-number="34"
+          data-audio-date="2026-05-06"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -7624,7 +7933,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene34.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene34.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -7779,7 +8089,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -7840,7 +8150,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-35"
+          data-audio-episode
+          data-audio-number="35"
+          data-audio-date="2026-07-04"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -7862,7 +8178,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene35.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene35.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -7985,7 +8302,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -8046,7 +8363,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-36"
+          data-audio-episode
+          data-audio-number="36"
+          data-audio-date="2026-07-10"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -8068,7 +8391,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene36.json">
+        data-subtitle="/audiobooks/mary-magdalene/texts/mary-magdalene36.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -8191,7 +8515,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -8249,139 +8573,15 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 </article>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".show-subtitles").forEach(button => {
-    const article = button.closest("article");
-    const audio = article.querySelector("audio");
-    const container = article.querySelector(".subtitle-box");
-    let subtitles = [];
-    let currentIndex = -1;
-    let isLoaded = false;
-
-    const smoothScrollTo = (target) => {
-      if (!target) return;
-      const targetTop = target.offsetTop - container.offsetTop;
-      const start = container.scrollTop;
-      const end = targetTop - container.clientHeight / 2 + target.clientHeight / 2;
-      const distance = end - start;
-      const duration = 400;
-      const startTime = performance.now();
-      const step = (now) => {
-        const progress = Math.min((now - startTime) / duration, 1);
-        const ease = 0.5 - Math.cos(progress * Math.PI) / 2;
-        container.scrollTop = start + distance * ease;
-        if (progress < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    };
-
-    const loadSubtitles = async () => {
-      try {
-        const res = await fetch(button.dataset.subtitle);
-        const data = await res.json();
-        container.innerHTML = data.map(s => 
-          `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.4em 0;">${s.text}</p>`
-        ).join("");
-        subtitles = Array.from(container.querySelectorAll("p"));
-        isLoaded = true;
-        currentIndex = -1;
-      } catch (err) {
-        container.innerHTML = "<p style='color:red;'>加载字幕失败。</p>";
-        console.error("字幕加载失败：", err);
-      }
-    };
-
-    const highlightSubtitles = () => {
-      if (!isLoaded || !subtitles.length) return;
-      const t = audio.currentTime;
-      let idx = subtitles.findIndex(p => t >= parseFloat(p.dataset.start) && t <= parseFloat(p.dataset.end));
-      if (idx === -1) return;
-      if (idx !== currentIndex) {
-        smoothScrollTo(subtitles[idx]);
-        currentIndex = idx;
-      }
-    };
-
-    button.addEventListener("click", async () => {
-      const isHidden = container.style.display === "none";
-      if (isHidden) {
-        container.style.display = "block";
-        button.textContent = "关闭字幕";
-        button.style.border = "1px solid #6B77CC";
-        button.style.color = "#6B77CC";
-
-        if (!isLoaded) await loadSubtitles();
-        highlightSubtitles();
-      } else {
-        container.style.display = "none";
-        button.textContent = "显示字幕";
-        button.style.border = "1px solid #ccc";
-        button.style.color = "#333";
-        currentIndex = -1;
-      }
-    });
-
-    audio.addEventListener("timeupdate", highlightSubtitles);
-    audio.addEventListener("seeked", () => {
-      currentIndex = -1;
-      highlightSubtitles();
-    });
-    audio.addEventListener("play", highlightSubtitles);
-    audio.addEventListener("loadedmetadata", highlightSubtitles);
-  });
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const audios = Array.from(document.querySelectorAll("article audio"));
-  let currentIndex = -1;
-
-  audios.forEach((audio, index) => {
-
-    // 当用户点击播放某一集
-    audio.addEventListener("play", () => {
-      // 暂停其他音频
-      audios.forEach((a, i) => {
-        if (i !== index && !a.paused) {
-          a.pause();
-        }
-      });
-	  
-      currentIndex = index;
-	  
-	  // 新增：滚动到当前播放的卡片
-  audio.closest("article")?.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
-	  
-    });
-
-    // 当前音频播放结束 → 播放下一集
-    audio.addEventListener("ended", () => {
-  // 极端情况防护
-  if (audio.currentTime === 0) return;
-
-  const nextIndex = index + 1;
-  if (audios[nextIndex]) {
-    audios[nextIndex].play();
-  }
-});
-
-  });
-
-});
-</script>
-
+<script src="/assets/js/audio-card.js" defer></script>
 
 
         </div>
       
 	<div class="sharethis-inline-share-buttons"></div>  
     </div>
+
+<script src="/assets/js/audiobook-collection-sort.js" defer></script>
 
 
 

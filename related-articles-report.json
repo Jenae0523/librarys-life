@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-24T17:24:56.771Z",
+  "generated_at": "2026-07-25T10:53:34.597Z",
   "rule_version": "mixed-related-articles-v1",
   "article_count": 132,
   "recommendation_count": 396,
-  "recommendation_generation_ms": 1606.175,
+  "recommendation_generation_ms": 4516.533,
   "articles": [
     {
       "title": "来自星星的孩子揭秘：前世回溯与星际种子灵魂成长指南",
@@ -360,7 +360,7 @@
         },
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 51,
           "rank_score": 94.5,
@@ -2821,7 +2821,7 @@
         },
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 28,
           "rank_score": 56,
@@ -2850,6 +2850,49 @@
               "label": "死后世界"
             }
           ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "遇见大角星人：在通灵信息、直觉体验与逻辑判断之间保持清醒",
+      "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology01-meeting-the-arcturians-consciousness.html",
+      "manual_declared": 3,
+      "manual_valid": 3,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
+          "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
+          "source": "manual",
+          "score": null,
+          "rank_score": null,
+          "structural_score": null,
+          "semantic_score": null,
+          "reason": "编辑精选",
+          "matched_by": []
+        },
+        {
+          "title": "死亡不是终点：死后世界的三大入口与“意识过渡”完整指南",
+          "url": "/all-articles/philosophy-consciousness/death-transition-three-choices-light-void-spiritual-guide.html",
+          "source": "manual",
+          "score": null,
+          "rank_score": null,
+          "structural_score": null,
+          "semantic_score": null,
+          "reason": "编辑精选",
+          "matched_by": []
+        },
+        {
+          "title": "混沌节点与意识的过渡状态：个人、集体与死亡的灵魂旅程",
+          "url": "/all-articles/courses/consciousness-alchemy/transition-states-consciousness-chaotic-nodes.html",
+          "source": "manual",
+          "score": null,
+          "rank_score": null,
+          "structural_score": null,
+          "semantic_score": null,
+          "reason": "编辑精选",
+          "matched_by": []
         }
       ],
       "needs_manual_review": false
@@ -3021,49 +3064,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "遇见大角星人：在通灵信息、直觉体验与逻辑判断之间保持清醒",
-      "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology01-meeting-the-arcturians-consciousness.html",
-      "manual_declared": 3,
-      "manual_valid": 3,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
-          "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
-          "source": "manual",
-          "score": null,
-          "rank_score": null,
-          "structural_score": null,
-          "semantic_score": null,
-          "reason": "编辑精选",
-          "matched_by": []
-        },
-        {
-          "title": "死亡不是终点：死后世界的三大入口与“意识过渡”完整指南",
-          "url": "/all-articles/philosophy-consciousness/death-transition-three-choices-light-void-spiritual-guide.html",
-          "source": "manual",
-          "score": null,
-          "rank_score": null,
-          "structural_score": null,
-          "semantic_score": null,
-          "reason": "编辑精选",
-          "matched_by": []
-        },
-        {
-          "title": "混沌节点与意识的过渡状态：个人、集体与死亡的灵魂旅程",
-          "url": "/all-articles/courses/consciousness-alchemy/transition-states-consciousness-chaotic-nodes.html",
-          "source": "manual",
-          "score": null,
-          "rank_score": null,
-          "structural_score": null,
-          "semantic_score": null,
-          "reason": "编辑精选",
-          "matched_by": []
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "安努纳奇创造人类？《大角星人文摘》中的人类起源、基因改造与意识潜能｜第3集",
       "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology03-anunnaki-human-origins.html",
       "manual_declared": 0,
@@ -3218,172 +3218,6 @@
               "type": "text",
               "score": 6,
               "label": "高维文明"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "外星人档案"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "萨纳特·库玛拉是谁？大角星指挥官、哈索尔联盟与人类沉睡的DNA｜《大角星人文摘》第5集",
-      "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology05-sanat-kumara-arcturian-commander.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "哈索尔人是谁？古埃及哈索尔女神、平行宇宙与天狼星传说｜《大角星人文摘》第4集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology04-hathors-ancient-egypt-parallel-universe.html",
-          "source": "auto",
-          "score": 108,
-          "rank_score": 139.5,
-          "structural_score": 51,
-          "semantic_score": 57,
-          "reason": "共同关注「萨纳特·库玛拉」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 24,
-              "label": "高维文明"
-            },
-            {
-              "type": "series",
-              "score": 20,
-              "label": "大角星人"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "大角星人"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "萨纳特·库玛拉"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《大角星人文摘》"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "外星文明"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "外星人档案"
-            }
-          ]
-        },
-        {
-          "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
-          "source": "auto",
-          "score": 100,
-          "rank_score": 123.5,
-          "structural_score": 51,
-          "semantic_score": 49,
-          "reason": "共同关注「萨纳特·库玛拉」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 24,
-              "label": "高维文明"
-            },
-            {
-              "type": "series",
-              "score": 20,
-              "label": "大角星人"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "大角星人"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《大角星人文摘》"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "通灵信息"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "萨纳特·库玛拉"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "外星人档案"
-            }
-          ]
-        },
-        {
-          "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
-          "source": "auto",
-          "score": 99,
-          "rank_score": 121.5,
-          "structural_score": 51,
-          "semantic_score": 48,
-          "reason": "共同关注「萨纳特·库玛拉」",
-          "matched_by": [
-            {
-              "type": "series",
-              "score": 20,
-              "label": "大角星人"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "大角星人"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "萨纳特·库玛拉"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "外星文明"
-            },
-            {
-              "type": "text",
-              "score": 12,
-              "label": "外星文明"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《大角星人文摘》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
             },
             {
               "type": "parent",
@@ -3555,6 +3389,172 @@
               "type": "text",
               "score": 3,
               "label": "萨纳特·库玛拉"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "萨纳特·库玛拉是谁？大角星指挥官、哈索尔联盟与人类沉睡的DNA｜《大角星人文摘》第5集",
+      "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology05-sanat-kumara-arcturian-commander.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "哈索尔人是谁？古埃及哈索尔女神、平行宇宙与天狼星传说｜《大角星人文摘》第4集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology04-hathors-ancient-egypt-parallel-universe.html",
+          "source": "auto",
+          "score": 108,
+          "rank_score": 139.5,
+          "structural_score": 51,
+          "semantic_score": 57,
+          "reason": "共同关注「萨纳特·库玛拉」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 24,
+              "label": "高维文明"
+            },
+            {
+              "type": "series",
+              "score": 20,
+              "label": "大角星人"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "大角星人"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "萨纳特·库玛拉"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《大角星人文摘》"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "外星文明"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "外星人档案"
+            }
+          ]
+        },
+        {
+          "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
+          "source": "auto",
+          "score": 100,
+          "rank_score": 123.5,
+          "structural_score": 51,
+          "semantic_score": 49,
+          "reason": "共同关注「萨纳特·库玛拉」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 24,
+              "label": "高维文明"
+            },
+            {
+              "type": "series",
+              "score": 20,
+              "label": "大角星人"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "大角星人"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《大角星人文摘》"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "通灵信息"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "萨纳特·库玛拉"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "外星人档案"
+            }
+          ]
+        },
+        {
+          "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
+          "source": "auto",
+          "score": 99,
+          "rank_score": 121.5,
+          "structural_score": 51,
+          "semantic_score": 48,
+          "reason": "共同关注「萨纳特·库玛拉」",
+          "matched_by": [
+            {
+              "type": "series",
+              "score": 20,
+              "label": "大角星人"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "大角星人"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "萨纳特·库玛拉"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "外星文明"
+            },
+            {
+              "type": "text",
+              "score": 12,
+              "label": "外星文明"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《大角星人文摘》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "外星人档案"
             }
           ]
         }
@@ -5343,172 +5343,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
-      "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "萨纳特·库玛拉是谁？大角星指挥官、哈索尔联盟与人类沉睡的DNA｜《大角星人文摘》第5集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology05-sanat-kumara-arcturian-commander.html",
-          "source": "auto",
-          "score": 99,
-          "rank_score": 121.5,
-          "structural_score": 51,
-          "semantic_score": 48,
-          "reason": "共同关注「鞍马山」",
-          "matched_by": [
-            {
-              "type": "series",
-              "score": 20,
-              "label": "大角星人"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "大角星人"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "鞍马山"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "外星文明"
-            },
-            {
-              "type": "text",
-              "score": 12,
-              "label": "外星文明"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《大角星人文摘》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "外星人档案"
-            }
-          ]
-        },
-        {
-          "title": "Nakura冥想是什么？顶轮、净光与改变意识状态的练习｜《大角星人文摘》第15集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html",
-          "source": "auto",
-          "score": 93,
-          "rank_score": 109.5,
-          "structural_score": 51,
-          "semantic_score": 42,
-          "reason": "共同关注「改变意识状态」",
-          "matched_by": [
-            {
-              "type": "series",
-              "score": 20,
-              "label": "大角星人"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "大角星人"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "改变意识状态"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "外星文明"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《大角星人文摘》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "改变意识状态"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "外星人档案"
-            }
-          ]
-        },
-        {
-          "title": "哈索尔人是谁？古埃及哈索尔女神、平行宇宙与天狼星传说｜《大角星人文摘》第4集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology04-hathors-ancient-egypt-parallel-universe.html",
-          "source": "auto",
-          "score": 93,
-          "rank_score": 109.5,
-          "structural_score": 51,
-          "semantic_score": 42,
-          "reason": "共同关注「声音疗愈」",
-          "matched_by": [
-            {
-              "type": "series",
-              "score": 20,
-              "label": "大角星人"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "大角星人"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "外星文明"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《大角星人文摘》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "外星人档案"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "共情力如何改变人类未来？大角星人谈生态危机、人与自然及集体意识｜《大角星人文摘》第17集",
       "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology17-empathy-intelligence-ecological-consciousness.html",
       "manual_declared": 0,
@@ -5841,130 +5675,165 @@
       "needs_manual_review": false
     },
     {
-      "title": "灵界疗愈殿堂揭秘：光能量疗法、以太体修复与灵魂疗愈系统解析",
-      "url": "/all-articles/books/between-death-life/10-spiritual-healing-hall-light-energy-aura-etheric-body-repair.html",
+      "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
+      "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
       "manual_declared": 0,
       "manual_valid": 0,
       "manual_issues": [],
       "recommendations": [
         {
-          "title": "灵魂挂毯与阿卡西记录揭秘：命运丝线、时间结构与人生编织系统解析",
-          "url": "/all-articles/books/between-death-life/11-akashic-records-soul-tapestry-fate-thread-consciousness-structure.html",
+          "title": "萨纳特·库玛拉是谁？大角星指挥官、哈索尔联盟与人类沉睡的DNA｜《大角星人文摘》第5集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology05-sanat-kumara-arcturian-commander.html",
           "source": "auto",
-          "score": 65,
-          "rank_score": 83.5,
-          "structural_score": 31,
-          "semantic_score": 34,
-          "reason": "共同关注「催眠回溯」",
+          "score": 99,
+          "rank_score": 121.5,
+          "structural_score": 51,
+          "semantic_score": 48,
+          "reason": "共同关注「鞍马山」",
           "matched_by": [
             {
-              "type": "tag",
-              "score": 18,
-              "label": "死后世界"
+              "type": "series",
+              "score": 20,
+              "label": "大角星人"
             },
             {
               "type": "category",
               "score": 16,
-              "label": "生死之间"
+              "label": "大角星人"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "鞍马山"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "外星文明"
+            },
+            {
+              "type": "text",
+              "score": 12,
+              "label": "外星文明"
             },
             {
               "type": "identity",
               "score": 10,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "催眠回溯"
+              "label": "《大角星人文摘》"
             },
             {
               "type": "related_tag",
               "score": 8,
-              "label": "阿卡西记录"
+              "label": "汤姆肯永"
             },
             {
               "type": "parent",
               "score": 5,
-              "label": "好书解读"
+              "label": "外星人档案"
             }
           ]
         },
         {
-          "title": "光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html",
+          "title": "Nakura冥想是什么？顶轮、净光与改变意识状态的练习｜《大角星人文摘》第15集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html",
           "source": "auto",
-          "score": 47,
-          "rank_score": 79,
-          "structural_score": 10,
-          "semantic_score": 37,
-          "reason": "共同关注「催眠回溯」",
+          "score": 93,
+          "rank_score": 109.5,
+          "structural_score": 51,
+          "semantic_score": 42,
+          "reason": "共同关注「改变意识状态」",
           "matched_by": [
             {
-              "type": "tag",
-              "score": 18,
-              "label": "能量场"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "潜意识"
-            }
-          ]
-        },
-        {
-          "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
-          "source": "auto",
-          "score": 60,
-          "rank_score": 73.5,
-          "structural_score": 31,
-          "semantic_score": 29,
-          "reason": "都涉及「死后世界」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "死后世界"
+              "type": "series",
+              "score": 20,
+              "label": "大角星人"
             },
             {
               "type": "category",
               "score": 16,
-              "label": "生死之间"
+              "label": "大角星人"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "改变意识状态"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "外星文明"
             },
             {
               "type": "identity",
               "score": 10,
-              "label": "《生死之间》"
+              "label": "《大角星人文摘》"
             },
             {
               "type": "related_tag",
               "score": 8,
-              "label": "死后世界"
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "改变意识状态"
             },
             {
               "type": "parent",
               "score": 5,
-              "label": "好书解读"
+              "label": "外星人档案"
+            }
+          ]
+        },
+        {
+          "title": "哈索尔人是谁？古埃及哈索尔女神、平行宇宙与天狼星传说｜《大角星人文摘》第4集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology04-hathors-ancient-egypt-parallel-universe.html",
+          "source": "auto",
+          "score": 93,
+          "rank_score": 109.5,
+          "structural_score": 51,
+          "semantic_score": 42,
+          "reason": "共同关注「声音疗愈」",
+          "matched_by": [
+            {
+              "type": "series",
+              "score": 20,
+              "label": "大角星人"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "大角星人"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "外星文明"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《大角星人文摘》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
             },
             {
               "type": "text",
-              "score": 3,
-              "label": "死后世界"
+              "score": 6,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "外星人档案"
             }
           ]
         }
@@ -5973,7 +5842,7 @@
     },
     {
       "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-      "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+      "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
       "manual_declared": 0,
       "manual_valid": 0,
       "manual_issues": [],
@@ -6106,6 +5975,137 @@
               "type": "identity",
               "score": 5,
               "label": "朵洛莉丝·侃南"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "灵界疗愈殿堂揭秘：光能量疗法、以太体修复与灵魂疗愈系统解析",
+      "url": "/all-articles/books/between-death-life/10-spiritual-healing-hall-light-energy-aura-etheric-body-repair.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "灵魂挂毯与阿卡西记录揭秘：命运丝线、时间结构与人生编织系统解析",
+          "url": "/all-articles/books/between-death-life/11-akashic-records-soul-tapestry-fate-thread-consciousness-structure.html",
+          "source": "auto",
+          "score": 65,
+          "rank_score": 83.5,
+          "structural_score": 31,
+          "semantic_score": 34,
+          "reason": "共同关注「催眠回溯」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "死后世界"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "生死之间"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "阿卡西记录"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告",
+          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html",
+          "source": "auto",
+          "score": 47,
+          "rank_score": 79,
+          "structural_score": 10,
+          "semantic_score": 37,
+          "reason": "共同关注「催眠回溯」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "能量场"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "潜意识"
+            }
+          ]
+        },
+        {
+          "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
+          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "source": "auto",
+          "score": 60,
+          "rank_score": 73.5,
+          "structural_score": 31,
+          "semantic_score": 29,
+          "reason": "都涉及「死后世界」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "死后世界"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "生死之间"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "死后世界"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "死后世界"
             }
           ]
         }
@@ -7430,7 +7430,7 @@
       "recommendations": [
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 77,
           "rank_score": 107.5,
@@ -8981,7 +8981,7 @@
       "recommendations": [
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 93,
           "rank_score": 139.5,
@@ -9527,137 +9527,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "邪恶、附身与能量真相：从灵性视角理解妖魔、元素能量与意识防护机制",
-      "url": "/all-articles/books/between-death-life/32-do-demons-exist-energy-view-entity-possession-negative-energy-cleansing-white-light-protection.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "地狱是心智创造的吗？灵魂能量、负面振动与濒死经验的深层解析",
-          "url": "/all-articles/books/between-death-life/22-is-hell-created-by-mind-negative-energy-afterlife-near-death-experience-explained.html",
-          "source": "auto",
-          "score": 76,
-          "rank_score": 105.5,
-          "structural_score": 31,
-          "semantic_score": 45,
-          "reason": "共同关注「负面能量」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "生死之间"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "负面能量"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "频率"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "频率"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "死后世界"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "觉醒与地球未来：提升振动频率与灵性成长指南",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html",
-          "source": "auto",
-          "score": 50,
-          "rank_score": 85,
-          "structural_score": 10,
-          "semantic_score": 40,
-          "reason": "共同关注「灵性成长」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "能量场"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性成长"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "频率"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "朵洛莉丝·侃南"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "朵洛莉丝·侃南 / 催眠报告"
-            }
-          ]
-        },
-        {
-          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
-          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
-          "source": "auto",
-          "score": 37,
-          "rank_score": 74,
-          "structural_score": 0,
-          "semantic_score": 37,
-          "reason": "共同关注「灵性成长」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "能量场"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性成长"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "频率"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "灵魂规划与指导灵系统：转世前协议、灵魂家族与日常引导机制解析",
       "url": "/all-articles/books/between-death-life/34-spirit-guides-soul-family-reincarnation-planning-communication-astral-guidance.html",
       "manual_declared": 0,
@@ -9787,6 +9656,137 @@
               "type": "parent",
               "score": 5,
               "label": "朵洛莉丝·侃南 / 催眠报告"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "邪恶、附身与能量真相：从灵性视角理解妖魔、元素能量与意识防护机制",
+      "url": "/all-articles/books/between-death-life/32-do-demons-exist-energy-view-entity-possession-negative-energy-cleansing-white-light-protection.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "地狱是心智创造的吗？灵魂能量、负面振动与濒死经验的深层解析",
+          "url": "/all-articles/books/between-death-life/22-is-hell-created-by-mind-negative-energy-afterlife-near-death-experience-explained.html",
+          "source": "auto",
+          "score": 76,
+          "rank_score": 105.5,
+          "structural_score": 31,
+          "semantic_score": 45,
+          "reason": "共同关注「负面能量」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "生死之间"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "负面能量"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "频率"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "频率"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "死后世界"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "觉醒与地球未来：提升振动频率与灵性成长指南",
+          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html",
+          "source": "auto",
+          "score": 50,
+          "rank_score": 85,
+          "structural_score": 10,
+          "semantic_score": 40,
+          "reason": "共同关注「灵性成长」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "能量场"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性成长"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "频率"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "朵洛莉丝·侃南"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "朵洛莉丝·侃南 / 催眠报告"
+            }
+          ]
+        },
+        {
+          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
+          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
+          "source": "auto",
+          "score": 37,
+          "rank_score": 74,
+          "structural_score": 0,
+          "semantic_score": 37,
+          "reason": "共同关注「灵性成长」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "能量场"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性成长"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "频率"
             }
           ]
         }
@@ -10547,7 +10547,7 @@
       "recommendations": [
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 79,
           "rank_score": 111.5,
@@ -11037,7 +11037,7 @@
         },
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 85,
           "rank_score": 123.5,
@@ -13142,117 +13142,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "治愈身体：我应该遵循什么样的饮食？食物的频率与吸引力法则",
-      "url": "/all-articles/courses/human-body-healing/healing-diet-energy-frequency-emotional-balance.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
-          "url": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
-          "source": "auto",
-          "score": 52,
-          "rank_score": 96.5,
-          "structural_score": 5,
-          "semantic_score": 47,
-          "reason": "都涉及「吸引力法则」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 30,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "频率"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "潜意识"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
-          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
-          "source": "auto",
-          "score": 62,
-          "rank_score": 92.5,
-          "structural_score": 21,
-          "semantic_score": 41,
-          "reason": "都涉及「现实创造」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 30,
-              "label": "现实创造"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "人体 / 能量场 / 身体疗愈"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "能量场"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "频率"
-            }
-          ]
-        },
-        {
-          "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
-          "url": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
-          "source": "auto",
-          "score": 49,
-          "rank_score": 90.5,
-          "structural_score": 5,
-          "semantic_score": 44,
-          "reason": "都涉及「吸引力法则」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 30,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "能量场"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "频率"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实",
       "url": "/all-articles/courses/creation-manifestation/multiple-truths-911-conspiracy-consciousness-reality-creation.html",
       "manual_declared": 0,
@@ -13357,6 +13246,117 @@
               "type": "text",
               "score": 3,
               "label": "集体意识"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "治愈身体：我应该遵循什么样的饮食？食物的频率与吸引力法则",
+      "url": "/all-articles/courses/human-body-healing/healing-diet-energy-frequency-emotional-balance.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
+          "url": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
+          "source": "auto",
+          "score": 52,
+          "rank_score": 96.5,
+          "structural_score": 5,
+          "semantic_score": 47,
+          "reason": "都涉及「吸引力法则」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 30,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "频率"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "潜意识"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
+          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
+          "source": "auto",
+          "score": 62,
+          "rank_score": 92.5,
+          "structural_score": 21,
+          "semantic_score": 41,
+          "reason": "都涉及「现实创造」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 30,
+              "label": "现实创造"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "人体 / 能量场 / 身体疗愈"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "能量场"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "频率"
+            }
+          ]
+        },
+        {
+          "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
+          "url": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
+          "source": "auto",
+          "score": 49,
+          "rank_score": 90.5,
+          "structural_score": 5,
+          "semantic_score": 44,
+          "reason": "都涉及「吸引力法则」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 30,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "能量场"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "频率"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
             }
           ]
         }
@@ -14132,7 +14132,7 @@
         },
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 28,
           "rank_score": 56,
@@ -16071,132 +16071,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "克里希那穆提：语言如何限制思想？超越语言局限的自由心智",
-      "url": "/all-articles/insight-awakening/jiddu-krishnamurti/3-language-limits-how-words-shape-thoughts-and-trap-the-mind.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实",
-          "url": "/all-articles/courses/creation-manifestation/multiple-truths-911-conspiracy-consciousness-reality-creation.html",
-          "source": "auto",
-          "score": 37,
-          "rank_score": 62,
-          "structural_score": 8,
-          "semantic_score": 29,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 13,
-              "label": "语言与思维"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "洞察力 / 智慧的觉醒"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "心理学"
-            }
-          ]
-        },
-        {
-          "title": "克里希那穆提的智慧：放下心中的屏障，自在聆听的力量",
-          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/2-deep-listening-how-to-drop-mental-barriers-and-hear-the-whole-world.html",
-          "source": "auto",
-          "score": 48,
-          "rank_score": 57,
-          "structural_score": 26,
-          "semantic_score": 22,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "克里希那穆提"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "克里希那穆提"
-            },
-            {
-              "type": "tag",
-              "score": 6,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "克里希那穆提"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "洞察力 / 智慧的觉醒"
-            }
-          ]
-        },
-        {
-          "title": "克里希那穆提：摆脱权威依附，从恐惧与无明中获得解脱",
-          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/4-break-authority-patterns-mindset-freedom-through-self-awareness.html",
-          "source": "auto",
-          "score": 45,
-          "rank_score": 51,
-          "structural_score": 26,
-          "semantic_score": 19,
-          "reason": "共同关注「自由心智」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "克里希那穆提"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "自由心智"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "自我认知"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "克里希那穆提"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "洞察力 / 智慧的觉醒"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "自由心智"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "克里希那穆提：摆脱权威依附，从恐惧与无明中获得解脱",
       "url": "/all-articles/insight-awakening/jiddu-krishnamurti/4-break-authority-patterns-mindset-freedom-through-self-awareness.html",
       "manual_declared": 0,
@@ -16316,6 +16190,132 @@
               "type": "text",
               "score": 3,
               "label": "冥想"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "克里希那穆提：语言如何限制思想？超越语言局限的自由心智",
+      "url": "/all-articles/insight-awakening/jiddu-krishnamurti/3-language-limits-how-words-shape-thoughts-and-trap-the-mind.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实",
+          "url": "/all-articles/courses/creation-manifestation/multiple-truths-911-conspiracy-consciousness-reality-creation.html",
+          "source": "auto",
+          "score": 37,
+          "rank_score": 62,
+          "structural_score": 8,
+          "semantic_score": 29,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 13,
+              "label": "语言与思维"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "洞察力 / 智慧的觉醒"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "心理学"
+            }
+          ]
+        },
+        {
+          "title": "克里希那穆提的智慧：放下心中的屏障，自在聆听的力量",
+          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/2-deep-listening-how-to-drop-mental-barriers-and-hear-the-whole-world.html",
+          "source": "auto",
+          "score": 48,
+          "rank_score": 57,
+          "structural_score": 26,
+          "semantic_score": 22,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "克里希那穆提"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "克里希那穆提"
+            },
+            {
+              "type": "tag",
+              "score": 6,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "克里希那穆提"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "洞察力 / 智慧的觉醒"
+            }
+          ]
+        },
+        {
+          "title": "克里希那穆提：摆脱权威依附，从恐惧与无明中获得解脱",
+          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/4-break-authority-patterns-mindset-freedom-through-self-awareness.html",
+          "source": "auto",
+          "score": 45,
+          "rank_score": 51,
+          "structural_score": 26,
+          "semantic_score": 19,
+          "reason": "共同关注「自由心智」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "克里希那穆提"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "自由心智"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "自我认知"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "克里希那穆提"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "洞察力 / 智慧的觉醒"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "自由心智"
             }
           ]
         }

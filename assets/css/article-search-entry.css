@@ -132,6 +132,7 @@
 }
 
 .article-search-control-label {
+  position: relative;
   display: inline-flex;
   align-items: center;
   margin: 0;
@@ -140,14 +141,44 @@
   white-space: nowrap;
 }
 
+.article-search-control-label::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-right: 1.5px solid #7b8491;
+  border-bottom: 1.5px solid #7b8491;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
 .article-search-select {
-  height: 36px;
-  padding: 0 30px 0 11px;
-  border: 1px solid #d9dde5;
-  border-radius: 8px;
+  height: 34px;
+  padding: 0 34px 0 13px;
+  border: 1px solid #dfe3e8;
+  border-radius: 9px;
   background: #fff;
-  color: #2f3440;
-  font-size: 0.9rem;
+  color: #3f4652;
+  font-family: inherit;
+  font-size: 0.86rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: 0 1px 2px rgba(38, 53, 84, 0.04);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.article-search-select:hover:not(:disabled) {
+  border-color: #cbd2dc;
+}
+
+.article-search-select:focus-visible {
+  border-color: #9aabd0;
+  box-shadow: 0 0 0 3px rgba(98, 129, 200, 0.12);
 }
 
 .article-search-filter {
@@ -159,6 +190,10 @@
   background: #f5f6f8;
   color: #9aa0aa;
   cursor: not-allowed;
+}
+
+.article-search-control-label:has(.article-search-select:disabled)::after {
+  border-color: #aeb4bd;
 }
 
 .ebook-section .article-search-panel--entry {

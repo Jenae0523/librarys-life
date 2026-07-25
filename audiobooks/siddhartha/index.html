@@ -23,7 +23,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260725-0119">
+<meta name="version" content="20260725-1852">
 
 
 <meta charset="utf-8">
@@ -215,10 +215,72 @@
       box-sizing: border-box;
     }
 
+    .audio-list-toolbar {
+      width: 100%;
+      max-width: 720px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      transform: translateY(24px);
+    }
+
+    .audio-list-toolbar label {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      margin: 0;
+    }
+
+    .audio-list-toolbar select {
+      min-width: 132px;
+      height: 34px;
+      padding: 0 34px 0 13px;
+      border: 1px solid #dfe3e8;
+      border-radius: 9px;
+      background: #fff;
+      color: #3f4652;
+      font-family: inherit;
+      font-size: 0.86rem;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      box-shadow: 0 1px 2px rgba(38, 53, 84, 0.04);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .audio-list-toolbar label::after {
+      content: "";
+      position: absolute;
+      right: 14px;
+      width: 6px;
+      height: 6px;
+      margin-top: -3px;
+      border-right: 1.5px solid #7b8491;
+      border-bottom: 1.5px solid #7b8491;
+      transform: rotate(45deg);
+      pointer-events: none;
+    }
+
+    .audio-list-toolbar select:hover {
+      border-color: #cbd2dc;
+    }
+
+    .audio-list-toolbar select:focus-visible {
+      border-color: #9aabd0;
+      box-shadow: 0 0 0 3px rgba(98, 129, 200, 0.12);
+    }
+
     /* 小屏下仍然保持单列，只是更贴边 */
     @media (max-width: 768px) {
       .audio-item {
         max-width: 100%;
+        padding: 0 16px;
+      }
+
+      .audio-list-toolbar {
         padding: 0 16px;
       }
     }
@@ -836,9 +898,25 @@
 
 
 
-    <div class="audio-list">
+
+
+    <div class="audio-list" data-audiobook-episode-list>
+      <div class="audio-list-toolbar">
+        <label>
+          <select data-audiobook-sort aria-label="音频排序">
+            <option value="number" selected>从第一集开始</option>
+            <option value="latest">按最新发布排序</option>
+          </select>
+        </label>
+      </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-1"
+          data-audio-episode
+          data-audio-number="1"
+          data-audio-date="2025-10-31"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -860,7 +938,8 @@
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha1.json">
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha1.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -936,7 +1015,7 @@
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -997,7 +1076,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-2"
+          data-audio-episode
+          data-audio-number="2"
+          data-audio-date="2025-10-31"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1019,7 +1104,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha2.json">
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha2.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -1095,7 +1181,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -1156,7 +1242,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-3"
+          data-audio-episode
+          data-audio-number="3"
+          data-audio-date="2025-10-31"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1178,7 +1270,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha3.json">
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha3.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -1254,7 +1347,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -1315,7 +1408,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-4"
+          data-audio-episode
+          data-audio-number="4"
+          data-audio-date="2025-10-31"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1337,7 +1436,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha4.json">
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha4.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -1413,7 +1513,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -1474,7 +1574,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-5"
+          data-audio-episode
+          data-audio-number="5"
+          data-audio-date="2025-10-31"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1496,7 +1602,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha5.json">
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha5.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -1572,7 +1679,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -1633,7 +1740,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-6"
+          data-audio-episode
+          data-audio-number="6"
+          data-audio-date="2025-10-31"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1655,7 +1768,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha6.json">
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha6.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -1731,7 +1845,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -1792,7 +1906,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-7"
+          data-audio-episode
+          data-audio-number="7"
+          data-audio-date="2025-10-31"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1814,7 +1934,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha7.json">
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha7.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -1890,7 +2011,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -1951,7 +2072,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-8"
+          data-audio-episode
+          data-audio-number="8"
+          data-audio-date="2025-10-31"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -1973,7 +2100,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha8.json">
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha8.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -2049,7 +2177,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -2110,7 +2238,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-9"
+          data-audio-episode
+          data-audio-number="9"
+          data-audio-date="2025-10-31"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2132,7 +2266,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha9.json">
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha9.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -2208,7 +2343,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -2269,7 +2404,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-10"
+          data-audio-episode
+          data-audio-number="10"
+          data-audio-date="2025-10-31"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2291,7 +2432,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha10.json">
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha10.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -2367,7 +2509,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -2428,7 +2570,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-11"
+          data-audio-episode
+          data-audio-number="11"
+          data-audio-date="2025-10-31"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2450,7 +2598,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha11.json">
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha11.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -2526,7 +2675,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -2587,7 +2736,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
         </div>
       
-        <div class="audio-item">
+        <div
+          class="audio-item"
+          id="audio-12"
+          data-audio-episode
+          data-audio-number="12"
+          data-audio-date="2025-10-31"
+        >
           
           
           <article class="audio-card d-flex u-shadow-v19 g-bg-white rounded g-pt-20 g-pb-20 g-pl-30 g-pr-30 align-items-center flex-column">
@@ -2609,7 +2764,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
       <button 
         class="btn btn-sm show-subtitles" 
         style="background:#fff; border:1px solid #ccc; color:#333; letter-spacing: 0.05em;"
-        data-subtitle="/audiobooks/siddhartha/texts/siddhartha12.json">
+        data-subtitle="/audiobooks/siddhartha/texts/siddhartha12.json"
+        aria-expanded="false">
         显示字幕
       </button>
       
@@ -2685,7 +2841,7 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
   <!-- 下半部分：拉通字幕容器 -->
   
-  <div class="subtitle-box w-100" style="
+  <div class="subtitle-box w-100" hidden style="
       display:none;
       max-height: 200px;
       overflow-y:auto;
@@ -2743,139 +2899,15 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 </article>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".show-subtitles").forEach(button => {
-    const article = button.closest("article");
-    const audio = article.querySelector("audio");
-    const container = article.querySelector(".subtitle-box");
-    let subtitles = [];
-    let currentIndex = -1;
-    let isLoaded = false;
-
-    const smoothScrollTo = (target) => {
-      if (!target) return;
-      const targetTop = target.offsetTop - container.offsetTop;
-      const start = container.scrollTop;
-      const end = targetTop - container.clientHeight / 2 + target.clientHeight / 2;
-      const distance = end - start;
-      const duration = 400;
-      const startTime = performance.now();
-      const step = (now) => {
-        const progress = Math.min((now - startTime) / duration, 1);
-        const ease = 0.5 - Math.cos(progress * Math.PI) / 2;
-        container.scrollTop = start + distance * ease;
-        if (progress < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    };
-
-    const loadSubtitles = async () => {
-      try {
-        const res = await fetch(button.dataset.subtitle);
-        const data = await res.json();
-        container.innerHTML = data.map(s => 
-          `<p data-start="${s.start}" data-end="${s.end}" style="margin:0.4em 0;">${s.text}</p>`
-        ).join("");
-        subtitles = Array.from(container.querySelectorAll("p"));
-        isLoaded = true;
-        currentIndex = -1;
-      } catch (err) {
-        container.innerHTML = "<p style='color:red;'>加载字幕失败。</p>";
-        console.error("字幕加载失败：", err);
-      }
-    };
-
-    const highlightSubtitles = () => {
-      if (!isLoaded || !subtitles.length) return;
-      const t = audio.currentTime;
-      let idx = subtitles.findIndex(p => t >= parseFloat(p.dataset.start) && t <= parseFloat(p.dataset.end));
-      if (idx === -1) return;
-      if (idx !== currentIndex) {
-        smoothScrollTo(subtitles[idx]);
-        currentIndex = idx;
-      }
-    };
-
-    button.addEventListener("click", async () => {
-      const isHidden = container.style.display === "none";
-      if (isHidden) {
-        container.style.display = "block";
-        button.textContent = "关闭字幕";
-        button.style.border = "1px solid #6B77CC";
-        button.style.color = "#6B77CC";
-
-        if (!isLoaded) await loadSubtitles();
-        highlightSubtitles();
-      } else {
-        container.style.display = "none";
-        button.textContent = "显示字幕";
-        button.style.border = "1px solid #ccc";
-        button.style.color = "#333";
-        currentIndex = -1;
-      }
-    });
-
-    audio.addEventListener("timeupdate", highlightSubtitles);
-    audio.addEventListener("seeked", () => {
-      currentIndex = -1;
-      highlightSubtitles();
-    });
-    audio.addEventListener("play", highlightSubtitles);
-    audio.addEventListener("loadedmetadata", highlightSubtitles);
-  });
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const audios = Array.from(document.querySelectorAll("article audio"));
-  let currentIndex = -1;
-
-  audios.forEach((audio, index) => {
-
-    // 当用户点击播放某一集
-    audio.addEventListener("play", () => {
-      // 暂停其他音频
-      audios.forEach((a, i) => {
-        if (i !== index && !a.paused) {
-          a.pause();
-        }
-      });
-	  
-      currentIndex = index;
-	  
-	  // 新增：滚动到当前播放的卡片
-  audio.closest("article")?.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
-	  
-    });
-
-    // 当前音频播放结束 → 播放下一集
-    audio.addEventListener("ended", () => {
-  // 极端情况防护
-  if (audio.currentTime === 0) return;
-
-  const nextIndex = index + 1;
-  if (audios[nextIndex]) {
-    audios[nextIndex].play();
-  }
-});
-
-  });
-
-});
-</script>
-
+<script src="/assets/js/audio-card.js" defer></script>
 
 
         </div>
       
 	<div class="sharethis-inline-share-buttons"></div>  
     </div>
+
+<script src="/assets/js/audiobook-collection-sort.js" defer></script>
 
 
 

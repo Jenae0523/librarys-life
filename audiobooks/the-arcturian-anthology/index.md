@@ -53,4 +53,5 @@ tags:
 download_url: https://readcafe.life/free-ebooks/authors/tom-kenyon/da-jiao-xing-ren-wen-zhai---mu-yu-jie-du-ban.pdf
 book_slug: the-arcturian-anthology
 is_book_index: true
+content_type: audiobook
 ---

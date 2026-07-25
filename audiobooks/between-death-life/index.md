@@ -39,4 +39,5 @@ tags:
 download_url: https://readcafe.life/free-ebooks/authors/dolores-cannon/sheng-si-zhi-jian--mu-yu-jie-du-ban.pdf
 book_slug: between-death-life
 is_book_index: true
+content_type: audiobook
 ---

@@ -52,4 +52,5 @@ tags:
 download_url: https://readcafe.life/free-ebooks/authors/tom-kenyon/mo-da-la-shou-gao-librarys-life-20260710.pdf
 book_slug: mary-magdalene
 is_book_index: true
+content_type: audiobook
 ---

@@ -592,20 +592,20 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio39.MP3"
   },
   {
-    "title": "前世的回溯10：雪地女巫医",
-    "subtitle": "",
-    "description": "谨小慎微，时刻警惕潜在危险的女巫医，这种特质可能源自另一个前世经验。",
-    "slug": "/audiobooks/dark-night-soul/audio40/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio40.MP3"
-  },
-  {
     "title": "第2章：日记撷录2",
     "subtitle": "",
     "description": "与“高我”的对话：我对轮回心怀恐惧的缘由。",
     "slug": "/audiobooks/dark-night-soul/audio4/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio4.MP3"
+  },
+  {
+    "title": "前世的回溯10：雪地女巫医",
+    "subtitle": "",
+    "description": "谨小慎微，时刻警惕潜在危险的女巫医，这种特质可能源自另一个前世经验。",
+    "slug": "/audiobooks/dark-night-soul/audio40/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio40.MP3"
   },
   {
     "title": "前世的回溯11：为正义而献身的女战士",
@@ -896,22 +896,6 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene10.mp3"
   },
   {
-    "title": "第9集：什么是启蒙？如何获得真正的启蒙？",
-    "subtitle": "",
-    "description": "故事结尾：揭示一个世代失传的秘密。关于内在炼金术的补充内容：同性伴侣的炼金术 │ 自我启蒙的简单入门仪式 │ 荷鲁斯炼金术中，为什么使用爬虫类动物（蛇）的形象？",
-    "slug": "/audiobooks/mary-magdalene/audio11/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene11.mp3"
-  },
-  {
-    "title": "第10集：“荷鲁斯内在炼金术”新手入门指南",
-    "subtitle": "",
-    "description": "冥想练习：开启意识潜能的途径 │ 激活生命力能量塞赫姆SEKHEM │ 激活更精微的蛇状能量 │ 节德柱djed │ 普拉纳能量管Pranic Tube │ 乌拉埃乌斯Uraeus",
-    "slug": "/audiobooks/mary-magdalene/audio12/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene12.mp3"
-  },
-  {
     "title": "第二部分 第11集：能量跟随意识！内在炼金术专注于微观量子世界",
     "subtitle": "",
     "description": "内在炼金术的三个基本要素 │ 意识是炼金反应容器 │ 收集能量的建议、强化意识容器：专注力与洞察力 │ 用太阳光给Ka体充电（名词解释与延伸阅读）神经生理学 │腺体与脉轮 │ 突破知觉限制：洋葱皮的世界、知觉事物的能量本质",
@@ -920,12 +904,36 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene13.MP3"
   },
   {
+    "title": "第12集：从量子物理学视角，揭秘古埃及炼金术【1】 ",
+    "subtitle": "",
+    "description": "贝尔定律：光的波粒二象性 │ 量子世界与牛顿世界的神奇交汇处 │ 量子世界的奇怪现象 │ 止痛的案例 │ 梦境与量子世界、掌握量子现实（名词解释）心理神经免疫学、替代现实：通过情绪过滤器影响现实",
+    "slug": "/audiobooks/mary-magdalene/audio14/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene14.mp3"
+  },
+  {
+    "title": "第9集：什么是启蒙？如何获得真正的启蒙？",
+    "subtitle": "",
+    "description": "故事结尾：揭示一个世代失传的秘密。关于内在炼金术的补充内容：同性伴侣的炼金术 │ 自我启蒙的简单入门仪式 │ 荷鲁斯炼金术中，为什么使用爬虫类动物（蛇）的形象？",
+    "slug": "/audiobooks/mary-magdalene/audio11/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene11.mp3"
+  },
+  {
     "title": "延伸阅读：量子梦境 │ 每个人都具备的隐藏功能",
     "subtitle": "",
     "description": "唐望控梦的艺术：做梦是调整能量体的艺术 │ 为什么大多数人被困在普通梦中？做梦注意力 │ 改变知觉的关键：集合点 │ 人类能量体 ",
     "slug": "/audiobooks/mary-magdalene/audio15/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene15.mp3"
+  },
+  {
+    "title": "第10集：“荷鲁斯内在炼金术”新手入门指南",
+    "subtitle": "",
+    "description": "冥想练习：开启意识潜能的途径 │ 激活生命力能量塞赫姆SEKHEM │ 激活更精微的蛇状能量 │ 节德柱djed │ 普拉纳能量管Pranic Tube │ 乌拉埃乌斯Uraeus",
+    "slug": "/audiobooks/mary-magdalene/audio12/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene12.mp3"
   },
   {
     "title": "延伸阅读：高阶控梦的奥秘 │ 睡眠编程",
@@ -942,14 +950,6 @@
     "slug": "/audiobooks/mary-magdalene/audio17/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene17.mp3"
-  },
-  {
-    "title": "第12集：从量子物理学视角，揭秘古埃及炼金术【1】 ",
-    "subtitle": "",
-    "description": "贝尔定律：光的波粒二象性 │ 量子世界与牛顿世界的神奇交汇处 │ 量子世界的奇怪现象 │ 止痛的案例 │ 梦境与量子世界、掌握量子现实（名词解释）心理神经免疫学、替代现实：通过情绪过滤器影响现实",
-    "slug": "/audiobooks/mary-magdalene/audio14/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene14.mp3"
   },
   {
     "title": "延伸阅读：唐望谈能量体分身",
@@ -1016,20 +1016,20 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene24.MP3"
   },
   {
-    "title": "第19集：揭秘密宗瑜伽【3】 ",
-    "subtitle": "",
-    "description": "颠覆常识：如何将性能量转化为觉悟？性能量的循环与积累过程 │ 性修行的奥秘与警告！用三摩地冥想驾驭性能量 │ 与神合一：性修行中的仪式",
-    "slug": "/audiobooks/mary-magdalene/audio26/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene26.MP3"
-  },
-  {
     "title": "第18集：揭秘密宗瑜伽【2】 ",
     "subtitle": "",
     "description": "我们为什么被困在虚拟现实中？冥想的目的？“三种宇宙原力”揭示密宗修行的核心 │ 超越玛雅的幻象：一切只是意识的游戏",
     "slug": "/audiobooks/mary-magdalene/audio25/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene25.MP3"
+  },
+  {
+    "title": "第19集：揭秘密宗瑜伽【3】 ",
+    "subtitle": "",
+    "description": "颠覆常识：如何将性能量转化为觉悟？性能量的循环与积累过程 │ 性修行的奥秘与警告！用三摩地冥想驾驭性能量 │ 与神合一：性修行中的仪式",
+    "slug": "/audiobooks/mary-magdalene/audio26/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene26.MP3"
   },
   {
     "title": "第20集：揭秘佛教炼金术【1】",
@@ -1104,20 +1104,20 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.MP3"
   },
   {
-    "title": "女性原则为何被从神话中抹去？",
-    "subtitle": "",
-    "description": "探讨索菲亚（Sophia）与逻各斯（Logos）、女性原则的失落、夏娃神话、诺斯替传统及宇宙之母的回归。",
-    "slug": "/audiobooks/mary-magdalene/audio36/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.mp3"
-  },
-  {
     "title": "第28集：一个女人的故事【3】（完结）",
     "subtitle": "",
     "description": "在关系中选择爱与真实：如果一段关系要求你完全真实，你会逃走吗？你最害怕的是什么呢？",
     "slug": "/audiobooks/mary-magdalene/audio35/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.mp3"
+  },
+  {
+    "title": "女性原则为何被从神话中抹去？",
+    "subtitle": "",
+    "description": "探讨索菲亚（Sophia）与逻各斯（Logos）、女性原则的失落、夏娃神话、诺斯替传统及宇宙之母的回归。",
+    "slug": "/audiobooks/mary-magdalene/audio36/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.mp3"
   },
   {
     "title": "第一部分 第4集：抹大拉的玛利亚与耶稣的故事",
@@ -1496,20 +1496,28 @@
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio7.MP3"
   },
   {
-    "title": "第1集：没有前世的人",
-    "subtitle": "",
-    "description": "催眠案例发生异常转变：一些人找不到任何地球前世，却被告知“肩负重要使命”。一个关于地球转化与灵魂来源的更大叙事逐渐浮现。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio1/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio1.MP3"
-  },
-  {
     "title": "第8集：去除无知的神秘 │ 精灵 天使 神话人物 未来人类",
     "subtitle": "",
     "description": "作为人类存有，你面临的困难中有一种催眠，那是由于你的大脑和神经系统的运作。你相信你对世界的感官经验是现实的全部，但事实并非如此。你生活在一个比你想象的更广阔、更复杂、更神秘、更奇怪的宇宙中。",
     "slug": "/audiobooks/the-arcturian-anthology/audio8/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio8.MP3"
+  },
+  {
+    "title": "第9集：如何塑造你的新现实？你是量子场活动的创造者",
+    "subtitle": "",
+    "description": "你是量子场活动的生产者。你可以通过你的意图，创造性思想和专注力影响量子领域。换句话说，你可以通过思维的力量塑造你的新现实。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio9/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio9.MP3"
+  },
+  {
+    "title": "第1集：没有前世的人",
+    "subtitle": "",
+    "description": "催眠案例发生异常转变：一些人找不到任何地球前世，却被告知“肩负重要使命”。一个关于地球转化与灵魂来源的更大叙事逐渐浮现。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio1/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio1.MP3"
   },
   {
     "title": "第10集：来自议会的存有",
@@ -1534,14 +1542,6 @@
     "slug": "/audiobooks/three-waves-of-volunteers/audio12/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio12.MP3"
-  },
-  {
-    "title": "第9集：如何塑造你的新现实？你是量子场活动的创造者",
-    "subtitle": "",
-    "description": "你是量子场活动的生产者。你可以通过你的意图，创造性思想和专注力影响量子领域。换句话说，你可以通过思维的力量塑造你的新现实。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio9/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio9.MP3"
   },
   {
     "title": "第13集：更多的星球毁灭",
@@ -1576,20 +1576,12 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio16.MP3"
   },
   {
-    "title": "第一部志愿者 第2集：三波志愿者的来历",
+    "title": "第17集：看不见的家人",
     "subtitle": "",
-    "description": "通过大量催眠案例，发现不同来源的灵魂分批进入地球，并揭示印记机制、宇宙干预方式与人类在地球转化中的关键角色。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio2/",
+    "description": "她常常在睡觉时灵魂出体，被外星家人护送至“母船教室”执行任务，协作影响人类意识；你将重新理解睡眠与现实的边界。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio17/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio2.MP3"
-  },
-  {
-    "title": "第19集：调整志愿者",
-    "subtitle": "",
-    "description": "这个灵魂在许多世都参与了人类基因实验，协助跨文明的基因繁衍计划。她既是做研究的人，也是被研究的对象。她在不同的层面都有涉入。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio19/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio19.MP3"
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio17.MP3"
   },
   {
     "title": "第18集：同时存在于多个维度的志愿者",
@@ -1600,12 +1592,20 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio18.MP3"
   },
   {
-    "title": "第17集：看不见的家人",
+    "title": "第19集：调整志愿者",
     "subtitle": "",
-    "description": "她常常在睡觉时灵魂出体，被外星家人护送至“母船教室”执行任务，协作影响人类意识；你将重新理解睡眠与现实的边界。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio17/",
+    "description": "这个灵魂在许多世都参与了人类基因实验，协助跨文明的基因繁衍计划。她既是做研究的人，也是被研究的对象。她在不同的层面都有涉入。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio19/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio17.MP3"
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio19.MP3"
+  },
+  {
+    "title": "第一部志愿者 第2集：三波志愿者的来历",
+    "subtitle": "",
+    "description": "通过大量催眠案例，发现不同来源的灵魂分批进入地球，并揭示印记机制、宇宙干预方式与人类在地球转化中的关键角色。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio2/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio2.MP3"
   },
   {
     "title": "第20集：监护与治疗志愿者",

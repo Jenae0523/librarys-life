@@ -43,4 +43,5 @@ download_url: https://readcafe.life/free-ebooks/authors/pamela-kribbe/ling-hun-d
 
 book_slug: dark-night-soul
 is_book_index: true
+content_type: audiobook
 ---

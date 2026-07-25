@@ -44,4 +44,5 @@ tags:
 download_url: https://readcafe.life/free-ebooks/spirituality/archangel-michael-20250316.pdf
 book_slug: messages-of-light-archangel-mike
 is_book_index: true
+content_type: podcast
 ---

@@ -24,9 +24,8 @@ number: 1
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life1.json"
 book_slug: between-death-life
 is_audio_episode: true
-article_url: "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html"
+article_url: "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html"
 
 ---
-
 
 

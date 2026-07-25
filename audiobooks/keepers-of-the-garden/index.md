@@ -41,5 +41,6 @@ tags:
   - 星际种子
 book_slug: keepers-of-the-garden
 is_book_index: true
+content_type: audiobook
 ---
 

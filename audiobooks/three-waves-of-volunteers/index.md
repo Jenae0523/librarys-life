@@ -47,4 +47,5 @@ tags:
   - 自我认知
 book_slug: three-waves-of-volunteers
 is_book_index: true
+content_type: audiobook
 ---
