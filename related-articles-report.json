@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-25T10:53:34.597Z",
+  "generated_at": "2026-07-25T13:05:15.576Z",
   "rule_version": "mixed-related-articles-v1",
   "article_count": 132,
   "recommendation_count": 396,
-  "recommendation_generation_ms": 4516.533,
+  "recommendation_generation_ms": 3616.041,
   "articles": [
     {
       "title": "来自星星的孩子揭秘：前世回溯与星际种子灵魂成长指南",
@@ -360,7 +360,7 @@
         },
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 51,
           "rank_score": 94.5,
@@ -392,127 +392,6 @@
               "type": "identity",
               "score": 5,
               "label": "朵洛莉丝·侃南"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
-      "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈",
-          "url": "/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html",
-          "source": "auto",
-          "score": 59,
-          "rank_score": 86.5,
-          "structural_score": 21,
-          "semantic_score": 38,
-          "reason": "都涉及「情绪疗愈」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 30,
-              "label": "情绪疗愈"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "人体 / 能量场 / 身体疗愈"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "心理—精神排毒：催眠、冥想与声音如何触发情绪释放和感知改变",
-          "url": "/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html",
-          "source": "auto",
-          "score": 61,
-          "rank_score": 83,
-          "structural_score": 26,
-          "semantic_score": 35,
-          "reason": "都涉及「冥想」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 24,
-              "label": "冥想"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "人体 / 能量场 / 身体疗愈"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "冥想"
-            }
-          ]
-        },
-        {
-          "title": "当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验",
-          "url": "/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html",
-          "source": "auto",
-          "score": 56,
-          "rank_score": 80.5,
-          "structural_score": 21,
-          "semantic_score": 35,
-          "reason": "都涉及「冥想」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 24,
-              "label": "冥想"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "人体 / 能量场 / 身体疗愈"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "冥想"
             }
           ]
         }
@@ -1272,102 +1151,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "无法正确的沟通，是因为缺乏沟通的品质，是什么导致沟通的终止？打破沟通障碍的5个关键点！",
-      "url": "/all-articles/insight-awakening/art-of-deep-listening-how-to-break-communication-barriers-and-connect-truly.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实",
-          "url": "/all-articles/courses/creation-manifestation/multiple-truths-911-conspiracy-consciousness-reality-creation.html",
-          "source": "auto",
-          "score": 29,
-          "rank_score": 46,
-          "structural_score": 8,
-          "semantic_score": 21,
-          "reason": "都涉及「语言与思维」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 13,
-              "label": "语言与思维"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "洞察力 / 智慧的觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "心理学"
-            }
-          ]
-        },
-        {
-          "title": "逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒",
-          "url": "/all-articles/insight-awakening/logic-mind-emotional-intelligence-keylonta-codes-awakening.html",
-          "source": "auto",
-          "score": 29,
-          "rank_score": 46,
-          "structural_score": 8,
-          "semantic_score": 21,
-          "reason": "都涉及「语言与思维」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 13,
-              "label": "语言与思维"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "洞察力 / 智慧的觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "心理学"
-            }
-          ]
-        },
-        {
-          "title": "《论内心生活》读书笔记：谦卑，不是看轻自己，而是不高估自己",
-          "url": "/all-articles/insight-awakening/on-humility.html",
-          "source": "auto",
-          "score": 25,
-          "rank_score": 38,
-          "structural_score": 8,
-          "semantic_score": 17,
-          "reason": "都涉及「心理学」主题",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 8,
-              "label": "洞察力 / 智慧的觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "自我认知"
-            },
-            {
-              "type": "tag",
-              "score": 6,
-              "label": "心理学"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "自我重要感"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧",
       "url": "/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html",
       "manual_declared": 0,
@@ -1620,6 +1403,102 @@
       "needs_manual_review": false
     },
     {
+      "title": "无法正确的沟通，是因为缺乏沟通的品质，是什么导致沟通的终止？打破沟通障碍的5个关键点！",
+      "url": "/all-articles/insight-awakening/art-of-deep-listening-how-to-break-communication-barriers-and-connect-truly.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实",
+          "url": "/all-articles/courses/creation-manifestation/multiple-truths-911-conspiracy-consciousness-reality-creation.html",
+          "source": "auto",
+          "score": 29,
+          "rank_score": 46,
+          "structural_score": 8,
+          "semantic_score": 21,
+          "reason": "都涉及「语言与思维」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 13,
+              "label": "语言与思维"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "洞察力 / 智慧的觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "心理学"
+            }
+          ]
+        },
+        {
+          "title": "逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒",
+          "url": "/all-articles/insight-awakening/logic-mind-emotional-intelligence-keylonta-codes-awakening.html",
+          "source": "auto",
+          "score": 29,
+          "rank_score": 46,
+          "structural_score": 8,
+          "semantic_score": 21,
+          "reason": "都涉及「语言与思维」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 13,
+              "label": "语言与思维"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "洞察力 / 智慧的觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "心理学"
+            }
+          ]
+        },
+        {
+          "title": "《论内心生活》读书笔记：谦卑，不是看轻自己，而是不高估自己",
+          "url": "/all-articles/insight-awakening/on-humility.html",
+          "source": "auto",
+          "score": 25,
+          "rank_score": 38,
+          "structural_score": 8,
+          "semantic_score": 17,
+          "reason": "都涉及「心理学」主题",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 8,
+              "label": "洞察力 / 智慧的觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "自我认知"
+            },
+            {
+              "type": "tag",
+              "score": 6,
+              "label": "心理学"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "自我重要感"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
       "title": "《论内心生活》读书笔记：谦卑，不是看轻自己，而是不高估自己",
       "url": "/all-articles/insight-awakening/on-humility.html",
       "manual_declared": 0,
@@ -1711,44 +1590,122 @@
       "needs_manual_review": false
     },
     {
-      "title": "俄罗斯谢琴宁「森林学校」：创新教育理念与儿童潜能开发",
-      "url": "/all-articles/insight-awakening/schetinin-forest-school-innovative-education.html",
-      "manual_declared": 3,
-      "manual_valid": 3,
+      "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
+      "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
       "manual_issues": [],
       "recommendations": [
         {
-          "title": "真正的教导，指向自我实现｜教导与学习的本质解析",
-          "url": "/all-articles/insight-awakening/teaching-and-learning-self-realization-spiritual-growth.html",
-          "source": "manual",
-          "score": null,
-          "rank_score": null,
-          "structural_score": null,
-          "semantic_score": null,
-          "reason": "从教育延伸到教导、学习与自我实现",
-          "matched_by": []
+          "title": "疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈",
+          "url": "/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html",
+          "source": "auto",
+          "score": 59,
+          "rank_score": 86.5,
+          "structural_score": 21,
+          "semantic_score": 38,
+          "reason": "都涉及「情绪疗愈」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 30,
+              "label": "情绪疗愈"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "人体 / 能量场 / 身体疗愈"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
         },
         {
-          "title": "克里希那穆提的智慧：如何让粗糙的心变得敏锐？",
-          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/1-how-awareness-transforms-a-rough-mind-inner-growth-not-effort.html",
-          "source": "manual",
-          "score": null,
-          "rank_score": null,
-          "structural_score": null,
-          "semantic_score": null,
-          "reason": "进一步理解觉察、心智成长与教育",
-          "matched_by": []
+          "title": "心理—精神排毒：催眠、冥想与声音如何触发情绪释放和感知改变",
+          "url": "/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html",
+          "source": "auto",
+          "score": 61,
+          "rank_score": 83,
+          "structural_score": 26,
+          "semantic_score": 35,
+          "reason": "都涉及「冥想」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 24,
+              "label": "冥想"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "人体 / 能量场 / 身体疗愈"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "冥想"
+            }
+          ]
         },
         {
-          "title": "克里希那穆提：语言如何限制思想？超越语言局限的自由心智",
-          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/3-language-limits-how-words-shape-thoughts-and-trap-the-mind.html",
-          "source": "manual",
-          "score": null,
-          "rank_score": null,
-          "structural_score": null,
-          "semantic_score": null,
-          "reason": "探索语言、思想与学习方式的关系",
-          "matched_by": []
+          "title": "当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验",
+          "url": "/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html",
+          "source": "auto",
+          "score": 56,
+          "rank_score": 80.5,
+          "structural_score": 21,
+          "semantic_score": 35,
+          "reason": "都涉及「冥想」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 24,
+              "label": "冥想"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "人体 / 能量场 / 身体疗愈"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "冥想"
+            }
+          ]
         }
       ],
       "needs_manual_review": false
@@ -1845,6 +1802,49 @@
               "label": "指导灵"
             }
           ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "俄罗斯谢琴宁「森林学校」：创新教育理念与儿童潜能开发",
+      "url": "/all-articles/insight-awakening/schetinin-forest-school-innovative-education.html",
+      "manual_declared": 3,
+      "manual_valid": 3,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "真正的教导，指向自我实现｜教导与学习的本质解析",
+          "url": "/all-articles/insight-awakening/teaching-and-learning-self-realization-spiritual-growth.html",
+          "source": "manual",
+          "score": null,
+          "rank_score": null,
+          "structural_score": null,
+          "semantic_score": null,
+          "reason": "从教育延伸到教导、学习与自我实现",
+          "matched_by": []
+        },
+        {
+          "title": "克里希那穆提的智慧：如何让粗糙的心变得敏锐？",
+          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/1-how-awareness-transforms-a-rough-mind-inner-growth-not-effort.html",
+          "source": "manual",
+          "score": null,
+          "rank_score": null,
+          "structural_score": null,
+          "semantic_score": null,
+          "reason": "进一步理解觉察、心智成长与教育",
+          "matched_by": []
+        },
+        {
+          "title": "克里希那穆提：语言如何限制思想？超越语言局限的自由心智",
+          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/3-language-limits-how-words-shape-thoughts-and-trap-the-mind.html",
+          "source": "manual",
+          "score": null,
+          "rank_score": null,
+          "structural_score": null,
+          "semantic_score": null,
+          "reason": "探索语言、思想与学习方式的关系",
+          "matched_by": []
         }
       ],
       "needs_manual_review": false
@@ -2090,6 +2090,112 @@
       "needs_manual_review": false
     },
     {
+      "title": "存在的乐趣：停止说话与思考，感受自我与万物的共振指南",
+      "url": "/all-articles/muyu-notes/joy-of-being-how-to-stop-talking-and-thinking-to-awaken-self-and-universe.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "暮雨札记：自由与反抗的本质探索，自由书写与内在觉知指南",
+          "url": "/all-articles/muyu-notes/muyu-notes-freedom-resistance-inner-awareness-writing.html",
+          "source": "auto",
+          "score": 48,
+          "rank_score": 84,
+          "structural_score": 8,
+          "semantic_score": 40,
+          "reason": "共同关注「内在觉知」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "潜意识"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "暮雨札记"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "内在觉知"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "心理学"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "潜意识"
+            }
+          ]
+        },
+        {
+          "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
+          "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
+          "source": "auto",
+          "score": 37,
+          "rank_score": 62,
+          "structural_score": 8,
+          "semantic_score": 29,
+          "reason": "都涉及「冥想」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "冥想"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "洞察力 / 智慧的觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "冥想"
+            }
+          ]
+        },
+        {
+          "title": "当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验",
+          "url": "/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html",
+          "source": "auto",
+          "score": 29,
+          "rank_score": 58,
+          "structural_score": 0,
+          "semantic_score": 29,
+          "reason": "都涉及「冥想」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "冥想"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "自我认知"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "潜意识"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
       "title": "暮雨札记：利用仪式与空间释放能量，快速切换意识频率的实用方法",
       "url": "/all-articles/muyu-notes/energy-release-rituals-space-mindset-shifting.html",
       "manual_declared": 0,
@@ -2194,112 +2300,6 @@
               "type": "text",
               "score": 6,
               "label": "频率"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "存在的乐趣：停止说话与思考，感受自我与万物的共振指南",
-      "url": "/all-articles/muyu-notes/joy-of-being-how-to-stop-talking-and-thinking-to-awaken-self-and-universe.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "暮雨札记：自由与反抗的本质探索，自由书写与内在觉知指南",
-          "url": "/all-articles/muyu-notes/muyu-notes-freedom-resistance-inner-awareness-writing.html",
-          "source": "auto",
-          "score": 48,
-          "rank_score": 84,
-          "structural_score": 8,
-          "semantic_score": 40,
-          "reason": "共同关注「内在觉知」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "潜意识"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "暮雨札记"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "内在觉知"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "心理学"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "潜意识"
-            }
-          ]
-        },
-        {
-          "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
-          "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
-          "source": "auto",
-          "score": 37,
-          "rank_score": 62,
-          "structural_score": 8,
-          "semantic_score": 29,
-          "reason": "都涉及「冥想」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "冥想"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "洞察力 / 智慧的觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "冥想"
-            }
-          ]
-        },
-        {
-          "title": "当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验",
-          "url": "/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html",
-          "source": "auto",
-          "score": 29,
-          "rank_score": 58,
-          "structural_score": 0,
-          "semantic_score": 29,
-          "reason": "都涉及「冥想」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "冥想"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "自我认知"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "潜意识"
             }
           ]
         }
@@ -2821,7 +2821,7 @@
         },
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 28,
           "rank_score": 56,
@@ -5842,7 +5842,7 @@
     },
     {
       "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-      "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+      "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
       "manual_declared": 0,
       "manual_valid": 0,
       "manual_issues": [],
@@ -6069,7 +6069,7 @@
         },
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 60,
           "rank_score": 73.5,
@@ -7430,7 +7430,7 @@
       "recommendations": [
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 77,
           "rank_score": 107.5,
@@ -8981,7 +8981,7 @@
       "recommendations": [
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 93,
           "rank_score": 139.5,
@@ -9527,6 +9527,137 @@
       "needs_manual_review": false
     },
     {
+      "title": "邪恶、附身与能量真相：从灵性视角理解妖魔、元素能量与意识防护机制",
+      "url": "/all-articles/books/between-death-life/32-do-demons-exist-energy-view-entity-possession-negative-energy-cleansing-white-light-protection.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "地狱是心智创造的吗？灵魂能量、负面振动与濒死经验的深层解析",
+          "url": "/all-articles/books/between-death-life/22-is-hell-created-by-mind-negative-energy-afterlife-near-death-experience-explained.html",
+          "source": "auto",
+          "score": 76,
+          "rank_score": 105.5,
+          "structural_score": 31,
+          "semantic_score": 45,
+          "reason": "共同关注「负面能量」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "生死之间"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "负面能量"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "频率"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "频率"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "死后世界"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "觉醒与地球未来：提升振动频率与灵性成长指南",
+          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html",
+          "source": "auto",
+          "score": 50,
+          "rank_score": 85,
+          "structural_score": 10,
+          "semantic_score": 40,
+          "reason": "共同关注「灵性成长」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "能量场"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性成长"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "频率"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "朵洛莉丝·侃南"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "朵洛莉丝·侃南 / 催眠报告"
+            }
+          ]
+        },
+        {
+          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
+          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
+          "source": "auto",
+          "score": 37,
+          "rank_score": 74,
+          "structural_score": 0,
+          "semantic_score": 37,
+          "reason": "共同关注「灵性成长」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "能量场"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性成长"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "频率"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
       "title": "灵魂规划与指导灵系统：转世前协议、灵魂家族与日常引导机制解析",
       "url": "/all-articles/books/between-death-life/34-spirit-guides-soul-family-reincarnation-planning-communication-astral-guidance.html",
       "manual_declared": 0,
@@ -9656,137 +9787,6 @@
               "type": "parent",
               "score": 5,
               "label": "朵洛莉丝·侃南 / 催眠报告"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "邪恶、附身与能量真相：从灵性视角理解妖魔、元素能量与意识防护机制",
-      "url": "/all-articles/books/between-death-life/32-do-demons-exist-energy-view-entity-possession-negative-energy-cleansing-white-light-protection.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "地狱是心智创造的吗？灵魂能量、负面振动与濒死经验的深层解析",
-          "url": "/all-articles/books/between-death-life/22-is-hell-created-by-mind-negative-energy-afterlife-near-death-experience-explained.html",
-          "source": "auto",
-          "score": 76,
-          "rank_score": 105.5,
-          "structural_score": 31,
-          "semantic_score": 45,
-          "reason": "共同关注「负面能量」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "生死之间"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "负面能量"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "频率"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "频率"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "死后世界"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "觉醒与地球未来：提升振动频率与灵性成长指南",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html",
-          "source": "auto",
-          "score": 50,
-          "rank_score": 85,
-          "structural_score": 10,
-          "semantic_score": 40,
-          "reason": "共同关注「灵性成长」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "能量场"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性成长"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "频率"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "朵洛莉丝·侃南"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "朵洛莉丝·侃南 / 催眠报告"
-            }
-          ]
-        },
-        {
-          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
-          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
-          "source": "auto",
-          "score": 37,
-          "rank_score": 74,
-          "structural_score": 0,
-          "semantic_score": 37,
-          "reason": "共同关注「灵性成长」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "能量场"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性成长"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "频率"
             }
           ]
         }
@@ -10547,7 +10547,7 @@
       "recommendations": [
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 79,
           "rank_score": 111.5,
@@ -11037,7 +11037,7 @@
         },
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 85,
           "rank_score": 123.5,
@@ -14132,7 +14132,7 @@
         },
         {
           "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
           "source": "auto",
           "score": 28,
           "rank_score": 56,
@@ -16071,132 +16071,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "克里希那穆提：摆脱权威依附，从恐惧与无明中获得解脱",
-      "url": "/all-articles/insight-awakening/jiddu-krishnamurti/4-break-authority-patterns-mindset-freedom-through-self-awareness.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "克里希那穆提：如何克服愤怒，如何不被他人行为激怒",
-          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/6-how-to-overcome-anger-dont-be-provoked-by-others-behavior.html",
-          "source": "auto",
-          "score": 66,
-          "rank_score": 93,
-          "structural_score": 26,
-          "semantic_score": 40,
-          "reason": "共同关注「自我觉察」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 24,
-              "label": "冥想"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "克里希那穆提"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "自我觉察"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "冥想"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "克里希那穆提"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "洞察力 / 智慧的觉醒"
-            }
-          ]
-        },
-        {
-          "title": "克里希那穆提：真正的静心，从理解自我与欲望开始",
-          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/5-true-meditation-begins-with-understanding-self-desire.html",
-          "source": "auto",
-          "score": 57,
-          "rank_score": 75,
-          "structural_score": 26,
-          "semantic_score": 31,
-          "reason": "共同关注「自我觉察」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "克里希那穆提"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "冥想"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "自我觉察"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "冥想"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "克里希那穆提"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "洞察力 / 智慧的觉醒"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "冥想"
-            }
-          ]
-        },
-        {
-          "title": "心理—精神排毒：催眠、冥想与声音如何触发情绪释放和感知改变",
-          "url": "/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html",
-          "source": "auto",
-          "score": 29,
-          "rank_score": 58,
-          "structural_score": 0,
-          "semantic_score": 29,
-          "reason": "都涉及「冥想」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "冥想"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "心理学"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "冥想"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "克里希那穆提：语言如何限制思想？超越语言局限的自由心智",
       "url": "/all-articles/insight-awakening/jiddu-krishnamurti/3-language-limits-how-words-shape-thoughts-and-trap-the-mind.html",
       "manual_declared": 0,
@@ -16316,6 +16190,132 @@
               "type": "text",
               "score": 3,
               "label": "自由心智"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "克里希那穆提：摆脱权威依附，从恐惧与无明中获得解脱",
+      "url": "/all-articles/insight-awakening/jiddu-krishnamurti/4-break-authority-patterns-mindset-freedom-through-self-awareness.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "克里希那穆提：如何克服愤怒，如何不被他人行为激怒",
+          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/6-how-to-overcome-anger-dont-be-provoked-by-others-behavior.html",
+          "source": "auto",
+          "score": 66,
+          "rank_score": 93,
+          "structural_score": 26,
+          "semantic_score": 40,
+          "reason": "共同关注「自我觉察」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 24,
+              "label": "冥想"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "克里希那穆提"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "自我觉察"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "冥想"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "克里希那穆提"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "洞察力 / 智慧的觉醒"
+            }
+          ]
+        },
+        {
+          "title": "克里希那穆提：真正的静心，从理解自我与欲望开始",
+          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/5-true-meditation-begins-with-understanding-self-desire.html",
+          "source": "auto",
+          "score": 57,
+          "rank_score": 75,
+          "structural_score": 26,
+          "semantic_score": 31,
+          "reason": "共同关注「自我觉察」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "克里希那穆提"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "冥想"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "自我觉察"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "冥想"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "克里希那穆提"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "洞察力 / 智慧的觉醒"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "冥想"
+            }
+          ]
+        },
+        {
+          "title": "心理—精神排毒：催眠、冥想与声音如何触发情绪释放和感知改变",
+          "url": "/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html",
+          "source": "auto",
+          "score": 29,
+          "rank_score": 58,
+          "structural_score": 0,
+          "semantic_score": 29,
+          "reason": "都涉及「冥想」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "冥想"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "心理学"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "冥想"
             }
           ]
         }

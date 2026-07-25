@@ -7,6 +7,7 @@
 
   const PAGE_SIZE = 8;
   const INPUT_DEBOUNCE_MS = 350;
+  const TRANSCRIPT_SEEK_LEAD_SECONDS = 2;
   const FIELD_WEIGHTS = {
     title: 10,
     parent_title: 8,
@@ -46,11 +47,39 @@
     return new Map(toArray(payload?.query_tags).map(tag => [tag.id, tag]));
   }
 
-  function tagSearchText(record, tagsById) {
-    return uniqueStrings(toArray(record.tag_ids).flatMap(id => {
+  function registeredTagValues(tag) {
+    return uniqueStrings([
+      tag?.name,
+      ...toArray(tag?.aliases),
+      ...toArray(tag?.keywords)
+    ]);
+  }
+
+  function tagMatches(record, tagsById, query, terms, weight) {
+    const matched = new Set();
+    const matchedTagIds = new Set();
+    const matchedTagNames = new Set();
+    let score = 0;
+
+    toArray(record.tag_ids).forEach(id => {
       const tag = tagsById.get(id);
-      return tag ? [tag.name, ...toArray(tag.aliases), ...toArray(tag.keywords)] : [];
-    })).map(normalizeText);
+      if (!tag) return;
+      const registeredValues = registeredTagValues(tag).map(normalizeText).filter(Boolean);
+      const isMatched = registeredValues.some(value => query && query.includes(value));
+      if (!isMatched) return;
+
+      matchedTagIds.add(id);
+      matchedTagNames.add(String(tag.name || id));
+      score += weight * 4;
+
+      const matchingTerms = terms.filter(term =>
+        registeredValues.some(value => term.includes(value))
+      );
+      if (matchingTerms.length) mergeMatches(matched, matchingTerms);
+      else if (query) matched.add(query);
+    });
+
+    return { score, matched, matchedTagIds, matchedTagNames };
   }
 
   function fieldMatches(values, query, terms, weight) {
@@ -128,7 +157,18 @@
     const sort = options.sort === "latest" ? "latest" : "relevance";
     const exact = exactCollection(payload, rawQuery, collectionSlug);
     if (exact) {
-      return { mode: "collection", query: rawQuery, sort, results: [{ record: exact, score: Infinity }] };
+      return {
+        mode: "collection",
+        query: rawQuery,
+        sort,
+        results: [{
+          record: exact,
+          score: Infinity,
+          matched_fields: ["collection_title"],
+          matched_terms: uniqueStrings([String(rawQuery || "").trim()]),
+          matched_tag_ids: []
+        }]
+      };
     }
     if (!query || !terms.length) return { mode: "episodes", query: rawQuery, sort, results: [] };
 
@@ -141,28 +181,48 @@
       )
       .flatMap(record => {
         const ownMatched = new Set();
+        const matchedFields = new Set();
+        const matchedTerms = new Set();
+        const matchedTagIds = new Set();
         let score = 0;
         let matchedLocation = "";
 
         const ownFields = [
           ["title", [record.title], FIELD_WEIGHTS.title, "单集标题"],
-          ["tags", tagSearchText(record, tagsById), FIELD_WEIGHTS.tags, "知识点"],
           ["description", [record.description], FIELD_WEIGHTS.description, "简介"],
           ["keywords", record.keywords, FIELD_WEIGHTS.keywords, "关键词"]
         ];
-        ownFields.forEach(([, values, weight, location]) => {
+        ownFields.forEach(([field, values, weight, location]) => {
           const match = fieldMatches(values, query, terms, weight);
           score += match.score;
-          if (match.score && !matchedLocation) matchedLocation = location;
+          if (match.score) {
+            matchedFields.add(field);
+            mergeMatches(matchedTerms, match.matched);
+            if (!matchedLocation) matchedLocation = location;
+          }
           mergeMatches(ownMatched, match.matched);
         });
+
+        const tagMatch = tagMatches(record, tagsById, query, terms, FIELD_WEIGHTS.tags);
+        score += tagMatch.score;
+        if (tagMatch.score) {
+          matchedFields.add("tag");
+          mergeMatches(matchedTerms, tagMatch.matchedTagNames);
+          mergeMatches(matchedTagIds, tagMatch.matchedTagIds);
+          if (!matchedLocation) matchedLocation = "知识点";
+        }
+        mergeMatches(ownMatched, tagMatch.matched);
 
         const shard = transcriptShards instanceof Map
           ? transcriptShards.get(record.book_slug)
           : transcriptShards[record.book_slug];
         const transcript = findTranscriptHit(shard, record.id, query, terms);
         score += transcript.score;
-        if (transcript.score && !matchedLocation) matchedLocation = "字幕";
+        if (transcript.score) {
+          matchedFields.add("transcript");
+          mergeMatches(matchedTerms, transcript.matched);
+          if (!matchedLocation) matchedLocation = "字幕";
+        }
         mergeMatches(ownMatched, transcript.matched);
 
         if (!ownMatched.size) return [];
@@ -177,7 +237,9 @@
         return [{
           record,
           score: Math.round(score * 100) / 100,
-          matched_terms: ownMatched.size,
+          matched_fields: [...matchedFields],
+          matched_terms: [...matchedTerms],
+          matched_tag_ids: [...matchedTagIds],
           matched_location: matchedLocation,
           transcript_snippet: transcript.snippet,
           transcript_start: Number.isFinite(transcript.start) ? transcript.start : null,
@@ -247,6 +309,112 @@
     }).join("");
   }
 
+  function formatTranscriptTime(value) {
+    if (!Number.isFinite(value)) return "";
+    const totalSeconds = Math.max(0, Math.floor(value));
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = String(totalSeconds % 60).padStart(2, "0");
+    return `${String(minutes).padStart(2, "0")}:${seconds}`;
+  }
+
+  function waitForAudioMetadata(audio) {
+    if (Number(audio?.readyState) >= 1) return Promise.resolve();
+    return new Promise((resolve, reject) => {
+      const cleanup = () => {
+        audio.removeEventListener("loadedmetadata", handleLoaded);
+        audio.removeEventListener("error", handleError);
+      };
+      const handleLoaded = () => {
+        cleanup();
+        resolve();
+      };
+      const handleError = () => {
+        cleanup();
+        reject(new Error("音频载入失败，无法跳转到字幕时间。"));
+      };
+      audio.addEventListener("loadedmetadata", handleLoaded);
+      audio.addEventListener("error", handleError);
+      try {
+        audio.load();
+      } catch (error) {
+        cleanup();
+        reject(error);
+      }
+    });
+  }
+
+  async function seekAudioTo(audio, rawStart, options = {}) {
+    const start = Number(rawStart);
+    if (!audio || !Number.isFinite(start)) throw new TypeError("字幕时间无效。");
+    await waitForAudioMetadata(audio);
+    const duration = Number(audio.duration);
+    const target = Number.isFinite(duration)
+      ? Math.min(Math.max(start, 0), Math.max(duration, 0))
+      : Math.max(start, 0);
+    audio.currentTime = target;
+    if (options.play !== false) await audio.play();
+    return target;
+  }
+
+  function transcriptPlaybackStart(rawStart) {
+    const start = Number(rawStart);
+    return Number.isFinite(start)
+      ? Math.max(0, start - TRANSCRIPT_SEEK_LEAD_SECONDS)
+      : null;
+  }
+
+  function renderMatchSource(result, tagsById) {
+    const fieldLabels = {
+      title: "标题",
+      description: "简介",
+      keywords: "关键词",
+      tag: "知识点",
+      transcript: "字幕"
+    };
+    const fieldOrder = ["title", "description", "keywords", "tag", "transcript"];
+    const fields = new Set(toArray(result.matched_fields));
+    const tagNames = uniqueStrings(toArray(result.matched_tag_ids).map(id => tagsById.get(id)?.name || id));
+    const parts = fieldOrder.flatMap(field => {
+      if (!fields.has(field)) return [];
+      let label = fieldLabels[field];
+      if (field === "tag" && tagNames.length) label += ` · ${tagNames.join("、")}`;
+      if (field === "transcript") {
+        const time = formatTranscriptTime(result.transcript_start);
+        if (time) {
+          const start = Number(result.transcript_start);
+          label += ` · <button type="button" class="audiobook-search-time-link" data-transcript-seek="${start}" aria-label="从字幕命中时间 ${escapeHtml(time)} 前 2 秒开始播放">${escapeHtml(time)}</button>`;
+        }
+      }
+      return [field === "transcript" && Number.isFinite(Number(result.transcript_start))
+        ? label
+        : escapeHtml(label)];
+    });
+    if (!parts.length && result.matched_location) parts.push(escapeHtml(result.matched_location));
+    return parts.length
+      ? `<p class="audiobook-search-match-source">匹配来源：${parts.join("、")}</p>`
+      : "";
+  }
+
+  async function handleTranscriptSeekClick(event) {
+    const button = event.target.closest?.("[data-transcript-seek]");
+    if (!button) return;
+    const card = button.closest("[data-audio-search-result]");
+    const audio = card?.querySelector("audio");
+    const start = Number(button.dataset.transcriptSeek);
+    if (!audio || !Number.isFinite(start)) return;
+
+    button.disabled = true;
+    button.setAttribute("aria-busy", "true");
+    try {
+      await seekAudioTo(audio, transcriptPlaybackStart(start));
+    } catch (error) {
+      console.error("[audiobook-search] 字幕时间跳转失败：", error);
+    } finally {
+      button.disabled = false;
+      button.removeAttribute("aria-busy");
+    }
+  }
+
   function renderEpisodeResult(result, tagsById) {
     const record = result.record;
     return `
@@ -265,9 +433,10 @@
                 <a href="${escapeHtml(record.url)}" class="g-font-weight-700 g-font-size-16 audio-title-link">${highlightHtml(record.title, result.highlight_terms)}</a>
               </h2>
               ${record.description ? `<p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2 audiobook-search-description">${highlightHtml(record.description, result.highlight_terms)}</p>` : ""}
+              ${renderMatchSource(result, tagsById)}
               ${result.transcript_snippet ? `
                 <div class="audiobook-search-transcript-hit">
-                  <strong>字幕命中${result.transcript_start == null ? "" : ` · ${Math.floor(result.transcript_start / 60)}:${String(Math.floor(result.transcript_start % 60)).padStart(2, "0")}`}</strong>
+                  <strong>字幕摘要</strong>
                   <p>${highlightHtml(result.transcript_snippet, result.highlight_terms)}</p>
                 </div>
               ` : ""}
@@ -331,6 +500,7 @@
     let currentPage = 1;
     let requestSerial = 0;
     const shardCache = new Map();
+    resultsElement.addEventListener("click", handleTranscriptSeekClick);
 
     const loadIndex = () => {
       if (payload) return Promise.resolve(payload);
@@ -705,6 +875,7 @@
     FIELD_WEIGHTS,
     INPUT_DEBOUNCE_MS,
     PAGE_SIZE,
+    TRANSCRIPT_SEEK_LEAD_SECONDS,
     exactCollection,
     findTranscriptHit,
     highlightHtml,
@@ -712,7 +883,10 @@
     normalizeCollectionTitle,
     normalizeText,
     readUrlState,
+    renderMatchSource,
+    seekAudioTo,
     search,
-    splitQuery
+    splitQuery,
+    transcriptPlaybackStart
   };
 });
