@@ -51,25 +51,31 @@
     return uniqueStrings([
       tag?.name,
       ...toArray(tag?.aliases),
-      ...toArray(tag?.keywords)
+      ...toArray(tag?.phrases)
     ]);
   }
 
-  function tagMatches(record, tagsById, query, terms, weight) {
+  function resolveQueryTags(tagsById, query, terms) {
+    const lookupTerms = new Set([...terms, query].filter(Boolean));
+    return [...tagsById.values()].filter(tag => {
+      const exactValues = [tag?.name, ...toArray(tag?.aliases)].map(normalizeText).filter(Boolean);
+      if (exactValues.some(value => lookupTerms.has(value))) return true;
+      const phrases = toArray(tag?.phrases).map(normalizeText).filter(Boolean);
+      return phrases.includes(query);
+    });
+  }
+
+  function tagMatches(record, queryTags, query, terms, weight) {
     const matched = new Set();
     const matchedTagIds = new Set();
     const matchedTagNames = new Set();
     let score = 0;
 
-    toArray(record.tag_ids).forEach(id => {
-      const tag = tagsById.get(id);
-      if (!tag) return;
+    queryTags.forEach(tag => {
+      if (!toArray(record.tag_ids).includes(tag.id)) return;
       const registeredValues = registeredTagValues(tag).map(normalizeText).filter(Boolean);
-      const isMatched = registeredValues.some(value => query && query.includes(value));
-      if (!isMatched) return;
-
-      matchedTagIds.add(id);
-      matchedTagNames.add(String(tag.name || id));
+      matchedTagIds.add(tag.id);
+      matchedTagNames.add(String(tag.name || tag.id));
       score += weight * 4;
 
       const matchingTerms = terms.filter(term =>
@@ -173,6 +179,27 @@
     if (!query || !terms.length) return { mode: "episodes", query: rawQuery, sort, results: [] };
 
     const tagsById = tagLookup(payload);
+    const queryTags = resolveQueryTags(tagsById, query, terms);
+    const policyCollectionResults = toArray(payload?.records)
+      .filter(record =>
+        record.subtype === "collection"
+        && (!collectionSlug || record.book_slug === collectionSlug)
+      )
+      .flatMap(record => {
+        const matchedPolicies = queryTags.filter(tag =>
+          toArray(tag.search_policy?.audiobook_collection_expansion_tag_ids)
+            .some(id => toArray(record.tag_ids).includes(id))
+        );
+        if (!matchedPolicies.length) return [];
+        return [{
+          record,
+          score: 240,
+          matched_fields: ["knowledge_node_expansion"],
+          matched_terms: matchedPolicies.map(tag => tag.name),
+          matched_tag_ids: matchedPolicies.map(tag => tag.id),
+          matched_location: "知识点关联"
+        }];
+      });
     const results = toArray(payload?.records)
       .filter(record =>
         record.subtype === "episode" &&
@@ -203,7 +230,7 @@
           mergeMatches(ownMatched, match.matched);
         });
 
-        const tagMatch = tagMatches(record, tagsById, query, terms, FIELD_WEIGHTS.tags);
+        const tagMatch = tagMatches(record, queryTags, query, terms, FIELD_WEIGHTS.tags);
         score += tagMatch.score;
         if (tagMatch.score) {
           matchedFields.add("tag");
@@ -247,6 +274,7 @@
         }];
       });
 
+    results.push(...policyCollectionResults);
     results.sort((left, right) => {
       if (sort === "latest") {
         const dateOrder = String(right.record.date || "").localeCompare(String(left.record.date || ""));
@@ -257,7 +285,12 @@
         Number(right.record.number || 0) - Number(left.record.number || 0) ||
         left.record.id.localeCompare(right.record.id);
     });
-    return { mode: "episodes", query: rawQuery, sort, results };
+    return {
+      mode: policyCollectionResults.length ? "mixed" : "episodes",
+      query: rawQuery,
+      sort,
+      results
+    };
   }
 
   function readUrlState(urlValue, payload) {
@@ -378,21 +411,24 @@
       if (!fields.has(field)) return [];
       let label = fieldLabels[field];
       if (field === "tag" && tagNames.length) label += ` · ${tagNames.join("、")}`;
-      if (field === "transcript") {
-        const time = formatTranscriptTime(result.transcript_start);
-        if (time) {
-          const start = Number(result.transcript_start);
-          label += ` · <button type="button" class="audiobook-search-time-link" data-transcript-seek="${start}" aria-label="从字幕命中时间 ${escapeHtml(time)} 前 2 秒开始播放">${escapeHtml(time)}</button>`;
-        }
-      }
-      return [field === "transcript" && Number.isFinite(Number(result.transcript_start))
-        ? label
-        : escapeHtml(label)];
+      return [escapeHtml(label)];
     });
     if (!parts.length && result.matched_location) parts.push(escapeHtml(result.matched_location));
     return parts.length
       ? `<p class="audiobook-search-match-source">匹配来源：${parts.join("、")}</p>`
       : "";
+  }
+
+  function renderTranscriptPlayHint(result) {
+    const start = Number(result.transcript_start);
+    const time = formatTranscriptTime(start);
+    if (!toArray(result.matched_fields).includes("transcript") || !time) return "";
+    return `
+      <p class="audiobook-search-play-hint">
+        <span>点击播放：</span>
+        <button type="button" class="audiobook-search-time-link" data-transcript-seek="${start}" aria-label="从字幕命中时间 ${escapeHtml(time)} 前 2 秒开始播放">${escapeHtml(time)}</button>
+      </p>
+    `;
   }
 
   async function handleTranscriptSeekClick(event) {
@@ -433,7 +469,7 @@
                 <a href="${escapeHtml(record.url)}" class="g-font-weight-700 g-font-size-16 audio-title-link">${highlightHtml(record.title, result.highlight_terms)}</a>
               </h2>
               ${record.description ? `<p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2 audiobook-search-description">${highlightHtml(record.description, result.highlight_terms)}</p>` : ""}
-              ${renderMatchSource(result, tagsById)}
+              ${renderTranscriptPlayHint(result)}
               ${result.transcript_snippet ? `
                 <div class="audiobook-search-transcript-hit">
                   <strong>字幕摘要</strong>
@@ -442,7 +478,10 @@
               ` : ""}
               ${record.tag_ids?.length ? `<div class="audio-card-tags g-mt-10 g-mb-10">${renderTagLinks(record, tagsById)}</div>` : ""}
               ${record.audio_url ? `<audio controls preload="none" data-subtitle="${escapeHtml(record.subtitle_url)}"><source src="${escapeHtml(record.audio_url)}" type="audio/mpeg">您的浏览器不支持音频播放。</audio>` : ""}
-              <p class="g-font-size-12 g-color-gray-light-v1 mt-2">${escapeHtml(record.date)}</p>
+              <div class="audiobook-search-meta">
+                <p class="audiobook-search-date">${escapeHtml(record.date)}</p>
+                ${renderMatchSource(result, tagsById)}
+              </div>
               ${record.related_article_url ? `<a class="audiobook-search-related" href="${escapeHtml(record.related_article_url)}" target="_blank" rel="noopener noreferrer">阅读相关文章 <span aria-hidden="true">→</span></a>` : ""}
             </div>
           </div>
@@ -632,7 +671,9 @@
       if (!options.preservePage) currentPage = 1;
       status.textContent = currentMode === "collection" && currentResults.length === 1
         ? "找到 1 个精确匹配的合集"
-        : `找到 ${currentResults.length} 个音频`;
+        : currentMode === "mixed"
+          ? `找到 ${currentResults.length} 个合集或音频结果`
+          : `找到 ${currentResults.length} 个音频`;
       emptyElement.hidden = currentResults.length > 0;
       emptyElement.innerHTML = currentResults.length
         ? ""
@@ -719,7 +760,10 @@
         currentPage = Math.min(Math.max(currentPage, 1), pageCount || 1);
         const offset = (currentPage - 1) * PAGE_SIZE;
         resultsElement.innerHTML = currentResults.slice(offset, offset + PAGE_SIZE)
-          .map(result => renderEpisodeResult(result, tagsById)).join("");
+          .map(result => result.record.subtype === "collection"
+            ? renderCollectionResult(result.record)
+            : renderEpisodeResult(result, tagsById)
+          ).join("");
         window.AudioCard?.init(resultsElement);
       }
       renderPagination();
@@ -884,6 +928,7 @@
     normalizeText,
     readUrlState,
     renderMatchSource,
+    renderTranscriptPlayHint,
     seekAudioTo,
     search,
     splitQuery,

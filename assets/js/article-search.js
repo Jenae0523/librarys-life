@@ -176,28 +176,31 @@
     const queryTags = toArray(source.query_tags);
     const registryTerms = new Map();
     const registryByName = new Map();
+    const registryById = new Map();
 
     queryTags.forEach(tag => {
       registryByName.set(normalizeText(tag.name), tag);
+      registryById.set(String(tag.id), tag);
 
-      const add = (value, kind, factor) => {
+      const add = (value, kind) => {
         const key = normalizeText(value);
         if (!key) return;
         const entries = registryTerms.get(key) || [];
-        entries.push({ tag, kind, factor });
+        entries.push({ tag, kind });
         registryTerms.set(key, entries);
       };
 
-      add(tag.name, "name", 1);
-      toArray(tag.aliases).forEach(value => add(value, "alias", 1));
-      toArray(tag.keywords).forEach(value => add(value, "keyword", 0.25));
+      add(tag.name, "name");
+      toArray(tag.aliases).forEach(value => add(value, "alias"));
+      toArray(tag.phrases).forEach(value => add(value, "phrase"));
     });
 
     const prepared = {
       articles: toArray(source.articles).map(prepareArticle),
       queryTags,
       registryTerms,
-      registryByName
+      registryByName,
+      registryById
     };
 
     if (source && typeof source === "object") payloadCache.set(source, prepared);
@@ -334,12 +337,14 @@
     const matchedLookupTerms = [];
 
     registryMatches.forEach(match => {
-      const { tag, factor, kind } = match;
-      expandedTerms.push(tag.name, ...toArray(tag.aliases));
+      const { tag, kind } = match;
+      let nodeMatched = false;
+      expandedTerms.push(tag.name, ...toArray(tag.aliases), ...toArray(tag.phrases));
 
       if (preparedArticle.tagIds.has(String(tag.id))) {
-        score += kind === "keyword" ? 110 : 1500 * factor;
+        score += kind === "phrase" ? 1250 : 1500;
         matched = true;
+        nodeMatched = true;
         matchedLookupTerms.push(match.lookupTerm);
       } else {
         const canonical = normalizeText(tag.name);
@@ -349,17 +354,38 @@
           preparedArticle.normalized.keywords.includes(canonical) ||
           preparedArticle.normalized.content.includes(canonical)
         ) {
-          score += kind === "keyword" ? 45 : 220 * factor;
+          score += kind === "phrase" ? 180 : 220;
           matched = true;
+          nodeMatched = true;
           matchedLookupTerms.push(match.lookupTerm);
         }
       }
 
-      if (kind !== "keyword") {
-        toArray(tag.related).forEach(relatedName => {
-          const relatedTag = preparedPayload.registryByName.get(normalizeText(relatedName));
-          if (relatedTag && preparedArticle.tagIds.has(String(relatedTag.id))) {
-            score += 45;
+      const expansionIds = toArray(tag.search_policy?.article_expansion_tag_ids).map(String);
+      if (!preparedArticle.tagIds.has(String(tag.id)) && expansionIds.some(id => preparedArticle.tagIds.has(id))) {
+        score += 800;
+        matched = true;
+        nodeMatched = true;
+        matchedLookupTerms.push(match.lookupTerm);
+      }
+
+      toArray(tag.related_ids).forEach(relatedId => {
+        if (preparedArticle.tagIds.has(String(relatedId))) score += 45;
+      });
+
+      if (nodeMatched) {
+        toArray(tag.context_terms).forEach(contextTerm => {
+          const normalizedContext = normalizeText(contextTerm);
+          if (
+            normalizedContext
+            && (
+              preparedArticle.normalized.title.includes(normalizedContext)
+              || preparedArticle.normalized.headings.includes(normalizedContext)
+              || preparedArticle.normalized.keywords.includes(normalizedContext)
+              || preparedArticle.normalized.content.includes(normalizedContext)
+            )
+          ) {
+            score += 12;
           }
         });
       }

@@ -50,8 +50,18 @@
 }
 
 .audiobook-search-match-source {
-  margin: 3px 0 8px;
+  margin: 0 0 0 auto;
   color: #8a94a6;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: right;
+}
+
+.audiobook-search-play-hint {
+  margin: 3px 0 8px;
+  color: #6f7fa4;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
@@ -65,6 +75,7 @@
   background: transparent;
   color: #6f7fa4;
   font: inherit;
+  font-weight: 400;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
@@ -89,6 +100,22 @@
 .audiobook-search-audio-item audio {
   width: 100%;
   margin-top: 5px;
+}
+
+.audiobook-search-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-top: 10px;
+}
+
+.audiobook-search-date {
+  flex: 0 0 auto;
+  margin: 0;
+  color: #a5adbb;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .audiobook-search-audio-item .audio-card-tags {
@@ -248,5 +275,13 @@
 
   .audiobook-search-audio-main {
     width: 100%;
+  }
+
+  .audiobook-search-meta {
+    align-items: flex-start;
+  }
+
+  .audiobook-search-match-source {
+    max-width: 70%;
   }
 }
