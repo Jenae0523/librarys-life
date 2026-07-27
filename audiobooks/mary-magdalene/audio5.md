@@ -22,6 +22,11 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 神话
+  - 古文明
+  - 女性灵性
 number: 5
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene5.json"

@@ -21,8 +21,13 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 古文明
   - 量子现实
+  - 能量场
   - 脉轮
+  - 意识扩展
 number: 13
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene13.json"

@@ -18,12 +18,16 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
+  - Tom Kenyon
   - 大角星人
-  - 外星文明
+  - 《大角星人文摘》
+  - 通灵信息
+  - 冥想
+  - 脉轮
+  - 意识扩展
 number: 6
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology6.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html"
 ---
 

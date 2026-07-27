@@ -22,6 +22,11 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 抹大拉的玛利亚
+  - 通灵信息
+  - 灵性觉醒
 number: 11
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene11.json"

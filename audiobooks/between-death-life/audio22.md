@@ -16,9 +16,13 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
-  - 业力法则
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 催眠回溯
   - 死后世界
   - 现实创造
+  - 频率
+  - 濒死体验
 number: 22
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life22.json"
 book_slug: between-death-life

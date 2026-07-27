@@ -22,9 +22,10 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
-  - 通灵信息
+  - 《抹大拉手稿》
+  - Tom Kenyon
   - 心理学
-  - 哈索尔人
+  - 自我认知
 number: 2
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene2.json"

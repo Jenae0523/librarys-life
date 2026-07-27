@@ -15,8 +15,12 @@ keywords:
 date: 2026-01-10
 tags:
   - audiobooks
-  - 前世今生
-  - 潜意识
+  - 《地球守护者》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - 前世记忆
+  - 星际种子
+  - 自我认知
 number: 24
 subtitle_url: "/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden24.json"
 book_slug: keepers-of-the-garden

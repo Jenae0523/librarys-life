@@ -30,12 +30,11 @@ tags:
   - audiobooks
   - 《生死之间》
   - 朵洛莉丝·侃南
-  - 潜意识
-  - 灵魂转世
-  - 前世今生
-  - 业力法则
   - 催眠回溯
   - 死后世界
+  - 前世今生
+  - 灵魂转世
+  - 业力法则
 download_url: https://readcafe.life/free-ebooks/authors/dolores-cannon/sheng-si-zhi-jian--mu-yu-jie-du-ban.pdf
 book_slug: between-death-life
 is_book_index: true

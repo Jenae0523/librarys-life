@@ -17,10 +17,11 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
-  - 指导灵
-  - 业力法则
-  - 灵魂转世
-  - 灵性觉醒
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 催眠回溯
+  - 个人指引系统
+  - 频率
 number: 28
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life28.json"
 book_slug: between-death-life

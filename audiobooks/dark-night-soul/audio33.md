@@ -13,8 +13,12 @@ keywords:
 date: 2026-02-26
 tags:
   - audiobooks
+  - 《灵魂的暗夜》
+  - 帕梅拉·克里柏
+  - 催眠回溯
   - 前世今生
   - 心理学
+  - 情绪疗愈
 number: 33
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul33.json"
 book_slug: dark-night-soul

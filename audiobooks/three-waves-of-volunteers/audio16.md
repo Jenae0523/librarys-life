@@ -17,10 +17,12 @@ keywords:
 date: 2026-04-08
 tags:
   - audiobooks
-  - 心理学
+  - 《三波志愿者与新地球》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - UFO
   - 外星文明
-  - 业力法则
-  - 灵魂转世
+  - 潜意识
 number: 16
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers16.json"
 book_slug: three-waves-of-volunteers

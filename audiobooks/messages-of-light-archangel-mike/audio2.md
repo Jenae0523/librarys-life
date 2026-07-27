@@ -22,9 +22,13 @@ keywords:
 date: 2026-03-01
 tags:
   - audiobooks
-  - 业力法则
-  - 前世今生
+  - 大天使迈克尔
+  - 通灵信息
+  - 星际种子
   - 频率
+  - 情绪疗愈
+  - 自我认知
+  - 灵性觉醒
 number: 2
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike2.json"

@@ -22,8 +22,9 @@ date: 2026-03-02
 tags:
   - audiobooks
   - 巫士唐望
-  - 哈索尔人
-  - 量子现实
+  - 能量场
+  - 自我认知
+  - 心理学
 number: 18
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene18.json"

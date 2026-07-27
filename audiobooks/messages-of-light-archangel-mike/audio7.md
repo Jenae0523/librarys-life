@@ -22,7 +22,12 @@ keywords:
 date: 2026-03-01
 tags:
   - audiobooks
+  - 大天使迈克尔
+  - 通灵信息
   - 冥想
+  - 能量场
+  - 正念
+  - 意识扩展
 number: 7
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike7.json"

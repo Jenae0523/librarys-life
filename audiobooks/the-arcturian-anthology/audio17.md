@@ -18,13 +18,14 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
-  - 量子现实
+  - Tom Kenyon
   - 大角星人
+  - 《大角星人文摘》
+  - 通灵信息
   - 集体意识
 number: 17
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology17.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology17-empathy-intelligence-ecological-consciousness.html"
 ---
 

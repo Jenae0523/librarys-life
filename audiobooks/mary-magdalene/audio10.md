@@ -20,6 +20,14 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 抹大拉的玛利亚
+  - 通灵信息
+  - 女性灵性
+  - 古文明
+  - 冥想
+  - 脉轮
 number: 10
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene10.json"

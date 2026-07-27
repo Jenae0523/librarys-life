@@ -22,10 +22,13 @@ keywords:
 date: 2026-05-06
 tags:
   - audiobooks
-  - 灵性觉醒
-  - 意识扩展
-  - 心理学
+  - 《抹大拉手稿》
+  - 抹大拉的玛利亚
   - 女性灵性
+  - 意识扩展
+  - 灵性觉醒
+  - 心理学
+  - 原生家庭
 number: 34
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene34.json"

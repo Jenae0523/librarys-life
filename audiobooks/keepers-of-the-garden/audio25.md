@@ -17,10 +17,13 @@ keywords:
 date: 2026-01-10
 tags:
   - audiobooks
+  - 《地球守护者》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
   - 心理学
   - 自我认知
-  - 前世今生
-  - 通灵信息
+  - 潜意识
+  - UFO
 number: 25
 subtitle_url: "/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden25.json"
 book_slug: keepers-of-the-garden

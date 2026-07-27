@@ -18,9 +18,11 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
-  - 业力法则
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 催眠回溯
   - 灵魂转世
-  - 潜意识
+  - 业力法则
 number: 40
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life40.json"
 book_slug: between-death-life

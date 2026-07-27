@@ -155,12 +155,45 @@
     ) || null;
   }
 
+  function exactEpisode(payload, rawQuery, collectionSlug) {
+    const phrase = String(rawQuery || "").normalize("NFKC").trim().toLocaleLowerCase();
+    if (!phrase) return null;
+    return toArray(payload?.records).find(record => {
+      if (record.subtype !== "episode") return false;
+      if (collectionSlug && record.book_slug !== collectionSlug) return false;
+      return uniqueStrings([
+        record.phrase,
+        record.canonical_id,
+        record.episode_id,
+        ...toArray(record.aliases)
+      ]).some(value =>
+        String(value).normalize("NFKC").trim().toLocaleLowerCase() === phrase
+      );
+    }) || null;
+  }
+
   function search(payload, rawQuery, transcriptShards = {}, options = {}) {
     const query = normalizeText(rawQuery);
     const terms = splitQuery(rawQuery);
     const collectionSlug = String(options.collection || "");
     const tagId = String(options.tag || "");
     const sort = options.sort === "latest" ? "latest" : "relevance";
+    const episode = exactEpisode(payload, rawQuery, collectionSlug);
+    if (episode) {
+      return {
+        mode: "episode",
+        query: rawQuery,
+        sort,
+        results: [{
+          record: episode,
+          score: Infinity,
+          matched_fields: ["episode_phrase"],
+          matched_terms: uniqueStrings([String(rawQuery || "").trim()]),
+          matched_tag_ids: [],
+          matched_location: "单集编号"
+        }]
+      };
+    }
     const exact = exactCollection(payload, rawQuery, collectionSlug);
     if (exact) {
       return {
@@ -921,6 +954,7 @@
     PAGE_SIZE,
     TRANSCRIPT_SEEK_LEAD_SECONDS,
     exactCollection,
+    exactEpisode,
     findTranscriptHit,
     highlightHtml,
     initAudiobookSearchPage,

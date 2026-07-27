@@ -20,7 +20,11 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
-  - 灵魂转世
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 神话
+  - 能量场
+  - 意识扩展
 number: 31
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene31.json"

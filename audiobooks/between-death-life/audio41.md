@@ -18,9 +18,12 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 催眠回溯
   - 灵魂转世
-  - 意识扩展
   - 灵性觉醒
+  - 集体意识
 number: 41
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life41.json"
 book_slug: between-death-life

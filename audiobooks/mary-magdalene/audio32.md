@@ -22,9 +22,13 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 神圣关系
   - 心理学
-  - 业力法则
   - 原生家庭
+  - 情绪疗愈
+  - 自我认知
 number: 32
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene32.json"

@@ -19,7 +19,11 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
+  - 《抹大拉手稿》
+  - Tom Kenyon
   - 冥想
+  - 意识扩展
+  - 神话
 number: 25
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene25.json"

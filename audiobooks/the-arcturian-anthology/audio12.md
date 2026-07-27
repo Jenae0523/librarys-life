@@ -17,13 +17,19 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
+  - Tom Kenyon
   - 大角星人
+  - 《大角星人文摘》
+  - 通灵信息
+  - 《抹大拉手稿》
   - 耶稣
+  - 抹大拉的玛利亚
+  - 基督意识
+  - 神话
+  - 高维文明
 number: 12
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology12.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology12-jesus-resurrection-mary-magdalene.html"
-
 ---
 

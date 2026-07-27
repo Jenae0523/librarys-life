@@ -16,9 +16,11 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 催眠回溯
   - 业力法则
   - 灵魂转世
-  - 前世今生
 number: 26
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life26.json"
 book_slug: between-death-life

@@ -9,7 +9,7 @@ keywords:
   - 梦境
   - 外星文明
 date: 2026-01-05
-tags: ["audiobooks"]
+tags: [audiobooks, 《地球守护者》, 朵洛莉丝·侃南, 催眠回溯, 外星文明, UFO]
 number: 6
 subtitle_url: "/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden6.json"
 book_slug: keepers-of-the-garden

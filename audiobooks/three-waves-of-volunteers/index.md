@@ -36,15 +36,14 @@ keywords:
   - 能量场
 tags:
   - audiobooks
-  - 朵洛莉丝·侃南
   - 《三波志愿者与新地球》
-  - 外星文明
-  - 前世今生
-  - 灵魂转世
-  - 频率
+  - 朵洛莉丝·侃南
+  - 催眠回溯
   - 星际种子
-  - 潜意识
-  - 自我认知
+  - 灵魂转世
+  - 灵性觉醒
+  - 集体意识
+  - 频率
 book_slug: three-waves-of-volunteers
 is_book_index: true
 content_type: audiobook

@@ -22,9 +22,13 @@ keywords:
 date: 2026-04-22
 tags:
   - audiobooks
-  - 灵魂转世
-  - 业力法则
+  - 《抹大拉手稿》
+  - 抹大拉的玛利亚
   - 女性灵性
+  - 情绪疗愈
+  - 灵性觉醒
+  - 心理学
+  - 原生家庭
 number: 33
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene33.json"

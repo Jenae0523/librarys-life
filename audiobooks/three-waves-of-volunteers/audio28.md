@@ -15,9 +15,15 @@ keywords:
 date: 2026-04-08
 tags:
   - audiobooks
-  - 业力法则
+  - 《三波志愿者与新地球》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - 星际种子
+  - UFO
+  - 灵魂转世
   - 能量场
   - 频率
+  - 意识扩展
 number: 28
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers28.json"
 book_slug: three-waves-of-volunteers

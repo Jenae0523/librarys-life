@@ -22,9 +22,14 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
-  - 心理学
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 古文明
+  - 能量场
   - 脉轮
-  - 通灵信息
+  - 意识扩展
+  - 自我认知
+  - 心理学
 number: 19
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene19.json"

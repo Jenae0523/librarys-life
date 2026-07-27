@@ -14,8 +14,12 @@ keywords:
 date: 2026-02-26
 tags:
   - audiobooks
-  - 灵魂转世
-  - 前世今生
+  - 《灵魂的暗夜》
+  - 帕梅拉·克里柏
+  - 通灵信息
+  - 玛利亚（耶稣之母）
+  - 灵性觉醒
+  - 自我认知
 number: 17
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul17.json"
 book_slug: dark-night-soul

@@ -13,7 +13,7 @@ keywords:
   - 圣经
   - 清明
 date: 2026-04-15
-tags: ["audiobooks"]
+tags: [audiobooks, 《三波志愿者与新地球》, 朵洛莉丝·侃南, 催眠回溯, 频率, 能量场, 灵性觉醒, 意识扩展]
 number: 33
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers33.json"
 book_slug: three-waves-of-volunteers

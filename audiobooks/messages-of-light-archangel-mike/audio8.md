@@ -22,9 +22,13 @@ keywords:
 date: 2026-03-01
 tags:
   - audiobooks
+  - 大天使迈克尔
+  - 通灵信息
+  - 意识扩展
   - 自我认知
-  - 灵魂转世
-  - 业力法则
+  - 能量场
+  - 频率
+  - 灵性觉醒
 number: 8
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike8.json"

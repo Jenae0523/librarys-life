@@ -18,9 +18,11 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
-  - 死后世界
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 催眠回溯
   - 阿卡西记录
-  - 前世今生
+  - 死后世界
 number: 12
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life12.json"
 book_slug: between-death-life

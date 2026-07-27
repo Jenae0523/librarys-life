@@ -20,8 +20,12 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
-  - 脉轮
-  - 业力法则
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 神话
+  - 能量场
+  - 冥想
+  - 意识扩展
 number: 30
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene30.json"

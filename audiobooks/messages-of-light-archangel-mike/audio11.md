@@ -22,8 +22,11 @@ keywords:
 date: 2026-03-01
 tags:
   - audiobooks
-  - 业力法则
-  - 灵魂转世
+  - 大天使迈克尔
+  - 通灵信息
+  - 自我认知
+  - 意识扩展
+  - 灵性觉醒
 number: 11
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike11.json"

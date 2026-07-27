@@ -16,10 +16,13 @@ keywords:
 date: 2026-01-05
 tags:
   - audiobooks
+  - 《地球守护者》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - 阿卡西记录
+  - 前世记忆
   - 前世今生
   - 灵魂转世
-  - 阿卡西记录
-  - 业力法则
 number: 9
 subtitle_url: "/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden9.json"
 book_slug: keepers-of-the-garden

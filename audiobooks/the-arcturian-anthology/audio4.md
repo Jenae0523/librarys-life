@@ -18,14 +18,17 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
-  - 哈索尔人
+  - Tom Kenyon
   - 大角星人
-  - 星际种子
+  - 《大角星人文摘》
+  - 通灵信息
+  - 哈索尔人
+  - 古文明
   - 平行宇宙
+  - 声音疗愈
 number: 4
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology4.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology04-hathors-ancient-egypt-parallel-universe.html"
 ---
 

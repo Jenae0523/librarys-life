@@ -16,7 +16,12 @@ keywords:
 date: 2026-02-25
 tags:
   - audiobooks
-  - 通灵信息
+  - 《灵魂的暗夜》
+  - 帕梅拉·克里柏
+  - 心理学
+  - 情绪疗愈
+  - 身体疗愈
+  - 灵性觉醒
 number: 10
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul10.json"
 book_slug: dark-night-soul

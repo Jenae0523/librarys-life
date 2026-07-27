@@ -33,11 +33,10 @@ keywords:
 tags:
   - audiobooks
   - 《灵魂的暗夜》
-  - 灵性觉醒
   - 帕梅拉·克里柏
-  - 自我认知
-  - 心理学
+  - 灵性觉醒
   - 情绪疗愈
+  - 自我认知
 
 download_url: https://readcafe.life/free-ebooks/authors/pamela-kribbe/ling-hun-de-an-ye.pdf
 

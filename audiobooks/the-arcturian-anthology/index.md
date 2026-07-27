@@ -43,13 +43,11 @@ keywords:
 tags:
   - audiobooks
   - 《大角星人文摘》
+  - Tom Kenyon
   - 大角星人
-  - 汤姆肯永
-  - 哈索尔人
   - 通灵信息
-  - 外星文明
-  - 频率
   - 高维文明
+  - 意识扩展
 download_url: https://readcafe.life/free-ebooks/authors/tom-kenyon/da-jiao-xing-ren-wen-zhai---mu-yu-jie-du-ban.pdf
 book_slug: the-arcturian-anthology
 is_book_index: true

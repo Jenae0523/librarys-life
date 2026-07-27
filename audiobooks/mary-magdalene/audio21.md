@@ -22,9 +22,11 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
-  - 宗教神话
-  - 外星文明
-  - 哈索尔人
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 古文明
+  - 神话
+  - 灵性觉醒
 number: 21
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene21.json"

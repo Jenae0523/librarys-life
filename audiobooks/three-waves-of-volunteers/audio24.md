@@ -17,9 +17,12 @@ keywords:
 date: 2026-04-08
 tags:
   - audiobooks
-  - 现实创造
+  - 《三波志愿者与新地球》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
   - 外星文明
-  - 灵魂转世
+  - 现实创造
+  - 意识扩展
 number: 24
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers24.json"
 book_slug: three-waves-of-volunteers

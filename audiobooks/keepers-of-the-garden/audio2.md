@@ -13,8 +13,12 @@ keywords:
 date: 2026-01-05
 tags:
   - audiobooks
-  - 灵魂转世
+  - 《地球守护者》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - 外星文明
   - 前世今生
+  - 前世记忆
 number: 2
 subtitle_url: "/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden2.json"
 book_slug: keepers-of-the-garden

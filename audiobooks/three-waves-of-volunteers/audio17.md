@@ -15,8 +15,14 @@ keywords:
 date: 2026-04-08
 tags:
   - audiobooks
-  - 前世今生
-  - 死后世界
+  - 《三波志愿者与新地球》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - 星际种子
+  - 出体体验
+  - UFO
+  - 外星文明
+  - 集体意识
 number: 17
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers17.json"
 book_slug: three-waves-of-volunteers

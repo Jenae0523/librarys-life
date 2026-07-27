@@ -13,9 +13,12 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 催眠回溯
   - 耶稣
-  - 宗教神话
-  - 灵性觉醒
+  - 基督意识
+  - 神话
 number: 31
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life31.json"
 book_slug: between-death-life

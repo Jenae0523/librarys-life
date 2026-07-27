@@ -16,9 +16,12 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 催眠回溯
   - 频率
-  - 身体疗愈
-  - 能量场
+  - 意识扩展
+  - 死后世界
 number: 21
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life21.json"
 book_slug: between-death-life

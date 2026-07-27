@@ -18,6 +18,7 @@ date: 2026-03-02
 tags:
   - audiobooks
   - 能量场
+  - 身体疗愈
 number: 20
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene20.json"

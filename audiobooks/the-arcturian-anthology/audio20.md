@@ -18,15 +18,17 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
+  - Tom Kenyon
   - 大角星人
-  - 灵性觉醒
+  - 《大角星人文摘》
+  - 朵洛莉丝·侃南
+  - 身体疗愈
+  - 梦境
   - 潜意识
+  - 冥想
 number: 20
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology20.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/courses/human-body-healing/sleep-self-healing-fifth-dimension-higher-self-dreams.html"
 ---
-
-
 

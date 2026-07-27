@@ -13,7 +13,12 @@ keywords:
 date: 2026-02-26
 tags:
   - audiobooks
-  - 灵魂转世
+  - 《灵魂的暗夜》
+  - 帕梅拉·克里柏
+  - 通灵信息
+  - 正念
+  - 自我认知
+  - 意识扩展
 number: 15
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul15.json"
 book_slug: dark-night-soul

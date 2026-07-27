@@ -34,10 +34,9 @@ tags:
   - audiobooks
   - 《地球守护者》
   - 朵洛莉丝·侃南
-  - 外星文明
-  - 前世今生
+  - 催眠回溯
   - UFO
-  - 潜意识
+  - 外星文明
   - 星际种子
 book_slug: keepers-of-the-garden
 is_book_index: true

@@ -18,9 +18,12 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
-  - 灵魂转世
-  - 意识扩展
-  - 集体意识
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 催眠回溯
+  - 频率
+  - 灵性觉醒
+  - 神话
 number: 18
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life18.json"
 book_slug: between-death-life

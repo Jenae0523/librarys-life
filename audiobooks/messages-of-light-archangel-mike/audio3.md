@@ -21,8 +21,13 @@ keywords:
 date: 2026-03-01
 tags:
   - audiobooks
-  - 能量场
+  - 大天使迈克尔
+  - 通灵信息
   - 脉轮
+  - 能量场
+  - 意识扩展
+  - 自我认知
+  - 频率
 number: 3
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike3.json"

@@ -22,8 +22,12 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
-  - 量子现实
+  - Tom Kenyon
   - 哈索尔人
+  - 通灵信息
+  - 现实创造
+  - 量子现实
+  - 频率
 number: 9
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene9.json"

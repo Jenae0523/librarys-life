@@ -13,7 +13,12 @@ keywords:
 date: 2026-03-27
 tags:
   - audiobooks
-  - 前世今生
+  - 《三波志愿者与新地球》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - 灵魂转世
+  - 业力法则
+  - 自我认知
 number: 5
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers5.json"
 book_slug: three-waves-of-volunteers

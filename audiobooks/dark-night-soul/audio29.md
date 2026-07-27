@@ -12,6 +12,13 @@ keywords:
 date: 2026-02-26
 tags:
   - audiobooks
+  - 《灵魂的暗夜》
+  - 帕梅拉·克里柏
+  - 通灵信息
+  - 身体疗愈
+  - 情绪疗愈
+  - 心理学
+  - 自我认知
 number: 29
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul29.json"
 book_slug: dark-night-soul

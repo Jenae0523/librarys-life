@@ -23,8 +23,8 @@ date: 2026-03-02
 tags:
   - audiobooks
   - 梦境
-  - 自我认知
-  - 大角星人
+  - 潜意识
+  - 现实创造
 number: 16
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene16.json"

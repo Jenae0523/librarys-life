@@ -15,7 +15,14 @@ keywords:
 date: 2026-02-26
 tags:
   - audiobooks
-  - 前世今生
+  - 《灵魂的暗夜》
+  - 帕梅拉·克里柏
+  - 通灵信息
+  - 耶稣
+  - 基督意识
+  - 情绪疗愈
+  - 心理学
+  - 自我认知
 number: 13
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul13.json"
 book_slug: dark-night-soul

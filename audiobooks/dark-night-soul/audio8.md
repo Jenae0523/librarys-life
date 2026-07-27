@@ -16,8 +16,12 @@ keywords:
 date: 2026-02-25
 tags:
   - audiobooks
-  - 前世今生
-  - 灵魂转世
+  - 《灵魂的暗夜》
+  - 帕梅拉·克里柏
+  - 原生家庭
+  - 心理学
+  - 情绪疗愈
+  - 自我认知
 number: 8
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul8.json"
 book_slug: dark-night-soul

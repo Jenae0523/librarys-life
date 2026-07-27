@@ -18,13 +18,16 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
+  - Tom Kenyon
   - 大角星人
-  - 量子现实
+  - 《大角星人文摘》
   - 通灵信息
+  - UFO
+  - 高维文明
+  - 意识扩展
 number: 2
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology2.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology02-arcturian-spaceship-higher-dimensional-civilization.html"
 ---
 

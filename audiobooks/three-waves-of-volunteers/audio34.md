@@ -18,7 +18,11 @@ keywords:
 date: 2026-04-15
 tags:
   - audiobooks
-  - 业力法则
+  - 《三波志愿者与新地球》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - 集体意识
+  - 意识扩展
 number: 34
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers34.json"
 book_slug: three-waves-of-volunteers

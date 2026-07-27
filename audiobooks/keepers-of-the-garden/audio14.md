@@ -17,11 +17,13 @@ keywords:
 date: 2026-01-05
 tags:
   - audiobooks
-  - 前世今生
+  - 《地球守护者》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
   - 外星文明
-  - 通灵信息
-  - 灵魂转世
   - UFO
+  - 前世今生
+  - 古文明
 number: 14
 subtitle_url: "/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden14.json"
 book_slug: keepers-of-the-garden

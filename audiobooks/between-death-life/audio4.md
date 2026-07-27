@@ -15,9 +15,11 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
-  - 死后世界
-  - 灵魂转世
+  - 朵洛莉丝·侃南
+  - 《生死之间》
   - 催眠回溯
+  - 濒死体验
+  - 死后世界
 number: 4
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life4.json"
 book_slug: between-death-life

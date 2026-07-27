@@ -17,14 +17,16 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
+  - Tom Kenyon
   - 大角星人
+  - 《大角星人文摘》
+  - 通灵信息
   - 冥想
-  - 量子现实
-  - 频率
+  - 脉轮
+  - 意识扩展
 number: 15
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology15.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html"
 ---
 

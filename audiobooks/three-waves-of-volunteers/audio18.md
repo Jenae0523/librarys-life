@@ -16,8 +16,16 @@ keywords:
 date: 2026-04-08
 tags:
   - audiobooks
-  - 前世今生
-  - 业力法则
+  - 《三波志愿者与新地球》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - 星际种子
+  - 出体体验
+  - UFO
+  - 高维文明
+  - 能量场
+  - 意识扩展
+  - 自我认知
 number: 18
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers18.json"
 book_slug: three-waves-of-volunteers

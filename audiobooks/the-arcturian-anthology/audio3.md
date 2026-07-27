@@ -18,12 +18,15 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
+  - Tom Kenyon
   - 大角星人
-  - 哈索尔人
+  - 《大角星人文摘》
+  - 通灵信息
+  - 古文明
+  - 外星文明
 number: 3
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology3.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology03-anunnaki-human-origins.html"
 ---
 

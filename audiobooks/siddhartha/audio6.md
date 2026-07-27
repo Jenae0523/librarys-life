@@ -9,6 +9,9 @@ keywords:
 date: 2025-10-31
 tags:
   - audiobooks
+  - 《悉达多》
+  - 赫尔曼·黑塞
+  - 自我认知
 number: 6
 subtitle_url: "/audiobooks/siddhartha/texts/siddhartha6.json"
 book_slug: siddhartha

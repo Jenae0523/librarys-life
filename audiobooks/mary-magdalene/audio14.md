@@ -22,9 +22,13 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 古文明
   - 量子现实
-  - 心理学
   - 梦境
+  - 现实创造
+  - 心理学
 number: 14
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene14.json"

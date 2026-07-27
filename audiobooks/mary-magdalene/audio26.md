@@ -21,7 +21,12 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
+  - 《抹大拉手稿》
+  - Tom Kenyon
   - 冥想
+  - 脉轮
+  - 神话
+  - 灵性觉醒
 number: 26
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene26.json"

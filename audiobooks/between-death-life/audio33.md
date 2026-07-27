@@ -15,9 +15,11 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
-  - 指导灵
-  - 潜意识
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 催眠回溯
   - 死后世界
+  - 个人指引系统
 number: 33
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life33.json"
 book_slug: between-death-life

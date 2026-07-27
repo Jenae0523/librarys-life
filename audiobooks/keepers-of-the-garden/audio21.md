@@ -16,10 +16,12 @@ keywords:
 date: 2026-01-10
 tags:
   - audiobooks
+  - 《地球守护者》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - UFO
   - 外星文明
   - 潜意识
-  - UFO
-  - 前世今生
 number: 21
 subtitle_url: "/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden21.json"
 book_slug: keepers-of-the-garden

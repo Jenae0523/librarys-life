@@ -16,10 +16,14 @@ keywords:
 date: 2026-04-15
 tags:
   - audiobooks
-  - 潜意识
+  - 《三波志愿者与新地球》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
   - 平行宇宙
-  - 业力法则
   - 频率
+  - 集体意识
+  - 潜意识
+  - 现实创造
 number: 38
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers38.json"
 book_slug: three-waves-of-volunteers

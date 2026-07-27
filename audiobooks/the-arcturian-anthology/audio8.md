@@ -17,13 +17,16 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
+  - Tom Kenyon
   - 大角星人
-  - 宗教神话
+  - 《大角星人文摘》
+  - 通灵信息
   - UFO
+  - 高维文明
+  - 意识扩展
 number: 8
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology8.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology08-ufo-future-humans-higher-dimensional-beings.html"
 ---
 

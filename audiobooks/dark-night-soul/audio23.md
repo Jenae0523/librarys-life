@@ -14,7 +14,14 @@ keywords:
 date: 2026-02-26
 tags:
   - audiobooks
-  - 灵魂转世
+  - 《灵魂的暗夜》
+  - 帕梅拉·克里柏
+  - 通灵信息
+  - 耶稣
+  - 心理学
+  - 情绪疗愈
+  - 自我认知
+  - 正念
 number: 23
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul23.json"
 book_slug: dark-night-soul

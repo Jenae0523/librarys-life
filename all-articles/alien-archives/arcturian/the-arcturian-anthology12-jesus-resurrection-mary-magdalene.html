@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260726-1224">
+<meta name="version" content="20260727-2319">
 
 
 <meta charset="utf-8">
@@ -35,7 +35,7 @@
 <link rel="stylesheet" href="/css261/html/assets/vendor/hs-megamenu/src/hs.megamenu.css">
 <link rel="stylesheet" href="/css261/html/assets/vendor/hamburgers/hamburgers.min.css">
 
-<link rel="stylesheet" href="../../css261/html/assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css">
+<link rel="stylesheet" href="/css261/html/assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css">
 <link rel="stylesheet" href="/css261/html/assets/vendor/slick-carousel/slick/slick.css">
 
 <!-- CSS Unify -->
@@ -67,8 +67,6 @@
 
 </head>
 
-  <link rel="stylesheet" href="/assets/css/selection-search.css">
-  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -76,59 +74,10 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
-      max-width: 100%;
-      overflow-x: clip;
-      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
-}
-
-body {
-  touch-action: pan-y pinch-zoom;
-}
-
-main {
-  max-width: 100%;
-  overflow-x: clip;
-}
-
-.article-body {
-  min-width: 0;
-  max-width: 100%;
-  overflow-wrap: anywhere;
-}
-
-.article-body > * {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.article-body iframe,
-.article-body video,
-.article-body audio,
-.article-body canvas,
-.article-body svg {
-  max-width: 100%;
-}
-
-.article-body pre,
-.article-body table {
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.article-body pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-.article-body a,
-.article-body code {
-  overflow-wrap: anywhere;
-  word-break: break-word;
 }
 	
 .article-body p {
@@ -159,32 +108,6 @@ main {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
-}
-
-.related-posts-heading {
-  font-size: 1.8rem;
-  line-height: 1.6;
-}
-
-.related-posts-item {
-  padding-top: 36px;
-}
-
-.related-posts-item:first-child {
-  padding-top: 12px;
-}
-
-.related-posts-excerpt {
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
-.related-posts-excerpt[role="button"]:focus {
-  outline: none;
-}
-
-.related-posts-excerpt[role="button"]:focus-visible {
-  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -293,22 +216,17 @@ main {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: flex;
+  display: none;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
 }
 
 .floating-episode-toc.is-visible {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
 }
 
 .floating-episode-toc.is-open {
@@ -492,8 +410,6 @@ main {
     </h2>
     
 
-    
-
     <!-- MP3有声书 -->
     
     <audio controls="controls">
@@ -532,15 +448,7 @@ main {
     
 
     
-      <a class="article-breadcrumb__link" href="/all-articles/alien-archives/">外星人档案</a>
-    
-  
-    
-      <span class="article-breadcrumb__separator" aria-hidden="true">/</span>
-    
-
-    
-      <span class="article-breadcrumb__current">大角星人</span>
+      <span class="article-breadcrumb__current">外星人档案</span>
     
   
 </nav>
@@ -636,7 +544,7 @@ main {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
+                <hr class="g-brd-gray-light-v4 g-pt-20">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -759,6 +667,18 @@ main {
     
   
 
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
 
 
   
@@ -778,8 +698,8 @@ main {
     <li class="list-inline-item g-mb-10">
       
       <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
-         href="/tags/arcturian/">
-         大角星人
+         href="/tags/tom-kenyon/">
+         汤姆肯永
       </a>
       
     </li>
@@ -788,8 +708,8 @@ main {
     <li class="list-inline-item g-mb-10">
       
       <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
-         href="/tags/tom-kenyon/">
-         汤姆肯永
+         href="/tags/arcturian/">
+         大角星人
       </a>
       
     </li>
@@ -808,16 +728,6 @@ main {
     <li class="list-inline-item g-mb-10">
       
       <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
-         href="/tags/mary-magdalene-manuscript/">
-         《抹大拉手稿》
-      </a>
-      
-    </li>
-    
-    
-    <li class="list-inline-item g-mb-10">
-      
-      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
          href="/tags/channeling-information/">
          通灵信息
       </a>
@@ -828,8 +738,48 @@ main {
     <li class="list-inline-item g-mb-10">
       
       <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
-         href="/tags/expanded-consciousness/">
-         意识扩展
+         href="/tags/mary-magdalene-manuscript/">
+         《抹大拉手稿》
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/jesus/">
+         耶稣
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/mary-magdalene-person/">
+         抹大拉的玛利亚
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/christ-consciousness/">
+         基督意识
+      </a>
+      
+    </li>
+    
+    
+    <li class="list-inline-item g-mb-10">
+      
+      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
+         href="/tags/religion-and-mythology/">
+         神话
       </a>
       
     </li>
@@ -844,130 +794,53 @@ main {
       
     </li>
     
-    
-    <li class="list-inline-item g-mb-10">
-      
-      <a class="u-tags-v1 g-color-gray-dark-v3 g-color-white--hover g-bg-gray-light-v5 g-bg-primary--hover g-font-size-14 g-rounded-50 g-py-4 g-px-15"
-         href="/tags/extraterrestrial-civilization/">
-         外星文明
-      </a>
-      
-    </li>
-    
   </ul>
 </div>
 
 
 			  
-              <!-- 加一条灰线 -->
+			  <!-- 加一条灰线 -->
               <hr class="g-brd-gray-light-v4 g-my-50">			  			  
               <!-- 相关文章 -->			  
               
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0">
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">抹大拉的玛利亚是耶稣的妻子吗？大角星起源、伊希斯神庙与内在炼金术｜《大角星人文摘》第11集</h5>
-          
-          <p id="related-post-excerpt-1"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">这份以抹大拉的玛利亚口吻呈现的通灵资料，讲述她在伊希斯神庙接受冥想、声音与内在炼金术训练，并将自己和耶稣描述为携带大角星能量、共同执行使命的伴侣。更深的主题是：一个感觉自己不属于这里的人，如何在现实生活中认识并表达独特天赋。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology11-mary-magdalene-isis-temple-arcturian-origin.html"
-             aria-label="阅读相关文章：抹大拉的玛利亚是耶稣的妻子吗？大角星起源、伊希斯神庙与内在炼金术｜《大角星人文摘》第11集">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">抹大拉的玛利亚是耶稣的妻子吗？大角星起源、伊希斯神庙与内在炼金术｜《大角星人文摘》第11集</h5>
+          <p class="g-color-gray-dark-v4">这份以抹大拉的玛利亚口吻呈现的通灵资料，讲述她在伊希斯神庙接受冥想、声音与内在炼金术训练，并将自己和耶稣描述为携带大角星能量、共同执行使命的伴侣。更深的主题是：一个感觉自己不属于这里的人，如何在现实生活中认识并表达独特天赋。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/alien-archives/arcturian/the-arcturian-anthology11-mary-magdalene-isis-temple-arcturian-origin.html">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">安努纳奇创造人类？《大角星人文摘》中的人类起源、基因改造与意识潜能｜第3集</h5>
-          
-          <p id="related-post-excerpt-2"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">人类是否可能源于安努纳奇的基因改造？《大角星人文摘》提供了一套不同于宗教创世说的人类起源叙事，并把问题引向更现实的层面：技术与力量不等于意识，真正的进化始于摆脱权威崇拜、恢复独立思考。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology03-anunnaki-human-origins.html"
-             aria-label="阅读相关文章：安努纳奇创造人类？《大角星人文摘》中的人类起源、基因改造与意识潜能｜第3集">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">耶稣之死的深层意义：三位一体、圣灵本质与灵性视角的重新理解</h5>
+          <p class="g-color-gray-dark-v4">重新解读耶稣之死的意义，超越“替人赎罪”的传统解释，从灵性层面探讨其象征结构与选择动机。同时解析三位一体的真实含义、圣灵的本质与生命能量关系，揭示宗教语言背后的更高层次意识逻辑。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/between-death-life/31-jesus-death-meaning-trinity-holy-spirit-divine-energy-spiritual-interpretation.html">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">通灵信息如何辨别？高维沟通的心理风险与安全原则｜《大角星人文摘》第18集</h5>
-          
-          <p id="related-post-excerpt-3"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">改变意识状态和所谓高维沟通，为什么有时会带来错误信息甚至心理风险？汤姆·肯永从心理治疗经验出发，说明情绪状态、个人愿望和信念投射如何扭曲接收内容，并给出自我诚实、记录验证、能量保护及必要时寻求专业支持等安全原则。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology18-channeling-discernment-psychological-safety.html"
-             aria-label="阅读相关文章：通灵信息如何辨别？高维沟通的心理风险与安全原则｜《大角星人文摘》第18集">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">大角星人飞船与高维文明：汤姆·肯永讲述他的第二次接触经历｜《大角星人文摘》2</h5>
+          <p class="g-color-gray-dark-v4">心理治疗师汤姆·肯永汤姆·肯永描述自己被带上一艘大角星飞船，接触意识导航、多维空间与全息感应语言。比飞船本身更值得注意的是，大角星人对仁慈、时间和现实的理解，以及这些激进观念如何迫使人跳出固有的认知框架。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/alien-archives/arcturian/the-arcturian-anthology02-arcturian-spaceship-higher-dimensional-civilization.html">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
-<script>
-  (function () {
-    var maxExcerptLength = 70;
-    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
-
-    excerpts.forEach(function (excerpt) {
-      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
-
-      var fullText = excerpt.textContent.trim();
-      var characters = Array.from(fullText);
-
-      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
-      if (characters.length <= maxExcerptLength) {
-        excerpt.removeAttribute("role");
-        excerpt.removeAttribute("tabindex");
-        excerpt.removeAttribute("aria-expanded");
-        excerpt.style.cursor = "default";
-        return;
-      }
-
-      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
-      var isExpanded = false;
-      excerpt.textContent = collapsedText;
-
-      function toggleExcerpt() {
-        isExpanded = !isExpanded;
-        excerpt.textContent = isExpanded ? fullText : collapsedText;
-        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
-      }
-
-      excerpt.addEventListener("click", toggleExcerpt);
-      excerpt.addEventListener("keydown", function (event) {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          toggleExcerpt();
-        }
-      });
-    });
-  })();
-</script>
 
 
 			  
@@ -999,10 +872,10 @@ main {
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8
-    "
-  href="/new"
+    is-active"
+  href="/all-articles/alien-archives/"
   style="padding-left: 0px;">
-  最新发布
+  外星人档案
 </a>
 
           
@@ -1016,9 +889,9 @@ main {
     nav-link-hover-underline
     g-py-8
     "
-  href="/all-articles/alien-archives/"
+  href="/all-articles/books/"
   style="padding-left: 0px;">
-  外星人档案
+  好书解读
 </a>
 
           
@@ -1032,17 +905,12 @@ main {
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8
-    is-active"
-  href="/all-articles/alien-archives/arcturian/"
+    "
+  href="/all-articles/books/mary-magdalene/"
   style="padding-left: 15px;">
-  大角星人
+  《抹大拉手稿》
 </a>
 
-          
-        </li>
-      
-    
-            </ul>
           
         </li>
       
@@ -1054,11 +922,32 @@ main {
     nav-link-hover-underline
     g-py-8
     "
-  href="/all-articles/books/mary-magdalene/"
-  style="padding-left: 0px;">
-  抹大拉手稿
+  href="/all-articles/books/between-death-life/"
+  style="padding-left: 15px;">
+  《生死之间》
 </a>
 
+          
+        </li>
+      
+        
+        <li>
+<a
+  class="sidebar-nav__link d-block u-link-v5 rounded
+    g-color-gray-dark-v4 g-color-primary--hover 
+    nav-link-hover-underline
+    g-py-8
+    "
+  href="/all-articles/books/many-mansions/"
+  style="padding-left: 15px;">
+  《多世生命》
+</a>
+
+          
+        </li>
+      
+    
+            </ul>
           
         </li>
       
@@ -1121,7 +1010,7 @@ main {
     "
   href="/all-articles/courses/human-body-healing/"
   style="padding-left: 15px;">
-  人体 / 能量场 / 身体疗愈
+  身体 / 能量场 / 疗愈实践
 </a>
 
           
@@ -1137,7 +1026,7 @@ main {
     "
   href="/all-articles/courses/messages-of-light-archangel-mike/"
   style="padding-left: 15px;">
-  光之信息 / 大天使迈克尔
+  大天使迈克尔 / 光之信息
 </a>
 
           
@@ -1173,41 +1062,9 @@ main {
     nav-link-hover-underline
     g-py-8
     "
-  href="/all-articles/dolores-cannon-hypnosis/earth-custodians-ufo/"
-  style="padding-left: 15px;">
-  地球监护人 / UFO调查
-</a>
-
-          
-        </li>
-      
-        
-        <li>
-<a
-  class="sidebar-nav__link d-block u-link-v5 rounded
-    g-color-gray-dark-v4 g-color-primary--hover 
-    nav-link-hover-underline
-    g-py-8
-    "
-  href="/all-articles/dolores-cannon-hypnosis/lost-history-knowledge/"
-  style="padding-left: 15px;">
-  寻找遗失的历史
-</a>
-
-          
-        </li>
-      
-        
-        <li>
-<a
-  class="sidebar-nav__link d-block u-link-v5 rounded
-    g-color-gray-dark-v4 g-color-primary--hover 
-    nav-link-hover-underline
-    g-py-8
-    "
   href="/all-articles/dolores-cannon-hypnosis/multiverse/"
   style="padding-left: 15px;">
-  多重宇宙
+  错综复杂的宇宙
 </a>
 
           
@@ -1239,7 +1096,7 @@ main {
     "
   href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/"
   style="padding-left: 15px;">
-  灵魂 / 多世生命
+  灵魂旅程 / 生死轮回
 </a>
 
           
@@ -1258,9 +1115,9 @@ main {
     nav-link-hover-underline
     g-py-8
     "
-  href="/all-articles/energy-source-field/"
+  href="/all-articles/lost-history-knowledge/"
   style="padding-left: 0px;">
-  物理学视角 / 探索宇宙与能量
+  失落文明 / 隐秘知识
 </a>
 
           
@@ -1277,44 +1134,6 @@ main {
   href="/all-articles/healing-empowerment/"
   style="padding-left: 0px;">
   生命的疗愈 / 自我赋权
-</a>
-
-          
-            <ul class="list-unstyled" style="padding-left: 15px;">
-              
-      
-        
-        <li>
-<a
-  class="sidebar-nav__link d-block u-link-v5 rounded
-    g-color-gray-dark-v4 g-color-primary--hover 
-    nav-link-hover-underline
-    g-py-8
-    "
-  href="/all-articles/healing-empowerment/dark-night-of-the-soul/"
-  style="padding-left: 15px;">
-  灵魂暗夜
-</a>
-
-          
-        </li>
-      
-    
-            </ul>
-          
-        </li>
-      
-        
-        <li>
-<a
-  class="sidebar-nav__link d-block u-link-v5 rounded
-    g-color-gray-dark-v4 g-color-primary--hover 
-    nav-link-hover-underline
-    g-py-8
-    "
-  href="/all-articles/history-wisdom/"
-  style="padding-left: 0px;">
-  读史明智 / 兼听则明
 </a>
 
           
@@ -1363,7 +1182,7 @@ main {
     "
   href="/all-articles/insight-awakening/teachings-of-don-juan/"
   style="padding-left: 15px;">
-  巫师唐望的智慧教导
+  唐望的智慧教导
 </a>
 
           
@@ -1371,22 +1190,6 @@ main {
       
     
             </ul>
-          
-        </li>
-      
-        
-        <li>
-<a
-  class="sidebar-nav__link d-block u-link-v5 rounded
-    g-color-gray-dark-v4 g-color-primary--hover 
-    nav-link-hover-underline
-    g-py-8
-    "
-  href="/all-articles/muyu-brief/"
-  style="padding-left: 0px;">
-  暮雨宇宙简报
-</a>
-
           
         </li>
       
@@ -1422,105 +1225,10 @@ main {
           
         </li>
       
-        
-        <li>
-<a
-  class="sidebar-nav__link d-block u-link-v5 rounded
-    g-color-gray-dark-v4 g-color-primary--hover 
-    nav-link-hover-underline
-    g-py-8
-    "
-  href="/free-ebooks"
-  style="padding-left: 0px;">
-  免费电子书
-</a>
-
-          
-        </li>
-      
-        
-        <li>
-<a
-  class="sidebar-nav__link d-block u-link-v5 rounded
-    g-color-gray-dark-v4 g-color-primary--hover 
-    nav-link-hover-underline
-    g-py-8
-    "
-  href="/all-audiobooks/0"
-  style="padding-left: 0px;">
-  有声书
-</a>
-
-          
-        </li>
-      
     
   </ul>
 </div>
 
-
-              <!-- 加一条灰线 -->
-              <hr class="g-brd-gray-light-v4 g-my-50">
-              <!-- 文章搜索入口 -->
-              <div class="article-sidebar-search">
-                
-                <section
-  class="article-search-panel article-search-panel--entry article-search-panel--compact"
-  aria-label="文章搜索"
->
-  <form
-    id="articleSearchSharedForm"
-    class="article-search-form"
-    action="/articles/search/"
-    method="get"
-    role="search"
-    
-  >
-    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
-    <input
-      id="articleSearchSharedInput"
-      class="article-search-input"
-      type="search"
-      name="q"
-      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
-      autocomplete="off"
-      
-    >
-    <button class="article-search-button" type="submit">搜索</button>
-    <button
-      class="article-search-button article-search-button--secondary"
-      type="reset"
-      
-    >
-      清空
-    </button>
-  </form>
-
-  <div class="article-search-toolbar">
-    
-      <p class="article-search-status">可搜索 132 篇文章</p>
-    
-
-    <div class="article-search-controls">
-      
-
-      <label class="article-search-control-label article-search-sort-label">
-        <span class="sr-only">排序</span>
-        <select
-          class="article-search-select article-search-sort"
-          name="sort"
-          form="articleSearchSharedForm"
-          
-        >
-          <option value="relevance">按相关度排序</option>
-          <option value="latest">按最新发布排序</option>
-        </select>
-      </label>
-    </div>
-  </div>
-</section>
-
-              </div>
 			  
 			  
             </div>
@@ -1602,18 +1310,6 @@ main {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
-        function updateFloatingTocVisibility(toc, endBoundary) {
-          if (!toc || !article || !endBoundary) return;
-
-          var articleRect = article.getBoundingClientRect();
-          var boundaryRect = endBoundary.getBoundingClientRect();
-          var tocRect = toc.getBoundingClientRect();
-          var staysBelowIntro = tocRect.top >= articleRect.top;
-          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
-
-          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
-        }
-
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1667,10 +1363,9 @@ main {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
-        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          updateFloatingTocVisibility(toc, endBoundary);
+          toc.classList.add("is-visible");
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1682,9 +1377,6 @@ main {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          window.requestAnimationFrame(function () {
-            updateFloatingTocVisibility(toc, endBoundary);
-          });
         }
 
         function setActive(id) {
@@ -1733,7 +1425,6 @@ main {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
-            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

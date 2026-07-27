@@ -43,13 +43,12 @@ keywords:
 tags:
   - audiobooks
   - 《抹大拉手稿》
+  - Tom Kenyon
   - 抹大拉的玛利亚
-  - 汤姆肯永
-  - 哈索尔人
-  - 通灵信息
-  - 耶稣
   - 女性灵性
-download_url: https://readcafe.life/free-ebooks/authors/tom-kenyon/mo-da-la-shou-gao-librarys-life-20260710.pdf
+  - 通灵信息
+  - 冥想
+download_url: https://readcafe.life/free-ebooks/authors/tom-kenyon/20250727--mo-da-la-shou-gao---mu-yu-fan-yi-jie-du.pdf
 book_slug: mary-magdalene
 is_book_index: true
 content_type: audiobook

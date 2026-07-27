@@ -16,10 +16,11 @@ keywords:
 date: 2026-01-10
 tags:
   - audiobooks
+  - 《地球守护者》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - UFO
   - 外星文明
-  - 灵魂转世
-  - 通灵信息
-  - 潜意识
 number: 22
 subtitle_url: "/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden22.json"
 book_slug: keepers-of-the-garden

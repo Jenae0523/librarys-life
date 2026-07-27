@@ -15,9 +15,13 @@ keywords:
 date: 2026-02-26
 tags:
   - audiobooks
-  - 宗教神话
+  - 《灵魂的暗夜》
+  - 帕梅拉·克里柏
   - 通灵信息
-  - 灵魂转世
+  - 耶稣
+  - 意识扩展
+  - 自我认知
+  - 个人指引系统
 number: 27
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul27.json"
 book_slug: dark-night-soul

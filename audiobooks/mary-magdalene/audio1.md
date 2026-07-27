@@ -20,6 +20,10 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 女性灵性
+  - 冥想
 number: 1
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene1.json"

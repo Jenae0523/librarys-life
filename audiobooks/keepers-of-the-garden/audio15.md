@@ -18,8 +18,10 @@ keywords:
 date: 2026-01-05
 tags:
   - audiobooks
-  - 通灵信息
-  - 前世今生
+  - 《地球守护者》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - 外星文明
 number: 15
 subtitle_url: "/audiobooks/keepers-of-the-garden/texts/keepers-of-the-garden15.json"
 book_slug: keepers-of-the-garden

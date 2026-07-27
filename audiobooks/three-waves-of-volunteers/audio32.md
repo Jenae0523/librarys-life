@@ -14,7 +14,13 @@ keywords:
 date: 2026-04-08
 tags:
   - audiobooks
+  - 《三波志愿者与新地球》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - 能量场
   - 频率
+  - 古文明
+  - 高维文明
 number: 32
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers32.json"
 book_slug: three-waves-of-volunteers

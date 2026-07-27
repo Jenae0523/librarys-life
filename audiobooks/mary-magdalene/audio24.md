@@ -19,8 +19,11 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
-  - 灵性觉醒
-  - 量子现实
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 冥想
+  - 意识扩展
+  - 神话
 number: 24
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene24.json"

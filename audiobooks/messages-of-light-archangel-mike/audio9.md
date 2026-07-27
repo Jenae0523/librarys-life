@@ -22,9 +22,13 @@ keywords:
 date: 2026-03-01
 tags:
   - audiobooks
+  - 大天使迈克尔
+  - 通灵信息
   - 现实创造
-  - 灵魂转世
   - 脉轮
+  - 频率
+  - 灵性觉醒
+  - 意识扩展
 number: 9
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike9.json"

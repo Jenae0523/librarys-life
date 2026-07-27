@@ -22,9 +22,12 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
+  - 《抹大拉手稿》
+  - Tom Kenyon
   - 抹大拉的玛利亚
-  - 哈索尔人
-  - 通灵信息
+  - 耶稣
+  - 女性灵性
+  - 神话
 number: 3
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene3.json"

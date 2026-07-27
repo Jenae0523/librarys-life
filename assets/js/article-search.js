@@ -528,15 +528,24 @@
     );
   }
 
-  function buildTagFacets(results, queryTags) {
-    const activeTags = new Map(
-      toArray(queryTags)
-        .filter(tag => tag?.id && tag?.name && String(tag.id) !== "articles")
-        .map(tag => [String(tag.id), tag])
-    );
+  function buildTagFacets(results, queryTags, scopedResults = results) {
+    const activeTags = new Map();
     const counts = new Map();
 
-    toArray(results).forEach(result => {
+    toArray(queryTags).forEach(tag => {
+      const canonicalId = String(tag?.canonical_id || tag?.id || "").trim();
+      const canonicalName = String(tag?.canonical_name || tag?.name || "").trim();
+      if (!canonicalId || !canonicalName || canonicalId === "articles" || activeTags.has(canonicalId)) {
+        return;
+      }
+      activeTags.set(canonicalId, {
+        canonical_id: canonicalId,
+        canonical_name: canonicalName,
+        aliases: uniqueStrings(tag.aliases)
+      });
+    });
+
+    toArray(scopedResults).forEach(result => {
       const tagIds = new Set(
         toArray(resultArticle(result).tag_ids)
           .map(String)
@@ -545,15 +554,37 @@
       tagIds.forEach(tagId => counts.set(tagId, (counts.get(tagId) || 0) + 1));
     });
 
-    return [...counts.entries()]
-      .map(([id, count]) => ({
-        id,
-        name: activeTags.get(id).name,
-        count
+    return [...activeTags.values()]
+      .map(tag => ({
+        id: tag.canonical_id,
+        name: tag.canonical_name,
+        canonical_id: tag.canonical_id,
+        canonical_name: tag.canonical_name,
+        aliases: tag.aliases,
+        count: counts.get(tag.canonical_id) || 0,
+        current_count: counts.get(tag.canonical_id) || 0,
+        selected: false
       }))
       .sort((left, right) =>
         right.count - left.count || left.name.localeCompare(right.name, "zh-CN")
       );
+  }
+
+  function buildVisibleTagFacets(facets, selectedTagId) {
+    const selectedId = String(selectedTagId || "").trim();
+    return toArray(facets)
+      .filter(option => {
+        const canonicalId = String(option?.canonical_id || option?.id || "").trim();
+        const currentCount = Number(option?.current_count ?? option?.count) || 0;
+        return currentCount > 0 || (selectedId && canonicalId === selectedId);
+      })
+      .map(option => {
+        const canonicalId = String(option?.canonical_id || option?.id || "").trim();
+        return {
+          ...option,
+          selected: Boolean(selectedId && canonicalId === selectedId)
+        };
+      });
   }
 
   function filterResultsByTag(results, tagId) {
@@ -572,6 +603,88 @@
         .localeCompare(String(resultArticle(left).date || ""));
       return dateOrder || Number(right.score || 0) - Number(left.score || 0);
     });
+  }
+
+  function readSearchUrlState(urlValue) {
+    const url = urlValue instanceof URL
+      ? urlValue
+      : new URL(String(urlValue || ""), "https://example.invalid");
+    return {
+      query: url.searchParams.get("q") || "",
+      category: url.searchParams.get("category") || "",
+      tag: url.searchParams.get("tag") || "",
+      sort: url.searchParams.get("sort") === "latest" ? "latest" : "relevance",
+      page: Math.max(parseInt(url.searchParams.get("page"), 10) || 1, 1)
+    };
+  }
+
+  function writeSearchUrlState(urlValue, state = {}) {
+    const url = urlValue instanceof URL
+      ? new URL(urlValue.href)
+      : new URL(String(urlValue || ""), "https://example.invalid");
+    const cleanQuery = String(state.query || "").trim();
+
+    if (!cleanQuery) {
+      ["q", "category", "tag", "sort", "page"].forEach(parameter =>
+        url.searchParams.delete(parameter)
+      );
+      return url;
+    }
+
+    url.searchParams.set("q", cleanQuery);
+    if (state.category) url.searchParams.set("category", String(state.category));
+    else url.searchParams.delete("category");
+    if (state.tag) url.searchParams.set("tag", String(state.tag));
+    else url.searchParams.delete("tag");
+    url.searchParams.set("sort", state.sort === "latest" ? "latest" : "relevance");
+    const page = Math.max(parseInt(state.page, 10) || 1, 1);
+    if (page > 1) url.searchParams.set("page", String(page));
+    else url.searchParams.delete("page");
+    return url;
+  }
+
+  function populateFacetSelect(select, allLabel, total, options, requestedValue, documentObject) {
+    const documentApi = documentObject || (
+      typeof document === "undefined" ? null : document
+    );
+    if (!select || !documentApi?.createElement) return "";
+
+    select.innerHTML = "";
+    const allOption = documentApi.createElement("option");
+    allOption.value = "";
+    allOption.textContent = `${allLabel}（${total}）`;
+    select.appendChild(allOption);
+
+    const seenCanonicalIds = new Set();
+    const canonicalOptions = [];
+    toArray(options).forEach(option => {
+      const canonicalId = String(option?.canonical_id || option?.id || "").trim();
+      const canonicalName = String(option?.canonical_name || option?.name || "").trim();
+      if (!canonicalId || !canonicalName || seenCanonicalIds.has(canonicalId)) return;
+      seenCanonicalIds.add(canonicalId);
+      canonicalOptions.push({
+        canonical_id: canonicalId,
+        canonical_name: canonicalName,
+        current_count: Number(option?.current_count ?? option?.count) || 0
+      });
+    });
+
+    canonicalOptions.forEach(option => {
+      const element = documentApi.createElement("option");
+      element.value = option.canonical_id;
+      element.textContent = `${option.canonical_name}（${option.current_count}）`;
+      if (element.dataset) {
+        element.dataset.canonicalId = option.canonical_id;
+        element.dataset.canonicalName = option.canonical_name;
+      }
+      select.appendChild(element);
+    });
+
+    const requestedId = String(requestedValue || "");
+    const validValue = seenCanonicalIds.has(requestedId) ? requestedId : "";
+    select.value = validValue;
+    select.disabled = canonicalOptions.length === 0;
+    return validValue;
   }
 
   function findLiteralIndex(text, terms) {
@@ -763,10 +876,22 @@
     );
   }
 
+  function buildCanonicalTagLookup(queryTags) {
+    const lookup = new Map();
+    toArray(queryTags).forEach(tag => {
+      if (!tag?.id || !tag?.name) return;
+      [tag.name, ...toArray(tag.aliases)].forEach(term => {
+        const normalized = normalizeText(term);
+        if (normalized && !lookup.has(normalized)) lookup.set(normalized, tag);
+      });
+    });
+    return lookup;
+  }
+
   function renderTags(article, tagByName) {
     return toArray(article.tags).map(tagName => {
-      const registryTag = tagByName.get(tagName);
-      const label = escapeHtml(tagName);
+      const registryTag = tagByName.get(normalizeText(tagName));
+      const label = escapeHtml(registryTag?.name || tagName);
       return registryTag?.id
         ? `<a class="article-search-tag" href="/tags/${encodeURIComponent(registryTag.id)}/" target="_blank" rel="noopener">${label}</a>`
         : `<span class="article-search-tag">${label}</span>`;
@@ -849,61 +974,20 @@
       return loadingPromise;
     };
 
-    const readUrlState = () => {
-      const url = new URL(window.location.href);
-      return {
-        query: url.searchParams.get("q") || "",
-        category: url.searchParams.get("category") || "",
-        tag: url.searchParams.get("tag") || "",
-        sort: url.searchParams.get("sort") === "latest" ? "latest" : "relevance",
-        page: Math.max(parseInt(url.searchParams.get("page"), 10) || 1, 1)
-      };
-    };
+    const readUrlState = () => readSearchUrlState(window.location.href);
 
     const updateUrl = (query, historyMode = "replace") => {
       if (historyMode === "none") return;
-      const url = new URL(window.location.href);
-      const cleanQuery = String(query || "").trim();
-
-      if (cleanQuery) {
-        url.searchParams.set("q", cleanQuery);
-        if (categorySelect.value) url.searchParams.set("category", categorySelect.value);
-        else url.searchParams.delete("category");
-        if (tagSelect.value) url.searchParams.set("tag", tagSelect.value);
-        else url.searchParams.delete("tag");
-        url.searchParams.set("sort", sortSelect.value === "latest" ? "latest" : "relevance");
-        if (currentPage > 1) url.searchParams.set("page", String(currentPage));
-        else url.searchParams.delete("page");
-      } else {
-        ["q", "category", "tag", "sort", "page"].forEach(parameter =>
-          url.searchParams.delete(parameter)
-        );
-      }
+      const url = writeSearchUrlState(window.location.href, {
+        query,
+        category: categorySelect.value,
+        tag: tagSelect.value,
+        sort: sortSelect.value,
+        page: currentPage
+      });
 
       const method = historyMode === "push" ? "pushState" : "replaceState";
       history[method]({}, "", url);
-    };
-
-    const populateFacetSelect = (select, allLabel, total, options, requestedValue) => {
-      select.innerHTML = "";
-      const allOption = document.createElement("option");
-      allOption.value = "";
-      allOption.textContent = `${allLabel}（${total}）`;
-      select.appendChild(allOption);
-
-      options.forEach(option => {
-        const element = document.createElement("option");
-        element.value = option.id;
-        element.textContent = `${option.name}（${option.count}）`;
-        select.appendChild(element);
-      });
-
-      const validValue = options.some(option => option.id === requestedValue)
-        ? requestedValue
-        : "";
-      select.value = validValue;
-      select.disabled = total === 0 || options.length === 0;
-      return validValue;
     };
 
     const makePaginationButton = (text, targetPage, disabled, isCurrent, accessibleLabel) => {
@@ -1045,12 +1129,17 @@
         selectedCategory,
         categoryFacets.registry
       );
-      const tagFacets = buildTagFacets(categoryResults, payload?.query_tags);
+      const tagFacets = buildTagFacets(
+        currentRawResults,
+        payload?.query_tags,
+        categoryResults
+      );
+      const visibleTagFacets = buildVisibleTagFacets(tagFacets, requestedTag);
       const selectedTag = populateFacetSelect(
         tagSelect,
         "全部知识点",
         categoryResults.length,
-        tagFacets,
+        visibleTagFacets,
         requestedTag
       );
       const filteredResults = filterResultsByTag(categoryResults, selectedTag);
@@ -1081,7 +1170,7 @@
       try {
         const data = await loadIndex();
         const result = search(data, query, { sort: "relevance" });
-        const tagByName = new Map(toArray(data.query_tags).map(tag => [tag.name, tag]));
+        const tagByName = buildCanonicalTagLookup(data.query_tags);
 
         currentRawResults = result.results;
         currentElapsedMs = result.elapsed_ms;
@@ -1209,9 +1298,11 @@
   return {
     FIELD_WEIGHTS,
     articleCategoryIds,
+    buildCanonicalTagLookup,
     buildCategoryFacets,
     buildCategoryRegistry,
     buildTagFacets,
+    buildVisibleTagFacets,
     categoryDisplayName,
     filterResultsByCategory,
     filterResultsByTag,
@@ -1219,8 +1310,12 @@
     highlightHtml,
     initArticleSearchPage,
     normalizeText,
+    populateFacetSelect,
+    readSearchUrlState,
+    renderTags,
     search,
     sortFacetedResults,
-    splitQuery
+    splitQuery,
+    writeSearchUrlState
   };
 });

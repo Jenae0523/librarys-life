@@ -11,7 +11,12 @@ keywords:
 date: 2026-02-26
 tags:
   - audiobooks
+  - 《灵魂的暗夜》
+  - 帕梅拉·克里柏
+  - 催眠回溯
   - 前世今生
+  - 自我认知
+  - 灵性觉醒
 number: 41
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul41.json"
 book_slug: dark-night-soul

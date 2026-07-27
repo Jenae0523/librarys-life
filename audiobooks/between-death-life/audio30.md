@@ -17,8 +17,11 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 催眠回溯
+  - 神话
   - 集体意识
-  - 哈索尔人
 number: 30
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life30.json"
 book_slug: between-death-life

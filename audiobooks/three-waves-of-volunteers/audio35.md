@@ -17,8 +17,13 @@ keywords:
 date: 2026-04-15
 tags:
   - audiobooks
-  - 前世今生
+  - 《三波志愿者与新地球》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
   - 频率
+  - 集体意识
+  - 灵性觉醒
+  - 意识扩展
 number: 35
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers35.json"
 book_slug: three-waves-of-volunteers

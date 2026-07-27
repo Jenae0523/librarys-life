@@ -10,6 +10,11 @@ keywords:
 date: 2025-10-31
 tags:
   - audiobooks
+  - 《悉达多》
+  - 赫尔曼·黑塞
+  - 神话
+  - 意识扩展
+  - 灵性觉醒
 number: 11
 subtitle_url: "/audiobooks/siddhartha/texts/siddhartha11.json"
 book_slug: siddhartha

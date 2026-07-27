@@ -14,6 +14,11 @@ keywords:
 date: 2025-10-31
 tags:
   - audiobooks
+  - 《悉达多》
+  - 赫尔曼·黑塞
+  - 灵性觉醒
+  - 自我认知
+  - 意识扩展
 number: 8
 subtitle_url: "/audiobooks/siddhartha/texts/siddhartha8.json"
 book_slug: siddhartha

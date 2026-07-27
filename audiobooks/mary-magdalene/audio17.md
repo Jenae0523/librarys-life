@@ -21,9 +21,12 @@ keywords:
 date: 2026-03-02
 tags:
   - audiobooks
-  - 大角星人
-  - 灵魂转世
-  - 通灵信息
+  - 《抹大拉手稿》
+  - Tom Kenyon
+  - 古文明
+  - 意识扩展
+  - 自我认知
+  - 心理学
 number: 17
 
 subtitle_url: "/audiobooks/mary-magdalene/texts/mary-magdalene17.json"

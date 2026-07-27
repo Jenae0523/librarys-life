@@ -18,8 +18,10 @@ keywords:
 date: 2026-03-03
 tags:
   - audiobooks
+  - 朵洛莉丝·侃南
+  - 《生死之间》
+  - 催眠回溯
   - 灵魂转世
-  - 业力法则
   - 死后世界
 number: 39
 subtitle_url: "/audiobooks/between-death-life/texts/between-death-life39.json"

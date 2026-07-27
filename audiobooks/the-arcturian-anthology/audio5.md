@@ -17,13 +17,14 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
+  - Tom Kenyon
   - 大角星人
-  - 哈索尔人
-  - 外星文明
+  - 《大角星人文摘》
+  - 通灵信息
+  - 高维文明
 number: 5
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology5.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology05-sanat-kumara-arcturian-commander.html"
 ---
 

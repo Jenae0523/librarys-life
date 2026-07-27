@@ -15,7 +15,7 @@ keywords:
   - 创伤
   - 新地球
 date: 2026-04-08
-tags: ["audiobooks"]
+tags: [audiobooks, 《三波志愿者与新地球》, 朵洛莉丝·侃南, 催眠回溯, 星际种子, UFO, 外星文明]
 number: 22
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers22.json"
 book_slug: three-waves-of-volunteers

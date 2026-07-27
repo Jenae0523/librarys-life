@@ -14,7 +14,12 @@ keywords:
 date: 2026-02-25
 tags:
   - audiobooks
-  - 灵魂转世
+  - 《灵魂的暗夜》
+  - 帕梅拉·克里柏
+  - 灵性觉醒
+  - 心理学
+  - 情绪疗愈
+  - 自我认知
 number: 7
 subtitle_url: "/audiobooks/dark-night-soul/texts/dark-night-soul7.json"
 book_slug: dark-night-soul

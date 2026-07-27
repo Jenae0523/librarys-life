@@ -15,7 +15,14 @@ keywords:
 date: 2026-04-08
 tags:
   - audiobooks
-  - 前世今生
+  - 《三波志愿者与新地球》
+  - 朵洛莉丝·侃南
+  - 催眠回溯
+  - 星际种子
+  - 外星文明
+  - 频率
+  - 脉轮
+  - 意识扩展
 number: 27
 subtitle_url: "/audiobooks/three-waves-of-volunteers/texts/three-waves-of-volunteers27.json"
 book_slug: three-waves-of-volunteers

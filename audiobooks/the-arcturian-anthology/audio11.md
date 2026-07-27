@@ -18,14 +18,18 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
-  - 抹大拉的玛利亚
+  - Tom Kenyon
   - 大角星人
+  - 《大角星人文摘》
   - 通灵信息
-  - 外星文明
+  - 《抹大拉手稿》
+  - 抹大拉的玛利亚
+  - 耶稣
+  - 女性灵性
+  - 冥想
 number: 11
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology11.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology11-mary-magdalene-isis-temple-arcturian-origin.html"
 ---
 

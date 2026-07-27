@@ -16,13 +16,17 @@ keywords:
 date: 2026-02-27
 tags:
   - audiobooks
+  - Tom Kenyon
   - 大角星人
-  - 外星文明
+  - 《大角星人文摘》
+  - 通灵信息
+  - 集体意识
+  - 频率
+  - 意识扩展
+  - 高维文明
 number: 7
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology7.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology07-planetary-consciousness-starseed-dna.html"
-
 ---
 
