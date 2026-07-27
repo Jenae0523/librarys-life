@@ -3,14 +3,14 @@
 <head>
   <head>
   <title>灵魂挂毯与阿卡西记录揭秘：命运丝线、时间结构与人生编织系统解析・生命之书 | librarys.life</title>
-  <meta name="description" content="深入解析“灵魂挂毯”与阿卡西记录的结构概念，探讨每一个人生如何被丝线编织进整体命运系统，并揭示灵界如何记录、观察与引导灵魂成长。结合催眠案例，呈现时间、选择与灵魂进化之间的深层关系。">
+  <meta name="description" content="如果每一段人生都是一条丝线，人类会织成怎样的整体？“灵魂挂毯”在催眠个案中被描述为一种阿卡西纪录：每条线代表一个生命，它们彼此交错、影响并组成不断变化的图案。能读取多深，则取决于灵魂的发展程度与信息是否会干扰他人。">
 <meta name="keywords" content="朵洛莉丝·侃南, 阿卡西记录, 灵魂挂毯, 命运结构, 灵魂丝线, 前世记录, 灵性进化, 时间与意识, 催眠回溯">
 
 <meta name="robots" content="all">
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260727-2319">
+<meta name="version" content="20260728-0050">
 
 
 <meta charset="utf-8">
@@ -67,6 +67,8 @@
 
 </head>
 
+  <link rel="stylesheet" href="/assets/css/selection-search.css">
+  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -74,10 +76,59 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
+      max-width: 100%;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-body iframe,
+.article-body video,
+.article-body audio,
+.article-body canvas,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.article-body a,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 	
 .article-body p {
@@ -108,6 +159,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -216,17 +293,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -410,6 +492,8 @@ html {
     </h2>
     
 
+    
+
     <!-- MP3有声书 -->
     
     <audio controls="controls">
@@ -576,7 +660,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -767,48 +851,115 @@ html {
 
 
 			  
-			  <!-- 加一条灰线 -->
+              <!-- 加一条灰线 -->
               <hr class="g-brd-gray-light-v4 g-my-50">			  			  
               <!-- 相关文章 -->			  
               
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">灵魂转世的秘密：印记系统、阿卡西记录与基督意识的多层现实解析</h5>
-          <p class="g-color-gray-dark-v4">深入探索灵魂转世中的“印记系统”，解析阿卡西记录如何存储生命经验，以及印记在转世前的选择机制与作用。进一步探讨如何区分真实前世与印记体验、多人共享同一人生经验的可能性，并揭示基督意识印记在灵性进化中的作用与意义。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/between-death-life/38-soul-imprints-akashic-records-reincarnation-christ-consciousness-evolution.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">灵魂转世的秘密：印记系统、阿卡西记录与基督意识的多层现实解析</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">催眠中出现的前世记忆，是否都属于本人真实经历？《生死之间》提出“印记”概念：灵魂可能从阿卡西纪录中选择他人的人生经验，用来准备即将面对的地球课题，因此多人也可能携带同一段记忆。书中进一步讨论如何区分转世与印记，以及所谓“基督意识印记”的作用。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/between-death-life/38-soul-imprints-akashic-records-reincarnation-christ-consciousness-evolution.html"
+             aria-label="阅读相关文章：灵魂转世的秘密：印记系统、阿卡西记录与基督意识的多层现实解析">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">灵界图书馆揭秘：阿卡西记录、观看室与灵魂进化等级的知识体系</h5>
-          <p class="g-color-gray-dark-v4">深入解析灵界图书馆结构，揭示不同灵魂进化层级如何获取知识，包括书本阅读、观看室全息信息以及阿卡西记录的高维信息系统。结合催眠案例，探讨灵魂如何通过不同方式学习与成长。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/between-death-life/12-spiritual-library-akashic-records-soul-evolution-viewing-room.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">阿卡西纪录揭秘：生命之书、灵魂记忆与能量记录的真实机制</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">阿卡西纪录究竟是一座资料库，还是每个灵魂的“生命之书”？催眠个案将它描述为保存多世行为与经验的能量记录，但读取范围会受意识状态、灵魂发展与信息是否有益所限制；有些记忆甚至可能被遮蔽或移除，以免干扰当事人的成长。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/between-death-life/7-akashic-records-soul-memory-energy-information-storage-mechanism.html"
+             aria-label="阅读相关文章：阿卡西纪录揭秘：生命之书、灵魂记忆与能量记录的真实机制">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">超越业力之轮：高维意识、光的频率与人类觉醒的真实机制</h5>
-          <p class="g-color-gray-dark-v4">通过真实的催眠回溯对话，揭示高维存在、次元结构、业力之轮与人类觉醒之间的深层关系。本文系统解析意识振动、光的频率、扬升大师与信念如何塑造人类的轮回路径，帮助你理解“觉醒”究竟意味着什么，以及它为何正在发生。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/beyond-karma-wheel-human-consciousness-dimensions-light-awakening.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">超越业力之轮：高维意识、光的频率与人类觉醒的真实机制</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">什么让灵魂不断停留在业力之轮中，又如何真正超越它？《回旋宇宙》的催眠对话把维度理解为意识频率的差异，并认为执着、固有信念与受限心智会阻碍人类觉醒。文章还谈到扬升大师、身体转化、阿卡西记录与“光”的练习，强调觉醒不是逃避死亡，而是改变意识与选择。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/beyond-karma-wheel-human-consciousness-dimensions-light-awakening.html"
+             aria-label="阅读相关文章：超越业力之轮：高维意识、光的频率与人类觉醒的真实机制">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1197,6 +1348,69 @@ html {
   </ul>
 </div>
 
+
+              <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- 文章搜索入口 -->
+              <div class="article-sidebar-search">
+                
+                <section
+  class="article-search-panel article-search-panel--entry article-search-panel--compact"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 132 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+              </div>
 			  
 			  
             </div>
@@ -1278,6 +1492,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1331,9 +1557,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1345,6 +1572,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1393,6 +1623,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

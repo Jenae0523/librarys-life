@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260727-2319">
+<meta name="version" content="20260728-0050">
 
 
 <meta charset="utf-8">
@@ -128,8 +128,9 @@
 <p class="g-py-20"></p>
 </div>
 </section>
+
 <!-- 栏目介绍 -->
-<section class="g-bg-gray-light-v5 g-pb-40">
+<section class="g-bg-gray-light-v5 g-pb-40 article-intro--with-search">
 <header class="text-center g-width-60x--md mx-auto g-mb-50">
     
     <!-- 栏目标题（支持两排）-->
@@ -138,6 +139,65 @@
       所有文章
     </h2>
     
+
+    
+
+    
+      <section
+  class="article-search-panel article-search-panel--entry"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 132 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
 
     
 
@@ -204,34 +264,6 @@
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   }
 
-  /* 分页导航 */
-  .pagination {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 40px 0 0;
-  }
-  .pagination li {
-    margin: 0 5px;
-  }
-  .pagination a {
-    display: block;
-    padding: 8px 14px;
-    border: 1px solid #ddd;
-    border-radius: 9999px;
-    color: #333;
-    text-decoration: none;
-  }
-  .pagination a:hover {
-    background-color: #f5f5f5;
-  }
-  .pagination .active a {
-    background-color: var(--color-primary, #6281c8);
-    color: #fff;
-    border-color: var(--color-primary, #6281c8);
-    font-weight: bold;
-  }
 </style>
 
 <div class="container g-pt-100 g-pb-40">
@@ -743,302 +775,81 @@
             </a>
           </div>
           
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/courses/consciousness-alchemy/fifth-dimension-consciousness-evolution-sound-meditation.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年10月19日
-              </p>
-
-              <img
-                src="https://img.librarys.life/img/articles-covers/fifth-dimension-consciousness-evolution-sound-meditation.jpg"
-                alt="哈索尔：第五维度觉醒指南 声音冥想 │ 体验第五视角的自由，释放你的创造力和洞察力"
-                class="article-cover">
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">哈索尔：第五维度觉醒指南</span>
-                
-                
-                  <span class="title-line2">声音冥想 │ 体验第五视角的自由，释放你的创造力和洞察力</span>
-                
-              </h3>
-
-            </a>
-          </div>
-          
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/healing-empowerment/dark-night-of-the-soul/starseed-fear-energy-how-to-break-free-and-awaken.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年10月5日
-              </p>
-
-              <img
-                src="https://img.librarys.life/img/articles-covers/starseed-fear-energy-how-to-break-free-and-awaken.jpg"
-                alt="走出恐惧的迷雾：人类集体意识的海洋 走出内在恐惧的4个阶段"
-                class="article-cover">
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">走出恐惧的迷雾：人类集体意识的海洋</span>
-                
-                
-                  <span class="title-line2">走出内在恐惧的4个阶段</span>
-                
-              </h3>
-
-            </a>
-          </div>
-          
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/courses/consciousness-alchemy/transition-states-consciousness-chaotic-nodes.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年10月4日
-              </p>
-
-              <img
-                src="https://img.librarys.life/img/articles-covers/transition-states-consciousness-chaotic-nodes.jpg"
-                alt="哈索尔：面对混沌的过渡期，你能做什么？ 如何面对危机？如何识别机会？如何创造新的现实？"
-                class="article-cover">
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">哈索尔：面对混沌的过渡期，你能做什么？</span>
-                
-                
-                  <span class="title-line2">如何面对危机？如何识别机会？如何创造新的现实？</span>
-                
-              </h3>
-
-            </a>
-          </div>
-          
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/philosophy-consciousness/death-transition-three-choices-light-void-spiritual-guide.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年10月1日
-              </p>
-
-              <img
-                src="https://img.librarys.life/img/articles-covers/death-transition-three-choices-light-void-spiritual-guide.jpg"
-                alt="哈索尔：死亡的意识过渡会发生什么？ 肉身死亡后，灵魂将面对的3个选择是什么？"
-                class="article-cover">
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">哈索尔：死亡的意识过渡会发生什么？</span>
-                
-                
-                  <span class="title-line2">肉身死亡后，灵魂将面对的3个选择是什么？</span>
-                
-              </h3>
-
-            </a>
-          </div>
-          
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年9月25日
-              </p>
-
-              <img
-                src="https://img.librarys.life/img/articles-covers/spirit-vs-soul-differences.jpg"
-                alt="大天使迈克尔：解密灵与魂的奥秘 身体与灵魂的关系，灵魂是什么？它由什么组成？起源于哪里？"
-                class="article-cover">
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">大天使迈克尔：解密灵与魂的奥秘</span>
-                
-                
-                  <span class="title-line2">身体与灵魂的关系，灵魂是什么？它由什么组成？起源于哪里？</span>
-                
-              </h3>
-
-            </a>
-          </div>
-          
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年9月22日
-              </p>
-
-              <img
-                src="https://img.librarys.life/img/articles-covers/demystifying-death-soul-transition-journey.jpg"
-                alt="大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处"
-                class="article-cover">
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么?</span>
-                
-                
-                  <span class="title-line2">灵魂的归途：你所相信的，决定你将去往何处</span>
-                
-              </h3>
-
-            </a>
-          </div>
-          
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年9月12日
-              </p>
-
-              <img
-                src="https://img.librarys.life/img/articles-covers/life-flower-creation-wheel-4-8-12-petals-activation.jpg"
-                alt="灵魂的探照灯：唤醒你的生命之花 如何激活十二道光线创造之轮，成为有意识的共同创造者？"
-                class="article-cover">
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">灵魂的探照灯：唤醒你的生命之花</span>
-                
-                
-                  <span class="title-line2">如何激活十二道光线创造之轮，成为有意识的共同创造者？</span>
-                
-              </h3>
-
-            </a>
-          </div>
-          
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年9月9日
-              </p>
-
-              <img
-                src="https://img.librarys.life/img/articles-covers/ascension-open-your-sacred-heart-stabilize-energy-field.jpg"
-                alt="大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 为什么生命力被削弱？如何获得充足的能量？"
-                class="article-cover">
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能</span>
-                
-                
-                  <span class="title-line2">为什么生命力被削弱？如何获得充足的能量？</span>
-                
-              </h3>
-
-            </a>
-          </div>
-          
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年9月4日
-              </p>
-
-              <img
-                src="https://img.librarys.life/img/articles-covers/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.jpg"
-                alt="光之灵：疗愈能量在说话 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告"
-                class="article-cover">
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">光之灵：疗愈能量在说话</span>
-                
-                
-                  <span class="title-line2">如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告</span>
-                
-              </h3>
-
-            </a>
-          </div>
-          
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/cell-consciousness-healing-beyond-germs-self-exploration.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年8月29日
-              </p>
-
-              <img
-                src="https://img.librarys.life/img/articles-covers/cell-consciousness-healing-beyond-germs-self-exploration.jpg"
-                alt="细胞的意识 与你的身体对话，病菌并非疾病的根源？"
-                class="article-cover">
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">细胞的意识</span>
-                
-                
-                  <span class="title-line2">与你的身体对话，病菌并非疾病的根源？</span>
-                
-              </h3>
-
-            </a>
-          </div>
-          
 
         </div>
 
         <!-- 分页 -->
-        <nav>
-          <ul class="pagination">
-            
+        <nav class="site-pagination" aria-label="所有文章分页">
+          
+          
+          
+          
+          
+          
 
-            
+          
+            <span class="site-pagination__button" aria-disabled="true" aria-label="文章上一页">‹</span>
+          
 
+          
             
-              
-              <li class="active">
-                <a href="/articles-list/0/">1</a>
-              </li>
             
-              
-              <li class="">
-                <a href="/articles-list/1/">2</a>
-              </li>
+            <a class="site-pagination__button"
+               href="/articles-list/0/"
+               aria-label="文章第 1 页"
+               aria-current="page">1</a>
             
-              
-              <li class="">
-                <a href="/articles-list/2/">3</a>
-              </li>
+          
             
-              
-              <li class="">
-                <a href="/articles-list/3/">4</a>
-              </li>
             
-              
-              <li class="">
-                <a href="/articles-list/4/">5</a>
-              </li>
+            <a class="site-pagination__button"
+               href="/articles-list/1/"
+               aria-label="文章第 2 页"
+               >2</a>
             
+          
+            
+            
+            <a class="site-pagination__button"
+               href="/articles-list/2/"
+               aria-label="文章第 3 页"
+               >3</a>
+            
+          
+            
+            
+            <a class="site-pagination__button"
+               href="/articles-list/3/"
+               aria-label="文章第 4 页"
+               >4</a>
+            
+          
+            
+            
+            <a class="site-pagination__button"
+               href="/articles-list/4/"
+               aria-label="文章第 5 页"
+               >5</a>
+            
+          
+            
+            
+          
+            
+            
+          
 
-            
-              <li>
-                <a href="/articles-list/1/">下一页</a>
-              </li>
-            
-          </ul>
+          
+            <a class="site-pagination__button"
+               href="/articles-list/1/"
+               aria-label="文章下一页">›</a>
+          
 
-          <hr class="g-brd-gray-light-v4 g-my-50">
+          <span class="site-pagination__status">
+            第 1 / 7 页，共 132 个文章
+          </span>
         </nav>
+        <hr class="g-brd-gray-light-v4 g-my-50">
 
       </div>
     </div>

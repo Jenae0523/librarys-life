@@ -3,14 +3,14 @@
 <head>
   <head>
   <title>唐望揭示：学习之路必经的四大考验！成为智者的修行指南・生命之书 | librarys.life</title>
-  <meta name="description" content="唐望提出：成为智者，必须战胜四个敌人——恐惧、明晰、力量与衰老。本篇深度解析每一阶段的心理陷阱，结合克里希那穆提的学习观，揭示成长的内在修炼路径。适合自我觉察、心灵成长、灵性追寻者参考。">
+  <meta name="description" content="成为智者为什么要先后面对恐惧、明晰、力量与衰老？唐望把学习描述为一场持续一生的考验：恐惧使人退缩，明晰使人自负，力量诱使人滥用所得，衰老则让人想要停下。真正的成长不在于彻底消灭这些敌人，而是在它们出现时仍保持谨慎、节制与继续学习的意志。">
 <meta name="keywords" content="卡洛斯卡斯塔涅达, 唐望的智慧教导, 智者的四个敌人, 自我成长修炼, 心灵成长之路, 克服恐惧, 灵性智慧, 智者之路">
 
 <meta name="robots" content="all">
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260727-2319">
+<meta name="version" content="20260728-0050">
 
 
 <meta charset="utf-8">
@@ -67,6 +67,8 @@
 
 </head>
 
+  <link rel="stylesheet" href="/assets/css/selection-search.css">
+  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -74,10 +76,59 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
+      max-width: 100%;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-body iframe,
+.article-body video,
+.article-body audio,
+.article-body canvas,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.article-body a,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 	
 .article-body p {
@@ -108,6 +159,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -216,17 +293,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -410,6 +492,8 @@ html {
     </h2>
     
 
+    
+
     <!-- MP3有声书 -->
     
     <audio controls="controls">
@@ -547,7 +631,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -722,48 +806,115 @@ html {
 
 
 			  
-			  <!-- 加一条灰线 -->
+              <!-- 加一条灰线 -->
               <hr class="g-brd-gray-light-v4 g-my-50">			  			  
               <!-- 相关文章 -->			  
               
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">这条道路，有心吗？一条路使你坚强，另一条路使你软弱</h5>
-          <p class="g-color-gray-dark-v4">在人生的每一个关键选择面前，我们是否真的知道该走哪一条路？本篇深入探讨平行宇宙视角下的选择困境，带你理解“有心之路”的智慧——一种源自古老哲思的内在导航方式。告别焦虑、放下执念，从多版本的自我中，找到那个与你真正对话的声音。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/teachings-of-don-juan/1-the-path-that-makes-you-strong-or-weak.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">这条道路，有心吗？一条路使你坚强，另一条路使你软弱</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">当每一条路都无法保证抵达正确的终点，我们该凭什么选择？卡斯塔尼达笔下的唐望认为，真正需要问的不是这条路是否安全、成功或符合他人期待，而是它是否“有心”：走在其中，你会变得丰盈而坚强，还是逐渐怨恨自己的生命。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/insight-awakening/teachings-of-don-juan/1-the-path-that-makes-you-strong-or-weak.html"
+             aria-label="阅读相关文章：这条道路，有心吗？一条路使你坚强，另一条路使你软弱">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">星际种子与原生家庭：4大灵魂使命与家族业力疗愈指南</h5>
-          <p class="g-color-gray-dark-v4">探索星际种子（Starseeds）为何常出生在充满阻塞能量的原生家庭，以及他们肩负的家族业力疗愈与觉醒使命。本文解析星际种子的4个灵魂任务：疗愈内在小孩、摆脱家族业力、找回真正的自我、找到灵魂家族，帮助你走上灵性觉醒之路。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/healing-empowerment/starseeds-family-karma-healing-spiritual-awakening-guide.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">一个人为什么会反复进入控制、暴力与自我牺牲的关系？朱迪·赛恩回望被收养、宗教压抑、事业成功、婚姻破裂与危险关系如何共同塑造她，也诚实记录自己怎样把渴望被爱误认成必须不断证明价值。真正的转折并非一次神秘体验，而是看见童年创伤如何使自己长期停留在受害结构中，选择离开控制，并在安全的关系里重新学习信任。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html"
+             aria-label="阅读相关文章：一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">当“觉醒”成为商品：如何识别真正的灵性导师与安全实践</h5>
-          <p class="g-color-gray-dark-v4">本文探讨现代灵性市场中的现象：当“觉醒”课程被商品化，如何分辨真诚导师与潜在心理操控。通过真实案例分析灵性导师面对质疑、批评与自我反思的方式，提供理性与灵性结合的思考框架，帮助读者在追寻灵性成长时保持独立判断、内在主权与心理安全。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/muyu-brief/2-awakening-as-commodity.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">疾病是业力惩罚，还是身体、心智与灵魂失衡后的结果？埃德加·凯西关于多发性硬化、失明与关节炎的解读，既要求当事人改变仇恨、自私等内在态度，也明确保留药物、手术、整骨与其他身体疗法的位置。健康问题不能被一概归因于心念，真正的整体疗愈需要同时尊重身体原因、心理改变与精神成长。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html"
+             aria-label="阅读相关文章：疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1152,6 +1303,69 @@ html {
   </ul>
 </div>
 
+
+              <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- 文章搜索入口 -->
+              <div class="article-sidebar-search">
+                
+                <section
+  class="article-search-panel article-search-panel--entry article-search-panel--compact"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 132 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+              </div>
 			  
 			  
             </div>
@@ -1233,6 +1447,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1286,9 +1512,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1300,6 +1527,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1348,6 +1578,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

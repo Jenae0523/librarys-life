@@ -3,14 +3,14 @@
 <head>
   <head>
   <title>多维宇宙与时间真相：平行人生、UFO与意识本质的终极解释・生命之书 | librarys.life</title>
-  <meta name="description" content="这篇文章系统解析一个颠覆认知的世界观：你并不是完整的“你”，而是更大意识中的一个聚焦点。深入探讨多维宇宙结构、时间并非线性流动的本质、平行人生的真实机制，以及UFO与外星文明为何难以被发现。从意识、维度与感知的角度，重新理解现实、成长与存在，带你从“个体视角”走向“整体意识”。">
+  <meta name="description" content="你所认识的“自己”，是否只是更大意识暂时聚焦的一个点？《回旋宇宙》中的催眠对话把时间描述为同时存在的闭环结构，并以意识焦点解释平行人生、前世回溯与潜意识。UFO、外星文明和维度穿越，也被放进“感知带宽不同”的多维宇宙框架中。">
 <meta name="keywords" content="多维宇宙, 平行宇宙理论, 时间本质, 意识聚焦, 平行人生, UFO现象解释, 高维文明, 潜意识与灵魂, 时间闭环结构, 宇宙多重现实">
 
 <meta name="robots" content="all">
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260727-2319">
+<meta name="version" content="20260728-0050">
 
 
 <meta charset="utf-8">
@@ -67,6 +67,8 @@
 
 </head>
 
+  <link rel="stylesheet" href="/assets/css/selection-search.css">
+  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -74,10 +76,59 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
+      max-width: 100%;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-body iframe,
+.article-body video,
+.article-body audio,
+.article-body canvas,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.article-body a,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 	
 .article-body p {
@@ -108,6 +159,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -216,17 +293,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -408,6 +490,8 @@ html {
     <h2 class="h1 g-color-gray-dark-v1 g-mb-30 g-font-weight-300">
       为什么你感觉不完整？如何感知其他维度？穿越的可能性？费城实验
     </h2>
+    
+
     
 
     <!-- MP3有声书 -->
@@ -783,7 +867,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -1006,48 +1090,115 @@ html {
 
 
 			  
-			  <!-- 加一条灰线 -->
+              <!-- 加一条灰线 -->
               <hr class="g-brd-gray-light-v4 g-my-50">			  			  
               <!-- 相关文章 -->			  
               
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">大角星人飞船与高维文明：汤姆·肯永讲述他的第二次接触经历｜《大角星人文摘》2</h5>
-          <p class="g-color-gray-dark-v4">心理治疗师汤姆·肯永汤姆·肯永描述自己被带上一艘大角星飞船，接触意识导航、多维空间与全息感应语言。比飞船本身更值得注意的是，大角星人对仁慈、时间和现实的理解，以及这些激进观念如何迫使人跳出固有的认知框架。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/alien-archives/arcturian/the-arcturian-anthology02-arcturian-spaceship-higher-dimensional-civilization.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">大角星人飞船与高维文明：汤姆·肯永讲述他的第二次接触经历｜《大角星人文摘》2</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">心理治疗师汤姆·肯永汤姆·肯永描述自己被带上一艘大角星飞船，接触意识导航、多维空间与全息感应语言。比飞船本身更值得注意的是，大角星人对仁慈、时间和现实的理解，以及这些激进观念如何迫使人跳出固有的认知框架。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology02-arcturian-spaceship-higher-dimensional-civilization.html"
+             aria-label="阅读相关文章：大角星人飞船与高维文明：汤姆·肯永讲述他的第二次接触经历｜《大角星人文摘》2">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">前世催眠回溯揭秘：潜意识、集体意识与宇宙意识探索指南</h5>
-          <p class="g-color-gray-dark-v4">深入解析潜意识的全知特性，探索前世催眠、冥想、控梦与星体投射等意识层次门户。结合催眠案例、脑波研究及历史实例，揭示如何通过控制专注力访问潜意识、获取失落知识与灵性启示。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-collective-consciousness-astral-projection.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">前世催眠回溯揭秘：潜意识、集体意识与宇宙意识探索指南</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">催眠中出现的“潜意识”，为什么常像一个独立于日常人格的观察者？文章结合朵洛莉丝·侃南、埃德加·凯西、多重人格案例与脑波研究，比较催眠、冥想、控梦和星体投射如何改变注意力与意识状态。它也提醒，这些实践并非没有风险，未知体验需要知识、辨别力与心理准备。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-collective-consciousness-astral-projection.html"
+             aria-label="阅读相关文章：前世催眠回溯揭秘：潜意识、集体意识与宇宙意识探索指南">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">觉醒与地球未来：提升振动频率与灵性成长指南</h5>
-          <p class="g-color-gray-dark-v4">探索人类觉醒如何改变地球的未来，通过催眠案例揭示意识、生命力与灵性成长的关键。了解如何提升振动频率、善行与觉知，从而影响潜在的地球未来。本文提供实践建议与思维启发，引导你走向觉醒之路。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">战争创伤与灵魂转世：越战案例揭示潜意识疗愈与地球进化课题</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">战争结束后，创伤为什么仍会长期留在身体与意识中？一名越战退伍军人的催眠回溯，把慢性疼痛、恐惧与战争记忆延伸到灵魂中转站、星际种子和转世课题；他的潜意识并未简单消除疼痛，而是把它解释为仍在进行的学习与关系经验。相关内容属于催眠个案的灵性诠释，不能替代创伤治疗与医疗评估。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/dolores-cannon-hypnosis/war-trauma-soul-reincarnation-subconscious-healing-starseed-case-study.html"
+             aria-label="阅读相关文章：战争创伤与灵魂转世：越战案例揭示潜意识疗愈与地球进化课题">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1436,6 +1587,69 @@ html {
   </ul>
 </div>
 
+
+              <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- 文章搜索入口 -->
+              <div class="article-sidebar-search">
+                
+                <section
+  class="article-search-panel article-search-panel--entry article-search-panel--compact"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 132 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+              </div>
 			  
 			  
             </div>
@@ -1517,6 +1731,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1570,9 +1796,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1584,6 +1811,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1632,6 +1862,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

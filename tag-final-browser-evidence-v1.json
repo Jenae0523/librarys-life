@@ -1,0 +1,6 @@
+{
+  "completed": false,
+  "passed": false,
+  "attempted_url": "http://127.0.0.1:8080/tags/spirit-guides/",
+  "notes": "已启动本地 Eleventy 预览并尝试接管既有站点标签页；浏览器控制因本地 URL 安全策略拒绝导航。未使用替代浏览器或其他绕过方式，因此刷新、前进/后退和 URL 状态恢复缺少真实浏览器交互证据。"
+}

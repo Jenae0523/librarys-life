@@ -48,7 +48,7 @@ tags:
   - 女性灵性
   - 通灵信息
   - 冥想
-download_url: https://readcafe.life/free-ebooks/authors/tom-kenyon/20250727--mo-da-la-shou-gao---mu-yu-fan-yi-jie-du.pdf
+download_url: https://readcafe.life/free-ebooks/authors/tom-kenyon/mo-da-la-shou-gao-librarys-life-20260710.pdf
 book_slug: mary-magdalene
 is_book_index: true
 content_type: audiobook
