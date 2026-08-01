@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-30T05:59:03.016Z",
+  "generated_at": "2026-08-01T04:50:19.928Z",
   "rule_version": "mixed-related-articles-v1",
   "article_count": 135,
   "recommendation_count": 405,
-  "recommendation_generation_ms": 1640.796,
+  "recommendation_generation_ms": 2878.606,
   "articles": [
     {
       "title": "来自星星的孩子揭秘：前世回溯与星际种子灵魂成长指南",
@@ -5665,2650 +5665,6 @@
               "type": "parent",
               "score": 5,
               "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
-      "url": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
-          "url": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
-          "source": "auto",
-          "score": 68,
-          "rank_score": 89.5,
-          "structural_score": 31,
-          "semantic_score": 37,
-          "reason": "都涉及「吸引力法则」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 26,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "创造与显化"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《伟大的人类潜能在自己的光中行走》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "频率"
-            }
-          ]
-        },
-        {
-          "title": "治愈身体：我应该遵循什么样的饮食？食物的频率与吸引力法则",
-          "url": "/all-articles/courses/human-body-healing/healing-diet-energy-frequency-emotional-balance.html",
-          "source": "auto",
-          "score": 52,
-          "rank_score": 81.5,
-          "structural_score": 15,
-          "semantic_score": 37,
-          "reason": "都涉及「吸引力法则」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 20,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《伟大的人类潜能在自己的光中行走》"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "人类潜能如何被唤醒？大角星人谈行星意识、星际DNA与宇宙触发因素｜《大角星人文摘》第7集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology07-planetary-consciousness-starseed-dna.html",
-          "source": "auto",
-          "score": 40,
-          "rank_score": 80,
-          "structural_score": 0,
-          "semantic_score": 40,
-          "reason": "共同关注「人类潜能」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "频率"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "人类潜能"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "频率"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈",
-      "url": "/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "揭秘前世催眠回溯：潜意识身体信号解读与灵魂疗愈指南",
-          "url": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-body-signs-soul-healing.html",
-          "source": "auto",
-          "score": 49,
-          "rank_score": 66.5,
-          "structural_score": 21,
-          "semantic_score": 28,
-          "reason": "共同关注「身心灵健康」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "身心灵健康"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "潜意识"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "灵魂转世的秘密：印记系统、阿卡西记录与基督意识的多层现实解析",
-          "url": "/all-articles/books/between-death-life/38-soul-imprints-akashic-records-reincarnation-christ-consciousness-evolution.html",
-          "source": "auto",
-          "score": 35,
-          "rank_score": 62.5,
-          "structural_score": 5,
-          "semantic_score": 30,
-          "reason": "共同关注「基督意识」",
-          "matched_by": [
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "基督意识"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "tag",
-              "score": 8,
-              "label": "基督意识"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "基督意识"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
-          "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
-          "source": "auto",
-          "score": 47,
-          "rank_score": 62.5,
-          "structural_score": 21,
-          "semantic_score": 26,
-          "reason": "都涉及「身体疗愈」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "情绪疗愈"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "揭秘道教炼金术② 如何修炼“气体身”？从采气，到炼气化神 │ 现代科学已证明“经络”存在？│ 抹大拉手稿23集",
-      "url": "/all-articles/books/mary-magdalene/23-taoist-alchemy-how-to-cultivate-energy-body-breathing-to-spirit.html",
-      "manual_declared": 3,
-      "manual_valid": 3,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
-          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
-          "source": "manual",
-          "score": null,
-          "rank_score": null,
-          "structural_score": null,
-          "semantic_score": null,
-          "reason": "延伸理解脉轮、能量中心与身体练习",
-          "matched_by": []
-        },
-        {
-          "title": "治愈身体：我应该遵循什么样的饮食？食物的频率与吸引力法则",
-          "url": "/all-articles/courses/human-body-healing/healing-diet-energy-frequency-emotional-balance.html",
-          "source": "manual",
-          "score": null,
-          "rank_score": null,
-          "structural_score": null,
-          "semantic_score": null,
-          "reason": "继续探索身体、能量频率与日常疗愈",
-          "matched_by": []
-        },
-        {
-          "title": "心理—精神排毒：催眠、冥想与声音如何触发情绪释放和感知改变",
-          "url": "/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html",
-          "source": "manual",
-          "score": null,
-          "rank_score": null,
-          "structural_score": null,
-          "semantic_score": null,
-          "reason": "从炼气与身体感知延伸到身心释放",
-          "matched_by": []
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化",
-      "url": "/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生",
-          "url": "/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html",
-          "source": "auto",
-          "score": 83,
-          "rank_score": 127,
-          "structural_score": 26,
-          "semantic_score": 57,
-          "reason": "共同关注「女性成长」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 25,
-              "label": "女性灵性"
-            },
-            {
-              "type": "keyword",
-              "score": 24,
-              "label": "女性成长"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "女性灵性"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "星际种子与原生家庭：4大灵魂使命与家族业力疗愈指南",
-          "url": "/all-articles/healing-empowerment/starseeds-family-karma-healing-spiritual-awakening-guide.html",
-          "source": "auto",
-          "score": 57,
-          "rank_score": 102,
-          "structural_score": 8,
-          "semantic_score": 49,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 30,
-              "label": "原生家庭"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "生命的疗愈 / 自我赋权"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "情绪疗愈"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "原生家庭"
-            }
-          ]
-        },
-        {
-          "title": "当“觉醒”成为商品：如何识别真正的灵性导师与安全实践",
-          "url": "/all-articles/muyu-brief/2-awakening-as-commodity.html",
-          "source": "auto",
-          "score": 34,
-          "rank_score": 68,
-          "structural_score": 0,
-          "semantic_score": 34,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "灵性觉醒"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生",
-      "url": "/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化",
-          "url": "/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html",
-          "source": "auto",
-          "score": 83,
-          "rank_score": 127,
-          "structural_score": 26,
-          "semantic_score": 57,
-          "reason": "共同关注「女性成长」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 25,
-              "label": "女性灵性"
-            },
-            {
-              "type": "keyword",
-              "score": 24,
-              "label": "女性成长"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "女性灵性"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "真实会让人自由：抹大拉手稿中的神圣关系、女性原则与爱的炼金术",
-          "url": "/all-articles/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.html",
-          "source": "auto",
-          "score": 53,
-          "rank_score": 67,
-          "structural_score": 26,
-          "semantic_score": 27,
-          "reason": "都涉及「女性灵性」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 19,
-              "label": "女性灵性"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "是什么在阻碍你达成目标？｜暮雨札记与心智觉察指南",
-          "url": "/all-articles/muyu-notes/what-is-blocking-your-goals-mind-awareness-self-mastery.html",
-          "source": "auto",
-          "score": 22,
-          "rank_score": 44,
-          "structural_score": 0,
-          "semantic_score": 22,
-          "reason": "共同关注「自我认知」",
-          "matched_by": [
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "自我认知"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "自我认知"
-            },
-            {
-              "type": "tag",
-              "score": 6,
-              "label": "自我认知"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "真实会让人自由：抹大拉手稿中的神圣关系、女性原则与爱的炼金术",
-      "url": "/all-articles/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "女性原则为何被从神话中抹去？索菲亚、逻各斯与宇宙之母的回归｜抹大拉手稿",
-          "url": "/all-articles/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.html",
-          "source": "auto",
-          "score": 76,
-          "rank_score": 105.5,
-          "structural_score": 31,
-          "semantic_score": 45,
-          "reason": "共同关注「神圣关系」",
-          "matched_by": [
-            {
-              "type": "keyword",
-              "score": 24,
-              "label": "神圣关系"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "tag",
-              "score": 7,
-              "label": "女性灵性"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "女性原则"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化",
-          "url": "/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html",
-          "source": "auto",
-          "score": 61,
-          "rank_score": 83,
-          "structural_score": 26,
-          "semantic_score": 35,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 19,
-              "label": "女性灵性"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "女性灵性"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生",
-          "url": "/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html",
-          "source": "auto",
-          "score": 53,
-          "rank_score": 67,
-          "structural_score": 26,
-          "semantic_score": 27,
-          "reason": "都涉及「女性灵性」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 19,
-              "label": "女性灵性"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "女性灵性"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "女性原则为何被从神话中抹去？索菲亚、逻各斯与宇宙之母的回归｜抹大拉手稿",
-      "url": "/all-articles/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "真实会让人自由：抹大拉手稿中的神圣关系、女性原则与爱的炼金术",
-          "url": "/all-articles/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.html",
-          "source": "auto",
-          "score": 76,
-          "rank_score": 105.5,
-          "structural_score": 31,
-          "semantic_score": 45,
-          "reason": "共同关注「神圣关系」",
-          "matched_by": [
-            {
-              "type": "keyword",
-              "score": 24,
-              "label": "神圣关系"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "tag",
-              "score": 7,
-              "label": "女性灵性"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "神圣关系"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "耶稣是大角星人？复活、抹大拉的玛利亚与被改写的基督叙事｜《大角星人文摘》第12集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology12-jesus-resurrection-mary-magdalene.html",
-          "source": "auto",
-          "score": 35,
-          "rank_score": 43,
-          "structural_score": 18,
-          "semantic_score": 17,
-          "reason": "都涉及「神话」主题",
-          "matched_by": [
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "失落文明 / 隐秘知识"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "tag",
-              "score": 6,
-              "label": "神话"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "神话"
-            }
-          ]
-        },
-        {
-          "title": "一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生",
-          "url": "/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html",
-          "source": "auto",
-          "score": 41,
-          "rank_score": 43,
-          "structural_score": 26,
-          "semantic_score": 15,
-          "reason": "都涉及「女性灵性」主题",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "女性灵性"
-            },
-            {
-              "type": "tag",
-              "score": 7,
-              "label": "女性灵性"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "《抹大拉手稿》"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验",
-      "url": "/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "DNA与梦境记忆：高我、小我、潜意识的形成原因 | 频率屏障与DNA修复全解析",
-          "url": "/all-articles/healing-empowerment/energy-dna-dream-memory-higher-self-ego-subconscious.html",
-          "source": "auto",
-          "score": 54,
-          "rank_score": 76.5,
-          "structural_score": 21,
-          "semantic_score": 33,
-          "reason": "都涉及「梦境」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 19,
-              "label": "梦境"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "意识扩展"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "梦境"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
-          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
-          "source": "auto",
-          "score": 52,
-          "rank_score": 72.5,
-          "structural_score": 21,
-          "semantic_score": 31,
-          "reason": "共同关注「灵性成长」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "通灵信息"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性成长"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "冥想"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "灵性成长"
-            }
-          ]
-        },
-        {
-          "title": "这条道路，有心吗？一条路使你坚强，另一条路使你软弱",
-          "url": "/all-articles/insight-awakening/teachings-of-don-juan/1-the-path-that-makes-you-strong-or-weak.html",
-          "source": "auto",
-          "score": 31,
-          "rank_score": 62,
-          "structural_score": 0,
-          "semantic_score": 31,
-          "reason": "共同关注「灵性成长」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性成长"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "自我认知"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "灵性成长"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "第五维度觉醒指南：哈索尔的讯息、意识进化与声音冥想练习",
-      "url": "/all-articles/courses/consciousness-alchemy/fifth-dimension-consciousness-evolution-sound-meditation.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
-          "source": "auto",
-          "score": 52,
-          "rank_score": 89,
-          "structural_score": 10,
-          "semantic_score": 42,
-          "reason": "都涉及「声音疗愈」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 25,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "大角星人"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "超越业力之轮：高维意识、光的频率与人类觉醒的真实机制",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/beyond-karma-wheel-human-consciousness-dimensions-light-awakening.html",
-          "source": "auto",
-          "score": 60,
-          "rank_score": 88.5,
-          "structural_score": 21,
-          "semantic_score": 39,
-          "reason": "共同关注「意识觉醒」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "意识觉醒"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "频率"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "高维意识"
-            }
-          ]
-        },
-        {
-          "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
-          "source": "auto",
-          "score": 58,
-          "rank_score": 77,
-          "structural_score": 26,
-          "semantic_score": 32,
-          "reason": "都涉及「冥想」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "冥想"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "大角星人"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "通灵信息"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "为什么五感无法洞悉真相？情绪的感知扩展，是直通灵魂矩阵的天线",
-      "url": "/all-articles/courses/consciousness-alchemy/hsp-soul-matrix-holographic-inserts-frequency-barrier.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧",
-          "url": "/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html",
-          "source": "auto",
-          "score": 89,
-          "rank_score": 116.5,
-          "structural_score": 41,
-          "semantic_score": 48,
-          "reason": "共同关注「灵魂矩阵」",
-          "matched_by": [
-            {
-              "type": "series",
-              "score": 20,
-              "label": "异邦者"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "灵魂矩阵"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "意识扩展"
-            },
-            {
-              "type": "text",
-              "score": 12,
-              "label": "高等感知"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
-          "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
-          "source": "auto",
-          "score": 86,
-          "rank_score": 110.5,
-          "structural_score": 41,
-          "semantic_score": 45,
-          "reason": "共同关注「灵魂矩阵」",
-          "matched_by": [
-            {
-              "type": "series",
-              "score": 20,
-              "label": "异邦者"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "灵魂矩阵"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "意识扩展"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "灵魂矩阵"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒",
-          "url": "/all-articles/insight-awakening/logic-mind-emotional-intelligence-keylonta-codes-awakening.html",
-          "source": "auto",
-          "score": 78,
-          "rank_score": 94.5,
-          "structural_score": 41,
-          "semantic_score": 37,
-          "reason": "共同关注「灵魂矩阵」",
-          "matched_by": [
-            {
-              "type": "series",
-              "score": 20,
-              "label": "异邦者"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "意识扩展"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "科洛提代码"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵魂矩阵"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "混沌节点与意识的过渡状态：个人、集体与死亡的灵魂旅程",
-      "url": "/all-articles/courses/consciousness-alchemy/transition-states-consciousness-chaotic-nodes.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "死亡不是终点：死后世界的三大入口与“意识过渡”完整指南",
-          "url": "/all-articles/philosophy-consciousness/death-transition-three-choices-light-void-spiritual-guide.html",
-          "source": "auto",
-          "score": 64,
-          "rank_score": 113,
-          "structural_score": 10,
-          "semantic_score": 54,
-          "reason": "共同关注「哈索尔」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "现实创造"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "哈索尔"
-            },
-            {
-              "type": "text",
-              "score": 12,
-              "label": "死后世界"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "哈索尔人"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            }
-          ]
-        },
-        {
-          "title": "大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html",
-          "source": "auto",
-          "score": 50,
-          "rank_score": 68.5,
-          "structural_score": 21,
-          "semantic_score": 29,
-          "reason": "都涉及「现实创造」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "现实创造"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "现实创造"
-            }
-          ]
-        },
-        {
-          "title": "大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html",
-          "source": "auto",
-          "score": 37,
-          "rank_score": 66.5,
-          "structural_score": 5,
-          "semantic_score": 32,
-          "reason": "都涉及「现实创造」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "现实创造"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "死后世界"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "你所专注的，会被你的能量喂养｜思想如何参与创造现实？",
-      "url": "/all-articles/courses/creation-manifestation/focus-expands-thought-energy-possibility-sphere.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
-          "url": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
-          "source": "auto",
-          "score": 46,
-          "rank_score": 60.5,
-          "structural_score": 21,
-          "semantic_score": 25,
-          "reason": "都涉及「吸引力法则」主题",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "创造与显化"
-            },
-            {
-              "type": "tag",
-              "score": 14,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "显化"
-            }
-          ]
-        },
-        {
-          "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
-          "url": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
-          "source": "auto",
-          "score": 46,
-          "rank_score": 60.5,
-          "structural_score": 21,
-          "semantic_score": 25,
-          "reason": "都涉及「吸引力法则」主题",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "创造与显化"
-            },
-            {
-              "type": "tag",
-              "score": 14,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "显化"
-            }
-          ]
-        },
-        {
-          "title": "平行宇宙揭秘：每个选择都在创造新现实？多重人生与业力真相解析",
-          "url": "/all-articles/dolores-cannon-hypnosis/multiverse/parallel-universe-every-choice-creates-new-reality-multiverse-karma-explained.html",
-          "source": "auto",
-          "score": 25,
-          "rank_score": 42.5,
-          "structural_score": 5,
-          "semantic_score": 20,
-          "reason": "都涉及「现实创造」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "现实创造"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "朵洛莉丝·侃南"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
-      "url": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
-          "url": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
-          "source": "auto",
-          "score": 68,
-          "rank_score": 89.5,
-          "structural_score": 31,
-          "semantic_score": 37,
-          "reason": "都涉及「吸引力法则」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 26,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "创造与显化"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《伟大的人类潜能在自己的光中行走》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "意识扩展"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "频率"
-            }
-          ]
-        },
-        {
-          "title": "治愈身体：我应该遵循什么样的饮食？食物的频率与吸引力法则",
-          "url": "/all-articles/courses/human-body-healing/healing-diet-energy-frequency-emotional-balance.html",
-          "source": "auto",
-          "score": 57,
-          "rank_score": 79.5,
-          "structural_score": 23,
-          "semantic_score": 34,
-          "reason": "都涉及「吸引力法则」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 20,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《伟大的人类潜能在自己的光中行走》"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "生命的疗愈 / 自我赋权"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "频率"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html",
-          "source": "auto",
-          "score": 34,
-          "rank_score": 60.5,
-          "structural_score": 5,
-          "semantic_score": 29,
-          "reason": "都涉及「现实创造」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "现实创造"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "现实创造"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "频率"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实",
-      "url": "/all-articles/courses/creation-manifestation/multiple-truths-911-conspiracy-consciousness-reality-creation.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "阿卡西记录能看见未来吗？大角星人谈可能时间线与集体意识｜《大角星人文摘》第10集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology10-akashic-records-future-timelines.html",
-          "source": "auto",
-          "score": 46,
-          "rank_score": 92,
-          "structural_score": 0,
-          "semantic_score": 46,
-          "reason": "共同关注「集体意识」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 24,
-              "label": "平行宇宙"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "集体意识"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "集体意识"
-            }
-          ]
-        },
-        {
-          "title": "思维能塑造现实吗？大角星人谈平行现实、情绪过滤器与多维意识｜《大角星人文摘》第9集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology09-mind-parallel-reality-multidimensional-consciousness.html",
-          "source": "auto",
-          "score": 61,
-          "rank_score": 90.5,
-          "structural_score": 21,
-          "semantic_score": 40,
-          "reason": "共同关注「平行现实」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "平行宇宙"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "创造与显化"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "平行现实"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "现实创造"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "前世催眠回溯揭秘：潜意识、集体意识与宇宙意识探索指南",
-          "url": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-collective-consciousness-astral-projection.html",
-          "source": "auto",
-          "score": 39,
-          "rank_score": 78,
-          "structural_score": 0,
-          "semantic_score": 39,
-          "reason": "共同关注「集体意识」",
-          "matched_by": [
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "集体意识"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "集体意识"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "意识扩展"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "集体意识"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "治愈身体：我应该遵循什么样的饮食？食物的频率与吸引力法则",
-      "url": "/all-articles/courses/human-body-healing/healing-diet-energy-frequency-emotional-balance.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
-          "url": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
-          "source": "auto",
-          "score": 52,
-          "rank_score": 81.5,
-          "structural_score": 15,
-          "semantic_score": 37,
-          "reason": "都涉及「吸引力法则」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 20,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《伟大的人类潜能在自己的光中行走》"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "频率"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "意识扩展"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
-          "url": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
-          "source": "auto",
-          "score": 57,
-          "rank_score": 79.5,
-          "structural_score": 23,
-          "semantic_score": 34,
-          "reason": "都涉及「吸引力法则」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 20,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《伟大的人类潜能在自己的光中行走》"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "生命的疗愈 / 自我赋权"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "现实创造"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "频率"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html",
-          "source": "auto",
-          "score": 47,
-          "rank_score": 62.5,
-          "structural_score": 21,
-          "semantic_score": 26,
-          "reason": "都涉及「身体疗愈」主题",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "能量场"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "频率"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "心理—精神排毒：催眠、冥想与声音如何触发情绪释放和感知改变",
-      "url": "/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
-          "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
-          "source": "auto",
-          "score": 62,
-          "rank_score": 85,
-          "structural_score": 26,
-          "semantic_score": 36,
-          "reason": "都涉及「声音疗愈」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 25,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "冥想"
-            }
-          ]
-        },
-        {
-          "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
-          "source": "auto",
-          "score": 59,
-          "rank_score": 79,
-          "structural_score": 26,
-          "semantic_score": 33,
-          "reason": "都涉及「声音疗愈」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 19,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "大角星人"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "前世催眠回溯揭秘：潜意识、集体意识与宇宙意识探索指南",
-          "url": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-collective-consciousness-astral-projection.html",
-          "source": "auto",
-          "score": 32,
-          "rank_score": 64,
-          "structural_score": 0,
-          "semantic_score": 32,
-          "reason": "都涉及「冥想」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "冥想"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "潜意识"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "冥想"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "自我整合指南：脉轮练习与多维生命的频率提升",
-      "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "觉醒与地球未来：提升振动频率与灵性成长指南",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html",
-          "source": "auto",
-          "score": 44,
-          "rank_score": 80.5,
-          "structural_score": 5,
-          "semantic_score": 39,
-          "reason": "共同关注「振动频率」",
-          "matched_by": [
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "振动频率"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "频率"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "外星文明"
-            },
-            {
-              "type": "tag",
-              "score": 6,
-              "label": "集体意识"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
-          "source": "auto",
-          "score": 54,
-          "rank_score": 76.5,
-          "structural_score": 21,
-          "semantic_score": 33,
-          "reason": "都涉及「声音疗愈」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 19,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "冥想"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "灵魂的探照灯：唤醒你的生命之花十二道光线创造之轮，成为有意识的共同创造者",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html",
-          "source": "auto",
-          "score": 41,
-          "rank_score": 74.5,
-          "structural_score": 5,
-          "semantic_score": 36,
-          "reason": "都涉及「脉轮」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 25,
-              "label": "脉轮"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "意识扩展"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "脉轮"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "睡眠自愈力：第五维度、潜意识疗愈与高维治疗师的睡前观想",
-      "url": "/all-articles/courses/human-body-healing/sleep-self-healing-fifth-dimension-higher-self-dreams.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "睡眠如何帮助身体自我修复？大角星医疗官谈睡前意图与高维疗愈｜《大角星人文摘》第13集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology13-sleep-self-healing-bedtime-intention.html",
-          "source": "auto",
-          "score": 75,
-          "rank_score": 103.5,
-          "structural_score": 31,
-          "semantic_score": 44,
-          "reason": "共同关注「睡眠自愈力」",
-          "matched_by": [
-            {
-              "type": "keyword",
-              "score": 24,
-              "label": "睡眠自愈力"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "大角星人"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "大角星人"
-            },
-            {
-              "type": "tag",
-              "score": 6,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "睡眠自愈力"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html",
-          "source": "auto",
-          "score": 60,
-          "rank_score": 81,
-          "structural_score": 26,
-          "semantic_score": 34,
-          "reason": "共同关注「潜意识疗愈」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "潜意识疗愈"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "潜意识"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "朵洛莉丝·侃南"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "战争创伤与灵魂转世：越战案例揭示潜意识疗愈与地球进化课题",
-          "url": "/all-articles/dolores-cannon-hypnosis/war-trauma-soul-reincarnation-subconscious-healing-starseed-case-study.html",
-          "source": "auto",
-          "score": 39,
-          "rank_score": 70.5,
-          "structural_score": 5,
-          "semantic_score": 34,
-          "reason": "共同关注「潜意识疗愈」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "潜意识疗愈"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "潜意识"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "朵洛莉丝·侃南"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？",
-      "url": "/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "解密灵与魂：灵的本质、灵魂重聚与扬升光柱实用指南",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.html",
-          "source": "auto",
-          "score": 63,
-          "rank_score": 87,
-          "structural_score": 26,
-          "semantic_score": 37,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "大天使迈克尔 / 光之信息"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "大天使迈克尔"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "扬升"
-            }
-          ]
-        },
-        {
-          "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
-          "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
-          "source": "auto",
-          "score": 55,
-          "rank_score": 78.5,
-          "structural_score": 21,
-          "semantic_score": 34,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "意识扩展"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "真正的教导，指向自我实现｜教导与学习的本质解析",
-          "url": "/all-articles/insight-awakening/teaching-and-learning-self-realization-spiritual-growth.html",
-          "source": "auto",
-          "score": 37,
-          "rank_score": 74,
-          "structural_score": 0,
-          "semantic_score": 37,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "自我觉知"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处",
-      "url": "/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "解密灵与魂：灵的本质、灵魂重聚与扬升光柱实用指南",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.html",
-          "source": "auto",
-          "score": 68,
-          "rank_score": 97,
-          "structural_score": 26,
-          "semantic_score": 42,
-          "reason": "共同关注「灵魂」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "大天使迈克尔 / 光之信息"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "灵魂"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "死后世界"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "死后世界"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "大天使迈克尔"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "地狱是心智创造的吗？灵魂能量、负面振动与濒死经验的深层解析",
-          "url": "/all-articles/books/between-death-life/22-is-hell-created-by-mind-negative-energy-afterlife-near-death-experience-explained.html",
-          "source": "auto",
-          "score": 46,
-          "rank_score": 92,
-          "structural_score": 0,
-          "semantic_score": 46,
-          "reason": "都涉及「濒死体验」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 26,
-              "label": "濒死体验"
-            },
-            {
-              "type": "text",
-              "score": 12,
-              "label": "频率"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "死后世界"
-            }
-          ]
-        },
-        {
-          "title": "濒死经验全记录：死亡天使、灵魂议会与死后世界的真实案例解析",
-          "url": "/all-articles/books/between-death-life/4-near-death-experience-afterlife-soul-council-energy-consciousness.html",
-          "source": "auto",
-          "score": 39,
-          "rank_score": 78,
-          "structural_score": 0,
-          "semantic_score": 39,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 14,
-              "label": "濒死体验"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "死后世界"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "死后世界"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "灵魂的探照灯：唤醒你的生命之花十二道光线创造之轮，成为有意识的共同创造者",
-      "url": "/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
-          "source": "auto",
-          "score": 47,
-          "rank_score": 86.5,
-          "structural_score": 5,
-          "semantic_score": 42,
-          "reason": "都涉及「脉轮」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 25,
-              "label": "脉轮"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "通灵信息"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "Nakura冥想是什么？顶轮、净光与改变意识状态的练习｜《大角星人文摘》第15集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html",
-          "source": "auto",
-          "score": 44,
-          "rank_score": 80.5,
-          "structural_score": 5,
-          "semantic_score": 39,
-          "reason": "都涉及「脉轮」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 25,
-              "label": "脉轮"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "冥想"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
-          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
-          "source": "auto",
-          "score": 41,
-          "rank_score": 74.5,
-          "structural_score": 5,
-          "semantic_score": 36,
-          "reason": "都涉及「脉轮」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 25,
-              "label": "脉轮"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "脉轮"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "解密灵与魂：灵的本质、灵魂重聚与扬升光柱实用指南",
-      "url": "/all-articles/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html",
-          "source": "auto",
-          "score": 68,
-          "rank_score": 97,
-          "structural_score": 26,
-          "semantic_score": 42,
-          "reason": "共同关注「灵魂」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "大天使迈克尔 / 光之信息"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "灵魂"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "死后世界"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "死后世界"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "大天使迈克尔"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html",
-          "source": "auto",
-          "score": 63,
-          "rank_score": 87,
-          "structural_score": 26,
-          "semantic_score": 37,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "大天使迈克尔 / 光之信息"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "大天使迈克尔"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "扬升"
-            }
-          ]
-        },
-        {
-          "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
-          "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
-          "source": "auto",
-          "score": 36,
-          "rank_score": 64.5,
-          "structural_score": 5,
-          "semantic_score": 31,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "意识扩展"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "灵魂"
             }
           ]
         }
@@ -14282,6 +11638,2650 @@
       "needs_manual_review": false
     },
     {
+      "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
+      "url": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
+          "url": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
+          "source": "auto",
+          "score": 68,
+          "rank_score": 89.5,
+          "structural_score": 31,
+          "semantic_score": 37,
+          "reason": "都涉及「吸引力法则」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 26,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "创造与显化"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《伟大的人类潜能在自己的光中行走》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "频率"
+            }
+          ]
+        },
+        {
+          "title": "治愈身体：我应该遵循什么样的饮食？食物的频率与吸引力法则",
+          "url": "/all-articles/courses/human-body-healing/healing-diet-energy-frequency-emotional-balance.html",
+          "source": "auto",
+          "score": 52,
+          "rank_score": 81.5,
+          "structural_score": 15,
+          "semantic_score": 37,
+          "reason": "都涉及「吸引力法则」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 20,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《伟大的人类潜能在自己的光中行走》"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "人类潜能如何被唤醒？大角星人谈行星意识、星际DNA与宇宙触发因素｜《大角星人文摘》第7集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology07-planetary-consciousness-starseed-dna.html",
+          "source": "auto",
+          "score": 40,
+          "rank_score": 80,
+          "structural_score": 0,
+          "semantic_score": 40,
+          "reason": "共同关注「人类潜能」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "频率"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "人类潜能"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "频率"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈",
+      "url": "/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "揭秘前世催眠回溯：潜意识身体信号解读与灵魂疗愈指南",
+          "url": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-body-signs-soul-healing.html",
+          "source": "auto",
+          "score": 49,
+          "rank_score": 66.5,
+          "structural_score": 21,
+          "semantic_score": 28,
+          "reason": "共同关注「身心灵健康」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "身心灵健康"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "潜意识"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "灵魂转世的秘密：印记系统、阿卡西记录与基督意识的多层现实解析",
+          "url": "/all-articles/books/between-death-life/38-soul-imprints-akashic-records-reincarnation-christ-consciousness-evolution.html",
+          "source": "auto",
+          "score": 35,
+          "rank_score": 62.5,
+          "structural_score": 5,
+          "semantic_score": 30,
+          "reason": "共同关注「基督意识」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "基督意识"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "tag",
+              "score": 8,
+              "label": "基督意识"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "基督意识"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
+          "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
+          "source": "auto",
+          "score": 47,
+          "rank_score": 62.5,
+          "structural_score": 21,
+          "semantic_score": 26,
+          "reason": "都涉及「身体疗愈」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "情绪疗愈"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "揭秘道教炼金术② 如何修炼“气体身”？从采气，到炼气化神 │ 现代科学已证明“经络”存在？│ 抹大拉手稿23集",
+      "url": "/all-articles/books/mary-magdalene/23-taoist-alchemy-how-to-cultivate-energy-body-breathing-to-spirit.html",
+      "manual_declared": 3,
+      "manual_valid": 3,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
+          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
+          "source": "manual",
+          "score": null,
+          "rank_score": null,
+          "structural_score": null,
+          "semantic_score": null,
+          "reason": "延伸理解脉轮、能量中心与身体练习",
+          "matched_by": []
+        },
+        {
+          "title": "治愈身体：我应该遵循什么样的饮食？食物的频率与吸引力法则",
+          "url": "/all-articles/courses/human-body-healing/healing-diet-energy-frequency-emotional-balance.html",
+          "source": "manual",
+          "score": null,
+          "rank_score": null,
+          "structural_score": null,
+          "semantic_score": null,
+          "reason": "继续探索身体、能量频率与日常疗愈",
+          "matched_by": []
+        },
+        {
+          "title": "心理—精神排毒：催眠、冥想与声音如何触发情绪释放和感知改变",
+          "url": "/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html",
+          "source": "manual",
+          "score": null,
+          "rank_score": null,
+          "structural_score": null,
+          "semantic_score": null,
+          "reason": "从炼气与身体感知延伸到身心释放",
+          "matched_by": []
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化",
+      "url": "/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生",
+          "url": "/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html",
+          "source": "auto",
+          "score": 83,
+          "rank_score": 127,
+          "structural_score": 26,
+          "semantic_score": 57,
+          "reason": "共同关注「女性成长」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 25,
+              "label": "女性灵性"
+            },
+            {
+              "type": "keyword",
+              "score": 24,
+              "label": "女性成长"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "女性灵性"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "星际种子与原生家庭：4大灵魂使命与家族业力疗愈指南",
+          "url": "/all-articles/healing-empowerment/starseeds-family-karma-healing-spiritual-awakening-guide.html",
+          "source": "auto",
+          "score": 57,
+          "rank_score": 102,
+          "structural_score": 8,
+          "semantic_score": 49,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 30,
+              "label": "原生家庭"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "生命的疗愈 / 自我赋权"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "情绪疗愈"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "原生家庭"
+            }
+          ]
+        },
+        {
+          "title": "当“觉醒”成为商品：如何识别真正的灵性导师与安全实践",
+          "url": "/all-articles/muyu-brief/2-awakening-as-commodity.html",
+          "source": "auto",
+          "score": 34,
+          "rank_score": 68,
+          "structural_score": 0,
+          "semantic_score": 34,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "灵性觉醒"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生",
+      "url": "/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化",
+          "url": "/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html",
+          "source": "auto",
+          "score": 83,
+          "rank_score": 127,
+          "structural_score": 26,
+          "semantic_score": 57,
+          "reason": "共同关注「女性成长」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 25,
+              "label": "女性灵性"
+            },
+            {
+              "type": "keyword",
+              "score": 24,
+              "label": "女性成长"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "女性灵性"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "真实会让人自由：抹大拉手稿中的神圣关系、女性原则与爱的炼金术",
+          "url": "/all-articles/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.html",
+          "source": "auto",
+          "score": 53,
+          "rank_score": 67,
+          "structural_score": 26,
+          "semantic_score": 27,
+          "reason": "都涉及「女性灵性」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 19,
+              "label": "女性灵性"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "是什么在阻碍你达成目标？｜暮雨札记与心智觉察指南",
+          "url": "/all-articles/muyu-notes/what-is-blocking-your-goals-mind-awareness-self-mastery.html",
+          "source": "auto",
+          "score": 22,
+          "rank_score": 44,
+          "structural_score": 0,
+          "semantic_score": 22,
+          "reason": "共同关注「自我认知」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "自我认知"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "自我认知"
+            },
+            {
+              "type": "tag",
+              "score": 6,
+              "label": "自我认知"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "真实会让人自由：抹大拉手稿中的神圣关系、女性原则与爱的炼金术",
+      "url": "/all-articles/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "女性原则为何被从神话中抹去？索菲亚、逻各斯与宇宙之母的回归｜抹大拉手稿",
+          "url": "/all-articles/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.html",
+          "source": "auto",
+          "score": 76,
+          "rank_score": 105.5,
+          "structural_score": 31,
+          "semantic_score": 45,
+          "reason": "共同关注「神圣关系」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 24,
+              "label": "神圣关系"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "tag",
+              "score": 7,
+              "label": "女性灵性"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "女性原则"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化",
+          "url": "/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html",
+          "source": "auto",
+          "score": 61,
+          "rank_score": 83,
+          "structural_score": 26,
+          "semantic_score": 35,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 19,
+              "label": "女性灵性"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "女性灵性"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生",
+          "url": "/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html",
+          "source": "auto",
+          "score": 53,
+          "rank_score": 67,
+          "structural_score": 26,
+          "semantic_score": 27,
+          "reason": "都涉及「女性灵性」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 19,
+              "label": "女性灵性"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "女性灵性"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "女性原则为何被从神话中抹去？索菲亚、逻各斯与宇宙之母的回归｜抹大拉手稿",
+      "url": "/all-articles/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "真实会让人自由：抹大拉手稿中的神圣关系、女性原则与爱的炼金术",
+          "url": "/all-articles/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.html",
+          "source": "auto",
+          "score": 76,
+          "rank_score": 105.5,
+          "structural_score": 31,
+          "semantic_score": 45,
+          "reason": "共同关注「神圣关系」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 24,
+              "label": "神圣关系"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "tag",
+              "score": 7,
+              "label": "女性灵性"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "神圣关系"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "耶稣是大角星人？复活、抹大拉的玛利亚与被改写的基督叙事｜《大角星人文摘》第12集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology12-jesus-resurrection-mary-magdalene.html",
+          "source": "auto",
+          "score": 35,
+          "rank_score": 43,
+          "structural_score": 18,
+          "semantic_score": 17,
+          "reason": "都涉及「神话」主题",
+          "matched_by": [
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "失落文明 / 隐秘知识"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "tag",
+              "score": 6,
+              "label": "神话"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "神话"
+            }
+          ]
+        },
+        {
+          "title": "一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生",
+          "url": "/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html",
+          "source": "auto",
+          "score": 41,
+          "rank_score": 43,
+          "structural_score": 26,
+          "semantic_score": 15,
+          "reason": "都涉及「女性灵性」主题",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "女性灵性"
+            },
+            {
+              "type": "tag",
+              "score": 7,
+              "label": "女性灵性"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "《抹大拉手稿》"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验",
+      "url": "/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "DNA与梦境记忆：高我、小我、潜意识的形成原因 | 频率屏障与DNA修复全解析",
+          "url": "/all-articles/healing-empowerment/energy-dna-dream-memory-higher-self-ego-subconscious.html",
+          "source": "auto",
+          "score": 54,
+          "rank_score": 76.5,
+          "structural_score": 21,
+          "semantic_score": 33,
+          "reason": "都涉及「梦境」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 19,
+              "label": "梦境"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "意识扩展"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "梦境"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
+          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
+          "source": "auto",
+          "score": 52,
+          "rank_score": 72.5,
+          "structural_score": 21,
+          "semantic_score": 31,
+          "reason": "共同关注「灵性成长」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "通灵信息"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性成长"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "冥想"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "灵性成长"
+            }
+          ]
+        },
+        {
+          "title": "这条道路，有心吗？一条路使你坚强，另一条路使你软弱",
+          "url": "/all-articles/insight-awakening/teachings-of-don-juan/1-the-path-that-makes-you-strong-or-weak.html",
+          "source": "auto",
+          "score": 31,
+          "rank_score": 62,
+          "structural_score": 0,
+          "semantic_score": 31,
+          "reason": "共同关注「灵性成长」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性成长"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "自我认知"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "灵性成长"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "第五维度觉醒指南：哈索尔的讯息、意识进化与声音冥想练习",
+      "url": "/all-articles/courses/consciousness-alchemy/fifth-dimension-consciousness-evolution-sound-meditation.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
+          "source": "auto",
+          "score": 52,
+          "rank_score": 89,
+          "structural_score": 10,
+          "semantic_score": 42,
+          "reason": "都涉及「声音疗愈」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 25,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "大角星人"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "超越业力之轮：高维意识、光的频率与人类觉醒的真实机制",
+          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/beyond-karma-wheel-human-consciousness-dimensions-light-awakening.html",
+          "source": "auto",
+          "score": 60,
+          "rank_score": 88.5,
+          "structural_score": 21,
+          "semantic_score": 39,
+          "reason": "共同关注「意识觉醒」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "意识觉醒"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "频率"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "高维意识"
+            }
+          ]
+        },
+        {
+          "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
+          "source": "auto",
+          "score": 58,
+          "rank_score": 77,
+          "structural_score": 26,
+          "semantic_score": 32,
+          "reason": "都涉及「冥想」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "冥想"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "大角星人"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "通灵信息"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "为什么五感无法洞悉真相？情绪的感知扩展，是直通灵魂矩阵的天线",
+      "url": "/all-articles/courses/consciousness-alchemy/hsp-soul-matrix-holographic-inserts-frequency-barrier.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧",
+          "url": "/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html",
+          "source": "auto",
+          "score": 89,
+          "rank_score": 116.5,
+          "structural_score": 41,
+          "semantic_score": 48,
+          "reason": "共同关注「灵魂矩阵」",
+          "matched_by": [
+            {
+              "type": "series",
+              "score": 20,
+              "label": "异邦者"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "灵魂矩阵"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "意识扩展"
+            },
+            {
+              "type": "text",
+              "score": 12,
+              "label": "高等感知"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
+          "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
+          "source": "auto",
+          "score": 86,
+          "rank_score": 110.5,
+          "structural_score": 41,
+          "semantic_score": 45,
+          "reason": "共同关注「灵魂矩阵」",
+          "matched_by": [
+            {
+              "type": "series",
+              "score": 20,
+              "label": "异邦者"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "灵魂矩阵"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "意识扩展"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "灵魂矩阵"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒",
+          "url": "/all-articles/insight-awakening/logic-mind-emotional-intelligence-keylonta-codes-awakening.html",
+          "source": "auto",
+          "score": 78,
+          "rank_score": 94.5,
+          "structural_score": 41,
+          "semantic_score": 37,
+          "reason": "共同关注「灵魂矩阵」",
+          "matched_by": [
+            {
+              "type": "series",
+              "score": 20,
+              "label": "异邦者"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "意识扩展"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "科洛提代码"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵魂矩阵"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "混沌节点与意识的过渡状态：个人、集体与死亡的灵魂旅程",
+      "url": "/all-articles/courses/consciousness-alchemy/transition-states-consciousness-chaotic-nodes.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "死亡不是终点：死后世界的三大入口与“意识过渡”完整指南",
+          "url": "/all-articles/philosophy-consciousness/death-transition-three-choices-light-void-spiritual-guide.html",
+          "source": "auto",
+          "score": 64,
+          "rank_score": 113,
+          "structural_score": 10,
+          "semantic_score": 54,
+          "reason": "共同关注「哈索尔」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "现实创造"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "哈索尔"
+            },
+            {
+              "type": "text",
+              "score": 12,
+              "label": "死后世界"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "哈索尔人"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            }
+          ]
+        },
+        {
+          "title": "大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html",
+          "source": "auto",
+          "score": 50,
+          "rank_score": 68.5,
+          "structural_score": 21,
+          "semantic_score": 29,
+          "reason": "都涉及「现实创造」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "现实创造"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "现实创造"
+            }
+          ]
+        },
+        {
+          "title": "大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html",
+          "source": "auto",
+          "score": 37,
+          "rank_score": 66.5,
+          "structural_score": 5,
+          "semantic_score": 32,
+          "reason": "都涉及「现实创造」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "现实创造"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "死后世界"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "你所专注的，会被你的能量喂养｜思想如何参与创造现实？",
+      "url": "/all-articles/courses/creation-manifestation/focus-expands-thought-energy-possibility-sphere.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
+          "url": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
+          "source": "auto",
+          "score": 46,
+          "rank_score": 60.5,
+          "structural_score": 21,
+          "semantic_score": 25,
+          "reason": "都涉及「吸引力法则」主题",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "创造与显化"
+            },
+            {
+              "type": "tag",
+              "score": 14,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "显化"
+            }
+          ]
+        },
+        {
+          "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
+          "url": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
+          "source": "auto",
+          "score": 46,
+          "rank_score": 60.5,
+          "structural_score": 21,
+          "semantic_score": 25,
+          "reason": "都涉及「吸引力法则」主题",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "创造与显化"
+            },
+            {
+              "type": "tag",
+              "score": 14,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "显化"
+            }
+          ]
+        },
+        {
+          "title": "平行宇宙揭秘：每个选择都在创造新现实？多重人生与业力真相解析",
+          "url": "/all-articles/dolores-cannon-hypnosis/multiverse/parallel-universe-every-choice-creates-new-reality-multiverse-karma-explained.html",
+          "source": "auto",
+          "score": 25,
+          "rank_score": 42.5,
+          "structural_score": 5,
+          "semantic_score": 20,
+          "reason": "都涉及「现实创造」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "现实创造"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "朵洛莉丝·侃南"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
+      "url": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
+          "url": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
+          "source": "auto",
+          "score": 68,
+          "rank_score": 89.5,
+          "structural_score": 31,
+          "semantic_score": 37,
+          "reason": "都涉及「吸引力法则」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 26,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "创造与显化"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《伟大的人类潜能在自己的光中行走》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "意识扩展"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "频率"
+            }
+          ]
+        },
+        {
+          "title": "治愈身体：我应该遵循什么样的饮食？食物的频率与吸引力法则",
+          "url": "/all-articles/courses/human-body-healing/healing-diet-energy-frequency-emotional-balance.html",
+          "source": "auto",
+          "score": 57,
+          "rank_score": 79.5,
+          "structural_score": 23,
+          "semantic_score": 34,
+          "reason": "都涉及「吸引力法则」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 20,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《伟大的人类潜能在自己的光中行走》"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "生命的疗愈 / 自我赋权"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "频率"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html",
+          "source": "auto",
+          "score": 34,
+          "rank_score": 60.5,
+          "structural_score": 5,
+          "semantic_score": 29,
+          "reason": "都涉及「现实创造」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "现实创造"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "现实创造"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "频率"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实",
+      "url": "/all-articles/courses/creation-manifestation/multiple-truths-911-conspiracy-consciousness-reality-creation.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "阿卡西记录能看见未来吗？大角星人谈可能时间线与集体意识｜《大角星人文摘》第10集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology10-akashic-records-future-timelines.html",
+          "source": "auto",
+          "score": 46,
+          "rank_score": 92,
+          "structural_score": 0,
+          "semantic_score": 46,
+          "reason": "共同关注「集体意识」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 24,
+              "label": "平行宇宙"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "集体意识"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "集体意识"
+            }
+          ]
+        },
+        {
+          "title": "思维能塑造现实吗？大角星人谈平行现实、情绪过滤器与多维意识｜《大角星人文摘》第9集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology09-mind-parallel-reality-multidimensional-consciousness.html",
+          "source": "auto",
+          "score": 61,
+          "rank_score": 90.5,
+          "structural_score": 21,
+          "semantic_score": 40,
+          "reason": "共同关注「平行现实」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "平行宇宙"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "创造与显化"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "平行现实"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "现实创造"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "前世催眠回溯揭秘：潜意识、集体意识与宇宙意识探索指南",
+          "url": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-collective-consciousness-astral-projection.html",
+          "source": "auto",
+          "score": 39,
+          "rank_score": 78,
+          "structural_score": 0,
+          "semantic_score": 39,
+          "reason": "共同关注「集体意识」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "集体意识"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "集体意识"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "意识扩展"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "集体意识"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "治愈身体：我应该遵循什么样的饮食？食物的频率与吸引力法则",
+      "url": "/all-articles/courses/human-body-healing/healing-diet-energy-frequency-emotional-balance.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
+          "url": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
+          "source": "auto",
+          "score": 52,
+          "rank_score": 81.5,
+          "structural_score": 15,
+          "semantic_score": 37,
+          "reason": "都涉及「吸引力法则」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 20,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《伟大的人类潜能在自己的光中行走》"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "频率"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "意识扩展"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
+          "url": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
+          "source": "auto",
+          "score": 57,
+          "rank_score": 79.5,
+          "structural_score": 23,
+          "semantic_score": 34,
+          "reason": "都涉及「吸引力法则」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 20,
+              "label": "吸引力法则"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《伟大的人类潜能在自己的光中行走》"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "生命的疗愈 / 自我赋权"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "现实创造"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "频率"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告",
+          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html",
+          "source": "auto",
+          "score": 47,
+          "rank_score": 62.5,
+          "structural_score": 21,
+          "semantic_score": 26,
+          "reason": "都涉及「身体疗愈」主题",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "能量场"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "频率"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "心理—精神排毒：催眠、冥想与声音如何触发情绪释放和感知改变",
+      "url": "/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
+          "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
+          "source": "auto",
+          "score": 62,
+          "rank_score": 85,
+          "structural_score": 26,
+          "semantic_score": 36,
+          "reason": "都涉及「声音疗愈」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 25,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "冥想"
+            }
+          ]
+        },
+        {
+          "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
+          "source": "auto",
+          "score": 59,
+          "rank_score": 79,
+          "structural_score": 26,
+          "semantic_score": 33,
+          "reason": "都涉及「声音疗愈」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 19,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "大角星人"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "前世催眠回溯揭秘：潜意识、集体意识与宇宙意识探索指南",
+          "url": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-collective-consciousness-astral-projection.html",
+          "source": "auto",
+          "score": 32,
+          "rank_score": 64,
+          "structural_score": 0,
+          "semantic_score": 32,
+          "reason": "都涉及「冥想」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "冥想"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "潜意识"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "冥想"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "自我整合指南：脉轮练习与多维生命的频率提升",
+      "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "觉醒与地球未来：提升振动频率与灵性成长指南",
+          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html",
+          "source": "auto",
+          "score": 44,
+          "rank_score": 80.5,
+          "structural_score": 5,
+          "semantic_score": 39,
+          "reason": "共同关注「振动频率」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "振动频率"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "频率"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "外星文明"
+            },
+            {
+              "type": "tag",
+              "score": 6,
+              "label": "集体意识"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
+          "source": "auto",
+          "score": 54,
+          "rank_score": 76.5,
+          "structural_score": 21,
+          "semantic_score": 33,
+          "reason": "都涉及「声音疗愈」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 19,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "冥想"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "灵魂的探照灯：唤醒你的生命之花十二道光线创造之轮，成为有意识的共同创造者",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html",
+          "source": "auto",
+          "score": 41,
+          "rank_score": 74.5,
+          "structural_score": 5,
+          "semantic_score": 36,
+          "reason": "都涉及「脉轮」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 25,
+              "label": "脉轮"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "意识扩展"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "脉轮"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "睡眠自愈力：第五维度、潜意识疗愈与高维治疗师的睡前观想",
+      "url": "/all-articles/courses/human-body-healing/sleep-self-healing-fifth-dimension-higher-self-dreams.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "睡眠如何帮助身体自我修复？大角星医疗官谈睡前意图与高维疗愈｜《大角星人文摘》第13集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology13-sleep-self-healing-bedtime-intention.html",
+          "source": "auto",
+          "score": 75,
+          "rank_score": 103.5,
+          "structural_score": 31,
+          "semantic_score": 44,
+          "reason": "共同关注「睡眠自愈力」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 24,
+              "label": "睡眠自愈力"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "大角星人"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "大角星人"
+            },
+            {
+              "type": "tag",
+              "score": 6,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "睡眠自愈力"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告",
+          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html",
+          "source": "auto",
+          "score": 60,
+          "rank_score": 81,
+          "structural_score": 26,
+          "semantic_score": 34,
+          "reason": "共同关注「潜意识疗愈」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "潜意识疗愈"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "潜意识"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "朵洛莉丝·侃南"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "战争创伤与灵魂转世：越战案例揭示潜意识疗愈与地球进化课题",
+          "url": "/all-articles/dolores-cannon-hypnosis/war-trauma-soul-reincarnation-subconscious-healing-starseed-case-study.html",
+          "source": "auto",
+          "score": 39,
+          "rank_score": 70.5,
+          "structural_score": 5,
+          "semantic_score": 34,
+          "reason": "共同关注「潜意识疗愈」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "潜意识疗愈"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "潜意识"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "朵洛莉丝·侃南"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？",
+      "url": "/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "解密灵与魂：灵的本质、灵魂重聚与扬升光柱实用指南",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.html",
+          "source": "auto",
+          "score": 63,
+          "rank_score": 87,
+          "structural_score": 26,
+          "semantic_score": 37,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "大天使迈克尔 / 光之信息"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "大天使迈克尔"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "扬升"
+            }
+          ]
+        },
+        {
+          "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
+          "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
+          "source": "auto",
+          "score": 55,
+          "rank_score": 78.5,
+          "structural_score": 21,
+          "semantic_score": 34,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "意识扩展"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "真正的教导，指向自我实现｜教导与学习的本质解析",
+          "url": "/all-articles/insight-awakening/teaching-and-learning-self-realization-spiritual-growth.html",
+          "source": "auto",
+          "score": 37,
+          "rank_score": 74,
+          "structural_score": 0,
+          "semantic_score": 37,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "自我觉知"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处",
+      "url": "/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "解密灵与魂：灵的本质、灵魂重聚与扬升光柱实用指南",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.html",
+          "source": "auto",
+          "score": 68,
+          "rank_score": 97,
+          "structural_score": 26,
+          "semantic_score": 42,
+          "reason": "共同关注「灵魂」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "大天使迈克尔 / 光之信息"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "灵魂"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "死后世界"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "死后世界"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "大天使迈克尔"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "地狱是心智创造的吗？灵魂能量、负面振动与濒死经验的深层解析",
+          "url": "/all-articles/books/between-death-life/22-is-hell-created-by-mind-negative-energy-afterlife-near-death-experience-explained.html",
+          "source": "auto",
+          "score": 46,
+          "rank_score": 92,
+          "structural_score": 0,
+          "semantic_score": 46,
+          "reason": "都涉及「濒死体验」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 26,
+              "label": "濒死体验"
+            },
+            {
+              "type": "text",
+              "score": 12,
+              "label": "频率"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "死后世界"
+            }
+          ]
+        },
+        {
+          "title": "濒死经验全记录：死亡天使、灵魂议会与死后世界的真实案例解析",
+          "url": "/all-articles/books/between-death-life/4-near-death-experience-afterlife-soul-council-energy-consciousness.html",
+          "source": "auto",
+          "score": 39,
+          "rank_score": 78,
+          "structural_score": 0,
+          "semantic_score": 39,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 14,
+              "label": "濒死体验"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "死后世界"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "死后世界"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "灵魂的探照灯：唤醒你的生命之花十二道光线创造之轮，成为有意识的共同创造者",
+      "url": "/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
+          "source": "auto",
+          "score": 47,
+          "rank_score": 86.5,
+          "structural_score": 5,
+          "semantic_score": 42,
+          "reason": "都涉及「脉轮」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 25,
+              "label": "脉轮"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "通灵信息"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "Nakura冥想是什么？顶轮、净光与改变意识状态的练习｜《大角星人文摘》第15集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html",
+          "source": "auto",
+          "score": 44,
+          "rank_score": 80.5,
+          "structural_score": 5,
+          "semantic_score": 39,
+          "reason": "都涉及「脉轮」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 25,
+              "label": "脉轮"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "冥想"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
+          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
+          "source": "auto",
+          "score": 41,
+          "rank_score": 74.5,
+          "structural_score": 5,
+          "semantic_score": 36,
+          "reason": "都涉及「脉轮」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 25,
+              "label": "脉轮"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "脉轮"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "解密灵与魂：灵的本质、灵魂重聚与扬升光柱实用指南",
+      "url": "/all-articles/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html",
+          "source": "auto",
+          "score": 68,
+          "rank_score": 97,
+          "structural_score": 26,
+          "semantic_score": 42,
+          "reason": "共同关注「灵魂」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "大天使迈克尔 / 光之信息"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "灵魂"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "死后世界"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "死后世界"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "大天使迈克尔"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html",
+          "source": "auto",
+          "score": 63,
+          "rank_score": 87,
+          "structural_score": 26,
+          "semantic_score": 37,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "大天使迈克尔 / 光之信息"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "大天使迈克尔"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "扬升"
+            }
+          ]
+        },
+        {
+          "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
+          "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
+          "source": "auto",
+          "score": 36,
+          "rank_score": 64.5,
+          "structural_score": 5,
+          "semantic_score": 31,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "意识扩展"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "灵魂"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
       "title": "多维宇宙与时间真相：平行人生、UFO与意识本质的终极解释",
       "url": "/all-articles/dolores-cannon-hypnosis/multiverse/multidimensional-universe-time-nonlinear-parallel-lives-consciousness-ufo.html",
       "manual_declared": 0,
@@ -17277,7 +17277,7 @@
       "needs_manual_review": false
     },
     {
-      "title": "功夫的真义：使行动趋于完美，也是修炼内在趋于完美",
+      "title": "我们为什么要认真做好每一件小事？功夫的真义：使行动趋于完美，也是修炼内在趋于完美",
       "url": "/all-articles/insight-awakening/teachings-of-don-juan/the-true-meaning-of-kung-fu.html",
       "manual_declared": 0,
       "manual_valid": 0,
