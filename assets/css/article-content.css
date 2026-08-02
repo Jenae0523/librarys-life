@@ -1,0 +1,92 @@
+/* Markdown typography shared by every page using the article layout. */
+.article-body blockquote {
+  margin: 2em 0;
+  padding: 1em 1.25em;
+  border-left: 3px solid rgba(107, 119, 204, 0.58);
+  background: rgba(107, 119, 204, 0.055);
+  color: #51586a;
+  font-style: normal;
+}
+
+.article-body blockquote > :first-child {
+  margin-top: 0;
+}
+
+.article-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.article-body blockquote p {
+  margin-bottom: 1em;
+}
+
+.article-body blockquote p + p {
+  margin-top: 0;
+}
+
+.article-body .article-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  margin: 2em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body .article-table-scroll:focus-visible {
+  outline: 2px solid rgba(107, 119, 204, 0.65);
+  outline-offset: 3px;
+}
+
+.article-body .article-table-scroll > table {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: auto;
+  overflow: visible;
+}
+
+.article-body .article-table-scroll th,
+.article-body .article-table-scroll td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #dfe3eb;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.8;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.article-body .article-table-scroll th {
+  background: #f5f6f9;
+  color: #3f4655;
+  font-weight: 600;
+}
+
+.article-body .article-table-scroll td {
+  background: #fff;
+}
+
+.article-body .article-table-scroll th > :first-child,
+.article-body .article-table-scroll td > :first-child {
+  margin-top: 0;
+}
+
+.article-body .article-table-scroll th > :last-child,
+.article-body .article-table-scroll td > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767.98px) {
+  .article-body .article-table-scroll > table {
+    min-width: 38rem;
+  }
+
+  .article-body .article-table-scroll th,
+  .article-body .article-table-scroll td {
+    padding: 0.65rem 0.8rem;
+  }
+}
