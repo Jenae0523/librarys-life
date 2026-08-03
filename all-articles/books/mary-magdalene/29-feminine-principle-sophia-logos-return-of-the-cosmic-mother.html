@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-1639">
+<meta name="version" content="20260803-2342">
 
 
 <meta charset="utf-8">
@@ -69,8 +69,6 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
-  <link rel="stylesheet" href="/assets/css/selection-search.css">
-  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -78,59 +76,10 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
-      max-width: 100%;
-      overflow-x: clip;
-      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
-}
-
-body {
-  touch-action: pan-y pinch-zoom;
-}
-
-main {
-  max-width: 100%;
-  overflow-x: clip;
-}
-
-.article-body {
-  min-width: 0;
-  max-width: 100%;
-  overflow-wrap: anywhere;
-}
-
-.article-body > * {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.article-body iframe,
-.article-body video,
-.article-body audio,
-.article-body canvas,
-.article-body svg {
-  max-width: 100%;
-}
-
-.article-body pre,
-.article-body table {
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.article-body pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-.article-body a,
-.article-body code {
-  overflow-wrap: anywhere;
-  word-break: break-word;
 }
 	
 .article-body p {
@@ -161,32 +110,6 @@ main {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
-}
-
-.related-posts-heading {
-  font-size: 1.8rem;
-  line-height: 1.6;
-}
-
-.related-posts-item {
-  padding-top: 36px;
-}
-
-.related-posts-item:first-child {
-  padding-top: 12px;
-}
-
-.related-posts-excerpt {
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
-.related-posts-excerpt[role="button"]:focus {
-  outline: none;
-}
-
-.related-posts-excerpt[role="button"]:focus-visible {
-  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -295,22 +218,17 @@ main {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: flex;
+  display: none;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
 }
 
 .floating-episode-toc.is-visible {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
 }
 
 .floating-episode-toc.is-open {
@@ -664,7 +582,7 @@ main {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
+                <hr class="g-brd-gray-light-v4 g-pt-20">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -823,115 +741,48 @@ main {
 
 
 			  
-              <!-- 加一条灰线 -->
+			  <!-- 加一条灰线 -->
               <hr class="g-brd-gray-light-v4 g-my-50">			  			  
               <!-- 相关文章 -->			  
               
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0">
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">真实会让人自由：抹大拉手稿中的神圣关系、女性原则与爱的炼金术</h5>
-          
-          <p id="related-post-excerpt-1"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">真实为什么会成为神圣关系中最困难、也最重要的选择？朱迪·赛恩在Pam去世后重新寻找自己的位置，并记录她与Tom Kenyon之间关于爱、嫉妒、遗弃恐惧和自由的冲突。抹大拉传讯把亲密关系比作炼金炉：双方只有停止隐藏、说出真正需要，并允许彼此拥有选择，旧身份才可能在冲突中被重塑。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.html"
-             aria-label="阅读相关文章：真实会让人自由：抹大拉手稿中的神圣关系、女性原则与爱的炼金术">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">真实会让人自由：抹大拉手稿中的神圣关系、女性原则与爱的炼金术</h5>
+          <p class="g-color-gray-dark-v4">在《抹大拉手稿》第28集中，一个女人通过爱、创伤、背叛、选择与真实，理解神圣关系的真正意义。本文探讨女性原则的回归、男性与女性能量的平衡，以及真实如何成为通往自由与灵性觉醒的道路。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.html">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">耶稣是大角星人？复活、抹大拉的玛利亚与被改写的基督叙事｜《大角星人文摘》第12集</h5>
-          
-          <p id="related-post-excerpt-2"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">这份以耶稣自述形式出现的通灵资料，将他的复活解释为身体转入第五维度，并称抹大拉的玛利亚是他的妻子和老师。它重新讲述了耶稣的大角星起源、早期基督教历史与被宗教制度改写的信息，也把“拯救”重新指向个人的意识、智慧与自由。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology12-jesus-resurrection-mary-magdalene.html"
-             aria-label="阅读相关文章：耶稣是大角星人？复活、抹大拉的玛利亚与被改写的基督叙事｜《大角星人文摘》第12集">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">耶稣是大角星人？复活、抹大拉的玛利亚与被改写的基督叙事｜《大角星人文摘》第12集</h5>
+          <p class="g-color-gray-dark-v4">这份以耶稣自述形式出现的通灵资料，将他的复活解释为身体转入第五维度，并称抹大拉的玛利亚是他的妻子和老师。它重新讲述了耶稣的大角星起源、早期基督教历史与被宗教制度改写的信息，也把“拯救”重新指向个人的意识、智慧与自由。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/alien-archives/arcturian/the-arcturian-anthology12-jesus-resurrection-mary-magdalene.html">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生</h5>
-          
-          <p id="related-post-excerpt-3"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">再深的灵性体验，也无法替代现实人生的重量。朱迪·赛恩在遇见Tom Kenyon、追随哈索尔的召唤并踏上欧洲精神之旅后，仍要面对关系崩塌、求生意志和朋友Pam的癌症与死亡。她最终看见，真正的觉醒不是逃离黑暗，而是尊重一个人在生命尽头的选择，并在失去中学会成为自己。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html"
-             aria-label="阅读相关文章：一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生</h5>
+          <p class="g-color-gray-dark-v4">一位女性在经历黑暗、情感崩塌与生命危机后，踏上欧洲精神之旅，从灵性探索到面对朋友的癌症与死亡，在极限中看见自我本质。本文融合觉醒、心理创伤、亲密关系与生命意义，是一段关于“成为自己”的深度真实记录。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
-<script>
-  (function () {
-    var maxExcerptLength = 70;
-    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
-
-    excerpts.forEach(function (excerpt) {
-      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
-
-      var fullText = excerpt.textContent.trim();
-      var characters = Array.from(fullText);
-
-      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
-      if (characters.length <= maxExcerptLength) {
-        excerpt.removeAttribute("role");
-        excerpt.removeAttribute("tabindex");
-        excerpt.removeAttribute("aria-expanded");
-        excerpt.style.cursor = "default";
-        return;
-      }
-
-      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
-      var isExpanded = false;
-      excerpt.textContent = collapsedText;
-
-      function toggleExcerpt() {
-        isExpanded = !isExpanded;
-        excerpt.textContent = isExpanded ? fullText : collapsedText;
-        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
-      }
-
-      excerpt.addEventListener("click", toggleExcerpt);
-      excerpt.addEventListener("keydown", function (event) {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          toggleExcerpt();
-        }
-      });
-    });
-  })();
-</script>
 
 
 			  
@@ -1320,69 +1171,6 @@ main {
   </ul>
 </div>
 
-
-              <!-- 加一条灰线 -->
-              <hr class="g-brd-gray-light-v4 g-my-50">
-              <!-- 文章搜索入口 -->
-              <div class="article-sidebar-search">
-                
-                <section
-  class="article-search-panel article-search-panel--entry article-search-panel--compact"
-  aria-label="文章搜索"
->
-  <form
-    id="articleSearchSharedForm"
-    class="article-search-form"
-    action="/articles/search/"
-    method="get"
-    role="search"
-    
-  >
-    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
-    <input
-      id="articleSearchSharedInput"
-      class="article-search-input"
-      type="search"
-      name="q"
-      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
-      autocomplete="off"
-      
-    >
-    <button class="article-search-button" type="submit">搜索</button>
-    <button
-      class="article-search-button article-search-button--secondary"
-      type="reset"
-      
-    >
-      清空
-    </button>
-  </form>
-
-  <div class="article-search-toolbar">
-    
-      <p class="article-search-status">可搜索 139 篇文章</p>
-    
-
-    <div class="article-search-controls">
-      
-
-      <label class="article-search-control-label article-search-sort-label">
-        <span class="sr-only">排序</span>
-        <select
-          class="article-search-select article-search-sort"
-          name="sort"
-          form="articleSearchSharedForm"
-          
-        >
-          <option value="relevance">按相关度排序</option>
-          <option value="latest">按最新发布排序</option>
-        </select>
-      </label>
-    </div>
-  </div>
-</section>
-
-              </div>
 			  
 			  
             </div>
@@ -1464,18 +1252,6 @@ main {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
-        function updateFloatingTocVisibility(toc, endBoundary) {
-          if (!toc || !article || !endBoundary) return;
-
-          var articleRect = article.getBoundingClientRect();
-          var boundaryRect = endBoundary.getBoundingClientRect();
-          var tocRect = toc.getBoundingClientRect();
-          var staysBelowIntro = tocRect.top >= articleRect.top;
-          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
-
-          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
-        }
-
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1529,10 +1305,9 @@ main {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
-        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          updateFloatingTocVisibility(toc, endBoundary);
+          toc.classList.add("is-visible");
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1544,9 +1319,6 @@ main {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          window.requestAnimationFrame(function () {
-            updateFloatingTocVisibility(toc, endBoundary);
-          });
         }
 
         function setActive(id) {
@@ -1595,7 +1367,6 @@ main {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
-            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

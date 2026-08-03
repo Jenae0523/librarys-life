@@ -547,6 +547,98 @@
     };
   }
 
+  function populateFacetSelect(select, allLabel, total, options, requestedValue) {
+    if (!select) return "";
+    select.innerHTML = `<option value="">${allLabel}（${total}）</option>` +
+      toArray(options).map(option =>
+        `<option value="${escapeHtml(option.id)}">${escapeHtml(option.name)}（${option.count}）</option>`
+      ).join("");
+    const value = toArray(options).some(option => option.id === requestedValue) ? requestedValue : "";
+    select.value = value;
+    select.disabled = total === 0 || toArray(options).length === 0;
+    return value;
+  }
+
+  function buildCollectionFacets(results, payload) {
+    const collectionBySlug = new Map(
+      toArray(payload?.records)
+        .filter(record => record.subtype === "collection")
+        .map(record => [record.book_slug, record])
+    );
+    const counts = new Map();
+    toArray(results).forEach(result => {
+      const slug = result.record.book_slug;
+      counts.set(slug, (counts.get(slug) || 0) + 1);
+    });
+    return [...counts.entries()].map(([slug, count]) => ({
+      id: slug,
+      name: collectionBySlug.get(slug)?.title || slug,
+      count
+    })).sort((left, right) => left.name.localeCompare(right.name, "zh-Hans"));
+  }
+
+  function buildTagFacets(results, payload) {
+    const tagsById = tagLookup(payload);
+    const counts = new Map();
+    toArray(results).forEach(result => {
+      toArray(result.record.tag_ids).forEach(id => counts.set(id, (counts.get(id) || 0) + 1));
+    });
+    return [...counts.entries()].flatMap(([id, count]) => {
+      const tag = tagsById.get(id);
+      return tag ? [{ id, name: tag.name, count }] : [];
+    });
+  }
+
+  function sortFacetedResults(results, sort) {
+    return toArray(results).slice().sort((left, right) => {
+      if (sort === "latest") {
+        const dateOrder = String(right.record.date || "").localeCompare(String(left.record.date || ""));
+        if (dateOrder) return dateOrder;
+      }
+      return right.score - left.score ||
+        String(right.record.date || "").localeCompare(String(left.record.date || "")) ||
+        Number(right.record.number || 0) - Number(left.record.number || 0) ||
+        left.record.id.localeCompare(right.record.id);
+    });
+  }
+
+  function filterFacetedResults(results, payload, state = {}) {
+    const source = toArray(results);
+    const collectionOptions = buildCollectionFacets(source, payload);
+    const requestedCollection = String(
+      Object.prototype.hasOwnProperty.call(state, "audioCollection")
+        ? state.audioCollection || ""
+        : state.collection || ""
+    );
+    const audioCollection = collectionOptions.some(option => option.id === requestedCollection)
+      ? requestedCollection
+      : "";
+    const collectionResults = source.filter(result =>
+      !audioCollection || result.record.book_slug === audioCollection
+    );
+    const tagOptions = buildTagFacets(collectionResults, payload);
+    const requestedTag = String(
+      Object.prototype.hasOwnProperty.call(state, "audioTag")
+        ? state.audioTag || ""
+        : state.tag || ""
+    );
+    const audioTag = tagOptions.some(option => option.id === requestedTag) ? requestedTag : "";
+    const audioSort = state.audioSort === "latest" ? "latest" : "relevance";
+    const tagResults = collectionResults.filter(result =>
+      !audioTag || toArray(result.record.tag_ids).includes(audioTag)
+    );
+    return {
+      results: sortFacetedResults(tagResults, audioSort),
+      audioCollection,
+      collectionOptions,
+      collectionTotal: source.length,
+      audioTag,
+      tagOptions,
+      tagTotal: collectionResults.length,
+      audioSort
+    };
+  }
+
   function initAudiobookSearchPage() {
     if (typeof document === "undefined") return;
     const root = document.querySelector("[data-audiobook-search]");
@@ -617,60 +709,6 @@
       tagSelect.disabled = true;
     }
 
-    function populateFacetSelect(select, allLabel, total, options, requestedValue) {
-      select.innerHTML = `<option value="">${allLabel}（${total}）</option>` +
-        options.map(option =>
-          `<option value="${escapeHtml(option.id)}">${escapeHtml(option.name)}（${option.count}）</option>`
-        ).join("");
-      const value = options.some(option => option.id === requestedValue) ? requestedValue : "";
-      select.value = value;
-      select.disabled = total === 0 || options.length === 0;
-      return value;
-    }
-
-    function buildCollectionFacets(results) {
-      const collectionBySlug = new Map(
-        toArray(payload.records)
-          .filter(record => record.subtype === "collection")
-          .map(record => [record.book_slug, record])
-      );
-      const counts = new Map();
-      results.forEach(result => {
-        const slug = result.record.book_slug;
-        counts.set(slug, (counts.get(slug) || 0) + 1);
-      });
-      return [...counts.entries()].map(([slug, count]) => ({
-        id: slug,
-        name: collectionBySlug.get(slug)?.title || slug,
-        count
-      })).sort((left, right) => left.name.localeCompare(right.name, "zh-Hans"));
-    }
-
-    function buildTagFacets(results) {
-      const tagsById = tagLookup(payload);
-      const counts = new Map();
-      results.forEach(result => {
-        toArray(result.record.tag_ids).forEach(id => counts.set(id, (counts.get(id) || 0) + 1));
-      });
-      return [...counts.entries()].flatMap(([id, count]) => {
-        const tag = tagsById.get(id);
-        return tag ? [{ id, name: tag.name, count }] : [];
-      });
-    }
-
-    function sortCurrentResults(results) {
-      return [...results].sort((left, right) => {
-        if (sortSelect.value === "latest") {
-          const dateOrder = String(right.record.date || "").localeCompare(String(left.record.date || ""));
-          if (dateOrder) return dateOrder;
-        }
-        return right.score - left.score ||
-          String(right.record.date || "").localeCompare(String(left.record.date || "")) ||
-          Number(right.record.number || 0) - Number(left.record.number || 0) ||
-          left.record.id.localeCompare(right.record.id);
-      });
-    }
-
     function applyFacetsAndRender(options = {}) {
       const requestedCollection = options.requestedCollection == null
         ? collectionSelect.value
@@ -678,7 +716,7 @@
       const requestedTag = options.requestedTag == null
         ? tagSelect.value
         : String(options.requestedTag);
-      const collectionOptions = buildCollectionFacets(currentRawResults);
+      const collectionOptions = buildCollectionFacets(currentRawResults, payload);
       const selectedCollection = populateFacetSelect(
         collectionSelect,
         "全部合集",
@@ -689,7 +727,7 @@
       const collectionResults = currentRawResults.filter(result =>
         !selectedCollection || result.record.book_slug === selectedCollection
       );
-      const tagOptions = buildTagFacets(collectionResults);
+      const tagOptions = buildTagFacets(collectionResults, payload);
       const selectedTag = populateFacetSelect(
         tagSelect,
         "全部知识点",
@@ -697,9 +735,9 @@
         tagOptions,
         requestedTag
       );
-      currentResults = sortCurrentResults(collectionResults.filter(result =>
+      currentResults = sortFacetedResults(collectionResults.filter(result =>
         !selectedTag || toArray(result.record.tag_ids).includes(selectedTag)
-      ));
+      ), sortSelect.value);
       currentMode = currentRawMode;
       if (!options.preservePage) currentPage = 1;
       status.textContent = currentMode === "collection" && currentResults.length === 1
@@ -953,18 +991,26 @@
     INPUT_DEBOUNCE_MS,
     PAGE_SIZE,
     TRANSCRIPT_SEEK_LEAD_SECONDS,
+    buildCollectionFacets,
+    buildTagFacets,
     exactCollection,
     exactEpisode,
     findTranscriptHit,
+    filterFacetedResults,
     highlightHtml,
+    handleTranscriptSeekClick,
     initAudiobookSearchPage,
     normalizeCollectionTitle,
     normalizeText,
+    populateFacetSelect,
     readUrlState,
+    renderCollectionResult,
+    renderEpisodeResult,
     renderMatchSource,
     renderTranscriptPlayHint,
     seekAudioTo,
     search,
+    sortFacetedResults,
     splitQuery,
     transcriptPlaybackStart
   };

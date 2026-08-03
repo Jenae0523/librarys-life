@@ -28,7 +28,6 @@ tags:
   - 脉轮
   - 意识扩展
   - 自我认知
-
 number: 6
 
 subtitle_url: "/audiobooks/messages-of-light-archangel-mike/texts/messages-of-light-archangel-mike6.json"

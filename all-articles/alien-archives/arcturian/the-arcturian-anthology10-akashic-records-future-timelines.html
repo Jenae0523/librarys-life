@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-1639">
+<meta name="version" content="20260803-2342">
 
 
 <meta charset="utf-8">
@@ -69,8 +69,6 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
-  <link rel="stylesheet" href="/assets/css/selection-search.css">
-  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -78,59 +76,10 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
-      max-width: 100%;
-      overflow-x: clip;
-      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
-}
-
-body {
-  touch-action: pan-y pinch-zoom;
-}
-
-main {
-  max-width: 100%;
-  overflow-x: clip;
-}
-
-.article-body {
-  min-width: 0;
-  max-width: 100%;
-  overflow-wrap: anywhere;
-}
-
-.article-body > * {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.article-body iframe,
-.article-body video,
-.article-body audio,
-.article-body canvas,
-.article-body svg {
-  max-width: 100%;
-}
-
-.article-body pre,
-.article-body table {
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.article-body pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-.article-body a,
-.article-body code {
-  overflow-wrap: anywhere;
-  word-break: break-word;
 }
 	
 .article-body p {
@@ -161,32 +110,6 @@ main {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
-}
-
-.related-posts-heading {
-  font-size: 1.8rem;
-  line-height: 1.6;
-}
-
-.related-posts-item {
-  padding-top: 36px;
-}
-
-.related-posts-item:first-child {
-  padding-top: 12px;
-}
-
-.related-posts-excerpt {
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
-.related-posts-excerpt[role="button"]:focus {
-  outline: none;
-}
-
-.related-posts-excerpt[role="button"]:focus-visible {
-  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -295,22 +218,17 @@ main {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: flex;
+  display: none;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
 }
 
 .floating-episode-toc.is-visible {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
 }
 
 .floating-episode-toc.is-open {
@@ -598,7 +516,7 @@ main {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
+                <hr class="g-brd-gray-light-v4 g-pt-20">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -821,115 +739,48 @@ main {
 
 
 			  
-              <!-- 加一条灰线 -->
+			  <!-- 加一条灰线 -->
               <hr class="g-brd-gray-light-v4 g-my-50">			  			  
               <!-- 相关文章 -->			  
               
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0">
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实</h5>
-          
-          <p id="related-post-excerpt-1"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">我们真的能找到关于9·11事件的唯一真相吗？《扬升书》借一位丧亲者追查阴谋的过程，讨论证据、情绪与立场如何共同塑造“多重真相”，并把问题转向注意力与现实创造：当人持续投入恐惧、愤怒和受害叙事时，是否也在强化自己反对的世界？书中的平行现实与“超权者”属于作者的意识哲学框架，并非对事件事实的定论。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/courses/creation-manifestation/multiple-truths-911-conspiracy-consciousness-reality-creation.html"
-             aria-label="阅读相关文章：多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">与外星生命接触时如何辨别信息？意识主权、科技伦理与人类未来｜《大角星人文摘》第16集</h5>
+          <p class="g-color-gray-dark-v4">与外星生命或所谓高维存有接触时，谁来判断信息是真是假？大角星战士Frephios强调，接收者必须暂时开放，又要在事后分析、研究并保留最终判断权。材料还把意识主权延伸到语言限制、技术权力、太阳活动与人类集体未来。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/alien-archives/arcturian/the-arcturian-anthology16-alien-contact-discernment-consciousness-sovereignty.html">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">与外星生命接触时如何辨别信息？意识主权、科技伦理与人类未来｜《大角星人文摘》第16集</h5>
-          
-          <p id="related-post-excerpt-2"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">与外星生命或所谓高维存有接触时，谁来判断信息是真是假？大角星战士Frephios强调，接收者必须暂时开放，又要在事后分析、研究并保留最终判断权。材料还把意识主权延伸到语言限制、技术权力、太阳活动与人类集体未来。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology16-alien-contact-discernment-consciousness-sovereignty.html"
-             aria-label="阅读相关文章：与外星生命接触时如何辨别信息？意识主权、科技伦理与人类未来｜《大角星人文摘》第16集">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实</h5>
+          <p class="g-color-gray-dark-v4">我们真的能接触到“唯一的真相”吗？本内容从911事件争议出发，深入解析“多重真相”与“阴谋叙事”的本质，探讨不同群体如何基于信息、认知与立场构建各自的现实。同时结合心理学与哲学视角，揭示“意识如何参与现实的创造”，以及“谁在影响我们对世界的理解”。帮助你跳出单一叙事，建立更清晰、更独立的思维框架。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/courses/creation-manifestation/multiple-truths-911-conspiracy-consciousness-reality-creation.html">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">共情力如何改变人类未来？大角星人谈生态危机、人与自然及集体意识｜《大角星人文摘》第17集</h5>
-          
-          <p id="related-post-excerpt-3"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">共情力为什么可能关系到人类能否度过生态危机？萨纳特·库玛拉把共情智力视为连接思想与心灵、个人与自然的能力，并认为个体意识的微小变化会通过所谓“微观量子效应”影响集体。植物、动物和自然，也因此成为重新学习关系与生存智慧的入口。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology17-empathy-intelligence-ecological-consciousness.html"
-             aria-label="阅读相关文章：共情力如何改变人类未来？大角星人谈生态危机、人与自然及集体意识｜《大角星人文摘》第17集">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">共情力如何改变人类未来？大角星人谈生态危机、人与自然及集体意识｜《大角星人文摘》第17集</h5>
+          <p class="g-color-gray-dark-v4">共情力为什么可能关系到人类能否度过生态危机？萨纳特·库玛拉把共情智力视为连接思想与心灵、个人与自然的能力，并认为个体意识的微小变化会通过所谓“微观量子效应”影响集体。植物、动物和自然，也因此成为重新学习关系与生存智慧的入口。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/alien-archives/arcturian/the-arcturian-anthology17-empathy-intelligence-ecological-consciousness.html">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
-<script>
-  (function () {
-    var maxExcerptLength = 70;
-    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
-
-    excerpts.forEach(function (excerpt) {
-      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
-
-      var fullText = excerpt.textContent.trim();
-      var characters = Array.from(fullText);
-
-      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
-      if (characters.length <= maxExcerptLength) {
-        excerpt.removeAttribute("role");
-        excerpt.removeAttribute("tabindex");
-        excerpt.removeAttribute("aria-expanded");
-        excerpt.style.cursor = "default";
-        return;
-      }
-
-      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
-      var isExpanded = false;
-      excerpt.textContent = collapsedText;
-
-      function toggleExcerpt() {
-        isExpanded = !isExpanded;
-        excerpt.textContent = isExpanded ? fullText : collapsedText;
-        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
-      }
-
-      excerpt.addEventListener("click", toggleExcerpt);
-      excerpt.addEventListener("keydown", function (event) {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          toggleExcerpt();
-        }
-      });
-    });
-  })();
-</script>
 
 
 			  
@@ -1318,69 +1169,6 @@ main {
   </ul>
 </div>
 
-
-              <!-- 加一条灰线 -->
-              <hr class="g-brd-gray-light-v4 g-my-50">
-              <!-- 文章搜索入口 -->
-              <div class="article-sidebar-search">
-                
-                <section
-  class="article-search-panel article-search-panel--entry article-search-panel--compact"
-  aria-label="文章搜索"
->
-  <form
-    id="articleSearchSharedForm"
-    class="article-search-form"
-    action="/articles/search/"
-    method="get"
-    role="search"
-    
-  >
-    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
-    <input
-      id="articleSearchSharedInput"
-      class="article-search-input"
-      type="search"
-      name="q"
-      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
-      autocomplete="off"
-      
-    >
-    <button class="article-search-button" type="submit">搜索</button>
-    <button
-      class="article-search-button article-search-button--secondary"
-      type="reset"
-      
-    >
-      清空
-    </button>
-  </form>
-
-  <div class="article-search-toolbar">
-    
-      <p class="article-search-status">可搜索 139 篇文章</p>
-    
-
-    <div class="article-search-controls">
-      
-
-      <label class="article-search-control-label article-search-sort-label">
-        <span class="sr-only">排序</span>
-        <select
-          class="article-search-select article-search-sort"
-          name="sort"
-          form="articleSearchSharedForm"
-          
-        >
-          <option value="relevance">按相关度排序</option>
-          <option value="latest">按最新发布排序</option>
-        </select>
-      </label>
-    </div>
-  </div>
-</section>
-
-              </div>
 			  
 			  
             </div>
@@ -1462,18 +1250,6 @@ main {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
-        function updateFloatingTocVisibility(toc, endBoundary) {
-          if (!toc || !article || !endBoundary) return;
-
-          var articleRect = article.getBoundingClientRect();
-          var boundaryRect = endBoundary.getBoundingClientRect();
-          var tocRect = toc.getBoundingClientRect();
-          var staysBelowIntro = tocRect.top >= articleRect.top;
-          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
-
-          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
-        }
-
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1527,10 +1303,9 @@ main {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
-        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          updateFloatingTocVisibility(toc, endBoundary);
+          toc.classList.add("is-visible");
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1542,9 +1317,6 @@ main {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          window.requestAnimationFrame(function () {
-            updateFloatingTocVisibility(toc, endBoundary);
-          });
         }
 
         function setActive(id) {
@@ -1593,7 +1365,6 @@ main {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
-            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

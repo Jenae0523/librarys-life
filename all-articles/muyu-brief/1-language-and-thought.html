@@ -3,14 +3,14 @@
 <head>
   <head>
   <title>从语言到AI与万物理论：人类认知重写之旅・生命之书 | librarys.life</title>
-  <meta name="description" content="语言会怎样改变我们对颜色、时间与空间的理解？从语言相对论、实验鼠大脑活动的影像重构，到GPT-4.5图灵测试争议、物理学的“万物理论”与臭氧层恢复，这期简报串联认知科学、人工智能、基础物理与地球环境，追踪人类如何重新认识思维、机器、宇宙和自身。">
+  <meta name="description" content="本文带你穿越语言、脑科学、人工智能与物理前沿：探讨语言如何塑造思维，科学家让实验鼠“看电影”重构大脑认知，GPT-4.5通过图灵测试的启示，以及物理学家对“万物理论”的最新探索。同时关注地球环境恢复的希望，呈现人类认知、科技与自然的全景视角。">
 <meta name="keywords" content="语言塑造思维, 脑科学, 神经工程, GPT-4.5图灵测试, 人工智能, 万物理论, 物理学前沿, 地球环境恢复, 科学与认知">
 
 <meta name="robots" content="all">
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-1639">
+<meta name="version" content="20260803-2342">
 
 
 <meta charset="utf-8">
@@ -69,8 +69,6 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
-  <link rel="stylesheet" href="/assets/css/selection-search.css">
-  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -78,59 +76,10 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
-      max-width: 100%;
-      overflow-x: clip;
-      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
-}
-
-body {
-  touch-action: pan-y pinch-zoom;
-}
-
-main {
-  max-width: 100%;
-  overflow-x: clip;
-}
-
-.article-body {
-  min-width: 0;
-  max-width: 100%;
-  overflow-wrap: anywhere;
-}
-
-.article-body > * {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.article-body iframe,
-.article-body video,
-.article-body audio,
-.article-body canvas,
-.article-body svg {
-  max-width: 100%;
-}
-
-.article-body pre,
-.article-body table {
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.article-body pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-.article-body a,
-.article-body code {
-  overflow-wrap: anywhere;
-  word-break: break-word;
 }
 	
 .article-body p {
@@ -161,32 +110,6 @@ main {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
-}
-
-.related-posts-heading {
-  font-size: 1.8rem;
-  line-height: 1.6;
-}
-
-.related-posts-item {
-  padding-top: 36px;
-}
-
-.related-posts-item:first-child {
-  padding-top: 12px;
-}
-
-.related-posts-excerpt {
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
-.related-posts-excerpt[role="button"]:focus {
-  outline: none;
-}
-
-.related-posts-excerpt[role="button"]:focus-visible {
-  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -295,22 +218,17 @@ main {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: flex;
+  display: none;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
 }
 
 .floating-episode-toc.is-visible {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
 }
 
 .floating-episode-toc.is-open {
@@ -606,7 +524,7 @@ main {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
+                <hr class="g-brd-gray-light-v4 g-pt-20">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -733,115 +651,48 @@ main {
 
 
 			  
-              <!-- 加一条灰线 -->
+			  <!-- 加一条灰线 -->
               <hr class="g-brd-gray-light-v4 g-my-50">			  			  
               <!-- 相关文章 -->			  
               
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0">
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">克里希那穆提：语言如何限制思想？超越语言局限的自由心智</h5>
-          
-          <p id="related-post-excerpt-1"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">当我们为一朵花命名时，是否也停止了真正观看它？克里希那穆提认为，语言是必要的符号，却也会把“自由”“神”“成功”“责任”等经验限制在既定含义中。若不能觉察词语触发的联想、立场与情绪，我们就容易把名称当成事物本身，失去独立思考与真实沟通的能力。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/insight-awakening/jiddu-krishnamurti/3-language-limits-how-words-shape-thoughts-and-trap-the-mind.html"
-             aria-label="阅读相关文章：克里希那穆提：语言如何限制思想？超越语言局限的自由心智">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">无法正确的沟通，是因为缺乏沟通的品质，是什么导致沟通的终止？打破沟通障碍的5个关键点！</h5>
+          <p class="g-color-gray-dark-v4">本篇深度解析沟通失败的根源，揭示为什么我们无法真正倾听和理解对方。探讨倾听的艺术、自我重要感、思维惰性、语言局限与沟通品质等5大关键问题，帮助你建立真实、开放、有品质的人际连结。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/art-of-deep-listening-how-to-break-communication-barriers-and-connect-truly.html">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒</h5>
-          
-          <p id="related-post-excerpt-2"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">逻辑心智为什么像困在玻璃缸里的青蛙，只相信五感能够验证的世界？《异邦者 I》用这个比喻说明，人类若持续排斥情绪与直觉，就难以看见既有认知之外的可能。真正的觉醒不是抛弃理性，而是让逻辑与情绪共同工作；科洛提代码、七种高等感官与DNA激活属于该书的灵性框架。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/insight-awakening/logic-mind-emotional-intelligence-keylonta-codes-awakening.html"
-             aria-label="阅读相关文章：逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">克里希那穆提：语言如何限制思想？超越语言局限的自由心智</h5>
+          <p class="g-color-gray-dark-v4">本文解析克里希那穆提关于语言与思想的洞见：语言作为人造符号，往往制造出思想的局限，让我们困在“词语的牢笼”里。通过观察“自由”“神”等概念如何影响认知，探讨如何突破语言的边界，进入不依赖符号的心智状态，触及真正的自由与真相。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/jiddu-krishnamurti/3-language-limits-how-words-shape-thoughts-and-trap-the-mind.html">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">多维宇宙与时间真相：平行人生、UFO与意识本质的终极解释</h5>
-          
-          <p id="related-post-excerpt-3"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">你所认识的“自己”，是否只是更大意识暂时聚焦的一个点？《回旋宇宙》中的催眠对话把时间描述为同时存在的闭环结构，并以意识焦点解释平行人生、前世回溯与潜意识。UFO、外星文明和维度穿越，也被放进“感知带宽不同”的多维宇宙框架中。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/dolores-cannon-hypnosis/multiverse/multidimensional-universe-time-nonlinear-parallel-lives-consciousness-ufo.html"
-             aria-label="阅读相关文章：多维宇宙与时间真相：平行人生、UFO与意识本质的终极解释">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">能量越高，生命状态越好吗？从物质状态看懂生命、关系与群体的弹性</h5>
+          <p class="g-color-gray-dark-v4">固态、液态和气态没有高低之分，差别来自能量、粒子运动与组织结构。借这一物理图景理解个人、关系与群体：健康并非永远稳定、流动或扩展，也不是能量越高越好，而是能在凝聚、调整与开拓之间转换，并以边界和结构承载活力。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/muyu-notes/states-of-matter-and-life-flexibility.html">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
-<script>
-  (function () {
-    var maxExcerptLength = 70;
-    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
-
-    excerpts.forEach(function (excerpt) {
-      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
-
-      var fullText = excerpt.textContent.trim();
-      var characters = Array.from(fullText);
-
-      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
-      if (characters.length <= maxExcerptLength) {
-        excerpt.removeAttribute("role");
-        excerpt.removeAttribute("tabindex");
-        excerpt.removeAttribute("aria-expanded");
-        excerpt.style.cursor = "default";
-        return;
-      }
-
-      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
-      var isExpanded = false;
-      excerpt.textContent = collapsedText;
-
-      function toggleExcerpt() {
-        isExpanded = !isExpanded;
-        excerpt.textContent = isExpanded ? fullText : collapsedText;
-        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
-      }
-
-      excerpt.addEventListener("click", toggleExcerpt);
-      excerpt.addEventListener("keydown", function (event) {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          toggleExcerpt();
-        }
-      });
-    });
-  })();
-</script>
 
 
 			  
@@ -1230,69 +1081,6 @@ main {
   </ul>
 </div>
 
-
-              <!-- 加一条灰线 -->
-              <hr class="g-brd-gray-light-v4 g-my-50">
-              <!-- 文章搜索入口 -->
-              <div class="article-sidebar-search">
-                
-                <section
-  class="article-search-panel article-search-panel--entry article-search-panel--compact"
-  aria-label="文章搜索"
->
-  <form
-    id="articleSearchSharedForm"
-    class="article-search-form"
-    action="/articles/search/"
-    method="get"
-    role="search"
-    
-  >
-    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
-    <input
-      id="articleSearchSharedInput"
-      class="article-search-input"
-      type="search"
-      name="q"
-      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
-      autocomplete="off"
-      
-    >
-    <button class="article-search-button" type="submit">搜索</button>
-    <button
-      class="article-search-button article-search-button--secondary"
-      type="reset"
-      
-    >
-      清空
-    </button>
-  </form>
-
-  <div class="article-search-toolbar">
-    
-      <p class="article-search-status">可搜索 139 篇文章</p>
-    
-
-    <div class="article-search-controls">
-      
-
-      <label class="article-search-control-label article-search-sort-label">
-        <span class="sr-only">排序</span>
-        <select
-          class="article-search-select article-search-sort"
-          name="sort"
-          form="articleSearchSharedForm"
-          
-        >
-          <option value="relevance">按相关度排序</option>
-          <option value="latest">按最新发布排序</option>
-        </select>
-      </label>
-    </div>
-  </div>
-</section>
-
-              </div>
 			  
 			  
             </div>
@@ -1374,18 +1162,6 @@ main {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
-        function updateFloatingTocVisibility(toc, endBoundary) {
-          if (!toc || !article || !endBoundary) return;
-
-          var articleRect = article.getBoundingClientRect();
-          var boundaryRect = endBoundary.getBoundingClientRect();
-          var tocRect = toc.getBoundingClientRect();
-          var staysBelowIntro = tocRect.top >= articleRect.top;
-          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
-
-          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
-        }
-
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1439,10 +1215,9 @@ main {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
-        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          updateFloatingTocVisibility(toc, endBoundary);
+          toc.classList.add("is-visible");
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1454,9 +1229,6 @@ main {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          window.requestAnimationFrame(function () {
-            updateFloatingTocVisibility(toc, endBoundary);
-          });
         }
 
         function setActive(id) {
@@ -1505,7 +1277,6 @@ main {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
-            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

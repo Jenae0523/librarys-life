@@ -3,14 +3,14 @@
 <head>
   <head>
   <title>《瓦尔登湖》反思生活/新闻的真相，现代人为何集体沉睡？隐居者的警钟：清醒地活着！・生命之书 | librarys.life</title>
-  <meta name="description" content="为什么信息越来越多，人却未必活得更清醒？梭罗在《瓦尔登湖》中质疑新闻成瘾、无意义的忙碌、物质扩张与随波逐流，提醒人们不要把社会普遍接受的生活方式误认为生命本身。回到简单生活，并不是逃避世界，而是剥去多余之物，亲自判断什么值得用有限的一生去交换。">
+  <meta name="description" content="亨利·戴维·梭罗在《瓦尔登湖》中预言了现代人的迷失与困境：信息焦虑、无意义的忙碌、沉迷幻象的生活方式。本文深度剖析梭罗的隐居哲学，反思新闻真相、现代社会的陷阱，以及我们如何重新学习“清醒地活着”，找回生活的本质。">
 <meta name="keywords" content="清醒生活, 现代人迷失, 瓦尔登湖哲学, 信息焦虑, 梭罗隐居思想, 自我觉醒指南">
 
 <meta name="robots" content="all">
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-1639">
+<meta name="version" content="20260803-2342">
 
 
 <meta charset="utf-8">
@@ -69,8 +69,6 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
-  <link rel="stylesheet" href="/assets/css/selection-search.css">
-  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -78,59 +76,10 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
-      max-width: 100%;
-      overflow-x: clip;
-      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
-}
-
-body {
-  touch-action: pan-y pinch-zoom;
-}
-
-main {
-  max-width: 100%;
-  overflow-x: clip;
-}
-
-.article-body {
-  min-width: 0;
-  max-width: 100%;
-  overflow-wrap: anywhere;
-}
-
-.article-body > * {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.article-body iframe,
-.article-body video,
-.article-body audio,
-.article-body canvas,
-.article-body svg {
-  max-width: 100%;
-}
-
-.article-body pre,
-.article-body table {
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.article-body pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-.article-body a,
-.article-body code {
-  overflow-wrap: anywhere;
-  word-break: break-word;
 }
 	
 .article-body p {
@@ -161,32 +110,6 @@ main {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
-}
-
-.related-posts-heading {
-  font-size: 1.8rem;
-  line-height: 1.6;
-}
-
-.related-posts-item {
-  padding-top: 36px;
-}
-
-.related-posts-item:first-child {
-  padding-top: 12px;
-}
-
-.related-posts-excerpt {
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
-.related-posts-excerpt[role="button"]:focus {
-  outline: none;
-}
-
-.related-posts-excerpt[role="button"]:focus-visible {
-  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -295,22 +218,17 @@ main {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: flex;
+  display: none;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
 }
 
 .floating-episode-toc.is-visible {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
 }
 
 .floating-episode-toc.is-open {
@@ -609,7 +527,7 @@ main {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
+                <hr class="g-brd-gray-light-v4 g-pt-20">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -752,115 +670,48 @@ main {
 
 
 			  
-              <!-- 加一条灰线 -->
+			  <!-- 加一条灰线 -->
               <hr class="g-brd-gray-light-v4 g-my-50">			  			  
               <!-- 相关文章 -->			  
               
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0">
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">真正的教导，指向自我实现｜教导与学习的本质解析</h5>
-          
-          <p id="related-post-excerpt-1"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">真正的教导，为什么不只是把知识从老师传给学生？Q’uo的通灵资料把教与学视为同一个自我认识过程：记忆可以积累知识，练习带来理解，而老师的热情、存在状态与真实自我，才可能唤醒学习的生命力。最深的教导不是制造追随者，而是帮助人看见并成为真正的自己。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/insight-awakening/teaching-and-learning-self-realization-spiritual-growth.html"
-             aria-label="阅读相关文章：真正的教导，指向自我实现｜教导与学习的本质解析">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">星际种子与原生家庭：4大灵魂使命与家族业力疗愈指南</h5>
+          <p class="g-color-gray-dark-v4">探索星际种子（Starseeds）为何常出生在充满阻塞能量的原生家庭，以及他们肩负的家族业力疗愈与觉醒使命。本文解析星际种子的4个灵魂任务：疗愈内在小孩、摆脱家族业力、找回真正的自我、找到灵魂家族，帮助你走上灵性觉醒之路。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/healing-empowerment/starseeds-family-karma-healing-spiritual-awakening-guide.html">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">走出恐惧的迷雾：人类集体意识的海洋 │ 走出内在恐惧的4个阶段</h5>
-          
-          <p id="related-post-excerpt-2"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">恐惧为什么常伪装成理性、责任，甚至“为你好”的声音？《灵魂的暗夜》认为，外在权威会被内化成心中的独裁者与顺从者，使人一边渴望新的生活，一边又不敢行动。文章给出四步循环：识别恐惧、连接真正的灵感、采取具体行动，再面对随之浮现的恐惧，逐渐分辨集体意识的迷雾与自己的内在声音。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/healing-empowerment/dark-night-of-the-soul/starseed-fear-energy-how-to-break-free-and-awaken.html"
-             aria-label="阅读相关文章：走出恐惧的迷雾：人类集体意识的海洋 │ 走出内在恐惧的4个阶段">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？</h5>
+          <p class="g-color-gray-dark-v4">本篇深入解析“扬升（Ascension）”的本质：如何透过观想、潜意识清理与能量练习，点燃神圣之心、扩展能量场并进入更高层次的意识。包含实操步骤、常见阻碍以及关系与灵魂整合的建议，适合正在追求灵性觉醒的你。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验</h5>
-          
-          <p id="related-post-excerpt-3"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">此生的功课，为什么不是离开身体，而是更完整地进入身体？DATRE把灵性探索重新拉回感官、专注与行动：观察者不是抽离生活的旁观者，而是能看见机械反应、教导大脑与身体，并清醒参与物质经验的人。梦境也不是逃离现实的入口，而是白天意识状态的延伸。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html"
-             aria-label="阅读相关文章：当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">真正的教导，指向自我实现｜教导与学习的本质解析</h5>
+          <p class="g-color-gray-dark-v4">深入探讨「教导与学习」真正发生的方式。本文指出，真正的教导并非知识灌输，而是指向自我实现与自我觉知的过程。通过解析灵性导师、自由意志、内在引导与存在状态，揭示为何所有深刻的学习，最终都回归为成为真正的自己。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/teaching-and-learning-self-realization-spiritual-growth.html">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
-<script>
-  (function () {
-    var maxExcerptLength = 70;
-    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
-
-    excerpts.forEach(function (excerpt) {
-      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
-
-      var fullText = excerpt.textContent.trim();
-      var characters = Array.from(fullText);
-
-      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
-      if (characters.length <= maxExcerptLength) {
-        excerpt.removeAttribute("role");
-        excerpt.removeAttribute("tabindex");
-        excerpt.removeAttribute("aria-expanded");
-        excerpt.style.cursor = "default";
-        return;
-      }
-
-      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
-      var isExpanded = false;
-      excerpt.textContent = collapsedText;
-
-      function toggleExcerpt() {
-        isExpanded = !isExpanded;
-        excerpt.textContent = isExpanded ? fullText : collapsedText;
-        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
-      }
-
-      excerpt.addEventListener("click", toggleExcerpt);
-      excerpt.addEventListener("keydown", function (event) {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          toggleExcerpt();
-        }
-      });
-    });
-  })();
-</script>
 
 
 			  
@@ -1249,69 +1100,6 @@ main {
   </ul>
 </div>
 
-
-              <!-- 加一条灰线 -->
-              <hr class="g-brd-gray-light-v4 g-my-50">
-              <!-- 文章搜索入口 -->
-              <div class="article-sidebar-search">
-                
-                <section
-  class="article-search-panel article-search-panel--entry article-search-panel--compact"
-  aria-label="文章搜索"
->
-  <form
-    id="articleSearchSharedForm"
-    class="article-search-form"
-    action="/articles/search/"
-    method="get"
-    role="search"
-    
-  >
-    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
-    <input
-      id="articleSearchSharedInput"
-      class="article-search-input"
-      type="search"
-      name="q"
-      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
-      autocomplete="off"
-      
-    >
-    <button class="article-search-button" type="submit">搜索</button>
-    <button
-      class="article-search-button article-search-button--secondary"
-      type="reset"
-      
-    >
-      清空
-    </button>
-  </form>
-
-  <div class="article-search-toolbar">
-    
-      <p class="article-search-status">可搜索 139 篇文章</p>
-    
-
-    <div class="article-search-controls">
-      
-
-      <label class="article-search-control-label article-search-sort-label">
-        <span class="sr-only">排序</span>
-        <select
-          class="article-search-select article-search-sort"
-          name="sort"
-          form="articleSearchSharedForm"
-          
-        >
-          <option value="relevance">按相关度排序</option>
-          <option value="latest">按最新发布排序</option>
-        </select>
-      </label>
-    </div>
-  </div>
-</section>
-
-              </div>
 			  
 			  
             </div>
@@ -1393,18 +1181,6 @@ main {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
-        function updateFloatingTocVisibility(toc, endBoundary) {
-          if (!toc || !article || !endBoundary) return;
-
-          var articleRect = article.getBoundingClientRect();
-          var boundaryRect = endBoundary.getBoundingClientRect();
-          var tocRect = toc.getBoundingClientRect();
-          var staysBelowIntro = tocRect.top >= articleRect.top;
-          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
-
-          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
-        }
-
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1458,10 +1234,9 @@ main {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
-        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          updateFloatingTocVisibility(toc, endBoundary);
+          toc.classList.add("is-visible");
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1473,9 +1248,6 @@ main {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          window.requestAnimationFrame(function () {
-            updateFloatingTocVisibility(toc, endBoundary);
-          });
         }
 
         function setActive(id) {
@@ -1524,7 +1296,6 @@ main {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
-            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

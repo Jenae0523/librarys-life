@@ -28,6 +28,5 @@ number: 8
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology8.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology08-ufo-future-humans-higher-dimensional-beings.html"
 ---
 

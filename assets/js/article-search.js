@@ -1312,6 +1312,7 @@
     normalizeText,
     populateFacetSelect,
     readSearchUrlState,
+    renderResult,
     renderTags,
     search,
     sortFacetedResults,

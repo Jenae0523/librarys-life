@@ -19,7 +19,6 @@ tags:
   - 神话
   - 冥想
   - 自我认知
-
 number: 2
 subtitle_url: "/audiobooks/siddhartha/texts/siddhartha2.json"
 book_slug: siddhartha

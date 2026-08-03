@@ -30,8 +30,5 @@ number: 20
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology20.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
-article_url: "/all-articles/courses/human-body-healing/sleep-self-healing-fifth-dimension-higher-self-dreams.html"
 ---
-
-
 

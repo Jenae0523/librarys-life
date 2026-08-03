@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-1639">
+<meta name="version" content="20260803-2342">
 
 
 <meta charset="utf-8">
@@ -69,8 +69,6 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
-  <link rel="stylesheet" href="/assets/css/selection-search.css">
-  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -78,59 +76,10 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
-      max-width: 100%;
-      overflow-x: clip;
-      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
-}
-
-body {
-  touch-action: pan-y pinch-zoom;
-}
-
-main {
-  max-width: 100%;
-  overflow-x: clip;
-}
-
-.article-body {
-  min-width: 0;
-  max-width: 100%;
-  overflow-wrap: anywhere;
-}
-
-.article-body > * {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.article-body iframe,
-.article-body video,
-.article-body audio,
-.article-body canvas,
-.article-body svg {
-  max-width: 100%;
-}
-
-.article-body pre,
-.article-body table {
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.article-body pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-.article-body a,
-.article-body code {
-  overflow-wrap: anywhere;
-  word-break: break-word;
 }
 	
 .article-body p {
@@ -161,32 +110,6 @@ main {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
-}
-
-.related-posts-heading {
-  font-size: 1.8rem;
-  line-height: 1.6;
-}
-
-.related-posts-item {
-  padding-top: 36px;
-}
-
-.related-posts-item:first-child {
-  padding-top: 12px;
-}
-
-.related-posts-excerpt {
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
-.related-posts-excerpt[role="button"]:focus {
-  outline: none;
-}
-
-.related-posts-excerpt[role="button"]:focus-visible {
-  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -295,22 +218,17 @@ main {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: flex;
+  display: none;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
 }
 
 .floating-episode-toc.is-visible {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
+  display: flex;
 }
 
 .floating-episode-toc.is-open {
@@ -756,7 +674,7 @@ main {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
+                <hr class="g-brd-gray-light-v4 g-pt-20">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -979,115 +897,48 @@ main {
 
 
 			  
-              <!-- 加一条灰线 -->
+			  <!-- 加一条灰线 -->
               <hr class="g-brd-gray-light-v4 g-my-50">			  			  
               <!-- 相关文章 -->			  
               
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0">
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验</h5>
-          
-          <p id="related-post-excerpt-1"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">此生的功课，为什么不是离开身体，而是更完整地进入身体？DATRE把灵性探索重新拉回感官、专注与行动：观察者不是抽离生活的旁观者，而是能看见机械反应、教导大脑与身体，并清醒参与物质经验的人。梦境也不是逃离现实的入口，而是白天意识状态的延伸。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html"
-             aria-label="阅读相关文章：当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验</h5>
+          <p class="g-color-gray-dark-v4">此生的功课，为什么不是离开身体，而是更完整地进入身体？DATRE把灵性探索重新拉回感官、专注与行动：观察者不是抽离生活的旁观者，而是能看见机械反应、教导大脑与身体，并清醒参与物质经验的人。梦境也不是逃离现实的入口，而是白天意识状态的延伸。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈</h5>
-          
-          <p id="related-post-excerpt-2"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">疾病是业力惩罚，还是身体、心智与灵魂失衡后的结果？埃德加·凯西关于多发性硬化、失明与关节炎的解读，既要求当事人改变仇恨、自私等内在态度，也明确保留药物、手术、整骨与其他身体疗法的位置。健康问题不能被一概归因于心念，真正的整体疗愈需要同时尊重身体原因、心理改变与精神成长。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html"
-             aria-label="阅读相关文章：疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈</h5>
+          <p class="g-color-gray-dark-v4">疾病是业力惩罚，还是身体、心智与灵魂失衡后的结果？埃德加·凯西关于多发性硬化、失明与关节炎的解读，既要求当事人改变仇恨、自私等内在态度，也明确保留药物、手术、整骨与其他身体疗法的位置。健康问题不能被一概归因于心念，真正的整体疗愈需要同时尊重身体原因、心理改变与精神成长。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li class="related-posts-item">
-      <article class="media">
+    <li>
+      <article class="media g-mb-35">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">我们为什么要认真做好每一件小事？功夫的真义：使行动趋于完美，也是修炼内在趋于完美</h5>
-          
-          <p id="related-post-excerpt-3"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">功夫不只是武术招式，而是一个人如何在长期行动中修炼自己。Taisha Abelar 的《巫士的穿越》中，克莱拉借搬运和排列石头说明：完成得快、做得多并非重点，行动的方式会显露一个人的内在状态；内功与外功虽然训练方向不同，最终都应改变行动背后的那个人。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/insight-awakening/teachings-of-don-juan/the-true-meaning-of-kung-fu.html"
-             aria-label="阅读相关文章：我们为什么要认真做好每一件小事？功夫的真义：使行动趋于完美，也是修炼内在趋于完美">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-600">我们为什么要认真做好每一件小事？功夫的真义：使行动趋于完美，也是修炼内在趋于完美</h5>
+          <p class="g-color-gray-dark-v4">功夫不只是武术招式，而是一个人如何在长期行动中修炼自己。Taisha Abelar 的《巫士的穿越》中，克莱拉借搬运和排列石头说明：完成得快、做得多并非重点，行动的方式会显露一个人的内在状态；内功与外功虽然训练方向不同，最终都应改变行动背后的那个人。</p>
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/teachings-of-don-juan/the-true-meaning-of-kung-fu.html">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
-<script>
-  (function () {
-    var maxExcerptLength = 70;
-    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
-
-    excerpts.forEach(function (excerpt) {
-      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
-
-      var fullText = excerpt.textContent.trim();
-      var characters = Array.from(fullText);
-
-      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
-      if (characters.length <= maxExcerptLength) {
-        excerpt.removeAttribute("role");
-        excerpt.removeAttribute("tabindex");
-        excerpt.removeAttribute("aria-expanded");
-        excerpt.style.cursor = "default";
-        return;
-      }
-
-      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
-      var isExpanded = false;
-      excerpt.textContent = collapsedText;
-
-      function toggleExcerpt() {
-        isExpanded = !isExpanded;
-        excerpt.textContent = isExpanded ? fullText : collapsedText;
-        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
-      }
-
-      excerpt.addEventListener("click", toggleExcerpt);
-      excerpt.addEventListener("keydown", function (event) {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          toggleExcerpt();
-        }
-      });
-    });
-  })();
-</script>
 
 
 			  
@@ -1476,69 +1327,6 @@ main {
   </ul>
 </div>
 
-
-              <!-- 加一条灰线 -->
-              <hr class="g-brd-gray-light-v4 g-my-50">
-              <!-- 文章搜索入口 -->
-              <div class="article-sidebar-search">
-                
-                <section
-  class="article-search-panel article-search-panel--entry article-search-panel--compact"
-  aria-label="文章搜索"
->
-  <form
-    id="articleSearchSharedForm"
-    class="article-search-form"
-    action="/articles/search/"
-    method="get"
-    role="search"
-    
-  >
-    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
-    <input
-      id="articleSearchSharedInput"
-      class="article-search-input"
-      type="search"
-      name="q"
-      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
-      autocomplete="off"
-      
-    >
-    <button class="article-search-button" type="submit">搜索</button>
-    <button
-      class="article-search-button article-search-button--secondary"
-      type="reset"
-      
-    >
-      清空
-    </button>
-  </form>
-
-  <div class="article-search-toolbar">
-    
-      <p class="article-search-status">可搜索 139 篇文章</p>
-    
-
-    <div class="article-search-controls">
-      
-
-      <label class="article-search-control-label article-search-sort-label">
-        <span class="sr-only">排序</span>
-        <select
-          class="article-search-select article-search-sort"
-          name="sort"
-          form="articleSearchSharedForm"
-          
-        >
-          <option value="relevance">按相关度排序</option>
-          <option value="latest">按最新发布排序</option>
-        </select>
-      </label>
-    </div>
-  </div>
-</section>
-
-              </div>
 			  
 			  
             </div>
@@ -1620,18 +1408,6 @@ main {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
-        function updateFloatingTocVisibility(toc, endBoundary) {
-          if (!toc || !article || !endBoundary) return;
-
-          var articleRect = article.getBoundingClientRect();
-          var boundaryRect = endBoundary.getBoundingClientRect();
-          var tocRect = toc.getBoundingClientRect();
-          var staysBelowIntro = tocRect.top >= articleRect.top;
-          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
-
-          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
-        }
-
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1685,10 +1461,9 @@ main {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
-        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          updateFloatingTocVisibility(toc, endBoundary);
+          toc.classList.add("is-visible");
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1700,9 +1475,6 @@ main {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          window.requestAnimationFrame(function () {
-            updateFloatingTocVisibility(toc, endBoundary);
-          });
         }
 
         function setActive(id) {
@@ -1751,7 +1523,6 @@ main {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
-            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

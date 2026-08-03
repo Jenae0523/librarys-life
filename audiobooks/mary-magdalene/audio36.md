@@ -25,6 +25,8 @@ keywords:
 date: 2026-07-10
 tags:
   - audiobooks
+  - 《抹大拉手稿》
+  - 神圣关系
   - 灵性觉醒
   - 女性灵性
 number: 36
@@ -38,6 +40,3 @@ is_audio_episode: true
 article_url: "/all-articles/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.html"
 
 ---
-
-
-
