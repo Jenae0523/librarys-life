@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-2342">
+<meta name="version" content="20260804-0206">
 
 
 <meta charset="utf-8">
@@ -110,6 +110,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -218,17 +244,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -496,7 +527,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -662,41 +693,108 @@ html {
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">无法正确的沟通，是因为缺乏沟通的品质，是什么导致沟通的终止？打破沟通障碍的5个关键点！</h5>
-          <p class="g-color-gray-dark-v4">本篇深度解析沟通失败的根源，揭示为什么我们无法真正倾听和理解对方。探讨倾听的艺术、自我重要感、思维惰性、语言局限与沟通品质等5大关键问题，帮助你建立真实、开放、有品质的人际连结。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/art-of-deep-listening-how-to-break-communication-barriers-and-connect-truly.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">无法正确的沟通，是因为缺乏沟通的品质，是什么导致沟通的终止？打破沟通障碍的5个关键点！</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">本篇深度解析沟通失败的根源，揭示为什么我们无法真正倾听和理解对方。探讨倾听的艺术、自我重要感、思维惰性、语言局限与沟通品质等5大关键问题，帮助你建立真实、开放、有品质的人际连结。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/insight-awakening/art-of-deep-listening-how-to-break-communication-barriers-and-connect-truly.html"
+             aria-label="阅读相关文章：无法正确的沟通，是因为缺乏沟通的品质，是什么导致沟通的终止？打破沟通障碍的5个关键点！">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求</h5>
-          <p class="g-color-gray-dark-v4">本文深入探讨“情绪癌症”的概念，揭示长期压抑情绪和忽视内在需求如何影响身体健康。结合心理学案例与神经肽理论，提供提升情绪免疫力的方法，帮助读者在灵性成长中平衡自我需求与他人需求，实现心理与身体的双重疗愈。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">本文深入探讨“情绪癌症”的概念，揭示长期压抑情绪和忽视内在需求如何影响身体健康。结合心理学案例与神经肽理论，提供提升情绪免疫力的方法，帮助读者在灵性成长中平衡自我需求与他人需求，实现心理与身体的双重疗愈。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html"
+             aria-label="阅读相关文章：情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">走出恐惧的迷雾：人类集体意识的海洋 │ 走出内在恐惧的4个阶段</h5>
-          <p class="g-color-gray-dark-v4">星际种子们正在地球上开辟新的人类意识之路。本篇深入解析恐惧能量如何操控人类思维，以及如何通过四个阶段的灵性实践走出恐惧迷雾。帮助你识别内在的独裁者，重新聆听灵魂的声音，迈向觉醒与自由。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/healing-empowerment/dark-night-of-the-soul/starseed-fear-energy-how-to-break-free-and-awaken.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">走出恐惧的迷雾：人类集体意识的海洋 │ 走出内在恐惧的4个阶段</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">星际种子们正在地球上开辟新的人类意识之路。本篇深入解析恐惧能量如何操控人类思维，以及如何通过四个阶段的灵性实践走出恐惧迷雾。帮助你识别内在的独裁者，重新聆听灵魂的声音，迈向觉醒与自由。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/healing-empowerment/dark-night-of-the-soul/starseed-fear-energy-how-to-break-free-and-awaken.html"
+             aria-label="阅读相关文章：走出恐惧的迷雾：人类集体意识的海洋 │ 走出内在恐惧的4个阶段">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1166,6 +1264,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1219,9 +1329,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1233,6 +1344,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1281,6 +1395,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

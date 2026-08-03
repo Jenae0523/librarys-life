@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-2342">
+<meta name="version" content="20260804-0206">
 
 
 <meta charset="utf-8">
@@ -110,6 +110,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -218,17 +244,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -532,7 +563,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -714,41 +745,108 @@ html {
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">地狱是心智创造的吗？灵魂能量、负面振动与濒死经验的深层解析</h5>
-          <p class="g-color-gray-dark-v4">从灵性视角解析“地狱与炼狱是否真实存在”，探讨心智如何创造体验、负面能量如何形成与吸引机制，以及濒死经验中的灵界感知。深入理解死亡恐惧、业力作用与意识状态对灵魂体验的影响。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/between-death-life/22-is-hell-created-by-mind-negative-energy-afterlife-near-death-experience-explained.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">地狱是心智创造的吗？灵魂能量、负面振动与濒死经验的深层解析</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">从灵性视角解析“地狱与炼狱是否真实存在”，探讨心智如何创造体验、负面能量如何形成与吸引机制，以及濒死经验中的灵界感知。深入理解死亡恐惧、业力作用与意识状态对灵魂体验的影响。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/between-death-life/22-is-hell-created-by-mind-negative-energy-afterlife-near-death-experience-explained.html"
+             aria-label="阅读相关文章：地狱是心智创造的吗？灵魂能量、负面振动与濒死经验的深层解析">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">死亡过程真实记录：濒死体验、灵魂出体与“银线”连接的深度解析</h5>
-          <p class="g-color-gray-dark-v4">基于大量催眠回溯个案，解析死亡过程中的真实体验，包括灵魂离体、隧道与白光现象，以及“银线”作为连接身体与意识的关键机制。同时探讨濒死经验、无痛过渡与灵魂层面的感知变化，为理解死亡提供一种全新视角。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/between-death-life/2-death-experience-nde-soul-out-of-body-silver-cord-explained.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">死亡过程真实记录：濒死体验、灵魂出体与“银线”连接的深度解析</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">基于大量催眠回溯个案，解析死亡过程中的真实体验，包括灵魂离体、隧道与白光现象，以及“银线”作为连接身体与意识的关键机制。同时探讨濒死经验、无痛过渡与灵魂层面的感知变化，为理解死亡提供一种全新视角。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/between-death-life/2-death-experience-nde-soul-out-of-body-silver-cord-explained.html"
+             aria-label="阅读相关文章：死亡过程真实记录：濒死体验、灵魂出体与“银线”连接的深度解析">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处</h5>
-          <p class="g-color-gray-dark-v4">本集探讨死亡作为灵魂回归的意义：从“紫罗兰转化火焰”与过渡之泉的描绘，到濒死体验如何在内在神圣心智中展开；进一步讨论灵魂离体后可能的去向（开悟、暴力死亡、自杀等），以及为何当代世代“遗忘的帷幕正在变薄”。适合对灵性、转世与意识扩展感兴趣的读者，兼顾理论、案例与实用安抚建议。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">本集探讨死亡作为灵魂回归的意义：从“紫罗兰转化火焰”与过渡之泉的描绘，到濒死体验如何在内在神圣心智中展开；进一步讨论灵魂离体后可能的去向（开悟、暴力死亡、自杀等），以及为何当代世代“遗忘的帷幕正在变薄”。适合对灵性、转世与意识扩展感兴趣的读者，兼顾理论、案例与实用安抚建议。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html"
+             aria-label="阅读相关文章：大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1218,6 +1316,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1271,9 +1381,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1285,6 +1396,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1333,6 +1447,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

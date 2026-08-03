@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-2342">
+<meta name="version" content="20260804-0206">
 
 
 <meta charset="utf-8">
@@ -110,6 +110,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -218,17 +244,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -495,7 +526,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -677,41 +708,108 @@ html {
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">如何与身体重新连接？4个视角理解身体与灵魂的关系</h5>
-          <p class="g-color-gray-dark-v4">如果人不只是一具身体，为什么仍必须完整地活在身体里？朵洛莉丝·侃南、DATRE、安诺德·朱迪斯与埃德加·凯西分别从身份认同、身体觉察、身心整合与疗愈方向提供四种互补视角，区分“身体不是全部自我”与“真正进入身体”，说明倾听身体不等于服从冲动，并将催眠材料、通灵报告和形而上观点明确视为待辨别的资料，而非已证实事实。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/courses/human-body-healing/reconnect-with-body-body-soul-relationship.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">如何与身体重新连接？4个视角理解身体与灵魂的关系</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">如果人不只是一具身体，为什么仍必须完整地活在身体里？朵洛莉丝·侃南、DATRE、安诺德·朱迪斯与埃德加·凯西分别从身份认同、身体觉察、身心整合与疗愈方向提供四种互补视角，区分“身体不是全部自我”与“真正进入身体”，说明倾听身体不等于服从冲动，并将催眠材料、通灵报告和形而上观点明确视为待辨别的资料，而非已证实事实。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/courses/human-body-healing/reconnect-with-body-body-soul-relationship.html"
+             aria-label="阅读相关文章：如何与身体重新连接？4个视角理解身体与灵魂的关系">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">克里希那穆提：真正的静心，从理解自我与欲望开始</h5>
-          <p class="g-color-gray-dark-v4">本文探讨克里希那穆提对“静心”的深刻洞见：静心并非依靠权威指令或机械的冥想步骤，而是要从认识自我与欲望的运作轨迹开始。唯有通过中立、温和的自我觉察，我们才能分辨内在声音的来源，超越小我的幻象，走向真正的开悟与心灵自由。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/jiddu-krishnamurti/5-true-meditation-begins-with-understanding-self-desire.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">克里希那穆提：真正的静心，从理解自我与欲望开始</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">本文探讨克里希那穆提对“静心”的深刻洞见：静心并非依靠权威指令或机械的冥想步骤，而是要从认识自我与欲望的运作轨迹开始。唯有通过中立、温和的自我觉察，我们才能分辨内在声音的来源，超越小我的幻象，走向真正的开悟与心灵自由。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/insight-awakening/jiddu-krishnamurti/5-true-meditation-begins-with-understanding-self-desire.html"
+             aria-label="阅读相关文章：克里希那穆提：真正的静心，从理解自我与欲望开始">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">克里希那穆提的智慧：如何让粗糙的心变得敏锐？</h5>
-          <p class="g-color-gray-dark-v4">探讨克里希那穆提关于“粗糙的心”的思考，揭示努力改变为何本身是一种粗糙。通过日常生活中的观察与觉知，我们如何超越愚钝，培养敏锐与清明的心智。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/jiddu-krishnamurti/1-how-awareness-transforms-a-rough-mind-inner-growth-not-effort.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">克里希那穆提的智慧：如何让粗糙的心变得敏锐？</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">探讨克里希那穆提关于“粗糙的心”的思考，揭示努力改变为何本身是一种粗糙。通过日常生活中的观察与觉知，我们如何超越愚钝，培养敏锐与清明的心智。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/insight-awakening/jiddu-krishnamurti/1-how-awareness-transforms-a-rough-mind-inner-growth-not-effort.html"
+             aria-label="阅读相关文章：克里希那穆提的智慧：如何让粗糙的心变得敏锐？">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1181,6 +1279,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1234,9 +1344,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1248,6 +1359,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1296,6 +1410,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

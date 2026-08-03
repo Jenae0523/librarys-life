@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-2342">
+<meta name="version" content="20260804-0206">
 
 
 <meta charset="utf-8">
@@ -110,6 +110,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -218,17 +244,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -576,7 +607,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -790,41 +821,108 @@ html {
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集</h5>
-          <p class="g-color-gray-dark-v4">松果体冥想真的能接收来自其他意识维度的信息吗？萨纳特·库玛拉给出一套外星接触的方法，同时强调接收者必须辨别信息、拒绝命令与崇拜、守住意识主权；相关材料也延伸到安努纳奇、人类起源和集体潜意识的另类解释。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">松果体冥想真的能接收来自其他意识维度的信息吗？萨纳特·库玛拉给出一套外星接触的方法，同时强调接收者必须辨别信息、拒绝命令与崇拜、守住意识主权；相关材料也延伸到安努纳奇、人类起源和集体潜意识的另类解释。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html"
+             aria-label="阅读相关文章：松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">与外星生命接触时如何辨别信息？意识主权、科技伦理与人类未来｜《大角星人文摘》第16集</h5>
-          <p class="g-color-gray-dark-v4">与外星生命或所谓高维存有接触时，谁来判断信息是真是假？大角星战士Frephios强调，接收者必须暂时开放，又要在事后分析、研究并保留最终判断权。材料还把意识主权延伸到语言限制、技术权力、太阳活动与人类集体未来。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/alien-archives/arcturian/the-arcturian-anthology16-alien-contact-discernment-consciousness-sovereignty.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">与外星生命接触时如何辨别信息？意识主权、科技伦理与人类未来｜《大角星人文摘》第16集</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">与外星生命或所谓高维存有接触时，谁来判断信息是真是假？大角星战士Frephios强调，接收者必须暂时开放，又要在事后分析、研究并保留最终判断权。材料还把意识主权延伸到语言限制、技术权力、太阳活动与人类集体未来。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology16-alien-contact-discernment-consciousness-sovereignty.html"
+             aria-label="阅读相关文章：与外星生命接触时如何辨别信息？意识主权、科技伦理与人类未来｜《大角星人文摘》第16集">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步</h5>
-          <p class="g-color-gray-dark-v4">探索直觉感知能力作为更高意识导航系统的作用，解析灵魂矩阵、科洛提代码与人类基因修复的关系。学习如何整合情绪能量、清理潜意识编程，并通过自我疗愈推进意识进化，找回内在主权与真实身份。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">探索直觉感知能力作为更高意识导航系统的作用，解析灵魂矩阵、科洛提代码与人类基因修复的关系。学习如何整合情绪能量、清理潜意识编程，并通过自我疗愈推进意识进化，找回内在主权与真实身份。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html"
+             aria-label="阅读相关文章：直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1294,6 +1392,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1347,9 +1457,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1361,6 +1472,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1409,6 +1523,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

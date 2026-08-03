@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-2342">
+<meta name="version" content="20260804-0206">
 
 
 <meta charset="utf-8">
@@ -110,6 +110,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -218,17 +244,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -489,7 +520,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -1089,6 +1120,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1142,9 +1185,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1156,6 +1200,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1204,6 +1251,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

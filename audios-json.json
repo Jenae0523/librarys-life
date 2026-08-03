@@ -1,13 +1,5 @@
 [
   {
-    "title": "第1集：死亡的真相？前世催眠回溯，揭秘死后灵魂世界",
-    "subtitle": "",
-    "description": "当个案重新经历死亡经验，他们会穿越白光，强烈的能量会切断银线，即连系灵魂与肉体的脐带，身体与灵魂就此分离。",
-    "slug": "/audiobooks/between-death-life/audio1/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio1.MP3"
-  },
-  {
     "title": "第10集：灵界疗愈殿堂，疗愈以太体",
     "subtitle": "",
     "description": "催眠探秘灵界疗愈殿堂，地球人世与星光界的中间地带 │ 学习用光净化你周遭的负面能量 │ 应专注于正面的思想，以吸引正面的能量 │ 使用心灵疗癒力，通过催眠、冥想连结疗愈殿堂",
@@ -24,12 +16,12 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio11.MP3"
   },
   {
-    "title": "第13集：探索不同层级的星光层│较低星光层，中阶星光层，上层星光界",
+    "title": "第1集：死亡的真相？前世催眠回溯，揭秘死后灵魂世界",
     "subtitle": "",
-    "description": "怎样离开较低星光层？低阶灵魂，被吸附在地球的黑暗层级 │ 中阶灵魂与已逝亲友在一起，等待转世 │ 高度进化的灵魂，居住在上层星光界",
-    "slug": "/audiobooks/between-death-life/audio13/",
+    "description": "当个案重新经历死亡经验，他们会穿越白光，强烈的能量会切断银线，即连系灵魂与肉体的脐带，身体与灵魂就此分离。",
+    "slug": "/audiobooks/between-death-life/audio1/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio13.MP3"
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio1.MP3"
   },
   {
     "title": "第12集：灵界图书馆，智慧的殿堂",
@@ -38,6 +30,14 @@
     "slug": "/audiobooks/between-death-life/audio12/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio12.MP3"
+  },
+  {
+    "title": "第13集：探索不同层级的星光层│较低星光层，中阶星光层，上层星光界",
+    "subtitle": "",
+    "description": "怎样离开较低星光层？低阶灵魂，被吸附在地球的黑暗层级 │ 中阶灵魂与已逝亲友在一起，等待转世 │ 高度进化的灵魂，居住在上层星光界",
+    "slug": "/audiobooks/between-death-life/audio13/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio13.MP3"
   },
   {
     "title": "第14集：灵魂计划，转世电脑室",
@@ -64,14 +64,6 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio16.MP3"
   },
   {
-    "title": "第18集：自然灵协助，新地球扬升",
-    "subtitle": "",
-    "description": "地球正在向高行星振动演化，大自然的灵正为此准备。",
-    "slug": "/audiobooks/between-death-life/audio18/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio18.MP3"
-  },
-  {
     "title": "第17集：元素层级，精灵层级",
     "subtitle": "",
     "description": "灵魂的演化，人类曾经也是精灵 │ 负面星光层的邪恶存在体，会冒充精灵 │ 第一层元素，纯粹的情绪与能量组成 │ 第二层精灵，大自然的守护者",
@@ -80,12 +72,12 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio17.MP3"
   },
   {
-    "title": "第2集：前世催眠，解密死亡过渡期",
+    "title": "第18集：自然灵协助，新地球扬升",
     "subtitle": "",
-    "description": "中阴身：许多被催眠个案对死亡过程的描述 │ 解释灵魂出体 │ 解释身体自燃现象 │ 穿越白光：物质世界和星光界的界线",
-    "slug": "/audiobooks/between-death-life/audio2/",
+    "description": "地球正在向高行星振动演化，大自然的灵正为此准备。",
+    "slug": "/audiobooks/between-death-life/audio18/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio2.MP3"
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio18.MP3"
   },
   {
     "title": "第19集：灵魂的演化过程",
@@ -94,6 +86,14 @@
     "slug": "/audiobooks/between-death-life/audio19/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio19.MP3"
+  },
+  {
+    "title": "第2集：前世催眠，解密死亡过渡期",
+    "subtitle": "",
+    "description": "中阴身：许多被催眠个案对死亡过程的描述 │ 解释灵魂出体 │ 解释身体自燃现象 │ 穿越白光：物质世界和星光界的界线",
+    "slug": "/audiobooks/between-death-life/audio2/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio2.MP3"
   },
   {
     "title": "第21集：超自然现象，是如何发生的？",
@@ -112,14 +112,6 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio20.MP3"
   },
   {
-    "title": "第23集：顺利的人生，辛苦的人生",
-    "subtitle": "",
-    "description": "为什么有些人一生很顺遂？负面体验，是为偿还前世业债吗？轮回的目的？关于惩罚，受困于负面经验的灵魂",
-    "slug": "/audiobooks/between-death-life/audio23/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio23.MP3"
-  },
-  {
     "title": "第22集：真的有地狱吗？",
     "subtitle": "",
     "description": "消除对死亡的误解 │ 吸引负面能量的心智，心智创造了地狱的体验 │ 好的业力：维持纯真的心理状态",
@@ -128,12 +120,28 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio22.MP3"
   },
   {
+    "title": "第23集：顺利的人生，辛苦的人生",
+    "subtitle": "",
+    "description": "为什么有些人一生很顺遂？负面体验，是为偿还前世业债吗？轮回的目的？关于惩罚，受困于负面经验的灵魂",
+    "slug": "/audiobooks/between-death-life/audio23/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio23.MP3"
+  },
+  {
     "title": "第24集：什么是罪？罪恶与犯罪的人生",
     "subtitle": "",
     "description": "处理业力的方法：前世是凶手的人，会受到怎样的惩罚？人为什么会成为罪犯？",
     "slug": "/audiobooks/between-death-life/audio24/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio24.MP3"
+  },
+  {
+    "title": "第26集：希特勒，开膛手杰克的灵魂案例",
+    "subtitle": "",
+    "description": "为什么允许发生如此残忍的事？灵魂能学到什么课题？他们会造更多业吗？永恒的生命力，生命只是转化形式",
+    "slug": "/audiobooks/between-death-life/audio26/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio26.MP3"
   },
   {
     "title": "第25集：杀人者的业力，如何平衡？",
@@ -152,14 +160,6 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio27.MP3"
   },
   {
-    "title": "第26集：希特勒，开膛手杰克的灵魂案例",
-    "subtitle": "",
-    "description": "为什么允许发生如此残忍的事？灵魂能学到什么课题？他们会造更多业吗？永恒的生命力，生命只是转化形式",
-    "slug": "/audiobooks/between-death-life/audio26/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio26.MP3"
-  },
-  {
     "title": "第28集：守护天使、指导灵",
     "subtitle": "",
     "description": "每个人都有守护天使、指导灵吗？指导灵如何提供帮助？指导灵有名字吗？学会分辨，正面与负面的存有",
@@ -176,20 +176,20 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio29.MP3"
   },
   {
-    "title": "第30集：上帝的概念",
-    "subtitle": "",
-    "description": "有没有什么在主导这一切？宇宙能量网格：一切都是能量，能量就是一切万有",
-    "slug": "/audiobooks/between-death-life/audio30/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio30.MP3"
-  },
-  {
     "title": "第3集：灵界的迎接者",
     "subtitle": "",
     "description": "死后灵魂会去哪儿？耶稣的能量，协助灵魂死亡跨界 │ 跨界后开启全部灵魂记忆 │ 为了进步，死亡是必要的 │ 圣经上被抹除的创造真相",
     "slug": "/audiobooks/between-death-life/audio3/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio3.MP3"
+  },
+  {
+    "title": "第30集：上帝的概念",
+    "subtitle": "",
+    "description": "有没有什么在主导这一切？宇宙能量网格：一切都是能量，能量就是一切万有",
+    "slug": "/audiobooks/between-death-life/audio30/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio30.MP3"
   },
   {
     "title": "第31集：耶稣的使命",
@@ -200,6 +200,14 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio31.MP3"
   },
   {
+    "title": "第33集：灵异现象，科学解释",
+    "subtitle": "",
+    "description": "各种“灵异现象”背后的真相 │ 什么是灵魂回音？灵魂能量的反射波 │ 青春期的灵异现象，骚扰灵，地缚灵，指导灵，去世的亲人",
+    "slug": "/audiobooks/between-death-life/audio33/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio33.MP3"
+  },
+  {
     "title": "第32集：邪恶 附身 邪气入侵，缘自能量的失衡",
     "subtitle": "",
     "description": "如何去除负面能量？如何保护自己免受负面能量的影响？恶魔和撒旦真的存在吗？",
@@ -208,12 +216,12 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio32.MP3"
   },
   {
-    "title": "第33集：灵异现象，科学解释",
+    "title": "第34集：灵魂的出生前计划",
     "subtitle": "",
-    "description": "各种“灵异现象”背后的真相 │ 什么是灵魂回音？灵魂能量的反射波 │ 青春期的灵异现象，骚扰灵，地缚灵，指导灵，去世的亲人",
-    "slug": "/audiobooks/between-death-life/audio33/",
+    "description": "灵魂如何规划与准备来世的人生？灵魂伴侣、灵魂家族参与转世规划 │ 指导灵的帮助与影响",
+    "slug": "/audiobooks/between-death-life/audio34/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio33.MP3"
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio34.MP3"
   },
   {
     "title": "第35集：如何理解“因果业力”？",
@@ -232,12 +240,12 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio37.MP3"
   },
   {
-    "title": "第34集：灵魂的出生前计划",
+    "title": "第36集：星光界的议会（上）",
     "subtitle": "",
-    "description": "灵魂如何规划与准备来世的人生？灵魂伴侣、灵魂家族参与转世规划 │ 指导灵的帮助与影响",
-    "slug": "/audiobooks/between-death-life/audio34/",
+    "description": "灵界议会 │ 宇宙有不同层级的议会，议会观察与推动地球整体业力的提升",
+    "slug": "/audiobooks/between-death-life/audio36/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio34.MP3"
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio36.MP3"
   },
   {
     "title": "第38集：转世的印记",
@@ -246,14 +254,6 @@
     "slug": "/audiobooks/between-death-life/audio38/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio38.MP3"
-  },
-  {
-    "title": "第36集：星光界的议会（上）",
-    "subtitle": "",
-    "description": "灵界议会 │ 宇宙有不同层级的议会，议会观察与推动地球整体业力的提升",
-    "slug": "/audiobooks/between-death-life/audio36/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio36.MP3"
   },
   {
     "title": "第39集：灵魂替换者，交换现象",
@@ -272,12 +272,12 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio40.MP3"
   },
   {
-    "title": "第4集：真实的濒死经验案例",
+    "title": "第5集：转世之间，灵界学校",
     "subtitle": "",
-    "description": "选择留下，还是回到人间？协助跨界的死亡天使 │ 灵魂的议会，无条件的爱 │ 帮助梅格解脱的守护天使",
-    "slug": "/audiobooks/between-death-life/audio4/",
+    "description": "天堂与乐园：不同的灵界层面 │ 灵魂课题：学习处理业，检视人生的经验和影响 │ 再次投胎地球，学会做决定",
+    "slug": "/audiobooks/between-death-life/audio5/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio4.MP3"
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio5.MP3"
   },
   {
     "title": "第41集：研究死亡，让我更能欣赏生命（完结）",
@@ -288,12 +288,12 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio41.MP3"
   },
   {
-    "title": "第5集：转世之间，灵界学校",
+    "title": "第4集：真实的濒死经验案例",
     "subtitle": "",
-    "description": "天堂与乐园：不同的灵界层面 │ 灵魂课题：学习处理业，检视人生的经验和影响 │ 再次投胎地球，学会做决定",
-    "slug": "/audiobooks/between-death-life/audio5/",
+    "description": "选择留下，还是回到人间？协助跨界的死亡天使 │ 灵魂的议会，无条件的爱 │ 帮助梅格解脱的守护天使",
+    "slug": "/audiobooks/between-death-life/audio4/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio5.MP3"
+    "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio4.MP3"
   },
   {
     "title": "第6集：灵魂出生前计划",
@@ -328,14 +328,6 @@
     "audio_url": "https://audio.librarys.life/audio/books/between-death-life/audio9.MP3"
   },
   {
-    "title": "第8章：关于深度抑郁症及精神病的建议",
-    "subtitle": "",
-    "description": "两者并非对立，而是互补：灵性提供意义与内在指引，医学提供生理支撑与安全保障。",
-    "slug": "/audiobooks/dark-night-soul/audio10/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio10.MP3"
-  },
-  {
     "title": "第1集：作者序",
     "subtitle": "",
     "description": "灵魂暗夜常会是“外在看似一切正常”时发生。",
@@ -344,12 +336,12 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio1.MP3"
   },
   {
-    "title": "第二部分第1章：灵魂暗夜时分的导师",
+    "title": "第8章：关于深度抑郁症及精神病的建议",
     "subtitle": "",
-    "description": "灵魂暗夜是一个反复深化的过程。当你不再评判、不再逃离，你就成为了自己的导师。",
-    "slug": "/audiobooks/dark-night-soul/audio12/",
+    "description": "两者并非对立，而是互补：灵性提供意义与内在指引，医学提供生理支撑与安全保障。",
+    "slug": "/audiobooks/dark-night-soul/audio10/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio12.MP3"
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio10.MP3"
   },
   {
     "title": "第9章：成熟的灵修与理性并存",
@@ -368,6 +360,14 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio13.MP3"
   },
   {
+    "title": "第二部分第1章：灵魂暗夜时分的导师",
+    "subtitle": "",
+    "description": "灵魂暗夜是一个反复深化的过程。当你不再评判、不再逃离，你就成为了自己的导师。",
+    "slug": "/audiobooks/dark-night-soul/audio12/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio12.MP3"
+  },
+  {
     "title": "第3章：重生于新地球",
     "subtitle": "",
     "description": "新地球不是未来，而是正在发生的现实。而你的光，首先照亮的是你自己的黑暗。",
@@ -384,14 +384,6 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio15.MP3"
   },
   {
-    "title": "第6章：台风之眼",
-    "subtitle": "",
-    "description": "真正的安身之处不是逃离世界，而是进入混乱中的寂静中心。",
-    "slug": "/audiobooks/dark-night-soul/audio17/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio17.MP3"
-  },
-  {
     "title": "第5章：走出恐惧的迷雾",
     "subtitle": "",
     "description": "恐惧是一种高度操控性的能量，能占据头脑、操纵情绪。解脱的起点不是对抗，而是看清它。",
@@ -400,20 +392,20 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio16.MP3"
   },
   {
+    "title": "第6章：台风之眼",
+    "subtitle": "",
+    "description": "真正的安身之处不是逃离世界，而是进入混乱中的寂静中心。",
+    "slug": "/audiobooks/dark-night-soul/audio17/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio17.MP3"
+  },
+  {
     "title": "第7章：生命之河",
     "subtitle": "",
     "description": "信任生命！即便你觉得无能为力，生命仍会推动你来到新的情境与出口。",
     "slug": "/audiobooks/dark-night-soul/audio18/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio18.MP3"
-  },
-  {
-    "title": "第8章：恐惧，通往新事物的门户",
-    "subtitle": "",
-    "description": "当旧结构瓦解、方向感消失，并不意味着你走错路，而是为新事物腾出空间的必经阶段。",
-    "slug": "/audiobooks/dark-night-soul/audio19/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio19.MP3"
   },
   {
     "title": "第一部分第1章：痛苦与恐惧",
@@ -432,20 +424,20 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio20.MP3"
   },
   {
+    "title": "第8章：恐惧，通往新事物的门户",
+    "subtitle": "",
+    "description": "当旧结构瓦解、方向感消失，并不意味着你走错路，而是为新事物腾出空间的必经阶段。",
+    "slug": "/audiobooks/dark-night-soul/audio19/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio19.MP3"
+  },
+  {
     "title": "第11章：璞石成玉",
     "subtitle": "",
     "description": "那块你一直背负的石头，正是你此生最珍贵的宝石。",
     "slug": "/audiobooks/dark-night-soul/audio22/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio22.MP3"
-  },
-  {
-    "title": "第10章：最高的给予",
-    "subtitle": "",
-    "description": "你的最高贡献源自你独特的特质组合，而非外在的技能或他人的影响。",
-    "slug": "/audiobooks/dark-night-soul/audio21/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio21.MP3"
   },
   {
     "title": "第13章：疗愈旧有创伤",
@@ -456,12 +448,20 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio24.MP3"
   },
   {
-    "title": "第14章：高度敏感与男性能量",
+    "title": "第12章：内在法官",
     "subtitle": "",
-    "description": "真正的男性能量=明晰、专注、设立界限、守护的骑士；旧式男性能量＝控制、压迫、权力。",
-    "slug": "/audiobooks/dark-night-soul/audio25/",
+    "description": "你对自己持续、苛刻的负面评判——这不是爱与自律，而是恐惧驱动的控制。",
+    "slug": "/audiobooks/dark-night-soul/audio23/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio25.MP3"
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio23.MP3"
+  },
+  {
+    "title": "第10章：最高的给予",
+    "subtitle": "",
+    "description": "你的最高贡献源自你独特的特质组合，而非外在的技能或他人的影响。",
+    "slug": "/audiobooks/dark-night-soul/audio21/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio21.MP3"
   },
   {
     "title": "第15章：重获新生",
@@ -472,12 +472,12 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio26.MP3"
   },
   {
-    "title": "第16章：一切万有与芸芸众生",
+    "title": "第14章：高度敏感与男性能量",
     "subtitle": "",
-    "description": "真正的灵性联结：是与你自己的源头直接联结，而非依赖任何人、神灵或宗教。",
-    "slug": "/audiobooks/dark-night-soul/audio27/",
+    "description": "真正的男性能量=明晰、专注、设立界限、守护的骑士；旧式男性能量＝控制、压迫、权力。",
+    "slug": "/audiobooks/dark-night-soul/audio25/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio27.MP3"
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio25.MP3"
   },
   {
     "title": "第17章：光之工作者的助人之道",
@@ -486,6 +486,14 @@
     "slug": "/audiobooks/dark-night-soul/audio28/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio28.MP3"
+  },
+  {
+    "title": "第16章：一切万有与芸芸众生",
+    "subtitle": "",
+    "description": "真正的灵性联结：是与你自己的源头直接联结，而非依赖任何人、神灵或宗教。",
+    "slug": "/audiobooks/dark-night-soul/audio27/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio27.MP3"
   },
   {
     "title": "第18章：疾病与情绪",
@@ -504,14 +512,6 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio3.MP3"
   },
   {
-    "title": "附录-关于12个前世的回溯1：简朴的僧侣",
-    "subtitle": "",
-    "description": "灵性纯净与实际智慧需要平衡，理想与现实之间存在张力。",
-    "slug": "/audiobooks/dark-night-soul/audio31/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio31.MP3"
-  },
-  {
     "title": "第19章：新纪元已经到来",
     "subtitle": "",
     "description": "新地球的实相，正在每个人内在和周遭展开。这既是全球层面的变革，也是个人内在觉醒的机会。",
@@ -520,12 +520,12 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio30.MP3"
   },
   {
-    "title": "前世的回溯3：遭受性侵的女子",
+    "title": "附录-关于12个前世的回溯1：简朴的僧侣",
     "subtitle": "",
-    "description": "灵魂在面对极端压迫和长期创伤后，如何在心理层面自我调适，这种调适可能带来的负面遗产。",
-    "slug": "/audiobooks/dark-night-soul/audio33/",
+    "description": "灵性纯净与实际智慧需要平衡，理想与现实之间存在张力。",
+    "slug": "/audiobooks/dark-night-soul/audio31/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio33.MP3"
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio31.MP3"
   },
   {
     "title": "前世的回溯2：灵性高度发展的神女",
@@ -536,6 +536,14 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio32.MP3"
   },
   {
+    "title": "前世的回溯3：遭受性侵的女子",
+    "subtitle": "",
+    "description": "灵魂在面对极端压迫和长期创伤后，如何在心理层面自我调适，这种调适可能带来的负面遗产。",
+    "slug": "/audiobooks/dark-night-soul/audio33/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio33.MP3"
+  },
+  {
     "title": "前世的回溯4：虔诚的圣经学者",
     "subtitle": "",
     "description": "狂热且执着，追求精神和道德上的“正确”，倾向理性至上，反而忽视生活中的平常喜悦。",
@@ -544,20 +552,20 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio34.MP3"
   },
   {
-    "title": "前世的回溯6：纳粹集中营的受害者",
-    "subtitle": "",
-    "description": "极端的苦难，带来灵魂的彻底麻木与臣服；同时也成为觉察生命价值与使命的转折点。",
-    "slug": "/audiobooks/dark-night-soul/audio36/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio36.MP3"
-  },
-  {
     "title": "前世的回溯5：专横傲慢的女领主",
     "subtitle": "",
     "description": "外在的权力成功，并不能解决内在情绪和孤独。未疗愈的愤怒和恐惧，会延续至未来生命。",
     "slug": "/audiobooks/dark-night-soul/audio35/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio35.MP3"
+  },
+  {
+    "title": "前世的回溯6：纳粹集中营的受害者",
+    "subtitle": "",
+    "description": "极端的苦难，带来灵魂的彻底麻木与臣服；同时也成为觉察生命价值与使命的转折点。",
+    "slug": "/audiobooks/dark-night-soul/audio36/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio36.MP3"
   },
   {
     "title": "前世的回溯7：罗马王子",
@@ -576,36 +584,12 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio38.MP3"
   },
   {
-    "title": "第12章：内在法官",
-    "subtitle": "",
-    "description": "你对自己持续、苛刻的负面评判——这不是爱与自律，而是恐惧驱动的控制。",
-    "slug": "/audiobooks/dark-night-soul/audio23/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio23.MP3"
-  },
-  {
     "title": "前世的回溯9：哥伦比亚妓女",
     "subtitle": "",
     "description": "此生经历造成后续轮回中出现长期的自卑、胆怯和消极依赖，影响自我价值感和主动性。",
     "slug": "/audiobooks/dark-night-soul/audio39/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio39.MP3"
-  },
-  {
-    "title": "第2章：日记撷录2",
-    "subtitle": "",
-    "description": "与“高我”的对话：我对轮回心怀恐惧的缘由。",
-    "slug": "/audiobooks/dark-night-soul/audio4/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio4.MP3"
-  },
-  {
-    "title": "前世的回溯11：为正义而献身的女战士",
-    "subtitle": "",
-    "description": "此生的经历带来洞见：光明并非必须通过牺牲或激烈行动获取，而在于自身内在的光明。",
-    "slug": "/audiobooks/dark-night-soul/audio41/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio41.MP3"
   },
   {
     "title": "前世的回溯10：雪地女巫医",
@@ -616,12 +600,28 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio40.MP3"
   },
   {
+    "title": "第2章：日记撷录2",
+    "subtitle": "",
+    "description": "与“高我”的对话：我对轮回心怀恐惧的缘由。",
+    "slug": "/audiobooks/dark-night-soul/audio4/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio4.MP3"
+  },
+  {
     "title": "前世的回溯12：耶稣的信徒（完结）",
     "subtitle": "",
     "description": "灵性经验的实践与体悟来自：开放、专注地感受——坚定而柔和的爱的能量，而非仅停留在信仰或理性层面。",
     "slug": "/audiobooks/dark-night-soul/audio42/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio42.MP3"
+  },
+  {
+    "title": "前世的回溯11：为正义而献身的女战士",
+    "subtitle": "",
+    "description": "此生的经历带来洞见：光明并非必须通过牺牲或激烈行动获取，而在于自身内在的光明。",
+    "slug": "/audiobooks/dark-night-soul/audio41/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio41.MP3"
   },
   {
     "title": "第3章：抑郁症与精神病",
@@ -632,20 +632,20 @@
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio5.MP3"
   },
   {
-    "title": "第5章：灵魂如是说",
-    "subtitle": "",
-    "description": "抑郁不是单纯的疾病，而是“拒绝生命”的极端表达。",
-    "slug": "/audiobooks/dark-night-soul/audio7/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio7.MP3"
-  },
-  {
     "title": "第4章：康复与重生",
     "subtitle": "",
     "description": "医学干预不等于否定灵性，两者可以并存。",
     "slug": "/audiobooks/dark-night-soul/audio6/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio6.MP3"
+  },
+  {
+    "title": "第5章：灵魂如是说",
+    "subtitle": "",
+    "description": "抑郁不是单纯的疾病，而是“拒绝生命”的极端表达。",
+    "slug": "/audiobooks/dark-night-soul/audio7/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/dark-night-soul/audio7.MP3"
   },
   {
     "title": "第6章：身边之人如是说",
@@ -672,20 +672,20 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio1.MP3"
   },
   {
-    "title": "第11集：三尖塔的突破",
-    "subtitle": "",
-    "description": "催眠释放更多信息：菲尔回到灵魂真正的故乡，意识到自己来自非地球的能量族群。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio11/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio11.MP3"
-  },
-  {
     "title": "第10集：死亡之针",
     "subtitle": "",
     "description": "菲尔在死亡边缘徘徊后，开始理解自己为何始终觉得不属于地球。",
     "slug": "/audiobooks/keepers-of-the-garden/audio10/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio10.MP3"
+  },
+  {
+    "title": "第11集：三尖塔的突破",
+    "subtitle": "",
+    "description": "催眠释放更多信息：菲尔回到灵魂真正的故乡，意识到自己来自非地球的能量族群。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio11/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio11.MP3"
   },
   {
     "title": "第12集：投生地球的使命",
@@ -736,12 +736,12 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio17.MP3"
   },
   {
-    "title": "第2集：外星记忆苏醒",
+    "title": "第19集：其他形态的存在体",
     "subtitle": "",
-    "description": "荒芜的探矿星球隐藏的悲伤秘密，七名外星科学家命运浮现记忆深处。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio2/",
+    "description": "一个远超人类想象的宇宙生命谱系，而意识的高度，决定你能看见多少世界。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio19/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio2.MP3"
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio19.MP3"
   },
   {
     "title": "第18集：星际文明联盟",
@@ -752,20 +752,12 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio18.MP3"
   },
   {
-    "title": "第20集：地底文明与人类起源",
+    "title": "第2集：外星记忆苏醒",
     "subtitle": "",
-    "description": "外星人在地球有基地吗？地表之下确实存在高等文明？外星人为何还不公开现身？",
-    "slug": "/audiobooks/keepers-of-the-garden/audio20/",
+    "description": "荒芜的探矿星球隐藏的悲伤秘密，七名外星科学家命运浮现记忆深处。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio2/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio20.MP3"
-  },
-  {
-    "title": "第19集：其他形态的存在体",
-    "subtitle": "",
-    "description": "一个远超人类想象的宇宙生命谱系，而意识的高度，决定你能看见多少世界。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio19/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio19.MP3"
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio2.MP3"
   },
   {
     "title": "第22集：外星飞船上的经历",
@@ -784,12 +776,12 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio21.MP3"
   },
   {
-    "title": "第24集：神秘的黑盒子",
+    "title": "第20集：地底文明与人类起源",
     "subtitle": "",
-    "description": "代表前世记忆、星际血缘、传承的黑盒子，提醒菲尔“你是谁、你来自哪里”。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio24/",
+    "description": "外星人在地球有基地吗？地表之下确实存在高等文明？外星人为何还不公开现身？",
+    "slug": "/audiobooks/keepers-of-the-garden/audio20/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio24.MP3"
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio20.MP3"
   },
   {
     "title": "第23集：童年外星接触经历",
@@ -800,12 +792,12 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio23.MP3"
   },
   {
-    "title": "第25集：与现实失联",
+    "title": "第24集：神秘的黑盒子",
     "subtitle": "",
-    "description": "外星接触记忆被唤醒后，菲尔在心理、现实感与自我认知方面经历了强烈冲突。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio25/",
+    "description": "代表前世记忆、星际血缘、传承的黑盒子，提醒菲尔“你是谁、你来自哪里”。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio24/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio25.MP3"
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio24.MP3"
   },
   {
     "title": "第26集：潜意识的保护机制",
@@ -814,6 +806,14 @@
     "slug": "/audiobooks/keepers-of-the-garden/audio26/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio26.MP3"
+  },
+  {
+    "title": "第25集：与现实失联",
+    "subtitle": "",
+    "description": "外星接触记忆被唤醒后，菲尔在心理、现实感与自我认知方面经历了强烈冲突。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio25/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio25.MP3"
   },
   {
     "title": "第3集：外星飞船科技",
@@ -840,14 +840,6 @@
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio4.MP3"
   },
   {
-    "title": "第5集：外星文明的社会结构",
-    "subtitle": "",
-    "description": "高度发达的文明中，居民以诚信与自律为本，心灵掌管一切，议会以共识维系社会秩序。",
-    "slug": "/audiobooks/keepers-of-the-garden/audio5/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio5.MP3"
-  },
-  {
     "title": "第6集：奇异的星球科技",
     "subtitle": "",
     "description": "水晶与磁力驱动的飞行器，以宇宙射线为基础的通讯系统，活跃的跨行星贸易。",
@@ -862,6 +854,14 @@
     "slug": "/audiobooks/keepers-of-the-garden/audio7/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio7.MP3"
+  },
+  {
+    "title": "第5集：外星文明的社会结构",
+    "subtitle": "",
+    "description": "高度发达的文明中，居民以诚信与自律为本，心灵掌管一切，议会以共识维系社会秩序。",
+    "slug": "/audiobooks/keepers-of-the-garden/audio5/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/keepers-of-the-garden/audio5.MP3"
   },
   {
     "title": "第8集：无时间的四次元星球",
@@ -904,20 +904,20 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene10.mp3"
   },
   {
-    "title": "第二部分 第11集：能量跟随意识！内在炼金术专注于微观量子世界",
-    "subtitle": "",
-    "description": "内在炼金术的三个基本要素 │ 意识是炼金反应容器 │ 收集能量的建议、强化意识容器：专注力与洞察力 │ 用太阳光给Ka体充电（名词解释与延伸阅读）神经生理学 │腺体与脉轮 │ 突破知觉限制：洋葱皮的世界、知觉事物的能量本质",
-    "slug": "/audiobooks/mary-magdalene/audio13/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene13.MP3"
-  },
-  {
     "title": "第10集：“荷鲁斯内在炼金术”新手入门指南",
     "subtitle": "",
     "description": "冥想练习：开启意识潜能的途径 │ 激活生命力能量塞赫姆SEKHEM │ 激活更精微的蛇状能量 │ 节德柱djed │ 普拉纳能量管Pranic Tube │ 乌拉埃乌斯Uraeus",
     "slug": "/audiobooks/mary-magdalene/audio12/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene12.mp3"
+  },
+  {
+    "title": "第二部分 第11集：能量跟随意识！内在炼金术专注于微观量子世界",
+    "subtitle": "",
+    "description": "内在炼金术的三个基本要素 │ 意识是炼金反应容器 │ 收集能量的建议、强化意识容器：专注力与洞察力 │ 用太阳光给Ka体充电（名词解释与延伸阅读）神经生理学 │腺体与脉轮 │ 突破知觉限制：洋葱皮的世界、知觉事物的能量本质",
+    "slug": "/audiobooks/mary-magdalene/audio13/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene13.MP3"
   },
   {
     "title": "第12集：从量子物理学视角，揭秘古埃及炼金术【1】 ",
@@ -928,14 +928,6 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene14.mp3"
   },
   {
-    "title": "延伸阅读：高阶控梦的奥秘 │ 睡眠编程",
-    "subtitle": "",
-    "description": "掌握命运，创造更积极的现实！睡眠编程是如何运作的？如何将睡眠编程运用在人际关系中？高我会拒绝我的睡眠编程请求吗？保护机制：假如有人试图用睡眠编程来影响你，怎么办？",
-    "slug": "/audiobooks/mary-magdalene/audio16/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene16.mp3"
-  },
-  {
     "title": "延伸阅读：量子梦境 │ 每个人都具备的隐藏功能",
     "subtitle": "",
     "description": "唐望控梦的艺术：做梦是调整能量体的艺术 │ 为什么大多数人被困在普通梦中？做梦注意力 │ 改变知觉的关键：集合点 │ 人类能量体 ",
@@ -944,12 +936,20 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene15.mp3"
   },
   {
-    "title": "延伸阅读：唐望谈能量体分身",
+    "title": "延伸阅读：高阶控梦的奥秘 │ 睡眠编程",
     "subtitle": "",
-    "description": "人类的分裂感来自于哪里？ │ 生命回顾：超越自我限制的方法、使自我的完整 │ 唐望谈悉地出现的征兆与形式│ 唐望谈悉地困境：人类的黑暗面",
-    "slug": "/audiobooks/mary-magdalene/audio18/",
+    "description": "掌握命运，创造更积极的现实！睡眠编程是如何运作的？如何将睡眠编程运用在人际关系中？高我会拒绝我的睡眠编程请求吗？保护机制：假如有人试图用睡眠编程来影响你，怎么办？",
+    "slug": "/audiobooks/mary-magdalene/audio16/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene18.mp3"
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene16.mp3"
+  },
+  {
+    "title": "第14集：揭秘古埃及炼金术【3】",
+    "subtitle": "",
+    "description": "脉轮如何过滤我们的感知？Ka体的能量建设，一个有关Ka的灵异故事 │ 身份认同的转变，进入第二注意力 │ 灵性力量与心理成熟度，未必相关 │ 方尖碑：塞赫姆-生命力能量 │ 乌拉埃乌斯：激活高级大脑中枢",
+    "slug": "/audiobooks/mary-magdalene/audio19/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene19.mp3"
   },
   {
     "title": "第13集：揭秘古埃及炼金术【2】 ",
@@ -968,12 +968,12 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene2.MP3"
   },
   {
-    "title": "第14集：揭秘古埃及炼金术【3】",
+    "title": "延伸阅读：人体能量场，解释了幻肢现象",
     "subtitle": "",
-    "description": "脉轮如何过滤我们的感知？Ka体的能量建设，一个有关Ka的灵异故事 │ 身份认同的转变，进入第二注意力 │ 灵性力量与心理成熟度，未必相关 │ 方尖碑：塞赫姆-生命力能量 │ 乌拉埃乌斯：激活高级大脑中枢",
-    "slug": "/audiobooks/mary-magdalene/audio19/",
+    "description": "科学解释什么是幻肢效应？幻肢的能量体 │ 像火蜥蜴一样，长出新腿的小男孩 │ 幻叶效应：植物的能量场 │ 人体经络的现代科学研究",
+    "slug": "/audiobooks/mary-magdalene/audio20/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene19.mp3"
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene20.mp3"
   },
   {
     "title": "第15集：揭秘古埃及炼金术【4】",
@@ -984,28 +984,12 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene21.MP3"
   },
   {
-    "title": "延伸阅读：人体能量场，解释了幻肢现象",
-    "subtitle": "",
-    "description": "科学解释什么是幻肢效应？幻肢的能量体 │ 像火蜥蜴一样，长出新腿的小男孩 │ 幻叶效应：植物的能量场 │ 人体经络的现代科学研究",
-    "slug": "/audiobooks/mary-magdalene/audio20/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene20.mp3"
-  },
-  {
     "title": "延伸阅读：庄子《逍遥游・北冥有鱼》在隐射道家内丹术吗？",
     "subtitle": "",
     "description": "南怀瑾：道家修行智慧，超脱之道 │ 人的进化潜能：从北溟之鲲到鹏的飞升 │ 飞升之道 │ 炁，生命之息",
     "slug": "/audiobooks/mary-magdalene/audio22/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene22.MP3"
-  },
-  {
-    "title": "第17集：揭秘密宗瑜伽【1】 ",
-    "subtitle": "",
-    "description": "三摩地：内在专注力的奥秘 │ 三摩地的不同意识层次 │ 三摩地创造的奇迹 │ 止息：心灵的静止状态 │ 心灵的觉醒：微妙能量的感知、感知时间和空间的变化",
-    "slug": "/audiobooks/mary-magdalene/audio24/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene24.MP3"
   },
   {
     "title": "第16集：四大炼金术比较：埃及炼金术、密宗瑜伽、道教和藏传佛教密宗",
@@ -1024,12 +1008,28 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene25.MP3"
   },
   {
+    "title": "第17集：揭秘密宗瑜伽【1】 ",
+    "subtitle": "",
+    "description": "三摩地：内在专注力的奥秘 │ 三摩地的不同意识层次 │ 三摩地创造的奇迹 │ 止息：心灵的静止状态 │ 心灵的觉醒：微妙能量的感知、感知时间和空间的变化",
+    "slug": "/audiobooks/mary-magdalene/audio24/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene24.MP3"
+  },
+  {
     "title": "第19集：揭秘密宗瑜伽【3】 ",
     "subtitle": "",
     "description": "颠覆常识：如何将性能量转化为觉悟？性能量的循环与积累过程 │ 性修行的奥秘与警告！用三摩地冥想驾驭性能量 │ 与神合一：性修行中的仪式",
     "slug": "/audiobooks/mary-magdalene/audio26/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene26.MP3"
+  },
+  {
+    "title": "第20集：揭秘佛教炼金术【1】",
+    "subtitle": "",
+    "description": "能量生物：护法神的真实来历？佛教与苯教文化的碰撞  │ 藏密修行借助能量生物的力量？佛陀早已预言量子力学？ 佛性：唤醒我们内在的极乐本性",
+    "slug": "/audiobooks/mary-magdalene/audio27/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene27.MP3"
   },
   {
     "title": "第21集：揭秘佛教炼金术【2】",
@@ -1048,20 +1048,12 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene29.MP3"
   },
   {
-    "title": "第20集：揭秘佛教炼金术【1】",
+    "title": "第24集：揭秘道教炼金术【3】",
     "subtitle": "",
-    "description": "能量生物：护法神的真实来历？佛教与苯教文化的碰撞  │ 藏密修行借助能量生物的力量？佛陀早已预言量子力学？ 佛性：唤醒我们内在的极乐本性",
-    "slug": "/audiobooks/mary-magdalene/audio27/",
+    "description": "阴阳的的真实含义？阴阳的本质：潜能与动能 │ 文化态度 & 阴的智慧 │ 道家双修的阴阳调和之道 │ 道家炼丹术的终极目标：得道成仙",
+    "slug": "/audiobooks/mary-magdalene/audio31/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene27.MP3"
-  },
-  {
-    "title": "第25集：神圣关系炼金术",
-    "subtitle": "",
-    "description": "关系炼金术的真谛：使自我完整 │ 打破机械化的互动模式，走进关系的熔炉，重新锻造心理合金 │ 心理合金：童年的熔炉如何塑造我们",
-    "slug": "/audiobooks/mary-magdalene/audio32/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene32.mp3"
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene31.mp3"
   },
   {
     "title": "第23集：揭秘道教炼金术【2】",
@@ -1080,28 +1072,12 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene3.mp3"
   },
   {
-    "title": "第24集：揭秘道教炼金术【3】",
+    "title": "第25集：神圣关系炼金术",
     "subtitle": "",
-    "description": "阴阳的的真实含义？阴阳的本质：潜能与动能 │ 文化态度 & 阴的智慧 │ 道家双修的阴阳调和之道 │ 道家炼丹术的终极目标：得道成仙",
-    "slug": "/audiobooks/mary-magdalene/audio31/",
+    "description": "关系炼金术的真谛：使自我完整 │ 打破机械化的互动模式，走进关系的熔炉，重新锻造心理合金 │ 心理合金：童年的熔炉如何塑造我们",
+    "slug": "/audiobooks/mary-magdalene/audio32/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene31.mp3"
-  },
-  {
-    "title": "女性原则为何被从神话中抹去？",
-    "subtitle": "",
-    "description": "探讨索菲亚（Sophia）与逻各斯（Logos）、女性原则的失落、夏娃神话、诺斯替传统及宇宙之母的回归。",
-    "slug": "/audiobooks/mary-magdalene/audio36/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.mp3"
-  },
-  {
-    "title": "第一部分 第4集：抹大拉的玛利亚与耶稣的故事",
-    "subtitle": "",
-    "description": "一个延续了2000年的谎言，圣殿骑士团守护的秘密是什么？",
-    "slug": "/audiobooks/mary-magdalene/audio4/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene4.mp3"
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene32.mp3"
   },
   {
     "title": "第27集：一个女人的故事【2】",
@@ -1110,14 +1086,6 @@
     "slug": "/audiobooks/mary-magdalene/audio34/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.MP3"
-  },
-  {
-    "title": "名词解释与历史资料补充",
-    "subtitle": "",
-    "description": "（名词解释）炼金术、化身、荷鲁斯、伊西斯、性魔法、入门/启蒙、入门者/启蒙者、Ka、扬升。（延伸阅读）圣殿骑士团、托尔山和格拉斯顿伯里、德鲁伊人、福音书、圣玛丽海滨、美索不达米亚。",
-    "slug": "/audiobooks/mary-magdalene/audio5/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene5.mp3"
   },
   {
     "title": "第26集：一个女人的故事【1】",
@@ -1136,28 +1104,28 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.mp3"
   },
   {
-    "title": "第6集：抹大拉的井暗指什么？",
+    "title": "女性原则为何被从神话中抹去？",
     "subtitle": "",
-    "description": "伊西斯性魔法与女性天赋：激活四条蛇力量、激活以太体。性的神圣与奥秘被严重扭曲。（延伸阅读）被隐藏的性知识：性的神圣与奥秘。把孩子带入世界的方式。",
-    "slug": "/audiobooks/mary-magdalene/audio7/",
+    "description": "探讨索菲亚（Sophia）与逻各斯（Logos）、女性原则的失落、夏娃神话、诺斯替传统及宇宙之母的回归。",
+    "slug": "/audiobooks/mary-magdalene/audio36/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene7.mp3"
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.mp3"
   },
   {
-    "title": "第7集：耶稣，施展神迹背后的真相",
+    "title": "第一部分 第4集：抹大拉的玛利亚与耶稣的故事",
     "subtitle": "",
-    "description": "五饼二鱼的奇迹 │ 揭示神迹背后的真相。澄清对耶稣措辞的误解。耶稣受难的回忆、耶稣复活的意义、耶稣的教导已被扭曲。（延伸阅读）伟大的人类潜能 │ 显化的关键秘密。",
-    "slug": "/audiobooks/mary-magdalene/audio8/",
+    "description": "一个延续了2000年的谎言，圣殿骑士团守护的秘密是什么？",
+    "slug": "/audiobooks/mary-magdalene/audio4/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene8.mp3"
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene4.mp3"
   },
   {
-    "title": "延伸阅读：创造与显化的物理学解释 / 掌握产生连贯情绪的能力",
+    "title": "名词解释与历史资料补充",
     "subtitle": "",
-    "description": "显化的关键秘密：“激光意识”可以影响“量子领域”，从而改变外部现实 │ 磁性吸引体 │ 未来自我 │ 巧合 │ 同步性 │ 掌握产生连贯情绪的能力 │ 谐波 │ 相干光 │ 亚原子粒子",
-    "slug": "/audiobooks/mary-magdalene/audio9/",
+    "description": "（名词解释）炼金术、化身、荷鲁斯、伊西斯、性魔法、入门/启蒙、入门者/启蒙者、Ka、扬升。（延伸阅读）圣殿骑士团、托尔山和格拉斯顿伯里、德鲁伊人、福音书、圣玛丽海滨、美索不达米亚。",
+    "slug": "/audiobooks/mary-magdalene/audio5/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene9.mp3"
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene5.mp3"
   },
   {
     "title": "第5集：圣母玛利亚",
@@ -1168,28 +1136,36 @@
     "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene6.MP3"
   },
   {
+    "title": "第6集：抹大拉的井暗指什么？",
+    "subtitle": "",
+    "description": "伊西斯性魔法与女性天赋：激活四条蛇力量、激活以太体。性的神圣与奥秘被严重扭曲。（延伸阅读）被隐藏的性知识：性的神圣与奥秘。把孩子带入世界的方式。",
+    "slug": "/audiobooks/mary-magdalene/audio7/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene7.mp3"
+  },
+  {
+    "title": "延伸阅读：创造与显化的物理学解释 / 掌握产生连贯情绪的能力",
+    "subtitle": "",
+    "description": "显化的关键秘密：“激光意识”可以影响“量子领域”，从而改变外部现实 │ 磁性吸引体 │ 未来自我 │ 巧合 │ 同步性 │ 掌握产生连贯情绪的能力 │ 谐波 │ 相干光 │ 亚原子粒子",
+    "slug": "/audiobooks/mary-magdalene/audio9/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene9.mp3"
+  },
+  {
+    "title": "第7集：耶稣，施展神迹背后的真相",
+    "subtitle": "",
+    "description": "五饼二鱼的奇迹 │ 揭示神迹背后的真相。澄清对耶稣措辞的误解。耶稣受难的回忆、耶稣复活的意义、耶稣的教导已被扭曲。（延伸阅读）伟大的人类潜能 │ 显化的关键秘密。",
+    "slug": "/audiobooks/mary-magdalene/audio8/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene8.mp3"
+  },
+  {
     "title": "协调你的身体、情绪体、心智体",
     "subtitle": "",
     "description": "通向高阶意识的三个层面演化 │ 什么是神圣心智？扬升过程的重要步骤 │ 自我掌握的大师 │ 星际种子",
     "slug": "/audiobooks/messages-of-light-archangel-mike/audio1/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/courses/messages-of-light-archangel-mike/harmonize-your-physical-body-emotional-body-mental-body.MP3"
-  },
-  {
-    "title": "解开古老的谜题：灵与魂的奥秘",
-    "subtitle": "",
-    "description": "身体与灵魂的关系，灵魂是什么？它由什么组成？起源于哪里？灵魂的沟通方式 │ 连接灵魂和超灵后，你会经历什么？",
-    "slug": "/audiobooks/messages-of-light-archangel-mike/audio11/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.MP3"
-  },
-  {
-    "title": "整合七道光芒",
-    "subtitle": "",
-    "description": "新自我：灵性人性复合体 │ 七种意识层次 │ 七个脉轮 │ 重新定义自我欲望体：  身体情感心智灵性 │ 光之金字塔能量场",
-    "slug": "/audiobooks/messages-of-light-archangel-mike/audio3/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/courses/messages-of-light-archangel-mike/integrate-the-seven-chakras-redefine-the-self-desire-body.mp3"
   },
   {
     "title": "打开你神圣之心的门户",
@@ -1224,12 +1200,12 @@
     "audio_url": "https://audio.librarys.life/audio/courses/messages-of-light-archangel-mike/infinite-breathing-method-still-point-meditation.mp3"
   },
   {
-    "title": "疗愈冥想：光之金字塔冥想",
+    "title": "整合七道光芒",
     "subtitle": "",
-    "description": "创建你的个人光之金字塔，光之金字塔的种类及用途 │ 正念觉知，正念意识 │ 整合更高维度生命之光",
-    "slug": "/audiobooks/messages-of-light-archangel-mike/audio7/",
+    "description": "新自我：灵性人性复合体 │ 七种意识层次 │ 七个脉轮 │ 重新定义自我欲望体：  身体情感心智灵性 │ 光之金字塔能量场",
+    "slug": "/audiobooks/messages-of-light-archangel-mike/audio3/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/courses/messages-of-light-archangel-mike/healing-meditation-pyramid-of-light-meditation.mp3"
+    "audio_url": "https://audio.librarys.life/audio/courses/messages-of-light-archangel-mike/integrate-the-seven-chakras-redefine-the-self-desire-body.mp3"
   },
   {
     "title": "激活你无限潜能的各种冥想工具",
@@ -1238,6 +1214,14 @@
     "slug": "/audiobooks/messages-of-light-archangel-mike/audio6/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/courses/messages-of-light-archangel-mike/activate-meditation-tools-for-your-infinite-potential.mp3"
+  },
+  {
+    "title": "疗愈冥想：光之金字塔冥想",
+    "subtitle": "",
+    "description": "创建你的个人光之金字塔，光之金字塔的种类及用途 │ 正念觉知，正念意识 │ 整合更高维度生命之光",
+    "slug": "/audiobooks/messages-of-light-archangel-mike/audio7/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/courses/messages-of-light-archangel-mike/healing-meditation-pyramid-of-light-meditation.mp3"
   },
   {
     "title": "连接高我：如何接入超意识心智？",
@@ -1264,14 +1248,6 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio10.mp3"
   },
   {
-    "title": "第一章：婆罗门之子",
-    "subtitle": "",
-    "description": "天赋聪颖的悉达多，在祭祀与经文中成长，却开始质疑众神与知识的意义。",
-    "slug": "/audiobooks/siddhartha/audio1/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio1.mp3"
-  },
-  {
     "title": "第十一章：唵",
     "subtitle": "",
     "description": "万千声音汇成一体，悉达多听懂了生命的圆满与“一”的真谛。",
@@ -1280,12 +1256,12 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio11.mp3"
   },
   {
-    "title": "第三章：乔达摩",
+    "title": "第一章：婆罗门之子",
     "subtitle": "",
-    "description": "悉达多遇见佛陀，却决定不做追随者，要亲自走出自己的觉悟之路。",
-    "slug": "/audiobooks/siddhartha/audio3/",
+    "description": "天赋聪颖的悉达多，在祭祀与经文中成长，却开始质疑众神与知识的意义。",
+    "slug": "/audiobooks/siddhartha/audio1/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio3.mp3"
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio1.mp3"
   },
   {
     "title": "第十二章（完结）：乔文达",
@@ -1296,12 +1272,12 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio12.mp3"
   },
   {
-    "title": "第四章：觉醒",
+    "title": "第三章：乔达摩",
     "subtitle": "",
-    "description": "当他离开信仰与师父，第一次真正看见世界的色彩与生命的呼吸。",
-    "slug": "/audiobooks/siddhartha/audio4/",
+    "description": "悉达多遇见佛陀，却决定不做追随者，要亲自走出自己的觉悟之路。",
+    "slug": "/audiobooks/siddhartha/audio3/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio4.mp3"
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio3.mp3"
   },
   {
     "title": "第二章：沙门",
@@ -1312,6 +1288,14 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio2.mp3"
   },
   {
+    "title": "第四章：觉醒",
+    "subtitle": "",
+    "description": "当他离开信仰与师父，第一次真正看见世界的色彩与生命的呼吸。",
+    "slug": "/audiobooks/siddhartha/audio4/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio4.mp3"
+  },
+  {
     "title": "第五章：迦摩罗",
     "subtitle": "",
     "description": "美人迦摩罗教会他欲望与感官的艺术，悉达多开始体验尘世的欢愉。",
@@ -1320,20 +1304,20 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio5.mp3"
   },
   {
-    "title": "第七章：轮回",
-    "subtitle": "",
-    "description": "被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。",
-    "slug": "/audiobooks/siddhartha/audio7/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio7.mp3"
-  },
-  {
     "title": "第六章：尘世间",
     "subtitle": "",
     "description": "他成为富有的商人，学习金钱与权力的游戏，却感到灵魂渐渐干涸。",
     "slug": "/audiobooks/siddhartha/audio6/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio6.mp3"
+  },
+  {
+    "title": "第七章：轮回",
+    "subtitle": "",
+    "description": "被世俗吞噬的悉达多陷入空虚，痛苦中看见自己灵魂的堕落。",
+    "slug": "/audiobooks/siddhartha/audio7/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/siddhartha/audio7.mp3"
   },
   {
     "title": "第八章：在河边",
@@ -1352,14 +1336,6 @@
     "audio_url": "https://audio.librarys.life/audio/siddhartha/audio9.mp3"
   },
   {
-    "title": "第1集：遇见大角星人",
-    "subtitle": "",
-    "description": "在应对意识状态改变时，不要因为别人告诉你、或你相信某件事是真实的，就接受它。不要把它们当作真理。用你的逻辑思维、个人经历以及你自己的价值观去测试它们。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio1/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio1.MP3"
-  },
-  {
     "title": "第10集：大角星文明的阿卡西管理员",
     "subtitle": "",
     "description": "阿卡西场域是一个信息领域，可同时包含与过去、现在和未来的可能相关的任何事件。通过永存的量子现实，建立可能的时间线。当足够多的人改变自己的想法，历史进程就会改变。",
@@ -1376,20 +1352,20 @@
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio11.MP3"
   },
   {
-    "title": "第13集：如何达到最高水平的身体疗愈？有效睡眠的自愈力",
-    "subtitle": "",
-    "description": "你可以召唤你自己更高维度的治疗师。你可以在入睡前请求他们的帮助。你必须请求，否则无法给出。第一，具体说出你希望得到的帮助，通过你头脑中的想法做到这一点；第二，你必须超越自己不值得，你不配拥有的信念系统。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio13/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio13.MP3"
-  },
-  {
     "title": "第12集：耶稣复活的真相 │ 物理身体转换至更高维度",
     "subtitle": "",
     "description": "我的话有很多翻译版本，其中大多数不准确。本质上，我试图传达给那些跟随我道路的人的是，他们将因自己生命、 智力和自由的提升而得救。得救的意思是，从生命的低微中得救，从智力的衰退中得救，从灵魂的禁锢中得救。",
     "slug": "/audiobooks/the-arcturian-anthology/audio12/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio12.MP3"
+  },
+  {
+    "title": "第13集：如何达到最高水平的身体疗愈？有效睡眠的自愈力",
+    "subtitle": "",
+    "description": "你可以召唤你自己更高维度的治疗师。你可以在入睡前请求他们的帮助。你必须请求，否则无法给出。第一，具体说出你希望得到的帮助，通过你头脑中的想法做到这一点；第二，你必须超越自己不值得，你不配拥有的信念系统。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio13/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio13.MP3"
   },
   {
     "title": "第14集：如何让大脑神经系统，超越线性感知，直接体验多维？",
@@ -1400,20 +1376,20 @@
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio14.MP3"
   },
   {
-    "title": "第16集：与外星生命接触时，人类面临的挑战和责任",
-    "subtitle": "",
-    "description": "宇宙的二元本质：任何行动都会产生相反的力量。你的责任：区分出真实且有价值的信息。人类语言的限制：线性感知和过滤现实。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio16/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio16.MP3"
-  },
-  {
     "title": "第15集：Nakura冥想 │ 如何让你的意识在维度间自由移动？",
     "subtitle": "",
     "description": "大角星冥想大师：呼吸的奥秘，改变脑波频率的方法；净光冥想保护，防止低振动存有的扰乱；Nakura冥想，穿越维度的通道；冥想结束，神经系统重新定位。",
     "slug": "/audiobooks/the-arcturian-anthology/audio15/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio15.MP3"
+  },
+  {
+    "title": "第16集：与外星生命接触时，人类面临的挑战和责任",
+    "subtitle": "",
+    "description": "宇宙的二元本质：任何行动都会产生相反的力量。你的责任：区分出真实且有价值的信息。人类语言的限制：线性感知和过滤现实。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio16/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio16.MP3"
   },
   {
     "title": "第17集：你的共情智力，在微观量子层面影响人类集体",
@@ -1464,6 +1440,14 @@
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio3.MP3"
   },
   {
+    "title": "第4集：影响古埃及的外星种族-哈索尔人",
+    "subtitle": "",
+    "description": "根据哈索尔人的感知，连续的宇宙彼此相邻地排成一排，就像纸箱里的鸡蛋彼此堆叠在一起。相邻的平行宇宙之间有能量线或通道流向彼此。通往你们宇宙的主要入口之一是天狼星，它是一个星门或门户。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio4/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio4.MP3"
+  },
+  {
     "title": "第5集：地球监护人 │ 大角星人的使命",
     "subtitle": "",
     "description": "这个宇宙充满了非凡的能量和存有。一些实体的意图是仁慈的，一些是恶毒的。我们大角星人主张生命、智力和仁慈的进步。我们相信众生应该是自由的，只要他们不限制他人的自由。",
@@ -1480,28 +1464,20 @@
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio6.MP3"
   },
   {
-    "title": "第4集：影响古埃及的外星种族-哈索尔人",
+    "title": "延伸阅读：唐望谈能量体分身",
     "subtitle": "",
-    "description": "根据哈索尔人的感知，连续的宇宙彼此相邻地排成一排，就像纸箱里的鸡蛋彼此堆叠在一起。相邻的平行宇宙之间有能量线或通道流向彼此。通往你们宇宙的主要入口之一是天狼星，它是一个星门或门户。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio4/",
+    "description": "人类的分裂感来自于哪里？ │ 生命回顾：超越自我限制的方法、使自我的完整 │ 唐望谈悉地出现的征兆与形式│ 唐望谈悉地困境：人类的黑暗面",
+    "slug": "/audiobooks/mary-magdalene/audio18/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio4.MP3"
+    "audio_url": "https://audio.librarys.life/audio/books/mary-magdalene/mary-magdalene18.mp3"
   },
   {
-    "title": "第8集：去除无知的神秘 │ 精灵 天使 神话人物 未来人类",
+    "title": "解开古老的谜题：灵与魂的奥秘",
     "subtitle": "",
-    "description": "作为人类存有，你面临的困难中有一种催眠，那是由于你的大脑和神经系统的运作。你相信你对世界的感官经验是现实的全部，但事实并非如此。你生活在一个比你想象的更广阔、更复杂、更神秘、更奇怪的宇宙中。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio8/",
+    "description": "身体与灵魂的关系，灵魂是什么？它由什么组成？起源于哪里？灵魂的沟通方式 │ 连接灵魂和超灵后，你会经历什么？",
+    "slug": "/audiobooks/messages-of-light-archangel-mike/audio11/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio8.MP3"
-  },
-  {
-    "title": "第9集：如何塑造你的新现实？你是量子场活动的创造者",
-    "subtitle": "",
-    "description": "你是量子场活动的生产者。你可以通过你的意图，创造性思想和专注力影响量子领域。换句话说，你可以通过思维的力量塑造你的新现实。",
-    "slug": "/audiobooks/the-arcturian-anthology/audio9/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio9.MP3"
+    "audio_url": "https://audio.librarys.life/audio/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.MP3"
   },
   {
     "title": "第7集：突破阻碍 │ 星际血统的DNA正被太阳激活",
@@ -1512,20 +1488,20 @@
     "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio7.MP3"
   },
   {
-    "title": "第10集：来自议会的存有",
-    "subtitle": "",
-    "description": "她是来自宇宙议会的成员，亲眼见证文明因贪婪反复自毁。由于议会只能旁观不能干预，她来地球负责向人类传递警告与知识。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio10/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio10.MP3"
-  },
-  {
     "title": "第1集：没有前世的人",
     "subtitle": "",
     "description": "催眠案例发生异常转变：一些人找不到任何地球前世，却被告知“肩负重要使命”。一个关于地球转化与灵魂来源的更大叙事逐渐浮现。",
     "slug": "/audiobooks/three-waves-of-volunteers/audio1/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio1.MP3"
+  },
+  {
+    "title": "第10集：来自议会的存有",
+    "subtitle": "",
+    "description": "她是来自宇宙议会的成员，亲眼见证文明因贪婪反复自毁。由于议会只能旁观不能干预，她来地球负责向人类传递警告与知识。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio10/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio10.MP3"
   },
   {
     "title": "第11集：一个星球的毁灭",
@@ -1536,20 +1512,20 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio11.MP3"
   },
   {
-    "title": "第13集：更多的星球毁灭",
-    "subtitle": "",
-    "description": "一个来自外星的研究者，在毁灭后的星球采集样本、检测辐射；她被派遣转世地球执行观察与影响任务，阻止同样的毁灭重演。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio13/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio13.MP3"
-  },
-  {
     "title": "第12集：另一个星球的毁灭",
     "subtitle": "",
     "description": "一群宇宙探索者，在家乡星球毁灭后的经历与选择；揭示人类迷失自我的深层原因，并指出重建内在秩序的重要性。",
     "slug": "/audiobooks/three-waves-of-volunteers/audio12/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio12.MP3"
+  },
+  {
+    "title": "第13集：更多的星球毁灭",
+    "subtitle": "",
+    "description": "一个来自外星的研究者，在毁灭后的星球采集样本、检测辐射；她被派遣转世地球执行观察与影响任务，阻止同样的毁灭重演。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio13/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio13.MP3"
   },
   {
     "title": "第14集：树木的一生 & 雷姆利亚",
@@ -1560,12 +1536,28 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio14.MP3"
   },
   {
+    "title": "第8集：去除无知的神秘 │ 精灵 天使 神话人物 未来人类",
+    "subtitle": "",
+    "description": "作为人类存有，你面临的困难中有一种催眠，那是由于你的大脑和神经系统的运作。你相信你对世界的感官经验是现实的全部，但事实并非如此。你生活在一个比你想象的更广阔、更复杂、更神秘、更奇怪的宇宙中。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio8/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio8.MP3"
+  },
+  {
     "title": "第15集：议会 & 地球实验失控",
     "subtitle": "",
     "description": "地球和人类是被长期监控的宇宙实验，而她本是实验策划者却主动进入地球转世，尝试从内部修复失控的进化方向。",
     "slug": "/audiobooks/three-waves-of-volunteers/audio15/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio15.MP3"
+  },
+  {
+    "title": "第9集：如何塑造你的新现实？你是量子场活动的创造者",
+    "subtitle": "",
+    "description": "你是量子场活动的生产者。你可以通过你的意图，创造性思想和专注力影响量子领域。换句话说，你可以通过思维的力量塑造你的新现实。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio9/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio9.MP3"
   },
   {
     "title": "第17集：看不见的家人",
@@ -1576,28 +1568,12 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio17.MP3"
   },
   {
-    "title": "第二部外星人和光体 第16集：更多志愿者",
+    "title": "第1集：遇见大角星人",
     "subtitle": "",
-    "description": "一次离奇的时间消失事件，通过催眠还原外星接触经历。人类恐惧心理背后，或许是被屏蔽与扭曲的真实接触经验。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio16/",
+    "description": "在应对意识状态改变时，不要因为别人告诉你、或你相信某件事是真实的，就接受它。不要把它们当作真理。用你的逻辑思维、个人经历以及你自己的价值观去测试它们。",
+    "slug": "/audiobooks/the-arcturian-anthology/audio1/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio16.MP3"
-  },
-  {
-    "title": "第18集：同时存在于多个维度的志愿者",
-    "subtitle": "",
-    "description": "重新思考“自我”的边界：她的身体还在驾车，但她的光体被带至飞船。催眠得知她同时在多个维度执行任务。你的人生或许只是你“更大自我”的一部分。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio18/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio18.MP3"
-  },
-  {
-    "title": "第一部志愿者 第2集：三波志愿者的来历",
-    "subtitle": "",
-    "description": "通过大量催眠案例，发现不同来源的灵魂分批进入地球，并揭示印记机制、宇宙干预方式与人类在地球转化中的关键角色。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio2/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio2.MP3"
+    "audio_url": "https://audio.librarys.life/audio/the-arcturian-anthology/audio1.MP3"
   },
   {
     "title": "第19集：调整志愿者",
@@ -1616,14 +1592,6 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio20.MP3"
   },
   {
-    "title": "第23集：跨星系的观察者",
-    "subtitle": "",
-    "description": "通过催眠回溯，发现自己是四处漂泊的观察者。同时揭示人类正经历基因与频率同步调整，这是地球整体转变的一部分。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio23/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio23.MP3"
-  },
-  {
     "title": "第21集：离开族人的女王",
     "subtitle": "",
     "description": "一个外星种族的女王，为寻找缺失的片段以完成循环，进入地球转世为人类：遭受虐待，伤害与疾病……种种人生困境，正是她主动选择的成长路径。",
@@ -1632,12 +1600,12 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio21.MP3"
   },
   {
-    "title": "第24集：对地球的最佳作法",
+    "title": "第18集：同时存在于多个维度的志愿者",
     "subtitle": "",
-    "description": "两派外星人在北极争论：是否直接干预人类进化，而不违反自由意志。地球正处于介入与不介入的临界点，而人类必须意识到自己须启动意图去创造现实。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio24/",
+    "description": "重新思考“自我”的边界：她的身体还在驾车，但她的光体被带至飞船。催眠得知她同时在多个维度执行任务。你的人生或许只是你“更大自我”的一部分。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio18/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio24.MP3"
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio18.MP3"
   },
   {
     "title": "第22集：童年外星接触",
@@ -1648,12 +1616,28 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio22.MP3"
   },
   {
+    "title": "第24集：对地球的最佳作法",
+    "subtitle": "",
+    "description": "两派外星人在北极争论：是否直接干预人类进化，而不违反自由意志。地球正处于介入与不介入的临界点，而人类必须意识到自己须启动意图去创造现实。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio24/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio24.MP3"
+  },
+  {
     "title": "第25集：被外星人绑架的外星人",
     "subtitle": "",
     "description": "一名男子回溯自己曾在火星，被陌生文明用光束带走并重组基因，反转“人类被绑架”的认知，揭示不同外星文明彼此改造基因，以执行跨星球任务的隐秘链条。",
     "slug": "/audiobooks/three-waves-of-volunteers/audio25/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio25.MP3"
+  },
+  {
+    "title": "第23集：跨星系的观察者",
+    "subtitle": "",
+    "description": "通过催眠回溯，发现自己是四处漂泊的观察者。同时揭示人类正经历基因与频率同步调整，这是地球整体转变的一部分。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio23/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio23.MP3"
   },
   {
     "title": "第26集：不寻常的外星生物",
@@ -1664,20 +1648,20 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio26.MP3"
   },
   {
-    "title": "第28集：太空船只是通道",
+    "title": "第一部志愿者 第2集：三波志愿者的来历",
     "subtitle": "",
-    "description": "飞船并非目的地，而是通往“源头能量场”的中转装置。灵魂以碎片形式进入地球执行干预任务，并通过周期性回归，维持自身频率以完成使命。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio28/",
+    "description": "通过大量催眠案例，发现不同来源的灵魂分批进入地球，并揭示印记机制、宇宙干预方式与人类在地球转化中的关键角色。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio2/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio28.MP3"
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio2.MP3"
   },
   {
-    "title": "第27集：作为信标台的志愿者",
+    "title": "第二部外星人和光体 第16集：更多志愿者",
     "subtitle": "",
-    "description": "个案在催眠中看到自己作为“信标台”，通过振动与第三只眼持续向外星系统回传地球信息，构成一个跨星球观测网络，用于记录人类演化与未来接触的决策依据。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio27/",
+    "description": "一次离奇的时间消失事件，通过催眠还原外星接触经历。人类恐惧心理背后，或许是被屏蔽与扭曲的真实接触经验。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio16/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio27.MP3"
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio16.MP3"
   },
   {
     "title": "第3集：首次进入肉身的灵魂",
@@ -1712,12 +1696,20 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio30.MP3"
   },
   {
-    "title": "第32集：地球网格的守护者",
+    "title": "第27集：作为信标台的志愿者",
     "subtitle": "",
-    "description": "地球存在由水晶与频率构建的能量网格系统，文明知识被编码进水晶DNA，而亚特兰蒂斯因误用能量导致网格崩溃，迫使高维介入并重置人类发展路径。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio32/",
+    "description": "个案在催眠中看到自己作为“信标台”，通过振动与第三只眼持续向外星系统回传地球信息，构成一个跨星球观测网络，用于记录人类演化与未来接触的决策依据。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio27/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio32.MP3"
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio27.MP3"
+  },
+  {
+    "title": "第33集：新地球",
+    "subtitle": "",
+    "description": "从数百个催眠案例中得出一致结论：地球振动正在提升，人类身体需通过饮食、能量与水的重构完成适配。这不仅是生理变化，更是迈向新次元的系统性转化过程。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio33/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio33.MP3"
   },
   {
     "title": "第34集：旧地球",
@@ -1728,20 +1720,20 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio34.MP3"
   },
   {
+    "title": "第32集：地球网格的守护者",
+    "subtitle": "",
+    "description": "地球存在由水晶与频率构建的能量网格系统，文明知识被编码进水晶DNA，而亚特兰蒂斯因误用能量导致网格崩溃，迫使高维介入并重置人类发展路径。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio32/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio32.MP3"
+  },
+  {
     "title": "第35集：消失的部落，集体升维实验",
     "subtitle": "",
     "description": "某印第安群体曾整体“消失”，真相是集体提升频率进入另一次元。人类历史中早已有过“带着身体转移次元”的实验，而当下正在重演更大规模集体升维。",
     "slug": "/audiobooks/three-waves-of-volunteers/audio35/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio35.MP3"
-  },
-  {
-    "title": "第33集：新地球",
-    "subtitle": "",
-    "description": "从数百个催眠案例中得出一致结论：地球振动正在提升，人类身体需通过饮食、能量与水的重构完成适配。这不仅是生理变化，更是迈向新次元的系统性转化过程。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio33/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio33.MP3"
   },
   {
     "title": "第36集：扬升症状",
@@ -1760,20 +1752,20 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio37.MP3"
   },
   {
-    "title": "第5集：从观察者变成凡人",
-    "subtitle": "",
-    "description": "从永恒光体观察万物，再到进入人类身体，体验极端苦难；灵魂自愿承受磨难以学习、感受生命的深度与价值。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio5/",
-    "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio5.MP3"
-  },
-  {
     "title": "第38集（完结）：分裂的世界，那些被留下的人",
     "subtitle": "",
     "description": "当你逐渐与某些人失去联系，这不仅是关系变化，而是频率分离的开始——人类正被引导进入不同的平行现实，而你已在无意识中完成了选择。",
     "slug": "/audiobooks/three-waves-of-volunteers/audio38/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio38.MP3"
+  },
+  {
+    "title": "第4集：能量体 & 灵魂中转机制",
+    "subtitle": "",
+    "description": "灵魂脱离肉身后，成为可变形的能量体，进入一个充满“流动生命体”的中间地带；揭示记忆、创造力与地球经验之间的关联机制。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio4/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio4.MP3"
   },
   {
     "title": "第6集：他一生孤独，却在守护世界",
@@ -1784,12 +1776,12 @@
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio6.MP3"
   },
   {
-    "title": "第4集：能量体 & 灵魂中转机制",
+    "title": "第5集：从观察者变成凡人",
     "subtitle": "",
-    "description": "灵魂脱离肉身后，成为可变形的能量体，进入一个充满“流动生命体”的中间地带；揭示记忆、创造力与地球经验之间的关联机制。",
-    "slug": "/audiobooks/three-waves-of-volunteers/audio4/",
+    "description": "从永恒光体观察万物，再到进入人类身体，体验极端苦难；灵魂自愿承受磨难以学习、感受生命的深度与价值。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio5/",
     "image": "",
-    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio4.MP3"
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio5.MP3"
   },
   {
     "title": "第7集：疲惫的志愿者",
@@ -1814,6 +1806,14 @@
     "slug": "/audiobooks/three-waves-of-volunteers/audio9/",
     "image": "",
     "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio9.MP3"
+  },
+  {
+    "title": "第28集：太空船只是通道",
+    "subtitle": "",
+    "description": "飞船并非目的地，而是通往“源头能量场”的中转装置。灵魂以碎片形式进入地球执行干预任务，并通过周期性回归，维持自身频率以完成使命。",
+    "slug": "/audiobooks/three-waves-of-volunteers/audio28/",
+    "image": "",
+    "audio_url": "https://audio.librarys.life/audio/three-waves-of-volunteers/audio28.MP3"
   },
   {
     "title": "《生死之间》",
@@ -1856,18 +1856,18 @@
     "audio_url": ""
   },
   {
-    "title": "《悉达多》",
-    "subtitle": "",
-    "description": "在关于“灵魂觉醒”的文学作品中，有一本书格外安静，却影响深远。\n\n这本书在1922年出版时反响平平，因为当时的欧洲文学界正沉浸在战后现实主义文学中，人们更关注社会与政治问题，对灵性与东方哲学并不热衷。然而几十年后，在1960年代美国反文化运动时期，当西方青年开始迷恋东方哲学、瑜伽与灵性探索时，这本小说却意外地被重新看见。\n\n在那样的文化氛围中，它陪伴了无数人在迷惘时期寻找内心的方向，甚至被许多年轻人视为“精神圣经”。因为它提出了一个简单而大胆的观点：真正的智慧，无法通过追随他人获得，只能在自己的生命经验中被发现。\n\n《悉达多》（Siddhartha），也被译为《流浪者之歌》《悉达求道记》，是德国小说家赫尔曼·黑塞（Hermann Hesse）于1922年创作的一部哲理小说。Siddhartha一词由两个梵语词构成：Siddha（意为“已获得”）与 artha（意为“所追寻之物”）。当两者结合时，它通常被理解为“已找到生命意义的人”或“实现目标之人”。这本书描述了主人公悉达多在追寻终极真理的过程中，经历的三个重要生命阶段……\n\n当你阅读本书时，会仿佛看到了自己的人生。它是如此真实，就像一条静静流淌的生命之河，映照出你的灵魂。这或许与作者的生命经历有关。在创作这部作品之前，黑塞正经历人生低谷：父亲去世、家庭危机，以及长期的精神压力，使他一度陷入抑郁，并在瑞士接受荣格学派心理治疗。\n\n《悉达多》正是在这样的时期逐渐完成的。某种意义上，这本书是黑塞自我疗愈的精神旅程，象征着他从混乱、痛苦中最终找到内在的平静。因此，你能在这部作品中感受到，一种从苦难中走出后的宁静与温柔。\n\n透过这部作品，你仿佛能读到黑塞的灵魂之歌，而与之共鸣的，也正是你的——灵魂之歌。这是一部优美、且极具吸引力的文学作品，暮雨把它献给所有正在寻找生命意义的“流浪者”。\n",
-    "slug": "/audiobooks/siddhartha/",
-    "image": "",
-    "audio_url": ""
-  },
-  {
     "title": "《大角星人文摘》",
     "subtitle": "",
     "description": "本书初版于2013年9月，它从更高维度的视角，为人类提供了一种对现实的扩展看法。\n\n这不是一本科幻小说，这是一本可以启发你思考，非常实用且严谨的通灵报告。书中反复强调我们应认识到人类自身的潜能——可以扩展与高维度智慧存有的全息感应交流能力、如何用思维塑造全新的现实、身体疗愈等。书中不但解释了其本质，并提出了详细有效的训练方法。\n\n此外，他们多次提到人类进化的限制在于狭隘的历史观。从地球守护者大角星人的视角，介绍了人类起源的历史（有关远古基因篡改，人类包含20多种星际血统，安努纳奇议程等），并提出人类当下正面临的机遇（太阳风正激活沉睡的DNA和科技大爆发）与挑战（灭绝是规则，生存是例外）。\n\n这本书不是为了满足那些对外星人好奇的读者，它是暮雨献给那些对展现他们生活中更高，更进化的现实和状况感兴趣的朋友。学习控制和重塑你的思维模式，绝对是一个挑战！你在生活中如何应对这一挑战，将决定你的生活质量、你的智力水平，以及你经历多少自由或监禁。\n\n【关于作者】汤姆·肯永（Tom Kenyon）拥有二十多年的心理治疗师临床经验。他通过将催眠状态和声音治疗结合，于1987年独创了一种加速治疗和改变人类神经系统以及行为模式的方法。他将这部分工作称为“身体/心灵再教育”的治疗方式。他以这种快速心理治疗的形式和一种称为跨维度的大脑开发培训为治疗师和咨询师开展专业认证。他提出的方法可以通过具体的意识训练，刺激大脑/思维未使用的部分。 \n\n汤姆·肯永同时也是多维度存有哈索尔人、大角星人、抹大拉的玛利亚的通灵管道，并具有20多年的通灵经验。他可以“调谐自己的大脑”到任何频率，并带来最高质量的信息。\n\n在肯永先生的另一本通灵作品《抹大拉手稿-荷鲁斯炼金术和伊希斯性魔法》里他谈到自己对通灵的态度，“对我来说，通灵是一种值得怀疑的活动。它们携带着各种各样的东西，有些有趣，有些则毫无价值，还有些甚至非常奇怪。有时，通灵能够捕捉到毫无疑问具有价值的东西，但通常它们夹杂在一堆垃圾中。\n\n我对信息的准确性非常挑剔。我会寻找逻辑上的不一致。我设置陷阱。如果它们通过了这些测试，我更有可能考虑它们告诉我的内容。但我是最终的评判者。如果他们所说的对我来说毫无意义，我就会将其驳回。\n\n作为一个精神实用主义者，我总是亲身尝试一切。如果有效，我会保留下来继续使用，否则就放弃它。\n\n作为一个重视客观事实，坚守逻辑的人，我无法确定这个故事是否真实。这让我感到不安。但我可以肯定的是，她（指抹大拉的玛丽亚）分享的方法和洞见是非凡的。因此，对我而言，在整理手稿时，我把故事放回了河里，保留了其中的方法。我希望你们也这样做。”\n",
     "slug": "/audiobooks/the-arcturian-anthology/",
+    "image": "",
+    "audio_url": ""
+  },
+  {
+    "title": "《悉达多》",
+    "subtitle": "",
+    "description": "在关于“灵魂觉醒”的文学作品中，有一本书格外安静，却影响深远。\n\n这本书在1922年出版时反响平平，因为当时的欧洲文学界正沉浸在战后现实主义文学中，人们更关注社会与政治问题，对灵性与东方哲学并不热衷。然而几十年后，在1960年代美国反文化运动时期，当西方青年开始迷恋东方哲学、瑜伽与灵性探索时，这本小说却意外地被重新看见。\n\n在那样的文化氛围中，它陪伴了无数人在迷惘时期寻找内心的方向，甚至被许多年轻人视为“精神圣经”。因为它提出了一个简单而大胆的观点：真正的智慧，无法通过追随他人获得，只能在自己的生命经验中被发现。\n\n《悉达多》（Siddhartha），也被译为《流浪者之歌》《悉达求道记》，是德国小说家赫尔曼·黑塞（Hermann Hesse）于1922年创作的一部哲理小说。Siddhartha一词由两个梵语词构成：Siddha（意为“已获得”）与 artha（意为“所追寻之物”）。当两者结合时，它通常被理解为“已找到生命意义的人”或“实现目标之人”。这本书描述了主人公悉达多在追寻终极真理的过程中，经历的三个重要生命阶段……\n\n当你阅读本书时，会仿佛看到了自己的人生。它是如此真实，就像一条静静流淌的生命之河，映照出你的灵魂。这或许与作者的生命经历有关。在创作这部作品之前，黑塞正经历人生低谷：父亲去世、家庭危机，以及长期的精神压力，使他一度陷入抑郁，并在瑞士接受荣格学派心理治疗。\n\n《悉达多》正是在这样的时期逐渐完成的。某种意义上，这本书是黑塞自我疗愈的精神旅程，象征着他从混乱、痛苦中最终找到内在的平静。因此，你能在这部作品中感受到，一种从苦难中走出后的宁静与温柔。\n\n透过这部作品，你仿佛能读到黑塞的灵魂之歌，而与之共鸣的，也正是你的——灵魂之歌。这是一部优美、且极具吸引力的文学作品，暮雨把它献给所有正在寻找生命意义的“流浪者”。\n",
+    "slug": "/audiobooks/siddhartha/",
     "image": "",
     "audio_url": ""
   },

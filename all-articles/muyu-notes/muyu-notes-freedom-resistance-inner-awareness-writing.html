@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-2342">
+<meta name="version" content="20260804-0206">
 
 
 <meta charset="utf-8">
@@ -110,6 +110,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -218,17 +244,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -515,7 +546,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -697,41 +728,108 @@ html {
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">暮雨札记 │ 完美的日子：极简生活、风水与心灵自由的启示</h5>
-          <p class="g-color-gray-dark-v4">一部关于东京清洁工的电影《完美的日子》，让我们重新思考生活的本质。影片揭示：生活方式而非财富决定了生活质量。通过极简生活、珍惜物品、净化心境与风水能量，探索如何让心灵获得自由与宁静。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/muyu-notes/perfect-days-movie-review-minimalism-fengshui-mindful-living.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">暮雨札记 │ 完美的日子：极简生活、风水与心灵自由的启示</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">一部关于东京清洁工的电影《完美的日子》，让我们重新思考生活的本质。影片揭示：生活方式而非财富决定了生活质量。通过极简生活、珍惜物品、净化心境与风水能量，探索如何让心灵获得自由与宁静。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/muyu-notes/perfect-days-movie-review-minimalism-fengshui-mindful-living.html"
+             aria-label="阅读相关文章：暮雨札记 │ 完美的日子：极简生活、风水与心灵自由的启示">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">存在的乐趣：停止说话与思考，感受自我与万物的共振指南</h5>
-          <p class="g-color-gray-dark-v4">探讨“存在的乐趣”，指导如何通过停止说话、暂停思考来感受自我与万物的联系。理解静默、沉思与能量流动，唤醒潜意识情绪与记忆，实现身心共振与内在觉知。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/muyu-notes/joy-of-being-how-to-stop-talking-and-thinking-to-awaken-self-and-universe.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">存在的乐趣：停止说话与思考，感受自我与万物的共振指南</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">探讨“存在的乐趣”，指导如何通过停止说话、暂停思考来感受自我与万物的联系。理解静默、沉思与能量流动，唤醒潜意识情绪与记忆，实现身心共振与内在觉知。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/muyu-notes/joy-of-being-how-to-stop-talking-and-thinking-to-awaken-self-and-universe.html"
+             aria-label="阅读相关文章：存在的乐趣：停止说话与思考，感受自我与万物的共振指南">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">克里希那穆提：真正的静心，从理解自我与欲望开始</h5>
-          <p class="g-color-gray-dark-v4">本文探讨克里希那穆提对“静心”的深刻洞见：静心并非依靠权威指令或机械的冥想步骤，而是要从认识自我与欲望的运作轨迹开始。唯有通过中立、温和的自我觉察，我们才能分辨内在声音的来源，超越小我的幻象，走向真正的开悟与心灵自由。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/jiddu-krishnamurti/5-true-meditation-begins-with-understanding-self-desire.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">克里希那穆提：真正的静心，从理解自我与欲望开始</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">本文探讨克里希那穆提对“静心”的深刻洞见：静心并非依靠权威指令或机械的冥想步骤，而是要从认识自我与欲望的运作轨迹开始。唯有通过中立、温和的自我觉察，我们才能分辨内在声音的来源，超越小我的幻象，走向真正的开悟与心灵自由。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/insight-awakening/jiddu-krishnamurti/5-true-meditation-begins-with-understanding-self-desire.html"
+             aria-label="阅读相关文章：克里希那穆提：真正的静心，从理解自我与欲望开始">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1201,6 +1299,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1254,9 +1364,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1268,6 +1379,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1316,6 +1430,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

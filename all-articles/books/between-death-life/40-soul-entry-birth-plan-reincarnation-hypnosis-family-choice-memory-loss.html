@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-2342">
+<meta name="version" content="20260804-0206">
 
 
 <meta charset="utf-8">
@@ -110,6 +110,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -218,17 +244,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -624,7 +655,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -806,41 +837,108 @@ html {
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">灵魂转世的真相：电脑室系统、轮回机制与灵魂进化终极目标解析</h5>
-          <p class="g-color-gray-dark-v4">探讨灵魂转世前的“处理系统”与轮回机制，解析星光层结构、天堂与地狱的本质差异，以及耶稣与佛陀作为高阶灵魂的回归意义。深入理解灵魂进化路径、转世次数与最终回归源头的过程。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/between-death-life/14-soul-reincarnation-system-astral-plane-evolution-heaven-hell-jesus-buddha.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">灵魂转世的真相：电脑室系统、轮回机制与灵魂进化终极目标解析</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">探讨灵魂转世前的“处理系统”与轮回机制，解析星光层结构、天堂与地狱的本质差异，以及耶稣与佛陀作为高阶灵魂的回归意义。深入理解灵魂进化路径、转世次数与最终回归源头的过程。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/between-death-life/14-soul-reincarnation-system-astral-plane-evolution-heaven-hell-jesus-buddha.html"
+             aria-label="阅读相关文章：灵魂转世的真相：电脑室系统、轮回机制与灵魂进化终极目标解析">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">自杀与灵魂业力：毁约、轮回学习与无法逃避的因果机制解析</h5>
-          <p class="g-color-gray-dark-v4">从灵性与业力系统解析自杀的本质，探讨灵魂契约、转世学习目标与自由意志之间的关系。深入说明自杀为何不会终止问题，反而延迟灵魂成长，并通过回归相同情境继续完成未解决的课题，以及对家庭与周围人的影响。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/between-death-life/27-suicide-karma-soul-contract-reincarnation-learning-purpose-free-will.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">自杀与灵魂业力：毁约、轮回学习与无法逃避的因果机制解析</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">从灵性与业力系统解析自杀的本质，探讨灵魂契约、转世学习目标与自由意志之间的关系。深入说明自杀为何不会终止问题，反而延迟灵魂成长，并通过回归相同情境继续完成未解决的课题，以及对家庭与周围人的影响。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/between-death-life/27-suicide-karma-soul-contract-reincarnation-learning-purpose-free-will.html"
+             aria-label="阅读相关文章：自杀与灵魂业力：毁约、轮回学习与无法逃避的因果机制解析">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">灵魂规划与指导灵系统：转世前协议、灵魂家族与日常引导机制解析</h5>
-          <p class="g-color-gray-dark-v4">深入解析灵魂转世前的规划过程，包括灵魂家族的协作、业力关系的设计，以及指导灵在不同层面的参与方式。探讨指导灵如何通过直觉、情绪与现实事件引导人生，并提供识别真实指导灵与外界干扰灵体的方法。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/between-death-life/34-spirit-guides-soul-family-reincarnation-planning-communication-astral-guidance.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">灵魂规划与指导灵系统：转世前协议、灵魂家族与日常引导机制解析</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">深入解析灵魂转世前的规划过程，包括灵魂家族的协作、业力关系的设计，以及指导灵在不同层面的参与方式。探讨指导灵如何通过直觉、情绪与现实事件引导人生，并提供识别真实指导灵与外界干扰灵体的方法。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/between-death-life/34-spirit-guides-soul-family-reincarnation-planning-communication-astral-guidance.html"
+             aria-label="阅读相关文章：灵魂规划与指导灵系统：转世前协议、灵魂家族与日常引导机制解析">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1310,6 +1408,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1363,9 +1473,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1377,6 +1488,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1425,6 +1539,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

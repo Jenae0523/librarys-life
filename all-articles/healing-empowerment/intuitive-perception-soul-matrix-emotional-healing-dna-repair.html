@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-2342">
+<meta name="version" content="20260804-0206">
 
 
 <meta charset="utf-8">
@@ -110,6 +110,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -218,17 +244,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -552,7 +583,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -766,41 +797,108 @@ html {
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧</h5>
-          <p class="g-color-gray-dark-v4">本篇深入探讨人类压抑情绪的历史与机制，揭示感知偏见如何阻碍你启动高等感知能力。通过觉察与理解情绪，我们得以唤醒沉睡的灵魂代码，解锁灵魂矩阵与自我意识的链接之门。探索情绪炼金术，开启内在潜能的转化之路。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">本篇深入探讨人类压抑情绪的历史与机制，揭示感知偏见如何阻碍你启动高等感知能力。通过觉察与理解情绪，我们得以唤醒沉睡的灵魂代码，解锁灵魂矩阵与自我意识的链接之门。探索情绪炼金术，开启内在潜能的转化之路。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html"
+             aria-label="阅读相关文章：人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">DNA与梦境记忆：高我、小我、潜意识的形成原因 | 频率屏障与DNA修复全解析</h5>
-          <p class="g-color-gray-dark-v4">为什么有些梦醒来就忘记，而另一些却清晰如真实？本篇文章深入解析12条能量DNA链、第三条DNA链的频率桥、高我与小我的分裂、潜意识的形成，以及如何通过DNA修复恢复清明梦、星体投射和多维感知。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/healing-empowerment/energy-dna-dream-memory-higher-self-ego-subconscious.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">DNA与梦境记忆：高我、小我、潜意识的形成原因 | 频率屏障与DNA修复全解析</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">为什么有些梦醒来就忘记，而另一些却清晰如真实？本篇文章深入解析12条能量DNA链、第三条DNA链的频率桥、高我与小我的分裂、潜意识的形成，以及如何通过DNA修复恢复清明梦、星体投射和多维感知。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/healing-empowerment/energy-dna-dream-memory-higher-self-ego-subconscious.html"
+             aria-label="阅读相关文章：DNA与梦境记忆：高我、小我、潜意识的形成原因 | 频率屏障与DNA修复全解析">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告</h5>
-          <p class="g-color-gray-dark-v4">本集基于朵洛莉丝·侃南的催眠报告，梳理“光之灵”的存在方式与沟通机制：从“无法言说的真相”“回到光之故乡”“能量口袋与风箱原理”，到“形态自由进出”“负能量与意图法则”“潜意识如何完成疗愈”。结合 Patricia 个案，解析如何在高频状态下引导能量、提升频率与身心修复的路径与边界，强调出于最高意图的应用与自我疗愈之路。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">本集基于朵洛莉丝·侃南的催眠报告，梳理“光之灵”的存在方式与沟通机制：从“无法言说的真相”“回到光之故乡”“能量口袋与风箱原理”，到“形态自由进出”“负能量与意图法则”“潜意识如何完成疗愈”。结合 Patricia 个案，解析如何在高频状态下引导能量、提升频率与身心修复的路径与边界，强调出于最高意图的应用与自我疗愈之路。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html"
+             aria-label="阅读相关文章：光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1270,6 +1368,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1323,9 +1433,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1337,6 +1448,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1385,6 +1499,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-2342">
+<meta name="version" content="20260804-0206">
 
 
 <meta charset="utf-8">
@@ -110,6 +110,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -218,17 +244,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -552,7 +583,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -766,41 +797,108 @@ html {
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">阿卡西记录能看见未来吗？大角星人谈可能时间线与集体意识｜《大角星人文摘》第10集</h5>
-          <p class="g-color-gray-dark-v4">阿卡西记录能否保存过去，也呈现尚未发生的未来？大角星阿卡西管理员Enandra将它描述为包含过去、现在与可能时间线的信息场，并认为个人和集体观念的变化，会使历史走向不同的分支。材料也谈到高维文明介入人类事务时面临的感知与自由意志难题。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/alien-archives/arcturian/the-arcturian-anthology10-akashic-records-future-timelines.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">阿卡西记录能看见未来吗？大角星人谈可能时间线与集体意识｜《大角星人文摘》第10集</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">阿卡西记录能否保存过去，也呈现尚未发生的未来？大角星阿卡西管理员Enandra将它描述为包含过去、现在与可能时间线的信息场，并认为个人和集体观念的变化，会使历史走向不同的分支。材料也谈到高维文明介入人类事务时面临的感知与自由意志难题。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology10-akashic-records-future-timelines.html"
+             aria-label="阅读相关文章：阿卡西记录能看见未来吗？大角星人谈可能时间线与集体意识｜《大角星人文摘》第10集">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">共情力如何改变人类未来？大角星人谈生态危机、人与自然及集体意识｜《大角星人文摘》第17集</h5>
-          <p class="g-color-gray-dark-v4">共情力为什么可能关系到人类能否度过生态危机？萨纳特·库玛拉把共情智力视为连接思想与心灵、个人与自然的能力，并认为个体意识的微小变化会通过所谓“微观量子效应”影响集体。植物、动物和自然，也因此成为重新学习关系与生存智慧的入口。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/alien-archives/arcturian/the-arcturian-anthology17-empathy-intelligence-ecological-consciousness.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">共情力如何改变人类未来？大角星人谈生态危机、人与自然及集体意识｜《大角星人文摘》第17集</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">共情力为什么可能关系到人类能否度过生态危机？萨纳特·库玛拉把共情智力视为连接思想与心灵、个人与自然的能力，并认为个体意识的微小变化会通过所谓“微观量子效应”影响集体。植物、动物和自然，也因此成为重新学习关系与生存智慧的入口。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology17-empathy-intelligence-ecological-consciousness.html"
+             aria-label="阅读相关文章：共情力如何改变人类未来？大角星人谈生态危机、人与自然及集体意识｜《大角星人文摘》第17集">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">通灵信息如何辨别？高维沟通的心理风险与安全原则｜《大角星人文摘》第18集</h5>
-          <p class="g-color-gray-dark-v4">改变意识状态和所谓高维沟通，为什么有时会带来错误信息甚至心理风险？汤姆·肯永从心理治疗经验出发，说明情绪状态、个人愿望和信念投射如何扭曲接收内容，并给出自我诚实、记录验证、能量保护及必要时寻求专业支持等安全原则。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/alien-archives/arcturian/the-arcturian-anthology18-channeling-discernment-psychological-safety.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">通灵信息如何辨别？高维沟通的心理风险与安全原则｜《大角星人文摘》第18集</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">改变意识状态和所谓高维沟通，为什么有时会带来错误信息甚至心理风险？汤姆·肯永从心理治疗经验出发，说明情绪状态、个人愿望和信念投射如何扭曲接收内容，并给出自我诚实、记录验证、能量保护及必要时寻求专业支持等安全原则。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology18-channeling-discernment-psychological-safety.html"
+             aria-label="阅读相关文章：通灵信息如何辨别？高维沟通的心理风险与安全原则｜《大角星人文摘》第18集">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1270,6 +1368,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1323,9 +1433,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1337,6 +1448,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1385,6 +1499,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

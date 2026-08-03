@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-2342">
+<meta name="version" content="20260804-0206">
 
 
 <meta charset="utf-8">
@@ -110,6 +110,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -218,17 +244,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -946,7 +977,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -1160,41 +1191,108 @@ html {
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">女性原则为何被从神话中抹去？索菲亚、逻各斯与宇宙之母的回归｜抹大拉手稿</h5>
-          <p class="g-color-gray-dark-v4">女性原则为什么会从基督教神话与神学中逐渐消失？Tom Kenyon从索菲亚与逻各斯的关系出发，说明精神与物质、天空与大地、男性与女性原本是共同完成创造的两股力量；当索菲亚被抹去，身体、自然和女性也随之失去神圣位置。朱迪·赛恩则解释，写下一个女人真实而不完美的人生，正是让女性原则重新获得尊严与力量的一部分。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">女性原则为何被从神话中抹去？索菲亚、逻各斯与宇宙之母的回归｜抹大拉手稿</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">女性原则为什么会从基督教神话与神学中逐渐消失？Tom Kenyon从索菲亚与逻各斯的关系出发，说明精神与物质、天空与大地、男性与女性原本是共同完成创造的两股力量；当索菲亚被抹去，身体、自然和女性也随之失去神圣位置。朱迪·赛恩则解释，写下一个女人真实而不完美的人生，正是让女性原则重新获得尊严与力量的一部分。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/mary-magdalene/29-feminine-principle-sophia-logos-return-of-the-cosmic-mother.html"
+             aria-label="阅读相关文章：女性原则为何被从神话中抹去？索菲亚、逻各斯与宇宙之母的回归｜抹大拉手稿">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化</h5>
-          <p class="g-color-gray-dark-v4">这是一个关于女性生命轨迹的深度叙事，从原生家庭的压抑与创伤，到事业成功、情感崩塌，再到精神觉醒与自我重建。通过多个关键人生转折点，呈现一个人在关系、信念与现实冲突中逐步解构旧身份、重建自我意识的全过程。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">这是一个关于女性生命轨迹的深度叙事，从原生家庭的压抑与创伤，到事业成功、情感崩塌，再到精神觉醒与自我重建。通过多个关键人生转折点，呈现一个人在关系、信念与现实冲突中逐步解构旧身份、重建自我意识的全过程。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html"
+             aria-label="阅读相关文章：一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生</h5>
-          <p class="g-color-gray-dark-v4">一位女性在经历黑暗、情感崩塌与生命危机后，踏上欧洲精神之旅，从灵性探索到面对朋友的癌症与死亡，在极限中看见自我本质。本文融合觉醒、心理创伤、亲密关系与生命意义，是一段关于“成为自己”的深度真实记录。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">一位女性在经历黑暗、情感崩塌与生命危机后，踏上欧洲精神之旅，从灵性探索到面对朋友的癌症与死亡，在极限中看见自我本质。本文融合觉醒、心理创伤、亲密关系与生命意义，是一段关于“成为自己”的深度真实记录。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html"
+             aria-label="阅读相关文章：一个女人的觉醒之路：欧洲精神之旅、内在崩塌与死亡中的重生">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1664,6 +1762,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1717,9 +1827,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1731,6 +1842,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1779,6 +1893,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

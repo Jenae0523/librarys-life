@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-2342">
+<meta name="version" content="20260804-0206">
 
 
 <meta charset="utf-8">
@@ -110,6 +110,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -218,17 +244,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -524,7 +555,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -658,41 +689,108 @@ html {
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">无法正确的沟通，是因为缺乏沟通的品质，是什么导致沟通的终止？打破沟通障碍的5个关键点！</h5>
-          <p class="g-color-gray-dark-v4">本篇深度解析沟通失败的根源，揭示为什么我们无法真正倾听和理解对方。探讨倾听的艺术、自我重要感、思维惰性、语言局限与沟通品质等5大关键问题，帮助你建立真实、开放、有品质的人际连结。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/art-of-deep-listening-how-to-break-communication-barriers-and-connect-truly.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">克里希那穆提：语言如何限制思想？超越语言局限的自由心智</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">本文解析克里希那穆提关于语言与思想的洞见：语言作为人造符号，往往制造出思想的局限，让我们困在“词语的牢笼”里。通过观察“自由”“神”等概念如何影响认知，探讨如何突破语言的边界，进入不依赖符号的心智状态，触及真正的自由与真相。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/insight-awakening/jiddu-krishnamurti/3-language-limits-how-words-shape-thoughts-and-trap-the-mind.html"
+             aria-label="阅读相关文章：克里希那穆提：语言如何限制思想？超越语言局限的自由心智">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">克里希那穆提：语言如何限制思想？超越语言局限的自由心智</h5>
-          <p class="g-color-gray-dark-v4">本文解析克里希那穆提关于语言与思想的洞见：语言作为人造符号，往往制造出思想的局限，让我们困在“词语的牢笼”里。通过观察“自由”“神”等概念如何影响认知，探讨如何突破语言的边界，进入不依赖符号的心智状态，触及真正的自由与真相。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/jiddu-krishnamurti/3-language-limits-how-words-shape-thoughts-and-trap-the-mind.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">通过“鱼缸里的青蛙”隐喻，探讨逻辑心智的局限与情绪智能的重要性，解析Keylonta Codes在DNA中被激活的过程，以及人类如何从五感的玻璃墙走向多维感知，整合情绪与理性，迈向灵魂与肉身的全面觉醒。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/insight-awakening/logic-mind-emotional-intelligence-keylonta-codes-awakening.html"
+             aria-label="阅读相关文章：逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">能量越高，生命状态越好吗？从物质状态看懂生命、关系与群体的弹性</h5>
-          <p class="g-color-gray-dark-v4">固态、液态和气态没有高低之分，差别来自能量、粒子运动与组织结构。借这一物理图景理解个人、关系与群体：健康并非永远稳定、流动或扩展，也不是能量越高越好，而是能在凝聚、调整与开拓之间转换，并以边界和结构承载活力。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/muyu-notes/states-of-matter-and-life-flexibility.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">多维宇宙与时间真相：平行人生、UFO与意识本质的终极解释</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">这篇文章系统解析一个颠覆认知的世界观：你并不是完整的“你”，而是更大意识中的一个聚焦点。深入探讨多维宇宙结构、时间并非线性流动的本质、平行人生的真实机制，以及UFO与外星文明为何难以被发现。从意识、维度与感知的角度，重新理解现实、成长与存在，带你从“个体视角”走向“整体意识”。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/dolores-cannon-hypnosis/multiverse/multidimensional-universe-time-nonlinear-parallel-lives-consciousness-ufo.html"
+             aria-label="阅读相关文章：多维宇宙与时间真相：平行人生、UFO与意识本质的终极解释">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1162,6 +1260,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1215,9 +1325,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1229,6 +1340,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1277,6 +1391,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }

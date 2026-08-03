@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260803-2342">
+<meta name="version" content="20260804-0206">
 
 
 <meta charset="utf-8">
@@ -110,6 +110,32 @@ html {
   line-height: 1.6;
   margin-top: 2.5em;
   margin-bottom: 1em;
+}
+
+.related-posts-heading {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.related-posts-item {
+  padding-top: 36px;
+}
+
+.related-posts-item:first-child {
+  padding-top: 12px;
+}
+
+.related-posts-excerpt {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.related-posts-excerpt[role="button"]:focus {
+  outline: none;
+}
+
+.related-posts-excerpt[role="button"]:focus-visible {
+  color: #5968b8 !important;
 }
 
 .article-body h2[id],
@@ -218,17 +244,22 @@ html {
   bottom: 96px;
   right: var(--floating-toc-right, 0px);
   z-index: 1001;
-  display: none;
+  display: flex;
   align-items: flex-end;
   flex-direction: row-reverse;
   width: var(--toc-toggle-width);
   max-width: calc(100vw - 18px);
   overflow: hidden;
-  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.25s ease, right 0.2s ease, bottom 0.2s ease, opacity 0.18s ease;
 }
 
 .floating-episode-toc.is-visible {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .floating-episode-toc.is-open {
@@ -505,7 +536,7 @@ html {
 
 
                 <!-- 横线与再次分享 -->
-                <hr class="g-brd-gray-light-v4 g-pt-20">
+                <hr class="g-brd-gray-light-v4 g-pt-20 article-share-boundary">
                 <div class="sharethis-inline-share-buttons"></div>
               </div>
             </article>
@@ -671,41 +702,108 @@ html {
 			  
 <!-- Related Posts -->
 <div class="g-mb-50">
-  <h4 class="h4 g-color-primary g-font-weight-600 mb-4">你可能想知道…</h4>
-  <ul class="list-unstyled g-font-size-14 mb-0">
+  <h4 class="h4 g-color-primary g-font-weight-600 mb-4 related-posts-heading">你可能想知道…</h4>
+  <ul class="list-unstyled g-font-size-14 mb-0 related-posts-list">
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">唐望揭示：学习之路必经的四大考验！成为智者的修行指南</h5>
-          <p class="g-color-gray-dark-v4">唐望提出：成为智者，必须战胜四个敌人——恐惧、明晰、力量与衰老。本篇深度解析每一阶段的心理陷阱，结合克里希那穆提的学习观，揭示成长的内在修炼路径。适合自我觉察、心灵成长、灵性追寻者参考。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/insight-awakening/teachings-of-don-juan/2-wisdom-warriors-path-overcoming-fear-clarity-power-aging.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">唐望揭示：学习之路必经的四大考验！成为智者的修行指南</h5>
+          
+          <p id="related-post-excerpt-1"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">唐望提出：成为智者，必须战胜四个敌人——恐惧、明晰、力量与衰老。本篇深度解析每一阶段的心理陷阱，结合克里希那穆提的学习观，揭示成长的内在修炼路径。适合自我觉察、心灵成长、灵性追寻者参考。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/insight-awakening/teachings-of-don-juan/2-wisdom-warriors-path-overcoming-fear-clarity-power-aging.html"
+             aria-label="阅读相关文章：唐望揭示：学习之路必经的四大考验！成为智者的修行指南">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验</h5>
-          <p class="g-color-gray-dark-v4">此生的功课，为什么不是离开身体，而是更完整地进入身体？DATRE把灵性探索重新拉回感官、专注与行动：观察者不是抽离生活的旁观者，而是能看见机械反应、教导大脑与身体，并清醒参与物质经验的人。梦境也不是逃离现实的入口，而是白天意识状态的延伸。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">克里希那穆提：摆脱权威依附，从恐惧与无明中获得解脱</h5>
+          
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">本文探讨克里希那穆提关于“权威与心智”的洞见：为何充满恐惧与欲望的心，总是渴望依附于权威？为什么追随传统、模仿知识无法带来真知？文章指出，唯有觉察自我内心的欲望与恐惧，才能摆脱权威的束缚，从无明与痛苦中解脱，发展出真正的洞见与自由心智。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/insight-awakening/jiddu-krishnamurti/4-break-authority-patterns-mindset-freedom-through-self-awareness.html"
+             aria-label="阅读相关文章：克里希那穆提：摆脱权威依附，从恐惧与无明中获得解脱">阅读文章</a>
         </div>
       </article>
     </li>
     
-    <li>
-      <article class="media g-mb-35">
+    <li class="related-posts-item">
+      <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-600">觉醒与地球未来：提升振动频率与灵性成长指南</h5>
-          <p class="g-color-gray-dark-v4">探索人类觉醒如何改变地球的未来，通过催眠案例揭示意识、生命力与灵性成长的关键。了解如何提升振动频率、善行与觉知，从而影响潜在的地球未来。本文提供实践建议与思维启发，引导你走向觉醒之路。</p>
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25" href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html">阅读文章</a>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">克里希那穆提：活出真实的自己，面对冲突与自我怀疑的智慧</h5>
+          
+          <p id="related-post-excerpt-3"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">本文探讨克里希那穆提关于“活出真实自我”的理念：如何在面对他人的批评、冲突与自我怀疑时，保持内心的真实与热忱。文章剖析妥协的真相、冲突的本质，以及如何通过正确沟通与智慧觉察，让内在能量顺畅流动，避免对自己与他人的暴力与愤怒，真正实现自我自由与成长。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/insight-awakening/jiddu-krishnamurti/7-authentic-self-conflict-criticism-compromise-truth.html"
+             aria-label="阅读相关文章：克里希那穆提：活出真实的自己，面对冲突与自我怀疑的智慧">阅读文章</a>
         </div>
       </article>
     </li>
     
   </ul>
 </div>
+<script>
+  (function () {
+    var maxExcerptLength = 70;
+    var excerpts = Array.prototype.slice.call(document.querySelectorAll("[data-related-post-excerpt]"));
+
+    excerpts.forEach(function (excerpt) {
+      if (excerpt.getAttribute("data-related-post-excerpt-ready") === "true") return;
+
+      var fullText = excerpt.textContent.trim();
+      var characters = Array.from(fullText);
+
+      excerpt.setAttribute("data-related-post-excerpt-ready", "true");
+      if (characters.length <= maxExcerptLength) {
+        excerpt.removeAttribute("role");
+        excerpt.removeAttribute("tabindex");
+        excerpt.removeAttribute("aria-expanded");
+        excerpt.style.cursor = "default";
+        return;
+      }
+
+      var collapsedText = characters.slice(0, maxExcerptLength).join("") + "……";
+      var isExpanded = false;
+      excerpt.textContent = collapsedText;
+
+      function toggleExcerpt() {
+        isExpanded = !isExpanded;
+        excerpt.textContent = isExpanded ? fullText : collapsedText;
+        excerpt.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+      }
+
+      excerpt.addEventListener("click", toggleExcerpt);
+      excerpt.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleExcerpt();
+        }
+      });
+    });
+  })();
+</script>
 
 
 			  
@@ -1175,6 +1273,18 @@ html {
           toc.style.setProperty("--floating-toc-right", Math.round(rightOffset) + "px");
         }
 
+        function updateFloatingTocVisibility(toc, endBoundary) {
+          if (!toc || !article || !endBoundary) return;
+
+          var articleRect = article.getBoundingClientRect();
+          var boundaryRect = endBoundary.getBoundingClientRect();
+          var tocRect = toc.getBoundingClientRect();
+          var staysBelowIntro = tocRect.top >= articleRect.top;
+          var staysAboveShareLine = tocRect.bottom <= boundaryRect.top;
+
+          toc.classList.toggle("is-visible", staysBelowIntro && staysAboveShareLine);
+        }
+
         updateScrollOffset();
         window.addEventListener("resize", updateScrollOffset);
 
@@ -1228,9 +1338,10 @@ html {
         toc.appendChild(toggle);
         toc.appendChild(panel);
         document.body.appendChild(toc);
+        var endBoundary = document.querySelector(".article-share-boundary");
         updateFloatingTocPosition(toc);
         window.requestAnimationFrame(function () {
-          toc.classList.add("is-visible");
+          updateFloatingTocVisibility(toc, endBoundary);
         });
 
         var floatingLinks = Array.prototype.slice.call(toc.querySelectorAll(".floating-episode-toc__link"));
@@ -1242,6 +1353,9 @@ html {
         function setOpen(isOpen) {
           toc.classList.toggle("is-open", isOpen);
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          window.requestAnimationFrame(function () {
+            updateFloatingTocVisibility(toc, endBoundary);
+          });
         }
 
         function setActive(id) {
@@ -1290,6 +1404,7 @@ html {
           ticking = true;
           window.requestAnimationFrame(function () {
             updateActiveLink();
+            updateFloatingTocVisibility(toc, endBoundary);
             ticking = false;
           });
         }
