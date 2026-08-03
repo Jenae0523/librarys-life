@@ -1,0 +1,21 @@
+.site-go-to {
+  z-index: 1000;
+}
+
+.site-go-to:focus-visible {
+  outline: 3px solid rgba(98, 129, 200, 0.32);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .site-go-to {
+    right: 64px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-go-to {
+    animation: none !important;
+    transition: none;
+  }
+}
