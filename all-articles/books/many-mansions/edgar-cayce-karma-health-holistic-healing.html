@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260804-0206">
+<meta name="version" content="20260804-1135">
 
 
 <meta charset="utf-8">
@@ -69,6 +69,8 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
+  <link rel="stylesheet" href="/assets/css/selection-search.css">
+  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -76,10 +78,59 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
+      max-width: 100%;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-body iframe,
+.article-body video,
+.article-body audio,
+.article-body canvas,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.article-body a,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 	
 .article-body p {
@@ -922,33 +973,14 @@ html {
     <li class="related-posts-item">
       <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求</h5>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">揭秘前世催眠回溯：潜意识身体信号解读与灵魂疗愈指南</h5>
           
           <p id="related-post-excerpt-1"
              class="g-color-gray-dark-v4 related-posts-excerpt"
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">本文深入探讨“情绪癌症”的概念，揭示长期压抑情绪和忽视内在需求如何影响身体健康。结合心理学案例与神经肽理论，提供提升情绪免疫力的方法，帮助读者在灵性成长中平衡自我需求与他人需求，实现心理与身体的双重疗愈。</p>
-          
-          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html"
-             aria-label="阅读相关文章：情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求">阅读文章</a>
-        </div>
-      </article>
-    </li>
-    
-    <li class="related-posts-item">
-      <article class="media">
-        <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">揭秘前世催眠回溯：潜意识身体信号解读与灵魂疗愈指南</h5>
-          
-          <p id="related-post-excerpt-2"
-             class="g-color-gray-dark-v4 related-posts-excerpt"
-             data-related-post-excerpt
-             role="button"
-             tabindex="0"
-             aria-expanded="false">探索前世催眠回溯的奥秘，解析潜意识如何通过身体症状传递灵魂讯息。结合朵洛莉丝·侃南的催眠案例，揭示疾病背后的心理与前世因素，帮助你解读身体信号，理解情绪、行为与健康的深层联系，实现身心灵的疗愈与自我觉察。</p>
+             aria-expanded="false">身体症状是否也可能承载情绪与生活经验留下的信息？朵洛莉丝·侃南与Julia Cannon的资料把潜意识视为连接身体、心理和灵魂经验的桥梁，并列举疼痛、表达受阻、压抑情绪与抗拒改变等象征性解释。这些对应关系适合用于自我观察，不应被当作疾病诊断或替代医学检查。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-body-signs-soul-healing.html"
@@ -962,16 +994,35 @@ html {
         <div class="media-body">
           <h5 class="g-color-black g-font-weight-400 g-mb-8">灵魂转世的秘密：印记系统、阿卡西记录与基督意识的多层现实解析</h5>
           
+          <p id="related-post-excerpt-2"
+             class="g-color-gray-dark-v4 related-posts-excerpt"
+             data-related-post-excerpt
+             role="button"
+             tabindex="0"
+             aria-expanded="false">催眠中出现的前世记忆，是否都属于本人真实经历？《生死之间》提出“印记”概念：灵魂可能从阿卡西纪录中选择他人的人生经验，用来准备即将面对的地球课题，因此多人也可能携带同一段记忆。书中进一步讨论如何区分转世与印记，以及所谓“基督意识印记”的作用。</p>
+          
+          <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
+             href="/all-articles/books/between-death-life/38-soul-imprints-akashic-records-reincarnation-christ-consciousness-evolution.html"
+             aria-label="阅读相关文章：灵魂转世的秘密：印记系统、阿卡西记录与基督意识的多层现实解析">阅读文章</a>
+        </div>
+      </article>
+    </li>
+    
+    <li class="related-posts-item">
+      <article class="media">
+        <div class="media-body">
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求</h5>
+          
           <p id="related-post-excerpt-3"
              class="g-color-gray-dark-v4 related-posts-excerpt"
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">深入探索灵魂转世中的“印记系统”，解析阿卡西记录如何存储生命经验，以及印记在转世前的选择机制与作用。进一步探讨如何区分真实前世与印记体验、多人共享同一人生经验的可能性，并揭示基督意识印记在灵性进化中的作用与意义。</p>
+             aria-expanded="false">长期压抑情绪、忽视自己的需要，会怎样影响身体健康？Tom Kenyon从声音释放、心理神经免疫学与癌症患者的经历提出“情绪癌症”概念，并提醒人们不要用冥想、疗愈他人或灵性理想回避悲伤、愤怒与界限。情绪确实会影响健康，但文中关于特定器官储存情绪、情绪直接导致癌症等内容属于作者经验与推测，不能替代医学诊断和治疗。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/books/between-death-life/38-soul-imprints-akashic-records-reincarnation-christ-consciousness-evolution.html"
-             aria-label="阅读相关文章：灵魂转世的秘密：印记系统、阿卡西记录与基督意识的多层现实解析">阅读文章</a>
+             href="/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html"
+             aria-label="阅读相关文章：情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求">阅读文章</a>
         </div>
       </article>
     </li>
@@ -1406,6 +1457,69 @@ html {
   </ul>
 </div>
 
+
+              <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- 文章搜索入口 -->
+              <div class="article-sidebar-search">
+                
+                <section
+  class="article-search-panel article-search-panel--entry article-search-panel--compact"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 139 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+              </div>
 			  
 			  
             </div>

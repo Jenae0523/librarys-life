@@ -24,5 +24,6 @@ number: 14
 subtitle_url: "/audiobooks/the-arcturian-anthology/texts/the-arcturian-anthology14.json"
 book_slug: the-arcturian-anthology
 is_audio_episode: true
+article_url: "/all-articles/alien-archives/arcturian/the-arcturian-anthology14-nonlinear-thinking-holographic-perception.html"
 ---
 

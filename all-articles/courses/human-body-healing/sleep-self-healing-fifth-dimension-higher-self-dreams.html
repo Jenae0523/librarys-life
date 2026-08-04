@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260804-0206">
+<meta name="version" content="20260804-1135">
 
 
 <meta charset="utf-8">
@@ -69,6 +69,8 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
+  <link rel="stylesheet" href="/assets/css/selection-search.css">
+  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -76,10 +78,59 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
+      max-width: 100%;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-body iframe,
+.article-body video,
+.article-body audio,
+.article-body canvas,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.article-body a,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 	
 .article-body p {
@@ -831,7 +882,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">本集基于朵洛莉丝·侃南的催眠报告，梳理“光之灵”的存在方式与沟通机制：从“无法言说的真相”“回到光之故乡”“能量口袋与风箱原理”，到“形态自由进出”“负能量与意图法则”“潜意识如何完成疗愈”。结合 Patricia 个案，解析如何在高频状态下引导能量、提升频率与身心修复的路径与边界，强调出于最高意图的应用与自我疗愈之路。</p>
+             aria-expanded="false">一种没有固定形体的“光之灵”，如何借人类身体传递和运用疗愈能量？朵洛莉丝·侃南的Patricia催眠个案描述了能量口袋、频率调节、情绪干扰与潜意识疗愈，也说明使用能量时为何需要明确意图和边界。这些内容属于催眠记录中的灵性叙事，并非经过临床验证的治疗方法。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html"
@@ -850,7 +901,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">本集通过一位越战退伍军人的深度催眠案例，探讨战争创伤、灵魂转世与潜意识疗愈之间的关系。内容涵盖灵魂中转站、星际种子、光的能量体、灵魂编程记忆，以及通过潜意识释放内啡肽缓解疼痛的可能性。从灵魂成长的角度重新理解恐惧、战争与人类进化课题。</p>
+             aria-expanded="false">战争结束后，创伤为什么仍会长期留在身体与意识中？一名越战退伍军人的催眠回溯，把慢性疼痛、恐惧与战争记忆延伸到灵魂中转站、星际种子和转世课题；他的潜意识并未简单消除疼痛，而是把它解释为仍在进行的学习与关系经验。相关内容属于催眠个案的灵性诠释，不能替代创伤治疗与医疗评估。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/dolores-cannon-hypnosis/war-trauma-soul-reincarnation-subconscious-healing-starseed-case-study.html"
@@ -1289,6 +1340,69 @@ html {
   </ul>
 </div>
 
+
+              <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- 文章搜索入口 -->
+              <div class="article-sidebar-search">
+                
+                <section
+  class="article-search-panel article-search-panel--entry article-search-panel--compact"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 139 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+              </div>
 			  
 			  
             </div>

@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260804-0206">
+<meta name="version" content="20260804-1135">
 
 
 <meta charset="utf-8">
@@ -69,6 +69,8 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
+  <link rel="stylesheet" href="/assets/css/selection-search.css">
+  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -76,10 +78,59 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
+      max-width: 100%;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-body iframe,
+.article-body video,
+.article-body audio,
+.article-body canvas,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.article-body a,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 	
 .article-body p {
@@ -740,7 +791,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">本文探讨克里希那穆提对“静心”的深刻洞见：静心并非依靠权威指令或机械的冥想步骤，而是要从认识自我与欲望的运作轨迹开始。唯有通过中立、温和的自我觉察，我们才能分辨内在声音的来源，超越小我的幻象，走向真正的开悟与心灵自由。</p>
+             aria-expanded="false">内在出现一个要求服从的声音，它来自智慧、神圣指引，还是自己的欲望？克里希那穆提借一位修行者的困惑指出，机械冥想、哲学观念和权威指令都不能代替自我认识。真正的静心始于温和而中立地观察欲望、恐惧与执念，只有看清自我如何投射世界，才可能辨认内在声音的来源。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/insight-awakening/jiddu-krishnamurti/5-true-meditation-begins-with-understanding-self-desire.html"
@@ -759,7 +810,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">探讨克里希那穆提关于“粗糙的心”的思考，揭示努力改变为何本身是一种粗糙。通过日常生活中的观察与觉知，我们如何超越愚钝，培养敏锐与清明的心智。</p>
+             aria-expanded="false">粗糙、愚钝的心，为什么不能靠“努力变好”真正改变？克里希那穆提指出，带着贪求和目标的改变仍延续着原有的粗糙。转化始于不逃避地观察日常生活中的贪婪、傲慢、粗鲁与机械反应；当这些状态被完整看见，觉知本身便开始改变心。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/insight-awakening/jiddu-krishnamurti/1-how-awareness-transforms-a-rough-mind-inner-growth-not-effort.html"
@@ -1198,6 +1249,69 @@ html {
   </ul>
 </div>
 
+
+              <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- 文章搜索入口 -->
+              <div class="article-sidebar-search">
+                
+                <section
+  class="article-search-panel article-search-panel--entry article-search-panel--compact"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 139 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+              </div>
 			  
 			  
             </div>

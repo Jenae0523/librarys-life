@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260804-0206">
+<meta name="version" content="20260804-1135">
 
 
 <meta charset="utf-8">
@@ -69,6 +69,8 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
+  <link rel="stylesheet" href="/assets/css/selection-search.css">
+  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -76,10 +78,59 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
+      max-width: 100%;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-body iframe,
+.article-body video,
+.article-body audio,
+.article-body canvas,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.article-body a,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 	
 .article-body p {
@@ -793,18 +844,18 @@ html {
     <li class="related-posts-item">
       <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集</h5>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告</h5>
           
           <p id="related-post-excerpt-2"
              class="g-color-gray-dark-v4 related-posts-excerpt"
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">松果体冥想真的能接收来自其他意识维度的信息吗？萨纳特·库玛拉给出一套外星接触的方法，同时强调接收者必须辨别信息、拒绝命令与崇拜、守住意识主权；相关材料也延伸到安努纳奇、人类起源和集体潜意识的另类解释。</p>
+             aria-expanded="false">一种没有固定形体的“光之灵”，如何借人类身体传递和运用疗愈能量？朵洛莉丝·侃南的Patricia催眠个案描述了能量口袋、频率调节、情绪干扰与潜意识疗愈，也说明使用能量时为何需要明确意图和边界。这些内容属于催眠记录中的灵性叙事，并非经过临床验证的治疗方法。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html"
-             aria-label="阅读相关文章：松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集">阅读文章</a>
+             href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html"
+             aria-label="阅读相关文章：光之灵：疗愈能量在说话 │ 如何使用疗愈能量，治愈身体？ │ 朵洛莉丝·侃南催眠报告">阅读文章</a>
         </div>
       </article>
     </li>
@@ -819,7 +870,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">哈索尔星际讯息揭示：人类正迈向第五维度的意识进化。本文深入解析“时间与空间的幻象”、引力场与信念系统的制约，以及人类面临的三大挑战。并附上汤姆·肯永的《连接世界的桥梁》声音冥想指南，帮助你跨越意识门槛，激活右脑空间感知，体验第五视角的自由。</p>
+             aria-expanded="false">第五维度在哈索尔的讯息中，并不是一个要逃去的地方，而是一种超越线性时间与固定空间的感知方式。文章说明引力、社会信念与个人心理如何限制这种转变，并附Tom Kenyon《连接世界的桥梁》声音冥想，练习在困境中获得更宽阔的视角，同时保持与身体和现实生活的连接。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/courses/consciousness-alchemy/fifth-dimension-consciousness-evolution-sound-meditation.html"
@@ -1258,6 +1309,69 @@ html {
   </ul>
 </div>
 
+
+              <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- 文章搜索入口 -->
+              <div class="article-sidebar-search">
+                
+                <section
+  class="article-search-panel article-search-panel--entry article-search-panel--compact"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 139 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+              </div>
 			  
 			  
             </div>

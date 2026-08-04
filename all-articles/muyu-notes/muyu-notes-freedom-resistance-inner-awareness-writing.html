@@ -3,14 +3,14 @@
 <head>
   <head>
   <title>暮雨札记：自由与反抗的本质探索，自由书写与内在觉知指南・生命之书 | librarys.life</title>
-  <meta name="description" content="深入探讨自由与反抗的本质，通过暮雨的自由书写分享，引导读者进入潜意识心流，超越情绪与阻碍，认识自我创造的力量与真实自由。结合日记实践与克里希那穆提《静谧之心》读书摘要，帮助建立与内在灵魂的连接，实现心理成长与心灵觉醒。">
+  <meta name="description" content="自由是否只是反抗限制，还是看见自己如何被愤怒、欲望与固有观念推动？暮雨从文章被删除后的挫败写起，记录自己如何把阻力转化为行动，并在自由书写中观察情绪背后的创造力。结合克里希那穆提关于反抗、选择与无选择觉知的思考，这篇札记寻找一种不被外在压制、也不被内在反应支配的自由。">
 <meta name="keywords" content="自由书写, 自由与反抗, 潜意识心流, 情绪超越, 内在觉知, 心灵成长, 暮雨札记, 克里希那穆提, 静谧之心, 心灵自由">
 
 <meta name="robots" content="all">
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260804-0206">
+<meta name="version" content="20260804-1135">
 
 
 <meta charset="utf-8">
@@ -69,6 +69,8 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
+  <link rel="stylesheet" href="/assets/css/selection-search.css">
+  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -76,10 +78,59 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
+      max-width: 100%;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-body iframe,
+.article-body video,
+.article-body audio,
+.article-body canvas,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.article-body a,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 	
 .article-body p {
@@ -741,7 +792,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">一部关于东京清洁工的电影《完美的日子》，让我们重新思考生活的本质。影片揭示：生活方式而非财富决定了生活质量。通过极简生活、珍惜物品、净化心境与风水能量，探索如何让心灵获得自由与宁静。</p>
+             aria-expanded="false">《完美的日子》里，一名东京公共厕所清洁工的规律生活，为什么让人感到如此自由而丰盛？暮雨从电影延伸到极简生活、物品选择、清洁与心境，思考生活质量为何更多取决于如何生活，而非拥有多少。所谓“风水”也不只关乎摆设，更关乎我们是否认真对待空间、物品和自己的内心。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/muyu-notes/perfect-days-movie-review-minimalism-fengshui-mindful-living.html"
@@ -760,7 +811,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">探讨“存在的乐趣”，指导如何通过停止说话、暂停思考来感受自我与万物的联系。理解静默、沉思与能量流动，唤醒潜意识情绪与记忆，实现身心共振与内在觉知。</p>
+             aria-expanded="false">当我们停止不断说话、解释和思考，会重新感受到什么？这篇暮雨札记把“存在的乐趣”理解为安静独处、允许潜意识中的情绪与记忆浮现，并重新感受身体、环境和万物之间的联系。真正的静默不是头脑一片空白，而是不再急着向世界证明自己，给感受与内在觉知留下空间。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/muyu-notes/joy-of-being-how-to-stop-talking-and-thinking-to-awaken-self-and-universe.html"
@@ -772,18 +823,18 @@ html {
     <li class="related-posts-item">
       <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">克里希那穆提：真正的静心，从理解自我与欲望开始</h5>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">克里希那穆提：活出真实的自己，面对冲突与自我怀疑的智慧</h5>
           
           <p id="related-post-excerpt-3"
              class="g-color-gray-dark-v4 related-posts-excerpt"
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">本文探讨克里希那穆提对“静心”的深刻洞见：静心并非依靠权威指令或机械的冥想步骤，而是要从认识自我与欲望的运作轨迹开始。唯有通过中立、温和的自我觉察，我们才能分辨内在声音的来源，超越小我的幻象，走向真正的开悟与心灵自由。</p>
+             aria-expanded="false">活出真实的自己，是否必然意味着自私、冲突和伤害他人？克里希那穆提认为，真正的问题不是如何永远避免反对，而是能否以热忱和智慧检验自己与他人的观点。为了表面和平而妥协，往往只是延迟冲突；真实也并非固执，而是不因恐惧批评而放弃对生活真相的探索。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/insight-awakening/jiddu-krishnamurti/5-true-meditation-begins-with-understanding-self-desire.html"
-             aria-label="阅读相关文章：克里希那穆提：真正的静心，从理解自我与欲望开始">阅读文章</a>
+             href="/all-articles/insight-awakening/jiddu-krishnamurti/7-authentic-self-conflict-criticism-compromise-truth.html"
+             aria-label="阅读相关文章：克里希那穆提：活出真实的自己，面对冲突与自我怀疑的智慧">阅读文章</a>
         </div>
       </article>
     </li>
@@ -1218,6 +1269,69 @@ html {
   </ul>
 </div>
 
+
+              <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- 文章搜索入口 -->
+              <div class="article-sidebar-search">
+                
+                <section
+  class="article-search-panel article-search-panel--entry article-search-panel--compact"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 139 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+              </div>
 			  
 			  
             </div>

@@ -3,14 +3,14 @@
 <head>
   <head>
   <title>耶稣之死的深层意义：三位一体、圣灵本质与灵性视角的重新理解・生命之书 | librarys.life</title>
-  <meta name="description" content="重新解读耶稣之死的意义，超越“替人赎罪”的传统解释，从灵性层面探讨其象征结构与选择动机。同时解析三位一体的真实含义、圣灵的本质与生命能量关系，揭示宗教语言背后的更高层次意识逻辑。">
+  <meta name="description" content="耶稣之死是否只能解释为“替人类赎罪”？《生死之间》提供了一套不同于传统教义的灵性解读：耶稣被视为来自更高层面的使者，他的死亡是个人选择，而非上帝要求的牺牲。三位一体、圣灵与“上帝之子”也被重新解释为意识层级与生命能量的象征语言。">
 <meta name="keywords" content="朵洛莉丝·侃南, 耶稣之死, 三位一体, 圣灵, 圣父圣子圣灵, 灵性解读, 基督意识, 宗教象征, 能量生命力, 灵魂层级, 上帝本质, 灵性成长, 意识觉醒">
 
 <meta name="robots" content="all">
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260804-0206">
+<meta name="version" content="20260804-1135">
 
 
 <meta charset="utf-8">
@@ -69,6 +69,8 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
+  <link rel="stylesheet" href="/assets/css/selection-search.css">
+  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -76,10 +78,59 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
+      max-width: 100%;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-body iframe,
+.article-body video,
+.article-body audio,
+.article-body canvas,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.article-body a,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 	
 .article-body p {
@@ -779,7 +830,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">深入探索灵魂转世中的“印记系统”，解析阿卡西记录如何存储生命经验，以及印记在转世前的选择机制与作用。进一步探讨如何区分真实前世与印记体验、多人共享同一人生经验的可能性，并揭示基督意识印记在灵性进化中的作用与意义。</p>
+             aria-expanded="false">催眠中出现的前世记忆，是否都属于本人真实经历？《生死之间》提出“印记”概念：灵魂可能从阿卡西纪录中选择他人的人生经验，用来准备即将面对的地球课题，因此多人也可能携带同一段记忆。书中进一步讨论如何区分转世与印记，以及所谓“基督意识印记”的作用。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/books/between-death-life/38-soul-imprints-akashic-records-reincarnation-christ-consciousness-evolution.html"
@@ -798,7 +849,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">深入解析守护天使与指导灵的存在机制，包括其来源、作用方式、与人类的关系，以及如何辨别正面与负面灵体。探讨灵魂如何在自由意志下获得协助、指导灵如何随人生阶段变化，以及灵性成长过程中不同层级灵体的功能差异。</p>
+             aria-expanded="false">每个人身边都有守护灵或指导灵吗？《生死之间》认为，他们常是与当事人有深厚关系、暂时留在灵界学习的灵魂，并会随人生阶段承担不同功能。书中也强调自由意志与辨别能力：并非所有接触到的存有都值得信任，帮助也不能越过个人的选择。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/books/between-death-life/28-guardian-angels-spirit-guides-soul-frequency-difference-spiritual-assistance-system.html"
@@ -1256,6 +1307,69 @@ html {
   </ul>
 </div>
 
+
+              <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- 文章搜索入口 -->
+              <div class="article-sidebar-search">
+                
+                <section
+  class="article-search-panel article-search-panel--entry article-search-panel--compact"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 139 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+              </div>
 			  
 			  
             </div>

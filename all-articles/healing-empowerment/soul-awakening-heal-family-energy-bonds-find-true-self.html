@@ -3,14 +3,14 @@
 <head>
   <head>
   <title>洞察力之剑 │ 灵魂成长中的重要课题：重新看待你与父母、原生家庭的关系・生命之书 | librarys.life</title>
-  <meta name="description" content="探索灵魂觉醒的深层意义，了解为何灵魂主动选择父母与人生经历。学习如何切断父母投射的恐惧与信念，用洞察力与爱化解原生家庭创伤，走出受害者心态，成为真正的创造者，重获内在自由与平静。">
+  <meta name="description" content="与父母分离，为什么既不能只靠抗争，也不能继续顺从？《灵性炼金术》把原生家庭视为灵魂觉醒的重要课题：辨认父母投射的恐惧、期待与信念，把不属于自己的能量从内在关系中松开。只有当人不再以受害者身份生活，也不再试图改变或拯救父母，原谅才可能从清晰的界限与内在自由中自然发生。">
 <meta name="keywords" content="灵魂觉醒, 原生家庭疗愈, 能量纽带, 如何切断能量束缚, 灵魂成长与父母关系, 从受害者到创造者">
 
 <meta name="robots" content="all">
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260804-0206">
+<meta name="version" content="20260804-1135">
 
 
 <meta charset="utf-8">
@@ -69,6 +69,8 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
+  <link rel="stylesheet" href="/assets/css/selection-search.css">
+  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -76,10 +78,59 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
+      max-width: 100%;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-body iframe,
+.article-body video,
+.article-body audio,
+.article-body canvas,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.article-body a,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 	
 .article-body p {
@@ -798,7 +849,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">本集深入探讨原生家庭对个体灵魂成长的影响，揭示父母无意识投射带来的三大情感幻相：控制感缺失、一体感丧失与爱的混淆。内容涵盖婴儿时期的能量冲突、孩子如何误解“爱”、父母的匮乏感如何塑造我们的情感剧本，以及如何开始疗愈童年创伤，唤醒真正的自我意识。适合想要深度了解亲子关系与心灵成长的观众。</p>
+             aria-expanded="false">青春期的叛逆，是否是孩子开始区分“父母的世界”和“真正的自己”？文章从控制感丧失、分离感与爱的混淆切入，说明孩子如何把成绩认可、情感依赖和被需要误认作爱，并在成年后重复过度努力、愧疚、讨好与边界模糊。青春期的冲突因此不只是反抗，也可能是自我意识开始苏醒、重新寻找身份的过程。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/healing-empowerment/truth-of-teenage-rebellion-family-roles-and-energy-entanglement.html"
@@ -817,7 +868,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">探索星际种子（Starseeds）为何常出生在充满阻塞能量的原生家庭，以及他们肩负的家族业力疗愈与觉醒使命。本文解析星际种子的4个灵魂任务：疗愈内在小孩、摆脱家族业力、找回真正的自我、找到灵魂家族，帮助你走上灵性觉醒之路。</p>
+             aria-expanded="false">为什么有些敏感的人从小就像原生家庭里的异类？《灵性炼金术》以“星际种子”的框架解释他们为何进入能量阻塞的家庭，并提出四项成长任务：疗愈内在小孩、成为真正的自己、终止代际模式，并为后来者留下新的路径。真正的使命不是唤醒或拯救父母，而是释放不属于自己的家庭角色，走出受害者与拯救者的循环。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/healing-empowerment/starseeds-family-karma-healing-spiritual-awakening-guide.html"
@@ -829,18 +880,18 @@ html {
     <li class="related-posts-item">
       <article class="media">
         <div class="media-body">
-          <h5 class="g-color-black g-font-weight-400 g-mb-8">大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？</h5>
+          <h5 class="g-color-black g-font-weight-400 g-mb-8">一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化</h5>
           
           <p id="related-post-excerpt-3"
              class="g-color-gray-dark-v4 related-posts-excerpt"
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">本篇深入解析“扬升（Ascension）”的本质：如何透过观想、潜意识清理与能量练习，点燃神圣之心、扩展能量场并进入更高层次的意识。包含实操步骤、常见阻碍以及关系与灵魂整合的建议，适合正在追求灵性觉醒的你。</p>
+             aria-expanded="false">一个人为什么会反复进入控制、暴力与自我牺牲的关系？朱迪·赛恩回望被收养、宗教压抑、事业成功、婚姻破裂与危险关系如何共同塑造她，也诚实记录自己怎样把渴望被爱误认成必须不断证明价值。真正的转折并非一次神秘体验，而是看见童年创伤如何使自己长期停留在受害结构中，选择离开控制，并在安全的关系里重新学习信任。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
-             href="/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html"
-             aria-label="阅读相关文章：大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？">阅读文章</a>
+             href="/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html"
+             aria-label="阅读相关文章：一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化">阅读文章</a>
         </div>
       </article>
     </li>
@@ -1275,6 +1326,69 @@ html {
   </ul>
 </div>
 
+
+              <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- 文章搜索入口 -->
+              <div class="article-sidebar-search">
+                
+                <section
+  class="article-search-panel article-search-panel--entry article-search-panel--compact"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 139 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+              </div>
 			  
 			  
             </div>

@@ -3,14 +3,14 @@
 <head>
   <head>
   <title>灵魂觉醒的炼成：孤独与静默中锤炼大器・生命之书 | librarys.life</title>
-  <meta name="description" content="本文探讨灵魂觉醒的真谛：它不是一时顿悟，而是在漫长孤独与静默中渐渐炼成。通过木材制作小提琴的比喻，揭示灵魂沉淀、去除杂质、凝聚精魄的过程。文章引导读者理解每个人觉醒的时间与节奏，强调孤独中的成长与内在微光，启发灵性觉察与自我成就。">
+  <meta name="description" content="灵魂的觉醒为什么更像一块木材被缓慢制成小提琴，而不是突然获得答案？漫长的风干、黑暗与静默，让杂质逐渐沉淀，也让独特的声音得以形成。暮雨在多年后重读这则比喻，看见孤独不必成为优越感：每个人都有自己的成熟时间，真正的理解是尊重那些尚未被看见、却正在凝聚的微光。">
 <meta name="keywords" content="灵魂觉醒, 内在成长, 孤独修炼, 大器炼成, 灵性觉察, 自我沉淀, 精神修炼">
 
 <meta name="robots" content="all">
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260804-0206">
+<meta name="version" content="20260804-1135">
 
 
 <meta charset="utf-8">
@@ -69,6 +69,8 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
+  <link rel="stylesheet" href="/assets/css/selection-search.css">
+  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -76,10 +78,59 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
+      max-width: 100%;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-body iframe,
+.article-body video,
+.article-body audio,
+.article-body canvas,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.article-body a,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 	
 .article-body p {
@@ -684,7 +735,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">探索灵魂觉醒的深层意义，了解为何灵魂主动选择父母与人生经历。学习如何切断父母投射的恐惧与信念，用洞察力与爱化解原生家庭创伤，走出受害者心态，成为真正的创造者，重获内在自由与平静。</p>
+             aria-expanded="false">与父母分离，为什么既不能只靠抗争，也不能继续顺从？《灵性炼金术》把原生家庭视为灵魂觉醒的重要课题：辨认父母投射的恐惧、期待与信念，把不属于自己的能量从内在关系中松开。只有当人不再以受害者身份生活，也不再试图改变或拯救父母，原谅才可能从清晰的界限与内在自由中自然发生。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/healing-empowerment/soul-awakening-heal-family-energy-bonds-find-true-self.html"
@@ -703,7 +754,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">深入探讨「教导与学习」真正发生的方式。本文指出，真正的教导并非知识灌输，而是指向自我实现与自我觉知的过程。通过解析灵性导师、自由意志、内在引导与存在状态，揭示为何所有深刻的学习，最终都回归为成为真正的自己。</p>
+             aria-expanded="false">真正的教导，为什么不只是把知识从老师传给学生？Q’uo的通灵资料把教与学视为同一个自我认识过程：记忆可以积累知识，练习带来理解，而老师的热情、存在状态与真实自我，才可能唤醒学习的生命力。最深的教导不是制造追随者，而是帮助人看见并成为真正的自己。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/insight-awakening/teaching-and-learning-self-realization-spiritual-growth.html"
@@ -722,7 +773,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">探讨“存在的乐趣”，指导如何通过停止说话、暂停思考来感受自我与万物的联系。理解静默、沉思与能量流动，唤醒潜意识情绪与记忆，实现身心共振与内在觉知。</p>
+             aria-expanded="false">当我们停止不断说话、解释和思考，会重新感受到什么？这篇暮雨札记把“存在的乐趣”理解为安静独处、允许潜意识中的情绪与记忆浮现，并重新感受身体、环境和万物之间的联系。真正的静默不是头脑一片空白，而是不再急着向世界证明自己，给感受与内在觉知留下空间。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/muyu-notes/joy-of-being-how-to-stop-talking-and-thinking-to-awaken-self-and-universe.html"
@@ -1161,6 +1212,69 @@ html {
   </ul>
 </div>
 
+
+              <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- 文章搜索入口 -->
+              <div class="article-sidebar-search">
+                
+                <section
+  class="article-search-panel article-search-panel--entry article-search-panel--compact"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 139 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+              </div>
 			  
 			  
             </div>

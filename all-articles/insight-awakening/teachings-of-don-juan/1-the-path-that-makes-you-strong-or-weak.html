@@ -3,14 +3,14 @@
 <head>
   <head>
   <title>这条道路，有心吗？一条路使你坚强，另一条路使你软弱・生命之书 | librarys.life</title>
-  <meta name="description" content="在人生的每一个关键选择面前，我们是否真的知道该走哪一条路？本篇深入探讨平行宇宙视角下的选择困境，带你理解“有心之路”的智慧——一种源自古老哲思的内在导航方式。告别焦虑、放下执念，从多版本的自我中，找到那个与你真正对话的声音。">
+  <meta name="description" content="当每一条路都无法保证抵达正确的终点，我们该凭什么选择？卡斯塔尼达笔下的唐望认为，真正需要问的不是这条路是否安全、成功或符合他人期待，而是它是否“有心”：走在其中，你会变得丰盈而坚强，还是逐渐怨恨自己的生命。">
 <meta name="keywords" content="卡洛斯卡斯塔涅达, 唐望的智慧教导, 人生选择, 平行宇宙, 灵性成长, 有心之路, 内在指南, 多版本人生, 选择困难">
 
 <meta name="robots" content="all">
 <meta http-equiv="Content-Language" content="zh-CN">
 <meta name="author" content="librarys.life, edit@librarys.life">
 <meta name="copyright" content="Copyright librarys.life all rights reserved">
-<meta name="version" content="20260804-0206">
+<meta name="version" content="20260804-1135">
 
 
 <meta charset="utf-8">
@@ -69,6 +69,8 @@
 </head>
 
   <link rel="stylesheet" href="/assets/css/article-content.css">
+  <link rel="stylesheet" href="/assets/css/selection-search.css">
+  <script src="/assets/js/selection-search.js" defer></script>
 </head>
 
 <style>
@@ -76,10 +78,59 @@
     html, body {
       font-family: "Microsoft YaHei", sans-serif;
 	  letter-spacing: 0.1em;
+      max-width: 100%;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
     }
 
 html {
   scroll-padding-top: var(--article-scroll-offset, 96px);
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+}
+
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.article-body {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.article-body > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.article-body iframe,
+.article-body video,
+.article-body audio,
+.article-body canvas,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body pre,
+.article-body table {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.article-body a,
+.article-body code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 	
 .article-body p {
@@ -715,7 +766,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">唐望提出：成为智者，必须战胜四个敌人——恐惧、明晰、力量与衰老。本篇深度解析每一阶段的心理陷阱，结合克里希那穆提的学习观，揭示成长的内在修炼路径。适合自我觉察、心灵成长、灵性追寻者参考。</p>
+             aria-expanded="false">成为智者为什么要先后面对恐惧、明晰、力量与衰老？唐望把学习描述为一场持续一生的考验：恐惧使人退缩，明晰使人自负，力量诱使人滥用所得，衰老则让人想要停下。真正的成长不在于彻底消灭这些敌人，而是在它们出现时仍保持谨慎、节制与继续学习的意志。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/insight-awakening/teachings-of-don-juan/2-wisdom-warriors-path-overcoming-fear-clarity-power-aging.html"
@@ -734,7 +785,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">本文探讨克里希那穆提关于“权威与心智”的洞见：为何充满恐惧与欲望的心，总是渴望依附于权威？为什么追随传统、模仿知识无法带来真知？文章指出，唯有觉察自我内心的欲望与恐惧，才能摆脱权威的束缚，从无明与痛苦中解脱，发展出真正的洞见与自由心智。</p>
+             aria-expanded="false">人为什么不断离开一个权威，又转身依附另一个权威？克里希那穆提认为，恐惧、欲望与对安全感的追求，使人臣服于传统、知识、团体和精神导师。真正的自由不能来自模仿或借用别人的洞见，而要从观察自己寻求权威的全过程开始，看清隐藏其中的恐惧与满足。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/insight-awakening/jiddu-krishnamurti/4-break-authority-patterns-mindset-freedom-through-self-awareness.html"
@@ -753,7 +804,7 @@ html {
              data-related-post-excerpt
              role="button"
              tabindex="0"
-             aria-expanded="false">本文探讨克里希那穆提关于“活出真实自我”的理念：如何在面对他人的批评、冲突与自我怀疑时，保持内心的真实与热忱。文章剖析妥协的真相、冲突的本质，以及如何通过正确沟通与智慧觉察，让内在能量顺畅流动，避免对自己与他人的暴力与愤怒，真正实现自我自由与成长。</p>
+             aria-expanded="false">活出真实的自己，是否必然意味着自私、冲突和伤害他人？克里希那穆提认为，真正的问题不是如何永远避免反对，而是能否以热忱和智慧检验自己与他人的观点。为了表面和平而妥协，往往只是延迟冲突；真实也并非固执，而是不因恐惧批评而放弃对生活真相的探索。</p>
           
           <a class="btn u-btn-outline-primary g-font-size-13 g-rounded-25"
              href="/all-articles/insight-awakening/jiddu-krishnamurti/7-authentic-self-conflict-criticism-compromise-truth.html"
@@ -1192,6 +1243,69 @@ html {
   </ul>
 </div>
 
+
+              <!-- 加一条灰线 -->
+              <hr class="g-brd-gray-light-v4 g-my-50">
+              <!-- 文章搜索入口 -->
+              <div class="article-sidebar-search">
+                
+                <section
+  class="article-search-panel article-search-panel--entry article-search-panel--compact"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 139 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+              </div>
 			  
 			  
             </div>
