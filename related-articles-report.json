@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-04T03:35:29.275Z",
+  "generated_at": "2026-08-04T06:11:04.148Z",
   "rule_version": "mixed-related-articles-v1",
   "article_count": 137,
   "recommendation_count": 411,
-  "recommendation_generation_ms": 2004.767,
+  "recommendation_generation_ms": 1885.855,
   "articles": [
     {
       "title": "来自星星的孩子揭秘：前世回溯与星际种子灵魂成长指南",
@@ -313,6 +313,122 @@
       "needs_manual_review": false
     },
     {
+      "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
+      "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "心理—精神排毒：催眠、冥想与声音如何触发情绪释放和感知改变",
+          "url": "/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html",
+          "source": "auto",
+          "score": 62,
+          "rank_score": 85,
+          "structural_score": 26,
+          "semantic_score": 36,
+          "reason": "都涉及「声音疗愈」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 25,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "冥想"
+            }
+          ]
+        },
+        {
+          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
+          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
+          "source": "auto",
+          "score": 51,
+          "rank_score": 70.5,
+          "structural_score": 21,
+          "semantic_score": 30,
+          "reason": "都涉及「声音疗愈」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 19,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "冥想"
+            }
+          ]
+        },
+        {
+          "title": "人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧",
+          "url": "/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html",
+          "source": "auto",
+          "score": 31,
+          "rank_score": 54.5,
+          "structural_score": 5,
+          "semantic_score": 26,
+          "reason": "都涉及「情绪疗愈」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "情绪疗愈"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
       "title": "战争创伤与灵魂转世：越战案例揭示潜意识疗愈与地球进化课题",
       "url": "/all-articles/dolores-cannon-hypnosis/war-trauma-soul-reincarnation-subconscious-healing-starseed-case-study.html",
       "manual_declared": 0,
@@ -464,122 +580,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
-      "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "心理—精神排毒：催眠、冥想与声音如何触发情绪释放和感知改变",
-          "url": "/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html",
-          "source": "auto",
-          "score": 62,
-          "rank_score": 85,
-          "structural_score": 26,
-          "semantic_score": 36,
-          "reason": "都涉及「声音疗愈」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 25,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "冥想"
-            }
-          ]
-        },
-        {
-          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
-          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
-          "source": "auto",
-          "score": 51,
-          "rank_score": 70.5,
-          "structural_score": 21,
-          "semantic_score": 30,
-          "reason": "都涉及「声音疗愈」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 19,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "冥想"
-            }
-          ]
-        },
-        {
-          "title": "人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧",
-          "url": "/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html",
-          "source": "auto",
-          "score": 31,
-          "rank_score": 54.5,
-          "structural_score": 5,
-          "semantic_score": 26,
-          "reason": "都涉及「情绪疗愈」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "情绪疗愈"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "DNA与梦境记忆：高我、小我、潜意识的形成原因 | 频率屏障与DNA修复全解析",
       "url": "/all-articles/healing-empowerment/energy-dna-dream-memory-higher-self-ego-subconscious.html",
       "manual_declared": 0,
@@ -704,157 +704,6 @@
               "type": "text",
               "score": 6,
               "label": "潜意识"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
-      "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧",
-          "url": "/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html",
-          "source": "auto",
-          "score": 107,
-          "rank_score": 152.5,
-          "structural_score": 41,
-          "semantic_score": 66,
-          "reason": "共同关注「灵魂矩阵」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 30,
-              "label": "潜意识"
-            },
-            {
-              "type": "series",
-              "score": 20,
-              "label": "异邦者"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "灵魂矩阵"
-            },
-            {
-              "type": "text",
-              "score": 12,
-              "label": "潜意识"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "DNA与梦境记忆：高我、小我、潜意识的形成原因 | 频率屏障与DNA修复全解析",
-          "url": "/all-articles/healing-empowerment/energy-dna-dream-memory-higher-self-ego-subconscious.html",
-          "source": "auto",
-          "score": 87,
-          "rank_score": 112.5,
-          "structural_score": 41,
-          "semantic_score": 46,
-          "reason": "共同关注「意识进化」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 24,
-              "label": "潜意识"
-            },
-            {
-              "type": "series",
-              "score": 20,
-              "label": "异邦者"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "意识进化"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "潜意识"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒",
-          "url": "/all-articles/insight-awakening/logic-mind-emotional-intelligence-keylonta-codes-awakening.html",
-          "source": "auto",
-          "score": 87,
-          "rank_score": 112.5,
-          "structural_score": 41,
-          "semantic_score": 46,
-          "reason": "共同关注「灵魂矩阵」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 24,
-              "label": "心理学"
-            },
-            {
-              "type": "series",
-              "score": 20,
-              "label": "异邦者"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵魂矩阵"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "科洛提代码"
             },
             {
               "type": "parent",
@@ -1006,6 +855,157 @@
               "type": "text",
               "score": 6,
               "label": "灵魂矩阵"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
+      "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧",
+          "url": "/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html",
+          "source": "auto",
+          "score": 107,
+          "rank_score": 152.5,
+          "structural_score": 41,
+          "semantic_score": 66,
+          "reason": "共同关注「灵魂矩阵」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 30,
+              "label": "潜意识"
+            },
+            {
+              "type": "series",
+              "score": 20,
+              "label": "异邦者"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "灵魂矩阵"
+            },
+            {
+              "type": "text",
+              "score": 12,
+              "label": "潜意识"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "DNA与梦境记忆：高我、小我、潜意识的形成原因 | 频率屏障与DNA修复全解析",
+          "url": "/all-articles/healing-empowerment/energy-dna-dream-memory-higher-self-ego-subconscious.html",
+          "source": "auto",
+          "score": 87,
+          "rank_score": 112.5,
+          "structural_score": 41,
+          "semantic_score": 46,
+          "reason": "共同关注「意识进化」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 24,
+              "label": "潜意识"
+            },
+            {
+              "type": "series",
+              "score": 20,
+              "label": "异邦者"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "意识进化"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "潜意识"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒",
+          "url": "/all-articles/insight-awakening/logic-mind-emotional-intelligence-keylonta-codes-awakening.html",
+          "source": "auto",
+          "score": 87,
+          "rank_score": 112.5,
+          "structural_score": 41,
+          "semantic_score": 46,
+          "reason": "共同关注「灵魂矩阵」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 24,
+              "label": "心理学"
+            },
+            {
+              "type": "series",
+              "score": 20,
+              "label": "异邦者"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵魂矩阵"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "科洛提代码"
             },
             {
               "type": "parent",
@@ -3722,137 +3722,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
-      "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
-          "source": "auto",
-          "score": 66,
-          "rank_score": 97.5,
-          "structural_score": 23,
-          "semantic_score": 43,
-          "reason": "共同关注「萨纳特·库玛拉」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "冥想"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "大角星人"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "冥想"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "外星人档案"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "萨纳特·库玛拉"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "大角星人"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "Nakura冥想是什么？顶轮、净光与改变意识状态的练习｜《大角星人文摘》第15集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html",
-          "source": "auto",
-          "score": 70,
-          "rank_score": 93.5,
-          "structural_score": 31,
-          "semantic_score": 39,
-          "reason": "都涉及「脉轮」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 25,
-              "label": "脉轮"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "大角星人"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "大角星人"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "冥想"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "灵魂的探照灯：唤醒你的生命之花十二道光线创造之轮，成为有意识的共同创造者",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html",
-          "source": "auto",
-          "score": 47,
-          "rank_score": 86.5,
-          "structural_score": 5,
-          "semantic_score": 42,
-          "reason": "都涉及「脉轮」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 25,
-              "label": "脉轮"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "脉轮"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "萨纳特·库玛拉是谁？大角星指挥官、哈索尔联盟与人类沉睡的DNA｜《大角星人文摘》第5集",
       "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology05-sanat-kumara-arcturian-commander.html",
       "manual_declared": 0,
@@ -3982,6 +3851,137 @@
               "type": "tag",
               "score": 6,
               "label": "通灵信息"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
+      "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
+          "source": "auto",
+          "score": 66,
+          "rank_score": 97.5,
+          "structural_score": 23,
+          "semantic_score": 43,
+          "reason": "共同关注「萨纳特·库玛拉」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "冥想"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "大角星人"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "冥想"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "外星人档案"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "萨纳特·库玛拉"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "大角星人"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "Nakura冥想是什么？顶轮、净光与改变意识状态的练习｜《大角星人文摘》第15集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html",
+          "source": "auto",
+          "score": 70,
+          "rank_score": 93.5,
+          "structural_score": 31,
+          "semantic_score": 39,
+          "reason": "都涉及「脉轮」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 25,
+              "label": "脉轮"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "大角星人"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "大角星人"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "冥想"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "灵魂的探照灯：唤醒你的生命之花十二道光线创造之轮，成为有意识的共同创造者",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html",
+          "source": "auto",
+          "score": 47,
+          "rank_score": 86.5,
+          "structural_score": 5,
+          "semantic_score": 42,
+          "reason": "都涉及「脉轮」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 25,
+              "label": "脉轮"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "脉轮"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
             }
           ]
         }
@@ -4370,6 +4370,132 @@
               "type": "text",
               "score": 3,
               "label": "现实创造"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "阿卡西记录能看见未来吗？大角星人谈可能时间线与集体意识｜《大角星人文摘》第10集",
+      "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology10-akashic-records-future-timelines.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实",
+          "url": "/all-articles/courses/creation-manifestation/multiple-truths-911-conspiracy-consciousness-reality-creation.html",
+          "source": "auto",
+          "score": 46,
+          "rank_score": 92,
+          "structural_score": 0,
+          "semantic_score": 46,
+          "reason": "共同关注「集体意识」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 24,
+              "label": "平行宇宙"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "集体意识"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "现实创造"
+            }
+          ]
+        },
+        {
+          "title": "与外星生命接触时如何辨别信息？意识主权、科技伦理与人类未来｜《大角星人文摘》第16集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology16-alien-contact-discernment-consciousness-sovereignty.html",
+          "source": "auto",
+          "score": 58,
+          "rank_score": 89,
+          "structural_score": 18,
+          "semantic_score": 40,
+          "reason": "共同关注「人类未来」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "集体意识"
+            },
+            {
+              "type": "text",
+              "score": 12,
+              "label": "高维文明"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "大角星人"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "外星人档案"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "人类未来"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "大角星人"
+            }
+          ]
+        },
+        {
+          "title": "共情力如何改变人类未来？大角星人谈生态危机、人与自然及集体意识｜《大角星人文摘》第17集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology17-empathy-intelligence-ecological-consciousness.html",
+          "source": "auto",
+          "score": 52,
+          "rank_score": 77,
+          "structural_score": 18,
+          "semantic_score": 34,
+          "reason": "共同关注「集体意识」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "集体意识"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "大角星人"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "外星人档案"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "集体意识"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "大角星人"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "集体意识"
             }
           ]
         }
@@ -5279,127 +5405,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "通灵信息如何辨别？高维沟通的心理风险与安全原则｜《大角星人文摘》第18集",
-      "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology18-channeling-discernment-psychological-safety.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
-          "source": "auto",
-          "score": 60,
-          "rank_score": 93,
-          "structural_score": 18,
-          "semantic_score": 42,
-          "reason": "共同关注「通灵信息辨别」",
-          "matched_by": [
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "通灵信息辨别"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "意识扩展"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "大角星人"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "外星人档案"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "大角星人"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "通灵信息"
-            }
-          ]
-        },
-        {
-          "title": "与外星生命接触时如何辨别信息？意识主权、科技伦理与人类未来｜《大角星人文摘》第16集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology16-alien-contact-discernment-consciousness-sovereignty.html",
-          "source": "auto",
-          "score": 54,
-          "rank_score": 81,
-          "structural_score": 18,
-          "semantic_score": 36,
-          "reason": "共同关注「意识主权」",
-          "matched_by": [
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "意识主权"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "大角星人"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "外星人档案"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "大角星人"
-            },
-            {
-              "type": "tag",
-              "score": 6,
-              "label": "通灵信息"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "通灵信息"
-            }
-          ]
-        },
-        {
-          "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
-          "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
-          "source": "auto",
-          "score": 35,
-          "rank_score": 70,
-          "structural_score": 0,
-          "semantic_score": 35,
-          "reason": "都涉及「心理学」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 24,
-              "label": "心理学"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "通灵信息"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
       "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
       "manual_declared": 0,
@@ -5685,6 +5690,127 @@
               "type": "parent",
               "score": 5,
               "label": "好书解读"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "通灵信息如何辨别？高维沟通的心理风险与安全原则｜《大角星人文摘》第18集",
+      "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology18-channeling-discernment-psychological-safety.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
+          "source": "auto",
+          "score": 60,
+          "rank_score": 93,
+          "structural_score": 18,
+          "semantic_score": 42,
+          "reason": "共同关注「通灵信息辨别」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "通灵信息辨别"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "意识扩展"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "大角星人"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "外星人档案"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "大角星人"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "通灵信息"
+            }
+          ]
+        },
+        {
+          "title": "与外星生命接触时如何辨别信息？意识主权、科技伦理与人类未来｜《大角星人文摘》第16集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology16-alien-contact-discernment-consciousness-sovereignty.html",
+          "source": "auto",
+          "score": 54,
+          "rank_score": 81,
+          "structural_score": 18,
+          "semantic_score": 36,
+          "reason": "共同关注「意识主权」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "意识主权"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "大角星人"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "外星人档案"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "大角星人"
+            },
+            {
+              "type": "tag",
+              "score": 6,
+              "label": "通灵信息"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "通灵信息"
+            }
+          ]
+        },
+        {
+          "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
+          "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
+          "source": "auto",
+          "score": 35,
+          "rank_score": 70,
+          "structural_score": 0,
+          "semantic_score": 35,
+          "reason": "都涉及「心理学」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 24,
+              "label": "心理学"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "通灵信息"
             }
           ]
         }
@@ -6991,137 +7117,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "死亡过程真实记录：濒死体验、灵魂出体与“银线”连接的深度解析",
-      "url": "/all-articles/books/between-death-life/2-death-experience-nde-soul-out-of-body-silver-cord-explained.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "濒死经验全记录：死亡天使、灵魂议会与死后世界的真实案例解析",
-          "url": "/all-articles/books/between-death-life/4-near-death-experience-afterlife-soul-council-energy-consciousness.html",
-          "source": "auto",
-          "score": 68,
-          "rank_score": 89.5,
-          "structural_score": 31,
-          "semantic_score": 37,
-          "reason": "都涉及「濒死体验」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 20,
-              "label": "濒死体验"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
-          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
-          "source": "auto",
-          "score": 65,
-          "rank_score": 83.5,
-          "structural_score": 31,
-          "semantic_score": 34,
-          "reason": "共同关注「前世回溯」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "死后世界"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "前世回溯"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "死后世界"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html",
-          "source": "auto",
-          "score": 39,
-          "rank_score": 78,
-          "structural_score": 0,
-          "semantic_score": 39,
-          "reason": "共同关注「濒死体验」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 14,
-              "label": "濒死体验"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "死后世界"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "濒死体验"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "死后世界"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "灵魂层级全解析：群体灵、动物意识与人类转世进化体系揭秘",
       "url": "/all-articles/books/between-death-life/19-soul-levels-group-soul-animal-consciousness-human-reincarnation-dual-worlds.html",
       "manual_declared": 0,
@@ -7266,6 +7261,137 @@
               "type": "parent",
               "score": 5,
               "label": "好书解读"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "死亡过程真实记录：濒死体验、灵魂出体与“银线”连接的深度解析",
+      "url": "/all-articles/books/between-death-life/2-death-experience-nde-soul-out-of-body-silver-cord-explained.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "濒死经验全记录：死亡天使、灵魂议会与死后世界的真实案例解析",
+          "url": "/all-articles/books/between-death-life/4-near-death-experience-afterlife-soul-council-energy-consciousness.html",
+          "source": "auto",
+          "score": 68,
+          "rank_score": 89.5,
+          "structural_score": 31,
+          "semantic_score": 37,
+          "reason": "都涉及「濒死体验」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 20,
+              "label": "濒死体验"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "前世回溯与死亡体验揭秘：催眠师揭开灵魂、转世与死后世界的真实过程",
+          "url": "/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html",
+          "source": "auto",
+          "score": 65,
+          "rank_score": 83.5,
+          "structural_score": 31,
+          "semantic_score": 34,
+          "reason": "共同关注「前世回溯」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "死后世界"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "前世回溯"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "死后世界"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html",
+          "source": "auto",
+          "score": 39,
+          "rank_score": 78,
+          "structural_score": 0,
+          "semantic_score": 39,
+          "reason": "共同关注「濒死体验」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 14,
+              "label": "濒死体验"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "死后世界"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "濒死体验"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "死后世界"
             }
           ]
         }
@@ -9023,132 +9149,6 @@
               "type": "parent",
               "score": 5,
               "label": "好书解读"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "阿卡西记录能看见未来吗？大角星人谈可能时间线与集体意识｜《大角星人文摘》第10集",
-      "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology10-akashic-records-future-timelines.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实",
-          "url": "/all-articles/courses/creation-manifestation/multiple-truths-911-conspiracy-consciousness-reality-creation.html",
-          "source": "auto",
-          "score": 46,
-          "rank_score": 92,
-          "structural_score": 0,
-          "semantic_score": 46,
-          "reason": "共同关注「集体意识」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 24,
-              "label": "平行宇宙"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "集体意识"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "现实创造"
-            }
-          ]
-        },
-        {
-          "title": "与外星生命接触时如何辨别信息？意识主权、科技伦理与人类未来｜《大角星人文摘》第16集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology16-alien-contact-discernment-consciousness-sovereignty.html",
-          "source": "auto",
-          "score": 58,
-          "rank_score": 89,
-          "structural_score": 18,
-          "semantic_score": 40,
-          "reason": "共同关注「人类未来」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "集体意识"
-            },
-            {
-              "type": "text",
-              "score": 12,
-              "label": "高维文明"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "大角星人"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "外星人档案"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "人类未来"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "大角星人"
-            }
-          ]
-        },
-        {
-          "title": "共情力如何改变人类未来？大角星人谈生态危机、人与自然及集体意识｜《大角星人文摘》第17集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology17-empathy-intelligence-ecological-consciousness.html",
-          "source": "auto",
-          "score": 52,
-          "rank_score": 77,
-          "structural_score": 18,
-          "semantic_score": 34,
-          "reason": "共同关注「集体意识」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "集体意识"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "大角星人"
-            },
-            {
-              "type": "category",
-              "score": 8,
-              "label": "外星人档案"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "集体意识"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "大角星人"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "集体意识"
             }
           ]
         }
@@ -12664,6 +12664,157 @@
       "needs_manual_review": false
     },
     {
+      "title": "为什么五感无法洞悉真相？情绪的感知扩展，是直通灵魂矩阵的天线",
+      "url": "/all-articles/courses/consciousness-alchemy/hsp-soul-matrix-holographic-inserts-frequency-barrier.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧",
+          "url": "/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html",
+          "source": "auto",
+          "score": 89,
+          "rank_score": 116.5,
+          "structural_score": 41,
+          "semantic_score": 48,
+          "reason": "共同关注「灵魂矩阵」",
+          "matched_by": [
+            {
+              "type": "series",
+              "score": 20,
+              "label": "异邦者"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "灵魂矩阵"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "意识扩展"
+            },
+            {
+              "type": "text",
+              "score": 12,
+              "label": "高等感知"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
+          "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
+          "source": "auto",
+          "score": 86,
+          "rank_score": 110.5,
+          "structural_score": 41,
+          "semantic_score": 45,
+          "reason": "共同关注「灵魂矩阵」",
+          "matched_by": [
+            {
+              "type": "series",
+              "score": 20,
+              "label": "异邦者"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "灵魂矩阵"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "意识扩展"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "灵魂矩阵"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒",
+          "url": "/all-articles/insight-awakening/logic-mind-emotional-intelligence-keylonta-codes-awakening.html",
+          "source": "auto",
+          "score": 78,
+          "rank_score": 94.5,
+          "structural_score": 41,
+          "semantic_score": 37,
+          "reason": "共同关注「灵魂矩阵」",
+          "matched_by": [
+            {
+              "type": "series",
+              "score": 20,
+              "label": "异邦者"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "意识扩展"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "科洛提代码"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵魂矩阵"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
       "title": "混沌节点与意识的过渡状态：个人、集体与死亡的灵魂旅程",
       "url": "/all-articles/courses/consciousness-alchemy/transition-states-consciousness-chaotic-nodes.html",
       "manual_declared": 0,
@@ -13138,157 +13289,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "为什么五感无法洞悉真相？情绪的感知扩展，是直通灵魂矩阵的天线",
-      "url": "/all-articles/courses/consciousness-alchemy/hsp-soul-matrix-holographic-inserts-frequency-barrier.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧",
-          "url": "/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html",
-          "source": "auto",
-          "score": 89,
-          "rank_score": 116.5,
-          "structural_score": 41,
-          "semantic_score": 48,
-          "reason": "共同关注「灵魂矩阵」",
-          "matched_by": [
-            {
-              "type": "series",
-              "score": 20,
-              "label": "异邦者"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "灵魂矩阵"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "意识扩展"
-            },
-            {
-              "type": "text",
-              "score": 12,
-              "label": "高等感知"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
-          "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
-          "source": "auto",
-          "score": 86,
-          "rank_score": 110.5,
-          "structural_score": 41,
-          "semantic_score": 45,
-          "reason": "共同关注「灵魂矩阵」",
-          "matched_by": [
-            {
-              "type": "series",
-              "score": 20,
-              "label": "异邦者"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "灵魂矩阵"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "意识扩展"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "灵魂矩阵"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒",
-          "url": "/all-articles/insight-awakening/logic-mind-emotional-intelligence-keylonta-codes-awakening.html",
-          "source": "auto",
-          "score": 78,
-          "rank_score": 94.5,
-          "structural_score": 41,
-          "semantic_score": 37,
-          "reason": "共同关注「灵魂矩阵」",
-          "matched_by": [
-            {
-              "type": "series",
-              "score": 20,
-              "label": "异邦者"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "意识扩展"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "科洛提代码"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵魂矩阵"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "治愈身体：我应该遵循什么样的饮食？食物的频率与吸引力法则",
       "url": "/all-articles/courses/human-body-healing/healing-diet-energy-frequency-emotional-balance.html",
       "manual_declared": 0,
@@ -13408,122 +13408,6 @@
               "type": "parent",
               "score": 5,
               "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "自我整合指南：脉轮练习与多维生命的频率提升",
-      "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "觉醒与地球未来：提升振动频率与灵性成长指南",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html",
-          "source": "auto",
-          "score": 44,
-          "rank_score": 80.5,
-          "structural_score": 5,
-          "semantic_score": 39,
-          "reason": "共同关注「振动频率」",
-          "matched_by": [
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "振动频率"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "频率"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "外星文明"
-            },
-            {
-              "type": "tag",
-              "score": 6,
-              "label": "集体意识"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
-          "source": "auto",
-          "score": 54,
-          "rank_score": 76.5,
-          "structural_score": 21,
-          "semantic_score": 33,
-          "reason": "都涉及「声音疗愈」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 19,
-              "label": "声音疗愈"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "汤姆肯永"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "冥想"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "灵魂的探照灯：唤醒你的生命之花十二道光线创造之轮，成为有意识的共同创造者",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html",
-          "source": "auto",
-          "score": 41,
-          "rank_score": 74.5,
-          "structural_score": 5,
-          "semantic_score": 36,
-          "reason": "都涉及「脉轮」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 25,
-              "label": "脉轮"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "意识扩展"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "脉轮"
             }
           ]
         }
@@ -13768,6 +13652,122 @@
       "needs_manual_review": false
     },
     {
+      "title": "自我整合指南：脉轮练习与多维生命的频率提升",
+      "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "觉醒与地球未来：提升振动频率与灵性成长指南",
+          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html",
+          "source": "auto",
+          "score": 44,
+          "rank_score": 80.5,
+          "structural_score": 5,
+          "semantic_score": 39,
+          "reason": "共同关注「振动频率」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "振动频率"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "频率"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "外星文明"
+            },
+            {
+              "type": "tag",
+              "score": 6,
+              "label": "集体意识"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "汤姆·肯永是谁？声音疗愈、意识研究与冥想音频资料指南｜《大角星人文摘》第19集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html",
+          "source": "auto",
+          "score": 54,
+          "rank_score": 76.5,
+          "structural_score": 21,
+          "semantic_score": 33,
+          "reason": "都涉及「声音疗愈」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 19,
+              "label": "声音疗愈"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "汤姆肯永"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "冥想"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "灵魂的探照灯：唤醒你的生命之花十二道光线创造之轮，成为有意识的共同创造者",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html",
+          "source": "auto",
+          "score": 41,
+          "rank_score": 74.5,
+          "structural_score": 5,
+          "semantic_score": 36,
+          "reason": "都涉及「脉轮」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 25,
+              "label": "脉轮"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "意识扩展"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "脉轮"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
       "title": "睡眠自愈力：第五维度、潜意识疗愈与高维治疗师的睡前观想",
       "url": "/all-articles/courses/human-body-healing/sleep-self-healing-fifth-dimension-higher-self-dreams.html",
       "manual_declared": 0,
@@ -13902,6 +13902,132 @@
               "type": "identity",
               "score": 5,
               "label": "朵洛莉丝·侃南"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？",
+      "url": "/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "解密灵与魂：灵的本质、灵魂重聚与扬升光柱实用指南",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.html",
+          "source": "auto",
+          "score": 63,
+          "rank_score": 87,
+          "structural_score": 26,
+          "semantic_score": 37,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "大天使迈克尔 / 光之信息"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "大天使迈克尔"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "扬升"
+            }
+          ]
+        },
+        {
+          "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
+          "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
+          "source": "auto",
+          "score": 55,
+          "rank_score": 78.5,
+          "structural_score": 21,
+          "semantic_score": 34,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "意识扩展"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "意识炼金术"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
+          "title": "真正的教导，指向自我实现｜教导与学习的本质解析",
+          "url": "/all-articles/insight-awakening/teaching-and-learning-self-realization-spiritual-growth.html",
+          "source": "auto",
+          "score": 37,
+          "rank_score": 74,
+          "structural_score": 0,
+          "semantic_score": 37,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "通灵信息"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "自我觉知"
             }
           ]
         }
@@ -14124,132 +14250,6 @@
               "type": "text",
               "score": 3,
               "label": "脉轮"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？",
-      "url": "/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "解密灵与魂：灵的本质、灵魂重聚与扬升光柱实用指南",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.html",
-          "source": "auto",
-          "score": 63,
-          "rank_score": 87,
-          "structural_score": 26,
-          "semantic_score": 37,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "大天使迈克尔 / 光之信息"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "大天使迈克尔"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "扬升"
-            }
-          ]
-        },
-        {
-          "title": "直觉桥：你的内在导航系统 │ 激活直觉感知：疗愈情绪的第一步",
-          "url": "/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html",
-          "source": "auto",
-          "score": 55,
-          "rank_score": 78.5,
-          "structural_score": 21,
-          "semantic_score": 34,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "意识扩展"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "真正的教导，指向自我实现｜教导与学习的本质解析",
-          "url": "/all-articles/insight-awakening/teaching-and-learning-self-realization-spiritual-growth.html",
-          "source": "auto",
-          "score": 37,
-          "rank_score": 74,
-          "structural_score": 0,
-          "semantic_score": 37,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "通灵信息"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "自我觉知"
             }
           ]
         }

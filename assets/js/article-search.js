@@ -46,13 +46,17 @@
   }
 
   function splitQuery(query) {
-    return uniqueStrings(
-      String(query || "")
-        .trim()
-        .split(/[\s,，、;；|｜]+/)
-        .map(value => value.trim())
-        .filter(Boolean)
-    );
+    const seen = new Set();
+    return String(query || "")
+      .trim()
+      .split(/[\s,，、;；|｜]+/)
+      .map(value => value.trim())
+      .filter(value => {
+        const normalized = normalizeText(value);
+        if (!normalized || seen.has(normalized)) return false;
+        seen.add(normalized);
+        return true;
+      });
   }
 
   function countOccurrences(text, term) {
@@ -772,7 +776,7 @@
 
       const phrase = exactPhraseScore(preparedArticle, normalizedQuery);
       let score = phrase.score;
-      let matchedTerms = 0;
+      const matchedQueryTerms = new Set();
       let bestLocation = phrase.location;
       let expandedTerms = [];
 
@@ -781,7 +785,7 @@
         score += direct.score;
 
         if (direct.matched) {
-          matchedTerms += 1;
+          matchedQueryTerms.add(term);
           if (!bestLocation) bestLocation = direct.location;
           return;
         }
@@ -789,7 +793,7 @@
         const fuzzy = scoreFuzzyTerm(preparedArticle, rawTerms[index]);
         if (fuzzy.score) {
           score += fuzzy.score;
-          matchedTerms += 1;
+          matchedQueryTerms.add(term);
           if (!bestLocation) bestLocation = fuzzy.location;
         }
       });
@@ -797,24 +801,19 @@
       const registry = scoreRegistryMatches(preparedArticle, registryMatches, preparedPayload);
       score += registry.score;
       expandedTerms = registry.expandedTerms;
-      if (registry.matchedLookupTerms.includes(normalizedQuery)) {
-        matchedTerms = normalizedTerms.length;
-        if (!bestLocation) bestLocation = "知识点";
-      } else if (registry.matched && matchedTerms === 0) {
-        matchedTerms = Math.min(1, normalizedTerms.length);
-        if (!bestLocation) bestLocation = "知识点";
-      }
+      normalizedTerms.forEach(term => {
+        if (
+          registry.matchedLookupTerms.includes(term)
+          || (registry.matchedLookupTerms.includes(normalizedQuery) && normalizedQuery.includes(term))
+        ) {
+          matchedQueryTerms.add(term);
+        }
+      });
+      if (registry.matched && !bestLocation) bestLocation = "知识点";
 
-      if (!score || !matchedTerms) return [];
+      if (!score || matchedQueryTerms.size !== normalizedTerms.length) return [];
 
-      const coverage = matchedTerms / Math.max(1, normalizedTerms.length);
-      if (coverage === 1) {
-        score = score * 1.35 + (normalizedTerms.length > 1 ? 400 : 0);
-      } else if (coverage >= 0.5) {
-        score *= 0.78;
-      } else {
-        score *= 0.42;
-      }
+      score = score * 1.35 + (normalizedTerms.length > 1 ? 400 : 0);
 
       const snippet = chooseSnippet(article, rawTerms, expandedTerms);
       const matchUrl = snippet.anchor ? `${article.url}#${snippet.anchor}` : article.url;
@@ -822,7 +821,7 @@
       return [{
         article,
         score: Math.round(score * 100) / 100,
-        matched_terms: matchedTerms,
+        matched_terms: matchedQueryTerms.size,
         matched_location: bestLocation || snippet.location || "正文",
         match_heading: snippet.heading,
         match_url: matchUrl,

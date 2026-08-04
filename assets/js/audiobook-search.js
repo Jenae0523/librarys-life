@@ -55,6 +55,13 @@
     ]);
   }
 
+  function queryTermsMatchedByTag(tag, terms) {
+    const registeredValues = registeredTagValues(tag).map(normalizeText).filter(Boolean);
+    return terms.filter(term =>
+      registeredValues.some(value => term.includes(value) || value.includes(term))
+    );
+  }
+
   function resolveQueryTags(tagsById, query, terms) {
     const lookupTerms = new Set([...terms, query].filter(Boolean));
     return [...tagsById.values()].filter(tag => {
@@ -73,14 +80,11 @@
 
     queryTags.forEach(tag => {
       if (!toArray(record.tag_ids).includes(tag.id)) return;
-      const registeredValues = registeredTagValues(tag).map(normalizeText).filter(Boolean);
       matchedTagIds.add(tag.id);
       matchedTagNames.add(String(tag.name || tag.id));
       score += weight * 4;
 
-      const matchingTerms = terms.filter(term =>
-        registeredValues.some(value => term.includes(value))
-      );
+      const matchingTerms = queryTermsMatchedByTag(tag, terms);
       if (matchingTerms.length) mergeMatches(matched, matchingTerms);
       else if (query) matched.add(query);
     });
@@ -178,7 +182,9 @@
     const collectionSlug = String(options.collection || "");
     const tagId = String(options.tag || "");
     const sort = options.sort === "latest" ? "latest" : "relevance";
-    const episode = exactEpisode(payload, rawQuery, collectionSlug);
+    const deduplicatedExactQuery = terms.length === 1 ? terms[0] : "";
+    const episode = exactEpisode(payload, rawQuery, collectionSlug)
+      || (deduplicatedExactQuery ? exactEpisode(payload, deduplicatedExactQuery, collectionSlug) : null);
     if (episode) {
       return {
         mode: "episode",
@@ -194,7 +200,8 @@
         }]
       };
     }
-    const exact = exactCollection(payload, rawQuery, collectionSlug);
+    const exact = exactCollection(payload, rawQuery, collectionSlug)
+      || (deduplicatedExactQuery ? exactCollection(payload, deduplicatedExactQuery, collectionSlug) : null);
     if (exact) {
       return {
         mode: "collection",
@@ -224,6 +231,10 @@
             .some(id => toArray(record.tag_ids).includes(id))
         );
         if (!matchedPolicies.length) return [];
+        const matchedPolicyTerms = new Set(
+          matchedPolicies.flatMap(tag => queryTermsMatchedByTag(tag, terms))
+        );
+        if (matchedPolicyTerms.size !== terms.length) return [];
         return [{
           record,
           score: 240,
@@ -285,14 +296,11 @@
         }
         mergeMatches(ownMatched, transcript.matched);
 
-        if (!ownMatched.size) return [];
+        if (ownMatched.size !== terms.length) return [];
 
         const parentMatch = fieldMatches([record.parent_title], query, terms, FIELD_WEIGHTS.parent_title);
         score += parentMatch.score;
-        const coverage = ownMatched.size / Math.max(terms.length, 1);
-        if (coverage === 1) score = score * 1.35 + (terms.length > 1 ? 20 : 0);
-        else if (coverage >= 0.5) score *= 0.78;
-        else score *= 0.42;
+        score = score * 1.35 + (terms.length > 1 ? 20 : 0);
 
         return [{
           record,
