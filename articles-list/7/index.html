@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
   <head>
-  <title>・生命之书 | librarys.life</title>
+  <title>所有文章・生命之书 | librarys.life</title>
   <meta name="description" content="">
 <meta name="keywords" content="">
 
@@ -123,8 +123,6 @@
 
   <main>
     
-
-
 <!-- 横幅图 -->
 <section class="g-pt-90">
 <div class="container-fluid g-pt-100" style="background-image: url(/img/starnight.jpg);">
@@ -132,239 +130,264 @@
 </div>
 </section>
 
+<!-- 栏目介绍 -->
+<section class="g-bg-gray-light-v5 g-pb-40 article-intro--with-search">
+<header class="text-center g-width-60x--md mx-auto g-mb-50">
+    
+    <!-- 栏目标题（支持两排）-->
+    
+    <h2 class="h1 g-color-gray-dark-v1 g-pt-80 g-font-weight-300">
+      所有文章
+    </h2>
+    
+
+    
+
+    
+      <section
+  class="article-search-panel article-search-panel--entry"
+  aria-label="文章搜索"
+>
+  <form
+    id="articleSearchSharedForm"
+    class="article-search-form"
+    action="/articles/search/"
+    method="get"
+    role="search"
+    
+  >
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <input
+      id="articleSearchSharedInput"
+      class="article-search-input"
+      type="search"
+      name="q"
+      placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
+      autocomplete="off"
+      
+    >
+    <button class="article-search-button" type="submit">搜索</button>
+    <button
+      class="article-search-button article-search-button--secondary"
+      type="reset"
+      
+    >
+      清空
+    </button>
+  </form>
+
+  <div class="article-search-toolbar">
+    
+      <p class="article-search-status">可搜索 141 篇文章</p>
+    
+
+    <div class="article-search-controls">
+      
+
+      <label class="article-search-control-label article-search-sort-label">
+        <span class="sr-only">排序</span>
+        <select
+          class="article-search-select article-search-sort"
+          name="sort"
+          form="articleSearchSharedForm"
+          
+        >
+          <option value="relevance">按相关度排序</option>
+          <option value="latest">按最新发布排序</option>
+        </select>
+      </label>
+    </div>
+  </div>
+</section>
+
+    
+
+    <!-- MP3有声书 -->
+    
+
+
+    
+  </header>
+</section>
+
+
+
 <style>
-  .article-category-header {
-    margin-bottom: 42px;
-  }
-
-  .article-category-breadcrumb {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 16px;
-    color: #7a8194;
-    font-size: 14px;
-    letter-spacing: 0;
-  }
-
-  .article-category-breadcrumb a {
-    color: #6B77CC;
-    text-decoration: none !important;
-    border-bottom: 1px solid rgba(107, 119, 204, 0.3);
-  }
-
-  .article-category-breadcrumb a:hover {
-    color: #3647B7;
-    text-decoration: none !important;
-    border-color: rgba(54, 71, 183, 0.68);
-  }
-
-  .article-category-title {
-    margin: 0 0 12px;
-    color: #222;
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: 0.02em;
-  }
-
-  .article-category-count {
-    margin: 0;
-    color: #757b8d;
-    font-size: 15px;
-    letter-spacing: 0;
-  }
-
+  /* ① 卡片 hover 下划线彻底关闭（必须放最后，覆盖全局样式） */
   .article-card,
   .article-card:hover,
   .article-card * {
     text-decoration: none !important;
   }
 
+
+  /* 固定封面比例 1920x1080 (16:9) */
   .article-cover {
-    display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     object-position: center;
     border-radius: 8px;
+    display: block;
     margin-bottom: 20px;
   }
 
+  /* 两行标题 */
   .article-title {
-    margin-bottom: 10px;
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.5;
+    margin-bottom: 10px;
   }
-
   .article-title span {
     display: block;
   }
 
   .article-title .title-line1 {
     font-size: 1.5rem;
-    font-weight: 550;
-  }
-
-  .article-title .title-line2 {
-    margin-top: 2px;
-    font-size: 1.1rem;
     font-weight: 400;
   }
+  .article-title .title-line2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 2px;
+  }
 
+  /* 整个卡片可点击 */
   .article-card {
     display: block;
-    color: inherit;
     text-decoration: none;
+    color: inherit;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-
   .article-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   }
 
-  .article-category-empty {
-    padding: 40px 0;
-    color: #757b8d;
-    font-size: 16px;
-    letter-spacing: 0;
-  }
 </style>
 
 <div class="container g-pt-100 g-pb-40">
   <div class="row justify-content-between">
+
+    <!-- 左侧：文章列表 -->
     <div class="col-lg-9 g-mb-80">
       <div class="g-pr-20--lg">
-        <header class="article-category-header">
-          <div class="article-category-breadcrumb">
-            <a href="/articles-list/0/">所有文章</a>
-            
-              <span aria-hidden="true">/</span>
-              <a href="/all-articles/courses/">课程 / 创造奇迹生命</a>
-            
-            <span aria-hidden="true">/</span>
-            <span>大天使迈克尔 / 光之信息</span>
-          </div>
-          <h1 class="article-category-title">大天使迈克尔 / 光之信息</h1>
-          <p class="article-category-count">共 4 篇文章</p>
-        </header>
-
-        
         <div class="row">
+
           
           <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.html"
+            <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology01-meeting-the-arcturians-consciousness.html"
                class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
               <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年9月25日
+                2023年6月5日
               </p>
 
-              
               <img
-                src="https://img.librarys.life/img/articles-covers/spirit-vs-soul-differences.jpg"
-                alt="大天使迈克尔：解密灵与魂的奥秘 身体与灵魂的关系，灵魂是什么？它由什么组成？起源于哪里？"
+                src="https://img.librarys.life/img/articles-covers/the-arcturian-anthology/1.jpg"
+                alt="《大角星人文摘》 第1集：遇见大角星人 20多年通灵经验，20多年临床经验的心理治疗师（汤姆・肯永）"
                 class="article-cover">
-              
 
               <h3 class="article-title g-color-gray-dark-v2">
                 
-                  <span class="title-line1">大天使迈克尔：解密灵与魂的奥秘</span>
+                  <span class="title-line1">《大角星人文摘》 第1集：遇见大角星人</span>
                 
                 
-                  <span class="title-line2">身体与灵魂的关系，灵魂是什么？它由什么组成？起源于哪里？</span>
+                  <span class="title-line2">20多年通灵经验，20多年临床经验的心理治疗师（汤姆・肯永）</span>
                 
               </h3>
+
             </a>
           </div>
           
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/courses/messages-of-light-archangel-mike/demystifying-death-soul-transition-journey.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年9月22日
-              </p>
-
-              
-              <img
-                src="https://img.librarys.life/img/articles-covers/demystifying-death-soul-transition-journey.jpg"
-                alt="大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么? 灵魂的归途：你所相信的，决定你将去往何处"
-                class="article-cover">
-              
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">大天使迈克尔 │ 解密死亡：灵魂离开肉体后，会发生什么?</span>
-                
-                
-                  <span class="title-line2">灵魂的归途：你所相信的，决定你将去往何处</span>
-                
-              </h3>
-            </a>
-          </div>
-          
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年9月12日
-              </p>
-
-              
-              <img
-                src="https://img.librarys.life/img/articles-covers/life-flower-creation-wheel-4-8-12-petals-activation.jpg"
-                alt="灵魂的探照灯：唤醒你的生命之花 如何激活十二道光线创造之轮，成为有意识的共同创造者？"
-                class="article-cover">
-              
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">灵魂的探照灯：唤醒你的生命之花</span>
-                
-                
-                  <span class="title-line2">如何激活十二道光线创造之轮，成为有意识的共同创造者？</span>
-                
-              </h3>
-            </a>
-          </div>
-          
-          <div class="col-md-6 g-mb-40">
-            <a href="/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html"
-               class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-              <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">
-                2025年9月9日
-              </p>
-
-              
-              <img
-                src="https://img.librarys.life/img/articles-covers/ascension-open-your-sacred-heart-stabilize-energy-field.jpg"
-                alt="大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 为什么生命力被削弱？如何获得充足的能量？"
-                class="article-cover">
-              
-
-              <h3 class="article-title g-color-gray-dark-v2">
-                
-                  <span class="title-line1">大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能</span>
-                
-                
-                  <span class="title-line2">为什么生命力被削弱？如何获得充足的能量？</span>
-                
-              </h3>
-            </a>
-          </div>
-          
         </div>
-        
 
+        <!-- 分页 -->
+        <nav class="site-pagination" aria-label="所有文章分页">
+          
+          
+          
+          
+          
+          
+            
+            
+            
+          
+
+          
+            <a class="site-pagination__button"
+               href="/articles-list/6/"
+               aria-label="文章上一页">‹</a>
+          
+
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+            <a class="site-pagination__button"
+               href="/articles-list/3/"
+               aria-label="文章第 4 页"
+               >4</a>
+            
+          
+            
+            
+            <a class="site-pagination__button"
+               href="/articles-list/4/"
+               aria-label="文章第 5 页"
+               >5</a>
+            
+          
+            
+            
+            <a class="site-pagination__button"
+               href="/articles-list/5/"
+               aria-label="文章第 6 页"
+               >6</a>
+            
+          
+            
+            
+            <a class="site-pagination__button"
+               href="/articles-list/6/"
+               aria-label="文章第 7 页"
+               >7</a>
+            
+          
+            
+            
+            <a class="site-pagination__button"
+               href="/articles-list/7/"
+               aria-label="文章第 8 页"
+               aria-current="page">8</a>
+            
+          
+
+          
+            <span class="site-pagination__button" aria-disabled="true" aria-label="文章下一页">›</span>
+          
+
+          <span class="site-pagination__status">
+            第 8 / 8 页，共 141 个文章
+          </span>
+        </nav>
         <hr class="g-brd-gray-light-v4 g-my-50">
+
       </div>
     </div>
 
+    <!-- 右侧 -->
     <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-50">
       <div class="g-pl-20--lg">
         
@@ -543,7 +566,7 @@
     g-color-gray-dark-v4 g-color-primary--hover 
     nav-link-hover-underline
     g-py-8
-    is-active"
+    "
   href="/all-articles/courses/messages-of-light-archangel-mike/"
   style="padding-left: 15px;">
   大天使迈克尔 / 光之信息
@@ -749,12 +772,17 @@
   </ul>
 </div>
 
+		<!-- 加一条灰线 -->
         <hr class="g-brd-gray-light-v4 g-mt-50">
       </div>
     </div>
+
   </div>
 </div>
 
+
+
+<!-- ✅ 居中对齐-保留首页一致的结构 -->
 <div class="container">
   <div class="row justify-content-center">
   <div class="col-lg-9 text-center">
