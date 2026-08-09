@@ -111,7 +111,7 @@
     const url = urlValue instanceof URL
       ? new URL(urlValue.href)
       : new URL(String(urlValue || ""), "https://example.invalid/search/");
-    const query = String(state.query || "").trim();
+    const query = String(state.query || "");
     const types = normalizeTypes(state.types);
     url.searchParams.delete("q");
     url.searchParams.delete("types");
@@ -123,7 +123,7 @@
     url.searchParams.delete("audioTag");
     url.searchParams.delete("audioSort");
     url.searchParams.delete("audioPage");
-    if (query) url.searchParams.set("q", query);
+    if (query.trim()) url.searchParams.set("q", query);
     url.searchParams.set("types", serializeTypes(types));
     if (state.category) url.searchParams.set("category", String(state.category));
     if (state.tag) url.searchParams.set("tag", String(state.tag));
@@ -131,10 +131,10 @@
     if (state.audioCollection) url.searchParams.set("audioCollection", String(state.audioCollection));
     if (state.audioTag) url.searchParams.set("audioTag", String(state.audioTag));
     url.searchParams.set("audioSort", state.audioSort === "latest" ? "latest" : "relevance");
-    if (query && types.includes("articles") && normalizePage(state.articlesPage) > 1) {
+    if (query.trim() && types.includes("articles") && normalizePage(state.articlesPage) > 1) {
       url.searchParams.set("articlesPage", String(normalizePage(state.articlesPage)));
     }
-    if (query && types.includes("audio") && normalizePage(state.audioPage) > 1) {
+    if (query.trim() && types.includes("audio") && normalizePage(state.audioPage) > 1) {
       url.searchParams.set("audioPage", String(normalizePage(state.audioPage)));
     }
     return url;
@@ -190,7 +190,7 @@
         }
         const types = sync();
         updateStatus();
-        options.onTypesChange?.({ query: input.value.trim(), types });
+        options.onTypesChange?.({ query: input.value, types });
       });
     });
 
@@ -198,7 +198,7 @@
       const types = sync();
       if (options.onSubmit) {
         event.preventDefault();
-        options.onSubmit({ query: input.value.trim(), types });
+        options.onSubmit({ query: input.value, types });
       }
     });
 
@@ -437,7 +437,7 @@
     }
 
     function renderSettled(settled, state, options = {}) {
-      const query = String(state.query || "").trim();
+      const query = String(state.query || "");
       const types = normalizeTypes(state.types);
       const normalizedState = {
         query,
@@ -453,6 +453,21 @@
       };
       let total = 0;
       let failed = 0;
+      const needsMoreSpecific = settled.some(([, outcome]) => outcome.value?.result?.query_plan?.needsMoreSpecific);
+      if (needsMoreSpecific) {
+        types.forEach(type => {
+          sectionElements[type].section.hidden = true;
+          sectionElements[type].results.innerHTML = "";
+        });
+        resetArticleFilterControls(normalizedState);
+        resetAudioFilterControls(normalizedState);
+        allEmpty.hidden = false;
+        allEmpty.innerHTML = "<p><strong>请输入更具体的关键词。</strong></p>";
+        summary.textContent = "";
+        currentState = normalizedState;
+        updateUrl(normalizedState, options.historyMode || "replace");
+        return;
+      }
       settled.forEach(([type, outcome]) => {
         const elements = sectionElements[type];
         elements.section.hidden = false;
@@ -528,7 +543,7 @@
     }
 
     async function runSearch(state, options = {}) {
-      const query = String(state.query || "").trim();
+      const query = String(state.query || "");
       const types = normalizeTypes(state.types);
       const requestedState = {
         query,
@@ -546,7 +561,7 @@
       currentState = requestedState;
       currentSettled = null;
       controller.setState({ query, types });
-      if (!query) {
+      if (!query.trim()) {
         updateUrl(requestedState, options.historyMode || "replace");
         resetDisplay(types, requestedState);
         return;
@@ -572,6 +587,8 @@
       }
       if (types.includes("audio")) {
         jobs.audio = loadAudioPayload().then(async payload => {
+          const preliminary = AudiobookSearch.search(payload, query, new Map(), { sort: "relevance" });
+          if (preliminary.query_plan?.needsMoreSpecific) return { payload, result: preliminary };
           const exact = AudiobookSearch.exactCollection(payload, query, "")
             || AudiobookSearch.exactEpisode(payload, query, "");
           const shards = exact ? new Map() : await loadAudioShards(payload);

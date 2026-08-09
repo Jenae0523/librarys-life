@@ -1,13 +1,18 @@
 (function (root, factory) {
-  const api = factory();
+  const queryTools = typeof module === "object" && module.exports
+    ? require("./search-query")
+    : root.SearchQuery;
+  const api = factory(queryTools);
   if (typeof module === "object" && module.exports) module.exports = api;
   if (root) root.AudiobookSearch = api;
-})(typeof globalThis !== "undefined" ? globalThis : this, function () {
+})(typeof globalThis !== "undefined" ? globalThis : this, function (SearchQuery) {
   "use strict";
 
   const PAGE_SIZE = 8;
   const INPUT_DEBOUNCE_MS = 350;
   const TRANSCRIPT_SEEK_LEAD_SECONDS = 2;
+  const SEARCH_PROXIMITY_WINDOW = SearchQuery.SEARCH_PROXIMITY_WINDOW;
+  const AUDIO_NAVIGATION_WINDOW_SECONDS = 45;
   const FIELD_WEIGHTS = {
     title: 10,
     parent_title: 8,
@@ -26,11 +31,7 @@
   }
 
   function normalizeText(value) {
-    return String(value || "")
-      .normalize("NFKC")
-      .toLocaleLowerCase()
-      .replace(/[\s　]+/gu, "")
-      .replace(/[，,。.!！?？；;：:“”"'‘’（）()【】\[\]《》<>「」『』·・—–_\-/\\|]+/gu, "");
+    return SearchQuery.normalizeTerm(value);
   }
 
   function normalizeCollectionTitle(value) {
@@ -38,9 +39,7 @@
   }
 
   function splitQuery(value) {
-    const raw = String(value || "").normalize("NFKC").trim();
-    const spacedTerms = raw.split(/[\s　,，;；、]+/u).map(normalizeText).filter(Boolean);
-    return uniqueStrings(spacedTerms.length > 1 ? spacedTerms : [normalizeText(raw)]);
+    return SearchQuery.parseQuery(value).effectiveTerms.map(normalizeText);
   }
 
   function tagLookup(payload) {
@@ -53,6 +52,13 @@
       ...toArray(tag?.aliases),
       ...toArray(tag?.phrases)
     ]);
+  }
+
+  function queryTermsMatchedByTag(tag, terms) {
+    const registeredValues = registeredTagValues(tag).map(normalizeText).filter(Boolean);
+    return terms.filter(term =>
+      registeredValues.some(value => term.includes(value) || value.includes(term))
+    );
   }
 
   function resolveQueryTags(tagsById, query, terms) {
@@ -73,14 +79,11 @@
 
     queryTags.forEach(tag => {
       if (!toArray(record.tag_ids).includes(tag.id)) return;
-      const registeredValues = registeredTagValues(tag).map(normalizeText).filter(Boolean);
       matchedTagIds.add(tag.id);
       matchedTagNames.add(String(tag.name || tag.id));
       score += weight * 4;
 
-      const matchingTerms = terms.filter(term =>
-        registeredValues.some(value => term.includes(value))
-      );
+      const matchingTerms = queryTermsMatchedByTag(tag, terms);
       if (matchingTerms.length) mergeMatches(matched, matchingTerms);
       else if (query) matched.add(query);
     });
@@ -172,13 +175,219 @@
     }) || null;
   }
 
+  function structuredFieldsForRecord(record, tagsById) {
+    return [
+      { name: "title", label: "单集标题", values: [record.title] },
+      { name: "parent_title", label: "合集标题", values: [record.parent_title] },
+      { name: "keywords", label: "关键词", values: record.keywords },
+      {
+        name: "tag",
+        label: "知识点",
+        values: toArray(record.tag_ids).map(id => tagsById.get(id)?.name || "")
+      },
+      { name: "author", label: "作者", values: [record.author] }
+    ];
+  }
+
+  function buildVocabulary(payload, tagsById) {
+    const vocabulary = [];
+    toArray(payload?.records).forEach(record => {
+      structuredFieldsForRecord(record, tagsById).forEach(field => {
+        toArray(field.values).forEach(value => {
+          if (String(value || "").trim()) {
+            vocabulary.push({ value, field: field.name, label: field.label, recordId: record.id });
+          }
+        });
+      });
+    });
+    toArray(payload?.query_tags).forEach(tag => {
+      if (tag?.name) vocabulary.push({ value: tag.name, field: "tag", label: "知识点", recordId: tag.id });
+    });
+    return vocabulary;
+  }
+
+  function bestTranscriptWindow(shard, episodeId, terms) {
+    const episode = toArray(shard?.episodes).find(item => item.id === episodeId);
+    let best = null;
+    toArray(episode?.segments).forEach(segment => {
+      const window = SearchQuery.findShortestWindow(segment.text, terms, SEARCH_PROXIMITY_WINDOW);
+      if (!window || (best && best.window.length <= window.length)) return;
+      best = { segment, window };
+    });
+    return best;
+  }
+
+  function bestNavigableTranscriptWindow(shard, episodeId, terms, maximumSeconds = AUDIO_NAVIGATION_WINDOW_SECONDS) {
+    const episode = toArray(shard?.episodes).find(item => item.id === episodeId);
+    const segments = toArray(episode?.segments);
+    const naturalTerms = uniqueStrings(terms).map(SearchQuery.normalizeNaturalText).filter(Boolean);
+    if (!segments.length || !naturalTerms.length) return null;
+
+    const events = [];
+    const termPresence = Array(naturalTerms.length).fill(false);
+    segments.forEach((segment, segmentIndex) => {
+      const text = SearchQuery.normalizeNaturalText(segment.text);
+      naturalTerms.forEach((term, termIndex) => {
+        if (!text.includes(term)) return;
+        termPresence[termIndex] = true;
+        events.push({ termIndex, segmentIndex });
+      });
+    });
+    if (termPresence.some(present => !present)) return null;
+
+    events.sort((left, right) => left.segmentIndex - right.segmentIndex || left.termIndex - right.termIndex);
+    const counts = Array(naturalTerms.length).fill(0);
+    let covered = 0;
+    let left = 0;
+    let best = null;
+
+    for (let right = 0; right < events.length; right += 1) {
+      if (counts[events[right].termIndex]++ === 0) covered += 1;
+      while (covered === naturalTerms.length && left <= right) {
+        const firstIndex = events[left].segmentIndex;
+        const lastIndex = events[right].segmentIndex;
+        const firstStart = Number(segments[firstIndex]?.start);
+        const lastEndValue = Number(segments[lastIndex]?.end);
+        const lastStart = Number(segments[lastIndex]?.start);
+        const lastEnd = Number.isFinite(lastEndValue) ? lastEndValue : lastStart;
+        const duration = Number.isFinite(firstStart) && Number.isFinite(lastEnd)
+          ? Math.max(0, lastEnd - firstStart)
+          : Infinity;
+
+        if (duration <= maximumSeconds) {
+          const text = segments.slice(firstIndex, lastIndex + 1)
+            .map(segment => String(segment.text || "").trim())
+            .filter(Boolean)
+            .join(" ");
+          const textWindow = SearchQuery.findShortestWindow(text, naturalTerms, Infinity);
+          const candidate = {
+            firstSegmentIndex: firstIndex,
+            lastSegmentIndex: lastIndex,
+            earliestMatchTime: firstStart,
+            duration,
+            segmentCount: lastIndex - firstIndex + 1,
+            textWindowLength: textWindow?.length ?? Infinity,
+            snippet: SearchQuery.createWindowSnippet(
+              text,
+              textWindow,
+              Math.min(360, Math.max(210, (textWindow?.length || 0) + 70))
+            ),
+            matchKind: firstIndex === lastIndex ? "single-segment" : "adjacent-segments"
+          };
+          if (
+            !best
+            || candidate.duration < best.duration
+            || (candidate.duration === best.duration && candidate.segmentCount < best.segmentCount)
+            || (candidate.duration === best.duration && candidate.segmentCount === best.segmentCount && candidate.textWindowLength < best.textWindowLength)
+            || (candidate.duration === best.duration && candidate.segmentCount === best.segmentCount && candidate.textWindowLength === best.textWindowLength && candidate.earliestMatchTime < best.earliestMatchTime)
+          ) {
+            best = candidate;
+          }
+        }
+
+        if (--counts[events[left].termIndex] === 0) covered -= 1;
+        left += 1;
+      }
+    }
+
+    return best;
+  }
+
+  function matchAudioStructured(record, tagsById, terms) {
+    const fields = structuredFieldsForRecord(record, tagsById);
+    const matched = new Map();
+    for (const term of terms) {
+      const direct = SearchQuery.matchStructured(fields, [term]);
+      const aliasMatched = toArray(record.tag_ids).some(id =>
+        registeredTagValues(tagsById.get(id)).map(normalizeText).includes(term)
+      );
+      if (!direct && !aliasMatched) return null;
+      toArray(direct?.matchedFields).forEach((field, index) => {
+        matched.set(field, direct.matchedFieldLabels[index]);
+      });
+      if (aliasMatched) matched.set("tag", "知识点");
+    }
+    return { matchedFields: [...matched.keys()], matchedFieldLabels: [...matched.values()] };
+  }
+
+  function audioInterpretationMatch(record, shard, tagsById, parsed, interpretation) {
+    const terms = interpretation.terms;
+    const naturalTerms = interpretation.naturalTerms || terms;
+    const isSplit = interpretation.kind === "split";
+    const structural = matchAudioStructured(record, tagsById, terms);
+    const descriptionWindow = SearchQuery.findShortestWindow(record.description, naturalTerms, SEARCH_PROXIMITY_WINDOW);
+    const transcript = bestNavigableTranscriptWindow(
+      shard,
+      record.id,
+      naturalTerms,
+      AUDIO_NAVIGATION_WINDOW_SECONDS
+    );
+    const title = normalizeText(record.title);
+    const titleSet = normalizeText([record.title, record.parent_title].join(" "));
+    const normalizedWhole = normalizeText(parsed.normalizedQuery.replace(/[“”"]/gu, ""));
+    const candidates = [];
+
+    if (structural) {
+      const matchedFieldLabels = uniqueStrings(structural.matchedFieldLabels);
+      let score = isSplit ? 8000 : 9500;
+      if (terms.every(term => titleSet.includes(term))) score = isSplit ? 9800 : 10000;
+      if (normalizedWhole && title === normalizedWhole) {
+        score = parsed.quotedPhrases.length ? 12000 : parsed.effectiveTerms.length === 1 ? 11500 : 11000;
+      }
+      candidates.push({
+        score,
+        type: isSplit ? "split-structured" : "full-structured",
+        fields: structural.matchedFields,
+        labels: matchedFieldLabels,
+        location: matchedFieldLabels[0] || "结构化字段",
+        descriptionSnippet: record.description || "",
+        transcriptSnippet: "",
+        transcriptStart: null,
+        windowLength: null
+      });
+    }
+    if (descriptionWindow) {
+      candidates.push({
+        score: (isSplit ? 7000 : 9000) + SEARCH_PROXIMITY_WINDOW - descriptionWindow.length,
+        type: isSplit ? "split-description" : "full-description",
+        fields: ["description"],
+        labels: ["简介"],
+        location: "简介",
+        descriptionSnippet: SearchQuery.createWindowSnippet(record.description, descriptionWindow),
+        transcriptSnippet: "",
+        transcriptStart: null,
+        windowLength: descriptionWindow.length
+      });
+    }
+    if (transcript) {
+      candidates.push({
+        score: (isSplit ? 6500 : 8500) + Math.max(0, SEARCH_PROXIMITY_WINDOW - transcript.textWindowLength),
+        type: isSplit ? "split-transcript" : "full-transcript",
+        fields: ["transcript"],
+        labels: ["字幕"],
+        location: "字幕",
+        descriptionSnippet: record.description || "",
+        transcriptSnippet: transcript.snippet,
+        transcriptStart: transcript.earliestMatchTime,
+        windowLength: transcript.textWindowLength
+      });
+    }
+    candidates.sort((left, right) => right.score - left.score || (left.windowLength ?? Infinity) - (right.windowLength ?? Infinity));
+    return candidates[0] ? { ...candidates[0], interpretation } : null;
+  }
+
   function search(payload, rawQuery, transcriptShards = {}, options = {}) {
-    const query = normalizeText(rawQuery);
-    const terms = splitQuery(rawQuery);
     const collectionSlug = String(options.collection || "");
     const tagId = String(options.tag || "");
     const sort = options.sort === "latest" ? "latest" : "relevance";
-    const episode = exactEpisode(payload, rawQuery, collectionSlug);
+    const tagsById = tagLookup(payload);
+    const parsed = SearchQuery.parseQuery(rawQuery, buildVocabulary(payload, tagsById));
+    if (parsed.isEmpty || parsed.needsMoreSpecific) {
+      return { mode: "episodes", query: parsed.rawQuery, query_plan: parsed, sort, results: [] };
+    }
+    const deduplicatedExactQuery = parsed.effectiveTerms.length === 1 ? parsed.effectiveTerms[0] : "";
+    const episode = exactEpisode(payload, rawQuery, collectionSlug)
+      || (deduplicatedExactQuery ? exactEpisode(payload, deduplicatedExactQuery, collectionSlug) : null);
     if (episode) {
       return {
         mode: "episode",
@@ -190,11 +399,13 @@
           matched_fields: ["episode_phrase"],
           matched_terms: uniqueStrings([String(rawQuery || "").trim()]),
           matched_tag_ids: [],
-          matched_location: "单集编号"
+          matched_location: "单集编号",
+          highlight_terms: parsed.effectiveTerms
         }]
       };
     }
-    const exact = exactCollection(payload, rawQuery, collectionSlug);
+    const exact = exactCollection(payload, rawQuery, collectionSlug)
+      || (deduplicatedExactQuery ? exactCollection(payload, deduplicatedExactQuery, collectionSlug) : null);
     if (exact) {
       return {
         mode: "collection",
@@ -205,34 +416,11 @@
           score: Infinity,
           matched_fields: ["collection_title"],
           matched_terms: uniqueStrings([String(rawQuery || "").trim()]),
-          matched_tag_ids: []
+          matched_tag_ids: [],
+          highlight_terms: parsed.effectiveTerms
         }]
       };
     }
-    if (!query || !terms.length) return { mode: "episodes", query: rawQuery, sort, results: [] };
-
-    const tagsById = tagLookup(payload);
-    const queryTags = resolveQueryTags(tagsById, query, terms);
-    const policyCollectionResults = toArray(payload?.records)
-      .filter(record =>
-        record.subtype === "collection"
-        && (!collectionSlug || record.book_slug === collectionSlug)
-      )
-      .flatMap(record => {
-        const matchedPolicies = queryTags.filter(tag =>
-          toArray(tag.search_policy?.audiobook_collection_expansion_tag_ids)
-            .some(id => toArray(record.tag_ids).includes(id))
-        );
-        if (!matchedPolicies.length) return [];
-        return [{
-          record,
-          score: 240,
-          matched_fields: ["knowledge_node_expansion"],
-          matched_terms: matchedPolicies.map(tag => tag.name),
-          matched_tag_ids: matchedPolicies.map(tag => tag.id),
-          matched_location: "知识点关联"
-        }];
-      });
     const results = toArray(payload?.records)
       .filter(record =>
         record.subtype === "episode" &&
@@ -240,73 +428,81 @@
         (!tagId || toArray(record.tag_ids).includes(tagId))
       )
       .flatMap(record => {
-        const ownMatched = new Set();
-        const matchedFields = new Set();
-        const matchedTerms = new Set();
-        const matchedTagIds = new Set();
-        let score = 0;
-        let matchedLocation = "";
-
-        const ownFields = [
-          ["title", [record.title], FIELD_WEIGHTS.title, "单集标题"],
-          ["description", [record.description], FIELD_WEIGHTS.description, "简介"],
-          ["keywords", record.keywords, FIELD_WEIGHTS.keywords, "关键词"]
-        ];
-        ownFields.forEach(([field, values, weight, location]) => {
-          const match = fieldMatches(values, query, terms, weight);
-          score += match.score;
-          if (match.score) {
-            matchedFields.add(field);
-            mergeMatches(matchedTerms, match.matched);
-            if (!matchedLocation) matchedLocation = location;
-          }
-          mergeMatches(ownMatched, match.matched);
-        });
-
-        const tagMatch = tagMatches(record, queryTags, query, terms, FIELD_WEIGHTS.tags);
-        score += tagMatch.score;
-        if (tagMatch.score) {
-          matchedFields.add("tag");
-          mergeMatches(matchedTerms, tagMatch.matchedTagNames);
-          mergeMatches(matchedTagIds, tagMatch.matchedTagIds);
-          if (!matchedLocation) matchedLocation = "知识点";
-        }
-        mergeMatches(ownMatched, tagMatch.matched);
-
         const shard = transcriptShards instanceof Map
           ? transcriptShards.get(record.book_slug)
           : transcriptShards[record.book_slug];
-        const transcript = findTranscriptHit(shard, record.id, query, terms);
-        score += transcript.score;
-        if (transcript.score) {
-          matchedFields.add("transcript");
-          mergeMatches(matchedTerms, transcript.matched);
-          if (!matchedLocation) matchedLocation = "字幕";
-        }
-        mergeMatches(ownMatched, transcript.matched);
-
-        if (!ownMatched.size) return [];
-
-        const parentMatch = fieldMatches([record.parent_title], query, terms, FIELD_WEIGHTS.parent_title);
-        score += parentMatch.score;
-        const coverage = ownMatched.size / Math.max(terms.length, 1);
-        if (coverage === 1) score = score * 1.35 + (terms.length > 1 ? 20 : 0);
-        else if (coverage >= 0.5) score *= 0.78;
-        else score *= 0.42;
+        const match = parsed.queryInterpretations
+          .map(interpretation => audioInterpretationMatch(record, shard, tagsById, parsed, interpretation))
+          .filter(Boolean)
+          .sort((left, right) => right.score - left.score || (left.windowLength ?? Infinity) - (right.windowLength ?? Infinity))[0];
+        if (!match) return [];
+        const navigation = bestNavigableTranscriptWindow(
+          shard,
+          record.id,
+          match.interpretation.naturalTerms || match.interpretation.terms,
+          AUDIO_NAVIGATION_WINDOW_SECONDS
+        );
 
         return [{
           record,
-          score: Math.round(score * 100) / 100,
-          matched_fields: [...matchedFields],
-          matched_terms: [...matchedTerms],
-          matched_tag_ids: [...matchedTagIds],
-          matched_location: matchedLocation,
-          transcript_snippet: transcript.snippet,
-          transcript_start: Number.isFinite(transcript.start) ? transcript.start : null,
-          highlight_terms: uniqueStrings([String(rawQuery || "").trim(), ...terms])
+          score: Math.round(match.score * 100) / 100,
+          matched_fields: match.fields,
+          matched_field_labels: match.labels,
+          matched_terms: match.interpretation.terms,
+          matched_tag_ids: toArray(record.tag_ids).filter(id => match.fields.includes("tag")),
+          matched_location: match.location,
+          matched_type: match.type,
+          match_window_length: match.windowLength,
+          relevance_match: {
+            type: match.type,
+            location: match.location,
+            fields: match.fields,
+            field_labels: match.labels,
+            window_length: match.windowLength
+          },
+          navigation_match: navigation ? {
+            type: navigation.matchKind,
+            earliest_match_time: navigation.earliestMatchTime,
+            seek_time: transcriptPlaybackStart(navigation.earliestMatchTime),
+            duration_seconds: navigation.duration,
+            segment_count: navigation.segmentCount,
+            first_segment_index: navigation.firstSegmentIndex,
+            last_segment_index: navigation.lastSegmentIndex
+          } : null,
+          query_interpretation: match.interpretation,
+          description_snippet: String(record.description || record.summary || "").trim(),
+          transcript_snippet: navigation?.snippet || "",
+          transcript_start: Number.isFinite(navigation?.earliestMatchTime) ? navigation.earliestMatchTime : null,
+          transcript_seek_time: Number.isFinite(navigation?.earliestMatchTime)
+            ? transcriptPlaybackStart(navigation.earliestMatchTime)
+            : null,
+          highlight_terms: match.interpretation.displayTerms
         }];
       });
-
+    const policyCollectionResults = toArray(payload?.records)
+      .filter(record => record.subtype === "collection" && (!collectionSlug || record.book_slug === collectionSlug))
+      .flatMap(record => {
+        const interpretation = parsed.queryInterpretations.find(candidate =>
+          candidate.terms.every(term => toArray(payload?.query_tags).some(tag => {
+            const exactValues = registeredTagValues(tag).map(normalizeText);
+            const targets = toArray(tag.search_policy?.audiobook_collection_expansion_tag_ids).map(String);
+            return exactValues.includes(term) && targets.some(id => toArray(record.tag_ids).includes(id));
+          }))
+        );
+        if (!interpretation) return [];
+        return [{
+          record,
+          score: interpretation.kind === "split" ? 7600 : 7800,
+          matched_fields: ["knowledge_node_expansion"],
+          matched_field_labels: ["知识点关联"],
+          matched_terms: interpretation.terms,
+          matched_tag_ids: [],
+          matched_location: "知识点关联",
+          matched_type: "controlled-expansion",
+          query_interpretation: interpretation,
+          highlight_terms: interpretation.displayTerms
+        }];
+      });
     results.push(...policyCollectionResults);
     results.sort((left, right) => {
       if (sort === "latest") {
@@ -321,6 +517,7 @@
     return {
       mode: policyCollectionResults.length ? "mixed" : "episodes",
       query: rawQuery,
+      query_plan: parsed,
       sort,
       results
     };
@@ -367,11 +564,11 @@
     return escaped.replace(new RegExp(`(${patterns.join("|")})`, "giu"), '<mark class="article-search-highlight">$1</mark>');
   }
 
-  function renderTagLinks(record, tagsById) {
+  function renderTagLinks(record, tagsById, terms = []) {
     return toArray(record.tag_ids).map(id => {
       const tag = tagsById.get(id);
       if (!tag) return "";
-      return `<a class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-white g-bg-primary--hover g-color-white--hover g-rounded-50 g-py-4 g-px-12" href="/tags/${encodeURIComponent(id)}/" target="_blank" rel="noopener">${escapeHtml(tag.name)}</a>`;
+      return `<a class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-white g-bg-primary--hover g-color-white--hover g-rounded-50 g-py-4 g-px-12" href="/tags/${encodeURIComponent(id)}/" target="_blank" rel="noopener">${highlightHtml(tag.name, terms)}</a>`;
     }).join("");
   }
 
@@ -430,36 +627,25 @@
   }
 
   function renderMatchSource(result, tagsById) {
-    const fieldLabels = {
-      title: "标题",
-      description: "简介",
-      keywords: "关键词",
-      tag: "知识点",
-      transcript: "字幕"
-    };
-    const fieldOrder = ["title", "description", "keywords", "tag", "transcript"];
-    const fields = new Set(toArray(result.matched_fields));
-    const tagNames = uniqueStrings(toArray(result.matched_tag_ids).map(id => tagsById.get(id)?.name || id));
-    const parts = fieldOrder.flatMap(field => {
-      if (!fields.has(field)) return [];
-      let label = fieldLabels[field];
-      if (field === "tag" && tagNames.length) label += ` · ${tagNames.join("、")}`;
-      return [escapeHtml(label)];
-    });
-    if (!parts.length && result.matched_location) parts.push(escapeHtml(result.matched_location));
-    return parts.length
-      ? `<p class="audiobook-search-match-source">匹配来源：${parts.join("、")}</p>`
-      : "";
+    void result;
+    void tagsById;
+    return "";
   }
 
   function renderTranscriptPlayHint(result) {
     const start = Number(result.transcript_start);
-    const time = formatTranscriptTime(start);
-    if (!toArray(result.matched_fields).includes("transcript") || !time) return "";
+    const storedSeekTime = result.transcript_seek_time == null
+      ? Number.NaN
+      : Number(result.transcript_seek_time);
+    const seekTime = Number.isFinite(storedSeekTime)
+      ? storedSeekTime
+      : transcriptPlaybackStart(start);
+    if (!result.navigation_match || !Number.isFinite(start) || !Number.isFinite(seekTime) || seekTime <= 0) return "";
+    const time = formatTranscriptTime(seekTime);
     return `
       <p class="audiobook-search-play-hint">
         <span>点击播放：</span>
-        <button type="button" class="audiobook-search-time-link" data-transcript-seek="${start}" aria-label="从字幕命中时间 ${escapeHtml(time)} 前 2 秒开始播放">${escapeHtml(time)}</button>
+        <button type="button" class="audiobook-search-time-link" data-transcript-seek="${start}" aria-label="从 ${escapeHtml(time)} 开始播放">${escapeHtml(time)}</button>
       </p>
     `;
   }
@@ -498,10 +684,10 @@
             </div>
             <div class="flex-grow-1 audiobook-search-audio-main">
               <h2 class="mb-2">
-                <a href="/audiobooks/${encodeURIComponent(record.book_slug)}/" class="g-font-weight-700 g-font-size-16 audiobook-search-parent-link">${escapeHtml(record.parent_title)}</a>
+                <a href="/audiobooks/${encodeURIComponent(record.book_slug)}/" class="g-font-weight-700 g-font-size-16 audiobook-search-parent-link">${highlightHtml(record.parent_title, result.highlight_terms)}</a>
                 <a href="${escapeHtml(record.url)}" class="g-font-weight-700 g-font-size-16 audio-title-link">${highlightHtml(record.title, result.highlight_terms)}</a>
               </h2>
-              ${record.description ? `<p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2 audiobook-search-description">${highlightHtml(record.description, result.highlight_terms)}</p>` : ""}
+              ${result.description_snippet ? `<p class="g-font-size-14 g-color-gray-dark-v4 mt-3 mb-2 audiobook-search-description">${highlightHtml(result.description_snippet, result.highlight_terms)}</p>` : ""}
               ${renderTranscriptPlayHint(result)}
               ${result.transcript_snippet ? `
                 <div class="audiobook-search-transcript-hit">
@@ -509,11 +695,10 @@
                   <p>${highlightHtml(result.transcript_snippet, result.highlight_terms)}</p>
                 </div>
               ` : ""}
-              ${record.tag_ids?.length ? `<div class="audio-card-tags g-mt-10 g-mb-10">${renderTagLinks(record, tagsById)}</div>` : ""}
+              ${record.tag_ids?.length ? `<div class="audio-card-tags g-mt-10 g-mb-10">${renderTagLinks(record, tagsById, result.highlight_terms)}</div>` : ""}
               ${record.audio_url ? `<audio controls preload="none" data-subtitle="${escapeHtml(record.subtitle_url)}"><source src="${escapeHtml(record.audio_url)}" type="audio/mpeg">您的浏览器不支持音频播放。</audio>` : ""}
               <div class="audiobook-search-meta">
                 <p class="audiobook-search-date">${escapeHtml(record.date)}</p>
-                ${renderMatchSource(result, tagsById)}
               </div>
               ${record.related_article_url ? `<a class="audiobook-search-related" href="${escapeHtml(record.related_article_url)}" target="_blank" rel="noopener noreferrer">阅读相关文章 <span aria-hidden="true">→</span></a>` : ""}
             </div>
@@ -755,9 +940,9 @@
     function updateUrl(mode) {
       if (mode === "none") return;
       const url = new URL(window.location.href);
-      const query = input.value.trim();
+      const query = input.value;
       ["q", "collection", "tag", "sort", "page"].forEach(key => url.searchParams.delete(key));
-      if (query) {
+      if (query.trim()) {
         url.searchParams.set("q", query);
         if (collectionSelect.value) url.searchParams.set("collection", collectionSelect.value);
         if (tagSelect.value) url.searchParams.set("tag", tagSelect.value);
@@ -843,9 +1028,9 @@
     }
 
     async function runSearch(options = {}) {
-      const query = input.value.trim();
+      const query = input.value;
       const serial = ++requestSerial;
-      if (!query) {
+      if (!query.trim()) {
         resetEmpty();
         updateUrl(options.historyMode || "replace");
         return;
@@ -854,6 +1039,20 @@
       emptyElement.hidden = true;
       try {
         await loadIndex();
+        const preliminaryPlan = SearchQuery.parseQuery(query, buildVocabulary(payload, tagLookup(payload)));
+        if (preliminaryPlan.needsMoreSpecific) {
+          currentRawResults = [];
+          currentResults = [];
+          currentPage = 1;
+          resultsElement.innerHTML = "";
+          paginationElement.hidden = true;
+          status.textContent = "";
+          resetFacetControls();
+          emptyElement.hidden = false;
+          emptyElement.innerHTML = "<p><strong>请输入更具体的关键词。</strong></p>";
+          updateUrl(options.historyMode || "replace");
+          return;
+        }
         const state = {
           collection: options.requestedCollection == null
             ? collectionSelect.value
@@ -988,13 +1187,16 @@
 
   return {
     FIELD_WEIGHTS,
+    AUDIO_NAVIGATION_WINDOW_SECONDS,
     INPUT_DEBOUNCE_MS,
     PAGE_SIZE,
+    SEARCH_PROXIMITY_WINDOW,
     TRANSCRIPT_SEEK_LEAD_SECONDS,
     buildCollectionFacets,
     buildTagFacets,
     exactCollection,
     exactEpisode,
+    bestNavigableTranscriptWindow,
     findTranscriptHit,
     filterFacetedResults,
     highlightHtml,

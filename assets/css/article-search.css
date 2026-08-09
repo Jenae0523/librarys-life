@@ -126,6 +126,14 @@
   line-height: 1.85;
 }
 
+.article-search-match-source {
+  margin: -5px 0 14px;
+  color: #8a94a6;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
 .article-search-highlight {
   padding: 0 2px;
   border-radius: 2px;

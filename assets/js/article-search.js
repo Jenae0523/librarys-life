@@ -1,5 +1,8 @@
 (function articleSearchModule(root, factory) {
-  const api = factory();
+  const queryTools = typeof module === "object" && module.exports
+    ? require("./search-query")
+    : root.SearchQuery;
+  const api = factory(queryTools);
 
   if (typeof module === "object" && module.exports) {
     module.exports = api;
@@ -14,7 +17,7 @@
   } else {
     start();
   }
-})(typeof globalThis !== "undefined" ? globalThis : this, function createArticleSearchApi() {
+})(typeof globalThis !== "undefined" ? globalThis : this, function createArticleSearchApi(SearchQuery) {
   "use strict";
 
   const FIELD_WEIGHTS = {
@@ -29,6 +32,7 @@
   };
 
   const payloadCache = new WeakMap();
+  const SEARCH_PROXIMITY_WINDOW = SearchQuery.SEARCH_PROXIMITY_WINDOW;
 
   function toArray(value) {
     return Array.isArray(value) ? value : value == null ? [] : [value];
@@ -39,20 +43,11 @@
   }
 
   function normalizeText(value) {
-    return String(value || "")
-      .normalize("NFKC")
-      .toLowerCase()
-      .replace(/[\s\u00b7·・•,，、。.!！?？;；:'’"“”《》〈〉【】[\]()（）{}—–_\-/\\|｜]+/g, "");
+    return SearchQuery.normalizeTerm(value);
   }
 
   function splitQuery(query) {
-    return uniqueStrings(
-      String(query || "")
-        .trim()
-        .split(/[\s,，、;；|｜]+/)
-        .map(value => value.trim())
-        .filter(Boolean)
-    );
+    return SearchQuery.parseQuery(query).effectiveTerms;
   }
 
   function countOccurrences(text, term) {
@@ -140,9 +135,34 @@
     const titleLines = [article.title_line1, article.title_line2];
     const tags = toArray(article.tags);
     const keywords = toArray(article.keywords);
+    const contentBlocks = toArray(article.content_blocks).length
+      ? toArray(article.content_blocks).map((text, index) => {
+        const section = toArray(article.sections).find(candidate =>
+          index >= Number(candidate.block_start) && index < Number(candidate.block_end)
+        );
+        return { text, heading: section?.heading || "", anchor: section?.anchor || "" };
+      })
+      : toArray(article.sections).length
+        ? toArray(article.sections).map(section => ({
+          text: section.text || "",
+          heading: section.heading || "",
+          anchor: section.anchor || ""
+        }))
+        : [{ text: article.content || "", heading: "", anchor: "" }];
+    const structuredFields = [
+      { name: "title", label: "标题", values: [article.title] },
+      { name: "titleLines", label: "标题", values: titleLines },
+      { name: "headings", label: "章节", values: headings.map(heading => heading.text) },
+      { name: "tags", label: "知识点", values: tags },
+      { name: "keywords", label: "关键词", values: keywords },
+      { name: "author", label: "作者", values: [article.author] },
+      { name: "category", label: "栏目", values: categoryParts }
+    ];
 
     return {
       article,
+      structuredFields,
+      contentBlocks,
       normalized: {
         title: normalizeText(article.title),
         titleLines: normalizeText(titleLines.join(" ")),
@@ -151,7 +171,7 @@
         keywords: normalizeText(keywords.join(" ")),
         description: normalizeText(article.description),
         category: normalizeText(categoryParts.join(" ")),
-        content: normalizeText(article.content)
+        content: normalizeText(article.content || contentBlocks.map(block => block.text).join(" "))
       },
       values: {
         title: [article.title],
@@ -161,7 +181,7 @@
         keywords,
         description: [article.description],
         category: categoryParts,
-        content: [article.content]
+        content: [article.content || contentBlocks.map(block => block.text).join(" ")]
       },
       tagIds: new Set(toArray(article.tag_ids).map(String))
     };
@@ -195,8 +215,22 @@
       toArray(tag.phrases).forEach(value => add(value, "phrase"));
     });
 
+    const articles = toArray(source.articles).map(prepareArticle);
+    const vocabulary = articles.flatMap(preparedArticle =>
+      preparedArticle.structuredFields.flatMap(field =>
+        toArray(field.values).flatMap(value => String(value || "").trim()
+          ? [{ value, field: field.name, label: field.label, recordId: preparedArticle.article.id }]
+          : []
+        )
+      )
+    );
+    queryTags.forEach(tag => {
+      if (tag?.name) vocabulary.push({ value: tag.name, field: "tags", label: "知识点", recordId: String(tag.id) });
+    });
+
     const prepared = {
-      articles: toArray(source.articles).map(prepareArticle),
+      articles,
+      vocabulary,
       queryTags,
       registryTerms,
       registryByName,
@@ -622,9 +656,9 @@
     const url = urlValue instanceof URL
       ? new URL(urlValue.href)
       : new URL(String(urlValue || ""), "https://example.invalid");
-    const cleanQuery = String(state.query || "").trim();
+    const cleanQuery = String(state.query || "");
 
-    if (!cleanQuery) {
+    if (!cleanQuery.trim()) {
       ["q", "category", "tag", "sort", "page"].forEach(parameter =>
         url.searchParams.delete(parameter)
       );
@@ -754,80 +788,271 @@
     };
   }
 
+  function bestNaturalBlock(blocks, terms) {
+    let best = null;
+    toArray(blocks).forEach(block => {
+      const window = SearchQuery.findShortestWindow(block.text, terms, SEARCH_PROXIMITY_WINDOW);
+      if (!window || (best && best.window.length <= window.length)) return;
+      best = { block, window };
+    });
+    return best;
+  }
+
+  function bestNaturalSectionWindow(preparedArticle, terms) {
+    const article = preparedArticle.article;
+    const blocks = toArray(article.content_blocks);
+    let best = null;
+    toArray(article.sections).forEach(section => {
+      const start = Math.max(0, Number(section.block_start) || 0);
+      const end = Math.max(start, Math.min(blocks.length, Number(section.block_end) || start));
+      const bodyText = blocks.slice(start, end).join(" ").replace(/\s+/g, " ").trim();
+      const text = [section.heading, bodyText].filter(Boolean).join(" ");
+      const window = SearchQuery.findShortestWindow(text, terms, SEARCH_PROXIMITY_WINDOW);
+      if (!window || (best && best.window.length <= window.length)) return;
+      best = {
+        block: { text, heading: section.heading || "", anchor: section.anchor || "" },
+        window
+      };
+    });
+    return best;
+  }
+
+  function bestArticleSection(preparedArticle, parsed, interpretation) {
+    const article = preparedArticle.article;
+    const blocks = toArray(article.content_blocks);
+    const naturalTerms = interpretation.naturalTerms || interpretation.terms;
+    const normalizedTerms = interpretation.terms.map(normalizeText).filter(Boolean);
+    const quotedTerms = toArray(parsed.quotedPhrases).map(normalizeText).filter(Boolean);
+    const normalizedWhole = normalizeText(parsed.normalizedQuery.replace(/[“”"]/gu, ""));
+    let best = null;
+
+    toArray(article.sections).forEach((section, sectionIndex) => {
+      const start = Math.max(0, Number(section.block_start) || 0);
+      const end = Math.max(start, Math.min(blocks.length, Number(section.block_end) || start));
+      const sectionText = blocks.slice(start, end).join(" ").replace(/\s+/g, " ").trim();
+      const heading = String(section.heading || "").trim();
+      const normalizedHeading = normalizeText(heading);
+      const headingHits = normalizedTerms.filter(term => normalizedHeading.includes(term));
+      const allTermsInHeading = normalizedTerms.length > 0 && headingHits.length === normalizedTerms.length;
+      const quotedPhraseInHeading = quotedTerms.some(term => normalizedHeading.includes(term));
+      const fullQueryInHeading = interpretation.kind === "full"
+        && normalizedWhole
+        && normalizedHeading.includes(normalizedWhole);
+      const contentWindow = SearchQuery.findShortestWindow(sectionText, naturalTerms, SEARCH_PROXIMITY_WINDOW);
+      const combinedWindow = SearchQuery.findShortestWindow(
+        [heading, sectionText].filter(Boolean).join(" "),
+        naturalTerms,
+        SEARCH_PROXIMITY_WINDOW
+      );
+
+      let score = 0;
+      let matchKind = "";
+      if (quotedPhraseInHeading) {
+        score = 60000;
+        matchKind = "quoted-heading";
+      } else if (fullQueryInHeading && normalizedWhole.length >= 4) {
+        score = 55000;
+        matchKind = "compound-heading";
+      } else if (allTermsInHeading) {
+        score = 50000;
+        matchKind = "all-terms-heading";
+      } else if (headingHits.length && combinedWindow) {
+        score = 40000 + headingHits.length * 500;
+        matchKind = "heading-and-content";
+      } else if (contentWindow) {
+        score = 30000;
+        matchKind = "content-window";
+      } else {
+        return;
+      }
+
+      const navigationWindow = contentWindow || combinedWindow;
+      const windowLength = navigationWindow?.length ?? 0;
+      score += Math.max(0, SEARCH_PROXIMITY_WINDOW - windowLength);
+      const contentTerms = naturalTerms.filter(term => !normalizedHeading.includes(normalizeText(term)));
+      const snippetWindow = contentWindow || SearchQuery.findShortestWindow(
+        sectionText,
+        contentTerms,
+        SEARCH_PROXIMITY_WINDOW
+      );
+      const candidate = {
+        heading,
+        anchor: String(section.anchor || ""),
+        snippet: SearchQuery.createWindowSnippet(sectionText, snippetWindow),
+        score,
+        matchKind,
+        windowLength,
+        sectionIndex,
+        blockStart: start,
+        blockEnd: end,
+        blockSpan: end - start,
+        level: Number(section.level) || 2,
+        headingMatchedTerms: headingHits
+      };
+
+      if (
+        !best
+        || candidate.score > best.score
+        || (candidate.score === best.score && candidate.windowLength < best.windowLength)
+        || (candidate.score === best.score && candidate.windowLength === best.windowLength && candidate.blockSpan < best.blockSpan)
+        || (candidate.score === best.score && candidate.windowLength === best.windowLength && candidate.blockSpan === best.blockSpan && candidate.level > best.level)
+        || (candidate.score === best.score && candidate.windowLength === best.windowLength && candidate.blockSpan === best.blockSpan && candidate.level === best.level && candidate.sectionIndex < best.sectionIndex)
+      ) {
+        best = candidate;
+      }
+    });
+
+    return best;
+  }
+
+  function matchArticleStructured(preparedArticle, preparedPayload, terms) {
+    const fields = new Map();
+    for (const term of terms) {
+      const direct = SearchQuery.matchStructured(preparedArticle.structuredFields, [term]);
+      let registryMatched = false;
+      toArray(preparedPayload.registryTerms.get(term)).forEach(match => {
+        const directId = String(match.tag?.id || "");
+        const expansionIds = toArray(match.tag?.search_policy?.article_expansion_tag_ids).map(String);
+        if (preparedArticle.tagIds.has(directId) || expansionIds.some(id => preparedArticle.tagIds.has(id))) {
+          registryMatched = true;
+        }
+      });
+      if (!direct && !registryMatched) return null;
+      toArray(direct?.matchedFields).forEach((field, index) => {
+        fields.set(field, direct.matchedFieldLabels[index]);
+      });
+      if (registryMatched) fields.set("tags", "知识点");
+    }
+    return { matchedFields: [...fields.keys()], matchedFieldLabels: [...fields.values()] };
+  }
+
+  function interpretationMatch(preparedArticle, preparedPayload, parsed, interpretation) {
+    const terms = interpretation.terms;
+    const naturalTerms = interpretation.naturalTerms || terms;
+    const structural = matchArticleStructured(preparedArticle, preparedPayload, terms);
+    const descriptionWindow = SearchQuery.findShortestWindow(
+      preparedArticle.article.description,
+      naturalTerms,
+      SEARCH_PROXIMITY_WINDOW
+    );
+    const blockContentMatch = bestNaturalBlock(preparedArticle.contentBlocks, naturalTerms);
+    const sectionContentMatch = bestNaturalSectionWindow(preparedArticle, naturalTerms);
+    const contentMatch = [blockContentMatch, sectionContentMatch]
+      .filter(Boolean)
+      .sort((left, right) => left.window.length - right.window.length)[0] || null;
+    const title = normalizeText(preparedArticle.article.title);
+    const titleLines = normalizeText([
+      preparedArticle.article.title,
+      preparedArticle.article.title_line1,
+      preparedArticle.article.title_line2
+    ].join(" "));
+    const normalizedWhole = normalizeText(parsed.normalizedQuery.replace(/[“”"]/gu, ""));
+    const allInTitle = terms.every(term => titleLines.includes(term));
+    const exactTitle = normalizedWhole && title === normalizedWhole;
+    const isQuoted = parsed.quotedPhrases.length > 0;
+    const isSplit = interpretation.kind === "split";
+    const candidates = [];
+
+    if (structural) {
+      const matchedFieldLabels = uniqueStrings(structural.matchedFieldLabels);
+      let score = isSplit ? 8000 : 9500;
+      if (allInTitle) score = isSplit ? 9800 : 10000;
+      if (exactTitle) score = isQuoted ? 12000 : parsed.effectiveTerms.length === 1 ? 11500 : 11000;
+      candidates.push({
+        score,
+        type: isSplit ? "split-structured" : "full-structured",
+        location: matchedFieldLabels[0] || "结构化字段",
+        matchedFields: structural.matchedFields,
+        matchedFieldLabels,
+        snippet: String(preparedArticle.article.description || "").trim()
+          ? SearchQuery.createWindowSnippet(preparedArticle.article.description, null)
+          : "",
+        heading: "",
+        anchor: "",
+        windowLength: null
+      });
+    }
+    if (descriptionWindow) {
+      candidates.push({
+        score: (isSplit ? 7000 : 9000) + Math.max(0, SEARCH_PROXIMITY_WINDOW - descriptionWindow.length),
+        type: isSplit ? "split-description" : "full-description",
+        location: "简介",
+        matchedFields: ["description"],
+        matchedFieldLabels: ["简介"],
+        snippet: SearchQuery.createWindowSnippet(preparedArticle.article.description, descriptionWindow),
+        heading: "",
+        anchor: "",
+        windowLength: descriptionWindow.length
+      });
+    }
+    if (contentMatch) {
+      candidates.push({
+        score: (isSplit ? 6500 : 8500) + Math.max(0, SEARCH_PROXIMITY_WINDOW - contentMatch.window.length),
+        type: isSplit ? "split-content" : "full-content",
+        location: "正文",
+        matchedFields: ["content"],
+        matchedFieldLabels: ["正文"],
+        snippet: SearchQuery.createWindowSnippet(contentMatch.block.text, contentMatch.window),
+        heading: contentMatch.block.heading || "",
+        anchor: contentMatch.block.anchor || "",
+        windowLength: contentMatch.window.length
+      });
+    }
+    candidates.sort((left, right) => right.score - left.score || (left.windowLength ?? Infinity) - (right.windowLength ?? Infinity));
+    return candidates[0] ? { ...candidates[0], interpretation } : null;
+  }
+
   function search(payload, query, options = {}) {
     const startedAt = typeof performance !== "undefined" ? performance.now() : Date.now();
-    const rawQuery = String(query || "").trim();
-    if (!rawQuery) return { query: "", results: [], elapsed_ms: 0 };
-
     const preparedPayload = preparePayload(payload);
-    const rawTerms = splitQuery(rawQuery);
-    const normalizedTerms = rawTerms.map(normalizeText).filter(Boolean);
-    const normalizedQuery = normalizeText(rawQuery);
-    const registryLookupTerms = uniqueStrings([...normalizedTerms, normalizedQuery]);
-    const registryMatches = resolveRegistryMatches(preparedPayload, registryLookupTerms);
+    const parsed = SearchQuery.parseQuery(query, preparedPayload.vocabulary);
+    if (parsed.isEmpty || parsed.needsMoreSpecific) {
+      return { query: parsed.rawQuery, query_plan: parsed, results: [], elapsed_ms: 0 };
+    }
 
     const results = preparedPayload.articles.flatMap(preparedArticle => {
       const article = preparedArticle.article;
       if (!matchesFilters(article, options.filters)) return [];
-
-      const phrase = exactPhraseScore(preparedArticle, normalizedQuery);
-      let score = phrase.score;
-      let matchedTerms = 0;
-      let bestLocation = phrase.location;
-      let expandedTerms = [];
-
-      normalizedTerms.forEach((term, index) => {
-        const direct = scoreTerm(preparedArticle, term);
-        score += direct.score;
-
-        if (direct.matched) {
-          matchedTerms += 1;
-          if (!bestLocation) bestLocation = direct.location;
-          return;
-        }
-
-        const fuzzy = scoreFuzzyTerm(preparedArticle, rawTerms[index]);
-        if (fuzzy.score) {
-          score += fuzzy.score;
-          matchedTerms += 1;
-          if (!bestLocation) bestLocation = fuzzy.location;
-        }
-      });
-
-      const registry = scoreRegistryMatches(preparedArticle, registryMatches, preparedPayload);
-      score += registry.score;
-      expandedTerms = registry.expandedTerms;
-      if (registry.matchedLookupTerms.includes(normalizedQuery)) {
-        matchedTerms = normalizedTerms.length;
-        if (!bestLocation) bestLocation = "知识点";
-      } else if (registry.matched && matchedTerms === 0) {
-        matchedTerms = Math.min(1, normalizedTerms.length);
-        if (!bestLocation) bestLocation = "知识点";
-      }
-
-      if (!score || !matchedTerms) return [];
-
-      const coverage = matchedTerms / Math.max(1, normalizedTerms.length);
-      if (coverage === 1) {
-        score = score * 1.35 + (normalizedTerms.length > 1 ? 400 : 0);
-      } else if (coverage >= 0.5) {
-        score *= 0.78;
-      } else {
-        score *= 0.42;
-      }
-
-      const snippet = chooseSnippet(article, rawTerms, expandedTerms);
-      const matchUrl = snippet.anchor ? `${article.url}#${snippet.anchor}` : article.url;
+      const match = parsed.queryInterpretations
+        .map(interpretation => interpretationMatch(preparedArticle, preparedPayload, parsed, interpretation))
+        .filter(Boolean)
+        .sort((left, right) => right.score - left.score || (left.windowLength ?? Infinity) - (right.windowLength ?? Infinity))[0];
+      if (!match) return [];
+      const navigation = bestArticleSection(preparedArticle, parsed, match.interpretation);
+      const matchUrl = navigation?.anchor ? `${article.url}#${navigation.anchor}` : article.url;
 
       return [{
         article,
-        score: Math.round(score * 100) / 100,
-        matched_terms: matchedTerms,
-        matched_location: bestLocation || snippet.location || "正文",
-        match_heading: snippet.heading,
+        score: Math.round(match.score * 100) / 100,
+        matched_terms: match.interpretation.terms.length,
+        matched_location: match.location,
+        matched_type: match.type,
+        matched_fields: match.matchedFields,
+        matched_field_labels: match.matchedFieldLabels,
+        match_window_length: match.windowLength,
+        relevance_match: {
+          type: match.type,
+          location: match.location,
+          fields: match.matchedFields,
+          field_labels: match.matchedFieldLabels,
+          window_length: match.windowLength
+        },
+        navigation_match: navigation ? {
+          type: navigation.matchKind,
+          heading: navigation.heading,
+          anchor: navigation.anchor,
+          score: navigation.score,
+          window_length: navigation.windowLength,
+          heading_level: navigation.level,
+          block_start: navigation.blockStart,
+          block_end: navigation.blockEnd,
+          heading_matched_terms: navigation.headingMatchedTerms
+        } : null,
+        query_interpretation: match.interpretation,
+        match_heading: navigation?.heading || "",
         match_url: matchUrl,
-        snippet: snippet.snippet,
-        highlight_terms: rawTerms
+        snippet: navigation?.snippet || match.snippet,
+        highlight_terms: match.interpretation.displayTerms
       }];
     });
 
@@ -843,7 +1068,8 @@
 
     const finishedAt = typeof performance !== "undefined" ? performance.now() : Date.now();
     return {
-      query: rawQuery,
+      query: parsed.rawQuery,
+      query_plan: parsed,
       sort,
       results,
       elapsed_ms: Math.round((finishedAt - startedAt) * 10) / 10
@@ -888,10 +1114,10 @@
     return lookup;
   }
 
-  function renderTags(article, tagByName) {
+  function renderTags(article, tagByName, terms = []) {
     return toArray(article.tags).map(tagName => {
       const registryTag = tagByName.get(normalizeText(tagName));
-      const label = escapeHtml(registryTag?.name || tagName);
+      const label = highlightHtml(registryTag?.name || tagName, terms);
       return registryTag?.id
         ? `<a class="article-search-tag" href="/tags/${encodeURIComponent(registryTag.id)}/" target="_blank" rel="noopener">${label}</a>`
         : `<span class="article-search-tag">${label}</span>`;
@@ -905,13 +1131,13 @@
     return `
       <article class="article-search-card">
         ${article.cover ? `
-          <a class="article-search-cover-link" href="${escapeHtml(result.match_url)}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <a class="article-search-cover-link" href="${escapeHtml(article.url)}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
             <img class="article-search-cover" src="${escapeHtml(article.cover)}" alt="" loading="lazy">
           </a>
         ` : ""}
         <div class="article-search-card-body">
           <h2 class="article-search-result-title">
-            <a href="${escapeHtml(result.match_url)}" target="_blank" rel="noopener">${highlightHtml(article.title, terms)}</a>
+            <a href="${escapeHtml(article.url)}" target="_blank" rel="noopener">${highlightHtml(article.title, terms)}</a>
           </h2>
           ${article.date ? `<p class="article-search-meta">${escapeHtml(article.date)}</p>` : ""}
           ${result.match_heading ? `
@@ -920,8 +1146,8 @@
             </p>
           ` : ""}
           ${result.snippet ? `<p class="article-search-snippet">${highlightHtml(result.snippet, terms)}</p>` : ""}
-          ${article.tags?.length ? `<div class="article-search-tags" aria-label="相关知识点">${renderTags(article, tagByName)}</div>` : ""}
-          <a class="article-search-read" href="${escapeHtml(result.match_url)}" target="_blank" rel="noopener">阅读全文 <span aria-hidden="true">→</span></a>
+          ${article.tags?.length ? `<div class="article-search-tags" aria-label="相关知识点">${renderTags(article, tagByName, terms)}</div>` : ""}
+          <a class="article-search-read" href="${escapeHtml(article.url)}" target="_blank" rel="noopener">阅读全文 <span aria-hidden="true">→</span></a>
         </div>
       </article>
     `;
@@ -1155,10 +1381,10 @@
     };
 
     const runSearch = async (options = {}) => {
-      const query = input.value.trim();
+      const query = input.value;
       if (!options.preservePage) currentPage = 1;
 
-      if (!query) {
+      if (!query.trim()) {
         renderEmptyInput();
         updateUrl("", options.historyMode || "replace");
         return;
@@ -1171,6 +1397,20 @@
         const data = await loadIndex();
         const result = search(data, query, { sort: "relevance" });
         const tagByName = buildCanonicalTagLookup(data.query_tags);
+
+        if (result.query_plan?.needsMoreSpecific) {
+          currentRawResults = [];
+          currentResults = [];
+          currentPage = 1;
+          resultsElement.innerHTML = "";
+          paginationElement.hidden = true;
+          status.textContent = "";
+          resetFacetControls();
+          emptyElement.hidden = false;
+          emptyElement.innerHTML = "<p><strong>请输入更具体的关键词。</strong></p>";
+          updateUrl(query, options.historyMode || "replace");
+          return;
+        }
 
         currentRawResults = result.results;
         currentElapsedMs = result.elapsed_ms;
@@ -1297,12 +1537,14 @@
 
   return {
     FIELD_WEIGHTS,
+    SEARCH_PROXIMITY_WINDOW,
     articleCategoryIds,
     buildCanonicalTagLookup,
     buildCategoryFacets,
     buildCategoryRegistry,
     buildTagFacets,
     buildVisibleTagFacets,
+    bestArticleSection,
     categoryDisplayName,
     filterResultsByCategory,
     filterResultsByTag,
