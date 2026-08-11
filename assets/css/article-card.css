@@ -1,0 +1,26 @@
+.article-card .article-title {
+  color: #333 !important;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.article-card .article-title span {
+  display: block;
+}
+
+.article-card .article-title .title-line1 {
+  font-family: "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+  font-weight: 540;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.article-card .article-title .title-line2 {
+  color: #777;
+  margin-top: 2px;
+  font-weight: 450;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}

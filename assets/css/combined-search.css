@@ -1,5 +1,6 @@
 .combined-search-panel {
   max-width: 940px;
+  padding-bottom: 30px;
 }
 
 .combined-search-types {
@@ -140,6 +141,10 @@
 }
 
 @media (max-width: 767px) {
+  .combined-search-panel {
+    padding-bottom: 28px;
+  }
+
   .combined-search-type-options {
     gap: 8px 14px;
   }
