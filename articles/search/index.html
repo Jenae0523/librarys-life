@@ -139,8 +139,7 @@
     class="article-search-form"
     action="/articles/search/"
     method="get"
-    role="search"
-    data-search-form
+    role="search"data-search-form
   >
     <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
     <input
@@ -149,26 +148,21 @@
       type="search"
       name="q"
       placeholder="例如：死后世界、汤姆肯永、灵魂 转世"
-      autocomplete="off"
-      data-search-input
+      autocomplete="off"data-search-input
     >
     <button class="article-search-button" type="submit">搜索</button>
     <button
       class="article-search-button article-search-button--secondary"
-      type="button"
-      data-search-clear
+      type="button"data-search-clear
     >
       清空
     </button>
   </form>
 
   <div class="article-search-toolbar">
-    
       <p class="article-search-status" data-search-status role="status" aria-live="polite"></p>
-    
 
     <div class="article-search-controls">
-      
         <label class="article-search-control-label">
           <span class="sr-only">栏目</span>
           <select
@@ -194,15 +188,13 @@
             <option value="">全部知识点（0）</option>
           </select>
         </label>
-      
 
       <label class="article-search-control-label article-search-sort-label">
         <span class="sr-only">排序</span>
         <select
           class="article-search-select article-search-sort"
           name="sort"
-          form="articleSearchSharedForm"
-          data-search-sort
+          form="articleSearchSharedForm"data-search-sort
         >
           <option value="relevance">按相关度排序</option>
           <option value="latest">按最新发布排序</option>

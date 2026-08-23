@@ -1,7 +1,7 @@
 {
   "rule_version": "mixed-related-articles-v1",
-  "article_count": 138,
-  "recommendation_count": 414,
+  "article_count": 139,
+  "recommendation_count": 417,
   "articles": [
     {
       "title": "遇见大角星人：在通灵信息、直觉体验与逻辑判断之间保持清醒",
@@ -615,29 +615,34 @@
           ]
         },
         {
-          "title": "Nakura冥想是什么？顶轮、净光与改变意识状态的练习｜《大角星人文摘》第15集",
-          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html",
+          "title": "通灵信息如何辨别？高维沟通的心理风险与安全原则｜《大角星人文摘》第18集",
+          "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology18-channeling-discernment-psychological-safety.html",
           "source": "auto",
-          "score": 70,
-          "rank_score": 93.5,
-          "structural_score": 31,
-          "semantic_score": 39,
-          "reason": "都涉及「脉轮」主题",
+          "score": 60,
+          "rank_score": 93,
+          "structural_score": 18,
+          "semantic_score": 42,
+          "reason": "共同关注「通灵信息辨别」",
           "matched_by": [
             {
-              "type": "tag",
-              "score": 25,
-              "label": "脉轮"
+              "type": "keyword",
+              "score": 16,
+              "label": "通灵信息辨别"
             },
             {
-              "type": "category",
-              "score": 16,
-              "label": "意识炼金术"
+              "type": "tag",
+              "score": 12,
+              "label": "意识扩展"
             },
             {
               "type": "identity",
               "score": 10,
               "label": "大角星人"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "外星人档案"
             },
             {
               "type": "related_tag",
@@ -647,12 +652,7 @@
             {
               "type": "text",
               "score": 6,
-              "label": "冥想"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
+              "label": "通灵信息"
             }
           ]
         },
@@ -660,15 +660,15 @@
           "title": "灵魂的探照灯：唤醒你的生命之花十二道光线创造之轮，成为有意识的共同创造者",
           "url": "/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html",
           "source": "auto",
-          "score": 47,
-          "rank_score": 86.5,
+          "score": 46,
+          "rank_score": 84.5,
           "structural_score": 5,
-          "semantic_score": 42,
+          "semantic_score": 41,
           "reason": "都涉及「脉轮」主题",
           "matched_by": [
             {
               "type": "tag",
-              "score": 25,
+              "score": 24,
               "label": "脉轮"
             },
             {
@@ -1814,15 +1814,15 @@
           "title": "灵魂的探照灯：唤醒你的生命之花十二道光线创造之轮，成为有意识的共同创造者",
           "url": "/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html",
           "source": "auto",
-          "score": 44,
-          "rank_score": 80.5,
+          "score": 43,
+          "rank_score": 78.5,
           "structural_score": 5,
-          "semantic_score": 39,
+          "semantic_score": 38,
           "reason": "都涉及「脉轮」主题",
           "matched_by": [
             {
               "type": "tag",
-              "score": 25,
+              "score": 24,
               "label": "脉轮"
             },
             {
@@ -10031,6 +10031,38 @@
           ]
         },
         {
+          "title": "哈达瑜伽智慧：清洁气脉如何帮助身体、呼吸与心恢复内在平衡",
+          "url": "/all-articles/courses/human-body-healing/20260823-clean-nadi-shodhana.html",
+          "source": "auto",
+          "score": 34,
+          "rank_score": 68,
+          "structural_score": 0,
+          "semantic_score": 34,
+          "reason": "共同关注「中脉」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "脉轮"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "中脉"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "冥想"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "脉轮"
+            }
+          ]
+        },
+        {
           "title": "大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？",
           "url": "/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html",
           "source": "auto",
@@ -10056,31 +10088,120 @@
               "label": "意识扩展"
             }
           ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "哈达瑜伽智慧：清洁气脉如何帮助身体、呼吸与心恢复内在平衡",
+      "url": "/all-articles/courses/human-body-healing/20260823-clean-nadi-shodhana.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "心理—精神排毒：催眠、冥想与声音如何触发情绪释放和感知改变",
+          "url": "/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html",
+          "source": "auto",
+          "score": 59,
+          "rank_score": 86.5,
+          "structural_score": 21,
+          "semantic_score": 38,
+          "reason": "都涉及「能量场」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 24,
+              "label": "能量场"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "冥想"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
         },
         {
-          "title": "自我整合指南：脉轮练习与多维生命的频率提升",
-          "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
+          "title": "揭秘道教炼金术② 如何修炼“气体身”？从采气，到炼气化神 │ 现代科学已证明“经络”存在？│ 抹大拉手稿23集",
+          "url": "/all-articles/books/mary-magdalene/23-taoist-alchemy-how-to-cultivate-energy-body-breathing-to-spirit.html",
           "source": "auto",
-          "score": 27,
-          "rank_score": 54,
-          "structural_score": 0,
-          "semantic_score": 27,
+          "score": 40,
+          "rank_score": 72.5,
+          "structural_score": 5,
+          "semantic_score": 35,
           "reason": "都涉及「脉轮」主题",
           "matched_by": [
             {
               "type": "tag",
-              "score": 13,
+              "score": 24,
               "label": "脉轮"
             },
             {
               "type": "related_tag",
               "score": 8,
-              "label": "冥想"
+              "label": "意识扩展"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
             },
             {
               "type": "text",
-              "score": 6,
-              "label": "脉轮"
+              "score": 3,
+              "label": "中脉"
+            }
+          ]
+        },
+        {
+          "title": "灵界疗愈殿堂揭秘：光能量疗法、以太体修复与灵魂疗愈系统解析",
+          "url": "/all-articles/books/between-death-life/10-spiritual-healing-hall-light-energy-aura-etheric-body-repair.html",
+          "source": "auto",
+          "score": 50,
+          "rank_score": 68.5,
+          "structural_score": 21,
+          "semantic_score": 29,
+          "reason": "都涉及「能量场」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "能量场"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "冥想"
             }
           ]
         }
@@ -10221,6 +10342,43 @@
       "manual_issues": [],
       "recommendations": [
         {
+          "title": "哈达瑜伽智慧：清洁气脉如何帮助身体、呼吸与心恢复内在平衡",
+          "url": "/all-articles/courses/human-body-healing/20260823-clean-nadi-shodhana.html",
+          "source": "auto",
+          "score": 59,
+          "rank_score": 86.5,
+          "structural_score": 21,
+          "semantic_score": 38,
+          "reason": "都涉及「能量场」主题",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 24,
+              "label": "能量场"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "冥想"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
           "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
           "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
           "source": "auto",
@@ -10301,33 +10459,6 @@
               "type": "parent",
               "score": 5,
               "label": "课程 / 创造奇迹生命"
-            }
-          ]
-        },
-        {
-          "title": "前世催眠回溯揭秘：潜意识、集体意识与宇宙意识探索指南",
-          "url": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-collective-consciousness-astral-projection.html",
-          "source": "auto",
-          "score": 32,
-          "rank_score": 64,
-          "structural_score": 0,
-          "semantic_score": 32,
-          "reason": "都涉及「冥想」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "冥想"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "潜意识"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "冥想"
             }
           ]
         }
@@ -10537,34 +10668,34 @@
           ]
         },
         {
-          "title": "灵魂的探照灯：唤醒你的生命之花十二道光线创造之轮，成为有意识的共同创造者",
-          "url": "/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html",
+          "title": "走出恐惧的迷雾：人类集体意识的海洋 │ 走出内在恐惧的4个阶段",
+          "url": "/all-articles/healing-empowerment/dark-night-of-the-soul/starseed-fear-energy-how-to-break-free-and-awaken.html",
           "source": "auto",
-          "score": 41,
-          "rank_score": 74.5,
-          "structural_score": 5,
-          "semantic_score": 36,
-          "reason": "都涉及「脉轮」主题",
+          "score": 43,
+          "rank_score": 74,
+          "structural_score": 8,
+          "semantic_score": 35,
+          "reason": "都涉及「集体意识」主题",
           "matched_by": [
             {
               "type": "tag",
-              "score": 25,
-              "label": "脉轮"
+              "score": 24,
+              "label": "集体意识"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "生命的疗愈 / 自我赋权"
             },
             {
               "type": "related_tag",
               "score": 8,
-              "label": "意识扩展"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
+              "label": "自我认知"
             },
             {
               "type": "text",
               "score": 3,
-              "label": "脉轮"
+              "label": "集体意识"
             }
           ]
         }
@@ -10965,15 +11096,15 @@
           "title": "松果体冥想与外星接触：如何辨别通灵信息与维护意识主权｜《大角星人文摘》第6集",
           "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html",
           "source": "auto",
-          "score": 47,
-          "rank_score": 86.5,
+          "score": 46,
+          "rank_score": 84.5,
           "structural_score": 5,
-          "semantic_score": 42,
+          "semantic_score": 41,
           "reason": "都涉及「脉轮」主题",
           "matched_by": [
             {
               "type": "tag",
-              "score": 25,
+              "score": 24,
               "label": "脉轮"
             },
             {
@@ -10997,15 +11128,15 @@
           "title": "Nakura冥想是什么？顶轮、净光与改变意识状态的练习｜《大角星人文摘》第15集",
           "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html",
           "source": "auto",
-          "score": 44,
-          "rank_score": 80.5,
+          "score": 43,
+          "rank_score": 78.5,
           "structural_score": 5,
-          "semantic_score": 39,
+          "semantic_score": 38,
           "reason": "都涉及「脉轮」主题",
           "matched_by": [
             {
               "type": "tag",
-              "score": 25,
+              "score": 24,
               "label": "脉轮"
             },
             {
@@ -11029,15 +11160,15 @@
           "title": "自我整合指南：脉轮练习与多维生命的频率提升",
           "url": "/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html",
           "source": "auto",
-          "score": 41,
-          "rank_score": 74.5,
+          "score": 40,
+          "rank_score": 72.5,
           "structural_score": 5,
-          "semantic_score": 36,
+          "semantic_score": 35,
           "reason": "都涉及「脉轮」主题",
           "matched_by": [
             {
               "type": "tag",
-              "score": 25,
+              "score": 24,
               "label": "脉轮"
             },
             {
@@ -12661,7 +12792,7 @@
             {
               "type": "tag",
               "score": 24,
-              "label": "身体疗愈"
+              "label": "潜意识"
             },
             {
               "type": "category",
@@ -12703,12 +12834,12 @@
           "rank_score": 89,
           "structural_score": 26,
           "semantic_score": 38,
-          "reason": "都涉及「身体疗愈」主题",
+          "reason": "都涉及「潜意识」主题",
           "matched_by": [
             {
               "type": "tag",
               "score": 24,
-              "label": "身体疗愈"
+              "label": "潜意识"
             },
             {
               "type": "category",
@@ -12928,7 +13059,7 @@
             {
               "type": "tag",
               "score": 24,
-              "label": "身体疗愈"
+              "label": "潜意识"
             },
             {
               "type": "category",
@@ -13631,7 +13762,7 @@
             {
               "type": "tag",
               "score": 24,
-              "label": "身体疗愈"
+              "label": "潜意识"
             },
             {
               "type": "text",
