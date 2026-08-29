@@ -1,7 +1,7 @@
 {
   "rule_version": "mixed-related-articles-v1",
-  "article_count": 139,
-  "recommendation_count": 417,
+  "article_count": 140,
+  "recommendation_count": 420,
   "articles": [
     {
       "title": "遇见大角星人：在通灵信息、直觉体验与逻辑判断之间保持清醒",
@@ -9201,14 +9201,14 @@
           ]
         },
         {
-          "title": "这条道路，有心吗？一条路使你坚强，另一条路使你软弱",
-          "url": "/all-articles/insight-awakening/teachings-of-don-juan/1-the-path-that-makes-you-strong-or-weak.html",
+          "title": "克里希那穆提1922年的身体过程与意识体验：为什么被解释为昆达里尼觉醒？",
+          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/20260828-krishnamurti-process-kundalini-awakening-1922.html",
           "source": "auto",
           "score": 31,
           "rank_score": 62,
           "structural_score": 0,
           "semantic_score": 31,
-          "reason": "共同关注「灵性成长」",
+          "reason": "共同关注「意识扩展」",
           "matched_by": [
             {
               "type": "tag",
@@ -9218,17 +9218,17 @@
             {
               "type": "keyword",
               "score": 8,
-              "label": "灵性成长"
+              "label": "意识扩展"
             },
             {
               "type": "related_tag",
               "score": 8,
-              "label": "自我认知"
+              "label": "意识扩展"
             },
             {
               "type": "text",
               "score": 3,
-              "label": "灵性成长"
+              "label": "意识状态"
             }
           ]
         }
@@ -15373,8 +15373,8 @@
           ]
         },
         {
-          "title": "克里希那穆提：语言如何限制思想？超越语言局限的自由心智",
-          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/3-language-limits-how-words-shape-thoughts-and-trap-the-mind.html",
+          "title": "克里希那穆提1922年的身体过程与意识体验：为什么被解释为昆达里尼觉醒？",
+          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/20260828-krishnamurti-process-kundalini-awakening-1922.html",
           "source": "auto",
           "score": 42,
           "rank_score": 45,
@@ -15395,7 +15395,7 @@
             {
               "type": "related_tag",
               "score": 8,
-              "label": "语言与思维"
+              "label": "意识扩展"
             },
             {
               "type": "identity",
@@ -15406,6 +15406,107 @@
               "type": "parent",
               "score": 5,
               "label": "洞察力 / 智慧的觉醒"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "克里希那穆提1922年的身体过程与意识体验：为什么被解释为昆达里尼觉醒？",
+      "url": "/all-articles/insight-awakening/jiddu-krishnamurti/20260828-krishnamurti-process-kundalini-awakening-1922.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html",
+          "source": "auto",
+          "score": 34,
+          "rank_score": 68,
+          "structural_score": 0,
+          "semantic_score": 34,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "意识扩展"
+            }
+          ]
+        },
+        {
+          "title": "当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验",
+          "url": "/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html",
+          "source": "auto",
+          "score": 31,
+          "rank_score": 62,
+          "structural_score": 0,
+          "semantic_score": 31,
+          "reason": "共同关注「意识扩展」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "意识扩展"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "自我认知"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "意识状态"
+            }
+          ]
+        },
+        {
+          "title": "解密灵与魂：灵的本质、灵魂重聚与扬升光柱实用指南",
+          "url": "/all-articles/courses/messages-of-light-archangel-mike/spirit-vs-soul-differences.html",
+          "source": "auto",
+          "score": 36,
+          "rank_score": 60,
+          "structural_score": 8,
+          "semantic_score": 28,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "category",
+              "score": 8,
+              "label": "哲学视角 / 探索宇宙与意识"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "意识扩展"
             }
           ]
         }
@@ -15467,6 +15568,48 @@
           ]
         },
         {
+          "title": "克里希那穆提1922年的身体过程与意识体验：为什么被解释为昆达里尼觉醒？",
+          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/20260828-krishnamurti-process-kundalini-awakening-1922.html",
+          "source": "auto",
+          "score": 48,
+          "rank_score": 57,
+          "structural_score": 26,
+          "semantic_score": 22,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "克里希那穆提"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "意识扩展"
+            },
+            {
+              "type": "tag",
+              "score": 6,
+              "label": "自我认知"
+            },
+            {
+              "type": "identity",
+              "score": 5,
+              "label": "克里希那穆提"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "洞察力 / 智慧的觉醒"
+            }
+          ]
+        },
+        {
           "title": "一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化",
           "url": "/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html",
           "source": "auto",
@@ -15490,33 +15633,6 @@
               "type": "related_tag",
               "score": 8,
               "label": "心理学"
-            }
-          ]
-        },
-        {
-          "title": "走出恐惧的迷雾：人类集体意识的海洋 │ 走出内在恐惧的4个阶段",
-          "url": "/all-articles/healing-empowerment/dark-night-of-the-soul/starseed-fear-energy-how-to-break-free-and-awaken.html",
-          "source": "auto",
-          "score": 28,
-          "rank_score": 56,
-          "structural_score": 0,
-          "semantic_score": 28,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "心理学"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "自我认知"
             }
           ]
         }
@@ -16725,8 +16841,8 @@
           ]
         },
         {
-          "title": "当灵性成长变成逃避：一场把注意力带回身体的对话 │ DATRE谈观察者、梦境与物质经验",
-          "url": "/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html",
+          "title": "克里希那穆提1922年的身体过程与意识体验：为什么被解释为昆达里尼觉醒？",
+          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/20260828-krishnamurti-process-kundalini-awakening-1922.html",
           "source": "auto",
           "score": 20,
           "rank_score": 40,
