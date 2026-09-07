@@ -97,16 +97,16 @@
 <ul class="navbar-nav g-pos-rel g-font-size-15 g-font-weight-500 ml-auto text-capitalize">
 
 <li class="nav-item g-mr-50">
-  <a href="/new/" class="nav-link g-py-7 g-px-0">近期更新</a>
-</li>
-<li class="nav-item g-mr-50">
   <a href="/articles-list/0/" class="nav-link g-py-7 g-px-0">所有文章</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="/free-ebooks/" class="nav-link g-py-7 g-px-0">免费电子书</a>
+  <a href="/micro-notes/" class="nav-link g-py-7 g-px-0">微笔记</a>
 </li>
 <li class="nav-item g-mr-50">
   <a href="/all-audiobooks/0/" class="nav-link g-py-7 g-px-0">有声书</a>
+</li>
+<li class="nav-item g-mr-50">
+  <a href="/free-ebooks/" class="nav-link g-py-7 g-px-0">免费电子书</a>
 </li>
 
 </ul>
@@ -119,9 +119,11 @@
 </header>
 <!-- End Header -->
 
+
   <main>
     
 <link rel="stylesheet" href="/assets/css/combined-search.css">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css">
 <script src="/assets/js/combined-search.js" defer></script>
 
 <!-- Banner -->
@@ -217,6 +219,7 @@
 
 /* 区块间距 */
 .ebook-section { margin-bottom:100px; }
+.ebook-section--before-micro-notes { margin-bottom:50px; }
 
 /* 知识星图索引精选入口 */
 .knowledge-index-section {
@@ -334,11 +337,11 @@ if(randomBanner.type==="video"){
 <div style="height:30px;"></div>
 
   <!-- 最新文章 -->
-  <section class="ebook-section">
+  <section class="ebook-section ebook-section--before-micro-notes">
     <header>
       <section
   class="article-search-panel article-search-panel--entry combined-search-panel"
-  aria-label="文章和音频搜索"
+  aria-label="书面内容和音频搜索"
   data-combined-search-entry
 >
   <form
@@ -363,13 +366,13 @@ if(randomBanner.type==="video"){
     </fieldset>
 
     <input type="hidden" name="types" value="articles,audio" data-combined-search-types-value>
-    <label class="sr-only" for="homeCombinedSearchInput">搜索文章、有声书、播客与字幕</label>
+    <label class="sr-only" for="homeCombinedSearchInput">搜索文章、微笔记、有声书、播客与字幕</label>
     <input
       id="homeCombinedSearchInput"
       class="article-search-input"
       type="search"
       name="q"
-      placeholder="搜索文章、有声书、播客与字幕"
+      placeholder="搜索文章、微笔记、有声书、播客与字幕"
       autocomplete="off"
       data-combined-search-input
     >
@@ -416,17 +419,6 @@ if(randomBanner.type==="video"){
       </div>
 
       <div class="col-article">
-        <a href="/micro-notes/2026/0808-accurate-response-in-communication.html" class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-          <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">2026年8月8日</p>
-          <img src="https://img.librarys.life/img/articles-covers/micro-notes/2026/0808-accurate-response-in-communication.png" class="article-cover">
-          <h3 class="article-title g-color-gray-dark-v2">
-            <span class="title-line1">准确回应：回应对方真正关心的问题</span>
-            <span class="title-line2">为什么你明明解释清楚了，对方还是生气？</span>
-          </h3>
-        </a>
-      </div>
-
-      <div class="col-article">
         <a href="/all-articles/courses/human-body-healing/20260807-anodea-judith-energy-body-core-chakras.html" class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
           <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">2026年8月7日</p>
           <img src="https://img.librarys.life/img/articles-covers/courses/human-body-healing/20260807-anodea-judith-energy-body-core-chakras.jpg" class="article-cover">
@@ -459,8 +451,170 @@ if(randomBanner.type==="video"){
         </a>
       </div>
 
+      <div class="col-article">
+        <a href="/all-articles/muyu-notes/states-of-matter-and-life-flexibility.html" class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
+          <p class="g-color-gray-light-v1 g-font-size-13 g-mb-15">2026年7月29日</p>
+          <img src="https://img.librarys.life/img/articles-covers/muyu-notes/states-of-matter-and-life-flexibility.jpg" class="article-cover">
+          <h3 class="article-title g-color-gray-dark-v2">
+            <span class="title-line1">暮雨札记：能量越高，生命状态越好吗？</span>
+            <span class="title-line2">从物质状态，看懂生命、关系与群体的弹性</span>
+          </h3>
+        </a>
+      </div>
+
     </div>
   </section>
+
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+  <!-- 最新微笔记 -->
+  <section class="ebook-section">
+      <header>
+        <div class="u-heading-v2-3--bottom g-brd-primary">
+          <h1 class="u-heading-v2__title">最新微笔记</h1>
+        </div>
+        <p>
+          记录阅读中的触动、线索与片刻思考，让零散的发现慢慢连接成新的理解。
+          <a href="/micro-notes/" class="see-more g-font-size-15">查看更多...</a>
+        </p>
+      </header>
+      
+        <div class="micro-note-card-list">
+          
+            <a class="micro-note-card" href="/micro-notes/2026/0808-accurate-response-in-communication.html">
+  
+    <span class="micro-note-card__cover-wrap" aria-hidden="true">
+      <img
+        class="micro-note-card__cover"
+        src="https://img.librarys.life/img/articles-covers/micro-notes/2026/0808-accurate-response-in-communication.png"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      >
+    </span>
+  
+  <div class="micro-note-card__content">
+    <span class="micro-note-card__meta">微笔记 · 2026年8月8日</span>
+    <h2 class="micro-note-card__title">减少关系冲突，从准确回应对方开始</h2>
+    
+      <span class="micro-note-card__description">关系沟通中，解释事实并不等于准确回应。对方的问题背后可能还有被忽视、不被重视等感受；试探性说出自己的理解，让对方确认或纠正，能减少反复解释和彼此指责。</span>
+    
+  </div>
+</a>
+
+          
+            <a class="micro-note-card" href="/micro-notes/2026/0730-body-creates-the-self.html">
+  
+    <span class="micro-note-card__cover-wrap" aria-hidden="true">
+      <img
+        class="micro-note-card__cover"
+        src="https://img.librarys.life/img/articles-covers/micro-notes/2026/0730-body-creates-the-self.jpg"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      >
+    </span>
+  
+  <div class="micro-note-card__content">
+    <span class="micro-note-card__meta">微笔记 · 2026年8月1日</span>
+    <h2 class="micro-note-card__title">为什么总感觉我不属于这里？身体限制了灵魂，还是创造了“我”？</h2>
+    
+      <span class="micro-note-card__description">朵洛莉丝·侃南记录了一个抗拒进入人类身体的催眠个案：玛莉眷恋无形、无边界的合一状态，却必须学习触摸、选择、关系与责任。结合 DATRE 对“观察者”的不同定义，提出：身体不只限制灵魂，也使个体性第一次从整体中显现。</span>
+    
+  </div>
+</a>
+
+          
+            <a class="micro-note-card" href="/all-articles/insight-awakening/teachings-of-don-juan/the-true-meaning-of-kung-fu.html">
+  
+    <span class="micro-note-card__cover-wrap" aria-hidden="true">
+      <img
+        class="micro-note-card__cover"
+        src="https://img.librarys.life/img/articles-covers/insight-awakening/teachings-of-don-juan/the-true-meaning-of-kung-fu.jpg"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      >
+    </span>
+  
+  <div class="micro-note-card__content">
+    <span class="micro-note-card__meta">微笔记 · 2026年7月30日</span>
+    <h2 class="micro-note-card__title">我们为什么要认真做好每一件小事？功夫的真义：使行动趋于完美，也是修炼内在趋于完美</h2>
+    
+      <span class="micro-note-card__description">功夫不只是武术招式，而是一个人如何在长期行动中修炼自己。Taisha Abelar 的《巫士的穿越》中，克莱拉借搬运和排列石头说明：完成得快、做得多并非重点，行动的方式会显露一个人的内在状态；内功与外功虽然训练方向不同，最终都应改变行动背后的那个人。</span>
+    
+  </div>
+</a>
+
+          
+            <a class="micro-note-card" href="/micro-notes/2026/0729-structure-action-rules.html">
+  
+    <span class="micro-note-card__cover-wrap" aria-hidden="true">
+      <img
+        class="micro-note-card__cover"
+        src="https://img.librarys.life/img/articles-covers/micro-notes/2026/0729-structure-action-rules.jpg"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      >
+    </span>
+  
+  <div class="micro-note-card__content">
+    <span class="micro-note-card__meta">微笔记 · 2026年7月30日</span>
+    <h2 class="micro-note-card__title">为什么选择越多，我们反而更难行动？结构影响行动，却不必然只是束缚</h2>
+    
+      <span class="micro-note-card__description">《物自体》借西洋棋说明，棋盘和规则虽然限制棋子的移动，却也是游戏得以成立的结构。所有限制都意味着囚禁吗？有些结构，也可能正是行动能够发生的条件。</span>
+    
+  </div>
+</a>
+
+          
+            <a class="micro-note-card" href="/all-articles/courses/creation-manifestation/focus-expands-thought-energy-possibility-sphere.html">
+  
+    <span class="micro-note-card__cover-wrap" aria-hidden="true">
+      <img
+        class="micro-note-card__cover"
+        src="https://img.librarys.life/img/articles-covers/focus-expands-thought-energy-possibility-sphere.jpg"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      >
+    </span>
+  
+  <div class="micro-note-card__content">
+    <span class="micro-note-card__meta">微笔记 · 2026年7月18日</span>
+    <h2 class="micro-note-card__title">你所专注的，会被你的能量喂养｜思想如何参与创造现实？</h2>
+    
+      <span class="micro-note-card__description">一个念头如何从瞬间的想法，变成持续影响现实的力量？朵洛莉丝·侃南的资料以“可能性的能量球”比喻思想：反复专注会不断强化某种可能，使它更容易进入行动和物质经验。练习的重点不是压抑负面念头，而是看见它、停止喂养，并用更清明、更有建设性的思想重新选择方向。</span>
+    
+  </div>
+</a>
+
+          
+        </div>
+      
+    </section>
 
 </div> <!-- page-inner 结束 -->
 

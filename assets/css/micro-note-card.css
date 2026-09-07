@@ -1,0 +1,100 @@
+.micro-note-card-list {
+  display: grid;
+  gap: 22px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.micro-note-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid #e6e9f2;
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+  letter-spacing: 0;
+  text-decoration: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.micro-note-card:hover {
+  border-color: #b7c4e3;
+  box-shadow: 0 8px 24px rgba(44, 59, 96, 0.08);
+  transform: translateY(-2px);
+  text-decoration: none !important;
+}
+
+.micro-note-card__cover-wrap {
+  flex: 0 0 136px;
+  width: 136px;
+  height: 136px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f4f6fa;
+}
+
+.micro-note-card__cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: right center;
+  transform: scale(1.28);
+  transform-origin: right center;
+}
+
+.micro-note-card__content,
+.micro-note-card__meta,
+.micro-note-card__title,
+.micro-note-card__description {
+  display: block;
+}
+
+.micro-note-card__content {
+  min-width: 0;
+}
+
+.micro-note-card__meta {
+  margin-bottom: 10px;
+  color: #777f93;
+  font-size: 13px;
+}
+
+.micro-note-card__title {
+  margin: 0 0 12px;
+  color: #33384b;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.micro-note-card__description {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #5f6678;
+  line-height: 1.85;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+@media screen and (max-width: 576px) {
+  .micro-note-card {
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .micro-note-card__cover-wrap {
+    flex-basis: 96px;
+    width: 96px;
+    height: 96px;
+  }
+
+  .micro-note-card__title {
+    font-size: 1.08rem;
+  }
+}

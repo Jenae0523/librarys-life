@@ -1127,6 +1127,8 @@
   function renderResult(result, tagByName) {
     const article = result.article;
     const terms = result.highlight_terms;
+    const contentTypeLabel = article.type === "micro-note" ? "微笔记" : "文章";
+    const readLabel = article.type === "micro-note" ? "阅读微笔记" : "阅读全文";
 
     return `
       <article class="article-search-card">
@@ -1139,7 +1141,7 @@
           <h2 class="article-search-result-title">
             <a href="${escapeHtml(article.url)}" target="_blank" rel="noopener">${highlightHtml(article.title, terms)}</a>
           </h2>
-          ${article.date ? `<p class="article-search-meta">${escapeHtml(article.date)}</p>` : ""}
+          <p class="article-search-meta">${contentTypeLabel}${article.date ? ` · ${escapeHtml(article.date)}` : ""}</p>
           ${result.match_heading ? `
             <p class="article-search-section">
               <a href="${escapeHtml(result.match_url)}" target="_blank" rel="noopener">${highlightHtml(result.match_heading, terms)}</a>
@@ -1147,7 +1149,7 @@
           ` : ""}
           ${result.snippet ? `<p class="article-search-snippet">${highlightHtml(result.snippet, terms)}</p>` : ""}
           ${article.tags?.length ? `<div class="article-search-tags" aria-label="相关知识点">${renderTags(article, tagByName, terms)}</div>` : ""}
-          <a class="article-search-read" href="${escapeHtml(article.url)}" target="_blank" rel="noopener">阅读全文 <span aria-hidden="true">→</span></a>
+          <a class="article-search-read" href="${escapeHtml(article.url)}" target="_blank" rel="noopener">${readLabel} <span aria-hidden="true">→</span></a>
         </div>
       </article>
     `;
@@ -1189,7 +1191,7 @@
         })
         .then(data => {
           payload = data;
-          status.textContent = `已载入 ${data.stats?.indexed_articles || data.articles?.length || 0} 篇文章`;
+          status.textContent = `已载入 ${data.stats?.indexed_articles || data.articles?.length || 0} 条书面内容`;
           return data;
         })
         .catch(error => {

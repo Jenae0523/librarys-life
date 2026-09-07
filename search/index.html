@@ -97,16 +97,16 @@
 <ul class="navbar-nav g-pos-rel g-font-size-15 g-font-weight-500 ml-auto text-capitalize">
 
 <li class="nav-item g-mr-50">
-  <a href="/new/" class="nav-link g-py-7 g-px-0">近期更新</a>
-</li>
-<li class="nav-item g-mr-50">
   <a href="/articles-list/0/" class="nav-link g-py-7 g-px-0">所有文章</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="/free-ebooks/" class="nav-link g-py-7 g-px-0">免费电子书</a>
+  <a href="/micro-notes/" class="nav-link g-py-7 g-px-0">微笔记</a>
 </li>
 <li class="nav-item g-mr-50">
   <a href="/all-audiobooks/0/" class="nav-link g-py-7 g-px-0">有声书</a>
+</li>
+<li class="nav-item g-mr-50">
+  <a href="/free-ebooks/" class="nav-link g-py-7 g-px-0">免费电子书</a>
 </li>
 
 </ul>
@@ -118,6 +118,7 @@
 </div>
 </header>
 <!-- End Header -->
+
 
   <main>
     
@@ -134,7 +135,7 @@
     
     <section
   class="article-search-panel article-search-panel--entry combined-search-panel"
-  aria-label="文章和音频搜索"
+  aria-label="书面内容和音频搜索"
   data-combined-search-entry
 >
   <form
@@ -159,13 +160,13 @@
     </fieldset>
 
     <input type="hidden" name="types" value="articles,audio" data-combined-search-types-value>
-    <label class="sr-only" for="combinedSearchInput">搜索文章、有声书、播客与字幕</label>
+    <label class="sr-only" for="combinedSearchInput">搜索文章、微笔记、有声书、播客与字幕</label>
     <input
       id="combinedSearchInput"
       class="article-search-input"
       type="search"
       name="q"
-      placeholder="搜索文章、有声书、播客与字幕"
+      placeholder="搜索文章、微笔记、有声书、播客与字幕"
       autocomplete="off"
       data-combined-search-input
     >
@@ -187,9 +188,9 @@
     <section class="combined-search-section" data-combined-search-section="articles" aria-labelledby="combinedArticlesHeading" hidden>
       <div class="combined-search-section-header">
         <h2 id="combinedArticlesHeading" class="combined-search-section-heading">
-          文章结果（<span data-combined-search-count="articles">0</span>）
+          书面内容结果（<span data-combined-search-count="articles">0</span>）
         </h2>
-        <div class="article-search-controls combined-search-filter-controls" aria-label="文章筛选">
+        <div class="article-search-controls combined-search-filter-controls" aria-label="书面内容筛选">
           <label class="article-search-control-label">
             <span class="sr-only">栏目</span>
             <select class="article-search-select article-search-filter" data-combined-search-category disabled>
@@ -197,13 +198,13 @@
             </select>
           </label>
           <label class="article-search-control-label">
-            <span class="sr-only">文章知识点</span>
+            <span class="sr-only">书面内容知识点</span>
             <select class="article-search-select article-search-filter" data-combined-search-tag disabled>
               <option value="">全部知识点（0）</option>
             </select>
           </label>
           <label class="article-search-control-label article-search-sort-label">
-            <span class="sr-only">文章排序</span>
+            <span class="sr-only">书面内容排序</span>
             <select class="article-search-select article-search-sort" data-combined-search-articles-sort>
               <option value="relevance">按相关度排序</option>
               <option value="latest">按最新发布排序</option>
@@ -213,7 +214,7 @@
       </div>
       <div class="article-search-results" data-combined-search-results="articles"></div>
       <p class="combined-search-section-empty" data-combined-search-empty="articles" hidden></p>
-      <nav class="site-pagination combined-search-pagination" data-combined-search-pagination="articles" aria-label="文章搜索结果分页" hidden></nav>
+      <nav class="site-pagination combined-search-pagination" data-combined-search-pagination="articles" aria-label="书面内容搜索结果分页" hidden></nav>
     </section>
 
     <section class="combined-search-section audiobook-search-page" data-combined-search-section="audio" aria-labelledby="combinedAudioHeading" hidden>

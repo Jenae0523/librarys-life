@@ -26,8 +26,8 @@
   const DEFAULT_TYPES = TYPE_ORDER.slice();
   const PAGE_SIZE = 20;
   const PLACEHOLDERS = {
-    "articles,audio": "搜索文章、有声书、播客与字幕",
-    articles: "搜索文章",
+    "articles,audio": "搜索文章、微笔记、有声书、播客与字幕",
+    articles: "搜索文章与微笔记",
     audio: "搜索有声书、播客与字幕"
   };
   let articleIndexPromise = null;
@@ -290,7 +290,7 @@
       }
       return;
     }
-    const label = type === "articles" ? "文章" : "有声书";
+    const label = type === "articles" ? "书面内容" : "有声书";
     const button = (text, page, disabled = false, current = false, ariaLabel = "") => `
       <button
         class="site-pagination__button"
@@ -475,7 +475,7 @@
           failed += 1;
           elements.empty.hidden = false;
           elements.empty.textContent = type === "articles"
-            ? "文章搜索暂时不可用，请稍后重试。"
+            ? "书面内容搜索暂时不可用，请稍后重试。"
             : "音频搜索暂时不可用，请稍后重试。";
           renderPagination(elements.pagination, type, { pageCount: 1 });
           return;
@@ -515,7 +515,7 @@
           : renderAudioResults({ ...outcome.value.result, results: pagination.results }, outcome.value.payload);
         elements.empty.hidden = count > 0;
         elements.empty.textContent = type === "articles"
-          ? "文章中没有找到相关结果。"
+          ? "文章与微笔记中没有找到相关结果。"
           : "有声书、播客与字幕中没有找到相关结果。";
         renderPagination(elements.pagination, type, pagination);
       });

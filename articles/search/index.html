@@ -2,8 +2,8 @@
 <html lang="zh">
 <head>
   <head>
-  <title>文章全文搜索・生命之书 | librarys.life</title>
-  <meta name="description" content="搜索生命之书中的全部文章，支持标题、章节、知识点、关键词与正文检索。">
+  <title>书面内容全文搜索・生命之书 | librarys.life</title>
+  <meta name="description" content="搜索生命之书中的文章与微笔记，支持标题、章节、知识点、关键词与正文检索。">
 <meta name="keywords" content="">
 
 <meta name="robots" content="all">
@@ -97,16 +97,16 @@
 <ul class="navbar-nav g-pos-rel g-font-size-15 g-font-weight-500 ml-auto text-capitalize">
 
 <li class="nav-item g-mr-50">
-  <a href="/new/" class="nav-link g-py-7 g-px-0">近期更新</a>
-</li>
-<li class="nav-item g-mr-50">
   <a href="/articles-list/0/" class="nav-link g-py-7 g-px-0">所有文章</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="/free-ebooks/" class="nav-link g-py-7 g-px-0">免费电子书</a>
+  <a href="/micro-notes/" class="nav-link g-py-7 g-px-0">微笔记</a>
 </li>
 <li class="nav-item g-mr-50">
   <a href="/all-audiobooks/0/" class="nav-link g-py-7 g-px-0">有声书</a>
+</li>
+<li class="nav-item g-mr-50">
+  <a href="/free-ebooks/" class="nav-link g-py-7 g-px-0">免费电子书</a>
 </li>
 
 </ul>
@@ -119,6 +119,7 @@
 </header>
 <!-- End Header -->
 
+
   <main>
     
 <link rel="stylesheet" href="/assets/css/article-search.css">
@@ -126,13 +127,13 @@
 <main class="article-search-page" data-article-search>
   <div class="container">
     <header class="article-search-hero">
-      <h1 class="article-search-heading">搜索所有文章</h1>
+      <h1 class="article-search-heading">搜索文章与微笔记</h1>
     </header>
 
     
     <section
   class="article-search-panel"
-  aria-label="文章搜索"
+  aria-label="文章与微笔记搜索"
 >
   <form
     id="articleSearchSharedForm"
@@ -141,7 +142,7 @@
     method="get"
     role="search"data-search-form
   >
-    <label class="sr-only" for="articleSearchSharedInput">搜索文章</label>
+    <label class="sr-only" for="articleSearchSharedInput">搜索文章与微笔记</label>
     <input
       id="articleSearchSharedInput"
       class="article-search-input"

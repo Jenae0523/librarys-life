@@ -1,7 +1,7 @@
 {
   "rule_version": "mixed-related-articles-v1",
-  "article_count": 140,
-  "recommendation_count": 420,
+  "article_count": 138,
+  "recommendation_count": 414,
   "articles": [
     {
       "title": "遇见大角星人：在通灵信息、直觉体验与逻辑判断之间保持清醒",
@@ -9634,122 +9634,6 @@
       "needs_manual_review": false
     },
     {
-      "title": "你所专注的，会被你的能量喂养｜思想如何参与创造现实？",
-      "url": "/all-articles/courses/creation-manifestation/focus-expands-thought-energy-possibility-sphere.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "改变现实的关键：放下时间的执念，重塑你的意识维度，突破三维思维限制",
-          "url": "/all-articles/books/great-human-potential/3d-reality-time-illusion-multidimensional-awareness-higher-self.html",
-          "source": "auto",
-          "score": 46,
-          "rank_score": 60.5,
-          "structural_score": 21,
-          "semantic_score": 25,
-          "reason": "都涉及「吸引力法则」主题",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "创造与显化"
-            },
-            {
-              "type": "tag",
-              "score": 14,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "显化"
-            }
-          ]
-        },
-        {
-          "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
-          "url": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
-          "source": "auto",
-          "score": 46,
-          "rank_score": 60.5,
-          "structural_score": 21,
-          "semantic_score": 25,
-          "reason": "都涉及「吸引力法则」主题",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "创造与显化"
-            },
-            {
-              "type": "tag",
-              "score": 14,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "吸引力法则"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "显化"
-            }
-          ]
-        },
-        {
-          "title": "朵洛莉丝·侃南：不适应身体的灵魂，想帮助人类却不愿接触人群",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/soul-uncomfortable-in-body.html",
-          "source": "auto",
-          "score": 32,
-          "rank_score": 49,
-          "structural_score": 10,
-          "semantic_score": 22,
-          "reason": "共同关注「三波志愿者与新地球」",
-          "matched_by": [
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《三波志愿者与新地球》"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "三波志愿者与新地球"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "tag",
-              "score": 6,
-              "label": "催眠回溯"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
       "title": "如何真正提升能量频率，吸引你渴望的现实？观念误区：改变现状=推开你不想要的",
       "url": "/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html",
       "manual_declared": 0,
@@ -10002,16 +9886,16 @@
           "title": "如何与身体重新连接？4个视角理解身体与灵魂的关系",
           "url": "/all-articles/courses/human-body-healing/reconnect-with-body-body-soul-relationship.html",
           "source": "auto",
-          "score": 53,
-          "rank_score": 106,
+          "score": 54,
+          "rank_score": 108,
           "structural_score": 0,
-          "semantic_score": 53,
+          "semantic_score": 54,
           "reason": "共同关注「安诺德·朱迪斯」",
           "matched_by": [
             {
               "type": "tag",
-              "score": 23,
-              "label": "自我整合"
+              "score": 24,
+              "label": "身体觉察"
             },
             {
               "type": "keyword",
@@ -10476,16 +10360,16 @@
           "title": "安诺德·朱迪斯：能量如何成为生命经验？从身体、核心到脉轮",
           "url": "/all-articles/courses/human-body-healing/20260807-anodea-judith-energy-body-core-chakras.html",
           "source": "auto",
-          "score": 53,
-          "rank_score": 106,
+          "score": 54,
+          "rank_score": 108,
           "structural_score": 0,
-          "semantic_score": 53,
+          "semantic_score": 54,
           "reason": "共同关注「身体觉察」",
           "matched_by": [
             {
               "type": "tag",
-              "score": 23,
-              "label": "自我整合"
+              "score": 24,
+              "label": "身体觉察"
             },
             {
               "type": "keyword",
@@ -16687,92 +16571,6 @@
               "type": "related_tag",
               "score": 8,
               "label": "心理学"
-            }
-          ]
-        }
-      ],
-      "needs_manual_review": false
-    },
-    {
-      "title": "我们为什么要认真做好每一件小事？功夫的真义：使行动趋于完美，也是修炼内在趋于完美",
-      "url": "/all-articles/insight-awakening/teachings-of-don-juan/the-true-meaning-of-kung-fu.html",
-      "manual_declared": 0,
-      "manual_valid": 0,
-      "manual_issues": [],
-      "recommendations": [
-        {
-          "title": "如何与身体重新连接？4个视角理解身体与灵魂的关系",
-          "url": "/all-articles/courses/human-body-healing/reconnect-with-body-body-soul-relationship.html",
-          "source": "auto",
-          "score": 25,
-          "rank_score": 50,
-          "structural_score": 0,
-          "semantic_score": 25,
-          "reason": "都涉及「身体觉察」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 14,
-              "label": "身体觉察"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "自我认知"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "身体觉察"
-            }
-          ]
-        },
-        {
-          "title": "安诺德·朱迪斯：能量如何成为生命经验？从身体、核心到脉轮",
-          "url": "/all-articles/courses/human-body-healing/20260807-anodea-judith-energy-body-core-chakras.html",
-          "source": "auto",
-          "score": 22,
-          "rank_score": 44,
-          "structural_score": 0,
-          "semantic_score": 22,
-          "reason": "都涉及「身体觉察」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 14,
-              "label": "身体觉察"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "自我认知"
-            }
-          ]
-        },
-        {
-          "title": "克里希那穆提：真正的静心，从理解自我与欲望开始",
-          "url": "/all-articles/insight-awakening/jiddu-krishnamurti/5-true-meditation-begins-with-understanding-self-desire.html",
-          "source": "auto",
-          "score": 25,
-          "rank_score": 42.5,
-          "structural_score": 5,
-          "semantic_score": 20,
-          "reason": "都涉及「正念」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "正念"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "冥想"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "洞察力 / 智慧的觉醒"
             }
           ]
         }
