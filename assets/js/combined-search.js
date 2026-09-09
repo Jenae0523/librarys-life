@@ -290,7 +290,7 @@
       }
       return;
     }
-    const label = type === "articles" ? "书面内容" : "有声书";
+    const label = type === "articles" ? "文章与微笔记" : "有声书";
     const button = (text, page, disabled = false, current = false, ariaLabel = "") => `
       <button
         class="site-pagination__button"
@@ -475,7 +475,7 @@
           failed += 1;
           elements.empty.hidden = false;
           elements.empty.textContent = type === "articles"
-            ? "书面内容搜索暂时不可用，请稍后重试。"
+            ? "文章与微笔记搜索暂时不可用，请稍后重试。"
             : "音频搜索暂时不可用，请稍后重试。";
           renderPagination(elements.pagination, type, { pageCount: 1 });
           return;

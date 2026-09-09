@@ -97,7 +97,7 @@
 <ul class="navbar-nav g-pos-rel g-font-size-15 g-font-weight-500 ml-auto text-capitalize">
 
 <li class="nav-item g-mr-50">
-  <a href="/articles-list/0/" class="nav-link g-py-7 g-px-0">所有文章</a>
+  <a href="/articles-list/0/" class="nav-link g-py-7 g-px-0">文章</a>
 </li>
 <li class="nav-item g-mr-50">
   <a href="/micro-notes/" class="nav-link g-py-7 g-px-0">微笔记</a>
@@ -106,7 +106,7 @@
   <a href="/all-audiobooks/0/" class="nav-link g-py-7 g-px-0">有声书</a>
 </li>
 <li class="nav-item g-mr-50">
-  <a href="/free-ebooks/" class="nav-link g-py-7 g-px-0">免费电子书</a>
+  <a href="/free-ebooks/" class="nav-link g-py-7 g-px-0">电子书</a>
 </li>
 
 </ul>
@@ -125,17 +125,18 @@
 <link rel="stylesheet" href="/assets/css/article-search.css">
 <link rel="stylesheet" href="/assets/css/audiobook-search.css">
 <link rel="stylesheet" href="/assets/css/combined-search.css">
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20260910-3">
 
 <main class="article-search-page combined-search-page" data-combined-search>
   <div class="container">
     <header class="article-search-hero">
-      <h1 class="article-search-heading">搜索文章与音频</h1>
+      <h1 class="article-search-heading">搜索文章、微笔记与音频</h1>
     </header>
 
     
     <section
   class="article-search-panel article-search-panel--entry combined-search-panel"
-  aria-label="书面内容和音频搜索"
+  aria-label="文章与微笔记和音频搜索"
   data-combined-search-entry
 >
   <form
@@ -150,7 +151,7 @@
       <span class="combined-search-type-options">
         <label class="combined-search-type">
           <input type="checkbox" value="articles" checked data-combined-search-type>
-          <span>文章</span>
+          <span>文章与微笔记</span>
         </label>
         <label class="combined-search-type">
           <input type="checkbox" value="audio" checked data-combined-search-type>
@@ -188,9 +189,9 @@
     <section class="combined-search-section" data-combined-search-section="articles" aria-labelledby="combinedArticlesHeading" hidden>
       <div class="combined-search-section-header">
         <h2 id="combinedArticlesHeading" class="combined-search-section-heading">
-          书面内容结果（<span data-combined-search-count="articles">0</span>）
+          文章与微笔记结果（<span data-combined-search-count="articles">0</span>）
         </h2>
-        <div class="article-search-controls combined-search-filter-controls" aria-label="书面内容筛选">
+        <div class="article-search-controls combined-search-filter-controls" aria-label="文章与微笔记筛选">
           <label class="article-search-control-label">
             <span class="sr-only">栏目</span>
             <select class="article-search-select article-search-filter" data-combined-search-category disabled>
@@ -198,13 +199,13 @@
             </select>
           </label>
           <label class="article-search-control-label">
-            <span class="sr-only">书面内容知识点</span>
+            <span class="sr-only">文章与微笔记知识点</span>
             <select class="article-search-select article-search-filter" data-combined-search-tag disabled>
               <option value="">全部知识点（0）</option>
             </select>
           </label>
           <label class="article-search-control-label article-search-sort-label">
-            <span class="sr-only">书面内容排序</span>
+            <span class="sr-only">文章与微笔记排序</span>
             <select class="article-search-select article-search-sort" data-combined-search-articles-sort>
               <option value="relevance">按相关度排序</option>
               <option value="latest">按最新发布排序</option>
@@ -214,7 +215,7 @@
       </div>
       <div class="article-search-results" data-combined-search-results="articles"></div>
       <p class="combined-search-section-empty" data-combined-search-empty="articles" hidden></p>
-      <nav class="site-pagination combined-search-pagination" data-combined-search-pagination="articles" aria-label="书面内容搜索结果分页" hidden></nav>
+      <nav class="site-pagination combined-search-pagination" data-combined-search-pagination="articles" aria-label="文章与微笔记搜索结果分页" hidden></nav>
     </section>
 
     <section class="combined-search-section audiobook-search-page" data-combined-search-section="audio" aria-labelledby="combinedAudioHeading" hidden>
@@ -255,9 +256,9 @@
 
 <script src="/assets/js/audio-card.js" defer></script>
 <script src="/assets/js/search-query.js" defer></script>
-<script src="/assets/js/article-search.js" defer></script>
+<script src="/assets/js/article-search.js?v=20260910-4" defer></script>
 <script src="/assets/js/audiobook-search.js" defer></script>
-<script src="/assets/js/combined-search.js" defer></script>
+<script src="/assets/js/combined-search.js?v=20260909-3" defer></script>
 
   </main>
 

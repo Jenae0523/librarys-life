@@ -1117,16 +1117,29 @@
   function renderTags(article, tagByName, terms = []) {
     return toArray(article.tags).map(tagName => {
       const registryTag = tagByName.get(normalizeText(tagName));
-      const label = highlightHtml(registryTag?.name || tagName, terms);
-      return registryTag?.id
-        ? `<a class="article-search-tag" href="/tags/${encodeURIComponent(registryTag.id)}/" target="_blank" rel="noopener">${label}</a>`
-        : `<span class="article-search-tag">${label}</span>`;
-    }).join("");
+      if (!registryTag?.id) return "";
+      const label = highlightHtml(registryTag.name, terms);
+      return `<a class="article-search-tag" href="/tags/${encodeURIComponent(registryTag.id)}/" target="_blank" rel="noopener">${label}</a>`;
+    }).filter(Boolean).join("");
   }
 
   function renderResult(result, tagByName) {
     const article = result.article;
     const terms = result.highlight_terms;
+    if (article.type === "micro-note" && article.note_type === "quote") {
+      const tagsHtml = renderTags(article, tagByName, terms);
+      return `
+        <article class="article-search-card article-search-card--quote">
+          <div class="article-search-card-body">
+            <a class="article-search-quote-link" href="${escapeHtml(article.url)}">
+              <p class="article-search-quote-text">${highlightHtml(article.quote_text || article.description, terms)}</p>
+              <p class="article-search-quote-source">${escapeHtml(article.book_title || "")}${article.author ? ` │ ${escapeHtml(article.author)}` : ""}</p>
+            </a>
+            ${tagsHtml ? `<div class="article-search-tags" aria-label="相关知识点">${tagsHtml}</div>` : ""}
+          </div>
+        </article>
+      `;
+    }
     const contentTypeLabel = article.type === "micro-note" ? "微笔记" : "文章";
     const readLabel = article.type === "micro-note" ? "阅读微笔记" : "阅读全文";
 
@@ -1191,7 +1204,7 @@
         })
         .then(data => {
           payload = data;
-          status.textContent = `已载入 ${data.stats?.indexed_articles || data.articles?.length || 0} 条书面内容`;
+          status.textContent = `已载入 ${data.stats?.indexed_articles || data.articles?.length || 0} 条文章与微笔记`;
           return data;
         })
         .catch(error => {

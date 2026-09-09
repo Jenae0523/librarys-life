@@ -27,9 +27,10 @@
 }
 
 .micro-note-card__cover-wrap {
-  flex: 0 0 136px;
-  width: 136px;
-  height: 136px;
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  margin: 0 8px;
   overflow: hidden;
   border-radius: 50%;
   background: #f4f6fa;
@@ -41,9 +42,9 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  object-position: right center;
-  transform: scale(1.28);
-  transform-origin: right center;
+  object-position: 82% center;
+  transform: scale(2);
+  transform-origin: 82% center;
 }
 
 .micro-note-card__content,
@@ -89,9 +90,10 @@
   }
 
   .micro-note-card__cover-wrap {
-    flex-basis: 96px;
-    width: 96px;
-    height: 96px;
+    flex-basis: 64px;
+    width: 64px;
+    height: 64px;
+    margin: 0 8px 0 0;
   }
 
   .micro-note-card__title {
