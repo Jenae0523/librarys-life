@@ -7,7 +7,6 @@
 
   const EXPORT_WIDTH = 1080;
   const EXPORT_HEIGHT = 1920;
-  const MAX_OVERLAY_CAPTURE_DELTA = 2;
   const MIN_EXPORT_BYTES = 1250000;
   const READABLE_CONTRAST_RATIO = 4.5;
   const CONTRAST_COVERAGE_TIE = 0.03;
@@ -181,6 +180,25 @@
     return image;
   }
 
+  function runtimeImageUrl(url, documentObject) {
+    if (!url || !documentObject?.baseURI) return url;
+    try {
+      const requested = new URL(url, documentObject.baseURI);
+      const page = new URL(documentObject.baseURI);
+      const decodedPathname = decodeURIComponent(requested.pathname);
+      if ((page.hostname === "127.0.0.1" || page.hostname === "localhost")
+        && requested.protocol === "https:"
+        && requested.hostname === "img.librarys.life"
+        && requested.port === ""
+        && requested.search === ""
+        && requested.hash === ""
+        && /^\/img\/light-quotes\/[A-Za-z0-9][A-Za-z0-9._() -]*\.webp$/i.test(decodedPathname)) {
+        return new URL(`/__light-quote-image${requested.pathname}`, page.origin).href;
+      }
+    } catch (_) {}
+    return url;
+  }
+
   function createImagePreloader(ImageConstructor) {
     const cache = new Map();
     return function preloadImage(url) {
@@ -347,156 +365,320 @@
     return `light-quote_${snapshot.quote_id}_${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}_${pad(date.getHours())}${pad(date.getMinutes())}.png`;
   }
 
-  async function exportStagePng(stage, htmlToImageApi) {
-    const api = htmlToImageApi || (typeof globalThis !== "undefined" ? globalThis.htmlToImage : null);
-    if (!stage || typeof api?.toBlob !== "function") throw new Error("PNG exporter is unavailable");
-    if (typeof document !== "undefined" && document.fonts?.ready) await document.fonts.ready;
-    const blob = await api.toBlob(stage, {
-      canvasWidth: EXPORT_WIDTH,
-      canvasHeight: EXPORT_HEIGHT,
-      pixelRatio: 1,
-      skipAutoScale: true,
-      skipFonts: true,
-      cacheBust: false,
-      backgroundColor: "#d9d7d0"
-    });
-    if (!blob || blob.type !== "image/png") throw new Error("PNG generation returned no image");
-    if (blob.size < MIN_EXPORT_BYTES) throw new Error(`PNG generation returned an implausibly small image (${blob.size} bytes)`);
-    return blob;
+  function splitCssList(value) {
+    const parts = [];
+    let start = 0;
+    let depth = 0;
+    for (let index = 0; index < String(value || "").length; index += 1) {
+      const character = value[index];
+      if (character === "(") depth += 1;
+      if (character === ")") depth = Math.max(0, depth - 1);
+      if (character === "," && depth === 0) {
+        parts.push(value.slice(start, index).trim());
+        start = index + 1;
+      }
+    }
+    const tail = String(value || "").slice(start).trim();
+    if (tail) parts.push(tail);
+    return parts;
   }
 
-  async function renderStageOverlay(stage, htmlToImageApi) {
-    const api = htmlToImageApi || (typeof globalThis !== "undefined" ? globalThis.htmlToImage : null);
-    if (!stage || typeof api?.toBlob !== "function") throw new Error("PNG exporter is unavailable");
-    if (typeof document !== "undefined" && document.fonts?.ready) await document.fonts.ready;
-    const rect = stage.getBoundingClientRect();
-    if (!(rect.width > 0 && rect.height > 0)) throw new Error("PNG stage has no dimensions");
-    const blob = await api.toBlob(stage, {
-      canvasWidth: EXPORT_WIDTH,
-      canvasHeight: EXPORT_HEIGHT,
-      pixelRatio: 1,
-      skipAutoScale: true,
-      skipFonts: true,
-      cacheBust: false,
-      backgroundColor: null
-    });
-    if (!blob || blob.type !== "image/png") throw new Error("PNG overlay generation returned no image");
-    return blob;
+  function cssPixels(value) {
+    const parsed = Number.parseFloat(value);
+    return Number.isFinite(parsed) ? parsed : 0;
   }
 
-  async function composeMomentPng(backgroundImage, overlayBlob, options = {}) {
-    const doc = options.documentObject || (typeof document !== "undefined" ? document : null);
-    const urls = options.urlApi || (typeof URL !== "undefined" ? URL : null);
-    if (!doc || !urls?.createObjectURL || !backgroundImage || !overlayBlob) throw new Error("PNG composition is unavailable");
-    const canvas = doc.createElement("canvas");
-    canvas.width = EXPORT_WIDTH;
-    canvas.height = EXPORT_HEIGHT;
-    const context = canvas.getContext("2d");
-    if (!context) throw new Error("PNG Canvas is unavailable");
-    const imageWidth = backgroundImage.naturalWidth || backgroundImage.width;
-    const imageHeight = backgroundImage.naturalHeight || backgroundImage.height;
+  function parseTextShadows(value) {
+    if (!value || value === "none") return [];
+    return splitCssList(value).map(layer => {
+      const colorMatch = layer.match(/rgba?\([^)]*\)|#[\da-f]{3,8}|\btransparent\b|\b[a-z]+\b/i);
+      const color = colorMatch?.[0] || "rgba(0,0,0,0)";
+      const lengths = layer.replace(color, " ").match(/-?(?:\d+\.?\d*|\.\d+)px/g) || [];
+      return {
+        color,
+        offsetX: cssPixels(lengths[0]),
+        offsetY: cssPixels(lengths[1]),
+        blur: Math.max(0, cssPixels(lengths[2]))
+      };
+    }).filter(layer => layer.color !== "transparent");
+  }
+
+  function textNodeLines(element, documentObject) {
+    const textNode = [...(element?.childNodes || [])].find(node => node.nodeType === 3 && node.nodeValue);
+    const textValue = textNode?.nodeValue || element?.textContent || "";
+    if (!textValue) return [];
+    if (!textNode || typeof documentObject?.createRange !== "function") {
+      const rect = element?.getBoundingClientRect?.();
+      return rect?.width > 0 && rect?.height > 0 ? [{ text: textValue, rect }] : [];
+    }
+
+    const lines = [];
+    let offset = 0;
+    for (const character of Array.from(textValue)) {
+      const nextOffset = offset + character.length;
+      if (character === "\n" || character === "\r") {
+        offset = nextOffset;
+        continue;
+      }
+      const range = documentObject.createRange();
+      let rect = null;
+      try {
+        range.setStart(textNode, offset);
+        range.setEnd(textNode, nextOffset);
+        rect = [...range.getClientRects()].find(item => item.width > 0 && item.height > 0) || null;
+      } finally {
+        range.detach?.();
+      }
+      offset = nextOffset;
+      if (!rect) continue;
+      let line = lines.at(-1);
+      if (!line || Math.abs(line.rect.top - rect.top) > Math.max(2, rect.height * 0.35)) {
+        line = { text: "", rect: { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom } };
+        lines.push(line);
+      }
+      line.text += character;
+      line.rect.left = Math.min(line.rect.left, rect.left);
+      line.rect.top = Math.min(line.rect.top, rect.top);
+      line.rect.right = Math.max(line.rect.right, rect.right);
+      line.rect.bottom = Math.max(line.rect.bottom, rect.bottom);
+    }
+    return lines.map(line => ({
+      text: line.text,
+      rect: {
+        ...line.rect,
+        width: line.rect.right - line.rect.left,
+        height: line.rect.bottom - line.rect.top
+      }
+    }));
+  }
+
+  function createTextRenderPlan(stage, options = {}) {
+    const doc = options.documentObject || stage?.ownerDocument || (typeof document !== "undefined" ? document : null);
+    const view = doc?.defaultView || (typeof window !== "undefined" ? window : null);
+    const stageRect = stage?.getBoundingClientRect?.();
+    if (!doc || !view?.getComputedStyle || !(stageRect?.width > 0) || !(stageRect?.height > 0)) {
+      throw new Error("PNG stage has no measurable layout");
+    }
+    const scaleX = EXPORT_WIDTH / stageRect.width;
+    const scaleY = EXPORT_HEIGHT / stageRect.height;
+    const selectors = [
+      "[data-light-quote-text]",
+      "[data-light-quote-book]",
+      "[data-light-quote-author]",
+      "[data-light-quote-time]",
+      ".light-quote-stage__footer > span"
+    ];
+    const entries = [];
+    selectors.forEach(selector => {
+      const element = stage.querySelector(selector);
+      if (!element) return;
+      const style = view.getComputedStyle(element);
+      const fontSize = cssPixels(style.fontSize) * scaleY;
+      textNodeLines(element, doc).forEach(line => {
+        entries.push({
+          text: line.text,
+          x: ((line.rect.left + line.rect.right) / 2 - stageRect.left) * scaleX,
+          centerY: ((line.rect.top + line.rect.bottom) / 2 - stageRect.top) * scaleY,
+          maxWidth: Math.max(1, line.rect.width * scaleX),
+          font: `${style.fontStyle || "normal"} ${style.fontVariant || "normal"} ${style.fontWeight || "400"} ${fontSize}px ${style.fontFamily || "sans-serif"}`,
+          lineHeight: style.lineHeight === "normal" ? "normal" : cssPixels(style.lineHeight) * scaleY,
+          color: style.color,
+          opacity: Number.isFinite(Number.parseFloat(style.opacity)) ? Number.parseFloat(style.opacity) : 1,
+          letterSpacing: style.letterSpacing === "normal" ? 0 : cssPixels(style.letterSpacing) * scaleX,
+          shadows: parseTextShadows(style.textShadow).map(shadow => ({
+            color: shadow.color,
+            offsetX: shadow.offsetX * scaleX,
+            offsetY: shadow.offsetY * scaleY,
+            blur: shadow.blur * ((scaleX + scaleY) / 2)
+          }))
+        });
+      });
+    });
+    return { entries, scaleX, scaleY, stageRect };
+  }
+
+  function backgroundPositionRatio(value, axis) {
+    const normalized = String(value || "50%").trim().toLowerCase();
+    const keywords = axis === "x" ? { left: 0, center: 0.5, right: 1 } : { top: 0, center: 0.5, bottom: 1 };
+    if (Object.hasOwn(keywords, normalized)) return keywords[normalized];
+    if (normalized.endsWith("%")) return Math.min(1, Math.max(0, cssPixels(normalized) / 100));
+    return 0.5;
+  }
+
+  function drawCoverBackground(context, image, backgroundPosition = "50% 50%") {
+    const imageWidth = image?.naturalWidth || image?.width;
+    const imageHeight = image?.naturalHeight || image?.height;
+    if (!(imageWidth > 0) || !(imageHeight > 0)) throw new Error("Background image has no dimensions");
     const scale = Math.max(EXPORT_WIDTH / imageWidth, EXPORT_HEIGHT / imageHeight);
     const width = imageWidth * scale;
     const height = imageHeight * scale;
-    context.drawImage(backgroundImage, (EXPORT_WIDTH - width) / 2, (EXPORT_HEIGHT - height) / 2, width, height);
-    const overlayUrl = urls.createObjectURL(overlayBlob);
-    try {
-      const overlayImage = await decodeRasterImage(overlayUrl, options.ImageConstructor);
-      const widthDelta = Math.abs(overlayImage.naturalWidth - EXPORT_WIDTH);
-      const heightDelta = Math.abs(overlayImage.naturalHeight - EXPORT_HEIGHT);
-      if (widthDelta > MAX_OVERLAY_CAPTURE_DELTA || heightDelta > MAX_OVERLAY_CAPTURE_DELTA) {
-        throw new Error(`PNG overlay has unexpected dimensions (${overlayImage.naturalWidth} × ${overlayImage.naturalHeight})`);
+    const positions = String(backgroundPosition || "50% 50%").trim().split(/\s+/);
+    const positionX = backgroundPositionRatio(positions[0], "x");
+    const positionY = backgroundPositionRatio(positions[1] || positions[0], "y");
+    context.drawImage(image, -(width - EXPORT_WIDTH) * positionX, -(height - EXPORT_HEIGHT) * positionY, width, height);
+  }
+
+  function gradientStops(value) {
+    const match = String(value || "").match(/^linear-gradient\((.*)\)$/i);
+    if (!match) return [];
+    const parts = splitCssList(match[1]);
+    if (parts[0] && !/rgba?\(|#/.test(parts[0])) parts.shift();
+    const stops = parts.map((part, index) => {
+      const color = part.match(/rgba?\([^)]*\)|#[\da-f]{3,8}/i)?.[0];
+      const rest = color ? part.replace(color, "") : "";
+      const position = rest.match(/-?(?:\d+\.?\d*|\.\d+)%/)?.[0];
+      return color ? { color, position: position ? cssPixels(position) / 100 : (parts.length > 1 ? index / (parts.length - 1) : 0) } : null;
+    }).filter(Boolean);
+    return stops;
+  }
+
+  function drawStageShade(context, stage, options = {}) {
+    const doc = options.documentObject || stage?.ownerDocument || (typeof document !== "undefined" ? document : null);
+    const shade = stage?.querySelector?.(".light-quote-stage__shade");
+    const style = shade && doc?.defaultView?.getComputedStyle?.(shade);
+    const stops = gradientStops(style?.backgroundImage);
+    if (!stops.length) return;
+    const gradient = context.createLinearGradient(0, 0, 0, EXPORT_HEIGHT);
+    stops.forEach(stop => gradient.addColorStop(Math.min(1, Math.max(0, stop.position)), stop.color));
+    context.save();
+    context.globalAlpha = Number.isFinite(Number.parseFloat(style.opacity)) ? Number.parseFloat(style.opacity) : 1;
+    context.fillStyle = gradient;
+    context.fillRect(0, 0, EXPORT_WIDTH, EXPORT_HEIGHT);
+    context.restore();
+  }
+
+  function drawTextRenderPlan(context, plan) {
+    plan.entries.forEach(entry => {
+      context.save();
+      context.font = entry.font;
+      context.textAlign = "center";
+      context.textBaseline = "middle";
+      context.fillStyle = entry.color;
+      context.globalAlpha = entry.opacity;
+      if ("letterSpacing" in context) context.letterSpacing = `${entry.letterSpacing}px`;
+      [...entry.shadows].sort((left, right) => right.blur - left.blur).forEach(shadow => {
+        context.shadowColor = shadow.color;
+        context.shadowBlur = shadow.blur;
+        context.shadowOffsetX = shadow.offsetX;
+        context.shadowOffsetY = shadow.offsetY;
+        context.fillText(entry.text, entry.x, entry.centerY, entry.maxWidth);
+      });
+      context.shadowColor = "rgba(0,0,0,0)";
+      context.shadowBlur = 0;
+      context.shadowOffsetX = 0;
+      context.shadowOffsetY = 0;
+      context.fillText(entry.text, entry.x, entry.centerY, entry.maxWidth);
+      context.restore();
+    });
+  }
+
+  function canvasToPngBlob(canvas) {
+    return new Promise((resolve, reject) => {
+      try {
+        canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error("PNG encoding returned no image")), "image/png");
+      } catch (error) {
+        reject(error);
       }
-      // html-to-image combines a floating DOMRect scale with integer layout
-      // dimensions, so a valid 9:16 capture may drift by one or two pixels.
-      // The canonical canvas remains the only output coordinate system.
-      context.drawImage(overlayImage, 0, 0, EXPORT_WIDTH, EXPORT_HEIGHT);
-    } finally {
-      urls.revokeObjectURL(overlayUrl);
-    }
-    const blob = await new Promise(resolve => canvas.toBlob(resolve, "image/png"));
-    if (!blob || blob.type !== "image/png") throw new Error("PNG composition returned no image");
-    if (blob.size < MIN_EXPORT_BYTES) throw new Error(`PNG composition returned an implausibly small image (${blob.size} bytes)`);
-    return blob;
+    });
   }
 
   async function prepareExportBackground(imageUrl, options = {}) {
     const fetcher = options.fetcher || (typeof fetch === "function" ? fetch : null);
     const urls = options.urlApi || (typeof URL !== "undefined" ? URL : null);
     if (!fetcher || !urls?.createObjectURL || !imageUrl) throw new Error("Background preparation is unavailable");
-    const response = await fetcher(imageUrl, {
+    const requestUrl = runtimeImageUrl(imageUrl, options.documentObject);
+    options.onDiagnostic?.("resolvedBackgroundUrl", requestUrl);
+    options.onStage?.("background-fetch");
+    const response = await fetcher(requestUrl, {
       mode: "cors",
       credentials: "omit",
       cache: "force-cache"
     });
     if (!response?.ok) throw new Error(`Background request failed (${response?.status || "network"})`);
+    options.onDiagnostic?.("fetchOk", true);
     const blob = await response.blob();
     if (!blob?.type?.startsWith("image/") || !blob.size) throw new Error("Background response is not a usable image");
     const objectUrl = urls.createObjectURL(blob);
     try {
+      options.onStage?.("background-decode");
       const image = await decodeRasterImage(objectUrl, options.ImageConstructor);
-      return {
+      options.onDiagnostic?.("decodeOk", true);
+      let released = false;
+      const prepared = {
         blob,
         image,
         objectUrl,
         width: image.naturalWidth || image.width,
         height: image.naturalHeight || image.height,
-        release() { urls.revokeObjectURL(objectUrl); }
+        release() {
+          if (released) return;
+          released = true;
+          try {
+            if (prepared.image && "src" in prepared.image) prepared.image.src = "";
+            prepared.image?.close?.();
+          } catch (_) {}
+          urls.revokeObjectURL(objectUrl);
+          prepared.image = null;
+          prepared.blob = null;
+        }
       };
+      return prepared;
     } catch (error) {
       urls.revokeObjectURL(objectUrl);
       throw error;
     }
   }
 
-  async function cloneStageForExport(stage, backgroundUrl, documentObject) {
-    const doc = documentObject || stage?.ownerDocument;
-    if (!stage?.cloneNode || !doc?.body) throw new Error("Export stage cannot be cloned");
-    const rect = stage.getBoundingClientRect();
-    const clone = stage.cloneNode(true);
-    clone.removeAttribute("data-light-quote-stage");
-    clone.setAttribute("aria-hidden", "true");
-    Object.assign(clone.style, {
-      position: "fixed",
-      top: "0",
-      left: "0",
-      zIndex: "-2147483647",
-      width: `${rect.width}px`,
-      height: `${rect.height}px`,
-      backgroundImage: "none",
-      backgroundColor: "transparent",
-      borderRadius: doc.defaultView?.getComputedStyle?.(stage)?.borderRadius || "",
-      containerType: "inline-size",
-      isolation: "isolate",
-      pointerEvents: "none"
-    });
-    const shade = clone.querySelector(".light-quote-stage__shade");
-    const body = clone.querySelector(".light-quote-stage__body");
-    const footer = clone.querySelector(".light-quote-stage__footer");
-    if (shade) shade.style.zIndex = "0";
-    if (body) body.style.zIndex = "1";
-    if (footer) footer.style.zIndex = "1";
-    doc.body.appendChild(clone);
-    return clone;
-  }
-
   async function generateMomentPng(options) {
     const snapshot = options.snapshot;
-    const background = await (options.backgroundPreparer || prepareExportBackground)(snapshot.image_url, options);
-    let exportStage = null;
+    const doc = options.documentObject || options.stage?.ownerDocument || (typeof document !== "undefined" ? document : null);
+    const diagnostics = options.diagnostics || {};
+    const onStage = stage => { diagnostics.stage = stage; };
+    const onDiagnostic = (key, value) => { diagnostics[key] = value; };
+    diagnostics.backgroundUrl = snapshot.image_url;
+    diagnostics.canvas = `${EXPORT_WIDTH}x${EXPORT_HEIGHT}`;
+    diagnostics.fetchOk = false;
+    diagnostics.decodeOk = false;
+    if (!doc?.createElement) throw new Error("PNG Canvas is unavailable");
+    onStage("fonts");
+    if (doc.fonts?.ready) await doc.fonts.ready;
+    onStage("layout");
+    const textPlan = (options.textPlanFactory || createTextRenderPlan)(options.stage, { ...options, documentObject: doc });
+    const stageStyle = doc.defaultView?.getComputedStyle?.(options.stage);
+    const backgroundPosition = stageStyle?.backgroundPosition || "50% 50%";
+    const background = await (options.backgroundPreparer || prepareExportBackground)(snapshot.image_url, {
+      ...options,
+      documentObject: doc,
+      onStage,
+      onDiagnostic
+    });
+    let canvas = null;
     try {
-      exportStage = await (options.stageFactory || cloneStageForExport)(options.stage, background.objectUrl, options.documentObject);
-      const blob = options.exporter
-        ? await options.exporter(exportStage, options.htmlToImageApi)
-        : await composeMomentPng(
-          background.image,
-          await renderStageOverlay(exportStage, options.htmlToImageApi),
-          options
-        );
+      onStage("canvas-create");
+      canvas = doc.createElement("canvas");
+      canvas.width = EXPORT_WIDTH;
+      canvas.height = EXPORT_HEIGHT;
+      const context = canvas.getContext("2d");
+      if (!context) throw new Error("PNG Canvas 2D context is unavailable");
+      onStage("background-draw");
+      drawCoverBackground(context, background.image, backgroundPosition);
+      drawStageShade(context, options.stage, { ...options, documentObject: doc });
+      onStage("text-draw");
+      drawTextRenderPlan(context, textPlan);
+      onStage("png-encode");
+      const blob = options.exporter ? await options.exporter(canvas) : await canvasToPngBlob(canvas);
+      diagnostics.toBlobOk = Boolean(blob);
+      if (!blob || blob.type !== "image/png") throw new Error("PNG generation returned no image");
+      if (blob.size < MIN_EXPORT_BYTES) throw new Error(`PNG generation returned an implausibly small image (${blob.size} bytes)`);
+      onStage("complete");
       return { blob, filename: momentFilename(snapshot), snapshot, width: EXPORT_WIDTH, height: EXPORT_HEIGHT };
     } finally {
-      exportStage?.remove?.();
       background?.release?.();
+      if (canvas) {
+        canvas.width = 1;
+        canvas.height = 1;
+        canvas = null;
+      }
     }
   }
 
@@ -533,7 +715,7 @@
   async function deliverMomentPng(result, options = {}) {
     const navigatorObject = options.navigatorObject || (typeof navigator !== "undefined" ? navigator : null);
     const windowObject = options.windowObject || (typeof window !== "undefined" ? window : null);
-    const mobile = options.mobile ?? isTouchDevice(navigatorObject, windowObject);
+    const mobile = options.mobile ?? (isTouchDevice(navigatorObject, windowObject) || Number(windowObject?.innerWidth || 0) <= 575);
     if (!mobile) {
       (options.downloader || downloadBlob)(result.blob, result.filename, options.documentObject, options.urlApi);
       return { mode: "download" };
@@ -715,7 +897,8 @@
     const previewImage = rootElement.querySelector("[data-light-quote-preview-image]");
     const previewShare = rootElement.querySelector("[data-light-quote-preview-share]");
     const previewClose = rootElement.querySelector("[data-light-quote-preview-close]");
-    const preloadImage = options.imagePreloader || createImagePreloader(options.ImageConstructor);
+    const rawPreloadImage = options.imagePreloader || createImagePreloader(options.ImageConstructor);
+    const preloadImage = url => rawPreloadImage(url);
     const analyzeBackground = options.backgroundAnalyzer || analyzeTextBackground;
     const textPosition = createTextPositionController({
       stage,
@@ -735,6 +918,8 @@
     let previewUrl = null;
     let previewFile = null;
     let backgroundBusy = false;
+    let exportBusy = false;
+    let exportOperationSequence = 0;
     let actionSequence = 0;
     const recentImageUrls = [];
     const readyImages = createReadyImageQueue({
@@ -890,6 +1075,8 @@
       if (previewShare) previewShare.hidden = true;
     }
 
+    rootElement.ownerDocument?.defaultView?.addEventListener?.("pagehide", closePreview, { once: true });
+
     function showPreview(blob, filename, file) {
       if (!preview || !previewImage) throw new Error("Image preview is unavailable");
       closePreview();
@@ -936,19 +1123,38 @@
       }
     });
     freezeButton?.addEventListener("click", async function () {
+      if (exportBusy) return;
       const button = this;
       const snapshot = createMomentSnapshot(currentQuote, currentImage, encounterTime);
       const frozenVersion = renderVersion;
+      const operationId = ++exportOperationSequence;
+      const navigatorObject = typeof navigator !== "undefined" ? navigator : null;
+      const userAgent = navigatorObject?.userAgent || "";
+      const diagnostics = {
+        operationId,
+        stage: "queued",
+        backgroundUrl: snapshot.image_url,
+        fetchOk: false,
+        decodeOk: false,
+        canvas: `${EXPORT_WIDTH}x${EXPORT_HEIGHT}`,
+        toBlobOk: false,
+        mobile: isTouchDevice(navigatorObject, typeof window !== "undefined" ? window : null)
+          || Number(typeof window !== "undefined" ? window.innerWidth : 0) <= 575,
+        ios: /iPad|iPhone|iPod/.test(userAgent) || (/Macintosh/.test(userAgent) && Number(navigatorObject?.maxTouchPoints || 0) > 1)
+      };
+      const originalButtonText = button.textContent;
+      exportBusy = true;
       button.disabled = true;
+      button.textContent = "生成中…";
       status.textContent = "图片还在准备，请稍候…";
       try {
         await currentImagePromise;
         await textTonePromise;
         if (frozenVersion !== renderVersion) throw new Error("Quote changed while preparing the image");
         status.textContent = "正在生成 1080 × 1920 PNG…";
-        const result = await generateMomentPng({ stage, snapshot });
+        const result = await (options.pngGenerator || generateMomentPng)({ stage, snapshot, diagnostics });
         if (frozenVersion !== renderVersion) throw new Error("Quote changed while generating the image");
-        const delivery = await deliverMomentPng(result, {
+        const delivery = await (options.pngDeliverer || deliverMomentPng)(result, {
           previewer: (blob, filename) => showPreview(blob, filename, null),
           sharePresenter: (file, shareResult) => showPreview(shareResult.blob, shareResult.filename, file)
         });
@@ -960,12 +1166,14 @@
         if (delivery.mode === "preview") status.textContent = `图片已生成，请长按预览图保存：1080 × 1920，${size}`;
         if (delivery.mode === "cancelled") status.textContent = "已取消分享；需要时可再次点击“定格此刻”。";
       } catch (error) {
-        console.error("Light quote PNG export failed", error);
+        console.error("Light quote PNG export failed", JSON.stringify(diagnostics), error);
         status.textContent = error?.message?.includes("Quote changed")
           ? "当前语录已切换，请重新点击“定格此刻”。"
           : "图片生成失败，请稍后重试。";
       } finally {
+        exportBusy = false;
         button.disabled = false;
+        button.textContent = originalButtonText;
       }
     });
     return {
@@ -982,6 +1190,7 @@
       getReadyImageUrls: () => readyImages.getReadyEntries().map(entry => entry.image.url),
       getTextTone: () => stage.dataset.textTone || "light",
       isBackgroundBusy: () => backgroundBusy,
+      isExportBusy: () => exportBusy,
       getTextOffsetRatio: textPosition.getOffsetRatio,
       isTextAdjustmentMode: textPosition.isAdjustmentMode,
       isTextDragging: textPosition.isDragging,
@@ -1062,15 +1271,13 @@
     CONTRAST_COVERAGE_TIE,
     EXPORT_HEIGHT,
     EXPORT_WIDTH,
-    MAX_OVERLAY_CAPTURE_DELTA,
     MIN_EXPORT_BYTES,
     READY_IMAGE_QUEUE_LIMIT,
     READABLE_CONTRAST_RATIO,
     analyzeTextBackground,
     candidateImages,
     chooseImage,
-    cloneStageForExport,
-    composeMomentPng,
+    createTextRenderPlan,
     contrastMetrics,
     contrastRatio,
     clampTextOffset,
@@ -1084,7 +1291,9 @@
     decodeRasterImage,
     deliverMomentPng,
     downloadBlob,
-    exportStagePng,
+    drawCoverBackground,
+    drawStageShade,
+    drawTextRenderPlan,
     freezeCurrentMoment,
     generateMomentPng,
     initMainPage,
@@ -1098,8 +1307,9 @@
     momentFilename,
     normalizeMatchingMode,
     prepareExportBackground,
-    renderStageOverlay,
+    parseTextShadows,
     resolveQuote,
+    runtimeImageUrl,
     sampleTextPixels,
     textContrastComparison,
     textLineRects,
