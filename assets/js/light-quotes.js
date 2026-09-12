@@ -7,6 +7,7 @@
 
   const EXPORT_WIDTH = 1080;
   const EXPORT_HEIGHT = 1920;
+  const MAX_OVERLAY_CAPTURE_DELTA = 2;
   const MIN_EXPORT_BYTES = 1250000;
   const READABLE_CONTRAST_RATIO = 4.5;
   const CONTRAST_COVERAGE_TIE = 0.03;
@@ -371,7 +372,9 @@
     const rect = stage.getBoundingClientRect();
     if (!(rect.width > 0 && rect.height > 0)) throw new Error("PNG stage has no dimensions");
     const blob = await api.toBlob(stage, {
-      pixelRatio: EXPORT_WIDTH / rect.width,
+      canvasWidth: EXPORT_WIDTH,
+      canvasHeight: EXPORT_HEIGHT,
+      pixelRatio: 1,
       skipAutoScale: true,
       skipFonts: true,
       cacheBust: false,
@@ -399,9 +402,14 @@
     const overlayUrl = urls.createObjectURL(overlayBlob);
     try {
       const overlayImage = await decodeRasterImage(overlayUrl, options.ImageConstructor);
-      if (Math.abs(overlayImage.naturalWidth - EXPORT_WIDTH) > 1 || Math.abs(overlayImage.naturalHeight - EXPORT_HEIGHT) > 1) {
+      const widthDelta = Math.abs(overlayImage.naturalWidth - EXPORT_WIDTH);
+      const heightDelta = Math.abs(overlayImage.naturalHeight - EXPORT_HEIGHT);
+      if (widthDelta > MAX_OVERLAY_CAPTURE_DELTA || heightDelta > MAX_OVERLAY_CAPTURE_DELTA) {
         throw new Error(`PNG overlay has unexpected dimensions (${overlayImage.naturalWidth} × ${overlayImage.naturalHeight})`);
       }
+      // html-to-image combines a floating DOMRect scale with integer layout
+      // dimensions, so a valid 9:16 capture may drift by one or two pixels.
+      // The canonical canvas remains the only output coordinate system.
       context.drawImage(overlayImage, 0, 0, EXPORT_WIDTH, EXPORT_HEIGHT);
     } finally {
       urls.revokeObjectURL(overlayUrl);
@@ -1054,6 +1062,7 @@
     CONTRAST_COVERAGE_TIE,
     EXPORT_HEIGHT,
     EXPORT_WIDTH,
+    MAX_OVERLAY_CAPTURE_DELTA,
     MIN_EXPORT_BYTES,
     READY_IMAGE_QUEUE_LIMIT,
     READABLE_CONTRAST_RATIO,
