@@ -107,15 +107,17 @@
   font-weight: 600;
 }
 .light-quote-experience {
+  --lq-action-font-size: .92rem;
   width: min(100%, 520px);
   margin: 0 auto;
+  container-type: inline-size;
 }
 .light-quote-stage {
   position: relative;
   width: 100%;
   aspect-ratio: 9 / 16;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 2.6923cqw;
   background-color: #d9d7d0;
   background-position: center;
   background-size: cover;
@@ -129,7 +131,7 @@
 }
 .light-quote-stage__body {
   position: absolute;
-  top: 25%;
+  top: calc(25% + var(--lq-text-offset-y, 0%));
   right: 0;
   bottom: 15%;
   left: 0;
@@ -140,51 +142,56 @@
 }
 .light-quote-stage__glow {
   position: relative;
-  z-index: 0;
-  isolation: isolate;
-  width: 86%;
-  max-width: 440px;
+  width: 84.6154%;
   min-width: 0;
   box-sizing: border-box;
   margin: 0 auto;
-  padding: clamp(16px, 4.8vw, 30px) clamp(11px, 4vw, 25px);
+  padding: 5.7692cqw 4.8077cqw;
+  filter: none;
   text-align: center;
 }
-.light-quote-stage__glow::before {
-  position: absolute;
-  z-index: -1;
-  top: -28px;
-  right: -14%;
-  bottom: -28px;
-  left: -14%;
-  content: "";
-  background:
-    radial-gradient(ellipse 72% 66% at 43% 43%, rgba(255,255,255,.5) 0%, rgba(255,255,255,.27) 42%, rgba(255,255,255,.08) 72%, rgba(255,255,255,0) 100%),
-    radial-gradient(ellipse 68% 62% at 59% 58%, rgba(255,255,255,.38) 0%, rgba(255,255,255,.2) 45%, rgba(255,255,255,.05) 74%, rgba(255,255,255,0) 100%);
-  filter: blur(24px);
+.light-quote-stage__glow.is-adjusting {
+  cursor: ns-resize;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.light-quote-stage__glow.is-dragging { cursor: grabbing; }
+.light-quote-stage--text-dark {
+  --lq-text-protection:
+    0 .0962cqw .3846cqw rgba(255,252,245,.82),
+    0 .1923cqw .7692cqw rgba(255,248,238,.5);
+}
+.light-quote-stage--text-light {
+  --lq-text-protection:
+    0 .0962cqw .1923cqw rgba(0,0,0,.92),
+    0 .1923cqw .3846cqw rgba(0,0,0,.74),
+    0 .3846cqw .7692cqw rgba(0,0,0,.42);
 }
 .light-quote-stage blockquote {
   margin: 0;
   padding: 0;
   border: 0;
-  color: #292e38;
+  color: #20242a;
   font: inherit;
-  font-size: clamp(1rem, 3.7vw, 1.36rem);
+  font-size: 4.1846cqw;
   font-weight: 500;
   line-height: 1.9;
   letter-spacing: .025em;
   text-align: center;
+  text-shadow: var(--lq-text-protection);
   text-wrap: pretty;
 }
 .light-quote-stage__source {
-  margin: 24px 0 0;
-  color: #292e38;
+  margin: 4.6154cqw 0 0;
+  color: #20242a;
   font: inherit;
-  font-size: clamp(.76rem, 2.25vw, .9rem);
+  font-size: 2.7692cqw;
   font-weight: 400;
   line-height: 1.75;
-  opacity: .92;
+  opacity: 1;
   text-align: center;
+  text-shadow: var(--lq-text-protection);
 }
 .light-quote-stage__source span {
   display: block;
@@ -193,16 +200,10 @@
   margin-left: auto;
   overflow-wrap: anywhere;
 }
-.light-quote-stage__source span + span { margin-top: 2px; }
+.light-quote-stage__source span + span { margin-top: .3846cqw; }
 .light-quote-stage--text-light blockquote,
 .light-quote-stage--text-light .light-quote-stage__source {
-  color: #f7f3e9;
-  text-shadow: 0 1px 2px rgba(8,12,22,.86), 0 2px 8px rgba(8,12,22,.72), 0 0 16px rgba(8,12,22,.45);
-}
-.light-quote-stage--text-light .light-quote-stage__glow::before {
-  background:
-    radial-gradient(ellipse 72% 66% at 43% 43%, rgba(12,18,30,.42) 0%, rgba(12,18,30,.24) 44%, rgba(12,18,30,.07) 74%, rgba(12,18,30,0) 100%),
-    radial-gradient(ellipse 68% 62% at 59% 58%, rgba(12,18,30,.32) 0%, rgba(12,18,30,.17) 46%, rgba(12,18,30,.04) 76%, rgba(12,18,30,0) 100%);
+  color: #fff;
 }
 .light-quote-stage__footer {
   position: absolute;
@@ -212,21 +213,64 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: .7692cqw;
   color: rgba(255,255,255,.94);
   font: inherit;
-  font-size: clamp(.9rem, 2.2vw, 1.06rem);
+  font-size: 3.2615cqw;
   line-height: 1.45;
   letter-spacing: .035em;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0,0,0,.78), 0 2px 7px rgba(0,0,0,.6), 0 0 14px rgba(0,0,0,.34);
+  text-shadow: 0 .1923cqw .3846cqw rgba(0,0,0,.78), 0 .3846cqw 1.3462cqw rgba(0,0,0,.6), 0 0 2.6923cqw rgba(0,0,0,.34);
 }
+.light-quote-background-control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 12px;
+  margin-top: 7px;
+}
+.light-quote-background-control__separator {
+  width: 1px;
+  height: 1em;
+  background: #d8dce3;
+}
+.light-quote-background-control button {
+  max-width: 100%;
+  padding: 6px 2px;
+  border: 0;
+  background: transparent;
+  color: #777e89;
+  font: inherit;
+  font-size: var(--lq-action-font-size);
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color .2s ease, opacity .2s ease;
+}
+.light-quote-background-control button:hover,
+.light-quote-background-control button:focus-visible {
+  color: #405b95;
+}
+.light-quote-background-control button:focus {
+  outline: none;
+}
+.light-quote-background-control button:focus-visible {
+  outline: 2px solid rgba(98, 129, 200, .34);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.light-quote-background-control button:disabled {
+  opacity: .45;
+  cursor: wait;
+}
+.light-quote-background-control button[hidden],
+.light-quote-background-control__separator[hidden] { display: none; }
 .light-quote-actions {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin-top: 28px;
+  margin-top: 38px;
 }
 .light-quote-actions button {
   padding: 10px 18px;
@@ -235,7 +279,7 @@
   background: #fff;
   color: #414957;
   font: inherit;
-  font-size: .92rem;
+  font-size: var(--lq-action-font-size);
   cursor: pointer;
   transition: border-color .2s ease, background-color .2s ease, color .2s ease, transform .2s ease;
 }
@@ -272,6 +316,63 @@
   font-size: .9rem;
   line-height: 1.6;
   text-align: center;
+}
+
+.light-quote-image-preview[hidden] { display: none; }
+.light-quote-image-preview {
+  position: fixed;
+  z-index: 1200;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: auto;
+  background: rgba(18, 22, 30, .82);
+}
+.light-quote-image-preview__dialog {
+  width: min(100%, 430px);
+  padding: 22px;
+  border-radius: 16px;
+  background: #fff;
+  color: #303541;
+  text-align: center;
+}
+.light-quote-image-preview__dialog h2 {
+  margin: 0 0 8px;
+  font: inherit;
+  font-size: 1.28rem;
+  font-weight: 600;
+}
+.light-quote-image-preview__dialog p { margin: 0 0 16px; color: #626975; }
+.light-quote-image-preview__dialog img {
+  display: block;
+  width: min(100%, 330px);
+  height: auto;
+  margin: 0 auto 18px;
+  border-radius: 10px;
+}
+.light-quote-image-preview__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.light-quote-image-preview__actions button[hidden] { display: none; }
+.light-quote-image-preview__dialog button {
+  min-width: 104px;
+  padding: 10px 22px;
+  border: 1px solid #cfd5df;
+  border-radius: 999px;
+  background: #fff;
+  color: #414957;
+  font: inherit;
+  cursor: pointer;
+}
+.light-quote-image-preview__dialog .light-quote-image-preview__share {
+  border-color: #6281c8;
+  background: #6281c8;
+  color: #fff;
 }
 
 .tag-quote-module {
@@ -322,6 +423,12 @@
   .light-quote-main { padding-top: 0; }
 }
 
+@media (min-width: 576px) {
+  .light-quote-experience {
+    width: min(100%, 520px, 36vh);
+  }
+}
+
 @media (max-width: 575px) {
   .quote-preview { margin-bottom: 62px; padding: 60px 18px 50px; }
   .quote-preview--micro { margin-bottom: 12px; }
@@ -335,15 +442,9 @@
   .light-quote-intro { font-size: 1.08rem; line-height: 1.9; }
   .light-quote-intro p { margin-bottom: 16px; }
   .light-quote-intro__echo { margin-top: 21px !important; }
-  .light-quote-stage { border-radius: 10px; }
-  .light-quote-stage__body { padding-right: 6%; padding-left: 6%; }
-  .light-quote-stage__glow { width: 86%; padding-right: 8px; padding-left: 8px; }
-  .light-quote-stage__glow::before { top: -22px; right: -13%; bottom: -22px; left: -13%; filter: blur(20px); }
-  .light-quote-stage blockquote { font-size: clamp(.96rem, 4.8vw, 1.2rem); line-height: 1.82; }
-  .light-quote-stage__source { margin-top: 18px; font-size: clamp(.72rem, 3.35vw, .84rem); }
-  .light-quote-stage__footer { font-size: clamp(.8rem, 3.45vw, .91rem); }
-  .light-quote-actions { gap: 8px; margin-top: 23px; }
-  .light-quote-actions button { padding: 10px 14px; font-size: .9rem; }
+  .light-quote-experience { --lq-action-font-size: .9rem; }
+  .light-quote-actions { gap: 8px; margin-top: 32px; }
+  .light-quote-actions button { padding: 10px 14px; }
   .article-search-card--quote { padding: 22px 20px; }
   .tag-quote-module { margin-top: 48px; margin-bottom: 54px; padding: 58px 18px 52px; }
   .tag-quote-module__mark { margin-bottom: 8px; font-size: 4.75rem; }
@@ -351,13 +452,12 @@
 }
 
 @media (max-width: 350px) {
-  .light-quote-stage blockquote { font-size: .9rem; line-height: 1.72; }
-  .light-quote-stage__source { margin-top: 14px; font-size: .69rem; }
   .light-quote-actions button { flex: 1 1 calc(50% - 8px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .quote-preview__button,
+  .light-quote-background-control button,
   .light-quote-actions button,
   .tag-quote-module__items { transition: none; }
 }
