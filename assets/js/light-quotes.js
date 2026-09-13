@@ -14,7 +14,7 @@
     + 0.7152 * channelLuminance(36)
     + 0.0722 * channelLuminance(42);
   const READY_IMAGE_QUEUE_LIMIT = 2;
-  const LIGHT_QUOTES_BUILD = "20260913-3";
+  const LIGHT_QUOTES_BUILD = "20260913-4";
 
   function userActivationState(navigatorObject) {
     return typeof navigatorObject?.userActivation?.isActive === "boolean"
@@ -22,17 +22,25 @@
       : null;
   }
 
-  function errorDiagnostic(error) {
-    return {
+  function errorDiagnostic(error, stage) {
+    const details = {
       name: error?.name || "Error",
       message: error?.message || String(error || "Unknown error")
     };
+    if (stage) details.stage = stage;
+    if (error?.stack) details.stack = String(error.stack);
+    return details;
   }
 
   function createDebugReporter(rootElement, options = {}) {
     const doc = options.documentObject || rootElement?.ownerDocument || (typeof document !== "undefined" ? document : null);
     const win = options.windowObject || doc?.defaultView || (typeof window !== "undefined" ? window : null);
     const navigatorObject = options.navigatorObject || win?.navigator || (typeof navigator !== "undefined" ? navigator : null);
+    const earlyDebug = win?.__lightQuoteDebug;
+    if (typeof earlyDebug?.report === "function") {
+      earlyDebug.report("RUNTIME_READY", { build: LIGHT_QUOTES_BUILD });
+      return earlyDebug.report;
+    }
     const panel = rootElement?.querySelector?.("[data-light-quote-debug]");
     const output = panel?.querySelector?.("[data-light-quote-debug-output]");
     let enabled = false;
@@ -61,6 +69,21 @@
     report.enabled = enabled;
     report.entries = entries;
     return report;
+  }
+
+  function textShadowDiagnostics(stage, documentObject) {
+    const doc = documentObject || stage?.ownerDocument || (typeof document !== "undefined" ? document : null);
+    const view = doc?.defaultView || (typeof window !== "undefined" ? window : null);
+    const read = selector => {
+      const element = stage?.querySelector?.(selector);
+      try { return element && view?.getComputedStyle ? view.getComputedStyle(element).textShadow || "none" : "unavailable"; } catch (_) { return "unavailable"; }
+    };
+    return {
+      cssSupportsCqw: Boolean(view?.CSS?.supports?.("width", "1cqw")),
+      quote: read("[data-light-quote-text]"),
+      source: read("[data-light-quote-source]"),
+      footer: read(".light-quote-stage__footer")
+    };
   }
 
   function randomItem(items, random = Math.random) {
@@ -479,7 +502,7 @@
       }
       offset = nextOffset;
       if (!rect) continue;
-      let line = lines.at(-1);
+      let line = lines.length ? lines[lines.length - 1] : null;
       if (!line || Math.abs(line.rect.top - rect.top) > Math.max(2, rect.height * 0.35)) {
         line = { text: "", rect: { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom } };
         lines.push(line);
@@ -510,20 +533,21 @@
     const scaleX = EXPORT_WIDTH / stageRect.width;
     const scaleY = EXPORT_HEIGHT / stageRect.height;
     const selectors = [
-      "[data-light-quote-text]",
-      "[data-light-quote-book]",
-      "[data-light-quote-author]",
-      "[data-light-quote-time]",
-      ".light-quote-stage__footer > span"
+      { selector: "[data-light-quote-text]", role: "text" },
+      { selector: "[data-light-quote-book]", role: "text" },
+      { selector: "[data-light-quote-author]", role: "text" },
+      { selector: "[data-light-quote-time]", role: "footer" },
+      { selector: ".light-quote-stage__footer > span", role: "footer" }
     ];
     const entries = [];
-    selectors.forEach(selector => {
+    selectors.forEach(({ selector, role }) => {
       const element = stage.querySelector(selector);
       if (!element) return;
       const style = view.getComputedStyle(element);
       const fontSize = cssPixels(style.fontSize) * scaleY;
       textNodeLines(element, doc).forEach(line => {
         entries.push({
+          role,
           text: line.text,
           x: ((line.rect.left + line.rect.right) / 2 - stageRect.left) * scaleX,
           centerY: ((line.rect.top + line.rect.bottom) / 2 - stageRect.top) * scaleY,
@@ -548,7 +572,7 @@
   function backgroundPositionRatio(value, axis) {
     const normalized = String(value || "50%").trim().toLowerCase();
     const keywords = axis === "x" ? { left: 0, center: 0.5, right: 1 } : { top: 0, center: 0.5, bottom: 1 };
-    if (Object.hasOwn(keywords, normalized)) return keywords[normalized];
+    if (Object.prototype.hasOwnProperty.call(keywords, normalized)) return keywords[normalized];
     if (normalized.endsWith("%")) return Math.min(1, Math.max(0, cssPixels(normalized) / 100));
     return 0.5;
   }
@@ -647,13 +671,13 @@
         cache: "no-store"
       });
     } catch (error) {
-      report("BG_FETCH_FAIL", errorDiagnostic(error));
+      report("BG_FETCH_FAIL", errorDiagnostic(error, "background-fetch"));
       throw error;
     }
     const responseType = response?.headers?.get?.("content-type") || "unknown";
     if (!response?.ok) {
       const error = new Error(`Background request failed (${response?.status || "network"})`);
-      report("BG_FETCH_FAIL", { status: response?.status || 0, contentType: responseType, ...errorDiagnostic(error) });
+      report("BG_FETCH_FAIL", { status: response?.status || 0, contentType: responseType, ...errorDiagnostic(error, "background-fetch") });
       throw error;
     }
     options.onDiagnostic?.("fetchOk", true);
@@ -661,18 +685,27 @@
     try {
       blob = await response.blob();
     } catch (error) {
-      report("BG_FETCH_FAIL", { status: response.status, contentType: responseType, ...errorDiagnostic(error) });
+      report("BG_FETCH_FAIL", { status: response.status, contentType: responseType, ...errorDiagnostic(error, "background-blob") });
       throw error;
     }
     report("BG_FETCH_OK", { status: response.status, contentType: responseType, blobSize: blob?.size || 0 });
+    report("BG_BLOB", { stage: "background-blob", contentType: blob?.type || responseType, blobSize: blob?.size || 0 });
     if (!blob?.type?.startsWith("image/") || !blob.size) {
       const error = new Error("Background response is not a usable image");
-      report("BG_FETCH_FAIL", { status: response.status, contentType: responseType, blobSize: blob?.size || 0, ...errorDiagnostic(error) });
+      report("BG_FETCH_FAIL", { status: response.status, contentType: responseType, blobSize: blob?.size || 0, ...errorDiagnostic(error, "background-blob") });
       throw error;
     }
-    const objectUrl = urls.createObjectURL(blob);
+    let objectUrl;
+    try {
+      options.onStage?.("background-object-url");
+      objectUrl = urls.createObjectURL(blob);
+    } catch (error) {
+      report("BG_DECODE_FAIL", errorDiagnostic(error, "background-object-url"));
+      throw error;
+    }
     try {
       options.onStage?.("background-decode");
+      report("BG_DECODE_START", { stage: "background-decode" });
       const image = await decodeRasterImage(objectUrl, options.ImageConstructor);
       options.onDiagnostic?.("decodeOk", true);
       report("BG_DECODE_OK", { width: image.naturalWidth || image.width, height: image.naturalHeight || image.height });
@@ -697,7 +730,7 @@
       };
       return prepared;
     } catch (error) {
-      report("BG_DECODE_FAIL", errorDiagnostic(error));
+      report("BG_DECODE_FAIL", errorDiagnostic(error, "background-decode"));
       urls.revokeObjectURL(objectUrl);
       throw error;
     }
@@ -714,12 +747,29 @@
     diagnostics.canvas = `${EXPORT_WIDTH}x${EXPORT_HEIGHT}`;
     diagnostics.fetchOk = false;
     diagnostics.decodeOk = false;
-    if (!doc?.createElement) throw new Error("PNG Canvas is unavailable");
+    report("EXPORT_START", { stage: "export-start", operationId: diagnostics.operationId || null, backgroundUrl: snapshot.image_url, width: EXPORT_WIDTH, height: EXPORT_HEIGHT });
+    if (!doc?.createElement) {
+      const error = new Error("PNG Canvas is unavailable");
+      report("EXPORT_FAIL", errorDiagnostic(error, "export-start"));
+      throw error;
+    }
     onStage("fonts");
-    if (doc.fonts?.ready) await doc.fonts.ready;
+    try {
+      if (doc.fonts?.ready) await doc.fonts.ready;
+    } catch (error) {
+      report("EXPORT_FAIL", errorDiagnostic(error, "fonts"));
+      throw error;
+    }
     onStage("layout");
-    const textPlan = (options.textPlanFactory || createTextRenderPlan)(options.stage, { ...options, documentObject: doc });
-    const stageStyle = doc.defaultView?.getComputedStyle?.(options.stage);
+    let textPlan;
+    let stageStyle;
+    try {
+      textPlan = (options.textPlanFactory || createTextRenderPlan)(options.stage, { ...options, documentObject: doc });
+      stageStyle = doc.defaultView?.getComputedStyle?.(options.stage);
+    } catch (error) {
+      report("EXPORT_FAIL", errorDiagnostic(error, "layout"));
+      throw error;
+    }
     const backgroundPosition = stageStyle?.backgroundPosition || "50% 50%";
     const background = await (options.backgroundPreparer || prepareExportBackground)(snapshot.image_url, {
       ...options,
@@ -731,47 +781,57 @@
     let canvas = null;
     try {
       onStage("canvas-create");
-      canvas = doc.createElement("canvas");
-      canvas.width = EXPORT_WIDTH;
-      canvas.height = EXPORT_HEIGHT;
-      const context = canvas.getContext("2d");
-      if (!context) {
-        const error = new Error("PNG Canvas 2D context is unavailable");
-        report("CANVAS_DRAW_FAIL", errorDiagnostic(error));
+      let context;
+      try {
+        canvas = doc.createElement("canvas");
+        canvas.width = EXPORT_WIDTH;
+        canvas.height = EXPORT_HEIGHT;
+        context = canvas.getContext("2d");
+        if (!context) throw new Error("PNG Canvas 2D context is unavailable");
+        report("CANVAS_CREATE", { stage: "canvas-create", width: canvas.width, height: canvas.height });
+      } catch (error) {
+        report("CANVAS_CREATE_FAIL", errorDiagnostic(error, "canvas-create"));
         throw error;
       }
       try {
-        onStage("background-draw");
+        onStage("canvas-draw-background");
         drawCoverBackground(context, background.image, backgroundPosition);
         drawStageShade(context, options.stage, { ...options, documentObject: doc });
-        onStage("text-draw");
-        drawTextRenderPlan(context, textPlan);
+        report("CANVAS_DRAW_BG", { stage: "canvas-draw-background" });
+        onStage("canvas-draw-text");
+        drawTextRenderPlan(context, { ...textPlan, entries: textPlan.entries.filter(entry => entry.role !== "footer") });
+        report("CANVAS_DRAW_TEXT", { stage: "canvas-draw-text", lines: textPlan.entries.filter(entry => entry.role !== "footer").length });
+        onStage("canvas-draw-footer");
+        drawTextRenderPlan(context, { ...textPlan, entries: textPlan.entries.filter(entry => entry.role === "footer") });
+        report("CANVAS_DRAW_FOOTER", { stage: "canvas-draw-footer", lines: textPlan.entries.filter(entry => entry.role === "footer").length });
       } catch (error) {
-        report("CANVAS_DRAW_FAIL", errorDiagnostic(error));
+        report("CANVAS_DRAW_FAIL", errorDiagnostic(error, diagnostics.stage));
         throw error;
       }
       report("CANVAS_DRAW_OK", { width: canvas.width, height: canvas.height });
-      onStage("png-encode");
+      onStage("to-blob");
+      report("TO_BLOB_START", { stage: "to-blob", width: canvas.width, height: canvas.height });
       let blob;
       try {
         blob = options.exporter ? await options.exporter(canvas) : await canvasToPngBlob(canvas);
       } catch (error) {
-        report("TO_BLOB_FAIL", errorDiagnostic(error));
+        report("TO_BLOB_FAIL", errorDiagnostic(error, "to-blob"));
         throw error;
       }
       diagnostics.toBlobOk = Boolean(blob);
       if (!blob || blob.type !== "image/png") {
         const error = new Error("PNG generation returned no image");
-        report("TO_BLOB_FAIL", errorDiagnostic(error));
+        report("TO_BLOB_FAIL", errorDiagnostic(error, "to-blob"));
         throw error;
       }
       if (blob.size < MIN_EXPORT_BYTES) {
         const error = new Error(`PNG generation returned an implausibly small image (${blob.size} bytes)`);
-        report("TO_BLOB_FAIL", { blobSize: blob.size, ...errorDiagnostic(error) });
+        report("TO_BLOB_FAIL", { blobSize: blob.size, ...errorDiagnostic(error, "to-blob") });
         throw error;
       }
       report("TO_BLOB_OK", { blobSize: blob.size, type: blob.type });
       onStage("complete");
+      report("EXPORT_OK", { stage: "complete", blobSize: blob.size, width: EXPORT_WIDTH, height: EXPORT_HEIGHT });
       return { blob, filename: momentFilename(snapshot), snapshot, width: EXPORT_WIDTH, height: EXPORT_HEIGHT };
     } finally {
       background?.release?.();
@@ -860,12 +920,21 @@
       options.reportDiagnostic?.("FALLBACK", { mode: "download" });
       return { mode: "download" };
     }
-    const file = createPngFile(result.blob, result.filename, options.FileConstructor);
-    options.reportDiagnostic?.("FILE_CREATED", {
-      fileName: file?.name || null,
-      fileType: file?.type || null,
-      fileSize: file?.size ?? result.blob.size
-    });
+    let file = null;
+    try {
+      file = createPngFile(result.blob, result.filename, options.FileConstructor);
+      if (!file) throw new Error("PNG File is unavailable");
+      const fileDetails = {
+        stage: "file-create",
+        fileName: file.name,
+        fileType: file.type,
+        fileSize: file.size
+      };
+      options.reportDiagnostic?.("FILE_CREATED", fileDetails);
+      options.reportDiagnostic?.("FILE_CREATE_OK", fileDetails);
+    } catch (error) {
+      options.reportDiagnostic?.("FILE_CREATE_FAIL", errorDiagnostic(error, "file-create"));
+    }
     const hasShare = typeof navigatorObject?.share === "function";
     const hasCanShare = typeof navigatorObject?.canShare === "function";
     options.reportDiagnostic?.("SHARE_CAPABILITIES", { hasShare, hasCanShare });
@@ -1122,6 +1191,7 @@
       stage.classList.toggle("light-quote-stage--text-light", resolvedTone === "light");
       stage.classList.toggle("light-quote-stage--text-dark", resolvedTone === "dark");
       stage.dataset.textTone = resolvedTone;
+      reportDiagnostic("TEXT_SHADOW", { tone: resolvedTone, ...textShadowDiagnostics(stage, rootElement.ownerDocument) });
       return resolvedTone;
     }
 
@@ -1155,6 +1225,7 @@
       const version = ++renderVersion;
       stage.className = `light-quote-stage light-quote-stage--${currentImage?.text_safe_area || "flexible"} light-quote-stage--text-light`;
       stage.dataset.textTone = "light";
+      reportDiagnostic("TEXT_SHADOW", { tone: "light", ...textShadowDiagnostics(stage, rootElement.ownerDocument) });
       if (currentImage) stage.style.backgroundImage = `url("${String(currentImage.url).replace(/"/g, "%22")}")`;
       currentImagePromise = decodedImage
         ? Promise.resolve(decodedImage)
@@ -1526,6 +1597,7 @@
     textOffsetBounds,
     textToneForPixels,
     technicalTitle,
+    textShadowDiagnostics,
     userActivationState
   };
 });
