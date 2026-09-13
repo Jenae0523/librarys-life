@@ -122,8 +122,8 @@
 
   <main>
     
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20260913-1">
-<script src="/assets/js/light-quotes.js?v=20260912-2" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20260913-2">
+<script src="/assets/js/light-quotes.js?v=20260913-3" defer></script>
 
 <section class="light-quote-main" data-light-quote-main aria-labelledby="light-quote-title">
   <header class="light-quote-header">
@@ -168,6 +168,10 @@
       <button type="button" data-light-quote-copy>复制文字</button>
     </div>
     <p class="light-quote-status" data-light-quote-status aria-live="polite"></p>
+    <details class="light-quote-debug" data-light-quote-debug hidden>
+      <summary>保存诊断</summary>
+      <pre data-light-quote-debug-output></pre>
+    </details>
 
     <div class="light-quote-image-preview" data-light-quote-image-preview hidden>
       <div class="light-quote-image-preview__dialog" role="dialog" aria-modal="true" aria-labelledby="light-quote-preview-title">
@@ -176,6 +180,7 @@
         <img data-light-quote-preview-image alt="">
         <div class="light-quote-image-preview__actions">
           <button type="button" class="light-quote-image-preview__share" data-light-quote-preview-share hidden>保存 / 分享图片</button>
+          <a class="light-quote-image-preview__download" data-light-quote-preview-download download hidden>下载 PNG</a>
           <button type="button" data-light-quote-preview-close>关闭</button>
         </div>
       </div>

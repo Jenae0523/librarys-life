@@ -323,6 +323,25 @@
   line-height: 1.6;
   text-align: center;
 }
+.light-quote-debug[hidden] { display: none; }
+.light-quote-debug {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid #d8dde6;
+  border-radius: 8px;
+  background: #f7f8fa;
+  color: #394150;
+  font-size: 12px;
+  text-align: left;
+}
+.light-quote-debug pre {
+  font: 12px/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
+  max-height: 260px;
+  margin: 8px 0 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
 
 .light-quote-image-preview[hidden] { display: none; }
 .light-quote-image-preview {
@@ -364,8 +383,10 @@
   justify-content: center;
   gap: 10px;
 }
-.light-quote-image-preview__actions button[hidden] { display: none; }
-.light-quote-image-preview__dialog button {
+.light-quote-image-preview__actions [hidden] { display: none; }
+.light-quote-image-preview__dialog button,
+.light-quote-image-preview__dialog .light-quote-image-preview__download {
+  display: inline-block;
   min-width: 104px;
   padding: 10px 22px;
   border: 1px solid #cfd5df;
@@ -373,6 +394,8 @@
   background: #fff;
   color: #414957;
   font: inherit;
+  line-height: normal;
+  text-decoration: none;
   cursor: pointer;
 }
 .light-quote-image-preview__dialog .light-quote-image-preview__share {

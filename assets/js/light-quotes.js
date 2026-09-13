@@ -14,6 +14,54 @@
     + 0.7152 * channelLuminance(36)
     + 0.0722 * channelLuminance(42);
   const READY_IMAGE_QUEUE_LIMIT = 2;
+  const LIGHT_QUOTES_BUILD = "20260913-3";
+
+  function userActivationState(navigatorObject) {
+    return typeof navigatorObject?.userActivation?.isActive === "boolean"
+      ? navigatorObject.userActivation.isActive
+      : null;
+  }
+
+  function errorDiagnostic(error) {
+    return {
+      name: error?.name || "Error",
+      message: error?.message || String(error || "Unknown error")
+    };
+  }
+
+  function createDebugReporter(rootElement, options = {}) {
+    const doc = options.documentObject || rootElement?.ownerDocument || (typeof document !== "undefined" ? document : null);
+    const win = options.windowObject || doc?.defaultView || (typeof window !== "undefined" ? window : null);
+    const navigatorObject = options.navigatorObject || win?.navigator || (typeof navigator !== "undefined" ? navigator : null);
+    const panel = rootElement?.querySelector?.("[data-light-quote-debug]");
+    const output = panel?.querySelector?.("[data-light-quote-debug-output]");
+    let enabled = false;
+    try { enabled = new URL(win.location.href).searchParams.get("lqdebug") === "1"; } catch (_) {}
+    if (panel) panel.hidden = !enabled;
+    const entries = [];
+    const report = (event, details = {}) => {
+      if (!enabled) return;
+      const entry = { event, ...details };
+      entries.push(entry);
+      if (entries.length > 120) entries.shift();
+      if (output) output.textContent = entries.map(item => JSON.stringify(item)).join("\n");
+      console.info("Light quote debug", entry);
+    };
+    if (enabled) {
+      const script = doc?.querySelector?.('script[src*="/assets/js/light-quotes.js"]');
+      const stylesheet = doc?.querySelector?.('link[href*="/assets/css/light-quotes.css"]');
+      report("BUILD", {
+        build: LIGHT_QUOTES_BUILD,
+        js: script?.getAttribute?.("src") || "unknown",
+        css: stylesheet?.getAttribute?.("href") || "unknown",
+        userAgent: navigatorObject?.userAgent || "unknown",
+        isSecureContext: Boolean(win?.isSecureContext)
+      });
+    }
+    report.enabled = enabled;
+    report.entries = entries;
+    return report;
+  }
 
   function randomItem(items, random = Math.random) {
     return items.length ? items[Math.floor(random() * items.length)] : null;
@@ -587,22 +635,47 @@
     const urls = options.urlApi || (typeof URL !== "undefined" ? URL : null);
     if (!fetcher || !urls?.createObjectURL || !imageUrl) throw new Error("Background preparation is unavailable");
     const requestUrl = runtimeImageUrl(imageUrl, options.documentObject);
+    const report = options.reportDiagnostic || (() => {});
     options.onDiagnostic?.("resolvedBackgroundUrl", requestUrl);
     options.onStage?.("background-fetch");
-    const response = await fetcher(requestUrl, {
-      mode: "cors",
-      credentials: "omit",
-      cache: "force-cache"
-    });
-    if (!response?.ok) throw new Error(`Background request failed (${response?.status || "network"})`);
+    report("BG_FETCH_START", { url: requestUrl });
+    let response;
+    try {
+      response = await fetcher(requestUrl, {
+        mode: "cors",
+        credentials: "omit",
+        cache: "no-store"
+      });
+    } catch (error) {
+      report("BG_FETCH_FAIL", errorDiagnostic(error));
+      throw error;
+    }
+    const responseType = response?.headers?.get?.("content-type") || "unknown";
+    if (!response?.ok) {
+      const error = new Error(`Background request failed (${response?.status || "network"})`);
+      report("BG_FETCH_FAIL", { status: response?.status || 0, contentType: responseType, ...errorDiagnostic(error) });
+      throw error;
+    }
     options.onDiagnostic?.("fetchOk", true);
-    const blob = await response.blob();
-    if (!blob?.type?.startsWith("image/") || !blob.size) throw new Error("Background response is not a usable image");
+    let blob;
+    try {
+      blob = await response.blob();
+    } catch (error) {
+      report("BG_FETCH_FAIL", { status: response.status, contentType: responseType, ...errorDiagnostic(error) });
+      throw error;
+    }
+    report("BG_FETCH_OK", { status: response.status, contentType: responseType, blobSize: blob?.size || 0 });
+    if (!blob?.type?.startsWith("image/") || !blob.size) {
+      const error = new Error("Background response is not a usable image");
+      report("BG_FETCH_FAIL", { status: response.status, contentType: responseType, blobSize: blob?.size || 0, ...errorDiagnostic(error) });
+      throw error;
+    }
     const objectUrl = urls.createObjectURL(blob);
     try {
       options.onStage?.("background-decode");
       const image = await decodeRasterImage(objectUrl, options.ImageConstructor);
       options.onDiagnostic?.("decodeOk", true);
+      report("BG_DECODE_OK", { width: image.naturalWidth || image.width, height: image.naturalHeight || image.height });
       let released = false;
       const prepared = {
         blob,
@@ -624,6 +697,7 @@
       };
       return prepared;
     } catch (error) {
+      report("BG_DECODE_FAIL", errorDiagnostic(error));
       urls.revokeObjectURL(objectUrl);
       throw error;
     }
@@ -633,6 +707,7 @@
     const snapshot = options.snapshot;
     const doc = options.documentObject || options.stage?.ownerDocument || (typeof document !== "undefined" ? document : null);
     const diagnostics = options.diagnostics || {};
+    const report = options.reportDiagnostic || (() => {});
     const onStage = stage => { diagnostics.stage = stage; };
     const onDiagnostic = (key, value) => { diagnostics[key] = value; };
     diagnostics.backgroundUrl = snapshot.image_url;
@@ -650,7 +725,8 @@
       ...options,
       documentObject: doc,
       onStage,
-      onDiagnostic
+      onDiagnostic,
+      reportDiagnostic: report
     });
     let canvas = null;
     try {
@@ -659,17 +735,42 @@
       canvas.width = EXPORT_WIDTH;
       canvas.height = EXPORT_HEIGHT;
       const context = canvas.getContext("2d");
-      if (!context) throw new Error("PNG Canvas 2D context is unavailable");
-      onStage("background-draw");
-      drawCoverBackground(context, background.image, backgroundPosition);
-      drawStageShade(context, options.stage, { ...options, documentObject: doc });
-      onStage("text-draw");
-      drawTextRenderPlan(context, textPlan);
+      if (!context) {
+        const error = new Error("PNG Canvas 2D context is unavailable");
+        report("CANVAS_DRAW_FAIL", errorDiagnostic(error));
+        throw error;
+      }
+      try {
+        onStage("background-draw");
+        drawCoverBackground(context, background.image, backgroundPosition);
+        drawStageShade(context, options.stage, { ...options, documentObject: doc });
+        onStage("text-draw");
+        drawTextRenderPlan(context, textPlan);
+      } catch (error) {
+        report("CANVAS_DRAW_FAIL", errorDiagnostic(error));
+        throw error;
+      }
+      report("CANVAS_DRAW_OK", { width: canvas.width, height: canvas.height });
       onStage("png-encode");
-      const blob = options.exporter ? await options.exporter(canvas) : await canvasToPngBlob(canvas);
+      let blob;
+      try {
+        blob = options.exporter ? await options.exporter(canvas) : await canvasToPngBlob(canvas);
+      } catch (error) {
+        report("TO_BLOB_FAIL", errorDiagnostic(error));
+        throw error;
+      }
       diagnostics.toBlobOk = Boolean(blob);
-      if (!blob || blob.type !== "image/png") throw new Error("PNG generation returned no image");
-      if (blob.size < MIN_EXPORT_BYTES) throw new Error(`PNG generation returned an implausibly small image (${blob.size} bytes)`);
+      if (!blob || blob.type !== "image/png") {
+        const error = new Error("PNG generation returned no image");
+        report("TO_BLOB_FAIL", errorDiagnostic(error));
+        throw error;
+      }
+      if (blob.size < MIN_EXPORT_BYTES) {
+        const error = new Error(`PNG generation returned an implausibly small image (${blob.size} bytes)`);
+        report("TO_BLOB_FAIL", { blobSize: blob.size, ...errorDiagnostic(error) });
+        throw error;
+      }
+      report("TO_BLOB_OK", { blobSize: blob.size, type: blob.type });
       onStage("complete");
       return { blob, filename: momentFilename(snapshot), snapshot, width: EXPORT_WIDTH, height: EXPORT_HEIGHT };
     } finally {
@@ -696,6 +797,24 @@
     setTimeout(() => urls.revokeObjectURL(objectUrl), 1000);
   }
 
+  function createObjectUrlStore(urlApi) {
+    const urls = urlApi || (typeof URL !== "undefined" ? URL : null);
+    let current = null;
+    return {
+      create(blob) {
+        this.revoke();
+        current = urls.createObjectURL(blob);
+        return current;
+      },
+      revoke() {
+        if (!current) return;
+        urls.revokeObjectURL(current);
+        current = null;
+      },
+      get: () => current
+    };
+  }
+
   async function freezeCurrentMoment(options) {
     const result = await generateMomentPng(options);
     (options.downloader || downloadBlob)(result.blob, result.filename);
@@ -712,30 +831,78 @@
     return Constructor ? new Constructor([blob], filename, { type: "image/png" }) : null;
   }
 
+  async function shareExistingPngFile(file, options = {}) {
+    const navigatorObject = options.navigatorObject || (typeof navigator !== "undefined" ? navigator : null);
+    const report = options.reportDiagnostic || (() => {});
+    if (!file || typeof navigatorObject?.share !== "function") return { mode: "unsupported" };
+    report("SHARE_START", {
+      userActivation: userActivationState(navigatorObject),
+      fileName: file.name,
+      fileType: file.type,
+      fileSize: file.size
+    });
+    try {
+      await navigatorObject.share({ files: [file], title: "光语录" });
+      report("SHARE_OK");
+      return { mode: "share", file };
+    } catch (error) {
+      report("SHARE_FAIL", errorDiagnostic(error));
+      return { mode: error?.name === "AbortError" ? "cancelled" : "share-failed", file, error };
+    }
+  }
+
   async function deliverMomentPng(result, options = {}) {
     const navigatorObject = options.navigatorObject || (typeof navigator !== "undefined" ? navigator : null);
     const windowObject = options.windowObject || (typeof window !== "undefined" ? window : null);
     const mobile = options.mobile ?? (isTouchDevice(navigatorObject, windowObject) || Number(windowObject?.innerWidth || 0) <= 575);
     if (!mobile) {
       (options.downloader || downloadBlob)(result.blob, result.filename, options.documentObject, options.urlApi);
+      options.reportDiagnostic?.("FALLBACK", { mode: "download" });
       return { mode: "download" };
     }
     const file = createPngFile(result.blob, result.filename, options.FileConstructor);
-    if (file && typeof navigatorObject?.canShare === "function" && typeof navigatorObject?.share === "function"
-      && navigatorObject.canShare({ files: [file] })) {
-      if (typeof options.sharePresenter === "function") {
-        options.sharePresenter(file, result);
-        return { mode: "share-ready", file };
-      }
+    options.reportDiagnostic?.("FILE_CREATED", {
+      fileName: file?.name || null,
+      fileType: file?.type || null,
+      fileSize: file?.size ?? result.blob.size
+    });
+    const hasShare = typeof navigatorObject?.share === "function";
+    const hasCanShare = typeof navigatorObject?.canShare === "function";
+    options.reportDiagnostic?.("SHARE_CAPABILITIES", { hasShare, hasCanShare });
+    let canShareFiles = false;
+    if (file && hasCanShare) {
       try {
-        await navigatorObject.share({ files: [file], title: "光语录" });
-        return { mode: "share", file };
+        canShareFiles = Boolean(navigatorObject.canShare({ files: [file] }));
+        options.reportDiagnostic?.("CAN_SHARE", { result: canShareFiles });
       } catch (error) {
-        if (error?.name === "AbortError") return { mode: "cancelled", file };
+        options.reportDiagnostic?.("CAN_SHARE_FAIL", errorDiagnostic(error));
       }
+    } else {
+      options.reportDiagnostic?.("CAN_SHARE", { result: false });
     }
-    if (typeof options.previewer !== "function") throw new Error("Image preview is unavailable");
-    options.previewer(result.blob, result.filename);
+    const activation = userActivationState(navigatorObject);
+    options.reportDiagnostic?.("SHARE_ACTIVATION", { userActivation: activation });
+    const present = mode => {
+      if (canShareFiles && typeof options.sharePresenter === "function") {
+        options.sharePresenter(file, result);
+      } else if (typeof options.previewer === "function") {
+        options.previewer(result.blob, result.filename, file, canShareFiles);
+      } else {
+        throw new Error("Image preview is unavailable");
+      }
+      options.reportDiagnostic?.("FALLBACK", { mode });
+    };
+    if (file && hasShare && canShareFiles && activation === true) {
+      const shared = await shareExistingPngFile(file, { navigatorObject, reportDiagnostic: options.reportDiagnostic });
+      if (shared.mode === "share") return shared;
+      present(shared.mode === "cancelled" ? "preview-after-cancel" : "preview-after-share-failure");
+      return shared;
+    }
+    if (file && hasShare && canShareFiles) {
+      present("second-user-gesture");
+      return { mode: "share-ready", file };
+    }
+    present("preview-download-long-press");
     return { mode: "preview", file };
   }
 
@@ -896,7 +1063,15 @@
     const preview = rootElement.querySelector("[data-light-quote-image-preview]");
     const previewImage = rootElement.querySelector("[data-light-quote-preview-image]");
     const previewShare = rootElement.querySelector("[data-light-quote-preview-share]");
+    const previewDownload = rootElement.querySelector("[data-light-quote-preview-download]");
     const previewClose = rootElement.querySelector("[data-light-quote-preview-close]");
+    const navigatorObject = options.navigatorObject || (typeof navigator !== "undefined" ? navigator : null);
+    const windowObject = options.windowObject || rootElement.ownerDocument?.defaultView || (typeof window !== "undefined" ? window : null);
+    const reportDiagnostic = options.reportDiagnostic || createDebugReporter(rootElement, {
+      documentObject: rootElement.ownerDocument,
+      windowObject,
+      navigatorObject
+    });
     const rawPreloadImage = options.imagePreloader || createImagePreloader(options.ImageConstructor);
     const preloadImage = url => rawPreloadImage(url);
     const analyzeBackground = options.backgroundAnalyzer || analyzeTextBackground;
@@ -915,10 +1090,11 @@
     let renderVersion = 0;
     let currentImagePromise = Promise.resolve(null);
     let textTonePromise = Promise.resolve("light");
-    let previewUrl = null;
+    const previewUrls = createObjectUrlStore(options.urlApi);
     let previewFile = null;
     let backgroundBusy = false;
     let exportBusy = false;
+    let shareBusy = false;
     let exportOperationSequence = 0;
     let actionSequence = 0;
     const recentImageUrls = [];
@@ -1069,24 +1245,35 @@
     function closePreview() {
       if (preview) preview.hidden = true;
       if (previewImage) previewImage.removeAttribute("src");
-      if (previewUrl) URL.revokeObjectURL(previewUrl);
-      previewUrl = null;
+      previewUrls.revoke();
       previewFile = null;
       if (previewShare) previewShare.hidden = true;
+      if (previewDownload) {
+        previewDownload.hidden = true;
+        previewDownload.removeAttribute("href");
+        previewDownload.removeAttribute("download");
+      }
+      reportDiagnostic("PREVIEW_CLOSED");
     }
 
     rootElement.ownerDocument?.defaultView?.addEventListener?.("pagehide", closePreview, { once: true });
 
-    function showPreview(blob, filename, file) {
+    function showPreview(blob, filename, file, canShareFile = Boolean(file)) {
       if (!preview || !previewImage) throw new Error("Image preview is unavailable");
       closePreview();
-      previewUrl = URL.createObjectURL(blob);
+      const previewUrl = previewUrls.create(blob);
       previewFile = file || null;
       previewImage.src = previewUrl;
       previewImage.alt = `${filename}，请长按保存`;
-      if (previewShare) previewShare.hidden = !previewFile;
+      if (previewShare) previewShare.hidden = !previewFile || !canShareFile;
+      if (previewDownload) {
+        previewDownload.href = previewUrl;
+        previewDownload.download = filename;
+        previewDownload.hidden = false;
+      }
       preview.hidden = false;
-      (previewFile ? previewShare : previewClose)?.focus?.();
+      reportDiagnostic("PREVIEW_READY", { fileName: filename, blobSize: blob.size, canShareFile });
+      (!previewShare?.hidden ? previewShare : previewDownload || previewClose)?.focus?.();
     }
 
     const requestedId = new URL(location.href).searchParams.get("quote");
@@ -1103,22 +1290,25 @@
     });
     previewClose?.addEventListener("click", closePreview);
     preview?.addEventListener("click", event => { if (event.target === preview) closePreview(); });
+    previewDownload?.addEventListener("click", () => reportDiagnostic("FALLBACK", { mode: "download-existing-blob" }));
     previewShare?.addEventListener("click", async function () {
-      if (!previewFile || typeof navigator.share !== "function") return;
+      if (shareBusy || !previewFile || typeof navigatorObject?.share !== "function") return;
+      const file = previewFile;
+      shareBusy = true;
       this.disabled = true;
       try {
-        await navigator.share({ files: [previewFile], title: "光语录" });
-        closePreview();
-        status.textContent = "图片已交给系统分享面板。";
-      } catch (error) {
-        if (error?.name === "AbortError") {
+        reportDiagnostic("SECOND_CLICK", { userActivation: userActivationState(navigatorObject) });
+        const shared = await shareExistingPngFile(file, { navigatorObject, reportDiagnostic });
+        if (shared.mode === "share") {
           closePreview();
-          status.textContent = "已取消分享；需要时可再次点击“定格此刻”。";
+          status.textContent = "图片已交给系统分享面板。";
+        } else if (shared.mode === "cancelled") {
+          status.textContent = "已取消分享；PNG 仍保留在预览中。";
         } else {
-          this.hidden = true;
-          status.textContent = "系统分享不可用，请长按图片保存。";
+          status.textContent = "系统分享失败；PNG 仍可下载或长按保存。";
         }
       } finally {
+        shareBusy = false;
         this.disabled = false;
       }
     });
@@ -1128,7 +1318,6 @@
       const snapshot = createMomentSnapshot(currentQuote, currentImage, encounterTime);
       const frozenVersion = renderVersion;
       const operationId = ++exportOperationSequence;
-      const navigatorObject = typeof navigator !== "undefined" ? navigator : null;
       const userAgent = navigatorObject?.userAgent || "";
       const diagnostics = {
         operationId,
@@ -1147,29 +1336,45 @@
       button.disabled = true;
       button.textContent = "生成中…";
       status.textContent = "图片还在准备，请稍候…";
+      reportDiagnostic("CLICK", { operationId, userActivation: userActivationState(navigatorObject) });
       try {
-        await currentImagePromise;
-        await textTonePromise;
-        if (frozenVersion !== renderVersion) throw new Error("Quote changed while preparing the image");
-        status.textContent = "正在生成 1080 × 1920 PNG…";
-        const result = await (options.pngGenerator || generateMomentPng)({ stage, snapshot, diagnostics });
-        if (frozenVersion !== renderVersion) throw new Error("Quote changed while generating the image");
-        const delivery = await (options.pngDeliverer || deliverMomentPng)(result, {
-          previewer: (blob, filename) => showPreview(blob, filename, null),
-          sharePresenter: (file, shareResult) => showPreview(shareResult.blob, shareResult.filename, file)
-        });
+        let result;
+        try {
+          await textTonePromise;
+          if (frozenVersion !== renderVersion) throw new Error("Quote changed while preparing the image");
+          status.textContent = "正在生成 1080 × 1920 PNG…";
+          result = await (options.pngGenerator || generateMomentPng)({ stage, snapshot, diagnostics, reportDiagnostic });
+          if (frozenVersion !== renderVersion) throw new Error("Quote changed while generating the image");
+          reportDiagnostic("PNG_GENERATION_OK", { operationId, blobSize: result.blob.size });
+        } catch (error) {
+          reportDiagnostic("PNG_GENERATION_FAIL", { operationId, stage: diagnostics.stage, ...errorDiagnostic(error) });
+          console.error("Light quote PNG generation failed", JSON.stringify(diagnostics), error);
+          status.textContent = error?.message?.includes("Quote changed")
+            ? "当前语录已切换，请重新点击“定格此刻”。"
+            : "图片生成失败，请稍后重试。";
+          return;
+        }
         try { sessionStorage.setItem("light-quote-snapshot", JSON.stringify(snapshot)); } catch (_) {}
         const size = `${(result.blob.size / 1024 / 1024).toFixed(2)} MB`;
-        if (delivery.mode === "download") status.textContent = `PNG 已生成并开始下载：1080 × 1920，${size}`;
-        if (delivery.mode === "share") status.textContent = `图片已生成：1080 × 1920，${size}`;
-        if (delivery.mode === "share-ready") status.textContent = `图片已生成，请点击“保存 / 分享图片”：1080 × 1920，${size}`;
-        if (delivery.mode === "preview") status.textContent = `图片已生成，请长按预览图保存：1080 × 1920，${size}`;
-        if (delivery.mode === "cancelled") status.textContent = "已取消分享；需要时可再次点击“定格此刻”。";
-      } catch (error) {
-        console.error("Light quote PNG export failed", JSON.stringify(diagnostics), error);
-        status.textContent = error?.message?.includes("Quote changed")
-          ? "当前语录已切换，请重新点击“定格此刻”。"
-          : "图片生成失败，请稍后重试。";
+        try {
+          const delivery = await (options.pngDeliverer || deliverMomentPng)(result, {
+            navigatorObject,
+            windowObject,
+            reportDiagnostic,
+            previewer: (blob, filename, file, canShareFile) => showPreview(blob, filename, file, canShareFile),
+            sharePresenter: (file, shareResult) => showPreview(shareResult.blob, shareResult.filename, file, true)
+          });
+          if (delivery.mode === "download") status.textContent = `PNG 已生成并开始下载：1080 × 1920，${size}`;
+          if (delivery.mode === "share") status.textContent = `PNG 已生成并交给系统分享：1080 × 1920，${size}`;
+          if (delivery.mode === "share-ready") status.textContent = `图片已生成，请点击“保存 / 分享图片”：1080 × 1920，${size}`;
+          if (delivery.mode === "preview") status.textContent = `图片已生成，请下载或长按预览图保存：1080 × 1920，${size}`;
+          if (delivery.mode === "cancelled") status.textContent = "已取消分享；PNG 仍保留在预览中。";
+          if (delivery.mode === "share-failed") status.textContent = "PNG 已生成；系统分享失败，仍可下载或长按保存。";
+        } catch (error) {
+          reportDiagnostic("DELIVERY_FAIL", errorDiagnostic(error));
+          console.error("Light quote PNG delivery failed", error);
+          status.textContent = `PNG 已生成，但保存界面打开失败：1080 × 1920，${size}`;
+        }
       } finally {
         exportBusy = false;
         button.disabled = false;
@@ -1191,6 +1396,7 @@
       getTextTone: () => stage.dataset.textTone || "light",
       isBackgroundBusy: () => backgroundBusy,
       isExportBusy: () => exportBusy,
+      isShareBusy: () => shareBusy,
       getTextOffsetRatio: textPosition.getOffsetRatio,
       isTextAdjustmentMode: textPosition.isAdjustmentMode,
       isTextDragging: textPosition.isDragging,
@@ -1271,6 +1477,7 @@
     CONTRAST_COVERAGE_TIE,
     EXPORT_HEIGHT,
     EXPORT_WIDTH,
+    LIGHT_QUOTES_BUILD,
     MIN_EXPORT_BYTES,
     READY_IMAGE_QUEUE_LIMIT,
     READABLE_CONTRAST_RATIO,
@@ -1284,9 +1491,11 @@
     copyTextValue,
     coverSampleRect,
     createImagePreloader,
+    createObjectUrlStore,
     createReadyImageQueue,
     createTextPositionController,
     createMomentSnapshot,
+    createDebugReporter,
     createPngFile,
     decodeRasterImage,
     deliverMomentPng,
@@ -1311,10 +1520,12 @@
     resolveQuote,
     runtimeImageUrl,
     sampleTextPixels,
+    shareExistingPngFile,
     textContrastComparison,
     textLineRects,
     textOffsetBounds,
     textToneForPixels,
-    technicalTitle
+    technicalTitle,
+    userActivationState
   };
 });
