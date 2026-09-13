@@ -14,7 +14,7 @@
     + 0.7152 * channelLuminance(36)
     + 0.0722 * channelLuminance(42);
   const READY_IMAGE_QUEUE_LIMIT = 2;
-  const LIGHT_QUOTES_BUILD = "20260913-4";
+  const LIGHT_QUOTES_BUILD = "20260913-5";
 
   function userActivationState(navigatorObject) {
     return typeof navigatorObject?.userActivation?.isActive === "boolean"
@@ -1027,7 +1027,6 @@
     const textGroup = options.textGroup;
     const footer = options.footer;
     const adjustButton = options.adjustButton;
-    const resetButton = options.resetButton;
     const status = options.status;
     let offsetRatio = 0;
     let adjustmentMode = false;
@@ -1057,16 +1056,14 @@
       if (!adjustmentMode) finishDrag();
       textGroup?.classList?.toggle?.("is-adjusting", adjustmentMode);
       adjustButton?.setAttribute?.("aria-pressed", String(adjustmentMode));
-      if (adjustButton) adjustButton.textContent = adjustmentMode ? "完成" : "调整文字";
-      if (resetButton) resetButton.hidden = !adjustmentMode;
-      if (status) status.textContent = adjustmentMode ? "上下拖动文字，调整完成后请点击“完成”。" : "";
+      if (adjustButton) adjustButton.textContent = adjustmentMode ? "锁定文字" : "调整文字";
+      if (status) status.textContent = adjustmentMode ? "上下拖动文字，调整后请点击“锁定文字”。" : "";
       return adjustmentMode;
     }
 
-    function reset() {
+    function resetForNewQuote() {
       offsetRatio = 0;
       applyOffset();
-      if (status && adjustmentMode) status.textContent = "文字已恢复默认位置。";
     }
 
     function pointerDown(event) {
@@ -1095,7 +1092,6 @@
     }
 
     adjustButton?.addEventListener?.("click", () => setMode(!adjustmentMode));
-    resetButton?.addEventListener?.("click", reset);
     textGroup?.addEventListener?.("pointerdown", pointerDown);
     textGroup?.addEventListener?.("pointermove", pointerMove);
     textGroup?.addEventListener?.("pointerup", finishDrag);
@@ -1103,7 +1099,7 @@
     applyOffset();
 
     return {
-      reset,
+      resetForNewQuote,
       setMode,
       getOffsetRatio: () => offsetRatio,
       isAdjustmentMode: () => adjustmentMode,
@@ -1127,7 +1123,6 @@
     const nextButton = rootElement.querySelector("[data-light-quote-next]");
     const backgroundButton = rootElement.querySelector("[data-light-quote-background]");
     const textAdjustButton = rootElement.querySelector("[data-light-quote-text-adjust]");
-    const textResetButton = rootElement.querySelector("[data-light-quote-text-reset]");
     const freezeButton = rootElement.querySelector("[data-light-quote-freeze]");
     const preview = rootElement.querySelector("[data-light-quote-image-preview]");
     const previewImage = rootElement.querySelector("[data-light-quote-preview-image]");
@@ -1150,7 +1145,6 @@
       textGroup: stage?.querySelector?.(".light-quote-stage__glow"),
       footer: stage?.querySelector?.(".light-quote-stage__footer"),
       adjustButton: textAdjustButton,
-      resetButton: textResetButton,
       status
     });
     let currentQuote = null;
@@ -1219,7 +1213,7 @@
       } else {
         source.textContent = `${quote.book_title}\n${quote.author}`;
       }
-      textPosition.reset();
+      textPosition.resetForNewQuote();
       const pad = value => String(value).padStart(2, "0");
       time.textContent = `${encounterTime.getFullYear()}.${pad(encounterTime.getMonth() + 1)}.${pad(encounterTime.getDate())} · ${pad(encounterTime.getHours())}:${pad(encounterTime.getMinutes())}`;
       const version = ++renderVersion;
@@ -1470,8 +1464,7 @@
       isShareBusy: () => shareBusy,
       getTextOffsetRatio: textPosition.getOffsetRatio,
       isTextAdjustmentMode: textPosition.isAdjustmentMode,
-      isTextDragging: textPosition.isDragging,
-      resetTextPosition: textPosition.reset
+      isTextDragging: textPosition.isDragging
     };
   }
 
