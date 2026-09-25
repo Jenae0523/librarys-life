@@ -148,6 +148,8 @@
 }
 .light-quote-stage__glow {
   position: relative;
+  z-index: 0;
+  isolation: isolate;
   width: 84.6154%;
   min-width: 0;
   box-sizing: border-box;
@@ -155,6 +157,21 @@
   padding: 5.7692cqw 4.8077cqw;
   filter: none;
   text-align: center;
+}
+.light-quote-stage__glow::before {
+  position: absolute;
+  z-index: -1;
+  inset: -8px -12px;
+  content: "";
+  pointer-events: none;
+}
+.light-quote-stage--text-dark .light-quote-stage__glow::before {
+  background-image: radial-gradient(
+    ellipse at center,
+    rgba(255,252,244,.34) 0%,
+    rgba(255,250,240,.22) 45%,
+    rgba(255,248,238,0) 100%
+  );
 }
 .light-quote-stage__glow.is-adjusting {
   cursor: ns-resize;
@@ -229,6 +246,9 @@
   text-shadow: 0 .69px 1.38px rgba(0,0,0,.78), 0 1.38px 4.85px rgba(0,0,0,.6), 0 0 9.69px rgba(0,0,0,.34);
 }
 @supports (width: 1cqw) {
+  .light-quote-stage__glow::before {
+    inset: -2.3077cqw -3.4615cqw;
+  }
   .light-quote-stage--text-dark {
     --lq-text-protection:
       0 .0962cqw .3846cqw rgba(255,252,245,.82),

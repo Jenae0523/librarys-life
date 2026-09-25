@@ -9,12 +9,14 @@
   const EXPORT_HEIGHT = 1920;
   const MIN_EXPORT_BYTES = 1250000;
   const READABLE_CONTRAST_RATIO = 4.5;
-  const CONTRAST_COVERAGE_TIE = 0.03;
+  const LIGHT_TEXT_COVERAGE_LEAD = 0.04;
+  const DARK_TEXT_COVERAGE_LEAD = 0.08;
+  const ROBUST_CONTRAST_TIE = 0.1;
   const DARK_TEXT_LUMINANCE = 0.2126 * channelLuminance(32)
     + 0.7152 * channelLuminance(36)
     + 0.0722 * channelLuminance(42);
   const READY_IMAGE_QUEUE_LIMIT = 2;
-  const LIGHT_QUOTES_BUILD = "20260913-5";
+  const LIGHT_QUOTES_BUILD = "20260926-1";
 
   function userActivationState(navigatorObject) {
     return typeof navigatorObject?.userActivation?.isActive === "boolean"
@@ -198,19 +200,22 @@
     };
   }
 
-  function textToneForPixels(pixelData) {
-    const comparison = textContrastComparison(pixelData);
+  function textToneForComparison(comparison) {
     if (!comparison) return "light";
     const coverageDelta = comparison.dark.coverage - comparison.light.coverage;
-    if (Math.abs(coverageDelta) > CONTRAST_COVERAGE_TIE) return coverageDelta > 0 ? "dark" : "light";
+    if (coverageDelta <= -LIGHT_TEXT_COVERAGE_LEAD + Number.EPSILON * 8) return "light";
+    if (coverageDelta >= DARK_TEXT_COVERAGE_LEAD - Number.EPSILON * 8) return "dark";
 
     const lowerQuartileDelta = comparison.dark.lowerQuartile - comparison.light.lowerQuartile;
-    if (Math.abs(lowerQuartileDelta) > 0.1) return lowerQuartileDelta > 0 ? "dark" : "light";
+    if (Math.abs(lowerQuartileDelta) > ROBUST_CONTRAST_TIE) return lowerQuartileDelta > 0 ? "dark" : "light";
 
     const medianDelta = comparison.dark.median - comparison.light.median;
-    if (Math.abs(medianDelta) > 0.1) return medianDelta > 0 ? "dark" : "light";
-    if (coverageDelta !== 0) return coverageDelta > 0 ? "dark" : "light";
-    return medianDelta > 0 ? "dark" : "light";
+    if (Math.abs(medianDelta) > ROBUST_CONTRAST_TIE) return medianDelta > 0 ? "dark" : "light";
+    return "light";
+  }
+
+  function textToneForPixels(pixelData) {
+    return textToneForComparison(textContrastComparison(pixelData));
   }
 
   function coverSampleRect(stageRect, textRect, imageWidth, imageHeight) {
@@ -532,6 +537,30 @@
     }
     const scaleX = EXPORT_WIDTH / stageRect.width;
     const scaleY = EXPORT_HEIGHT / stageRect.height;
+    let groupGlow = null;
+    const textGroup = stage.querySelector(".light-quote-stage__glow");
+    if (textGroup?.getBoundingClientRect) {
+      try {
+        const groupRect = textGroup.getBoundingClientRect();
+        const glowStyle = view.getComputedStyle(textGroup, "::before");
+        const stops = gradientStops(glowStyle?.backgroundImage);
+        const opacity = Number.parseFloat(glowStyle?.opacity || "1");
+        if (groupRect.width > 0 && groupRect.height > 0 && stops.length && opacity > 0) {
+          const left = cssPixels(glowStyle.left);
+          const right = cssPixels(glowStyle.right);
+          const top = cssPixels(glowStyle.top);
+          const bottom = cssPixels(glowStyle.bottom);
+          groupGlow = {
+            x: (groupRect.left + left - stageRect.left) * scaleX,
+            y: (groupRect.top + top - stageRect.top) * scaleY,
+            width: (groupRect.width - left - right) * scaleX,
+            height: (groupRect.height - top - bottom) * scaleY,
+            opacity,
+            stops
+          };
+        }
+      } catch (_) {}
+    }
     const selectors = [
       { selector: "[data-light-quote-text]", role: "text" },
       { selector: "[data-light-quote-book]", role: "text" },
@@ -566,7 +595,7 @@
         });
       });
     });
-    return { entries, scaleX, scaleY, stageRect };
+    return { entries, groupGlow, scaleX, scaleY, stageRect };
   }
 
   function backgroundPositionRatio(value, axis) {
@@ -591,7 +620,7 @@
   }
 
   function gradientStops(value) {
-    const match = String(value || "").match(/^linear-gradient\((.*)\)$/i);
+    const match = String(value || "").match(/^(?:linear|radial)-gradient\((.*)\)$/i);
     if (!match) return [];
     const parts = splitCssList(match[1]);
     if (parts[0] && !/rgba?\(|#/.test(parts[0])) parts.shift();
@@ -616,6 +645,21 @@
     context.globalAlpha = Number.isFinite(Number.parseFloat(style.opacity)) ? Number.parseFloat(style.opacity) : 1;
     context.fillStyle = gradient;
     context.fillRect(0, 0, EXPORT_WIDTH, EXPORT_HEIGHT);
+    context.restore();
+  }
+
+  function drawGroupGlow(context, glow) {
+    if (!glow || !(glow.width > 0) || !(glow.height > 0) || !glow.stops?.length) return;
+    const radiusX = glow.width / 2;
+    const radiusY = glow.height / 2;
+    const gradient = context.createRadialGradient(0, 0, 0, 0, 0, 1);
+    glow.stops.forEach(stop => gradient.addColorStop(Math.min(1, Math.max(0, stop.position)), stop.color));
+    context.save();
+    context.translate(glow.x + radiusX, glow.y + radiusY);
+    context.scale(radiusX, radiusY);
+    context.globalAlpha = glow.opacity;
+    context.fillStyle = gradient;
+    context.fillRect(-1, -1, 2, 2);
     context.restore();
   }
 
@@ -799,8 +843,9 @@
         drawStageShade(context, options.stage, { ...options, documentObject: doc });
         report("CANVAS_DRAW_BG", { stage: "canvas-draw-background" });
         onStage("canvas-draw-text");
+        drawGroupGlow(context, textPlan.groupGlow);
         drawTextRenderPlan(context, { ...textPlan, entries: textPlan.entries.filter(entry => entry.role !== "footer") });
-        report("CANVAS_DRAW_TEXT", { stage: "canvas-draw-text", lines: textPlan.entries.filter(entry => entry.role !== "footer").length });
+        report("CANVAS_DRAW_TEXT", { stage: "canvas-draw-text", glow: Boolean(textPlan.groupGlow), lines: textPlan.entries.filter(entry => entry.role !== "footer").length });
         onStage("canvas-draw-footer");
         drawTextRenderPlan(context, { ...textPlan, entries: textPlan.entries.filter(entry => entry.role === "footer") });
         report("CANVAS_DRAW_FOOTER", { stage: "canvas-draw-footer", lines: textPlan.entries.filter(entry => entry.role === "footer").length });
@@ -1137,7 +1182,7 @@
       navigatorObject
     });
     const rawPreloadImage = options.imagePreloader || createImagePreloader(options.ImageConstructor);
-    const preloadImage = url => rawPreloadImage(url);
+    const preloadImage = url => rawPreloadImage(runtimeImageUrl(url, rootElement.ownerDocument));
     const analyzeBackground = options.backgroundAnalyzer || analyzeTextBackground;
     const textPosition = createTextPositionController({
       stage,
@@ -1538,13 +1583,15 @@
   }
 
   return {
-    CONTRAST_COVERAGE_TIE,
+    DARK_TEXT_COVERAGE_LEAD,
     EXPORT_HEIGHT,
     EXPORT_WIDTH,
     LIGHT_QUOTES_BUILD,
+    LIGHT_TEXT_COVERAGE_LEAD,
     MIN_EXPORT_BYTES,
     READY_IMAGE_QUEUE_LIMIT,
     READABLE_CONTRAST_RATIO,
+    ROBUST_CONTRAST_TIE,
     analyzeTextBackground,
     candidateImages,
     chooseImage,
@@ -1565,6 +1612,7 @@
     deliverMomentPng,
     downloadBlob,
     drawCoverBackground,
+    drawGroupGlow,
     drawStageShade,
     drawTextRenderPlan,
     freezeCurrentMoment,
@@ -1589,6 +1637,7 @@
     textLineRects,
     textOffsetBounds,
     textToneForPixels,
+    textToneForComparison,
     technicalTitle,
     textShadowDiagnostics,
     userActivationState
