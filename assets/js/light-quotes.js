@@ -16,7 +16,8 @@
     + 0.7152 * channelLuminance(36)
     + 0.0722 * channelLuminance(42);
   const READY_IMAGE_QUEUE_LIMIT = 2;
-  const LIGHT_QUOTES_BUILD = "20260926-1";
+  const TEXT_TOP_SAFE_RATIO = 0.025;
+  const LIGHT_QUOTES_BUILD = "20260927-1";
 
   function userActivationState(navigatorObject) {
     return typeof navigatorObject?.userActivation?.isActive === "boolean"
@@ -1050,7 +1051,7 @@
   function textOffsetBounds(stageRect, textRect, footerRect, currentOffsetRatio = 0, options = {}) {
     const stageHeight = Number(stageRect?.height) || 0;
     if (!stageHeight || !textRect || !footerRect) return { min: 0, max: 0 };
-    const topSafeRatio = options.topSafeRatio ?? 0.08;
+    const topSafeRatio = options.topSafeRatio ?? TEXT_TOP_SAFE_RATIO;
     const footerGapRatio = options.footerGapRatio ?? 0.025;
     const stageTop = Number(stageRect.top) || 0;
     const textTop = Number(textRect.top) || 0;
@@ -1592,6 +1593,7 @@
     READY_IMAGE_QUEUE_LIMIT,
     READABLE_CONTRAST_RATIO,
     ROBUST_CONTRAST_TIE,
+    TEXT_TOP_SAFE_RATIO,
     analyzeTextBackground,
     candidateImages,
     chooseImage,
