@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "dataset_version": "sha256-208c9da3ef06294b65f69b9b111a2382d9791f5c3b8e355ea4d79d005cabfbcb",
+  "count": 197,
+  "shard_size": 250,
+  "shards": [
+    {
+      "key": "0001",
+      "url": "shards/quotes-0001-23e89cb57b30.json",
+      "start": 0,
+      "count": 197,
+      "min_lq_id": "lq-0001",
+      "max_lq_id": "lq-0212",
+      "sha256": "23e89cb57b306405c7c6fa17d31df45a0be70c18beb620f774531563c2ec6366"
+    }
+  ]
+}

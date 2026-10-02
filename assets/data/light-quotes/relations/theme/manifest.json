@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "quote_dataset_version": "sha256-208c9da3ef06294b65f69b9b111a2382d9791f5c3b8e355ea4d79d005cabfbcb",
+  "relation_version": "sha256-eb057c72ea8ad0c754a7e1f48a2234935aa03505844cc4ccf3cb9a7d2b064fda",
+  "dimension": "theme",
+  "key_count": 5,
+  "bucket_count": 5,
+  "chunk_count": 5,
+  "chunk_size": 500,
+  "buckets": {
+    "个人成长": {
+      "key": "个人成长",
+      "count": 40,
+      "chunks": [
+        {
+          "url": "buckets/56c655c02cef3425-0001-adbf2e8fbcdb.json",
+          "start": 0,
+          "count": 40,
+          "sha256": "adbf2e8fbcdbe05f6f6998f46934259cc8616b63aa4516b82c578f5152261356"
+        }
+      ]
+    },
+    "亲子教育": {
+      "key": "亲子教育",
+      "count": 37,
+      "chunks": [
+        {
+          "url": "buckets/e0ac4b5256edaf96-0001-f622e818f441.json",
+          "start": 0,
+          "count": 37,
+          "sha256": "f622e818f44178f0a57b32248f21aaeb94fb52e140f394b5542955cbdf87c129"
+        }
+      ]
+    },
+    "亲密关系": {
+      "key": "亲密关系",
+      "count": 46,
+      "chunks": [
+        {
+          "url": "buckets/abe53bf80171feb1-0001-387481aadd16.json",
+          "start": 0,
+          "count": 46,
+          "sha256": "387481aadd16c8f14f8707f114747230fb364fa85ac1494b8a685d9f26f89c37"
+        }
+      ]
+    },
+    "婚姻家庭": {
+      "key": "婚姻家庭",
+      "count": 33,
+      "chunks": [
+        {
+          "url": "buckets/94844749f8b64815-0001-057d49cf6c61.json",
+          "start": 0,
+          "count": 33,
+          "sha256": "057d49cf6c61140ef61a0924767cafc00c9952c6db27e2049bd7498921c27293"
+        }
+      ]
+    },
+    "沟通方式": {
+      "key": "沟通方式",
+      "count": 41,
+      "chunks": [
+        {
+          "url": "buckets/0fbedadef25ea710-0001-0064f803ecdb.json",
+          "start": 0,
+          "count": 41,
+          "sha256": "0064f803ecdbff75caac135ee3741688ebec8a87ef7081365bd3aa6d905e8fec"
+        }
+      ]
+    }
+  }
+}

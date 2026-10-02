@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "quote_dataset_version": "sha256-208c9da3ef06294b65f69b9b111a2382d9791f5c3b8e355ea4d79d005cabfbcb",
+  "relation_version": "sha256-eb057c72ea8ad0c754a7e1f48a2234935aa03505844cc4ccf3cb9a7d2b064fda",
+  "dimension": "state",
+  "key_count": 4,
+  "bucket_count": 4,
+  "chunk_count": 4,
+  "chunk_size": 500,
+  "buckets": {
+    "attachment-alarm": {
+      "key": "attachment-alarm",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/d06fe84020689f89-0001-043b90ce7215.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "043b90ce72152501db399a50146486d1315e960d0c303b5c3c818299e3ab9f40"
+        }
+      ]
+    },
+    "felt-security": {
+      "key": "felt-security",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/ddcc205f572332e4-0001-d517687ee882.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "d517687ee882ba79adcaed070a0c0874ddde2eb956dd68987f8a06475bb37a69"
+        }
+      ]
+    },
+    "social-connectedness": {
+      "key": "social-connectedness",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/845b991cd62b318b-0001-d23bb9355187.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "d23bb93551878f7ecb6c89e2c7cb5c3adfd484769b68db44d41e200a03986d4a"
+        }
+      ]
+    },
+    "social-isolation": {
+      "key": "social-isolation",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/c5340e61b0eafcb2-0001-9df7b8cf95d8.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "9df7b8cf95d89e4dd4ebf75effb128387b24fb3005559050db0b2a578fc88cfc"
+        }
+      ]
+    }
+  }
+}

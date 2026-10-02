@@ -17,7 +17,21 @@
     + 0.0722 * channelLuminance(42);
   const READY_IMAGE_QUEUE_LIMIT = 2;
   const TEXT_TOP_SAFE_RATIO = 0.025;
-  const LIGHT_QUOTES_BUILD = "20260927-1";
+  const LIGHT_QUOTES_BUILD = "20260929-3";
+  const CONTROLLED_RANDOM_DEFAULTS = Object.freeze({
+    historySize: 20,
+    quoteExclusionWindow: 20,
+    bookWindow: 5,
+    authorWindow: 4,
+    themeWindow: 3,
+    bookPenalty: 0.4,
+    authorPenalty: 0.55,
+    themePenalty: 0.8,
+    windowCount: 3,
+    windowSize: 4,
+    candidatePoolTarget: 12,
+    maxShardFetchBudget: 7
+  });
 
   function userActivationState(navigatorObject) {
     return typeof navigatorObject?.userActivation?.isActive === "boolean"
@@ -1043,6 +1057,500 @@
     }
   }
 
+  function quoteFilterValues(value) {
+    if (value === undefined || value === null || value === "") return [];
+    return (Array.isArray(value) ? value : [value])
+      .map(item => String(item || "").trim())
+      .filter(Boolean);
+  }
+
+  function quoteMatchesAny(actualValue, expectedValues) {
+    if (!expectedValues.length) return true;
+    const actualValues = Array.isArray(actualValue) ? actualValue : [actualValue];
+    return actualValues.some(value => expectedValues.includes(String(value || "").trim()));
+  }
+
+  /**
+   * Creates the Promise-based quote data-access contract used by page logic.
+   * The current provider is memory-backed; a shard/fetch provider can implement
+   * the same methods without exposing its storage layout to callers.
+   */
+  function createQuoteStore(sourceQuotes = []) {
+    if (!Array.isArray(sourceQuotes)) throw new TypeError("Quote store source must be an array");
+    const records = sourceQuotes.slice();
+    const byId = new Map();
+    for (const quote of records) {
+      const id = String(quote?.lq_id || "").trim();
+      if (!id) continue;
+      if (byId.has(id)) throw new Error(`Duplicate quote ID in store: ${id}`);
+      byId.set(id, quote);
+    }
+    const metadata = Object.freeze({ count: records.length });
+
+    return Object.freeze({
+      async getById(lqId) {
+        return byId.get(String(lqId || "").trim()) || null;
+      },
+
+      async getCandidates(options = {}) {
+        const excludedIds = new Set(quoteFilterValues(options.excludeIds ?? options.exclude_ids));
+        const themes = quoteFilterValues(options.theme);
+        const tags = quoteFilterValues(options.tag);
+        const concepts = quoteFilterValues(options.psychologyConcept ?? options.psychology_concept);
+        const authors = quoteFilterValues(options.author);
+        const books = quoteFilterValues(options.book);
+        const hasOffset = options.offset !== undefined && options.offset !== null;
+        const numericOffset = hasOffset ? Number(options.offset) : 0;
+        if (!Number.isFinite(numericOffset) || numericOffset < 0) {
+          throw new RangeError("Quote candidate offset must be a non-negative finite number");
+        }
+        const offset = Math.floor(numericOffset);
+        const hasLimit = options.limit !== undefined && options.limit !== null;
+        const numericLimit = hasLimit ? Number(options.limit) : Infinity;
+        if (hasLimit && (!Number.isFinite(numericLimit) || numericLimit < 0)) {
+          throw new RangeError("Quote candidate limit must be a non-negative finite number");
+        }
+        const limit = hasLimit ? Math.floor(numericLimit) : Infinity;
+        const result = [];
+        let matchedBeforeOffset = 0;
+        if (limit === 0) return result;
+
+        for (const quote of records) {
+          if (excludedIds.has(String(quote?.lq_id || ""))) continue;
+          if (!quoteMatchesAny(quote?.theme, themes)) continue;
+          if (!quoteMatchesAny(quote?.tags, tags)) continue;
+          if (!quoteMatchesAny(quote?.psychology_concepts, concepts)) continue;
+          if (!quoteMatchesAny(quote?.author, authors)) continue;
+          if (!quoteMatchesAny(quote?.book_title, books)) continue;
+          if (matchedBeforeOffset < offset) {
+            matchedBeforeOffset += 1;
+            continue;
+          }
+          result.push(quote);
+          if (result.length >= limit) break;
+        }
+        return result;
+      },
+
+      async getMany(ids) {
+        if (!Array.isArray(ids)) return [];
+        return ids.map(id => byId.get(String(id || "").trim()) || null).filter(Boolean);
+      },
+
+      async getMetadata() {
+        return metadata;
+      }
+    });
+  }
+
+  function resolveQuoteDataUrl(value, baseUrl) {
+    if (!value) return "";
+    try { return new URL(value, baseUrl || undefined).href; } catch (_) { return String(value); }
+  }
+
+  function validateQuoteManifest(manifest) {
+    if (!manifest || manifest.schema_version !== 1 || !Array.isArray(manifest.shards)) {
+      throw new Error("Invalid light quote manifest");
+    }
+    if (!Number.isInteger(manifest.count) || manifest.count < 0 || typeof manifest.dataset_version !== "string") {
+      throw new Error("Invalid light quote manifest metadata");
+    }
+    let expectedStart = 0;
+    for (const descriptor of manifest.shards) {
+      if (!descriptor || descriptor.start !== expectedStart || !Number.isInteger(descriptor.count) || descriptor.count <= 0
+        || !descriptor.url || !descriptor.min_lq_id || !descriptor.max_lq_id) {
+        throw new Error("Invalid light quote manifest shard coverage");
+      }
+      expectedStart += descriptor.count;
+    }
+    if (expectedStart !== manifest.count) throw new Error("Light quote manifest count mismatch");
+    return manifest;
+  }
+
+  function createShardedQuoteStore(options = {}) {
+    const documentObject = options.documentObject || (typeof document !== "undefined" ? document : null);
+    const baseUrl = options.baseUrl || documentObject?.baseURI || (typeof location !== "undefined" ? location.href : undefined);
+    const manifestUrl = resolveQuoteDataUrl(options.manifestUrl, baseUrl);
+    const fetcher = options.fetcher || (typeof fetch === "function" ? fetch.bind(globalThis) : null);
+    if (!manifestUrl) throw new Error("Sharded quote store requires manifestUrl");
+    if (!fetcher) throw new Error("Sharded quote store requires fetch");
+    let manifestPromise = null;
+    const shardPromises = new Map();
+
+    async function fetchJson(url, label) {
+      const response = await fetcher(url, { credentials: "same-origin" });
+      if (!response?.ok) throw new Error(`${label} request failed (${response?.status || "network"})`);
+      try { return await response.json(); } catch (error) {
+        throw new Error(`${label} returned malformed JSON: ${error?.message || error}`);
+      }
+    }
+
+    function getManifest() {
+      if (!manifestPromise) {
+        manifestPromise = fetchJson(manifestUrl, "Light quote manifest")
+          .then(validateQuoteManifest)
+          .catch(error => {
+            manifestPromise = null;
+            throw error;
+          });
+      }
+      return manifestPromise;
+    }
+
+    function shardUrl(descriptor) {
+      return resolveQuoteDataUrl(descriptor.url, manifestUrl);
+    }
+
+    function loadShard(descriptor, manifest) {
+      const url = shardUrl(descriptor);
+      if (!shardPromises.has(url)) {
+        const pending = fetchJson(url, `Light quote shard ${descriptor.key || descriptor.url}`)
+          .then(shard => {
+            if (!shard || shard.schema_version !== manifest.schema_version
+              || shard.dataset_version !== manifest.dataset_version
+              || shard.shard_key !== descriptor.key
+              || shard.start !== descriptor.start
+              || shard.count !== descriptor.count
+              || !Array.isArray(shard.quotes)
+              || shard.quotes.length !== descriptor.count) {
+              throw new Error(`Malformed light quote shard: ${descriptor.url}`);
+            }
+            const ids = shard.quotes.map(quote => String(quote?.lq_id || "").trim());
+            if (ids.some(id => !id) || new Set(ids).size !== ids.length) {
+              throw new Error(`Invalid quote IDs in shard: ${descriptor.url}`);
+            }
+            return shard.quotes;
+          })
+          .catch(error => {
+            shardPromises.delete(url);
+            throw error;
+          });
+        shardPromises.set(url, pending);
+      }
+      return shardPromises.get(url);
+    }
+
+    function descriptorForId(manifest, lqId) {
+      return manifest.shards.find(descriptor => lqId >= descriptor.min_lq_id && lqId <= descriptor.max_lq_id) || null;
+    }
+
+    function candidateOptions(rawOptions = {}) {
+      const excludedIds = new Set(quoteFilterValues(rawOptions.excludeIds ?? rawOptions.exclude_ids));
+      const themes = quoteFilterValues(rawOptions.theme);
+      const tags = quoteFilterValues(rawOptions.tag);
+      const concepts = quoteFilterValues(rawOptions.psychologyConcept ?? rawOptions.psychology_concept);
+      const authors = quoteFilterValues(rawOptions.author);
+      const books = quoteFilterValues(rawOptions.book);
+      const numericOffset = rawOptions.offset === undefined || rawOptions.offset === null ? 0 : Number(rawOptions.offset);
+      if (!Number.isFinite(numericOffset) || numericOffset < 0) throw new RangeError("Quote candidate offset must be a non-negative finite number");
+      const hasLimit = rawOptions.limit !== undefined && rawOptions.limit !== null;
+      const numericLimit = hasLimit ? Number(rawOptions.limit) : Infinity;
+      if (hasLimit && (!Number.isFinite(numericLimit) || numericLimit < 0)) {
+        throw new RangeError("Quote candidate limit must be a non-negative finite number");
+      }
+      return {
+        excludedIds,
+        themes,
+        tags,
+        concepts,
+        authors,
+        books,
+        offset: Math.floor(numericOffset),
+        limit: hasLimit ? Math.floor(numericLimit) : Infinity,
+        filtered: Boolean(themes.length || tags.length || concepts.length || authors.length || books.length)
+      };
+    }
+
+    function quoteMatchesFilters(quote, request) {
+      return quoteMatchesAny(quote?.theme, request.themes)
+        && quoteMatchesAny(quote?.tags, request.tags)
+        && quoteMatchesAny(quote?.psychology_concepts, request.concepts)
+        && quoteMatchesAny(quote?.author, request.authors)
+        && quoteMatchesAny(quote?.book_title, request.books);
+    }
+
+    return Object.freeze({
+      async getById(lqId) {
+        const id = String(lqId || "").trim();
+        if (!id) return null;
+        const manifest = await getManifest();
+        const descriptor = descriptorForId(manifest, id);
+        if (!descriptor) return null;
+        const records = await loadShard(descriptor, manifest);
+        return records.find(quote => quote.lq_id === id) || null;
+      },
+
+      async getCandidates(options = {}) {
+        const request = candidateOptions(options);
+        if (request.limit === 0) return [];
+        const manifest = await getManifest();
+        const result = [];
+        let remainingOffset = request.offset;
+
+        if (!request.filtered) {
+          if (request.offset >= manifest.count) return result;
+          for (const descriptor of manifest.shards) {
+            if (descriptor.start + descriptor.count <= request.offset) continue;
+            const records = await loadShard(descriptor, manifest);
+            const localStart = Math.max(0, request.offset - descriptor.start);
+            for (let index = localStart; index < records.length; index += 1) {
+              const quote = records[index];
+              if (request.excludedIds.has(quote.lq_id)) continue;
+              result.push(quote);
+              if (result.length >= request.limit) return result;
+            }
+          }
+          return result;
+        }
+
+        for (const descriptor of manifest.shards) {
+          const records = await loadShard(descriptor, manifest);
+          for (const quote of records) {
+            if (request.excludedIds.has(quote.lq_id) || !quoteMatchesFilters(quote, request)) continue;
+            if (remainingOffset > 0) {
+              remainingOffset -= 1;
+              continue;
+            }
+            result.push(quote);
+            if (result.length >= request.limit) return result;
+          }
+        }
+        return result;
+      },
+
+      async getMany(ids) {
+        if (!Array.isArray(ids) || !ids.length) return [];
+        const normalizedIds = ids.map(id => String(id || "").trim()).filter(Boolean);
+        const manifest = await getManifest();
+        const descriptors = [...new Set(normalizedIds.map(id => descriptorForId(manifest, id)).filter(Boolean))];
+        const groups = await Promise.all(descriptors.map(async descriptor => ({
+          descriptor,
+          records: await loadShard(descriptor, manifest)
+        })));
+        const byId = new Map(groups.flatMap(group => group.records).map(quote => [quote.lq_id, quote]));
+        return normalizedIds.map(id => byId.get(id) || null).filter(Boolean);
+      },
+
+      async getMetadata() {
+        const manifest = await getManifest();
+        return Object.freeze({ count: manifest.count, version: manifest.dataset_version });
+      }
+    });
+  }
+
+  async function randomQuoteFromStore(quoteStore, random = Math.random, excludeIds = []) {
+    const metadata = await quoteStore.getMetadata();
+    const count = Math.max(0, Number(metadata?.count) || 0);
+    if (!count) return null;
+    const excluded = quoteFilterValues(excludeIds);
+    const firstOffset = Math.min(count - 1, Math.floor(random() * count));
+    const attempts = Math.min(count, Math.max(2, excluded.length + 1));
+    for (let attempt = 0; attempt < attempts; attempt += 1) {
+      const offset = (firstOffset + attempt) % count;
+      const candidates = await quoteStore.getCandidates({ offset, limit: 1, excludeIds: excluded });
+      if (candidates[0]) return candidates[0];
+    }
+    return null;
+  }
+
+  function controlledRandomConfig(overrides = {}) {
+    const positiveInteger = (key, minimum = 0) => {
+      const value = Math.floor(Number(overrides[key] ?? CONTROLLED_RANDOM_DEFAULTS[key]));
+      return Number.isFinite(value) ? Math.max(minimum, value) : CONTROLLED_RANDOM_DEFAULTS[key];
+    };
+    const penalty = key => {
+      const value = Number(overrides[key] ?? CONTROLLED_RANDOM_DEFAULTS[key]);
+      return Number.isFinite(value) && value > 0 && value <= 1 ? value : CONTROLLED_RANDOM_DEFAULTS[key];
+    };
+    return Object.freeze({
+      historySize: positiveInteger("historySize"),
+      quoteExclusionWindow: positiveInteger("quoteExclusionWindow"),
+      bookWindow: positiveInteger("bookWindow"),
+      authorWindow: positiveInteger("authorWindow"),
+      themeWindow: positiveInteger("themeWindow"),
+      bookPenalty: penalty("bookPenalty"),
+      authorPenalty: penalty("authorPenalty"),
+      themePenalty: penalty("themePenalty"),
+      windowCount: positiveInteger("windowCount", 1),
+      windowSize: positiveInteger("windowSize", 1),
+      candidatePoolTarget: positiveInteger("candidatePoolTarget", 1),
+      maxShardFetchBudget: positiveInteger("maxShardFetchBudget", 1)
+    });
+  }
+
+  function controlledRandomHistoryEntry(quote) {
+    const entityAuthorIds = Array.isArray(quote?.author_ids)
+      ? [...new Set(quote.author_ids.map(value => String(value || "").trim()).filter(Boolean))]
+      : [];
+    const fallbackAuthor = String(quote?.author_id || quote?.author || "").trim();
+    const authorIds = entityAuthorIds.length ? entityAuthorIds : (fallbackAuthor ? [fallbackAuthor] : []);
+    return Object.freeze({
+      lq_id: String(quote?.lq_id || "").trim(),
+      book: String(quote?.book_id || quote?.book_title || "").trim(),
+      author_ids: Object.freeze(authorIds),
+      theme: String(quote?.theme || "").trim()
+    });
+  }
+
+  function countRecentOccurrences(history, field, value, windowSize) {
+    const records = Array.isArray(history) ? history : [];
+    const size = Math.max(0, Math.floor(Number(windowSize) || 0));
+    if (!size) return 0;
+    return records.slice(-size).reduce((count, entry) => count + (entry?.[field] === value ? 1 : 0), 0);
+  }
+
+  function countRecentAuthorOverlaps(history, authorIds, windowSize) {
+    const records = Array.isArray(history) ? history : [];
+    const size = Math.max(0, Math.floor(Number(windowSize) || 0));
+    const candidates = new Set(Array.isArray(authorIds) ? authorIds.filter(Boolean) : []);
+    if (!size || !candidates.size) return 0;
+    return records.slice(-size).reduce((count, entry) => {
+      const recent = Array.isArray(entry?.author_ids) ? entry.author_ids : [];
+      return count + (recent.some(authorId => candidates.has(authorId)) ? 1 : 0);
+    }, 0);
+  }
+
+  function buildRecentExclusion(history, windowSize, currentQuote) {
+    const records = Array.isArray(history) ? history : [];
+    const size = Math.max(0, Math.floor(Number(windowSize) || 0));
+    const ids = records.slice(-size).map(entry => String(entry?.lq_id || "").trim()).filter(Boolean);
+    const currentId = String(currentQuote?.lq_id || "").trim();
+    if (currentId) ids.push(currentId);
+    return new Set(ids);
+  }
+
+  function buildCandidateWeights(candidates, history = [], options = {}) {
+    const config = controlledRandomConfig(options);
+    const records = Array.isArray(candidates) ? candidates.filter(Boolean) : [];
+    const bookFrequency = new Map();
+    for (const quote of records) {
+      const key = controlledRandomHistoryEntry(quote).book;
+      bookFrequency.set(key, (bookFrequency.get(key) || 0) + 1);
+    }
+    return records.map(quote => {
+      const entry = controlledRandomHistoryEntry(quote);
+      const bookPoolBalance = 1 / Math.sqrt(bookFrequency.get(entry.book) || 1);
+      const recentBookCount = countRecentOccurrences(history, "book", entry.book, config.bookWindow);
+      const recentAuthorCount = countRecentAuthorOverlaps(history, entry.author_ids, config.authorWindow);
+      const recentThemeCount = countRecentOccurrences(history, "theme", entry.theme, config.themeWindow);
+      const weight = bookPoolBalance
+        * Math.pow(config.bookPenalty, recentBookCount)
+        * Math.pow(config.authorPenalty, recentAuthorCount)
+        * Math.pow(config.themePenalty, recentThemeCount);
+      return Object.freeze({
+        quote,
+        weight,
+        bookPoolBalance,
+        recentBookCount,
+        recentAuthorCount,
+        recentThemeCount
+      });
+    });
+  }
+
+  function normalizedRandomValue(random) {
+    const value = Number(typeof random === "function" ? random() : Math.random());
+    if (!Number.isFinite(value)) return 0;
+    return Math.min(1 - Number.EPSILON, Math.max(0, value));
+  }
+
+  function weightedRandom(weightedCandidates, random = Math.random) {
+    const entries = Array.isArray(weightedCandidates) ? weightedCandidates.filter(entry => entry?.quote) : [];
+    if (!entries.length) return null;
+    const unit = normalizedRandomValue(random);
+    const valid = entries.filter(entry => Number.isFinite(Number(entry.weight)) && Number(entry.weight) > 0);
+    const total = valid.reduce((sum, entry) => sum + Number(entry.weight), 0);
+    if (!valid.length || !Number.isFinite(total) || total <= 0) {
+      return entries[Math.min(entries.length - 1, Math.floor(unit * entries.length))].quote;
+    }
+    const threshold = unit * total;
+    let cumulative = 0;
+    for (const entry of valid) {
+      cumulative += Number(entry.weight);
+      if (threshold < cumulative) return entry.quote;
+    }
+    return valid[valid.length - 1].quote;
+  }
+
+  async function sampleControlledCandidates(quoteStore, count, random, config) {
+    const windowSize = Math.min(config.windowSize, count);
+    const maximumOffset = Math.max(0, count - windowSize);
+    const offsets = Array.from({ length: config.windowCount }, (_, index) => {
+      const stratified = (normalizedRandomValue(random) + index / config.windowCount) % 1;
+      return Math.min(maximumOffset, Math.floor(stratified * (maximumOffset + 1)));
+    });
+    const windows = await Promise.all(offsets.map(offset => quoteStore.getCandidates({ offset, limit: windowSize })));
+    const byId = new Map();
+    for (const quote of windows.flat()) {
+      const id = String(quote?.lq_id || "").trim();
+      if (id && !byId.has(id)) byId.set(id, quote);
+      if (byId.size >= config.candidatePoolTarget) break;
+    }
+    return [...byId.values()];
+  }
+
+  function createControlledRandomStrategy(options = {}) {
+    const config = controlledRandomConfig(options);
+    const history = [];
+
+    function record(quote) {
+      const entry = controlledRandomHistoryEntry(quote);
+      if (!entry.lq_id || !config.historySize) return entry;
+      history.push(entry);
+      if (history.length > config.historySize) history.splice(0, history.length - config.historySize);
+      return entry;
+    }
+
+    function reset() {
+      history.splice(0, history.length);
+    }
+
+    async function next({ quoteStore, currentQuote = null, random = Math.random } = {}) {
+      if (!quoteStore) return null;
+      const metadata = await quoteStore.getMetadata();
+      const count = Math.max(0, Math.floor(Number(metadata?.count) || 0));
+      if (!count) return null;
+      let pool = await sampleControlledCandidates(quoteStore, count, random, config);
+      if (!pool.length) return null;
+
+      const effectiveWindow = Math.min(config.quoteExclusionWindow, Math.max(0, count - 1), history.length);
+      const fullExclusion = buildRecentExclusion(history, effectiveWindow, currentQuote);
+      let eligible = pool.filter(quote => !fullExclusion.has(quote.lq_id));
+
+      if (!eligible.length && count > fullExclusion.size) {
+        const fallback = await quoteStore.getCandidates({
+          offset: 0,
+          limit: config.windowSize,
+          excludeIds: [...fullExclusion]
+        });
+        const byId = new Map(pool.map(quote => [quote.lq_id, quote]));
+        fallback.forEach(quote => byId.set(quote.lq_id, quote));
+        pool = [...byId.values()];
+        eligible = fallback;
+      }
+
+      if (!eligible.length && effectiveWindow > 1) {
+        const shorterExclusion = buildRecentExclusion(history, Math.floor(effectiveWindow / 2), currentQuote);
+        eligible = pool.filter(quote => !shorterExclusion.has(quote.lq_id));
+      }
+      if (!eligible.length && count > 1) {
+        const currentId = String(currentQuote?.lq_id || "").trim();
+        eligible = pool.filter(quote => quote.lq_id !== currentId);
+      }
+      if (!eligible.length && count === 1) eligible = pool.slice(0, 1);
+      if (!eligible.length) return null;
+      return weightedRandom(buildCandidateWeights(eligible, history, config), random);
+    }
+
+    return Object.freeze({
+      next,
+      record,
+      reset,
+      getConfig: () => config,
+      getHistory: () => history.map(entry => ({ ...entry, author_ids: [...entry.author_ids] }))
+    });
+  }
+
   function resolveQuote(quotes, requestedId, random = Math.random) {
     const items = Array.isArray(quotes) ? quotes : [];
     return items.find(quote => quote.lq_id === requestedId) || randomItem(items, random);
@@ -1155,7 +1663,8 @@
 
   function initMainPage(rootElement, options = {}) {
     if (!rootElement) return null;
-    const quotes = options.quotes || [];
+    const quoteStore = options.quoteStore || createQuoteStore(options.quotes || []);
+    const randomStrategy = options.randomStrategy || createControlledRandomStrategy(options.controlledRandomConfig);
     const images = options.images || [];
     const random = options.random || Math.random;
     const matchingMode = normalizeMatchingMode(options.matchingMode);
@@ -1206,6 +1715,7 @@
     let shareBusy = false;
     let exportOperationSequence = 0;
     let actionSequence = 0;
+    let initializationPromise = Promise.resolve(null);
     const recentImageUrls = [];
     const readyImages = createReadyImageQueue({
       limit: READY_IMAGE_QUEUE_LIMIT,
@@ -1285,13 +1795,16 @@
       status.textContent = "";
       if (decodedImage) readyImages.refresh();
       scheduleReadyPreload(version);
+      randomStrategy.record(quote);
     }
 
     async function chooseNext() {
       if (nextButton?.disabled) return;
       const actionToken = ++actionSequence;
-      const pool = quotes.length > 1 ? quotes.filter(quote => quote.lq_id !== currentQuote?.lq_id) : quotes;
-      const quote = randomItem(pool, random);
+      await initializationPromise;
+      if (!currentQuote) return false;
+      const quote = await randomStrategy.next({ quoteStore, currentQuote, random });
+      if (!quote) return false;
       if (nextButton) nextButton.disabled = true;
       status.textContent = "图片还在准备，请稍候…";
       try {
@@ -1388,11 +1901,25 @@
     }
 
     const requestedId = new URL(location.href).searchParams.get("quote");
-    render(resolveQuote(quotes, requestedId, random), false);
+    initializationPromise = (async () => {
+      let quote = requestedId ? await quoteStore.getById(requestedId) : null;
+      if (!quote) quote = await randomStrategy.next({ quoteStore, random });
+      render(quote, false);
+      return quote;
+    })().catch(error => {
+      console.error("Light quote initialization failed", error);
+      status.textContent = "语录加载失败，请稍后刷新页面。";
+      return null;
+    });
 
     nextButton?.addEventListener("click", chooseNext);
     backgroundButton?.addEventListener("click", changeBackground);
     rootElement.querySelector("[data-light-quote-copy]")?.addEventListener("click", async function () {
+      await initializationPromise;
+      if (!currentQuote) {
+        status.textContent = "语录尚未加载完成，请稍后重试。";
+        return;
+      }
       const shareUrl = new URL("/light-quotes/", location.origin);
       shareUrl.searchParams.set("quote", currentQuote.lq_id);
       const value = `「${currentQuote.quote_text}」\n${currentQuote.book_title} │ ${currentQuote.author}\n${shareUrl.href}`;
@@ -1425,6 +1952,11 @@
     });
     freezeButton?.addEventListener("click", async function () {
       if (exportBusy) return;
+      await initializationPromise;
+      if (!currentQuote || !currentImage || !encounterTime) {
+        status.textContent = "语录尚未加载完成，请稍后重试。";
+        return;
+      }
       const button = this;
       const snapshot = createMomentSnapshot(currentQuote, currentImage, encounterTime);
       const frozenVersion = renderVersion;
@@ -1493,6 +2025,9 @@
       }
     });
     return {
+      ready: initializationPromise,
+      quoteStore,
+      randomStrategy,
       render,
       chooseNext,
       changeBackground,
@@ -1514,13 +2049,58 @@
     };
   }
 
-  function initPreviewModules(documentObject = document, random = Math.random) {
-    documentObject.querySelectorAll("[data-quote-preview]").forEach(module => {
-      const items = [...module.querySelectorAll("[data-quote-preview-item]")];
-      items.forEach(item => { item.hidden = true; });
-      const selected = randomItem(items, random);
-      if (selected) selected.hidden = false;
-    });
+  function previewQuoteStore(documentObject, providedStore) {
+    if (providedStore) return providedStore;
+    const module = documentObject.querySelector?.("[data-quote-preview][data-quote-preview-manifest-url]");
+    const manifestUrl = module?.dataset?.quotePreviewManifestUrl
+      || module?.getAttribute?.("data-quote-preview-manifest-url");
+    if (!manifestUrl) return null;
+    try {
+      return createShardedQuoteStore({ manifestUrl, documentObject });
+    } catch (error) {
+      console.error("Light quote preview data could not be initialized", error);
+      return null;
+    }
+  }
+
+  async function initPreviewModule(module, quoteStore, random = Math.random, randomStrategy = createControlledRandomStrategy()) {
+    const item = module?.querySelector?.("[data-quote-preview-item]");
+    const text = module?.querySelector?.("[data-quote-preview-text]");
+    const source = module?.querySelector?.("[data-quote-preview-source]");
+    if (item) item.hidden = true;
+    if (!module || !item || !text || !source || !quoteStore) {
+      if (module?.dataset) module.dataset.quotePreviewState = "unavailable";
+      return null;
+    }
+
+    module.dataset.quotePreviewState = "loading";
+    try {
+      const quote = await randomStrategy.next({ quoteStore, random });
+      if (!quote) {
+        module.dataset.quotePreviewState = "empty";
+        return null;
+      }
+      text.textContent = quote.quote_text || "";
+      source.textContent = `${quote.book_title || ""}│ ${quote.author || ""}`;
+      item.hidden = false;
+      module.dataset.quotePreviewState = "ready";
+      return quote;
+    } catch (error) {
+      module.dataset.quotePreviewState = "error";
+      console.error("Light quote preview could not be rendered", error);
+      return null;
+    }
+  }
+
+  function initPreviewModules(documentObject = document, random = Math.random, options = {}) {
+    const quoteStore = previewQuoteStore(documentObject, options.quoteStore);
+    return Promise.all([...documentObject.querySelectorAll("[data-quote-preview]")]
+      .map(module => initPreviewModule(
+        module,
+        quoteStore,
+        random,
+        options.randomStrategy || createControlledRandomStrategy(options.controlledRandomConfig)
+      )));
   }
 
   function initTagModule(module, random = Math.random, scheduler) {
@@ -1584,6 +2164,7 @@
   }
 
   return {
+    CONTROLLED_RANDOM_DEFAULTS,
     DARK_TEXT_COVERAGE_LEAD,
     EXPORT_HEIGHT,
     EXPORT_WIDTH,
@@ -1595,15 +2176,23 @@
     ROBUST_CONTRAST_TIE,
     TEXT_TOP_SAFE_RATIO,
     analyzeTextBackground,
+    buildCandidateWeights,
+    buildRecentExclusion,
     candidateImages,
     chooseImage,
     createTextRenderPlan,
     contrastMetrics,
     contrastRatio,
+    controlledRandomHistoryEntry,
+    countRecentAuthorOverlaps,
+    countRecentOccurrences,
     clampTextOffset,
     copyTextValue,
     coverSampleRect,
     createImagePreloader,
+    createQuoteStore,
+    createControlledRandomStrategy,
+    createShardedQuoteStore,
     createObjectUrlStore,
     createReadyImageQueue,
     createTextPositionController,
@@ -1620,6 +2209,7 @@
     freezeCurrentMoment,
     generateMomentPng,
     initMainPage,
+    initPreviewModule,
     initPreviewModules,
     initTagModule,
     initTagModules,
@@ -1632,6 +2222,7 @@
     prepareExportBackground,
     parseTextShadows,
     resolveQuote,
+    randomQuoteFromStore,
     runtimeImageUrl,
     sampleTextPixels,
     shareExistingPngFile,
@@ -1642,6 +2233,7 @@
     textToneForComparison,
     technicalTitle,
     textShadowDiagnostics,
-    userActivationState
+    userActivationState,
+    weightedRandom
   };
 });

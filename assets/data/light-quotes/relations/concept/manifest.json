@@ -1,0 +1,684 @@
+{
+  "schema_version": 1,
+  "quote_dataset_version": "sha256-208c9da3ef06294b65f69b9b111a2382d9791f5c3b8e355ea4d79d005cabfbcb",
+  "relation_version": "sha256-eb057c72ea8ad0c754a7e1f48a2234935aa03505844cc4ccf3cb9a7d2b064fda",
+  "dimension": "concept",
+  "key_count": 56,
+  "bucket_count": 56,
+  "chunk_count": 56,
+  "chunk_size": 500,
+  "buckets": {
+    "acceptance": {
+      "key": "acceptance",
+      "count": 7,
+      "chunks": [
+        {
+          "url": "buckets/c1514c6cdad166c1-0001-85b395869f26.json",
+          "start": 0,
+          "count": 7,
+          "sha256": "85b395869f26d31d5245dcf1bf6a7a6f229aa2cd70cd9f91ac1b893e945d3401"
+        }
+      ]
+    },
+    "active-listening": {
+      "key": "active-listening",
+      "count": 5,
+      "chunks": [
+        {
+          "url": "buckets/92f417aa514ce415-0001-48df20231a05.json",
+          "start": 0,
+          "count": 5,
+          "sha256": "48df20231a0588928d323acd239057c8ba56f29006e587932a20d3ed47e29177"
+        }
+      ]
+    },
+    "affirmation": {
+      "key": "affirmation",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/a69ad33c292fe184-0001-d67f77742505.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "d67f777425050643b05cdd72d3d4be645f487bbe9190b0de6dfcb78ef4a94f3f"
+        }
+      ]
+    },
+    "anger": {
+      "key": "anger",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/d4cc56aa47e0b5c7-0001-588b506f9679.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "588b506f9679d521322bbb77ba60b9aaa5b75b44ab8b69ef1d98ee8bb38b5b50"
+        }
+      ]
+    },
+    "approval-seeking": {
+      "key": "approval-seeking",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/6dc7e495728f2b8b-0001-9268bd6a968a.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "9268bd6a968a851111ddf13b3fe01b2b9c58e63a5d97b479623dac970d9219c9"
+        }
+      ]
+    },
+    "attachment": {
+      "key": "attachment",
+      "count": 6,
+      "chunks": [
+        {
+          "url": "buckets/602a5e69c3021bdb-0001-a1e85f05ad2e.json",
+          "start": 0,
+          "count": 6,
+          "sha256": "a1e85f05ad2e45c2c4a39a55af17de94ab397d08e3c04fded0713212156d0b7c"
+        }
+      ]
+    },
+    "attention-allocation": {
+      "key": "attention-allocation",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/7f81cf527048064a-0001-a5c12b9cc055.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "a5c12b9cc055a800058851d0876a8d765849e76e152a5a569bb69fdbad5a8b84"
+        }
+      ]
+    },
+    "attribution": {
+      "key": "attribution",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/3ee591fcb25f09a0-0001-025c9b5a3f87.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "025c9b5a3f872a635994b72ce24ab8b76d9a73dc6092fdcf05c45a311b926a71"
+        }
+      ]
+    },
+    "authenticity": {
+      "key": "authenticity",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/c62eda8e53de8f7a-0001-52f683cc3e5a.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "52f683cc3e5a43de86e057fff69618df07b7e9b0041437db37440ed7a3ef129a"
+        }
+      ]
+    },
+    "autonomy": {
+      "key": "autonomy",
+      "count": 9,
+      "chunks": [
+        {
+          "url": "buckets/e94d787f61ea3ee8-0001-43f24e4842a8.json",
+          "start": 0,
+          "count": 9,
+          "sha256": "43f24e4842a8591093215cc2e89516fb0070e75deeef3d1b5990daeed9a2ff0c"
+        }
+      ]
+    },
+    "blame": {
+      "key": "blame",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/5e7434f45c5ecbda-0001-2e4517594d72.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "2e4517594d724589ae8515ef62f5f40044db54536b424e189f41f163bdfea456"
+        }
+      ]
+    },
+    "boundaries": {
+      "key": "boundaries",
+      "count": 7,
+      "chunks": [
+        {
+          "url": "buckets/bfb1bd0227290c53-0001-181c4a2e26af.json",
+          "start": 0,
+          "count": 7,
+          "sha256": "181c4a2e26af368042de3fc0255053110f482d04113366730e86eb955179c020"
+        }
+      ]
+    },
+    "cognitive-bias": {
+      "key": "cognitive-bias",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/3d56536992ed9d44-0001-0c74b79619dc.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "0c74b79619dc7a0ead84b9b8a5d85302885d0791c3da3bd09356334cadd0776c"
+        }
+      ]
+    },
+    "constructive-conflict": {
+      "key": "constructive-conflict",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/4d6d3dfc4a748dd9-0001-a1a1b1751d8a.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "a1a1b1751d8a887414f40d3f8b774ca81ad4b4bc1d1928b5cbac0b2350130cf9"
+        }
+      ]
+    },
+    "contingent-self-worth": {
+      "key": "contingent-self-worth",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/b1e2c4b103383f37-0001-e4d043e886de.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "e4d043e886de0cf1430597ad7829e33c19f0c6ae0449f5a14d7febed0749db06"
+        }
+      ]
+    },
+    "control": {
+      "key": "control",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/0fcd568a5cb9bdb4-0001-23410d4afafa.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "23410d4afafa7e8fdb45f6929ae278a304ee1217cf2e770dfe57981fbb5af6f5"
+        }
+      ]
+    },
+    "defensiveness": {
+      "key": "defensiveness",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/663658c1fbe7e772-0001-6a5188040a57.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "6a5188040a579d7a3c8ff17ec65c865f753558f55eafaadaae22c280ec2ba9a2"
+        }
+      ]
+    },
+    "dependency": {
+      "key": "dependency",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/f26350dafe3f19aa-0001-8b3aed1f6a9f.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "8b3aed1f6a9fbd543efed2ad66730e5a96aa8f6001428b0e4871d70a4259282b"
+        }
+      ]
+    },
+    "differentiation-of-self": {
+      "key": "differentiation-of-self",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/f42878425f95c877-0001-f77def0171f0.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "f77def0171f0a6cecd4317a3f0fa8e44dfb7b40d6861e25420af738320c75736"
+        }
+      ]
+    },
+    "emotion-regulation": {
+      "key": "emotion-regulation",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/facc433586c6e57c-0001-65679c9da061.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "65679c9da0613395b8bc1aa9497e34bb42c1aea5fd90409e568812a7051600ff"
+        }
+      ]
+    },
+    "emotional-resilience": {
+      "key": "emotional-resilience",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/ba6354899af6138b-0001-2cfb7d640fe7.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "2cfb7d640fe770ae51b8e4e8a4110e7faef32b9340a2a1845c4aa430ae60fb2f"
+        }
+      ]
+    },
+    "emotional-support": {
+      "key": "emotional-support",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/f1c6f90a589c8d8e-0001-0cb00de3d1dd.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "0cb00de3d1dd9d98a536ec7ebb4cca51d2d302c6b5881672fe9a4be0e5cc616b"
+        }
+      ]
+    },
+    "emotional-validation": {
+      "key": "emotional-validation",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/a526b3c8dfc6ed3c-0001-b58dd8c45f79.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "b58dd8c45f79a9226002e918beecdf409ad8a2f3306f19244461007ac4f8526b"
+        }
+      ]
+    },
+    "empathy": {
+      "key": "empathy",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/1bb41bab96782718-0001-a25aebbdd8cd.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "a25aebbdd8cded63b18d261b77980d2b706bb072b2ac77336168c00c91ad0bb3"
+        }
+      ]
+    },
+    "fear": {
+      "key": "fear",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/58d54e7c7553ce1f-0001-48c0939c14f8.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "48c0939c14f8b913303a326b8b801308695f5a93dddd8a47c9265462da252c5e"
+        }
+      ]
+    },
+    "intimacy": {
+      "key": "intimacy",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/a427b3cbc38e5ca8-0001-86bb5d551dae.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "86bb5d551dae8d42153e04d1ac22fb8dedd2651f06c469f60c71c19831f703a1"
+        }
+      ]
+    },
+    "metacommunication": {
+      "key": "metacommunication",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/b4701d2e81af823a-0001-2f47c7be5d79.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "2f47c7be5d79bc4afbfce166c23778a7bc0dd18daf54d40b296bc34d195109b6"
+        }
+      ]
+    },
+    "michelangelo-phenomenon": {
+      "key": "michelangelo-phenomenon",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/eb04a667a7999a56-0001-a7f88df0a631.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "a7f88df0a6312c178f1c3dc5402c14ff6b27ce67c0bd5abb2d6fd95b153cc7a4"
+        }
+      ]
+    },
+    "narrative-identity": {
+      "key": "narrative-identity",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/78bc69b3f4381a68-0001-93330edf1874.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "93330edf1874ee21bfb4b890da834c85eba520abdd63a3447d7617bbf461a349"
+        }
+      ]
+    },
+    "need-to-belong": {
+      "key": "need-to-belong",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/ff4c57eb263806cb-0001-073783adbd04.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "073783adbd04567f86503ca7f6c5fd313729be76fd17290317330a69070913d4"
+        }
+      ]
+    },
+    "needs-awareness": {
+      "key": "needs-awareness",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/fe53d95a7c1ef340-0001-7981e29bbbe3.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "7981e29bbbe34a2f9c51953cf88953c746e94ed6c5c99e89ac0a41f17900140d"
+        }
+      ]
+    },
+    "needs-expression": {
+      "key": "needs-expression",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/de51dab3f6ed87d4-0001-708576c380b4.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "708576c380b45d98c6530ac1ba073ec4e42a99282158ff28c94ca081541491d2"
+        }
+      ]
+    },
+    "partner-responsiveness": {
+      "key": "partner-responsiveness",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/858fff206f589cdd-0001-4aed5e61e99e.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "4aed5e61e99e750806bf14a1dc46946388be3260b367a2dfcdfeae4003903636"
+        }
+      ]
+    },
+    "people-pleasing": {
+      "key": "people-pleasing",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/93d912ee672c567d-0001-509a313cf477.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "509a313cf4773181837676bc9ae533b080fe94f83559de3a006e1af4fb559963"
+        }
+      ]
+    },
+    "perfectionism": {
+      "key": "perfectionism",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/b7e7dd772a86cd61-0001-8279a5d02070.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "8279a5d020709c656e95db68de97967d23b57e59a7c7d40712579ae6ed7ddd78"
+        }
+      ]
+    },
+    "perspective-taking": {
+      "key": "perspective-taking",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/5c179ff57a4b9476-0001-03d471a71f19.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "03d471a71f19dce0ea790406a600d2ac77bea53f4e3696d5c328ce5662f98373"
+        }
+      ]
+    },
+    "possessiveness": {
+      "key": "possessiveness",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/a3ac9ab8a7aee2b8-0001-e33c180f378f.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "e33c180f378f102787904b3fb137c0155763d8a2d5a2c38737ce63720a212dd8"
+        }
+      ]
+    },
+    "prospection": {
+      "key": "prospection",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/59fd1291f4a48758-0001-4adee7d11fa4.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "4adee7d11fa410c5137e7cd3976e3b3dc0f6cdc1fbed521d39664e49333c5e57"
+        }
+      ]
+    },
+    "psychological-needs": {
+      "key": "psychological-needs",
+      "count": 6,
+      "chunks": [
+        {
+          "url": "buckets/7361b97619691991-0001-0a6073599851.json",
+          "start": 0,
+          "count": 6,
+          "sha256": "0a6073599851e22bcf219d20409c48992bb6c87073c89420818c8130d6f4666c"
+        }
+      ]
+    },
+    "relational-security": {
+      "key": "relational-security",
+      "count": 5,
+      "chunks": [
+        {
+          "url": "buckets/48d086bc78fb4113-0001-8ad20fe3aec8.json",
+          "start": 0,
+          "count": 5,
+          "sha256": "8ad20fe3aec8c31a0a655695cea6d3aba89b5e8207edde5af3f9592e81860aab"
+        }
+      ]
+    },
+    "relationship-equity": {
+      "key": "relationship-equity",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/c46b48563526cc67-0001-bfb0f1af464c.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "bfb0f1af464c4ff024a94864d0d81cbdd0c000d79d2aa6338f51e43a671cd381"
+        }
+      ]
+    },
+    "relationship-growth-beliefs": {
+      "key": "relationship-growth-beliefs",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/e271942b6efa56d3-0001-c006ec6d9e34.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "c006ec6d9e347edbffc082a800357ce645ef186439f038cff96219e59deb154a"
+        }
+      ]
+    },
+    "relationship-maintenance": {
+      "key": "relationship-maintenance",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/f3b7d3dd8e4abb6b-0001-26bf54cb664d.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "26bf54cb664d84bd8ea0f4427c5cd86d4d4ea6b76c8d485c0507f859ef55dcd0"
+        }
+      ]
+    },
+    "relationship-repair": {
+      "key": "relationship-repair",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/ac43ffc5a7197db6-0001-5c8c173b625d.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "5c8c173b625d0dd7639656c325189dfa382dc958765a36e2713fd90223e768dc"
+        }
+      ]
+    },
+    "self-awareness": {
+      "key": "self-awareness",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/72713044acf7c21d-0001-484bc9028703.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "484bc9028703baa794eabb415487c64aa70cc463b7724b76c46e6963619af4ed"
+        }
+      ]
+    },
+    "self-compassion": {
+      "key": "self-compassion",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/1b1000d2bdbf5db7-0001-62961dbe0eab.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "62961dbe0eab5ed173d2fc791bdebfdbe3bf0860acb4e2036ffb3f633373e683"
+        }
+      ]
+    },
+    "self-concept": {
+      "key": "self-concept",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/a735c1a90b5104ae-0001-19d8e0fe72a6.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "19d8e0fe72a662cc1f5536c7ac7261f8d99d4014709203f80a0faa38b0f47cdd"
+        }
+      ]
+    },
+    "self-control": {
+      "key": "self-control",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/7fac42aaf082cbb5-0001-70f314a7e36e.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "70f314a7e36e40a213805d6a145f6d3c08c096f37d0bd49e995d9afe6210f7ad"
+        }
+      ]
+    },
+    "self-criticism": {
+      "key": "self-criticism",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/b87b6c72a73da6a2-0001-a588fc9d5727.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "a588fc9d5727d9693a78f196634749011f568b5d872a423cde4de41c7f985db7"
+        }
+      ]
+    },
+    "self-disclosure": {
+      "key": "self-disclosure",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/5b557534fb0ea244-0001-e17af662d924.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "e17af662d9244865b214e059b5f7c60238ab6393577b3c6f12c76fce05cd0c83"
+        }
+      ]
+    },
+    "self-sabotage": {
+      "key": "self-sabotage",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/1baff2347982ea8d-0001-d44ee2c3dae2.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "d44ee2c3dae24c515740410a64d1383eb735cff8b5048a3671d139cd4b7f6f05"
+        }
+      ]
+    },
+    "self-validation": {
+      "key": "self-validation",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/2e6b82fa7dfe8447-0001-126617e16669.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "126617e166697743ba421cc79225a790ea01759dabe27af65db14498eaf130c7"
+        }
+      ]
+    },
+    "separation-anxiety": {
+      "key": "separation-anxiety",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/85ca9607f599cdbc-0001-71173367e43f.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "71173367e43fc51fa85fe6babfa6882f1b1f17db17faa690101810af8d492323"
+        }
+      ]
+    },
+    "shame": {
+      "key": "shame",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/bf197ff3615054b0-0001-039710f6c8a6.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "039710f6c8a63dcc12e85e704a62622870a23bcbc2b7f2fb302bb67a378b9268"
+        }
+      ]
+    },
+    "trust": {
+      "key": "trust",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/f796e2f28ae58117-0001-3ddff8740131.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "3ddff87401312101b2915ef2c174c71ec26e842d1dfdad2a87f29bf2588b2b85"
+        }
+      ]
+    },
+    "vulnerable-disclosure": {
+      "key": "vulnerable-disclosure",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/7bb384d0bc75d2ed-0001-76aa046e20ee.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "76aa046e20ee6e86f690488024fa3836e4536923c8e45e7d0fc73635037c33f6"
+        }
+      ]
+    }
+  }
+}

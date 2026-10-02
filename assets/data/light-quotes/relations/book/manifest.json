@@ -1,0 +1,660 @@
+{
+  "schema_version": 1,
+  "quote_dataset_version": "sha256-208c9da3ef06294b65f69b9b111a2382d9791f5c3b8e355ea4d79d005cabfbcb",
+  "relation_version": "sha256-eb057c72ea8ad0c754a7e1f48a2234935aa03505844cc4ccf3cb9a7d2b064fda",
+  "dimension": "book",
+  "key_count": 54,
+  "bucket_count": 54,
+  "chunk_count": 54,
+  "chunk_size": 500,
+  "buckets": {
+    "book-0001": {
+      "key": "book-0001",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/6b4c0f51eaa3cd10-0001-5cda4edcf91b.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "5cda4edcf91b9702de3168b315ff9f9d0560654cc52d2b658fcfb2bd840868f0"
+        }
+      ]
+    },
+    "book-0002": {
+      "key": "book-0002",
+      "count": 6,
+      "chunks": [
+        {
+          "url": "buckets/42be0a89c3765fd7-0001-85b5c68ab890.json",
+          "start": 0,
+          "count": 6,
+          "sha256": "85b5c68ab890d0b6594e597d175b6241eaab7b3d5c47d231c5f3db447fc6c270"
+        }
+      ]
+    },
+    "book-0003": {
+      "key": "book-0003",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/f872c871a79bd360-0001-54a3f8df4c45.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "54a3f8df4c456d92574fdf7dc009e18d72d8ed6843e13f5ef04270cc98f634bf"
+        }
+      ]
+    },
+    "book-0004": {
+      "key": "book-0004",
+      "count": 6,
+      "chunks": [
+        {
+          "url": "buckets/41f6537f714e448e-0001-926d51eb5f63.json",
+          "start": 0,
+          "count": 6,
+          "sha256": "926d51eb5f6369a8d6d0afdd6f3d1e4b4f18fcc96a8b9bda85e65c0b3a2c02bd"
+        }
+      ]
+    },
+    "book-0005": {
+      "key": "book-0005",
+      "count": 9,
+      "chunks": [
+        {
+          "url": "buckets/bddf299d06ef06ad-0001-56ee2b216a1b.json",
+          "start": 0,
+          "count": 9,
+          "sha256": "56ee2b216a1b3b85e895d3d341446fec9831d2c9f4518fe2cb0ce982bba2c3ff"
+        }
+      ]
+    },
+    "book-0006": {
+      "key": "book-0006",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/e6b635b28df2c17c-0001-cc71f69dc3b1.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "cc71f69dc3b1edcdbd1785ed28547efec7c5959faa08bd69c86ad945650fc53e"
+        }
+      ]
+    },
+    "book-0007": {
+      "key": "book-0007",
+      "count": 7,
+      "chunks": [
+        {
+          "url": "buckets/caa69792dae87fbc-0001-1452d7c8cedb.json",
+          "start": 0,
+          "count": 7,
+          "sha256": "1452d7c8cedbe680b29fe8e0e526c4b8d3ceba2b8c3dfa5ed8638ab9f2b6067e"
+        }
+      ]
+    },
+    "book-0008": {
+      "key": "book-0008",
+      "count": 6,
+      "chunks": [
+        {
+          "url": "buckets/aa1d921792b04e93-0001-5b45aae8eb3d.json",
+          "start": 0,
+          "count": 6,
+          "sha256": "5b45aae8eb3defa8a90cdc61cadc29fbb17aa1a9d9f32b4a9d3491f170f8a0ee"
+        }
+      ]
+    },
+    "book-0009": {
+      "key": "book-0009",
+      "count": 5,
+      "chunks": [
+        {
+          "url": "buckets/eeafb9c575024449-0001-c12ec55a7f67.json",
+          "start": 0,
+          "count": 5,
+          "sha256": "c12ec55a7f67183817fa9b10aeab955e624e6b7ed101d5d1e5fdcff035c7711b"
+        }
+      ]
+    },
+    "book-0010": {
+      "key": "book-0010",
+      "count": 6,
+      "chunks": [
+        {
+          "url": "buckets/821abb6667e330d6-0001-67dfd1f9f431.json",
+          "start": 0,
+          "count": 6,
+          "sha256": "67dfd1f9f4315207d317862ce3122968282635b7a4a882a40ff8891404cb9d40"
+        }
+      ]
+    },
+    "book-0011": {
+      "key": "book-0011",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/996319ec0f13b36e-0001-1eb780e7a29c.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "1eb780e7a29c8f908b258160358a8e4e23c81e57f633e08fe6412888ef4f0d8e"
+        }
+      ]
+    },
+    "book-0012": {
+      "key": "book-0012",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/23ccba8af9597cec-0001-0e10677af6b8.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "0e10677af6b8422cd25676cb380d189bc39d0c4f258e0c26a98ebda25e56c77e"
+        }
+      ]
+    },
+    "book-0013": {
+      "key": "book-0013",
+      "count": 5,
+      "chunks": [
+        {
+          "url": "buckets/5e2128fd8e937a52-0001-c8c6cfa23132.json",
+          "start": 0,
+          "count": 5,
+          "sha256": "c8c6cfa2313204f159425f20ce3907dceddfcd900ba744ed2c9cf8c0e4df727a"
+        }
+      ]
+    },
+    "book-0014": {
+      "key": "book-0014",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/e978a6c3e373cdce-0001-d9cfbdf800d9.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "d9cfbdf800d956e10c77242c725cff181888540e733a82958acd5de4fc16fc13"
+        }
+      ]
+    },
+    "book-0015": {
+      "key": "book-0015",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/cb3e834d26b17d82-0001-d5b8e0b03369.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "d5b8e0b0336926396d9054f7d9bf87c661e39f6428c87aeeb2d09e4c6d145635"
+        }
+      ]
+    },
+    "book-0016": {
+      "key": "book-0016",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/f9032ae7434c50ed-0001-5e6f62cac274.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "5e6f62cac2744dc6db24a5594078abeb25e078f7dac071220720cd7b6d8eba61"
+        }
+      ]
+    },
+    "book-0017": {
+      "key": "book-0017",
+      "count": 5,
+      "chunks": [
+        {
+          "url": "buckets/65e205bda80b6dde-0001-8b456fd3746a.json",
+          "start": 0,
+          "count": 5,
+          "sha256": "8b456fd3746a5ba750343061ff63c61ef53f445167571c1605f00cd402aba465"
+        }
+      ]
+    },
+    "book-0018": {
+      "key": "book-0018",
+      "count": 5,
+      "chunks": [
+        {
+          "url": "buckets/b4002859b826d252-0001-1358e118250a.json",
+          "start": 0,
+          "count": 5,
+          "sha256": "1358e118250ae6bf117acf3b59b0638a38f836192db257f14b995162bd9950f8"
+        }
+      ]
+    },
+    "book-0019": {
+      "key": "book-0019",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/abddfd94c0802060-0001-f908e0dd9a9f.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "f908e0dd9a9f985566b40f614f2e12555b4cb8cc3bcfccf5206f39175f43c7d2"
+        }
+      ]
+    },
+    "book-0020": {
+      "key": "book-0020",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/8366febcada8d625-0001-b276bd844260.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "b276bd84426019656ab0ea541a0ccb6d5d42b64f220a01c579a6921dfcb78264"
+        }
+      ]
+    },
+    "book-0021": {
+      "key": "book-0021",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/ffebea01652bf682-0001-7b30eda7e0b4.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "7b30eda7e0b4dcd2240215ef309079aa835bc2481c72c33a435773ebc7011c11"
+        }
+      ]
+    },
+    "book-0022": {
+      "key": "book-0022",
+      "count": 5,
+      "chunks": [
+        {
+          "url": "buckets/4dc9bc4b1d503eff-0001-397f41dcebb0.json",
+          "start": 0,
+          "count": 5,
+          "sha256": "397f41dcebb02570a8f9c1a2955833edce1c37613d41f32ac7d70a59cae2a544"
+        }
+      ]
+    },
+    "book-0023": {
+      "key": "book-0023",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/ffcf3cc0da526cfb-0001-1a2def76c4da.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "1a2def76c4da19be3556f85072c820923a19c018dbb2c96318d8d6e809d3f805"
+        }
+      ]
+    },
+    "book-0024": {
+      "key": "book-0024",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/ecf15207d572408f-0001-4ce14aecee50.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "4ce14aecee50064902a32747c611a02a2b769d4011611c067f34913ee757fd69"
+        }
+      ]
+    },
+    "book-0025": {
+      "key": "book-0025",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/5af4063c5a20e469-0001-36166a1283a6.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "36166a1283a6e76726759275a29243cfde5469baf14b9ea3075487fa05ec93f5"
+        }
+      ]
+    },
+    "book-0026": {
+      "key": "book-0026",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/ed012890319bc577-0001-7b8f5d39e85a.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "7b8f5d39e85a3d922d3db45cb447e61b95e29ca256d4c317f1b0e8fa4fd3ed70"
+        }
+      ]
+    },
+    "book-0027": {
+      "key": "book-0027",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/ad0f3e53e561ccc2-0001-6ce407ddc673.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "6ce407ddc67377555614b8fe4069958eb69357c74ba7d1152a6f610c70a9aac7"
+        }
+      ]
+    },
+    "book-0028": {
+      "key": "book-0028",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/8c4ae3d1142cc022-0001-4025fa43d371.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "4025fa43d371b7292df27381a3c42d5af847895a698243a4cf3fe589131164e1"
+        }
+      ]
+    },
+    "book-0029": {
+      "key": "book-0029",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/14893638b08fa850-0001-e13537194da4.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "e13537194da47cf183f9ec08ea6f56be862dbb8b57361a6fc7f0cfbb5b1464d4"
+        }
+      ]
+    },
+    "book-0030": {
+      "key": "book-0030",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/47db72fd247e7b67-0001-e0f1f469d99e.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "e0f1f469d99e863108ed89919fafb4100930d821139c76eedbe87c050905617a"
+        }
+      ]
+    },
+    "book-0031": {
+      "key": "book-0031",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/7b82a4a4fff16394-0001-6bf1bd550431.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "6bf1bd5504310f18bda37bdc7b856da96873d79ce8edead90bf4bbf82139c8ca"
+        }
+      ]
+    },
+    "book-0032": {
+      "key": "book-0032",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/75b17e30769825a1-0001-b91a5c575a51.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "b91a5c575a5108184281e636e96bdf996e9300c5757b3bdc4038eebc8beab399"
+        }
+      ]
+    },
+    "book-0033": {
+      "key": "book-0033",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/016c41fa98ac505c-0001-ac56b879e873.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "ac56b879e87318378bc87e984916e0a383f2ce6cba9f91ffac8e14fbe4a98b53"
+        }
+      ]
+    },
+    "book-0034": {
+      "key": "book-0034",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/670fcd260a745cce-0001-c412839fbd79.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "c412839fbd799d91e740e5a627ff6814c1c269392c2016bd6e0cc16b4a0ccfb2"
+        }
+      ]
+    },
+    "book-0035": {
+      "key": "book-0035",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/f360cd9343c7897c-0001-5c0724b31c8e.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "5c0724b31c8e816fcfbb91690fe32a88ed285ea2c9bd528515230506f7ff1794"
+        }
+      ]
+    },
+    "book-0036": {
+      "key": "book-0036",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/da475f24f5d2f3df-0001-ff49c805123d.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "ff49c805123d7d064a1206405197061d2279aeea2a14e1e0feb08692e6ca493d"
+        }
+      ]
+    },
+    "book-0037": {
+      "key": "book-0037",
+      "count": 10,
+      "chunks": [
+        {
+          "url": "buckets/cc0459185fbd1e20-0001-f2a2efa869f1.json",
+          "start": 0,
+          "count": 10,
+          "sha256": "f2a2efa869f1141a209859762603d8b76b11d2a49a37569e61450abb3ee68653"
+        }
+      ]
+    },
+    "book-0038": {
+      "key": "book-0038",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/db60d41b54d52889-0001-db5944067f48.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "db5944067f48745f5b06fc9b49f203c88d621304a2451f70ed2f5bdcf9cc2a7e"
+        }
+      ]
+    },
+    "book-0039": {
+      "key": "book-0039",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/576f32556068145f-0001-96919069ccc2.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "96919069ccc2020bb4431f120f72655d57dd1128ca0d6e59457e1a96f7621475"
+        }
+      ]
+    },
+    "book-0040": {
+      "key": "book-0040",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/b090781c01284ccd-0001-9c345aec4e88.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "9c345aec4e887844b8b1f2aeefd7cd3f73d3b887d4da547b3e73c5804527b72c"
+        }
+      ]
+    },
+    "book-0041": {
+      "key": "book-0041",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/5282de7164e159c7-0001-e0918305bc57.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "e0918305bc57feb64568aba021659c53c75e0ee6cea823237249ec1d4d17acba"
+        }
+      ]
+    },
+    "book-0042": {
+      "key": "book-0042",
+      "count": 5,
+      "chunks": [
+        {
+          "url": "buckets/8ccafddc787265d3-0001-e54a90561094.json",
+          "start": 0,
+          "count": 5,
+          "sha256": "e54a905610945e938c3369b25ca3e3f94cc948fcd701d60c06f19c1eb6598345"
+        }
+      ]
+    },
+    "book-0043": {
+      "key": "book-0043",
+      "count": 5,
+      "chunks": [
+        {
+          "url": "buckets/29039be18a134d41-0001-f71d15e65f7e.json",
+          "start": 0,
+          "count": 5,
+          "sha256": "f71d15e65f7ee3b245383b9439656fbda26fa98695166299922be9e00186d19a"
+        }
+      ]
+    },
+    "book-0044": {
+      "key": "book-0044",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/906b4a82d84dddc3-0001-e41955bb0030.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "e41955bb0030d6f9ded8db27ec02dd52bad47465a59ac1aecb745b47f9074464"
+        }
+      ]
+    },
+    "book-0045": {
+      "key": "book-0045",
+      "count": 6,
+      "chunks": [
+        {
+          "url": "buckets/debfc9578e71a4cb-0001-8b6a1d4b820f.json",
+          "start": 0,
+          "count": 6,
+          "sha256": "8b6a1d4b820f3a6f7c7f1174ce0bf30558207c959ddcb18fff59990474d26f87"
+        }
+      ]
+    },
+    "book-0046": {
+      "key": "book-0046",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/b1ec2a0acf341588-0001-cda2278865a0.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "cda2278865a0235161877e7595cf518345f05324151e8393088c192faaa3e4a8"
+        }
+      ]
+    },
+    "book-0047": {
+      "key": "book-0047",
+      "count": 5,
+      "chunks": [
+        {
+          "url": "buckets/f53347165476216a-0001-29452893e389.json",
+          "start": 0,
+          "count": 5,
+          "sha256": "29452893e389fc2d5033e92caef4847f8b408957d095f8dd1b30c03c9471602c"
+        }
+      ]
+    },
+    "book-0048": {
+      "key": "book-0048",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/68f2a652be8d726f-0001-f6de3daf54f8.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "f6de3daf54f803043f77a8c2d4a1eede091db2c31ab4db69e8868f2133244e05"
+        }
+      ]
+    },
+    "book-0049": {
+      "key": "book-0049",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/3e47cd86685961ad-0001-fdb3b247e47d.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "fdb3b247e47dabb9603682fcfb1ececa421d0351161f30a16d64f94f354d7912"
+        }
+      ]
+    },
+    "book-0050": {
+      "key": "book-0050",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/dfdc01ecbdee4dbe-0001-05d39b569f22.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "05d39b569f224b2fef0865425991ea0c439458d2f8db42f996a3ca3bb046c54d"
+        }
+      ]
+    },
+    "book-0051": {
+      "key": "book-0051",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/e6bd48b77de40ad2-0001-5b78ae9b74ea.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "5b78ae9b74eab33a72e197aafde72a2015beae0810cba55388cbb0ab2d78c6a1"
+        }
+      ]
+    },
+    "book-0052": {
+      "key": "book-0052",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/3fc3d9e68466be92-0001-f6f9e0cf522e.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "f6f9e0cf522e363aabbe23520fbb1ac0263cd735875d76674aaf64d9cc5b76ef"
+        }
+      ]
+    },
+    "book-0053": {
+      "key": "book-0053",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/4895708ee1b35124-0001-b0313f65e76a.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "b0313f65e76a99858be97b8acd785187e95f076fc22f572c300ea63d31e75516"
+        }
+      ]
+    },
+    "book-0054": {
+      "key": "book-0054",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/83f7e4af1bb4b7a1-0001-b5f218f72dbf.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "b5f218f72dbf3342d23071134f0382fc61f923d732a36bc5a18faf0517bc2fc6"
+        }
+      ]
+    }
+  }
+}

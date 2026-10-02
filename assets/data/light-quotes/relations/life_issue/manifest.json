@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "quote_dataset_version": "sha256-208c9da3ef06294b65f69b9b111a2382d9791f5c3b8e355ea4d79d005cabfbcb",
+  "relation_version": "sha256-eb057c72ea8ad0c754a7e1f48a2234935aa03505844cc4ccf3cb9a7d2b064fda",
+  "dimension": "life_issue",
+  "key_count": 11,
+  "bucket_count": 11,
+  "chunk_count": 11,
+  "chunk_size": 500,
+  "buckets": {
+    "attention-fragmentation": {
+      "key": "attention-fragmentation",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/8bd7b9eee0ea7515-0001-e6b34bc5999c.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "e6b34bc5999cad2fed9fdd749365cff826aa030b1b63d6dd633c8cd11821c68c"
+        }
+      ]
+    },
+    "friendship-change-and-rupture": {
+      "key": "friendship-change-and-rupture",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/b72ebab3a775f833-0001-17739047cbdb.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "17739047cbdb683e02521ddc639ea440998871144b99a5f212913fa8d7b99bc7"
+        }
+      ]
+    },
+    "grief-and-loss": {
+      "key": "grief-and-loss",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/6ac1d6fb285db09a-0001-65f4fd4175b9.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "65f4fd4175b9f86faa337037c92e9108e34db7b6b97a05095aaf69a2c3e5753e"
+        }
+      ]
+    },
+    "life-change-and-transition": {
+      "key": "life-change-and-transition",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/7ca9641a9e4fc8ac-0001-992588eed27f.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "992588eed27fdb0cee67cfba180fecbb4e5b0c720589bcd478cb7f7d7c69c3ab"
+        }
+      ]
+    },
+    "relational-insecurity": {
+      "key": "relational-insecurity",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/4d105882c2242245-0001-7b8843c7e972.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "7b8843c7e9720dcb84491d0e869f2306b5627a6f8878efc8f9d066d354ea7225"
+        }
+      ]
+    },
+    "relationship-ending": {
+      "key": "relationship-ending",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/999f46a916a23c77-0001-91ee579e6335.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "91ee579e6335566c9c956d7b508e4e93ca40fbe8c76189dc6d8180970abd193f"
+        }
+      ]
+    },
+    "relationship-norm-pressure": {
+      "key": "relationship-norm-pressure",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/e3e66ad24d763ec6-0001-8b03a5d560ab.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "8b03a5d560ab77cc909581ebf407252005b46a348148a5fa02e4e47ee8e4eba3"
+        }
+      ]
+    },
+    "social-disconnection-and-loneliness": {
+      "key": "social-disconnection-and-loneliness",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/6caa18eba2a10110-0001-6d675dd70154.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "6d675dd70154809203bc9633a5cdb462516fe5e2f72ad50cb27064760a18d2b4"
+        }
+      ]
+    },
+    "time-limits-and-prioritization": {
+      "key": "time-limits-and-prioritization",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/2604a46f2dbfcf41-0001-0e176858d433.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "0e176858d433dce23d4a48295666a2a7a2c9e64a2b014a1415f99e1003c0efe7"
+        }
+      ]
+    },
+    "unmet-relational-needs": {
+      "key": "unmet-relational-needs",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/ecd3978f1e0c1aaf-0001-7abe02e41cc5.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "7abe02e41cc5dc2d212968173ad242d1477f16e0003d8a7fd86e2fe94b89f74e"
+        }
+      ]
+    },
+    "unresolved-relational-hurt": {
+      "key": "unresolved-relational-hurt",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/45b9314f0932de0d-0001-04ef3371c47a.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "04ef3371c47ac77e478f4559935f70de9f0ca400d60f65f60a910b3e78fe2471"
+        }
+      ]
+    }
+  }
+}

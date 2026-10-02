@@ -82,6 +82,59 @@
   line-clamp: 2;
 }
 
+.atomic-micro-note-item {
+  min-width: 0;
+  padding: 10px 4px 28px;
+  border-bottom: 1px solid #e3e6ed;
+  letter-spacing: 0;
+}
+
+.atomic-micro-note-item__meta {
+  margin: 0 0 12px;
+  color: #777f93;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.atomic-micro-note-item__title {
+  margin: 0 0 12px;
+  color: #33384b;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.atomic-micro-note-item__title a,
+.atomic-micro-note-item__read {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.atomic-micro-note-item__title a:hover,
+.atomic-micro-note-item__read:hover {
+  color: #4f65a5;
+}
+
+.atomic-micro-note-item__summary {
+  display: -webkit-box;
+  margin: 0 0 10px;
+  overflow: hidden;
+  color: #5f6678;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.atomic-micro-note-item__read {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  color: #6281c8;
+  font-size: 14px;
+}
+
 @media screen and (max-width: 576px) {
   .micro-note-card {
     align-items: flex-start;
@@ -98,5 +151,24 @@
 
   .micro-note-card__title {
     font-size: 1.08rem;
+  }
+
+  .atomic-micro-note-item {
+    padding: 6px 0 24px;
+  }
+
+  .atomic-micro-note-item__meta {
+    margin-bottom: 10px;
+  }
+
+  .atomic-micro-note-item__title {
+    font-size: 1.08rem;
+    line-height: 1.7;
+  }
+
+  .atomic-micro-note-item__summary {
+    line-height: 1.85;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
 }
