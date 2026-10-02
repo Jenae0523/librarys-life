@@ -1,7 +1,7 @@
 {
   "rule_version": "mixed-related-articles-v1",
-  "article_count": 138,
-  "recommendation_count": 414,
+  "article_count": 139,
+  "recommendation_count": 417,
   "articles": [
     {
       "title": "遇见大角星人：在通灵信息、直觉体验与逻辑判断之间保持清醒",
@@ -4792,39 +4792,34 @@
           ]
         },
         {
-          "title": "灵魂规划与指导灵系统：转世前协议、灵魂家族与日常引导机制解析",
-          "url": "/all-articles/books/between-death-life/34-spirit-guides-soul-family-reincarnation-planning-communication-astral-guidance.html",
+          "title": "身体业力的3种类型，凯西解读中的业力法则、潜意识与身心关系的案例",
+          "url": "/all-articles/books/many-mansions/body-karma-three-types-edgar-cayce.html",
           "source": "auto",
-          "score": 73,
-          "rank_score": 99.5,
-          "structural_score": 31,
-          "semantic_score": 42,
-          "reason": "共同关注「回溯催眠」",
+          "score": 53,
+          "rank_score": 98.5,
+          "structural_score": 5,
+          "semantic_score": 48,
+          "reason": "共同关注「业力法则」",
           "matched_by": [
             {
               "type": "tag",
               "score": 18,
-              "label": "业力法则"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《生死之间》"
+              "label": "前世今生"
             },
             {
               "type": "keyword",
               "score": 16,
-              "label": "回溯催眠"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《生死之间》"
+              "label": "业力法则"
             },
             {
               "type": "related_tag",
               "score": 8,
-              "label": "催眠回溯"
+              "label": "前世今生"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "业力法则"
             },
             {
               "type": "parent",
@@ -5084,49 +5079,39 @@
           ]
         },
         {
-          "title": "灵魂规划与指导灵系统：转世前协议、灵魂家族与日常引导机制解析",
-          "url": "/all-articles/books/between-death-life/34-spirit-guides-soul-family-reincarnation-planning-communication-astral-guidance.html",
+          "title": "身体业力的3种类型，凯西解读中的业力法则、潜意识与身心关系的案例",
+          "url": "/all-articles/books/many-mansions/body-karma-three-types-edgar-cayce.html",
           "source": "auto",
-          "score": 68,
-          "rank_score": 89.5,
-          "structural_score": 31,
-          "semantic_score": 37,
-          "reason": "共同关注「灵魂规划」",
+          "score": 39,
+          "rank_score": 70.5,
+          "structural_score": 5,
+          "semantic_score": 34,
+          "reason": "共同关注「前世今生」",
           "matched_by": [
             {
               "type": "tag",
-              "score": 18,
+              "score": 12,
               "label": "业力法则"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《生死之间》"
             },
             {
               "type": "keyword",
               "score": 8,
-              "label": "灵魂规划"
+              "label": "前世今生"
             },
             {
               "type": "related_tag",
               "score": 8,
-              "label": "催眠回溯"
+              "label": "前世今生"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "业力法则"
             },
             {
               "type": "parent",
               "score": 5,
               "label": "好书解读"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "灵魂规划"
             }
           ]
         }
@@ -7848,28 +7833,23 @@
           ]
         },
         {
-          "title": "阿卡西记录与生命的挂毯：灵魂轮回、业力与地球转世的真相",
-          "url": "/all-articles/dolores-cannon-hypnosis/tapestry-room-akashic-records-soul-reincarnation-karma-earth.html",
+          "title": "身体业力的3种类型，凯西解读中的业力法则、潜意识与身心关系的案例",
+          "url": "/all-articles/books/many-mansions/body-karma-three-types-edgar-cayce.html",
           "source": "auto",
-          "score": 77,
-          "rank_score": 115,
-          "structural_score": 26,
-          "semantic_score": 51,
+          "score": 50,
+          "rank_score": 92.5,
+          "structural_score": 5,
+          "semantic_score": 45,
           "reason": "共同关注「业力法则」",
           "matched_by": [
             {
-              "type": "tag",
-              "score": 18,
+              "type": "keyword",
+              "score": 16,
               "label": "业力法则"
             },
             {
-              "type": "category",
-              "score": 16,
-              "label": "灵魂旅程 / 生死轮回"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
+              "type": "tag",
+              "score": 12,
               "label": "业力法则"
             },
             {
@@ -7880,17 +7860,12 @@
             {
               "type": "related_tag",
               "score": 8,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "朵洛莉丝·侃南"
+              "label": "前世今生"
             },
             {
               "type": "parent",
               "score": 5,
-              "label": "朵洛莉丝·侃南 / 催眠报告"
+              "label": "好书解读"
             }
           ]
         }
@@ -8457,12 +8432,190 @@
       "needs_manual_review": false
     },
     {
+      "title": "身体业力的3种类型，凯西解读中的业力法则、潜意识与身心关系的案例",
+      "url": "/all-articles/books/many-mansions/body-karma-three-types-edgar-cayce.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "罪与业力的真相：犯罪行为、前世因果与灵魂自我惩罚机制解析",
+          "url": "/all-articles/books/between-death-life/24-karma-law-crime-reincarnation-soul-punishment-past-life-healing-relationships.html",
+          "source": "auto",
+          "score": 53,
+          "rank_score": 98.5,
+          "structural_score": 5,
+          "semantic_score": 48,
+          "reason": "共同关注「业力法则」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "前世今生"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "业力法则"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "业力法则"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈",
+          "url": "/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html",
+          "source": "auto",
+          "score": 70,
+          "rank_score": 93.5,
+          "structural_score": 31,
+          "semantic_score": 39,
+          "reason": "共同关注「业力法则」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《多世生命》"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "业力法则"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《灵魂转生的奥秘》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "业力法则"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "业力法则"
+            }
+          ]
+        },
+        {
+          "title": "灵魂出生前计划与业力法则：命运是注定的吗？为什么还要转世？",
+          "url": "/all-articles/books/between-death-life/6-soul-plan-before-birth-karma-free-will-reincarnation-purpose.html",
+          "source": "auto",
+          "score": 50,
+          "rank_score": 92.5,
+          "structural_score": 5,
+          "semantic_score": 45,
+          "reason": "共同关注「业力法则」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "业力法则"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "业力法则"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "业力法则"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
       "title": "疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈",
       "url": "/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html",
       "manual_declared": 0,
       "manual_valid": 0,
       "manual_issues": [],
       "recommendations": [
+        {
+          "title": "身体业力的3种类型，凯西解读中的业力法则、潜意识与身心关系的案例",
+          "url": "/all-articles/books/many-mansions/body-karma-three-types-edgar-cayce.html",
+          "source": "auto",
+          "score": 70,
+          "rank_score": 93.5,
+          "structural_score": 31,
+          "semantic_score": 39,
+          "reason": "共同关注「业力法则」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《多世生命》"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "业力法则"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "身体疗愈"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《灵魂转生的奥秘》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "前世今生"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "业力法则"
+            }
+          ]
+        },
         {
           "title": "揭秘前世催眠回溯：潜意识身体信号解读与灵魂疗愈指南",
           "url": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-body-signs-soul-healing.html",
@@ -8534,38 +8687,6 @@
               "type": "parent",
               "score": 5,
               "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "情绪癌症与身体健康：如何提升情绪免疫力，保护自我需求",
-          "url": "/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html",
-          "source": "auto",
-          "score": 47,
-          "rank_score": 62.5,
-          "structural_score": 21,
-          "semantic_score": 26,
-          "reason": "都涉及「身体疗愈」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "情绪疗愈"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
             }
           ]
         }
