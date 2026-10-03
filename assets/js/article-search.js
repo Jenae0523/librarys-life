@@ -1132,6 +1132,7 @@
         <article class="article-search-card article-search-card--quote">
           <div class="article-search-card-body">
             <a class="article-search-quote-link" href="${escapeHtml(article.url)}">
+              <span class="light-quote-mark article-search-quote-mark" aria-hidden="true"></span>
               <p class="article-search-quote-text">${highlightHtml(article.quote_text || article.description, terms)}</p>
               <p class="article-search-quote-source">${escapeHtml(article.book_title || "")}${article.author ? ` │ ${escapeHtml(article.author)}` : ""}</p>
             </a>

@@ -44,7 +44,7 @@
 <link rel="stylesheet" href="/css261/html/assets/css/custom.css">
 <link rel="stylesheet" href="/assets/css/article-card.css">
 <link rel="stylesheet" href="/assets/css/site-pagination.css">
-<link rel="stylesheet" href="/assets/css/article-search-entry.css">
+<link rel="stylesheet" href="/assets/css/article-search-entry.css?v=20261003-1">
 <link rel="stylesheet" href="/assets/css/site-go-to.css">
 
 <!-- Google tag (gtag.js) -->
@@ -135,7 +135,7 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20260910-3">
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
 <script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
 
 <style>
@@ -173,7 +173,7 @@
     margin-bottom: 32px;
     padding: 22px 24px;
     border: 1px solid #e6e9f2;
-    border-radius: 8px;
+    border-radius: 5px;
     background: rgba(248, 249, 252, 0.78);
     text-align: left;
     letter-spacing: 0;
@@ -2119,12 +2119,44 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 <div class="container">
   <div class="row justify-content-center">
   <div class="col-lg-9 text-center">
-    <blockquote class="g-color-primary g-font-weight-600 g-font-size-30 g-line-height-1_8 mb-5">
-      “ 让我们回归纯真，认识事物的本质，看见生命之美 ”
-    </blockquote>
+    <div class="founder-quote g-color-primary">
+      <span class="light-quote-mark founder-quote__mark" aria-hidden="true"></span>
+      <blockquote class="g-font-weight-600 g-font-size-30 g-line-height-1_8 mb-5">
+        让我们回归纯真，认识事物的本质，看见生命之美
+      </blockquote>
+    </div>
     <h4 class="h4 g-mb-4">网站创办人, 暮雨</h4>
   </div>
 </div>
+
+<style>
+  .founder-quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .founder-quote__mark {
+    display: flex;
+    width: 31px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 0 auto 18px;
+    color: inherit;
+  }
+
+  .founder-quote__mark::before,
+  .founder-quote__mark::after {
+    width: 8px;
+    height: 17px;
+    background: currentColor;
+    clip-path: polygon(0 0, 100% 0, 78% 100%, 22% 100%);
+    content: "";
+    transform: skewX(-16deg);
+  }
+</style>
 
 
 
@@ -2135,14 +2167,14 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 <img class="img-fluid" src="https://img.librarys.life/site-img/juanzeng-1920x700.jpg">
 
 <div class="text-center g-pt-100">
-  <h2 class="g-color-black g-font-weight-700 mb-1">所有内容，永久免费！扫赞赏码，支持暮雨！</h2>    
+  <h2 class="g-color-black g-font-weight-700 mb-1">喜欢这里，扫码请暮雨喝杯咖啡。</h2>
 </div>
 
 <!-- 给最新文章上方增加空间 -->
 <div style="height:50px;"></div>
 
-<div class="text-center g-pb-100">
-  <p class="lead mb-2">如果暮雨的作品，像朋友一样，静静陪伴你成长。</p>
+<div class="text-center g-pb-100 donation-support-copy">
+  <p class="lead mb-2">如果暮雨的作品像朋友一样，静静陪伴你成长。</p>
   <p class="lead mb-2">欢迎透过打赏、点赞分享，支持我继续创作。</p>        
   <p class="lead mb-2">你的陪伴与支持，也同样温暖着我，</p>    
   <p class="lead mb-2">激励我继续耕耘，把丰盛的能量延伸至更多生命。</p>            
