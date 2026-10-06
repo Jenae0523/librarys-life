@@ -836,6 +836,7 @@
     const tagSelect = root.querySelector("[data-search-tag]");
     const sortSelect = root.querySelector("[data-search-sort]");
     const status = root.querySelector("[data-search-status]");
+    const loadingIndicator = root.querySelector("[data-search-loading]");
     const resultsElement = root.querySelector("[data-search-results]");
     const paginationElement = root.querySelector("[data-search-pagination]");
     const emptyElement = root.querySelector("[data-search-empty]");
@@ -850,6 +851,12 @@
     let requestSerial = 0;
     const shardCache = new Map();
     resultsElement.addEventListener("click", handleTranscriptSeekClick);
+
+    const setSearchLoading = isLoading => {
+      if (!loadingIndicator) return;
+      loadingIndicator.hidden = !isLoading;
+      loadingIndicator.setAttribute("aria-hidden", isLoading ? "false" : "true");
+    };
 
     const loadIndex = () => {
       if (payload) return Promise.resolve(payload);
@@ -953,6 +960,7 @@
     }
 
     function resetEmpty() {
+      setSearchLoading(false);
       currentResults = [];
       currentRawResults = [];
       currentMode = "episodes";
@@ -1036,6 +1044,7 @@
         return;
       }
       status.textContent = "正在搜索…";
+      setSearchLoading(true);
       emptyElement.hidden = true;
       try {
         await loadIndex();
@@ -1095,6 +1104,8 @@
         emptyElement.hidden = false;
         emptyElement.innerHTML = "<p>有声书搜索暂时不可用，请稍后重试。</p>";
         status.textContent = "搜索载入失败";
+      } finally {
+        if (serial === requestSerial) setSearchLoading(false);
       }
     }
 
@@ -1106,6 +1117,7 @@
     input.addEventListener("input", () => {
       if (!input.value.trim()) {
         requestSerial += 1;
+        setSearchLoading(false);
         resetEmpty();
         updateUrl("replace");
         return;
@@ -1114,6 +1126,7 @@
     });
     clearButton.addEventListener("click", () => {
       requestSerial += 1;
+      setSearchLoading(false);
       input.value = "";
       sortSelect.value = "relevance";
       resetEmpty();

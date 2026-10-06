@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "quote_dataset_version": "sha256-208c9da3ef06294b65f69b9b111a2382d9791f5c3b8e355ea4d79d005cabfbcb",
-  "relation_version": "sha256-eb057c72ea8ad0c754a7e1f48a2234935aa03505844cc4ccf3cb9a7d2b064fda",
+  "quote_dataset_version": "sha256-5c82497954cf481110be127e461e073c0d516601b002d09c36d3373eb45e3354",
+  "relation_version": "sha256-2d1623ed9ca332f16b7cd442d3d855bef37198c5b9ae461823f3927cc09d68b1",
   "quote_count": 197,
   "chunk_size": 500,
   "dimensions": {
@@ -13,6 +13,8 @@
     "life_issue": "life_issue/manifest.json",
     "state": "state/manifest.json",
     "thought_tradition": "thought_tradition/manifest.json",
+    "knowledge_node": "knowledge_node/manifest.json",
+    "related_semantic": "related_semantic/manifest.json",
     "explicit": "explicit/manifest.json"
   },
   "structural_dimensions": [
@@ -27,6 +29,11 @@
     "state",
     "thought_tradition"
   ],
+  "derived_dimensions": [
+    "knowledge_node",
+    "related_semantic"
+  ],
+  "knowledge_profiles": "knowledge-profiles.json",
   "reserved_dimensions": [],
   "explicit_relation_types": {
     "symmetric": [

@@ -1181,6 +1181,7 @@
     const tagSelect = rootElement.querySelector("[data-search-tag]");
     const sortSelect = rootElement.querySelector("[data-search-sort]");
     const status = rootElement.querySelector("[data-search-status]");
+    const loadingIndicator = rootElement.querySelector("[data-search-loading]");
     const resultsElement = rootElement.querySelector("[data-search-results]");
     const paginationElement = rootElement.querySelector("[data-search-pagination]");
     const emptyElement = rootElement.querySelector("[data-search-empty]");
@@ -1192,6 +1193,13 @@
     let currentTagByName = new Map();
     let currentElapsedMs = 0;
     let currentPage = 1;
+    let requestSerial = 0;
+
+    const setSearchLoading = isLoading => {
+      if (!loadingIndicator) return;
+      loadingIndicator.hidden = !isLoading;
+      loadingIndicator.setAttribute("aria-hidden", isLoading ? "false" : "true");
+    };
 
     const loadIndex = () => {
       if (payload) return Promise.resolve(payload);
@@ -1310,6 +1318,8 @@
     };
 
     const renderEmptyInput = () => {
+      requestSerial += 1;
+      setSearchLoading(false);
       currentRawResults = [];
       currentResults = [];
       currentElapsedMs = 0;
@@ -1398,6 +1408,7 @@
 
     const runSearch = async (options = {}) => {
       const query = input.value;
+      const serial = ++requestSerial;
       if (!options.preservePage) currentPage = 1;
 
       if (!query.trim()) {
@@ -1408,9 +1419,11 @@
 
       emptyElement.hidden = true;
       status.textContent = "正在搜索…";
+      setSearchLoading(true);
 
       try {
         const data = await loadIndex();
+        if (serial !== requestSerial) return;
         const result = search(data, query, { sort: "relevance" });
         const tagByName = buildCanonicalTagLookup(data.query_tags);
 
@@ -1446,6 +1459,7 @@
           });
         }
       } catch (error) {
+        if (serial !== requestSerial) return;
         currentRawResults = [];
         currentResults = [];
         resultsElement.innerHTML = "";
@@ -1454,6 +1468,8 @@
         resetFacetControls();
         emptyElement.hidden = false;
         emptyElement.innerHTML = "<p>搜索暂时不可用，请刷新页面后重试。</p>";
+      } finally {
+        if (serial === requestSerial) setSearchLoading(false);
       }
     };
 
@@ -1463,6 +1479,8 @@
     });
 
     clearButton.addEventListener("click", () => {
+      requestSerial += 1;
+      setSearchLoading(false);
       input.value = "";
       sortSelect.value = "relevance";
       renderEmptyInput();

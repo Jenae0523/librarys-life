@@ -114,6 +114,28 @@
   margin-top: 12px;
 }
 
+.article-search-feedback {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.search-loading-feedback[hidden] {
+  display: none;
+}
+
+.search-loading-feedback {
+  width: 100%;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.search-loading-book {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto;
+}
+
 .article-search-status {
   min-height: 20px;
   margin: 0;

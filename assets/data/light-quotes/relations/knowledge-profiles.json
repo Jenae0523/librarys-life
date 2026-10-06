@@ -1,0 +1,3694 @@
+{
+  "schema_version": 1,
+  "quote_dataset_version": "sha256-5c82497954cf481110be127e461e073c0d516601b002d09c36d3373eb45e3354",
+  "relation_version": "sha256-2d1623ed9ca332f16b7cd442d3d855bef37198c5b9ae461823f3927cc09d68b1",
+  "profiles": {
+    "lq-0001": {
+      "direct_knowledge_node_ids": [
+        "personal-boundaries"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "personal-boundaries",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "personal-boundaries",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0003": {
+      "direct_knowledge_node_ids": [
+        "attribution"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "attribution",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attribution",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0004": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [
+        "intimacy",
+        "personal-growth"
+      ],
+      "references": [
+        {
+          "node_id": "intimacy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "michelangelo-phenomenon",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "personal-growth",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "michelangelo-phenomenon",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0007": {
+      "direct_knowledge_node_ids": [
+        "dependency",
+        "fear"
+      ],
+      "related_semantic_node_ids": [
+        "control"
+      ],
+      "references": [
+        {
+          "node_id": "dependency",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "dependency",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            },
+            {
+              "source": "explicit-tag",
+              "value": "心理依赖"
+            }
+          ]
+        },
+        {
+          "node_id": "fear",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "fear",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            },
+            {
+              "source": "explicit-tag",
+              "value": "恐惧"
+            }
+          ]
+        },
+        {
+          "node_id": "control",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "possessiveness",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0012": {
+      "direct_knowledge_node_ids": [
+        "attachment"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "attachment",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0015": {
+      "direct_knowledge_node_ids": [
+        "communication",
+        "trust"
+      ],
+      "related_semantic_node_ids": [
+        "intimacy",
+        "relational-security"
+      ],
+      "references": [
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-disclosure",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        },
+        {
+          "node_id": "trust",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "trust",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "intimacy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "partner-responsiveness",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            },
+            {
+              "source": "semantic",
+              "semantic_id": "self-disclosure",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "partner-responsiveness",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0018": {
+      "direct_knowledge_node_ids": [
+        "cognitive-bias",
+        "self-concept"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "cognitive-bias",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "cognitive-bias",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "self-concept",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-concept",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0020": {
+      "direct_knowledge_node_ids": [
+        "differentiation-of-self",
+        "personal-boundaries"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "differentiation-of-self",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "differentiation-of-self",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "personal-boundaries",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "personal-boundaries",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0021": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [
+        "people-pleasing"
+      ],
+      "references": [
+        {
+          "node_id": "people-pleasing",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "approval-seeking",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0022": {
+      "direct_knowledge_node_ids": [
+        "control",
+        "fear",
+        "people-pleasing"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "control",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "control",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "fear",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "fear",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "people-pleasing",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "people-pleasing",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0025": {
+      "direct_knowledge_node_ids": [
+        "communication",
+        "control",
+        "personal-boundaries"
+      ],
+      "related_semantic_node_ids": [
+        "psychological-needs"
+      ],
+      "references": [
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "needs-expression",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        },
+        {
+          "node_id": "control",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "control",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "personal-boundaries",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "personal-boundaries",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "psychological-needs",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "needs-expression",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0026": {
+      "direct_knowledge_node_ids": [
+        "communication",
+        "intimacy"
+      ],
+      "related_semantic_node_ids": [
+        "psychological-needs"
+      ],
+      "references": [
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "needs-expression",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        },
+        {
+          "node_id": "intimacy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "intimacy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "psychological-needs",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "needs-expression",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0028": {
+      "direct_knowledge_node_ids": [
+        "grief-and-loss"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "grief-and-loss",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-ending",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "narrower"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0029": {
+      "direct_knowledge_node_ids": [
+        "self-sabotage"
+      ],
+      "related_semantic_node_ids": [
+        "attachment"
+      ],
+      "references": [
+        {
+          "node_id": "self-sabotage",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-sabotage",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "attachment",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "separation-anxiety",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0030": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [
+        "control"
+      ],
+      "references": [
+        {
+          "node_id": "control",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "possessiveness",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0031": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0032": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0033": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0034": {
+      "direct_knowledge_node_ids": [
+        "self-awareness"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "self-awareness",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-awareness",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0035": {
+      "direct_knowledge_node_ids": [
+        "acceptance",
+        "grief-and-loss",
+        "life-change-and-transition"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "acceptance",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "acceptance",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "grief-and-loss",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "grief-and-loss",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "life-change-and-transition",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "life-change-and-transition",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0036": {
+      "direct_knowledge_node_ids": [
+        "autonomy",
+        "time-limits-and-prioritization"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "autonomy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "autonomy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "time-limits-and-prioritization",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "time-limits-and-prioritization",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0037": {
+      "direct_knowledge_node_ids": [
+        "acceptance",
+        "perfectionism"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "acceptance",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "acceptance",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "perfectionism",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "perfectionism",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0038": {
+      "direct_knowledge_node_ids": [
+        "acceptance",
+        "time-limits-and-prioritization"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "acceptance",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "acceptance",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "time-limits-and-prioritization",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "time-limits-and-prioritization",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0039": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0040": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0041": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0042": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0043": {
+      "direct_knowledge_node_ids": [
+        "shame"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "shame",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "shame",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0044": {
+      "direct_knowledge_node_ids": [
+        "self-criticism"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "self-criticism",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-criticism",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0045": {
+      "direct_knowledge_node_ids": [
+        "perfectionism"
+      ],
+      "related_semantic_node_ids": [
+        "self-concept"
+      ],
+      "references": [
+        {
+          "node_id": "perfectionism",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "perfectionism",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "self-concept",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "contingent-self-worth",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0046": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0047": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0048": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0049": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0050": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0051": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0052": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0053": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0054": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0055": {
+      "direct_knowledge_node_ids": [
+        "narrative-identity"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "narrative-identity",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "narrative-identity",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0056": {
+      "direct_knowledge_node_ids": [
+        "grief-and-loss"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "grief-and-loss",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "grief-and-loss",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0057": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0058": {
+      "direct_knowledge_node_ids": [
+        "self-criticism"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "self-criticism",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-criticism",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0059": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0060": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0061": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0062": {
+      "direct_knowledge_node_ids": [
+        "life-change-and-transition"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "life-change-and-transition",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "life-change-and-transition",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0063": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [
+        "time-and-consciousness"
+      ],
+      "references": [
+        {
+          "node_id": "time-and-consciousness",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "prospection",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0064": {
+      "direct_knowledge_node_ids": [
+        "anger",
+        "grief-and-loss",
+        "self-criticism"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "anger",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "anger",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "grief-and-loss",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "grief-and-loss",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "self-criticism",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-criticism",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0065": {
+      "direct_knowledge_node_ids": [
+        "self-compassion",
+        "self-criticism"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "self-compassion",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-compassion",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "self-criticism",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-criticism",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0066": {
+      "direct_knowledge_node_ids": [
+        "acceptance",
+        "self-compassion"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "acceptance",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "acceptance",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "self-compassion",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-compassion",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0067": {
+      "direct_knowledge_node_ids": [
+        "attention-fragmentation",
+        "autonomy"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "attention-fragmentation",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attention-fragmentation",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "autonomy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "autonomy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0068": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0069": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0070": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0071": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0072": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0073": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0074": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0075": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0076": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0077": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0078": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0079": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0080": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0081": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0082": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0083": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0084": {
+      "direct_knowledge_node_ids": [
+        "attribution"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "attribution",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attribution",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0085": {
+      "direct_knowledge_node_ids": [
+        "attribution"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "attribution",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "blame",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0086": {
+      "direct_knowledge_node_ids": [
+        "anger",
+        "attribution"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "anger",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "anger",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "attribution",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attribution",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0087": {
+      "direct_knowledge_node_ids": [
+        "communication"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "metacommunication",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0088": {
+      "direct_knowledge_node_ids": [
+        "active-listening",
+        "psychological-needs"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "active-listening",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "active-listening",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "psychological-needs",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "psychological-needs",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0089": {
+      "direct_knowledge_node_ids": [
+        "autonomy",
+        "personal-boundaries"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "autonomy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "autonomy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "personal-boundaries",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "personal-boundaries",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0090": {
+      "direct_knowledge_node_ids": [
+        "communication"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "constructive-conflict",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0091": {
+      "direct_knowledge_node_ids": [
+        "communication"
+      ],
+      "related_semantic_node_ids": [
+        "empathy"
+      ],
+      "references": [
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "constructive-conflict",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        },
+        {
+          "node_id": "empathy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "perspective-taking",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0092": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0093": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0094": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0095": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0096": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0097": {
+      "direct_knowledge_node_ids": [
+        "communication"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "affirmation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0098": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0099": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0100": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [
+        "empathy"
+      ],
+      "references": [
+        {
+          "node_id": "empathy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "perspective-taking",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0101": {
+      "direct_knowledge_node_ids": [
+        "authenticity"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "authenticity",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "authenticity",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0102": {
+      "direct_knowledge_node_ids": [
+        "communication",
+        "psychological-needs"
+      ],
+      "related_semantic_node_ids": [
+        "empathy"
+      ],
+      "references": [
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-validation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        },
+        {
+          "node_id": "psychological-needs",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "psychological-needs",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "empathy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-validation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0103": {
+      "direct_knowledge_node_ids": [
+        "active-listening"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "active-listening",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "active-listening",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0104": {
+      "direct_knowledge_node_ids": [
+        "attribution",
+        "communication"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "attribution",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "blame",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        },
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "metacommunication",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0105": {
+      "direct_knowledge_node_ids": [
+        "communication"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "constructive-conflict",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0106": {
+      "direct_knowledge_node_ids": [
+        "active-listening"
+      ],
+      "related_semantic_node_ids": [
+        "communication"
+      ],
+      "references": [
+        {
+          "node_id": "active-listening",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "active-listening",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "communication",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "defensiveness",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0107": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0108": {
+      "direct_knowledge_node_ids": [
+        "communication"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "metacommunication",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0109": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0110": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0111": {
+      "direct_knowledge_node_ids": [
+        "active-listening",
+        "communication"
+      ],
+      "related_semantic_node_ids": [
+        "empathy"
+      ],
+      "references": [
+        {
+          "node_id": "active-listening",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "active-listening",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-validation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        },
+        {
+          "node_id": "empathy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-validation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0112": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0113": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0114": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0115": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0116": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0117": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0118": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0119": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0120": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0121": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0122": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0123": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0124": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0125": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0126": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0127": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0128": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0129": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0130": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0131": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0132": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0133": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0134": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0135": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0136": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0137": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0138": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0139": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0140": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0141": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0142": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0143": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0144": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0145": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0146": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0147": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0148": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0149": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0150": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0151": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0152": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0153": {
+      "direct_knowledge_node_ids": [
+        "emotion-regulation"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "emotion-regulation",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotion-regulation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0154": {
+      "direct_knowledge_node_ids": [
+        "emotion-regulation"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "emotion-regulation",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotion-regulation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0155": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0156": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0157": {
+      "direct_knowledge_node_ids": [
+        "empathy",
+        "relational-security"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "empathy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "empathy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relational-security",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0158": {
+      "direct_knowledge_node_ids": [
+        "communication",
+        "personal-boundaries"
+      ],
+      "related_semantic_node_ids": [
+        "empathy"
+      ],
+      "references": [
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-validation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        },
+        {
+          "node_id": "personal-boundaries",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "personal-boundaries",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "empathy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-validation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0159": {
+      "direct_knowledge_node_ids": [
+        "narrative-identity"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "narrative-identity",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "narrative-identity",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0160": {
+      "direct_knowledge_node_ids": [
+        "autonomy",
+        "self-control"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "autonomy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "autonomy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "self-control",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-control",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0161": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0162": {
+      "direct_knowledge_node_ids": [
+        "autonomy"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "autonomy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "autonomy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0163": {
+      "direct_knowledge_node_ids": [
+        "communication"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "metacommunication",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0164": {
+      "direct_knowledge_node_ids": [
+        "active-listening",
+        "communication"
+      ],
+      "related_semantic_node_ids": [
+        "empathy"
+      ],
+      "references": [
+        {
+          "node_id": "active-listening",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "active-listening",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-validation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        },
+        {
+          "node_id": "empathy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-validation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            },
+            {
+              "source": "semantic",
+              "semantic_id": "perspective-taking",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0165": {
+      "direct_knowledge_node_ids": [
+        "self-concept"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "self-concept",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-concept",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0166": {
+      "direct_knowledge_node_ids": [
+        "acceptance",
+        "empathy",
+        "personal-boundaries"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "acceptance",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "acceptance",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "empathy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "empathy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "personal-boundaries",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "personal-boundaries",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0167": {
+      "direct_knowledge_node_ids": [
+        "acceptance",
+        "self-validation"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "acceptance",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "acceptance",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "self-validation",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-validation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0168": {
+      "direct_knowledge_node_ids": [
+        "differentiation-of-self",
+        "self-concept"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "differentiation-of-self",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "differentiation-of-self",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "self-concept",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-concept",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0169": {
+      "direct_knowledge_node_ids": [
+        "autonomy",
+        "personal-boundaries"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "autonomy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "autonomy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "personal-boundaries",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "personal-boundaries",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0170": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0171": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0172": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0173": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0174": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0175": {
+      "direct_knowledge_node_ids": [
+        "emotional-resilience"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "emotional-resilience",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-resilience",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0176": {
+      "direct_knowledge_node_ids": [
+        "self-validation"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "self-validation",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-validation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0177": {
+      "direct_knowledge_node_ids": [
+        "acceptance",
+        "emotion-regulation"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "acceptance",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "acceptance",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "emotion-regulation",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotion-regulation",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0178": {
+      "direct_knowledge_node_ids": [
+        "emotion-focused-therapy",
+        "psychological-needs"
+      ],
+      "related_semantic_node_ids": [
+        "empathy",
+        "relational-security"
+      ],
+      "references": [
+        {
+          "node_id": "emotion-focused-therapy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotion-focused-therapy",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "psychological-needs",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "psychological-needs",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "empathy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-support",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-support",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0179": {
+      "direct_knowledge_node_ids": [
+        "self-concept"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "self-concept",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-concept",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0180": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0181": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0182": {
+      "direct_knowledge_node_ids": [
+        "attachment",
+        "attachment-theory"
+      ],
+      "related_semantic_node_ids": [
+        "relational-security"
+      ],
+      "references": [
+        {
+          "node_id": "attachment",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment-alarm",
+              "semantic_dimension": "states",
+              "mapping_relation": "narrower"
+            },
+            {
+              "source": "semantic",
+              "semantic_id": "attachment",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "attachment-theory",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment-theory",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relational-insecurity",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0183": {
+      "direct_knowledge_node_ids": [
+        "emotion-focused-therapy"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "emotion-focused-therapy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotion-focused-therapy",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0184": {
+      "direct_knowledge_node_ids": [
+        "attachment",
+        "attachment-theory",
+        "relational-security"
+      ],
+      "related_semantic_node_ids": [
+        "relational-security"
+      ],
+      "references": [
+        {
+          "node_id": "attachment",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "attachment-theory",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment-theory",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relational-security",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "felt-security",
+              "semantic_dimension": "states",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0185": {
+      "direct_knowledge_node_ids": [
+        "attachment",
+        "attachment-theory",
+        "relational-security"
+      ],
+      "related_semantic_node_ids": [
+        "intimacy",
+        "relational-security"
+      ],
+      "references": [
+        {
+          "node_id": "attachment",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "attachment-theory",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment-theory",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relational-security",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "intimacy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "partner-responsiveness",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relational-insecurity",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "related"
+            },
+            {
+              "source": "semantic",
+              "semantic_id": "partner-responsiveness",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            },
+            {
+              "source": "semantic",
+              "semantic_id": "felt-security",
+              "semantic_dimension": "states",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0186": {
+      "direct_knowledge_node_ids": [
+        "attachment",
+        "attachment-theory",
+        "autonomy",
+        "psychological-needs"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "attachment",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "attachment-theory",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment-theory",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "autonomy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "autonomy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "psychological-needs",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "unmet-relational-needs",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "narrower"
+            },
+            {
+              "source": "semantic",
+              "semantic_id": "psychological-needs",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0187": {
+      "direct_knowledge_node_ids": [
+        "attachment",
+        "attachment-theory"
+      ],
+      "related_semantic_node_ids": [],
+      "references": [
+        {
+          "node_id": "attachment",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "attachment-theory",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment-theory",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0188": {
+      "direct_knowledge_node_ids": [
+        "attachment-theory",
+        "autonomy",
+        "relational-security"
+      ],
+      "related_semantic_node_ids": [
+        "empathy",
+        "relational-security"
+      ],
+      "references": [
+        {
+          "node_id": "attachment-theory",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment-theory",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "autonomy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "autonomy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relational-security",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "empathy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-support",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-support",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            },
+            {
+              "source": "semantic",
+              "semantic_id": "felt-security",
+              "semantic_dimension": "states",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0189": {
+      "direct_knowledge_node_ids": [
+        "attachment-theory",
+        "psychological-needs",
+        "relational-security",
+        "self-awareness"
+      ],
+      "related_semantic_node_ids": [
+        "psychological-needs"
+      ],
+      "references": [
+        {
+          "node_id": "attachment-theory",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "attachment-theory",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "psychological-needs",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "unmet-relational-needs",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "narrower"
+            },
+            {
+              "source": "semantic",
+              "semantic_id": "psychological-needs",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relational-security",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "self-awareness",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "needs-awareness",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        },
+        {
+          "node_id": "psychological-needs",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "needs-awareness",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0190": {
+      "direct_knowledge_node_ids": [
+        "trust"
+      ],
+      "related_semantic_node_ids": [
+        "personal-boundaries"
+      ],
+      "references": [
+        {
+          "node_id": "trust",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "trust",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "personal-boundaries",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-equity",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0191": {
+      "direct_knowledge_node_ids": [
+        "empathy",
+        "need-to-belong",
+        "social-disconnection-and-loneliness"
+      ],
+      "related_semantic_node_ids": [
+        "need-to-belong",
+        "social-disconnection-and-loneliness"
+      ],
+      "references": [
+        {
+          "node_id": "empathy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "empathy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "need-to-belong",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "need-to-belong",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "social-disconnection-and-loneliness",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "social-disconnection-and-loneliness",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "need-to-belong",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "social-connectedness",
+              "semantic_dimension": "states",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "social-disconnection-and-loneliness",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "social-isolation",
+              "semantic_dimension": "states",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0192": {
+      "direct_knowledge_node_ids": [
+        "relationship-pluralism"
+      ],
+      "related_semantic_node_ids": [
+        "relationship-pluralism"
+      ],
+      "references": [
+        {
+          "node_id": "relationship-pluralism",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-pluralism",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relationship-pluralism",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-norm-pressure",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0193": {
+      "direct_knowledge_node_ids": [
+        "anger",
+        "communication",
+        "relationship-repair"
+      ],
+      "related_semantic_node_ids": [
+        "intimacy",
+        "relationship-repair"
+      ],
+      "references": [
+        {
+          "node_id": "anger",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "anger",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "communication",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "vulnerable-disclosure",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "narrower"
+            }
+          ]
+        },
+        {
+          "node_id": "relationship-repair",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-repair",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "intimacy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "vulnerable-disclosure",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "relationship-repair",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "unresolved-relational-hurt",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0194": {
+      "direct_knowledge_node_ids": [
+        "intimacy",
+        "relationship-pluralism"
+      ],
+      "related_semantic_node_ids": [
+        "relational-security",
+        "relationship-pluralism"
+      ],
+      "references": [
+        {
+          "node_id": "intimacy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "intimacy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relationship-pluralism",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-pluralism",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "felt-security",
+              "semantic_dimension": "states",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "relationship-pluralism",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-norm-pressure",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0195": {
+      "direct_knowledge_node_ids": [
+        "intimacy",
+        "need-to-belong",
+        "psychological-needs",
+        "relationship-pluralism",
+        "social-disconnection-and-loneliness"
+      ],
+      "related_semantic_node_ids": [
+        "relationship-pluralism"
+      ],
+      "references": [
+        {
+          "node_id": "intimacy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "intimacy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "need-to-belong",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "need-to-belong",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "psychological-needs",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "psychological-needs",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relationship-pluralism",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-pluralism",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "social-disconnection-and-loneliness",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "social-disconnection-and-loneliness",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relationship-pluralism",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-norm-pressure",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0196": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [
+        "grief-and-loss"
+      ],
+      "references": [
+        {
+          "node_id": "grief-and-loss",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "friendship-change-and-rupture",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0197": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [
+        "grief-and-loss",
+        "intimacy",
+        "relationship-repair",
+        "trust"
+      ],
+      "references": [
+        {
+          "node_id": "grief-and-loss",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "friendship-change-and-rupture",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "intimacy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-maintenance",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "relationship-repair",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-growth-beliefs",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "trust",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-maintenance",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0198": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [
+        "grief-and-loss",
+        "intimacy",
+        "trust"
+      ],
+      "references": [
+        {
+          "node_id": "grief-and-loss",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "friendship-change-and-rupture",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "intimacy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-maintenance",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "trust",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-maintenance",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0199": {
+      "direct_knowledge_node_ids": [
+        "autonomy"
+      ],
+      "related_semantic_node_ids": [
+        "empathy",
+        "relational-security"
+      ],
+      "references": [
+        {
+          "node_id": "autonomy",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "autonomy",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "empathy",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-support",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        },
+        {
+          "node_id": "relational-security",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "emotional-support",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0200": {
+      "direct_knowledge_node_ids": [
+        "relationship-pluralism",
+        "self-awareness"
+      ],
+      "related_semantic_node_ids": [
+        "relationship-pluralism"
+      ],
+      "references": [
+        {
+          "node_id": "relationship-pluralism",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-pluralism",
+              "semantic_dimension": "thought_traditions",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "self-awareness",
+          "relationship": "direct",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "self-awareness",
+              "semantic_dimension": "psychology_concepts",
+              "mapping_relation": "same"
+            }
+          ]
+        },
+        {
+          "node_id": "relationship-pluralism",
+          "relationship": "related-semantic",
+          "provenance": [
+            {
+              "source": "semantic",
+              "semantic_id": "relationship-norm-pressure",
+              "semantic_dimension": "life_issues",
+              "mapping_relation": "related"
+            }
+          ]
+        }
+      ]
+    },
+    "lq-0201": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0202": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0203": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0204": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0205": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0206": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0207": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0208": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0209": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0210": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0211": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    },
+    "lq-0212": {
+      "direct_knowledge_node_ids": [],
+      "related_semantic_node_ids": [],
+      "references": []
+    }
+  }
+}

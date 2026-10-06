@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "quote_dataset_version": "sha256-208c9da3ef06294b65f69b9b111a2382d9791f5c3b8e355ea4d79d005cabfbcb",
-  "relation_version": "sha256-eb057c72ea8ad0c754a7e1f48a2234935aa03505844cc4ccf3cb9a7d2b064fda",
+  "quote_dataset_version": "sha256-5c82497954cf481110be127e461e073c0d516601b002d09c36d3373eb45e3354",
+  "relation_version": "sha256-2d1623ed9ca332f16b7cd442d3d855bef37198c5b9ae461823f3927cc09d68b1",
   "dimension": "thought_tradition",
   "key_count": 3,
   "bucket_count": 3,
@@ -13,10 +13,10 @@
       "count": 7,
       "chunks": [
         {
-          "url": "buckets/193a7a65ceffee63-0001-c3445ebf1d2a.json",
+          "url": "buckets/193a7a65ceffee63-0001-8c6633223667.json",
           "start": 0,
           "count": 7,
-          "sha256": "c3445ebf1d2a9111e3868bd154bbeb25282f98d7e6ca5269b5d37250effbe2d0"
+          "sha256": "8c6633223667e320462f5ea38f0694f614c0c8cd6c6f1ebcf0942535be3aad32"
         }
       ]
     },
@@ -25,10 +25,10 @@
       "count": 2,
       "chunks": [
         {
-          "url": "buckets/94adfed006049044-0001-97c7bc74de12.json",
+          "url": "buckets/94adfed006049044-0001-145e93821240.json",
           "start": 0,
           "count": 2,
-          "sha256": "97c7bc74de127e45660801fdaa6d35015638a1c9f2841623118a8bcb4687e0d0"
+          "sha256": "145e93821240d0ce0921ca9defa417222f82daab2a3cc130336b0d0976af93ca"
         }
       ]
     },
@@ -37,10 +37,10 @@
       "count": 4,
       "chunks": [
         {
-          "url": "buckets/21701d4cc535a928-0001-991ab73f450f.json",
+          "url": "buckets/21701d4cc535a928-0001-e929543d7f05.json",
           "start": 0,
           "count": 4,
-          "sha256": "991ab73f450fb2fa886eeb014be75d3b13fd87a74f4606976e3de33cc932fe86"
+          "sha256": "e929543d7f054b784c1689f11181f020e50474e8cd1f5da558353c38e6239ba1"
         }
       ]
     }

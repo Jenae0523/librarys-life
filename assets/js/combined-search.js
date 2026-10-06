@@ -328,6 +328,7 @@
     if (!pageRoot || !ArticleSearch || !AudiobookSearch) return;
     const entry = pageRoot.querySelector("[data-combined-search-entry]");
     const summary = pageRoot.querySelector("[data-combined-search-summary]");
+    const loadingIndicator = pageRoot.querySelector("[data-search-loading]");
     const allEmpty = pageRoot.querySelector("[data-combined-search-empty-all]");
     const categorySelect = pageRoot.querySelector("[data-combined-search-category]");
     const tagSelect = pageRoot.querySelector("[data-combined-search-tag]");
@@ -350,6 +351,12 @@
     let requestSerial = 0;
     let currentSettled = null;
     let currentState = initialState;
+
+    const setSearchLoading = isLoading => {
+      if (!loadingIndicator) return;
+      loadingIndicator.hidden = !isLoading;
+      loadingIndicator.setAttribute("aria-hidden", isLoading ? "false" : "true");
+    };
 
     const loadAudioShards = payload => {
       if (audioShardsPromise) return audioShardsPromise;
@@ -562,6 +569,7 @@
       currentSettled = null;
       controller.setState({ query, types });
       if (!query.trim()) {
+        setSearchLoading(false);
         updateUrl(requestedState, options.historyMode || "replace");
         resetDisplay(types, requestedState);
         return;
@@ -569,6 +577,7 @@
 
       allEmpty.hidden = true;
       summary.textContent = "正在搜索…";
+      setSearchLoading(true);
       TYPE_ORDER.forEach(type => {
         const elements = sectionElements[type];
         elements.section.hidden = !types.includes(type);
@@ -599,17 +608,21 @@
         });
       }
 
-      const settled = await Promise.all(types.map(async type => {
-        try {
-          return [type, { value: await jobs[type] }];
-        } catch (error) {
-          console.error(`[combined-search:${type}]`, error);
-          return [type, { error }];
-        }
-      }));
-      if (serial !== requestSerial) return;
-      currentSettled = settled;
-      renderSettled(settled, requestedState, options);
+      try {
+        const settled = await Promise.all(types.map(async type => {
+          try {
+            return [type, { value: await jobs[type] }];
+          } catch (error) {
+            console.error(`[combined-search:${type}]`, error);
+            return [type, { error }];
+          }
+        }));
+        if (serial !== requestSerial) return;
+        currentSettled = settled;
+        renderSettled(settled, requestedState, options);
+      } finally {
+        if (serial === requestSerial) setSearchLoading(false);
+      }
     }
 
     const controller = setupEntry(entry, {

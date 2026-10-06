@@ -88,6 +88,11 @@
   text-align: center;
 }
 
+.combined-search-page > .container > .search-loading-feedback {
+  max-width: 940px;
+  margin: 0 auto 8px;
+}
+
 .combined-search-section {
   max-width: 940px;
   margin: 0 auto 52px;

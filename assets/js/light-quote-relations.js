@@ -4,7 +4,7 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
 
-  const RELATION_DIMENSIONS = Object.freeze(["theme", "book", "author", "concept", "tag", "life_issue", "state", "thought_tradition"]);
+  const RELATION_DIMENSIONS = Object.freeze(["theme", "book", "author", "concept", "tag", "life_issue", "state", "thought_tradition", "knowledge_node", "related_semantic"]);
   const ALL_DIMENSIONS = new Set([...RELATION_DIMENSIONS, "explicit"]);
 
   function values(value) {
@@ -25,7 +25,9 @@
       ["tag", quote.tags],
       ["life_issue", semanticProfile.life_issues],
       ["state", semanticProfile.states],
-      ["thought_tradition", semanticProfile.thought_traditions]
+      ["thought_tradition", semanticProfile.thought_traditions],
+      ["knowledge_node", semanticProfile.direct_knowledge_node_ids],
+      ["related_semantic", semanticProfile.related_semantic_node_ids]
     ];
     return fields.flatMap(([dimension, raw]) => values(raw).map(key => Object.freeze({ dimension, key })));
   }
