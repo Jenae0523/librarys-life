@@ -17,7 +17,7 @@
     + 0.0722 * channelLuminance(42);
   const READY_IMAGE_QUEUE_LIMIT = 2;
   const TEXT_TOP_SAFE_RATIO = 0.025;
-  const LIGHT_QUOTES_BUILD = "20261007-2";
+  const LIGHT_QUOTES_BUILD = "20260929-3";
   const CONTROLLED_RANDOM_DEFAULTS = Object.freeze({
     historySize: 20,
     quoteExclusionWindow: 20,
@@ -277,14 +277,14 @@
       const requested = new URL(url, documentObject.baseURI);
       const page = new URL(documentObject.baseURI);
       const decodedPathname = decodeURIComponent(requested.pathname);
-      if ((page.protocol === "http:" || page.protocol === "https:")
+      if ((page.hostname === "127.0.0.1" || page.hostname === "localhost")
         && requested.protocol === "https:"
         && requested.hostname === "img.librarys.life"
         && requested.port === ""
         && requested.search === ""
         && requested.hash === ""
         && /^\/img\/light-quotes\/[A-Za-z0-9][A-Za-z0-9._() -]*\.webp$/i.test(decodedPathname)) {
-        return new URL(requested.pathname, page.origin).href;
+        return new URL(`/__light-quote-image${requested.pathname}`, page.origin).href;
       }
     } catch (_) {}
     return url;
