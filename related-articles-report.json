@@ -1,7 +1,7 @@
 {
   "rule_version": "mixed-related-articles-v1",
-  "article_count": 139,
-  "recommendation_count": 417,
+  "article_count": 140,
+  "recommendation_count": 420,
   "articles": [
     {
       "title": "遇见大角星人：在通灵信息、直觉体验与逻辑判断之间保持清醒",
@@ -5220,39 +5220,29 @@
           ]
         },
         {
-          "title": "灵魂如何进入身体：出生前计划、家庭选择与转世记忆的回溯催眠解析",
-          "url": "/all-articles/books/between-death-life/40-soul-entry-birth-plan-reincarnation-hypnosis-family-choice-memory-loss.html",
+          "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
+          "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
           "source": "auto",
-          "score": 76,
-          "rank_score": 105.5,
-          "structural_score": 31,
-          "semantic_score": 45,
-          "reason": "共同关注「灵性成长」",
+          "score": 44,
+          "rank_score": 80.5,
+          "structural_score": 5,
+          "semantic_score": 39,
+          "reason": "共同关注「因果法则」",
           "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "业力法则"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《生死之间》"
-            },
             {
               "type": "keyword",
               "score": 16,
-              "label": "灵性成长"
+              "label": "因果法则"
             },
             {
-              "type": "identity",
-              "score": 10,
-              "label": "《生死之间》"
+              "type": "tag",
+              "score": 12,
+              "label": "业力法则"
             },
             {
               "type": "related_tag",
               "score": 8,
-              "label": "催眠回溯"
+              "label": "灵魂转世"
             },
             {
               "type": "parent",
@@ -5262,7 +5252,7 @@
             {
               "type": "text",
               "score": 3,
-              "label": "回溯催眠"
+              "label": "自由意志"
             }
           ]
         }
@@ -7833,8 +7823,8 @@
           ]
         },
         {
-          "title": "身体业力的3种类型，凯西解读中的业力法则、潜意识与身心关系的案例",
-          "url": "/all-articles/books/many-mansions/body-karma-three-types-edgar-cayce.html",
+          "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
+          "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
           "source": "auto",
           "score": 50,
           "rank_score": 92.5,
@@ -7860,7 +7850,7 @@
             {
               "type": "related_tag",
               "score": 8,
-              "label": "前世今生"
+              "label": "灵魂转世"
             },
             {
               "type": "parent",
@@ -8476,6 +8466,53 @@
           ]
         },
         {
+          "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
+          "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
+          "source": "auto",
+          "score": 70,
+          "rank_score": 93.5,
+          "structural_score": 31,
+          "semantic_score": 39,
+          "reason": "共同关注「业力法则」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《多世生命》"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "业力法则"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "业力法则"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《灵魂转生的奥秘》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "灵魂转世"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "业力法则"
+            }
+          ]
+        },
+        {
           "title": "疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈",
           "url": "/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html",
           "source": "auto",
@@ -8519,43 +8556,6 @@
               "type": "text",
               "score": 3,
               "label": "业力法则"
-            }
-          ]
-        },
-        {
-          "title": "灵魂出生前计划与业力法则：命运是注定的吗？为什么还要转世？",
-          "url": "/all-articles/books/between-death-life/6-soul-plan-before-birth-karma-free-will-reincarnation-purpose.html",
-          "source": "auto",
-          "score": 50,
-          "rank_score": 92.5,
-          "structural_score": 5,
-          "semantic_score": 45,
-          "reason": "共同关注「业力法则」",
-          "matched_by": [
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "业力法则"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "业力法则"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "业力法则"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
             }
           ]
         }
@@ -8617,39 +8617,44 @@
           ]
         },
         {
-          "title": "揭秘前世催眠回溯：潜意识身体信号解读与灵魂疗愈指南",
-          "url": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-body-signs-soul-healing.html",
+          "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
+          "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
           "source": "auto",
-          "score": 49,
-          "rank_score": 66.5,
-          "structural_score": 21,
-          "semantic_score": 28,
-          "reason": "共同关注「身心灵健康」",
+          "score": 61,
+          "rank_score": 75.5,
+          "structural_score": 31,
+          "semantic_score": 30,
+          "reason": "共同关注「业力法则」",
           "matched_by": [
             {
               "type": "category",
               "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "身体疗愈"
+              "label": "《多世生命》"
             },
             {
               "type": "keyword",
-              "score": 8,
-              "label": "身心灵健康"
+              "score": 16,
+              "label": "业力法则"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《灵魂转生的奥秘》"
             },
             {
               "type": "related_tag",
               "score": 8,
-              "label": "潜意识"
+              "label": "灵魂转世"
+            },
+            {
+              "type": "tag",
+              "score": 6,
+              "label": "业力法则"
             },
             {
               "type": "parent",
               "score": 5,
-              "label": "课程 / 创造奇迹生命"
+              "label": "好书解读"
             }
           ]
         },
@@ -8687,6 +8692,137 @@
               "type": "parent",
               "score": 5,
               "label": "好书解读"
+            }
+          ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
+      "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "身体业力的3种类型，凯西解读中的业力法则、潜意识与身心关系的案例",
+          "url": "/all-articles/books/many-mansions/body-karma-three-types-edgar-cayce.html",
+          "source": "auto",
+          "score": 70,
+          "rank_score": 93.5,
+          "structural_score": 31,
+          "semantic_score": 39,
+          "reason": "共同关注「业力法则」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《多世生命》"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "业力法则"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "业力法则"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《灵魂转生的奥秘》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "前世今生"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "业力法则"
+            }
+          ]
+        },
+        {
+          "title": "灵魂出生前计划与业力法则：命运是注定的吗？为什么还要转世？",
+          "url": "/all-articles/books/between-death-life/6-soul-plan-before-birth-karma-free-will-reincarnation-purpose.html",
+          "source": "auto",
+          "score": 50,
+          "rank_score": 92.5,
+          "structural_score": 5,
+          "semantic_score": 45,
+          "reason": "共同关注「业力法则」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "业力法则"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "业力法则"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "业力法则"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "自杀与灵魂业力：毁约、轮回学习与无法逃避的因果机制解析",
+          "url": "/all-articles/books/between-death-life/27-suicide-karma-soul-contract-reincarnation-learning-purpose-free-will.html",
+          "source": "auto",
+          "score": 44,
+          "rank_score": 80.5,
+          "structural_score": 5,
+          "semantic_score": 39,
+          "reason": "共同关注「因果法则」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "因果法则"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "业力法则"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "自由意志"
             }
           ]
         }
