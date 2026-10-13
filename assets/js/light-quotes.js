@@ -17,7 +17,8 @@
     + 0.0722 * channelLuminance(42);
   const READY_IMAGE_QUEUE_LIMIT = 2;
   const TEXT_TOP_SAFE_RATIO = 0.025;
-  const LIGHT_QUOTES_BUILD = "20261013-4";
+  const LIGHT_QUOTES_BUILD = "20261014-4";
+  const DEFAULT_TEXT_LAYOUT = Object.freeze({ scale: 1, widthPercent: 84.6154, align: "center", offsetXPercent: 0, offsetYPercent: -14, toneMode: "black" });
   const CONTROLLED_RANDOM_DEFAULTS = Object.freeze({
     historySize: 20,
     quoteExclusionWindow: 20,
@@ -66,7 +67,11 @@
     const entries = [];
     const report = (event, details = {}) => {
       if (!enabled) return;
-      const entry = { event, ...details };
+      const entry = {
+        event,
+        elapsedMs: Math.round(win?.performance?.now?.() || 0),
+        ...details
+      };
       entries.push(entry);
       if (entries.length > 120) entries.shift();
       if (output) output.textContent = entries.map(item => JSON.stringify(item)).join("\n");
@@ -602,9 +607,10 @@
         entries.push({
           role,
           text: line.text,
-          x: ((line.rect.left + line.rect.right) / 2 - stageRect.left) * scaleX,
+          x: ((style.textAlign === "left" || style.textAlign === "start" ? line.rect.left : style.textAlign === "right" || style.textAlign === "end" ? line.rect.right : (line.rect.left + line.rect.right) / 2) - stageRect.left) * scaleX,
           centerY: ((line.rect.top + line.rect.bottom) / 2 - stageRect.top) * scaleY,
           maxWidth: Math.max(1, line.rect.width * scaleX),
+          textAlign: style.textAlign === "left" || style.textAlign === "start" ? "left" : style.textAlign === "right" || style.textAlign === "end" ? "right" : "center",
           font: `${style.fontStyle || "normal"} ${style.fontVariant || "normal"} ${style.fontWeight || "400"} ${fontSize}px ${style.fontFamily || "sans-serif"}`,
           lineHeight: style.lineHeight === "normal" ? "normal" : cssPixels(style.lineHeight) * scaleY,
           color: style.color,
@@ -691,7 +697,7 @@
     plan.entries.forEach(entry => {
       context.save();
       context.font = entry.font;
-      context.textAlign = "center";
+      context.textAlign = entry.textAlign || "center";
       context.textBaseline = "middle";
       context.fillStyle = entry.color;
       context.globalAlpha = entry.opacity;
@@ -701,13 +707,13 @@
         context.shadowBlur = shadow.blur;
         context.shadowOffsetX = shadow.offsetX;
         context.shadowOffsetY = shadow.offsetY;
-        context.fillText(entry.text, entry.x, entry.centerY, entry.maxWidth);
+        context.fillText(entry.text, entry.x, entry.centerY);
       });
       context.shadowColor = "rgba(0,0,0,0)";
       context.shadowBlur = 0;
       context.shadowOffsetX = 0;
       context.shadowOffsetY = 0;
-      context.fillText(entry.text, entry.x, entry.centerY, entry.maxWidth);
+      context.fillText(entry.text, entry.x, entry.centerY);
       context.restore();
     });
   }
@@ -839,13 +845,26 @@
       throw error;
     }
     const backgroundPosition = stageStyle?.backgroundPosition || "50% 50%";
-    const background = await (options.backgroundPreparer || prepareExportBackground)(snapshot.image_url, {
-      ...options,
-      documentObject: doc,
-      onStage,
-      onDiagnostic,
-      reportDiagnostic: report
-    });
+    let background;
+    if (options.backgroundImage) {
+      diagnostics.fetchOk = true;
+      diagnostics.decodeOk = true;
+      background = { image: options.backgroundImage, release() {} };
+      report("BG_REUSE", {
+        stage: "background-reuse",
+        width: options.backgroundImage.naturalWidth || options.backgroundImage.width || 0,
+        height: options.backgroundImage.naturalHeight || options.backgroundImage.height || 0
+      });
+    } else {
+      report("BG_REUSE_UNAVAILABLE", { stage: "background-reuse" });
+      background = await (options.backgroundPreparer || prepareExportBackground)(snapshot.image_url, {
+        ...options,
+        documentObject: doc,
+        onStage,
+        onDiagnostic,
+        reportDiagnostic: report
+      });
+    }
     let canvas = null;
     try {
       onStage("canvas-create");
@@ -1591,26 +1610,98 @@
     const footer = options.footer;
     const adjustButton = options.adjustButton;
     const status = options.status;
-    let offsetRatio = 0;
+    const controls = options.controls || {};
+    let preferredLayout = { ...DEFAULT_TEXT_LAYOUT, ...(options.initialLayout || {}) };
+    let effectiveLayout = { ...preferredLayout };
     let adjustmentMode = false;
     let dragging = false;
-    let pointerId = null;
-    let startClientY = 0;
-    let startOffsetRatio = 0;
-    let dragBounds = { min: 0, max: 0 };
+    const pointers = new Map();
+    let dragStart = null;
+    let pinchStart = null;
 
-    function applyOffset() {
-      if (!body?.style) return;
-      const value = `${offsetRatio * 100}%`;
-      if (typeof body.style.setProperty === "function") body.style.setProperty("--lq-text-offset-y", value);
-      else body.style["--lq-text-offset-y"] = value;
+    function setProperty(name, value) {
+      if (typeof textGroup?.style?.setProperty === "function") textGroup.style.setProperty(name, value);
+      else if (textGroup?.style) textGroup.style[name] = value;
+    }
+
+    function applyLayout(layout = effectiveLayout) {
+      const stageRect = stage?.getBoundingClientRect?.();
+      setProperty("--lq-text-scale", String(layout.scale));
+      setProperty("--lq-text-width", `${layout.widthPercent}%`);
+      setProperty("--lq-text-align", layout.align);
+      setProperty("--lq-text-offset-x", `${(stageRect?.width || 0) * layout.offsetXPercent / 100}px`);
+      setProperty("--lq-text-offset-y", `${(stageRect?.height || 0) * layout.offsetYPercent / 100}px`);
+      if (controls.width) controls.width.value = String(Math.round(preferredLayout.widthPercent));
+      if (controls.scaleDown) controls.scaleDown.disabled = preferredLayout.scale <= .75;
+      if (controls.scaleUp) controls.scaleUp.disabled = preferredLayout.scale >= 1.3;
+      controls.alignButtons?.forEach?.(button => button.setAttribute?.("aria-pressed", String(button.dataset?.lightQuoteAlign === preferredLayout.align)));
+      controls.toneButtons?.forEach?.(button => button.setAttribute?.("aria-pressed", String(button.dataset?.lightQuoteTone === preferredLayout.toneMode)));
+    }
+
+    function measureAndFit() {
+      effectiveLayout = { ...preferredLayout };
+      applyLayout();
+      const stageRect = stage?.getBoundingClientRect?.();
+      const footerRect = footer?.getBoundingClientRect?.();
+      let textRect = textGroup?.getBoundingClientRect?.();
+      if (!stageRect?.width || !textRect || !footerRect) return effectiveLayout;
+      const leftSafe = stageRect.left + stageRect.width * .025;
+      const rightSafe = stageRect.right - stageRect.width * .025;
+      const topSafe = stageRect.top + stageRect.height * .025;
+      const bottomSafe = footerRect.top - stageRect.height * .025;
+      const safeHeight = Math.max(1, bottomSafe - topSafe);
+      if (textRect.height > safeHeight && effectiveLayout.widthPercent < 96) {
+        effectiveLayout.widthPercent = Math.min(96, effectiveLayout.widthPercent + 8);
+        applyLayout(); textRect = textGroup.getBoundingClientRect();
+      }
+      if (textRect.height > safeHeight && effectiveLayout.scale > .75) {
+        effectiveLayout.scale = Math.max(.75, effectiveLayout.scale * (safeHeight / Math.max(1, textRect.height)));
+        applyLayout(); textRect = textGroup.getBoundingClientRect();
+      }
+      const dx = textRect.left < leftSafe ? leftSafe - textRect.left : textRect.right > rightSafe ? rightSafe - textRect.right : 0;
+      const dy = textRect.top < topSafe ? topSafe - textRect.top : textRect.bottom > bottomSafe ? bottomSafe - textRect.bottom : 0;
+      effectiveLayout.offsetXPercent += dx / stageRect.width * 100;
+      effectiveLayout.offsetYPercent += dy / stageRect.height * 100;
+      applyLayout();
+      const finalRect = textGroup.getBoundingClientRect();
+      const overflow = finalRect.top < stageRect.top || finalRect.bottom > bottomSafe || finalRect.left < stageRect.left || finalRect.right > stageRect.right;
+      if (controls.warning) controls.warning.textContent = overflow ? "文字仍超出安全区，请缩小文字或增加行宽。" : "";
+      return effectiveLayout;
+    }
+
+    function updatePreferred(patch, metadata = {}) {
+      preferredLayout = { ...preferredLayout, ...patch };
+      measureAndFit();
+      options.onChange?.({ ...preferredLayout }, { ...effectiveLayout }, metadata);
+      return preferredLayout;
+    }
+
+    function setToneMode(toneMode, metadata = {}) {
+      const resolvedToneMode = toneMode === "white" ? "white" : "black";
+      preferredLayout = { ...preferredLayout, toneMode: resolvedToneMode };
+      effectiveLayout = { ...effectiveLayout, toneMode: resolvedToneMode };
+      applyLayout();
+      options.onChange?.({ ...preferredLayout }, { ...effectiveLayout }, metadata);
+      return resolvedToneMode;
     }
 
     function finishDrag(event) {
-      if (!dragging || (event?.pointerId != null && event.pointerId !== pointerId)) return;
-      textGroup?.releasePointerCapture?.(pointerId);
-      dragging = false;
-      pointerId = null;
+      if (event?.pointerId != null) {
+        pointers.delete(event.pointerId);
+        textGroup?.releasePointerCapture?.(event.pointerId);
+      } else {
+        [...pointers.keys()].forEach(id => textGroup?.releasePointerCapture?.(id));
+        pointers.clear();
+      }
+      dragging = pointers.size > 0;
+      if (pointers.size === 1) {
+        const [remaining] = [...pointers.values()];
+        dragStart = { x: remaining.x, y: remaining.y, layout: { ...preferredLayout } };
+        pinchStart = null;
+      } else if (!dragging) {
+        dragStart = null;
+        pinchStart = null;
+      }
       textGroup?.classList?.toggle?.("is-dragging", false);
     }
 
@@ -1620,51 +1711,83 @@
       textGroup?.classList?.toggle?.("is-adjusting", adjustmentMode);
       adjustButton?.setAttribute?.("aria-pressed", String(adjustmentMode));
       if (adjustButton) adjustButton.textContent = adjustmentMode ? "锁定文字" : "调整文字";
-      if (status) status.textContent = adjustmentMode ? "上下拖动文字，调整后请点击“锁定文字”。" : "";
+      if (controls.panel) controls.panel.hidden = !adjustmentMode;
+      if (!adjustmentMode && controls.widthPopover) controls.widthPopover.hidden = true;
+      if (!adjustmentMode) controls.widthToggle?.setAttribute?.("aria-expanded", "false");
+      if (status) status.textContent = adjustmentMode ? "单指/鼠标拖动文字组；双指缩放。" : "";
       return adjustmentMode;
     }
 
     function resetForNewQuote() {
-      offsetRatio = 0;
-      applyOffset();
+      measureAndFit();
     }
 
     function pointerDown(event) {
-      if (!adjustmentMode || dragging || event?.button > 0) return;
+      if (!adjustmentMode || event?.button > 0) return;
       const stageRect = stage?.getBoundingClientRect?.();
-      const textRect = textGroup?.getBoundingClientRect?.();
-      const footerRect = footer?.getBoundingClientRect?.();
-      if (!stageRect?.height || !textRect || !footerRect) return;
+      if (!stageRect?.height || !stageRect?.width) return;
       event.preventDefault?.();
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
       dragging = true;
-      pointerId = event.pointerId;
-      startClientY = event.clientY;
-      startOffsetRatio = offsetRatio;
-      dragBounds = textOffsetBounds(stageRect, textRect, footerRect, offsetRatio, options);
-      textGroup.setPointerCapture?.(pointerId);
+      if (pointers.size === 1) dragStart = { x: event.clientX, y: event.clientY, layout: { ...preferredLayout } };
+      if (pointers.size === 2) {
+        const [a,b] = [...pointers.values()];
+        pinchStart = { distance: Math.hypot(b.x-a.x,b.y-a.y), scale: preferredLayout.scale };
+        dragStart = null;
+      }
+      textGroup.setPointerCapture?.(event.pointerId);
       textGroup.classList?.toggle?.("is-dragging", true);
     }
 
     function pointerMove(event) {
-      if (!dragging || event.pointerId !== pointerId) return;
-      const stageHeight = stage?.getBoundingClientRect?.().height || 0;
-      if (!stageHeight) return;
+      if (!dragging || !pointers.has(event.pointerId)) return;
+      const stageRect = stage?.getBoundingClientRect?.();
+      if (!stageRect?.height || !stageRect?.width) return;
       event.preventDefault?.();
-      offsetRatio = clampTextOffset(startOffsetRatio + (event.clientY - startClientY) / stageHeight, dragBounds);
-      applyOffset();
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (pointers.size === 2 && pinchStart) {
+        const [a,b] = [...pointers.values()];
+        updatePreferred({ scale: Math.min(1.3, Math.max(.75, pinchStart.scale * Math.hypot(b.x-a.x,b.y-a.y) / Math.max(1,pinchStart.distance))) });
+      } else if (dragStart) updatePreferred({
+        offsetXPercent: dragStart.layout.offsetXPercent + (event.clientX-dragStart.x)/stageRect.width*100,
+        offsetYPercent: dragStart.layout.offsetYPercent + (event.clientY-dragStart.y)/stageRect.height*100
+      });
     }
+
+    controls.scaleDown?.addEventListener?.("click", () => updatePreferred({ scale: Math.max(.75, Math.round((preferredLayout.scale - .05) * 100) / 100) }));
+    controls.scaleUp?.addEventListener?.("click", () => updatePreferred({ scale: Math.min(1.3, Math.round((preferredLayout.scale + .05) * 100) / 100) }));
+    controls.width?.addEventListener?.("input", event => updatePreferred({ widthPercent: Number(event.target.value) }));
+    controls.widthToggle?.addEventListener?.("click", () => {
+      const expanded = controls.widthToggle?.getAttribute?.("aria-expanded") === "true";
+      controls.widthToggle?.setAttribute?.("aria-expanded", String(!expanded));
+      if (controls.widthPopover) controls.widthPopover.hidden = expanded;
+    });
+    controls.alignButtons?.forEach?.(button => button.addEventListener?.("click", () => updatePreferred({ align: button.dataset.lightQuoteAlign })));
+    controls.toneButtons?.forEach?.(button => button.addEventListener?.("click", () => setToneMode(button.dataset.lightQuoteTone, { source: "tone-control" })));
+    controls.reset?.addEventListener?.("click", () => {
+      preferredLayout = { ...DEFAULT_TEXT_LAYOUT, toneMode: preferredLayout.toneMode };
+      if (controls.widthPopover) controls.widthPopover.hidden = true;
+      controls.widthToggle?.setAttribute?.("aria-expanded", "false");
+      measureAndFit();
+      options.onChange?.({ ...preferredLayout }, { ...effectiveLayout }, { source: "reset" });
+    });
 
     adjustButton?.addEventListener?.("click", () => setMode(!adjustmentMode));
     textGroup?.addEventListener?.("pointerdown", pointerDown);
     textGroup?.addEventListener?.("pointermove", pointerMove);
     textGroup?.addEventListener?.("pointerup", finishDrag);
     textGroup?.addEventListener?.("pointercancel", finishDrag);
-    applyOffset();
+    applyLayout();
 
     return {
       resetForNewQuote,
       setMode,
-      getOffsetRatio: () => offsetRatio,
+      getOffsetRatio: () => preferredLayout.offsetYPercent / 100,
+      getPreferredLayout: () => ({ ...preferredLayout }),
+      getEffectiveLayout: () => ({ ...effectiveLayout }),
+      updatePreferred,
+      setToneMode,
+      measureAndFit,
       isAdjustmentMode: () => adjustmentMode,
       isDragging: () => dragging
     };
@@ -1687,6 +1810,7 @@
     const nextButton = rootElement.querySelector("[data-light-quote-next]");
     const backgroundButton = rootElement.querySelector("[data-light-quote-background]");
     const textAdjustButton = rootElement.querySelector("[data-light-quote-text-adjust]");
+    const layoutControls = rootElement.querySelector("[data-light-quote-layout-controls]");
     const freezeButton = rootElement.querySelector("[data-light-quote-freeze]");
     const preview = rootElement.querySelector("[data-light-quote-image-preview]");
     const previewImage = rootElement.querySelector("[data-light-quote-preview-image]");
@@ -1702,19 +1826,36 @@
     });
     const rawPreloadImage = options.imagePreloader || createImagePreloader(options.ImageConstructor);
     const preloadImage = url => rawPreloadImage(runtimeImageUrl(url, rootElement.ownerDocument));
-    const analyzeBackground = options.backgroundAnalyzer || analyzeTextBackground;
+    const backgroundAnalyzer = options.backgroundAnalyzer || analyzeTextBackground;
+    let renderVersion = 0;
+    let manualToneVersion = null;
     const textPosition = createTextPositionController({
       stage,
       body: stage?.querySelector?.(".light-quote-stage__body"),
       textGroup: stage?.querySelector?.(".light-quote-stage__glow"),
       footer: stage?.querySelector?.(".light-quote-stage__footer"),
       adjustButton: textAdjustButton,
-      status
+      status,
+      controls: {
+        panel: layoutControls,
+        scaleDown: rootElement.querySelector("[data-light-quote-scale-down]"),
+        scaleUp: rootElement.querySelector("[data-light-quote-scale-up]"),
+        width: rootElement.querySelector("[data-light-quote-width]"),
+        widthToggle: rootElement.querySelector("[data-light-quote-width-toggle]"),
+        widthPopover: rootElement.querySelector("[data-light-quote-width-popover]"),
+        alignButtons: [...(rootElement.querySelectorAll?.("[data-light-quote-align]") || [])],
+        toneButtons: [...(rootElement.querySelectorAll?.("[data-light-quote-tone]") || [])],
+        reset: rootElement.querySelector("[data-light-quote-reset]"),
+        warning: rootElement.querySelector("[data-light-quote-layout-warning]")
+      },
+      onChange(preferred, _effective, metadata = {}) {
+        if (metadata.source === "tone-control") manualToneVersion = renderVersion;
+        applyTextTone(preferred.toneMode === "white" ? "light" : "dark");
+      }
     });
     let currentQuote = null;
     let currentImage = null;
     let encounterTime = null;
-    let renderVersion = 0;
     let currentImagePromise = Promise.resolve(null);
     let textTonePromise = Promise.resolve("light");
     const previewUrls = createObjectUrlStore(options.urlApi);
@@ -1746,7 +1887,7 @@
     }
 
     function applyTextTone(tone) {
-      const resolvedTone = tone === "dark" ? "dark" : "light";
+      const resolvedTone = tone === "light" ? "light" : "dark";
       stage.classList.toggle("light-quote-stage--text-light", resolvedTone === "light");
       stage.classList.toggle("light-quote-stage--text-dark", resolvedTone === "dark");
       stage.dataset.textTone = resolvedTone;
@@ -1758,6 +1899,39 @@
       Promise.allSettled([currentImagePromise, textTonePromise]).then(() => {
         if (version === renderVersion) readyImages.refresh();
       });
+    }
+
+    function displayImageUrl(image) {
+      return runtimeImageUrl(image?.url, rootElement.ownerDocument);
+    }
+
+    function analyzeCurrentTextTone(version, image, imagePromise) {
+      const startedAt = Date.now();
+      reportDiagnostic("TEXT_TONE_WAIT", { version, imageUrl: image?.url || "" });
+      return Promise.resolve(imagePromise)
+        .then(decodedImage => {
+          if (!decodedImage) return "dark";
+          reportDiagnostic("TEXT_TONE_START", { version, imageUrl: image?.url || "", waitMs: Date.now() - startedAt });
+          return backgroundAnalyzer(stage, image.url, { image: decodedImage, documentObject: rootElement.ownerDocument });
+        })
+        .then(tone => {
+          const resolvedTone = tone === "light" ? "light" : "dark";
+          if (version !== renderVersion) {
+            reportDiagnostic("TEXT_TONE_STALE", { version, currentVersion: renderVersion, tone: resolvedTone });
+            return stage.dataset.textTone || resolvedTone;
+          }
+          if (manualToneVersion === version) {
+            reportDiagnostic("TEXT_TONE_MANUAL", { version, tone: stage.dataset.textTone || resolvedTone });
+            return stage.dataset.textTone || resolvedTone;
+          }
+          textPosition.setToneMode(resolvedTone === "light" ? "white" : "black", { source: "automatic-tone" });
+          reportDiagnostic("TEXT_TONE_APPLIED", { version, tone: resolvedTone, totalMs: Date.now() - startedAt });
+          return resolvedTone;
+        })
+        .catch(error => {
+          reportDiagnostic("TEXT_TONE_FAIL", { version, ...errorDiagnostic(error, "text-tone") });
+          return stage.dataset.textTone || "dark";
+        });
     }
 
     function render(quote, updateUrl, preparedImage, decodedImage) {
@@ -1782,18 +1956,14 @@
       const pad = value => String(value).padStart(2, "0");
       time.textContent = `${encounterTime.getFullYear()}.${pad(encounterTime.getMonth() + 1)}.${pad(encounterTime.getDate())} · ${pad(encounterTime.getHours())}:${pad(encounterTime.getMinutes())}`;
       const version = ++renderVersion;
-      stage.className = `light-quote-stage light-quote-stage--${currentImage?.text_safe_area || "flexible"} light-quote-stage--text-light`;
-      stage.dataset.textTone = "light";
-      reportDiagnostic("TEXT_SHADOW", { tone: "light", ...textShadowDiagnostics(stage, rootElement.ownerDocument) });
-      if (currentImage) stage.style.backgroundImage = `url("${String(currentImage.url).replace(/"/g, "%22")}")`;
+      manualToneVersion = null;
+      stage.className = `light-quote-stage light-quote-stage--${currentImage?.text_safe_area || "flexible"} light-quote-stage--text-dark`;
+      textPosition.setToneMode("black", { source: "automatic-tone-pending" });
+      if (currentImage) stage.style.backgroundImage = `url("${String(displayImageUrl(currentImage)).replace(/"/g, "%22")}")`;
       currentImagePromise = decodedImage
         ? Promise.resolve(decodedImage)
         : currentImage ? preloadImage(currentImage.url) : Promise.resolve(null);
-      textTonePromise = currentImage
-        ? currentImagePromise.then(image => analyzeTextBackground(stage, currentImage.url, { image }))
-          .then(tone => version === renderVersion ? applyTextTone(tone) : tone)
-          .catch(() => version === renderVersion ? applyTextTone("light") : "light")
-        : Promise.resolve(applyTextTone("light"));
+      textTonePromise = analyzeCurrentTextTone(version, currentImage, currentImagePromise);
       rootElement.dataset.currentQuote = quote.lq_id;
       if (updateUrl && typeof history !== "undefined") {
         const url = new URL(location.href);
@@ -1802,7 +1972,7 @@
       }
       document.title = `${technicalTitle(quote.quote_text)}・光语录・生命之书 | librarys.life`;
       status.textContent = "";
-      if (decodedImage) readyImages.refresh();
+      readyImages.refresh();
       scheduleReadyPreload(version);
       randomStrategy.record(quote);
     }
@@ -1810,17 +1980,28 @@
     async function chooseNext() {
       if (nextButton?.disabled) return;
       const actionToken = ++actionSequence;
+      const startedAt = Date.now();
+      reportDiagnostic("NEXT_START", { actionToken, readyCount: readyImages.getReadyCount(), pendingCount: readyImages.getPendingCount() });
       await initializationPromise;
       if (!currentQuote) return false;
       const quote = await randomStrategy.next({ quoteStore, currentQuote, random });
+      reportDiagnostic("NEXT_QUOTE_READY", { actionToken, quoteId: quote?.lq_id || "", durationMs: Date.now() - startedAt });
       if (!quote) return false;
       if (nextButton) nextButton.disabled = true;
       status.textContent = "图片还在准备，请稍候…";
       try {
+        const imageStartedAt = Date.now();
         const prepared = await readyImages.consume();
+        reportDiagnostic("NEXT_IMAGE_READY", {
+          actionToken,
+          durationMs: Date.now() - imageStartedAt,
+          totalMs: Date.now() - startedAt,
+          imageUrl: prepared?.image?.url || ""
+        });
         if (!prepared) throw new Error("No decoded background candidate is available");
         if (actionToken !== actionSequence) return false;
         render(quote, true, prepared.image, prepared.decodedImage);
+        reportDiagnostic("NEXT_RENDERED", { actionToken, quoteId: quote.lq_id, totalMs: Date.now() - startedAt });
         return true;
       } catch (error) {
         console.error("Light quote background preload failed", error);
@@ -1845,20 +2026,19 @@
         if (!prepared) throw new Error("No decoded background candidate is available");
         const { image: candidate, decodedImage } = prepared;
         if (actionToken !== actionSequence || versionAtStart !== renderVersion || currentImage !== previousImage) return false;
-        let tone = "light";
-        try {
-          tone = await analyzeBackground(stage, candidate.url, { image: decodedImage });
-        } catch (_) {}
-        if (actionToken !== actionSequence || versionAtStart !== renderVersion || currentImage !== previousImage) return false;
-
         rememberPreviousImage(previousImage);
         currentImage = candidate;
         currentImagePromise = Promise.resolve(decodedImage);
         const version = ++renderVersion;
-        stage.className = `light-quote-stage light-quote-stage--${candidate.text_safe_area || "flexible"} light-quote-stage--text-${tone}`;
-        stage.dataset.textTone = tone;
-        stage.style.backgroundImage = `url("${String(candidate.url).replace(/"/g, "%22")}")`;
-        textTonePromise = Promise.resolve(applyTextTone(tone));
+        const keepsManualTone = manualToneVersion === versionAtStart;
+        manualToneVersion = keepsManualTone ? version : null;
+        const preferredTone = textPosition.getPreferredLayout().toneMode === "white" ? "light" : "dark";
+        stage.className = `light-quote-stage light-quote-stage--${candidate.text_safe_area || "flexible"} light-quote-stage--text-${preferredTone}`;
+        stage.style.backgroundImage = `url("${String(displayImageUrl(candidate)).replace(/"/g, "%22")}")`;
+        applyTextTone(preferredTone);
+        textTonePromise = keepsManualTone
+          ? Promise.resolve(preferredTone)
+          : analyzeCurrentTextTone(version, candidate, currentImagePromise);
         status.textContent = "背景已更换。";
         readyImages.refresh();
         scheduleReadyPreload(version);
@@ -1994,8 +2174,15 @@
         try {
           await textTonePromise;
           if (frozenVersion !== renderVersion) throw new Error("Quote changed while preparing the image");
+          let backgroundImage = null;
+          try {
+            backgroundImage = await currentImagePromise;
+          } catch (error) {
+            reportDiagnostic("BG_REUSE_UNAVAILABLE", errorDiagnostic(error, "background-reuse"));
+          }
+          if (frozenVersion !== renderVersion) throw new Error("Quote changed while preparing the image");
           status.textContent = "正在生成 1080 × 1920 PNG…";
-          result = await (options.pngGenerator || generateMomentPng)({ stage, snapshot, diagnostics, reportDiagnostic });
+          result = await (options.pngGenerator || generateMomentPng)({ stage, snapshot, diagnostics, reportDiagnostic, backgroundImage });
           if (frozenVersion !== renderVersion) throw new Error("Quote changed while generating the image");
           reportDiagnostic("PNG_GENERATION_OK", { operationId, blobSize: result.blob.size });
         } catch (error) {
@@ -2033,6 +2220,7 @@
         button.textContent = originalButtonText;
       }
     });
+    windowObject?.addEventListener?.("resize", () => textPosition.measureAndFit());
     return {
       ready: initializationPromise,
       quoteStore,
@@ -2049,10 +2237,13 @@
       getPendingImageCount: () => readyImages.getPendingCount(),
       getReadyImageUrls: () => readyImages.getReadyEntries().map(entry => entry.image.url),
       getTextTone: () => stage.dataset.textTone || "light",
+      waitForTextTone: () => textTonePromise,
       isBackgroundBusy: () => backgroundBusy,
       isExportBusy: () => exportBusy,
       isShareBusy: () => shareBusy,
       getTextOffsetRatio: textPosition.getOffsetRatio,
+      getPreferredLayout: textPosition.getPreferredLayout,
+      getEffectiveLayout: textPosition.getEffectiveLayout,
       isTextAdjustmentMode: textPosition.isAdjustmentMode,
       isTextDragging: textPosition.isDragging
     };
@@ -2180,6 +2371,7 @@
   return {
     CONTROLLED_RANDOM_DEFAULTS,
     DARK_TEXT_COVERAGE_LEAD,
+    DEFAULT_TEXT_LAYOUT,
     EXPORT_HEIGHT,
     EXPORT_WIDTH,
     LIGHT_QUOTES_BUILD,

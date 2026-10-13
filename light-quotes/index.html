@@ -122,8 +122,8 @@
 
   <main>
     
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
-<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261014-4">
+<script src="/assets/js/light-quotes.js?v=20261014-4" defer></script>
 
 <section class="light-quote-main" data-light-quote-main data-light-quote-manifest-url="/assets/data/light-quotes/manifest.json" aria-labelledby="light-quote-title">
   <header class="light-quote-header">
@@ -160,6 +160,44 @@
       <span class="light-quote-background-control__separator" aria-hidden="true"></span>
       <button type="button" data-light-quote-text-adjust aria-pressed="false">调整文字</button>
     </div>
+
+    <section class="light-quote-layout-controls" data-light-quote-layout-controls hidden aria-label="整体文字组调整">
+      <div class="light-quote-layout-controls__toolbar" role="toolbar" aria-label="文字工具栏">
+        <div class="light-quote-layout-controls__group light-quote-layout-controls__group--scale" role="group" aria-label="文字大小">
+          <button type="button" aria-label="缩小文字组" title="缩小文字组" data-light-quote-scale-down>A−</button>
+          <button type="button" aria-label="放大文字组" title="放大文字组" data-light-quote-scale-up>A+</button>
+        </div>
+        <div class="light-quote-layout-controls__group" role="group" aria-label="文字对齐">
+          <button type="button" aria-label="左对齐" title="左对齐" data-light-quote-align="left">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 10h11M4 14h16M4 18h9"/></svg>
+          </button>
+          <button type="button" aria-label="居中" title="居中" data-light-quote-align="center" aria-pressed="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M6.5 10h11M4 14h16M7.5 18h9"/></svg>
+          </button>
+          <button type="button" aria-label="右对齐" title="右对齐" data-light-quote-align="right">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M9 10h11M4 14h16M11 18h9"/></svg>
+          </button>
+        </div>
+        <div class="light-quote-layout-controls__group light-quote-layout-controls__group--tone" role="group" aria-label="文字颜色">
+          <button type="button" aria-label="黑色文字" title="黑色文字" data-light-quote-tone="black" aria-pressed="true"><span class="light-quote-layout-controls__swatch light-quote-layout-controls__swatch--black" aria-hidden="true"></span></button>
+          <button type="button" aria-label="白色文字" title="白色文字" data-light-quote-tone="white"><span class="light-quote-layout-controls__swatch light-quote-layout-controls__swatch--white" aria-hidden="true"></span></button>
+        </div>
+        <div class="light-quote-layout-controls__group light-quote-layout-controls__group--width">
+          <button type="button" aria-label="设置每行宽度" title="设置每行宽度" aria-expanded="false" data-light-quote-width-toggle>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 11h10M5 15h14M5 19h8M3 4v16M21 4v16"/></svg>
+          </button>
+          <div class="light-quote-layout-controls__popover" data-light-quote-width-popover hidden>
+            <input type="range" min="62" max="96" step="1" value="85" aria-label="每行宽度" data-light-quote-width>
+          </div>
+        </div>
+        <div class="light-quote-layout-controls__group light-quote-layout-controls__group--reset">
+          <button type="button" aria-label="恢复文字默认设置" title="恢复文字默认设置" data-light-quote-reset>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.2A8 8 0 1 1 4 14M5.2 8.2V3.8M5.2 8.2h4.4"/></svg>
+          </button>
+        </div>
+      </div>
+      <p data-light-quote-layout-warning aria-live="polite"></p>
+    </section>
 
     <div class="light-quote-actions" aria-label="光语录操作">
       <button type="button" data-light-quote-next>再翻一页</button>
@@ -201,6 +239,7 @@
     panel.hidden = false;
     panel.style.display = "block";
     var entries = [];
+    var debugStartedAt = Date.now();
     function errorDetails(error, stage) {
       var details = {
         stage: stage || "global",
@@ -211,7 +250,7 @@
       return details;
     }
     function report(event, details) {
-      var entry = { event: event };
+      var entry = { event: event, elapsedMs: Date.now() - debugStartedAt };
       var key;
       details = details || {};
       for (key in details) {
@@ -252,7 +291,7 @@
     try { objectSpread = Boolean(Function("var value={a:1};return {...value}.a")()); } catch (_) {}
     try { asyncFunction = Boolean(Function("return async function () {}")()); } catch (_) {}
     report("BUILD", {
-      build: "20261013-4",
+      build: "20261014-4",
       js: script && script.getAttribute("src") || "unknown",
       css: stylesheet && stylesheet.getAttribute("href") || "unknown",
       userAgent: navigator.userAgent || "unknown",

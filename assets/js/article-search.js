@@ -1154,7 +1154,7 @@
     const readLabel = article.type === "micro-note" ? "阅读微笔记" : "阅读全文";
 
     return `
-      <article class="article-search-card${article.type === "micro-note" ? " article-search-card--micro-note" : ""}${article.cover ? "" : " article-search-card--no-cover"}">
+      <article class="article-search-card${article.cover ? "" : " article-search-card--no-cover"}">
         ${article.cover ? `
           <a class="article-search-cover-link" href="${escapeHtml(article.url)}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
             <img class="article-search-cover" src="${escapeHtml(article.cover)}" alt="" loading="lazy">
