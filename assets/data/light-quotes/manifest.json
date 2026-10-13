@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "dataset_version": "sha256-5c82497954cf481110be127e461e073c0d516601b002d09c36d3373eb45e3354",
-  "count": 197,
+  "dataset_version": "sha256-aedc9405b391eccc6cba7989b4f459cbab4447ac4642c45994127b44266a1172",
+  "count": 199,
   "shard_size": 250,
   "shards": [
     {
       "key": "0001",
-      "url": "shards/quotes-0001-5aff97549fd8.json",
+      "url": "shards/quotes-0001-4fc9b36fc9ee.json",
       "start": 0,
-      "count": 197,
+      "count": 199,
       "min_lq_id": "lq-0001",
-      "max_lq_id": "lq-0212",
-      "sha256": "5aff97549fd829f26511bb2425efd8575aa6151ee871500293e6f3c02b3b826b"
+      "max_lq_id": "lq-0216",
+      "sha256": "4fc9b36fc9ee1cbccc42e16071554d7a294e9c4ffb5a28c130ad600c34647007"
     }
   ]
 }

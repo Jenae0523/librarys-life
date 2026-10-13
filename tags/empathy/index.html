@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -602,23 +634,58 @@
     <div class="tag-quote-module__items">
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0077">
+            <blockquote>报复是一种被扭曲的呼求，背后是对同理心的需要。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Surprising Purpose of Anger: Beyond Anger Management: Finding the Gift》│ Marshall B. Rosenberg</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0079">
+            <blockquote>同理心的一个重要部分，是尝试站在对方的视角看事情。这需要我们暂时放下评判，把自己的意见搁在一边，试着去理解对方。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Looking Out, Looking In》│ Ronald B. Adler、Russell F. Proctor II</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0080">
+            <blockquote>同理心让你理解他人的动机，却不意味着你必须赞同对方。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Looking Out, Looking In》│ Ronald B. Adler、Russell F. Proctor II</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0081">
+            <blockquote>当我们感受到他人的共情与理解时，愤怒会渐渐平息，悲伤和羞耻也会随之减轻。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Emotions in Child Psychotherapy: An Integrative Framework》│ Kenneth Barish</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0116">
+            <blockquote>在亲密关系中，我们需要保持共情所产生的平衡，也要明白，在与爱的人相处时，自己的边界从哪里开始，又在哪里结束。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Power of Empathy》│ Arthur P. Ciaramicoli、Katherine Ketcham</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0147">
+            <blockquote>父母理解孩子的气质往往至关重要。这种理解不仅能减轻父母不必要的内疚，也能帮助他们更具共情地理解孩子，从而以更具建设性的方式回应孩子令人困扰的情绪和行为。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Emotions in Child Psychotherapy: An Integrative Framework》│ Kenneth Barish</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0157">
-            <blockquote>人在关系中的安全感来自理解，而非说服。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《看见孩子：洞察、共情与联结》│ 贝姬·肯尼迪</figcaption>
+            <blockquote>想与人建立稳固的关系，需要承认没有谁是绝对正确的。因为在一段关系中，让人感到安全的是理解，而非说服。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Good Inside》│ Dr. Becky Kennedy</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0166">
-            <blockquote>父母的职责是通过行为规则、接纳和共情来构建安全的成长环境。孩子的职责是通过感知和表达情感来探索和学习。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《看见孩子：洞察、共情与联结》│ 贝姬·肯尼迪</figcaption>
-          </a>
-        </figure>
-      
-        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
-          <a href="/light-quotes/?quote=lq-0191">
-            <blockquote>连接会影响我们成为怎样的人，而我们是怎样的人，也会影响我们如何与人连接。感到连接时，我们会变得更开放、更有同理心，也更勇敢；感到隔绝时，我们会在自我保护中变得封闭、挑剔或疏远。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《Platonic》│ Marisa G. Franco</figcaption>
+            <blockquote>父母的职责，是通过设立边界、理解并接纳孩子的感受，为他们营造安全的成长环境；孩子的职责，则是在体验和表达情绪的过程中探索与学习。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Good Inside》│ Dr. Becky Kennedy</figcaption>
           </a>
         </figure>
       
@@ -637,39 +704,37 @@
           </header>
 
 
-          <div class="row" data-tag-pagination-list>
-
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
-              <a href="/micro-notes/2026/0808-accurate-response-in-communication.html"
-                 class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-                <p class="article-card-meta">
-                  微笔记
-                  <span aria-hidden="true"> · </span>
-                  2026年8月8日
+          <div class="tag-node-content-list" data-tag-pagination-list>
 
 
-                </p>
+            <div class="tag-node-micro-note" data-tag-pagination-item>
+              
+              
+  
+  <a class="micro-note-card" href="/micro-notes/2026/0808-accurate-response-in-communication.html">
+    
+      <span class="micro-note-card__cover-wrap" aria-hidden="true">
+        <img
+          class="micro-note-card__cover"
+          src="https://img.librarys.life/img/articles-covers/micro-notes/2026/0808-accurate-response-in-communication.png"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        >
+      </span>
+    
+    <div class="micro-note-card__content">
+      <span class="micro-note-card__meta">微笔记 · 2026年8月8日</span>
+      <h2 class="micro-note-card__title">减少关系冲突，从准确回应对方开始</h2>
+      
+        <span class="micro-note-card__description">关系沟通中，解释事实并不等于准确回应。对方的问题背后可能还有被忽视、不被重视等感受；试探性说出自己的理解，让对方确认或纠正，能减少反复解释和彼此指责。</span>
+      
+    </div>
+  </a>
 
 
-                <img
-                  src="https://img.librarys.life/img/articles-covers/micro-notes/2026/0808-accurate-response-in-communication.png"
-                  alt="准确回应：回应对方真正关心的问题 为什么你明明解释清楚了，对方还是生气？"
-                  class="article-cover">
-
-
-                <h3 class="article-title">
-
-                    <span class="title-line1">准确回应：回应对方真正关心的问题</span>
-
-
-                    <span class="title-line2">为什么你明明解释清楚了，对方还是生气？</span>
-
-
-                </h3>
-
-              </a>
             </div>
+
 
           </div>
           <nav class="site-pagination"
@@ -713,13 +778,13 @@
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -754,7 +819,11 @@
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -783,6 +852,8 @@
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -839,8 +910,6 @@
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -974,7 +1043,9 @@
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

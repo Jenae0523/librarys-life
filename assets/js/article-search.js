@@ -1085,6 +1085,15 @@
       .replace(/'/g, "&#039;");
   }
 
+  function formatBookTitle(value) {
+    let title = String(value == null ? "" : value).trim();
+    if (!title) return "";
+    while (title.startsWith("《") && title.endsWith("》")) {
+      title = title.slice(1, -1).trim();
+    }
+    return title ? `《${title}》` : "";
+  }
+
   function escapeRegExp(value) {
     return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
@@ -1134,7 +1143,7 @@
             <a class="article-search-quote-link" href="${escapeHtml(article.url)}">
               <span class="light-quote-mark article-search-quote-mark" aria-hidden="true"></span>
               <p class="article-search-quote-text">${highlightHtml(article.quote_text || article.description, terms)}</p>
-              <p class="article-search-quote-source">${escapeHtml(article.book_title || "")}${article.author ? ` │ ${escapeHtml(article.author)}` : ""}</p>
+              <p class="article-search-quote-source">${escapeHtml(formatBookTitle(article.book_title))}${article.author ? ` │ ${escapeHtml(article.author)}` : ""}</p>
             </a>
             ${tagsHtml ? `<div class="article-search-tags" aria-label="相关知识点">${tagsHtml}</div>` : ""}
           </div>
@@ -1145,7 +1154,7 @@
     const readLabel = article.type === "micro-note" ? "阅读微笔记" : "阅读全文";
 
     return `
-      <article class="article-search-card">
+      <article class="article-search-card${article.type === "micro-note" ? " article-search-card--micro-note" : ""}${article.cover ? "" : " article-search-card--no-cover"}">
         ${article.cover ? `
           <a class="article-search-cover-link" href="${escapeHtml(article.url)}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
             <img class="article-search-cover" src="${escapeHtml(article.cover)}" alt="" loading="lazy">

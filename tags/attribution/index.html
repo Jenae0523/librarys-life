@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -596,22 +628,43 @@
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0003">
-            <blockquote>幸福的爱人会宽容地理解伴侣并解释他们的行为，假定伴侣无辜，甚至把伴侣偶尔的不端行为视为善意和关爱。</blockquote>
+            <blockquote>感情生活幸福的人，往往以宽厚的眼光看待伴侣，善意地理解对方的行为。即使伴侣偶尔行为不当，也倾向于认为对方是善良、体贴的人。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《亲密关系》│ 罗兰·米勒</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0084">
-            <blockquote>我们在判断意图时所犯的错误简单却深刻：我们以为自己知道别人的意图，其实并不知道。意图是看不见的，我们只能根据他人的行为进行推测。换句话说，那些意图是我们自己构造出来的。</blockquote>
+            <blockquote>我们在判断意图时所犯的错误，简单却深刻：我们以为自己知道别人的意图，其实并不知道。意图是看不见的，我们只能根据他人的行为进行推测。换句话说，那些我们所认定的意图，其实是自己构造出来的。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Difficult Conversations》│ Douglas Stone、Bruce Patton、Sheila Heen</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0086">
-            <blockquote>最重要的是意识到：即使没有人蛮不讲理、心怀恶意或故意欺骗，误解和怒气仍然可能产生。我们可以停下来提醒自己，对方想表达的未必就是我们听到的意思。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《That’s Not What I Meant!》│ Deborah Tannen</figcaption>
+            <blockquote>最重要的是意识到：即使没有人蛮不讲理、心怀恶意或故意欺骗，误解和怒气仍然可能产生。我们可以停下来提醒自己，对方想表达的，未必就是我们听到的意思。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《That&#39;s Not What I Meant!》│ Deborah Tannen</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0107">
+            <blockquote>我们与他人之间的冲突，很少只是表面看起来的那回事。在冲突的表象之下，还隐藏着更深的故事脉络，而那往往才是最值得探究的部分。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《High Conflict》│ Amanda Ripley</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0151">
+            <blockquote>孩子那些令人担忧的行为，是在告诉我们：孩子在满足某些要求时遇到了困难。把这些行为简单理解为“博取关注”，既不准确，也无助于解决问题。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Explosive Child》│ Ross W. Greene</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0174">
+            <blockquote>完美主义往往并非源于孩子进步得不够，而更多源于父母自己的焦虑。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Explosive Child》│ Ross W. Greene</figcaption>
           </a>
         </figure>
       
@@ -667,13 +720,13 @@
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -708,7 +761,11 @@
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -737,6 +794,8 @@
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -793,8 +852,6 @@
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -928,7 +985,9 @@
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

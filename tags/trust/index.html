@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -602,14 +634,21 @@
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0015">
-            <blockquote>如果他们应答适当，就能建立互信，表露会加深，亲密感也会增加；反之如果他们看来漠不关心或心不在焉，我们就会向后退缩，表露就会减少。</blockquote>
+            <blockquote>当我们向他人敞开心扉时，若得到理解与关心，信任便会建立，我们也会更深入地袒露自己，亲密感随之增加；如果对方显得不感兴趣或漠不关心，我们便会退缩，减少自我表露。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《亲密关系》│ 罗兰·米勒</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0115">
+            <blockquote>有时候，尤其是面对严重的越界行为，悔意和改变的承诺需要经得起时间的检验，受伤的一方才会相信它们是真诚的。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Looking Out, Looking In》│ Ronald B. Adler、Russell F. Proctor II</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0190">
-            <blockquote>信任与零和关系彼此对立。在一段相互信任的关系中，我们确信伴侣会把我们的利益放在心上，而不是只考虑自己。伴侣不必无私，只需要让我们的利益对他同样重要。</blockquote>
+            <blockquote>在亲密关系中，“零和博弈”意味着双方把彼此当成对手，只顾自己的利益：一方得利，另一方就受损。信任则恰恰相反：我们相信伴侣虽不必无私，也会把我们的利益放在心上。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Science of Trust》│ John M. Gottman</figcaption>
           </a>
         </figure>
@@ -666,13 +705,13 @@
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -707,7 +746,11 @@
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -736,6 +779,8 @@
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -792,8 +837,6 @@
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -927,7 +970,9 @@
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

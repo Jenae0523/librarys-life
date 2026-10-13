@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "quote_dataset_version": "sha256-aedc9405b391eccc6cba7989b4f459cbab4447ac4642c45994127b44266a1172",
+  "relation_version": "sha256-a40412fe52d0eb6ba5b2f1d42c3c0e62683be93675df583595cbf71e202d4e0a",
+  "dimension": "book",
+  "key": "book-0023",
+  "start": 0,
+  "count": 2,
+  "lq_ids": [
+    "lq-0092",
+    "lq-0093"
+  ]
+}

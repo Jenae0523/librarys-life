@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -602,147 +634,140 @@
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0112">
-            <blockquote>在很多人的观念里，爱和婚姻就意味着压抑和忽视自己而去迁就对方。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《非暴力沟通·两性篇》│ 马歇尔·卢森堡</figcaption>
+            <blockquote>在有些人的观念里，爱一个人，就意味着压抑和忽视自己的需要，转而去迁就和照顾对方。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Being Me, Loving You: A Practical Guide to Extraordinary Relationships》│ Marshall B. Rosenberg</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0113">
-            <blockquote>同居的情侣如果对家务劳动的分派有分歧，他们比观点相似的情侣更可能分手。共同分担家务劳动的夫妻比家务分配不公平的夫妻对婚姻更加满足。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《亲密关系》│ 罗兰·米勒</figcaption>
+            <blockquote>同居的情侣如果对家务分工意见有分歧，他们比观点相似的情侣更可能分手；共同分担家务的夫妻，也比家务分工不均的夫妻对婚姻更加满足。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Intimate Relationships》│ Rowland S. Miller</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0114">
-            <blockquote>因此，冲突并不是可怕的问题，而是具有挑战性的机遇——理解自己和伴侣的机会，个体亲密关系变得更满意更亲密的契机。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《亲密关系》│ 罗兰·米勒</figcaption>
+            <blockquote>换个角度看，冲突并不是可怕的问题，而是一个充满挑战的机会——让我们更了解伴侣，也更了解自己，并有可能让这段关系变得更令人满意、更亲密。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Intimate Relationships》│ Rowland S. Miller</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0115">
-            <blockquote>有时候，尤其是严重的越界行为，表达悔意并承诺改善后必须经得起时间的考验，才能让对方感受到真诚而愿意接受道歉。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《沟通的艺术：看入人里，看出人外》│ 罗纳德·B·阿德勒、拉塞尔·F·普罗科特</figcaption>
+            <blockquote>有时候，尤其是面对严重的越界行为，悔意和改变的承诺需要经得起时间的检验，受伤的一方才会相信它们是真诚的。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Looking Out, Looking In》│ Ronald B. Adler、Russell F. Proctor II</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0116">
-            <blockquote>在亲密关系中，我们需要保持住共情所产生的那个平衡，要明白对于我们所爱的人来说，我们自己的边界是从哪里开始，到哪里结束。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《共情的力量》│ 亚瑟·乔拉米卡利、凯瑟琳·柯茜</figcaption>
+            <blockquote>在亲密关系中，我们需要保持共情所产生的平衡，也要明白，在与爱的人相处时，自己的边界从哪里开始，又在哪里结束。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Power of Empathy》│ Arthur P. Ciaramicoli、Katherine Ketcham</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0117">
-            <blockquote>忽视是一种被动的破坏性行为（“过冷”的极端），包括拒绝讨论面临的问题、虽然不断点头但并没有真正在听、避免进一步的互动、回避可能会导致吵架的争论，或者因为不相关的事情批评你的伴侣等。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《共情的力量》│ 亚瑟·乔拉米卡利、凯瑟琳·柯茜</figcaption>
-          </a>
-        </figure>
-      
-        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
-          <a href="/light-quotes/?quote=lq-0118">
-            <blockquote>婚姻是为了更深的东西：为了亲密，为了一种相互归属，为了做一个人无法单独做的事，为了做两个人可以一起做的事，为了做一种需要两个人在一起、深深地在一起才能够做的事。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《女人与婚姻》│ 奥修</figcaption>
+            <blockquote>忽视是一种被动而具有破坏性的反应，是关系冲突中“过冷”的极端。表现为拒绝讨论问题，虽点头却并没有真正倾听，以此避免进一步互动；回避有争议的讨论，或转而拿无关的事情批评伴侣。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Power of Empathy》│ Arthur P. Ciaramicoli、Katherine Ketcham</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0119">
-            <blockquote>两个共同生活的人若都是自由的，可以让彼此的人生更丰富，而且对方的工作其实保障了另一方能够保持独立自主；经济自主的妻子可以让丈夫免受婚姻的奴役，反之，她若是依附于他，受他的奴役，他相对地也要以让自己受到奴役作为代价。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《第二性》│ 西蒙娜·德·波伏娃</figcaption>
+            <blockquote>两个共同生活的人若都是自由的，就能让彼此的人生更加丰富；而各自的工作，也为彼此保持独立提供了保障。经济独立的妻子能让丈夫免受婚姻的奴役，因为妻子的依附与受支配，也会反过来把丈夫困在另一种婚姻束缚里。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Second Sex》│ Simone de Beauvoir</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0120">
-            <blockquote>因为婚姻是伴侣式的结合，所以两个人都不应该想统驭对方。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《自卑与超越》│ 阿尔弗雷德·阿德勒</figcaption>
+            <blockquote>婚姻既然是一种伙伴关系，就不应该有任何一方凌驾于另一方之上。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《What Life Should Mean to You》│ Alfred Adler</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0121">
-            <blockquote>如果父母们经常吵架，并将他们的婚姻视同儿戏，如果他们不再认为他们的问题能够顺利解决，他们的关系能够延续下去，那么这种婚姻便不是能够帮助孩子发展其社会性的有利情境。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《自卑与超越》│ 阿尔弗雷德·阿德勒</figcaption>
+            <blockquote>如果父母经常吵架，将婚姻视同儿戏，如果不再相信他们婚姻中的问题能够解决、他们的关系能够延续下去，那么这种婚姻便不是能够帮助孩子发展其社会性的有利情境。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《What Life Should Mean to You》│ Alfred Adler</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0122">
-            <blockquote>他们在婚姻的战争中，关系不断疏远，但由于双方都希望最终取得胜利，不希望由自己主动结束战争，因此都没有勇气提出离婚。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《洞察人性（阿德勒心理学经典）》│ 阿尔弗雷德·阿德勒</figcaption>
+            <blockquote>当婚姻变成一场争夺胜负的战争，两个人会越来越疏远，但谁都没有勇气提出离婚，因为双方都还期待自己最终获胜，不愿离开这场婚姻战争。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Understanding Human Nature》│ Alfred Adler</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0123">
-            <blockquote>可是，很多夫妻在如何管理财务、如何营造浪漫生活或是如何抚养孩子等问题上都有不同的观点，这并不妨碍他们建立幸福美满的婚姻关系。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《关键对话：如何高效能沟通》│ 科里·帕特森等</figcaption>
+            <blockquote>夫妻在如何管理财务、如何经营感情、如何抚养孩子等重要问题上，难免会有不同意见。真正决定关系走向的，不是有没有分歧，而是两个人如何面对和处理这些分歧。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Crucial Conversations: Tools for Talking When Stakes Are High》│ Kerry Patterson、Joseph Grenny、Ron McMillan、Al Switzler</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0124">
-            <blockquote>在成长的过程中，我们都认为其他人绝对不能碰我们，但是父母、未婚夫和丈夫，只要他们想，随时都可以给我们一巴掌，这是出于爱，或是为了教育我们，不断地教育我们。</blockquote>
+            <blockquote>我们从小看着父亲打母亲，也渐渐相信：任何陌生人都不应该碰我们一下，但父母、未婚夫和丈夫，只要他们想，就可以给我们一巴掌——因为爱，因为要教育我们，或重新教育我们。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《新名字的故事》│ 埃莱娜·费兰特</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0125">
-            <blockquote>当男人或女人在伴侣关系中认为他们有权苛责、教育或是改变另一半，这是假设自己拥有只存在于亲子关系中的父母对孩子的权力。</blockquote>
+            <blockquote>当一个人在伴侣关系中认为自己有权苛责、教育或改变另一半，其实是在把亲子关系中父母对孩子的权力带进伴侣关系。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《在爱中升华》│ 伯特·海灵格</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0126">
-            <blockquote>承诺之爱最大的幻觉，是以为伴侣属于我们。事实上，他们作为独立个体的存在不可侵犯，他们的神秘也永远无法被彻底掌握。当我们开始承认这一点，——长久维持（性爱的）欲望才真正成为可能。</blockquote>
+            <blockquote>承诺之爱最大的幻觉，是以为伴侣属于我们。事实上，伴侣始终是独立于我们的个体，他们身上的神秘也永远无法被彻底掌握。当我们开始承认这一点，彼此间的性吸引才真正有可能长久延续。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Mating in Captivity》│ Esther Perel</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0127">
-            <blockquote>没有人会为了成为出色的小提琴手，只是等待一把合适的琴出现；但许多人却想靠等待一个合适的伴侣，让自己擅长经营关系。更有帮助的做法，是培养我们爱的能力——成为有技巧、成熟且有自我觉察的关系伴侣。</blockquote>
+            <blockquote>没有人会为了成为出色的小提琴手，只是等待一把合适的琴出现；但许多人却期待找到一个合适的伴侣，就能拥有一段成功的关系。更有帮助的做法，是培养我们爱的能力——成为一个有技巧、成熟且有自我觉察的伴侣。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The All-or-Nothing Marriage》│ Eli J. Finkel</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0128">
-            <blockquote>请记住，走出僵局并不要求你们解决这个问题。谁也不必“让步”或“认输”。真正的目标，是能够承认并讨论这个问题，而不再彼此伤害。</blockquote>
+            <blockquote>要走出僵局，并不意味着一定要解决这个问题。谁也不必“让步”或“认输”。真正的目标，是能够承认问题的存在，并在不伤害彼此的情况下讨论它。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Seven Principles for Making Marriage Work》│ John Gottman、Nan Silver</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0129">
-            <blockquote>如果伴侣喊道“你跑题了！”或嘟囔“我们能暂停一下吗？”，尽管表达方式并不好，这仍是一次修复尝试。如果你只听语气、不听话里的意思，就可能错过真正的信息：“停一下！事情正在失控。”</blockquote>
+            <blockquote>如果伴侣喊道“你跑题了！”或嘟囔“我们能暂停一下吗？”，尽管表达方式并不好，这仍是一种修复尝试。如果你只听对方的语气，而忽略了话里的意思，就可能错过真正的信息：“停一下！事情正在失控。”</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Seven Principles for Making Marriage Work》│ John Gottman、Nan Silver</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0130">
-            <blockquote>这些对话中的大多数责备，其实都是绝望的依恋呼喊，是对情感失联的抗议。</blockquote>
+            <blockquote>对话中的大多数责备，其实都是绝望的依恋呼喊，是在抗议彼此失去情感连接。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Hold Me Tight》│ Sue Johnson</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0131">
-            <blockquote>退缩和暴怒是“恶性对话”的典型标志，它们掩盖了脆弱中最核心的情绪：悲伤、羞耻，尤其是恐惧。</blockquote>
+            <blockquote>退缩和暴怒是“恶性对话”的典型标志，它们掩盖了更深层的脆弱情绪：悲伤、羞耻，尤其是恐惧。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Hold Me Tight》│ Sue Johnson</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0132">
-            <blockquote>婚姻的衰败，始于有回应的亲密互动日渐消失；冲突是在这之后才出现的。</blockquote>
+            <blockquote>婚姻的衰败，往往始于有回应的亲密互动逐渐消失；冲突是在这之后才出现的。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Hold Me Tight》│ Sue Johnson</figcaption>
           </a>
         </figure>
@@ -756,77 +781,77 @@
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0134">
-            <blockquote>人并不是在回忆创伤，而是在重新经历它。</blockquote>
+            <blockquote>当创伤被触发时，我们并不只是在回忆过去，而是在当下重新经历它。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Us》│ Terrence Real</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0135">
-            <blockquote>苛刻没有任何可取之处。凡是苛刻想要做到的事，带着爱意的坚定都能做得更好。</blockquote>
+            <blockquote>苛刻没有任何可取之处。凡是靠苛刻想做到的事，带着爱意的坚定都能做得更好。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Us》│ Terrence Real</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0136">
-            <blockquote>悖论在于：只有放弃“双方必须达成同一种看法”的梦想，真正接受你和伴侣不会以同样的方式看待所有事情，关系才可能得到化解。</blockquote>
+            <blockquote>悖论在于：只有放弃“两个人必须看法一致”的幻想，真正接受你和伴侣不会以同样的方式看待所有事情，问题才可能得到化解。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Us》│ Terrence Real</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0137">
-            <blockquote>亲密不是一种你已经拥有的东西，而是一件需要不断去做的事；而且，你可以学着把它做得更好。</blockquote>
+            <blockquote>亲密不是一种你已经拥有的东西，而是一件需要持续去做的事；而且，你可以学着把它做得更好。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Us》│ Terrence Real</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0138">
-            <blockquote>提醒伴侣去做一件事，并不会把这件事从你的清单上拿走，反而又给清单增加了一项；更糟的是，这种提醒还常常被不公平地说成“唠叨”。</blockquote>
+            <blockquote>提醒伴侣去做一件事，并不会把这件事从你的清单上划掉，反而又给清单增加了一项；更糟的是，这种提醒还常常被不公平地说成“唠叨”。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Fair Play》│ Eve Rodsky</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0139">
-            <blockquote>一项任务真正的“所有权”，属于那个先记得需要规划、继而完成规划，并在无需提醒的情况下执行所有环节、把事情彻底做完的人。</blockquote>
+            <blockquote>一项任务真正的“所有权”，属于那个先记得这件事需要规划、接着完成规划，并在无需提醒的情况下执行所有环节、把事情彻底做完的人。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Fair Play》│ Eve Rodsky</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0140">
-            <blockquote>让自己承担的全部隐形劳动被看见、被计算，确有价值；但那只是起点，并不是解决方案。</blockquote>
+            <blockquote>让自己承担的所有隐形劳动被看见、被计算，确实有价值；但这只是起点，并不是解决方案。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Fair Play》│ Eve Rodsky</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0141">
-            <blockquote>孩子出生后，我们不再像从前那样，持续而亲近地参与彼此的生活。无法充分进入对方的生活，使亲密变得困难得多。</blockquote>
+            <blockquote>孩子出生后，我们不再像从前那样，持续而亲近地参与彼此的生活。无法充分参与彼此的生活，也使维持亲密变得更加困难。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《And Baby Makes Three》│ John M. Gottman、Julie Schwartz Gottman</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0142">
-            <blockquote>性的亲密来自情感的亲密，而情感的亲密，来自伴侣在纷繁的责任与事务中仍然努力找到彼此。</blockquote>
+            <blockquote>性的亲密来自情感的亲密，而情感的亲密，来自伴侣在纷繁的责任与事务中，仍然努力找到彼此。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《And Baby Makes Three》│ John M. Gottman、Julie Schwartz Gottman</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0143">
-            <blockquote>修复可以只是几句话或一个动作，让沟通重新回到场内，让我们再次站到同一队里；而一次修复要奏效，需要两个人共同完成。</blockquote>
+            <blockquote>关系修复可以只是几句话或一个动作，让沟通重新回到正轨，让我们再次站到同一队里；而一次修复要奏效，需要两个人共同完成。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《And Baby Makes Three》│ John M. Gottman、Julie Schwartz Gottman</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0144">
-            <blockquote>关于婚姻的忠诚：也许，成熟还可以这样理解——它不是没有激情的爱，而是一种知道还有其他激情存在、却没有选择它们的爱。</blockquote>
+            <blockquote>关于婚姻中的忠诚，也许成熟还可以这样理解：它不是没有激情的爱，而是一种知道还有其他激情存在，却没有选择它们的爱。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Mating in Captivity》│ Esther Perel</figcaption>
           </a>
         </figure>
@@ -846,7 +871,36 @@
           </header>
 
 
-            <p class="tag-node-empty">这个知识节点正在整理中，相关内容将陆续加入。</p>
+          <div class="tag-node-content-list" data-tag-pagination-list>
+
+
+            <div class="tag-node-micro-note" data-tag-pagination-item>
+              
+              
+  
+  <article class="atomic-micro-note-item">
+    <p class="atomic-micro-note-item__meta">
+      <time datetime="2026-10-13">2026年10月13日</time>
+    </p>
+    <h2 class="atomic-micro-note-item__title">
+      <a href="/micro-notes/mn-000013.html">我们嘴上认定什么最重要，与实际把时间和精力花在哪里，并不是一回事</a>
+    </h2>
+    
+      <p class="atomic-micro-note-item__summary">我们可能真心相信家人最重要，也努力赚钱想给他们更好的生活；但真正的优先顺序，往往会暴露在时间和精力实际流向哪里。作者用自己家庭的经历呈现：物质条件变好，并不等于最重视的关系真的得到了最多的投入。</p>
+    
+    <a class="atomic-micro-note-item__read" href="/micro-notes/mn-000013.html">阅读全文…</a>
+  </article>
+
+
+            </div>
+
+
+          </div>
+          <nav class="site-pagination"
+               data-tag-pagination
+               data-page-size="20"
+               data-pagination-label="文章"
+               aria-label="相关文章分页"></nav>
 
         </section>
 
@@ -883,13 +937,13 @@
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -924,7 +978,11 @@
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -953,6 +1011,8 @@
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -1009,8 +1069,6 @@
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -1144,7 +1202,9 @@
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

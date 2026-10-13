@@ -17,7 +17,7 @@
     + 0.0722 * channelLuminance(42);
   const READY_IMAGE_QUEUE_LIMIT = 2;
   const TEXT_TOP_SAFE_RATIO = 0.025;
-  const LIGHT_QUOTES_BUILD = "20260929-3";
+  const LIGHT_QUOTES_BUILD = "20261013-4";
   const CONTROLLED_RANDOM_DEFAULTS = Object.freeze({
     historySize: 20,
     quoteExclusionWindow: 20,
@@ -438,11 +438,20 @@
     return value.length > length ? `${value.slice(0, length)}…` : value;
   }
 
+  function formatBookTitle(value) {
+    let title = String(value || "").trim();
+    if (!title) return "";
+    while (title.startsWith("《") && title.endsWith("》")) {
+      title = title.slice(1, -1).trim();
+    }
+    return title ? `《${title}》` : "";
+  }
+
   function createMomentSnapshot(quote, image, encounteredAt) {
     return Object.freeze({
       quote_id: quote?.lq_id || "",
       quote_text: quote?.quote_text || "",
-      book_title: quote?.book_title || "",
+      book_title: formatBookTitle(quote?.book_title),
       author: quote?.author || "",
       image_id: image?.image_id || "",
       image_url: image?.url || "",
@@ -1764,10 +1773,10 @@
       encounterTime = new Date();
       text.textContent = quote.quote_text;
       if (sourceBook && sourceAuthor) {
-        sourceBook.textContent = quote.book_title;
+        sourceBook.textContent = formatBookTitle(quote.book_title);
         sourceAuthor.textContent = quote.author;
       } else {
-        source.textContent = `${quote.book_title}\n${quote.author}`;
+        source.textContent = `${formatBookTitle(quote.book_title)}\n${quote.author}`;
       }
       textPosition.resetForNewQuote();
       const pad = value => String(value).padStart(2, "0");
@@ -1922,7 +1931,7 @@
       }
       const shareUrl = new URL("/light-quotes/", location.origin);
       shareUrl.searchParams.set("quote", currentQuote.lq_id);
-      const value = `「${currentQuote.quote_text}」\n${currentQuote.book_title} │ ${currentQuote.author}\n${shareUrl.href}`;
+      const value = `「${currentQuote.quote_text}」\n${formatBookTitle(currentQuote.book_title)} │ ${currentQuote.author}\n${shareUrl.href}`;
       const copied = await copyTextValue(value);
       status.textContent = copied ? "文字与固定语录链接已复制。" : "复制失败，请手动选择文字。";
     });
@@ -2081,7 +2090,12 @@
         return null;
       }
       text.textContent = quote.quote_text || "";
-      source.textContent = `${quote.book_title || ""}│ ${quote.author || ""}`;
+      source.textContent = `${formatBookTitle(quote.book_title)}│ ${quote.author || ""}`;
+      const deepLink = `/light-quotes/?quote=${encodeURIComponent(quote.lq_id)}`;
+      [...(module.querySelectorAll?.("[data-quote-preview-link]") || [])].forEach(link => {
+        link.href = deepLink;
+      });
+      module.dataset.quotePreviewId = quote.lq_id;
       item.hidden = false;
       module.dataset.quotePreviewState = "ready";
       return quote;
@@ -2207,6 +2221,7 @@
     drawStageShade,
     drawTextRenderPlan,
     freezeCurrentMoment,
+    formatBookTitle,
     generateMomentPng,
     initMainPage,
     initPreviewModule,

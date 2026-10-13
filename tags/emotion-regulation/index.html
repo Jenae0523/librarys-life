@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -611,22 +643,29 @@
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0153">
-            <blockquote>心理健康并不意味着感觉良好，而是在恰当的时候产生恰当的感受，并且能够有效地调节这些感受。</blockquote>
+            <blockquote>心理健康并不意味着感觉良好，而是在恰当的时候拥有恰当的感受，并且能够有效地调节这些感受。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Emotional Lives of Teenagers》│ Lisa Damour</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0154">
-            <blockquote>青少年的情绪可能完全可以理解，但表达这些情绪的方式却可能有问题。作为在场的成年人，我们需要帮助青少年看清这个关键区别。</blockquote>
+            <blockquote>青少年的情绪本身可能完全合理，但表达这些情绪的方式却可能有问题。作为身边的成年人，我们需要帮助他们看清这个关键区别。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Emotional Lives of Teenagers》│ Lisa Damour</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0177">
-            <blockquote>经历心理上的痛苦是生活中不可避免的一部分；青春期本就伴随着许多正常的挑战和失望，因此，痛苦也是青少年生活中无法回避的事实。我们的目标不能是阻止或驱散他们的痛苦，而应当帮助他们调节自己的情绪。</blockquote>
+            <blockquote>经历心理上的痛苦是生活中不可避免的一部分，青春期本就伴随着许多挑战和失望。我们的目标不应是阻止或驱散青少年的痛苦，而是帮助他们学会调节自己的情绪。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Emotional Lives of Teenagers》│ Lisa Damour</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0205">
+            <blockquote>有些关系即使已经疏远，也未必真的归于平静。保持距离，有时正是我们应对强烈情绪的方式。如果你已经五年没见过前夫，却仍无法心平气和地与他谈论孩子，那么说明你们之间依然有着强烈的情绪牵扯。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Dance of Intimacy》│ Harriet Goldhor Lerner</figcaption>
           </a>
         </figure>
       
@@ -682,13 +721,13 @@
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -723,7 +762,11 @@
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -752,6 +795,8 @@
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -808,8 +853,6 @@
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -943,7 +986,9 @@
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

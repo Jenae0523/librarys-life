@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -604,36 +636,78 @@
     <div class="tag-quote-module__items">
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0082">
+            <blockquote>当你不打断别人，让他们把想说的话说完，你会惊讶地发现，他们说出的话常会带来意想不到的触动和收获。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《I Need Your Love—Is That True?》│ Byron Katie、Michael Katz</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0088">
-            <blockquote>被听见的需要看似理所当然，却是人性中最强大的动力之一。正是通过别人是否愿意倾听，我们逐渐发现自己能否被理解、能否被接纳。</blockquote>
+            <blockquote>被听见的需要看似理所当然，却是人性中最强大的动力之一。正是通过被人倾听，我们逐渐发现自己是否能够被理解、被接纳。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Lost Art of Listening》│ Michael P. Nichols</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0094">
+            <blockquote>长期相处的人往往会渐渐失去对彼此的好奇心。这并不一定出于冷漠，只是他们以为自己已经很了解对方，于是不再认真倾听，觉得自己早就知道对方要说什么。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《You&#39;re Not Listening》│ Kate Murphy</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0095">
+            <blockquote>犹他大学的研究发现，面对心不在焉的倾听者时，说话者回忆起的内容更少，表达也不够清楚。相反，被认真倾听的人会说出更多信息和细节，即使倾听者没有主动提问。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《You&#39;re Not Listening》│ Kate Murphy</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0103">
-            <blockquote>大多数理解失败，不是因为人们只顾自己或心怀恶意，而是因为我们急着说些什么。我们往往只对听到的话作出反应，却没有专心理解对方真正想表达什么。</blockquote>
+            <blockquote>很多时候，我们没能真正理解彼此，并不是因为自私或恶意，而是因为太急着开口。我们往往只是在回应自己听到的话，却没有静下心来理解对方真正想表达什么。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Lost Art of Listening》│ Michael P. Nichols</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0106">
-            <blockquote>当人们感到自己没有被听见时，就会变得有些焦虑和防备。他们说得更少，而说出来的内容也往往被过度简化。墙就这样竖了起来。</blockquote>
+            <blockquote>当一个人觉得自己说的话，没有得到对方的认真倾听时，就会变得有些焦虑，也更容易防备。他们会说得更少，说出来的事情也往往会被过度简化。人与人之间的墙，就这样筑了起来。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《High Conflict》│ Amanda Ripley</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0110">
+            <blockquote>所有对话都需要沉默。如果没有沉默，我们就无法聆听，也不会产生真正的沟通。聆听中的沉默并不是强迫或压抑的，是因为感兴趣而自然产生的安静。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Say What You Mean: A Mindful Approach to Nonviolent Communication》│ Oren Jay Sofer</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0111">
-            <blockquote>倾听的真正问题，不在于我们是否给出建议，而在于我们的回应是在理解并回应对方的感受，还是只是在处理自己的感受。</blockquote>
+            <blockquote>倾听的真正问题，不在于我们是否给出建议，而在于我们的回应，是在理解并回应对方的感受，还是只是在处理自己的感受。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Lost Art of Listening》│ Michael P. Nichols</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0117">
+            <blockquote>忽视是一种被动而具有破坏性的反应，是关系冲突中“过冷”的极端。表现为拒绝讨论问题，虽点头却并没有真正倾听，以此避免进一步互动；回避有争议的讨论，或转而拿无关的事情批评伴侣。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Power of Empathy》│ Arthur P. Ciaramicoli、Katherine Ketcham</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0148">
+            <blockquote>当孩子感受到我们在认真倾听他们，也理解他们合理的需要和担忧时，他们会更愿意以开放的态度听我们说话。这是所有对话的基本原则——夫妻之间、父母与孩子之间、群体之间，乃至国家之间，都是如此。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Emotions in Child Psychotherapy: An Integrative Framework》│ Kenneth Barish</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0164">
-            <blockquote>只有当孩子感到自己被倾听、被理解时，她才有可能开始考虑你的感受。</blockquote>
+            <blockquote>只有当孩子觉得父母真正听进了自己的话、理解了自己的感受，才有可能开始考虑父母的感受。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《How to Talk So Kids Will Listen &amp; Listen So Kids Will Talk》│ Adele Faber、Elaine Mazlish</figcaption>
           </a>
         </figure>
@@ -690,13 +764,13 @@
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -731,7 +805,11 @@
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -760,6 +838,8 @@
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -816,8 +896,6 @@
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -951,7 +1029,9 @@
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

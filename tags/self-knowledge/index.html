@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -629,9 +661,10 @@
           </header>
 
 
-          <div class="row" data-tag-pagination-list>
+          <div class="tag-node-content-list" data-tag-pagination-list>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/jiddu-krishnamurti/20260828-krishnamurti-process-kundalini-awakening-1922.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -665,7 +698,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/human-body-healing/20260807-anodea-judith-energy-body-core-chakras.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -699,7 +734,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/human-body-healing/reconnect-with-body-body-soul-relationship.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -733,7 +770,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/soul-uncomfortable-in-body.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -767,39 +806,39 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
-              <a href="/all-articles/insight-awakening/teachings-of-don-juan/the-true-meaning-of-kung-fu.html"
-                 class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-                <p class="article-card-meta">
-                  微笔记
-                  <span aria-hidden="true"> · </span>
-                  2026年7月30日
 
 
-                </p>
+            <div class="tag-node-micro-note" data-tag-pagination-item>
+              
+              
+  
+  <a class="micro-note-card" href="/all-articles/insight-awakening/teachings-of-don-juan/the-true-meaning-of-kung-fu.html">
+    
+      <span class="micro-note-card__cover-wrap" aria-hidden="true">
+        <img
+          class="micro-note-card__cover"
+          src="https://img.librarys.life/img/articles-covers/insight-awakening/teachings-of-don-juan/the-true-meaning-of-kung-fu.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        >
+      </span>
+    
+    <div class="micro-note-card__content">
+      <span class="micro-note-card__meta">微笔记 · 2026年7月30日</span>
+      <h2 class="micro-note-card__title">我们为什么要认真做好每一件小事？功夫的真义：使行动趋于完美，也是修炼内在趋于完美</h2>
+      
+        <span class="micro-note-card__description">功夫不只是武术招式，而是一个人如何在长期行动中修炼自己。Taisha Abelar 的《巫士的穿越》中，克莱拉借搬运和排列石头说明：完成得快、做得多并非重点，行动的方式会显露一个人的内在状态；内功与外功虽然训练方向不同，最终都应改变行动背后的那个人。</span>
+      
+    </div>
+  </a>
 
 
-                <img
-                  src="https://img.librarys.life/img/articles-covers/insight-awakening/teachings-of-don-juan/the-true-meaning-of-kung-fu.jpg"
-                  alt="我们为什么要认真做好每一件小事？ 功夫的真义：使行动趋于完美，也是修炼内在趋于完美"
-                  class="article-cover">
-
-
-                <h3 class="article-title">
-
-                    <span class="title-line1">我们为什么要认真做好每一件小事？</span>
-
-
-                    <span class="title-line2">功夫的真义：使行动趋于完美，也是修炼内在趋于完美</span>
-
-
-                </h3>
-
-              </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/muyu-notes/states-of-matter-and-life-flexibility.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -833,7 +872,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-memory-shared-memory-simultaneous-time.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -867,7 +908,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/multiple-selves-personality-fragmentation-inner-integration.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -901,7 +944,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/consciousness-alchemy/enter-the-body-datre-observer-dreams.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -935,7 +980,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/gender-energy-soul-identity.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -969,7 +1016,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/on-humility.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1003,7 +1052,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1037,7 +1088,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/mary-magdalene/28-mary-magdalene-sacred-relationship-truth-freedom-feminine-principle.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1071,7 +1124,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/mary-magdalene/27-becoming-yourself-through-death-spiritual-journey-europe.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1105,7 +1160,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1139,7 +1196,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/star-children-hypnosis-past-life-soul-mission.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1173,7 +1232,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/teaching-and-learning-self-realization-spiritual-growth.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1207,7 +1268,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/healing-empowerment/dark-night-of-the-soul/starseed-fear-energy-how-to-break-free-and-awaken.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1241,7 +1304,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1275,7 +1340,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/healing-empowerment/emotional-cancer-immune-system-self-needs-health.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1309,7 +1376,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1343,7 +1412,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/healing-empowerment/energy-dna-dream-memory-higher-self-ego-subconscious.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1377,7 +1448,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/healing-empowerment/intuitive-perception-soul-matrix-emotional-healing-dna-repair.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1411,7 +1484,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/healing-empowerment/gene-mutation-emotional-chaos-intuition-as-healing-key.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1445,7 +1520,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/logic-mind-emotional-intelligence-keylonta-codes-awakening.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1479,7 +1556,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1513,7 +1592,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/healing-empowerment/starseeds-family-karma-healing-spiritual-awakening-guide.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1547,7 +1628,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/healing-empowerment/soul-awakening-heal-family-energy-bonds-find-true-self.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1581,7 +1664,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/healing-empowerment/truth-of-teenage-rebellion-family-roles-and-energy-entanglement.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1615,7 +1700,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/creation-manifestation/how-to-align-your-reality-energy-shift-not-rejection.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1649,7 +1736,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/walden-rethinking-life-and-the-news-living-with-wakeful-clarity.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1683,7 +1772,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/muyu-notes/soul-awakening-the-silent-path-to-greatness-and-inner-growth.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1715,7 +1806,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/teachings-of-don-juan/1-the-path-that-makes-you-strong-or-weak.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1749,7 +1842,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/teachings-of-don-juan/2-wisdom-warriors-path-overcoming-fear-clarity-power-aging.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1783,7 +1878,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/art-of-deep-listening-how-to-break-communication-barriers-and-connect-truly.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1817,7 +1914,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/jiddu-krishnamurti/5-true-meditation-begins-with-understanding-self-desire.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1849,7 +1948,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/jiddu-krishnamurti/1-how-awareness-transforms-a-rough-mind-inner-growth-not-effort.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1881,7 +1982,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/jiddu-krishnamurti/3-language-limits-how-words-shape-thoughts-and-trap-the-mind.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1913,7 +2016,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/jiddu-krishnamurti/4-break-authority-patterns-mindset-freedom-through-self-awareness.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1945,7 +2050,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/jiddu-krishnamurti/6-how-to-overcome-anger-dont-be-provoked-by-others-behavior.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1977,7 +2084,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/jiddu-krishnamurti/7-authentic-self-conflict-criticism-compromise-truth.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2011,7 +2120,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/muyu-brief/2-awakening-as-commodity.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2045,7 +2156,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/muyu-notes/perfect-days-movie-review-minimalism-fengshui-mindful-living.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2077,7 +2190,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/muyu-notes/joy-of-being-how-to-stop-talking-and-thinking-to-awaken-self-and-universe.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2111,7 +2226,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/muyu-notes/what-is-blocking-your-goals-mind-awareness-self-mastery.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2143,7 +2260,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/muyu-notes/muyu-notes-freedom-resistance-inner-awareness-writing.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2177,7 +2296,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-body-signs-soul-healing.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2211,7 +2332,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/muyu-notes/energy-release-rituals-space-mindset-shifting.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2245,7 +2368,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology18-channeling-discernment-psychological-safety.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2279,7 +2404,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology09-mind-parallel-reality-multidimensional-consciousness.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2312,6 +2439,7 @@
 
               </a>
             </div>
+
 
           </div>
           <nav class="site-pagination"
@@ -14714,13 +14842,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -14755,7 +14883,11 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -14784,6 +14916,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -14840,8 +14974,6 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -14975,7 +15107,9 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

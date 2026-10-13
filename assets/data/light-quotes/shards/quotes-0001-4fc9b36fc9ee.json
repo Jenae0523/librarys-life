@@ -1,0 +1,4264 @@
+{
+  "schema_version": 1,
+  "dataset_version": "sha256-aedc9405b391eccc6cba7989b4f459cbab4447ac4642c45994127b44266a1172",
+  "shard_key": "0001",
+  "start": 0,
+  "count": 199,
+  "quotes": [
+    {
+      "work_id": "QR-INT-005",
+      "lq_id": "lq-0001",
+      "quote_text": "我知道，不能以牺牲你的需要为代价来满足我自己的需要。你的需要对我来说，与我的同等重要。但这绝不意味着我必须放弃自己的需要。",
+      "book_title": "《Being Me, Loving You》",
+      "book_id": "book-0001",
+      "author": "Marshall B. Rosenberg",
+      "author_ids": [
+        "author-0001"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "personal-boundaries"
+      ],
+      "psychology_concept_names": [
+        "边界"
+      ],
+      "visual_tags": [
+        "grounded",
+        "spacious",
+        "connected"
+      ],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-010",
+      "lq_id": "lq-0003",
+      "quote_text": "感情生活幸福的人，往往以宽厚的眼光看待伴侣，善意地理解对方的行为。即使伴侣偶尔行为不当，也倾向于认为对方是善良、体贴的人。",
+      "book_title": "《亲密关系》",
+      "book_id": "book-0002",
+      "author": "罗兰·米勒",
+      "author_ids": [
+        "author-0002"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "attribution"
+      ],
+      "psychology_concept_names": [
+        "归因"
+      ],
+      "visual_tags": [
+        "warm",
+        "soft",
+        "connected"
+      ],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-014",
+      "lq_id": "lq-0004",
+      "quote_text": "当伴侣鼓励我们成为自己想成为的人——支持我们学习想掌握的技能，鼓励我们迎接有发展前景的新角色和责任，帮助我们实现所追求的成长——我们的亲密关系和个人幸福感都会随之提升。",
+      "book_title": "《亲密关系》",
+      "book_id": "book-0002",
+      "author": "罗兰·米勒",
+      "author_ids": [
+        "author-0002"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "michelangelo-phenomenon"
+      ],
+      "psychology_concept_names": [
+        "米开朗基罗现象"
+      ],
+      "visual_tags": [
+        "hopeful",
+        "bright",
+        "connected",
+        "spacious"
+      ],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-020",
+      "lq_id": "lq-0007",
+      "quote_text": "对我们大多数人来说，人与人的关系建立在经济或心理上的依赖之上。这种依赖会引发恐惧、滋生占有欲，并带来摩擦、猜疑和挫败感。",
+      "book_title": "《关系的真谛：做人、交友、处世》",
+      "book_id": "book-0003",
+      "author": "吉杜·克里希那穆提",
+      "author_ids": [
+        "author-0003"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "dependency",
+        "possessiveness",
+        "fear"
+      ],
+      "psychology_concept_names": [
+        "心理依赖",
+        "占有倾向",
+        "恐惧"
+      ],
+      "visual_tags": [
+        "reflective",
+        "night",
+        "quiet"
+      ],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-030",
+      "lq_id": "lq-0012",
+      "quote_text": "我们并非童年经历的囚徒，因为成年后的经历仍会不断塑造我们的依恋类型。",
+      "book_title": "《亲密关系》",
+      "book_id": "book-0002",
+      "author": "罗兰·米勒",
+      "author_ids": [
+        "author-0002"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "attachment"
+      ],
+      "psychology_concept_names": [
+        "依恋"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-034",
+      "lq_id": "lq-0015",
+      "quote_text": "当我们向他人敞开心扉时，若得到理解与关心，信任便会建立，我们也会更深入地袒露自己，亲密感随之增加；如果对方显得不感兴趣或漠不关心，我们便会退缩，减少自我表露。",
+      "book_title": "《亲密关系》",
+      "book_id": "book-0002",
+      "author": "罗兰·米勒",
+      "author_ids": [
+        "author-0002"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "partner-responsiveness",
+        "self-disclosure",
+        "trust"
+      ],
+      "psychology_concept_names": [
+        "伴侣应答性",
+        "自我表露",
+        "信任"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-057",
+      "lq_id": "lq-0018",
+      "quote_text": "我们对自己的看法和感受，会深刻影响我们如何解读他人的行为。",
+      "book_title": "《沟通的艺术：看入人里，看出人外》",
+      "book_id": "book-0004",
+      "author": "罗纳德·B·阿德勒、拉塞尔·F·普罗科特",
+      "author_ids": [
+        "author-0004",
+        "author-0005"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "self-concept"
+      ],
+      "psychology_concept_names": [
+        "自我概念"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-063",
+      "lq_id": "lq-0020",
+      "quote_text": "“结合”被看成是两个人从相识到正式确立关系这一过程的顶峰；但即使彼此的关系再紧密、承诺再坚定，每个人仍需保有独立的自我，表达自己的想法和意愿。",
+      "book_title": "《沟通的艺术：看入人里，看出人外》",
+      "book_id": "book-0004",
+      "author": "罗纳德·B·阿德勒、拉塞尔·F·普罗科特",
+      "author_ids": [
+        "author-0004",
+        "author-0005"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "differentiation-of-self"
+      ],
+      "psychology_concept_names": [
+        "自我分化"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-077",
+      "lq_id": "lq-0021",
+      "quote_text": "讽刺的是，我们为了赢得爱与认可而苦苦挣扎，正因如此才很难真正感受到它们。",
+      "book_title": "I Need Your Love—Is That True?",
+      "book_id": "book-0005",
+      "author": "Byron Katie、Michael Katz",
+      "author_ids": [
+        "author-0006",
+        "author-0007"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "approval-seeking"
+      ],
+      "psychology_concept_names": [
+        "寻求认可"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-081",
+      "lq_id": "lq-0022",
+      "quote_text": "当你说话或做事是为了取悦、得到、留住、影响或控制某个人或某件事时，恐惧是起因，痛苦是结果。操控意味着疏离，而疏离是痛苦的。",
+      "book_title": "I Need Your Love—Is That True?",
+      "book_id": "book-0005",
+      "author": "Byron Katie、Michael Katz",
+      "author_ids": [
+        "author-0006",
+        "author-0007"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "control",
+        "fear"
+      ],
+      "psychology_concept_names": [
+        "控制",
+        "恐惧"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-092",
+      "lq_id": "lq-0025",
+      "quote_text": "明白爱一个人和希望对方按自己的意愿行事是两回事，并不意味着你不能向对方提出请求。但对方如何回答与你是否被爱无关。当请求不再带有隐藏的目的，开口就容易得多。而当对方知道，无论怎样回答你都能接受，你们之间便可能产生意想不到的亲密感。",
+      "book_title": "I Need Your Love—Is That True?",
+      "book_id": "book-0005",
+      "author": "Byron Katie、Michael Katz",
+      "author_ids": [
+        "author-0006",
+        "author-0007"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "personal-boundaries",
+        "needs-expression"
+      ],
+      "psychology_concept_names": [
+        "边界",
+        "表达需要"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-098",
+      "lq_id": "lq-0028",
+      "quote_text": "我不像你，从一开始就知道是爱，所以知道在能爱的时候尽量去爱，也在不能爱时，准备好不再爱。",
+      "book_title": "《鳄鱼手记》",
+      "book_id": "book-0006",
+      "author": "邱妙津",
+      "author_ids": [
+        "author-0008"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-099",
+      "lq_id": "lq-0029",
+      "quote_text": "原来我正是用加速分离在逃避分离。",
+      "book_title": "《鳄鱼手记》",
+      "book_id": "book-0006",
+      "author": "邱妙津",
+      "author_ids": [
+        "author-0008"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "separation-anxiety"
+      ],
+      "psychology_concept_names": [
+        "分离焦虑"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-100",
+      "lq_id": "lq-0030",
+      "quote_text": "我不可能永远拥有一件美的东西，甚至记忆也不能，即使我再爱它。就是因为美有它的自然生命。如果我想永远拥有它，就会扼杀了它的美。",
+      "book_title": "《鳄鱼手记》",
+      "book_id": "book-0006",
+      "author": "邱妙津",
+      "author_ids": [
+        "author-0008"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-078",
+      "lq_id": "lq-0031",
+      "quote_text": "你最亲密的关系，是你与自己的念头之间的关系。",
+      "book_title": "I Need Your Love—Is That True?",
+      "book_id": "book-0005",
+      "author": "Byron Katie、Michael Katz",
+      "author_ids": [
+        "author-0006",
+        "author-0007"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "self-relationship"
+      ],
+      "psychology_concept_names": [
+        "自我关系"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-080",
+      "lq_id": "lq-0032",
+      "quote_text": "正是这些未经质疑的念头，导致了分离与痛苦。",
+      "book_title": "I Need Your Love—Is That True?",
+      "book_id": "book-0005",
+      "author": "Byron Katie、Michael Katz",
+      "author_ids": [
+        "author-0006",
+        "author-0007"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-085",
+      "lq_id": "lq-0033",
+      "quote_text": "当我认可自己时，我很快乐，并不需要任何人的认可。别人的认可只是锦上添花，是额外的，并非我快乐的必要条件。",
+      "book_title": "I Need Your Love—Is That True?",
+      "book_id": "book-0005",
+      "author": "Byron Katie、Michael Katz",
+      "author_ids": [
+        "author-0006",
+        "author-0007"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "self-validation"
+      ],
+      "psychology_concept_names": [
+        "自我认可"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-001",
+      "lq_id": "lq-0034",
+      "quote_text": "“我想改变，但如果这意味着我自己也得改变，那就算了。”一位患者曾毫无察觉地对我说。",
+      "book_title": "The Examined Life",
+      "book_id": "book-0007",
+      "author": "Stephen Grosz",
+      "author_ids": [
+        "author-0009"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "self-awareness"
+      ],
+      "psychology_concept_names": [
+        "自我觉察"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-002",
+      "lq_id": "lq-0035",
+      "quote_text": "面对改变时，我们会迟疑，因为改变意味着失去。但如果我们不能接受某些失去，就可能失去一切。",
+      "book_title": "The Examined Life",
+      "book_id": "book-0007",
+      "author": "Stephen Grosz",
+      "author_ids": [
+        "author-0009"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "acceptance"
+      ],
+      "psychology_concept_names": [
+        "接纳"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-003",
+      "lq_id": "lq-0036",
+      "quote_text": "每当你决定把一部分时间花在某件事上，就意味着放弃所有其他本可以用这段时间去做的事；而自愿作出这种取舍，就是毫无保留地表明，什么对你最重要。",
+      "book_title": "Four Thousand Weeks",
+      "book_id": "book-0008",
+      "author": "Oliver Burkeman",
+      "author_ids": [
+        "author-0010"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "autonomy"
+      ],
+      "psychology_concept_names": [
+        "自主性"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-004",
+      "lq_id": "lq-0037",
+      "quote_text": "你终于可以放弃一项从来就不可能完成的追求：成为那个被期待要成为的、经过完美优化、能力无限、情感上坚不可摧而又完全独立的人。然后，你可以把精力转向那些真正可能实现、也真正值得去做的事。",
+      "book_title": "Four Thousand Weeks",
+      "book_id": "book-0008",
+      "author": "Oliver Burkeman",
+      "author_ids": [
+        "author-0010"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "acceptance",
+        "perfectionism"
+      ],
+      "psychology_concept_names": [
+        "接纳",
+        "完美主义"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-005",
+      "lq_id": "lq-0038",
+      "quote_text": "明智的拖延者会接受一个事实：自己不可能把所有事情都做完，然后尽可能审慎地决定哪些事要专注，哪些事暂且不做。相反，糟糕的拖延者之所以陷入瘫痪，恰恰是因为他无法忍受直面自己的局限。",
+      "book_title": "Four Thousand Weeks",
+      "book_id": "book-0008",
+      "author": "Oliver Burkeman",
+      "author_ids": [
+        "author-0010"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "acceptance"
+      ],
+      "psychology_concept_names": [
+        "接纳"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-006",
+      "lq_id": "lq-0039",
+      "quote_text": "简单地说，生命向每个人发问，而我们只能通过为自己的人生负责来作答；面对生命，我们只能以承担责任来回应。因此，意义疗法认为，责任正是人类存在的本质。",
+      "book_title": "Man's Search for Meaning",
+      "book_id": "book-0009",
+      "author": "Viktor E. Frankl",
+      "author_ids": [
+        "author-0011"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "existential-responsibility"
+      ],
+      "psychology_concept_names": [
+        "存在性责任"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-007",
+      "lq_id": "lq-0040",
+      "quote_text": "所谓自我实现，绝不是一个可以直接追求的目标，因为一个人越是刻意追求它，反而越容易错过它。换句话说，自我实现只有作为自我超越的副产品，才可能实现。",
+      "book_title": "Man's Search for Meaning",
+      "book_id": "book-0009",
+      "author": "Viktor E. Frankl",
+      "author_ids": [
+        "author-0011"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "self-transcendence"
+      ],
+      "psychology_concept_names": [
+        "自我超越"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-008",
+      "lq_id": "lq-0041",
+      "quote_text": "生命的短暂并不会使它失去意义，反而使我们承担起责任，因为一切都取决于我们是否意识到：生命中的种种可能，同样稍纵即逝。",
+      "book_title": "Man's Search for Meaning",
+      "book_id": "book-0009",
+      "author": "Viktor E. Frankl",
+      "author_ids": [
+        "author-0011"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "existential-responsibility"
+      ],
+      "psychology_concept_names": [
+        "存在性责任"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-009",
+      "lq_id": "lq-0042",
+      "quote_text": "自由并非最终答案。自由只是故事的一半，真理的一面。自由是整个问题的消极一面，而积极的一面则是责任。事实上，如果自由不与责任相伴，就有沦为任意妄为的危险。",
+      "book_title": "Man's Search for Meaning",
+      "book_id": "book-0009",
+      "author": "Viktor E. Frankl",
+      "author_ids": [
+        "author-0011"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "existential-responsibility"
+      ],
+      "psychology_concept_names": [
+        "存在性责任"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-010",
+      "lq_id": "lq-0043",
+      "quote_text": "如果我们因为自己的所作所为而深陷羞耻和不足感，其实仍然是在关注自己。我们的注意和关切并没有放在最需要的地方——那个被我们伤害的人身上。",
+      "book_title": "Self-Compassion",
+      "book_id": "book-0010",
+      "author": "Kristin Neff",
+      "author_ids": [
+        "author-0012"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "shame"
+      ],
+      "psychology_concept_names": [
+        "羞耻"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-011",
+      "lq_id": "lq-0044",
+      "quote_text": "换句话说，孩子会开始相信，自我批评可以防止自己以后犯错，从而避免受到别人的批评。至少，当别人的批评只是重复自己早已责备过自己的那些话时，它带来的冲击就会减弱。",
+      "book_title": "Self-Compassion",
+      "book_id": "book-0010",
+      "author": "Kristin Neff",
+      "author_ids": [
+        "author-0012"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "self-criticism"
+      ],
+      "psychology_concept_names": [
+        "自我批评"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-012",
+      "lq_id": "lq-0045",
+      "quote_text": "当一个人的全部自我价值都取决于自己能否有所产出、是否取得成功，当失败根本不被允许时，对成就的追求就会变成一种暴政，最终适得其反。",
+      "book_title": "Self-Compassion",
+      "book_id": "book-0010",
+      "author": "Kristin Neff",
+      "author_ids": [
+        "author-0012"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "perfectionism",
+        "contingent-self-worth"
+      ],
+      "psychology_concept_names": [
+        "完美主义",
+        "条件性自我价值"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-013",
+      "lq_id": "lq-0046",
+      "quote_text": "所谓“幸福的陷阱”，简而言之就是：为了变得更幸福，我们努力回避或摆脱不想要的念头和感受；但矛盾的是，我们越用力与它们斗争，反而会制造出更多令人困扰的念头和感受。",
+      "book_title": "The Happiness Trap",
+      "book_id": "book-0011",
+      "author": "Russ Harris",
+      "author_ids": [
+        "author-0013"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "experiential-avoidance"
+      ],
+      "psychology_concept_names": [
+        "经验性回避"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-014",
+      "lq_id": "lq-0047",
+      "quote_text": "价值是我们希望带入行为中的一种品质，它引导我们说什么、怎样说，以及做什么、怎样做。相比之下，目标描述的是我们希望拥有、得到、实现或完成什么。",
+      "book_title": "The Happiness Trap",
+      "book_id": "book-0011",
+      "author": "Russ Harris",
+      "author_ids": [
+        "author-0013"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "values-clarification"
+      ],
+      "psychology_concept_names": [
+        "价值澄清"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-015",
+      "lq_id": "lq-0048",
+      "quote_text": "固定型思维模式会让人产生一种不断证明自己的迫切感。每一种情境都像是在检验自己的智力、个性或品格：我会成功还是失败？我会显得聪明还是愚蠢？我会被接受还是被拒绝？我会觉得自己是赢家还是输家？",
+      "book_title": "Mindset: The New Psychology of Success",
+      "book_id": "book-0012",
+      "author": "Carol S. Dweck",
+      "author_ids": [
+        "author-0014"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "fixed-mindset"
+      ],
+      "psychology_concept_names": [
+        "固定型思维模式"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-016",
+      "lq_id": "lq-0049",
+      "quote_text": "完美主义相信：只要活得完美、看起来完美、表现得完美，我们就能减少或避开责备、评判与羞耻带来的痛苦。它是一面盾牌，一面重达二十吨的盾牌；我们拖着它，以为它能保护自己，实际上它才是阻止我们起飞的东西。",
+      "book_title": "The Gifts of Imperfection",
+      "book_id": "book-0013",
+      "author": "Brené Brown",
+      "author_ids": [
+        "author-0015"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "perfectionism",
+        "shame"
+      ],
+      "psychology_concept_names": [
+        "完美主义",
+        "羞耻"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-017",
+      "lq_id": "lq-0050",
+      "quote_text": "“比较”最终会形成一个令人窒息的悖论：“既要融入，又要出众！”它要求的不是培养自我接纳、归属感和真实，而是变得和所有人一样——只是要比他们更好。",
+      "book_title": "The Gifts of Imperfection",
+      "book_id": "book-0013",
+      "author": "Brené Brown",
+      "author_ids": [
+        "author-0015"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "social-comparison"
+      ],
+      "psychology_concept_names": [
+        "社会比较"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-018",
+      "lq_id": "lq-0051",
+      "quote_text": "如果我们想全心生活，就必须有意识地为睡眠和玩乐留下位置，不再把疲惫当作身份象征，也不再用生产力衡量自我价值。",
+      "book_title": "The Gifts of Imperfection",
+      "book_id": "book-0013",
+      "author": "Brené Brown",
+      "author_ids": [
+        "author-0015"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "contingent-self-worth"
+      ],
+      "psychology_concept_names": [
+        "条件性自我价值"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-019",
+      "lq_id": "lq-0052",
+      "quote_text": "如果你很难改变自己的习惯，问题不在你，而在你所采用的体系。坏习惯之所以一再重复，并不是因为你不想改变，而是因为你用来改变习惯的那套行动方式出了问题。",
+      "book_title": "Atomic Habits",
+      "book_id": "book-0014",
+      "author": "James Clear",
+      "author_ids": [
+        "author-0016"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "habit-formation"
+      ],
+      "psychology_concept_names": [
+        "习惯形成"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-020",
+      "lq_id": "lq-0053",
+      "quote_text": "你采取的每一个行动，都是在为你想成为的那种人投下一票。一次行动不会改变你的信念，但随着投票不断累积，支持这种新身份的证据也会越来越多。",
+      "book_title": "Atomic Habits",
+      "book_id": "book-0014",
+      "author": "James Clear",
+      "author_ids": [
+        "author-0016"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "self-concept"
+      ],
+      "psychology_concept_names": [
+        "自我概念"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-021",
+      "lq_id": "lq-0054",
+      "quote_text": "习惯的好处，是我们能够不假思索地做事；缺点是，当你习惯了以某种方式做事，就会不再留意其中出现的小问题。",
+      "book_title": "Atomic Habits",
+      "book_id": "book-0014",
+      "author": "James Clear",
+      "author_ids": [
+        "author-0016"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "habit-formation"
+      ],
+      "psychology_concept_names": [
+        "习惯形成"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-022",
+      "lq_id": "lq-0055",
+      "quote_text": "当我们找不到讲述自己故事的方式时，我们的故事就会反过来讲述我们。",
+      "book_title": "The Examined Life",
+      "book_id": "book-0007",
+      "author": "Stephen Grosz",
+      "author_ids": [
+        "author-0009"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "narrative-identity"
+      ],
+      "psychology_concept_names": [
+        "叙事认同"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-023",
+      "lq_id": "lq-0056",
+      "quote_text": "根据我的经验，所谓“给悲伤画上句号”，是哀悼过程中一种极具诱惑力的幻想。",
+      "book_title": "The Examined Life",
+      "book_id": "book-0007",
+      "author": "Stephen Grosz",
+      "author_ids": [
+        "author-0009"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-024",
+      "lq_id": "lq-0057",
+      "quote_text": "你把注意力投向什么，什么就会定义你所体验到的现实。",
+      "book_title": "Four Thousand Weeks",
+      "book_id": "book-0008",
+      "author": "Oliver Burkeman",
+      "author_ids": [
+        "author-0010"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "attention-allocation"
+      ],
+      "psychology_concept_names": [
+        "注意分配"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-025",
+      "lq_id": "lq-0058",
+      "quote_text": "如果看得更深一些，我们会发现，严厉的自我批评常常掩盖着另一种欲望：对控制的渴望。",
+      "book_title": "Self-Compassion",
+      "book_id": "book-0010",
+      "author": "Kristin Neff",
+      "author_ids": [
+        "author-0012"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "self-criticism"
+      ],
+      "psychology_concept_names": [
+        "自我批评"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-026",
+      "lq_id": "lq-0059",
+      "quote_text": "一个人真正的潜能是未知的，也是不可知的；我们无法预见，经过多年的热情投入、辛勤努力与训练，一个人最终能够做到什么。",
+      "book_title": "Mindset: The New Psychology of Success",
+      "book_id": "book-0012",
+      "author": "Carol S. Dweck",
+      "author_ids": [
+        "author-0014"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "growth-mindset"
+      ],
+      "psychology_concept_names": [
+        "成长型思维模式"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-027",
+      "lq_id": "lq-0060",
+      "quote_text": "羞耻发生在人与人之间，也在人与人之间得到疗愈。",
+      "book_title": "The Gifts of Imperfection",
+      "book_id": "book-0013",
+      "author": "Brené Brown",
+      "author_ids": [
+        "author-0015"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "shame"
+      ],
+      "psychology_concept_names": [
+        "羞耻"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-028",
+      "lq_id": "lq-0061",
+      "quote_text": "你越是让一种信念定义自己，当生活发生变化、这种信念受到挑战时，你就越难适应。",
+      "book_title": "Atomic Habits",
+      "book_id": "book-0014",
+      "author": "James Clear",
+      "author_ids": [
+        "author-0016"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "self-concept"
+      ],
+      "psychology_concept_names": [
+        "自我概念"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-029",
+      "lq_id": "lq-0062",
+      "quote_text": "如果我们没有预见到，成功也意味着失去，我们可能反而会被自己的成功击垮。",
+      "book_title": "The Examined Life",
+      "book_id": "book-0007",
+      "author": "Stephen Grosz",
+      "author_ids": [
+        "author-0009"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-030",
+      "lq_id": "lq-0063",
+      "quote_text": "未来不是我们正在前往的某个地方，而是此刻存在于头脑中的一个观念。我们创造未来，而我们想象中的未来也反过来塑造着我们。未来是一种塑造当下的幻想。",
+      "book_title": "The Examined Life",
+      "book_id": "book-0007",
+      "author": "Stephen Grosz",
+      "author_ids": [
+        "author-0009"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "prospection"
+      ],
+      "psychology_concept_names": [
+        "未来想象（前瞻）"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-031",
+      "lq_id": "lq-0064",
+      "quote_text": "处在哀伤中的人，可能承受两次痛苦：第一次来自悲伤本身，第二次来自“我应该怎样”的暴政——“我应该已经振作起来了”“我不该这么愤怒”“我早就应该走出来了”。",
+      "book_title": "The Examined Life",
+      "book_id": "book-0007",
+      "author": "Stephen Grosz",
+      "author_ids": [
+        "author-0009"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "anger",
+        "self-criticism"
+      ],
+      "psychology_concept_names": [
+        "愤怒",
+        "自我批评"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-032",
+      "lq_id": "lq-0065",
+      "quote_text": "自我关怀和自尊一样，能够保护我们免受严厉的自我批评，却不要求我们把自己看成完美的人，或看成比别人更好的人。",
+      "book_title": "Self-Compassion",
+      "book_id": "book-0010",
+      "author": "Kristin Neff",
+      "author_ids": [
+        "author-0012"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "self-criticism",
+        "self-compassion"
+      ],
+      "psychology_concept_names": [
+        "自我批评",
+        "自我关怀"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-033",
+      "lq_id": "lq-0066",
+      "quote_text": "无论我们跌落得多远，作为人的资格都不会被夺走。恰恰是我们的不完美，证明我们也是人类的一员，因此始终自然而然地与整个人类相连。",
+      "book_title": "Self-Compassion",
+      "book_id": "book-0010",
+      "author": "Kristin Neff",
+      "author_ids": [
+        "author-0012"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "acceptance",
+        "self-compassion"
+      ],
+      "psychology_concept_names": [
+        "接纳",
+        "自我关怀"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-034",
+      "lq_id": "lq-0067",
+      "quote_text": "一个分心的人其实并没有真正作出选择。他的注意力已经被那些并不真正在乎他利益的力量接管。",
+      "book_title": "Four Thousand Weeks",
+      "book_id": "book-0008",
+      "author": "Oliver Burkeman",
+      "author_ids": [
+        "author-0010"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "autonomy",
+        "attention-allocation"
+      ],
+      "psychology_concept_names": [
+        "自主性",
+        "注意分配"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-035",
+      "lq_id": "lq-0068",
+      "quote_text": "真正不辜负生命赐予我们的这几千周，并不意味着必须下定决心，在这段时间里做出什么非凡之事。",
+      "book_title": "Four Thousand Weeks",
+      "book_id": "book-0008",
+      "author": "Oliver Burkeman",
+      "author_ids": [
+        "author-0010"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-036",
+      "lq_id": "lq-0069",
+      "quote_text": "真实不是一种固定的特质，而是我们每天都要作出的一系列选择：选择不回避，真实地面对生活；选择诚实；选择让真实的自己被人看见。",
+      "book_title": "The Gifts of Imperfection",
+      "book_id": "book-0013",
+      "author": "Brené Brown",
+      "author_ids": [
+        "author-0015"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "authenticity"
+      ],
+      "psychology_concept_names": [
+        "真实性"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-GRO-037",
+      "lq_id": "lq-0070",
+      "quote_text": "当我们已经无法改变所处的境况时——比如面对无法治愈的癌症——我们就必须面对改变自己的挑战。",
+      "book_title": "Man's Search for Meaning",
+      "book_id": "book-0009",
+      "author": "Viktor E. Frankl",
+      "author_ids": [
+        "author-0011"
+      ],
+      "attribution_type": "person",
+      "theme": "个人成长",
+      "psychology_concepts": [
+        "acceptance"
+      ],
+      "psychology_concept_names": [
+        "接纳"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-022",
+      "lq_id": "lq-0071",
+      "quote_text": "面对别人的评判或指责时，我们通常会以防卫、回避或攻击来回应。",
+      "book_title": "Nonviolent Communication: A Language of Life",
+      "book_id": "book-0015",
+      "author": "Marshall B. Rosenberg",
+      "author_ids": [
+        "author-0001"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "defensiveness"
+      ],
+      "psychology_concept_names": [
+        "防御"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-024",
+      "lq_id": "lq-0072",
+      "quote_text": "当我们借助评价、解读或给别人贴上某种形象标签，来间接表达自己的需要时，别人很容易听成批评，并随之把精力用在自我防卫或反击上。",
+      "book_title": "Nonviolent Communication: A Language of Life",
+      "book_id": "book-0015",
+      "author": "Marshall B. Rosenberg",
+      "author_ids": [
+        "author-0001"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "needs-expression",
+        "defensiveness"
+      ],
+      "psychology_concept_names": [
+        "表达需要",
+        "防御"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-025",
+      "lq_id": "lq-0073",
+      "quote_text": "我们越能直接地把自己的感受与需要联系起来，别人就越容易以理解和关怀来回应我们。",
+      "book_title": "Nonviolent Communication: A Language of Life",
+      "book_id": "book-0015",
+      "author": "Marshall B. Rosenberg",
+      "author_ids": [
+        "author-0001"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "needs-awareness"
+      ],
+      "psychology_concept_names": [
+        "需要觉察"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-039",
+      "lq_id": "lq-0074",
+      "quote_text": "愤怒是一份礼物，它促使我们去觉察那些尚未得到满足、并触发了这种反应的需要。",
+      "book_title": "The Surprising Purpose of Anger: Beyond Anger Management: Finding the Gift",
+      "book_id": "book-0016",
+      "author": "Opening introduction",
+      "author_ids": [],
+      "attribution_type": "editorial-introduction",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "anger",
+        "needs-awareness"
+      ],
+      "psychology_concept_names": [
+        "愤怒",
+        "需要觉察"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-040",
+      "lq_id": "lq-0075",
+      "quote_text": "发自内心地生活、不带评判地观察、看清自己的感受与需要、提出明确的请求，并建立滋养生命的连接——这些都与我们如何回应愤怒有关。",
+      "book_title": "The Surprising Purpose of Anger: Beyond Anger Management: Finding the Gift",
+      "book_id": "book-0016",
+      "author": "Opening introduction",
+      "author_ids": [],
+      "attribution_type": "editorial-introduction",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "nonjudgmental-observation",
+        "needs-awareness"
+      ],
+      "psychology_concept_names": [
+        "非评判观察",
+        "需要觉察"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-048",
+      "lq_id": "lq-0076",
+      "quote_text": "愤怒源于责备和评判他人的念头，它会占用我们的能量，把这些能量导向惩罚别人，而不是满足自己的需要。",
+      "book_title": "The Surprising Purpose of Anger: Beyond Anger Management: Finding the Gift",
+      "book_id": "book-0016",
+      "author": "Marshall B. Rosenberg",
+      "author_ids": [
+        "author-0001"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "anger",
+        "blame"
+      ],
+      "psychology_concept_names": [
+        "愤怒",
+        "责备"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-050",
+      "lq_id": "lq-0077",
+      "quote_text": "报复是一种被扭曲的呼求，背后是对同理心的需要。",
+      "book_title": "The Surprising Purpose of Anger: Beyond Anger Management: Finding the Gift",
+      "book_id": "book-0016",
+      "author": "Marshall B. Rosenberg",
+      "author_ids": [
+        "author-0001"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "empathy"
+      ],
+      "psychology_concept_names": [
+        "共情"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-058",
+      "lq_id": "lq-0078",
+      "quote_text": "与其认定“我知道你在想什么”，不如先核对自己的理解。这种做法更尊重对方，因为它承认：“如果没有你的帮助与澄清，我其实没有资格判断你。”",
+      "book_title": "Looking Out, Looking In",
+      "book_id": "book-0004",
+      "author": "Ronald B. Adler、Russell F. Proctor II",
+      "author_ids": [
+        "author-0004",
+        "author-0005"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "perception-checking"
+      ],
+      "psychology_concept_names": [
+        "知觉检核"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-059",
+      "lq_id": "lq-0079",
+      "quote_text": "同理心的一个重要部分，是尝试站在对方的视角看事情。这需要我们暂时放下评判，把自己的意见搁在一边，试着去理解对方。",
+      "book_title": "Looking Out, Looking In",
+      "book_id": "book-0004",
+      "author": "Ronald B. Adler、Russell F. Proctor II",
+      "author_ids": [
+        "author-0004",
+        "author-0005"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "empathy",
+        "perspective-taking"
+      ],
+      "psychology_concept_names": [
+        "共情",
+        "观点采择"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-060",
+      "lq_id": "lq-0080",
+      "quote_text": "同理心让你理解他人的动机，却不意味着你必须赞同对方。",
+      "book_title": "Looking Out, Looking In",
+      "book_id": "book-0004",
+      "author": "Ronald B. Adler、Russell F. Proctor II",
+      "author_ids": [
+        "author-0004",
+        "author-0005"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "empathy"
+      ],
+      "psychology_concept_names": [
+        "共情"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-071",
+      "lq_id": "lq-0081",
+      "quote_text": "当我们感受到他人的共情与理解时，愤怒会渐渐平息，悲伤和羞耻也会随之减轻。",
+      "book_title": "Emotions in Child Psychotherapy: An Integrative Framework",
+      "book_id": "book-0017",
+      "author": "Kenneth Barish",
+      "author_ids": [
+        "author-0017"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "empathy",
+        "anger",
+        "shame"
+      ],
+      "psychology_concept_names": [
+        "共情",
+        "愤怒",
+        "羞耻"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-083",
+      "lq_id": "lq-0082",
+      "quote_text": "当你不打断别人，让他们把想说的话说完，你会惊讶地发现，他们说出的话常会带来意想不到的触动和收获。",
+      "book_title": "I Need Your Love—Is That True?",
+      "book_id": "book-0005",
+      "author": "Byron Katie、Michael Katz",
+      "author_ids": [
+        "author-0006",
+        "author-0007"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "active-listening"
+      ],
+      "psychology_concept_names": [
+        "积极倾听"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-084",
+      "lq_id": "lq-0083",
+      "quote_text": "你对一个人的了解，会受限于那些你以为自己已经知道的事。",
+      "book_title": "I Need Your Love—Is That True?",
+      "book_id": "book-0005",
+      "author": "Byron Katie、Michael Katz",
+      "author_ids": [
+        "author-0006",
+        "author-0007"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "cognitive-bias"
+      ],
+      "psychology_concept_names": [
+        "认知偏差"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-001",
+      "lq_id": "lq-0084",
+      "quote_text": "我们在判断意图时所犯的错误，简单却深刻：我们以为自己知道别人的意图，其实并不知道。意图是看不见的，我们只能根据他人的行为进行推测。换句话说，那些我们所认定的意图，其实是自己构造出来的。",
+      "book_title": "Difficult Conversations",
+      "book_id": "book-0018",
+      "author": "Douglas Stone、Bruce Patton、Sheila Heen",
+      "author_ids": [
+        "author-0018",
+        "author-0019",
+        "author-0020"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "attribution"
+      ],
+      "psychology_concept_names": [
+        "归因"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-002",
+      "lq_id": "lq-0085",
+      "quote_text": "当我们想弄清事情是怎样发生的，以改善今后的相处与合作时，理解彼此在其中起了什么作用才真正有用。无论在工作还是私人关系中，我们真正想要的是理解和改变，却常常在处理问题时陷入相互归责。",
+      "book_title": "Difficult Conversations",
+      "book_id": "book-0018",
+      "author": "Douglas Stone、Bruce Patton、Sheila Heen",
+      "author_ids": [
+        "author-0018",
+        "author-0019",
+        "author-0020"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "blame"
+      ],
+      "psychology_concept_names": [
+        "责备"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-003",
+      "lq_id": "lq-0086",
+      "quote_text": "最重要的是意识到：即使没有人蛮不讲理、心怀恶意或故意欺骗，误解和怒气仍然可能产生。我们可以停下来提醒自己，对方想表达的，未必就是我们听到的意思。",
+      "book_title": "That's Not What I Meant!",
+      "book_id": "book-0019",
+      "author": "Deborah Tannen",
+      "author_ids": [
+        "author-0021"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "attribution",
+        "anger"
+      ],
+      "psychology_concept_names": [
+        "归因",
+        "愤怒"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-004",
+      "lq_id": "lq-0087",
+      "quote_text": "只盯着说出口的字句，往往会妨碍我们弄清冲突是怎样被点燃的，因为真正引发问题的不是字句，而是语气、声调，以及没有说出口的暗示和假设。",
+      "book_title": "That's Not What I Meant!",
+      "book_id": "book-0019",
+      "author": "Deborah Tannen",
+      "author_ids": [
+        "author-0021"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "metacommunication"
+      ],
+      "psychology_concept_names": [
+        "元沟通"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-005",
+      "lq_id": "lq-0088",
+      "quote_text": "被听见的需要看似理所当然，却是人性中最强大的动力之一。正是通过被人倾听，我们逐渐发现自己是否能够被理解、被接纳。",
+      "book_title": "The Lost Art of Listening",
+      "book_id": "book-0020",
+      "author": "Michael P. Nichols",
+      "author_ids": [
+        "author-0022"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "active-listening",
+        "psychological-needs"
+      ],
+      "psychology_concept_names": [
+        "积极倾听",
+        "心理需要"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-007",
+      "lq_id": "lq-0089",
+      "quote_text": "能够说“不”，恰恰是善于接受反馈的核心。因为如果你不能说“不”，那么你说“好”也就不是自由选择的。",
+      "book_title": "Thanks for the Feedback",
+      "book_id": "book-0021",
+      "author": "Douglas Stone、Sheila Heen",
+      "author_ids": [
+        "author-0018",
+        "author-0020"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "personal-boundaries",
+        "autonomy"
+      ],
+      "psychology_concept_names": [
+        "边界",
+        "自主性"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-008",
+      "lq_id": "lq-0090",
+      "quote_text": "良性的冲突可以紧张而激烈，但人的尊严仍然完整。它不会把彼此简化成刻板、失真的形象。",
+      "book_title": "High Conflict",
+      "book_id": "book-0022",
+      "author": "Amanda Ripley",
+      "author_ids": [
+        "author-0023"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "constructive-conflict"
+      ],
+      "psychology_concept_names": [
+        "建设性冲突"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-009",
+      "lq_id": "lq-0091",
+      "quote_text": "他们并不会突然达成一致，也没有放弃自己的信念，更没有从一个立场转向另一个极端。他们做了一件更有意思的事：开始能够理解那些自己依然不同意的观点。",
+      "book_title": "High Conflict",
+      "book_id": "book-0022",
+      "author": "Amanda Ripley",
+      "author_ids": [
+        "author-0023"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "perspective-taking",
+        "constructive-conflict"
+      ],
+      "psychology_concept_names": [
+        "观点采择",
+        "建设性冲突"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-010",
+      "lq_id": "lq-0092",
+      "quote_text": "提出深入的问题尤其容易建立亲密感，因为它们会让人谈论自己的信念、价值观、感受和经历，从而袒露内心深处的脆弱。而这种脆弱会引发情绪感染，使我们在情感上更加同步。",
+      "book_title": "Supercommunicators: How to Unlock the Secret Language of Connection",
+      "book_id": "book-0023",
+      "author": "Charles Duhigg",
+      "author_ids": [
+        "author-0024"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "vulnerable-disclosure",
+        "emotional-contagion"
+      ],
+      "psychology_concept_names": [
+        "袒露脆弱",
+        "情绪感染"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-011",
+      "lq_id": "lq-0093",
+      "quote_text": "互惠并不意味着要用自己的脆弱回应对方的脆弱，或用自己的悲伤回应对方的悲伤；而是在情感上保持开放，倾听对方的感受和需要，并分享自己的情感反应。",
+      "book_title": "Supercommunicators: How to Unlock the Secret Language of Connection",
+      "book_id": "book-0023",
+      "author": "Charles Duhigg",
+      "author_ids": [
+        "author-0024"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "emotional-validation",
+        "self-disclosure"
+      ],
+      "psychology_concept_names": [
+        "情绪确认",
+        "自我表露"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-012",
+      "lq_id": "lq-0094",
+      "quote_text": "长期相处的人往往会渐渐失去对彼此的好奇心。这并不一定出于冷漠，只是他们以为自己已经很了解对方，于是不再认真倾听，觉得自己早就知道对方要说什么。",
+      "book_title": "You're Not Listening",
+      "book_id": "book-0024",
+      "author": "Kate Murphy",
+      "author_ids": [
+        "author-0025"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "cognitive-bias",
+        "active-listening"
+      ],
+      "psychology_concept_names": [
+        "认知偏差",
+        "积极倾听"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-013",
+      "lq_id": "lq-0095",
+      "quote_text": "犹他大学的研究发现，面对心不在焉的倾听者时，说话者回忆起的内容更少，表达也不够清楚。相反，被认真倾听的人会说出更多信息和细节，即使倾听者没有主动提问。",
+      "book_title": "You're Not Listening",
+      "book_id": "book-0024",
+      "author": "Kate Murphy",
+      "author_ids": [
+        "author-0025"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "active-listening"
+      ],
+      "psychology_concept_names": [
+        "积极倾听"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-014",
+      "lq_id": "lq-0096",
+      "quote_text": "在判断反馈是对是错之前，我们必须先理解它。这似乎天经地义，但实际上我们常常会跳过理解，直接作出判断。",
+      "book_title": "Thanks for the Feedback",
+      "book_id": "book-0021",
+      "author": "Douglas Stone、Sheila Heen",
+      "author_ids": [
+        "author-0018",
+        "author-0020"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-015",
+      "lq_id": "lq-0097",
+      "quote_text": "无论是私人还是工作关系，如果缺少认可，就会在关系中留下巨大的空洞。我们当然想学到改进的方法，但也希望对方看见我们的努力和付出，看到我们做得好的地方。没有这些认可，再好的指导也很难听进去，因为我们真正想听到的，并不是这些建议。",
+      "book_title": "Thanks for the Feedback",
+      "book_id": "book-0021",
+      "author": "Douglas Stone、Sheila Heen",
+      "author_ids": [
+        "author-0018",
+        "author-0020"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "affirmation"
+      ],
+      "psychology_concept_names": [
+        "肯定回应"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-016",
+      "lq_id": "lq-0098",
+      "quote_text": "有多少次，你正在说一件对自己很重要的事，对方却把话题带到了完全不同的方向？如果不告诉别人你希望得到怎样的回应，他们就只能靠猜，或按自己的理解来回应。",
+      "book_title": "Say What You Mean: A Mindful Approach to Nonviolent Communication",
+      "book_id": "book-0025",
+      "author": "Oren Jay Sofer",
+      "author_ids": [
+        "author-0026"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "needs-expression"
+      ],
+      "psychology_concept_names": [
+        "表达需要"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-017",
+      "lq_id": "lq-0099",
+      "quote_text": "请求是在邀请合作；命令则是在用后果施压。",
+      "book_title": "Say What You Mean: A Mindful Approach to Nonviolent Communication",
+      "book_id": "book-0025",
+      "author": "Oren Jay Sofer",
+      "author_ids": [
+        "author-0026"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "coercion"
+      ],
+      "psychology_concept_names": [
+        "强制"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-018",
+      "lq_id": "lq-0100",
+      "quote_text": "认定事情就是如此，会把我们挡在对方的故事之外；好奇心则让我们走进其中。",
+      "book_title": "Difficult Conversations",
+      "book_id": "book-0018",
+      "author": "Douglas Stone、Bruce Patton、Sheila Heen",
+      "author_ids": [
+        "author-0018",
+        "author-0019",
+        "author-0020"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "perspective-taking"
+      ],
+      "psychology_concept_names": [
+        "观点采择"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-019",
+      "lq_id": "lq-0101",
+      "quote_text": "如果你的用意并不真诚，再周全的措辞、再得体的姿态也无济于事；如果你的用意出自真心，即使言辞笨拙，也不容易让沟通偏离轨道。",
+      "book_title": "Difficult Conversations",
+      "book_id": "book-0018",
+      "author": "Douglas Stone、Bruce Patton、Sheila Heen",
+      "author_ids": [
+        "author-0018",
+        "author-0019",
+        "author-0020"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "authenticity"
+      ],
+      "psychology_concept_names": [
+        "真实性"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-020",
+      "lq_id": "lq-0102",
+      "quote_text": "为什么承认对方的感受如此重要？因为每一次表达感受的背后，都藏着几个没有说出口的问题：“我的感受可以被接受吗？”“你理解我的感受吗？”“你在意我的感受吗？”“你在意我吗？”",
+      "book_title": "Difficult Conversations",
+      "book_id": "book-0018",
+      "author": "Douglas Stone、Bruce Patton、Sheila Heen",
+      "author_ids": [
+        "author-0018",
+        "author-0019",
+        "author-0020"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "emotional-validation",
+        "psychological-needs"
+      ],
+      "psychology_concept_names": [
+        "情绪确认",
+        "心理需要"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-021",
+      "lq_id": "lq-0103",
+      "quote_text": "很多时候，我们没能真正理解彼此，并不是因为自私或恶意，而是因为太急着开口。我们往往只是在回应自己听到的话，却没有静下心来理解对方真正想表达什么。",
+      "book_title": "The Lost Art of Listening",
+      "book_id": "book-0020",
+      "author": "Michael P. Nichols",
+      "author_ids": [
+        "author-0022"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "active-listening"
+      ],
+      "psychology_concept_names": [
+        "积极倾听"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-022",
+      "lq_id": "lq-0104",
+      "quote_text": "有些人用提问表达兴趣，有些人则觉得，想说什么应该由对方自己说出来。有些人会先开口，以此带动对方；有些人则习惯等别人来问。如果一方等着被问，另一方又等着对方主动开口，对话就不会发生，而双方最后都会觉得，是对方造成了这种失衡。",
+      "book_title": "That's Not What I Meant!",
+      "book_id": "book-0019",
+      "author": "Deborah Tannen",
+      "author_ids": [
+        "author-0021"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "metacommunication",
+        "blame"
+      ],
+      "psychology_concept_names": [
+        "元沟通",
+        "责备"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-023",
+      "lq_id": "lq-0105",
+      "quote_text": "恶性冲突与良性冲突最根本的区别，通常不在于争论什么，也不在有没有吼叫或情绪激动，而是冲突会不会陷入停滞。良性的冲突仍会向前推进：人们还在提问，好奇心也依然存在。",
+      "book_title": "High Conflict",
+      "book_id": "book-0022",
+      "author": "Amanda Ripley",
+      "author_ids": [
+        "author-0023"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "constructive-conflict"
+      ],
+      "psychology_concept_names": [
+        "建设性冲突"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-024",
+      "lq_id": "lq-0106",
+      "quote_text": "当一个人觉得自己说的话，没有得到对方的认真倾听时，就会变得有些焦虑，也更容易防备。他们会说得更少，说出来的事情也往往会被过度简化。人与人之间的墙，就这样筑了起来。",
+      "book_title": "High Conflict",
+      "book_id": "book-0022",
+      "author": "Amanda Ripley",
+      "author_ids": [
+        "author-0023"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "active-listening",
+        "defensiveness"
+      ],
+      "psychology_concept_names": [
+        "积极倾听",
+        "防御"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-025",
+      "lq_id": "lq-0107",
+      "quote_text": "我们与他人之间的冲突，很少只是表面看起来的那回事。在冲突的表象之下，还隐藏着更深的故事脉络，而那往往才是最值得探究的部分。",
+      "book_title": "High Conflict",
+      "book_id": "book-0022",
+      "author": "Amanda Ripley",
+      "author_ids": [
+        "author-0023"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "attribution"
+      ],
+      "psychology_concept_names": [
+        "归因"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-026",
+      "lq_id": "lq-0108",
+      "quote_text": "词语本身传递的是信息；而我们彼此之间的关系，以及我们对当下情境和所谈内容的态度，传递的则是元信息。我们反应最强烈的，往往正是这些元信息。",
+      "book_title": "That's Not What I Meant!",
+      "book_id": "book-0019",
+      "author": "Deborah Tannen",
+      "author_ids": [
+        "author-0021"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "metacommunication"
+      ],
+      "psychology_concept_names": [
+        "元沟通"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-027",
+      "lq_id": "lq-0109",
+      "quote_text": "即使最后你认定别人的反馈有九成不准确，只有一成是对的，也可能那正是你成长所需的建言。",
+      "book_title": "Thanks for the Feedback",
+      "book_id": "book-0021",
+      "author": "Douglas Stone、Sheila Heen",
+      "author_ids": [
+        "author-0018",
+        "author-0020"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-028",
+      "lq_id": "lq-0110",
+      "quote_text": "所有对话都需要沉默。如果没有沉默，我们就无法聆听，也不会产生真正的沟通。聆听中的沉默并不是强迫或压抑的，是因为感兴趣而自然产生的安静。",
+      "book_title": "Say What You Mean: A Mindful Approach to Nonviolent Communication",
+      "book_id": "book-0025",
+      "author": "Oren Jay Sofer",
+      "author_ids": [
+        "author-0026"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "active-listening"
+      ],
+      "psychology_concept_names": [
+        "积极倾听"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-COM-029",
+      "lq_id": "lq-0111",
+      "quote_text": "倾听的真正问题，不在于我们是否给出建议，而在于我们的回应，是在理解并回应对方的感受，还是只是在处理自己的感受。",
+      "book_title": "The Lost Art of Listening",
+      "book_id": "book-0020",
+      "author": "Michael P. Nichols",
+      "author_ids": [
+        "author-0022"
+      ],
+      "attribution_type": "person",
+      "theme": "沟通方式",
+      "psychology_concepts": [
+        "active-listening",
+        "emotional-validation"
+      ],
+      "psychology_concept_names": [
+        "积极倾听",
+        "情绪确认"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-004",
+      "lq_id": "lq-0112",
+      "quote_text": "在有些人的观念里，爱一个人，就意味着压抑和忽视自己的需要，转而去迁就和照顾对方。",
+      "book_title": "《Being Me, Loving You: A Practical Guide to Extraordinary Relationships》",
+      "book_id": "book-0001",
+      "author": "Marshall B. Rosenberg",
+      "author_ids": [
+        "author-0001"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "self-silencing",
+        "people-pleasing"
+      ],
+      "psychology_concept_names": [
+        "自我沉默",
+        "讨好"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-002",
+      "lq_id": "lq-0113",
+      "quote_text": "同居的情侣如果对家务分工意见有分歧，他们比观点相似的情侣更可能分手；共同分担家务的夫妻，也比家务分工不均的夫妻对婚姻更加满足。",
+      "book_title": "《Intimate Relationships》",
+      "book_id": "book-0002",
+      "author": "Rowland S. Miller",
+      "author_ids": [
+        "author-0002"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "relationship-equity",
+        "relationship-satisfaction"
+      ],
+      "psychology_concept_names": [
+        "关系公平",
+        "关系满意度"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-007",
+      "lq_id": "lq-0114",
+      "quote_text": "换个角度看，冲突并不是可怕的问题，而是一个充满挑战的机会——让我们更了解伴侣，也更了解自己，并有可能让这段关系变得更令人满意、更亲密。",
+      "book_title": "《Intimate Relationships》",
+      "book_id": "book-0002",
+      "author": "Rowland S. Miller",
+      "author_ids": [
+        "author-0002"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "constructive-conflict",
+        "relationship-growth-beliefs"
+      ],
+      "psychology_concept_names": [
+        "建设性冲突",
+        "关系成长信念"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-015",
+      "lq_id": "lq-0115",
+      "quote_text": "有时候，尤其是面对严重的越界行为，悔意和改变的承诺需要经得起时间的检验，受伤的一方才会相信它们是真诚的。",
+      "book_title": "《Looking Out, Looking In》",
+      "book_id": "book-0004",
+      "author": "Ronald B. Adler、Russell F. Proctor II",
+      "author_ids": [
+        "author-0004",
+        "author-0005"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "trust"
+      ],
+      "psychology_concept_names": [
+        "信任"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-017",
+      "lq_id": "lq-0116",
+      "quote_text": "在亲密关系中，我们需要保持共情所产生的平衡，也要明白，在与爱的人相处时，自己的边界从哪里开始，又在哪里结束。",
+      "book_title": "《The Power of Empathy》",
+      "book_id": "book-0026",
+      "author": "Arthur P. Ciaramicoli、Katherine Ketcham",
+      "author_ids": [
+        "author-0027",
+        "author-0028"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "empathy",
+        "personal-boundaries"
+      ],
+      "psychology_concept_names": [
+        "共情",
+        "边界"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-018",
+      "lq_id": "lq-0117",
+      "quote_text": "忽视是一种被动而具有破坏性的反应，是关系冲突中“过冷”的极端。表现为拒绝讨论问题，虽点头却并没有真正倾听，以此避免进一步互动；回避有争议的讨论，或转而拿无关的事情批评伴侣。",
+      "book_title": "《The Power of Empathy》",
+      "book_id": "book-0026",
+      "author": "Arthur P. Ciaramicoli、Katherine Ketcham",
+      "author_ids": [
+        "author-0027",
+        "author-0028"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "active-listening"
+      ],
+      "psychology_concept_names": [
+        "积极倾听"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-027",
+      "lq_id": "lq-0119",
+      "quote_text": "两个共同生活的人若都是自由的，就能让彼此的人生更加丰富；而各自的工作，也为彼此保持独立提供了保障。经济独立的妻子能让丈夫免受婚姻的奴役，因为妻子的依附与受支配，也会反过来把丈夫困在另一种婚姻束缚里。",
+      "book_title": "《The Second Sex》",
+      "book_id": "book-0028",
+      "author": "Simone de Beauvoir",
+      "author_ids": [
+        "author-0030"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "autonomy"
+      ],
+      "psychology_concept_names": [
+        "自主性"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-029",
+      "lq_id": "lq-0120",
+      "quote_text": "婚姻既然是一种伙伴关系，就不应该有任何一方凌驾于另一方之上。",
+      "book_title": "《What Life Should Mean to You》",
+      "book_id": "book-0029",
+      "author": "Alfred Adler",
+      "author_ids": [
+        "author-0031"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "relationship-equity"
+      ],
+      "psychology_concept_names": [
+        "关系公平"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-033",
+      "lq_id": "lq-0121",
+      "quote_text": "如果父母经常吵架，将婚姻视同儿戏，如果不再相信他们婚姻中的问题能够解决、他们的关系能够延续下去，那么这种婚姻便不是能够帮助孩子发展其社会性的有利情境。",
+      "book_title": "《What Life Should Mean to You》",
+      "book_id": "book-0029",
+      "author": "Alfred Adler",
+      "author_ids": [
+        "author-0031"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-035",
+      "lq_id": "lq-0122",
+      "quote_text": "当婚姻变成一场争夺胜负的战争，两个人会越来越疏远，但谁都没有勇气提出离婚，因为双方都还期待自己最终获胜，不愿离开这场婚姻战争。",
+      "book_title": "《Understanding Human Nature》",
+      "book_id": "book-0030",
+      "author": "Alfred Adler",
+      "author_ids": [
+        "author-0031"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "reciprocal-influence"
+      ],
+      "psychology_concept_names": [
+        "循环互动"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-037",
+      "lq_id": "lq-0123",
+      "quote_text": "夫妻在如何管理财务、如何经营感情、如何抚养孩子等重要问题上，难免会有不同意见。真正决定关系走向的，不是有没有分歧，而是两个人如何面对和处理这些分歧。",
+      "book_title": "《Crucial Conversations: Tools for Talking When Stakes Are High》",
+      "book_id": "book-0031",
+      "author": "Kerry Patterson、Joseph Grenny、Ron McMillan、Al Switzler",
+      "author_ids": [
+        "author-0032",
+        "author-0033",
+        "author-0034",
+        "author-0035"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "constructive-conflict"
+      ],
+      "psychology_concept_names": [
+        "建设性冲突"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-044",
+      "lq_id": "lq-0124",
+      "quote_text": "我们从小看着父亲打母亲，也渐渐相信：任何陌生人都不应该碰我们一下，但父母、未婚夫和丈夫，只要他们想，就可以给我们一巴掌——因为爱，因为要教育我们，或重新教育我们。",
+      "book_title": "《新名字的故事》",
+      "book_id": "book-0032",
+      "author": "埃莱娜·费兰特",
+      "author_ids": [
+        "author-0036"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "violence-normalization"
+      ],
+      "psychology_concept_names": [
+        "暴力正常化"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-049",
+      "lq_id": "lq-0125",
+      "quote_text": "当一个人在伴侣关系中认为自己有权苛责、教育或改变另一半，其实是在把亲子关系中父母对孩子的权力带进伴侣关系。",
+      "book_title": "《在爱中升华》",
+      "book_id": "book-0033",
+      "author": "伯特·海灵格",
+      "author_ids": [
+        "author-0037"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "control"
+      ],
+      "psychology_concept_names": [
+        "控制"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-051",
+      "lq_id": "lq-0126",
+      "quote_text": "承诺之爱最大的幻觉，是以为伴侣属于我们。事实上，伴侣始终是独立于我们的个体，他们身上的神秘也永远无法被彻底掌握。当我们开始承认这一点，彼此间的性吸引才真正有可能长久延续。",
+      "book_title": "《Mating in Captivity》",
+      "book_id": "book-0034",
+      "author": "Esther Perel",
+      "author_ids": [
+        "author-0038"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "possessiveness"
+      ],
+      "psychology_concept_names": [
+        "占有倾向"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-052",
+      "lq_id": "lq-0127",
+      "quote_text": "没有人会为了成为出色的小提琴手，只是等待一把合适的琴出现；但许多人却期待找到一个合适的伴侣，就能拥有一段成功的关系。更有帮助的做法，是培养我们爱的能力——成为一个有技巧、成熟且有自我觉察的伴侣。",
+      "book_title": "《The All-or-Nothing Marriage》",
+      "book_id": "book-0035",
+      "author": "Eli J. Finkel",
+      "author_ids": [
+        "author-0039"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "relationship-growth-beliefs"
+      ],
+      "psychology_concept_names": [
+        "关系成长信念"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-053",
+      "lq_id": "lq-0128",
+      "quote_text": "要走出僵局，并不意味着一定要解决这个问题。谁也不必“让步”或“认输”。真正的目标，是能够承认问题的存在，并在不伤害彼此的情况下讨论它。",
+      "book_title": "《The Seven Principles for Making Marriage Work》",
+      "book_id": "book-0036",
+      "author": "John Gottman、Nan Silver",
+      "author_ids": [
+        "author-0040",
+        "author-0041"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "constructive-conflict"
+      ],
+      "psychology_concept_names": [
+        "建设性冲突"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-054",
+      "lq_id": "lq-0129",
+      "quote_text": "如果伴侣喊道“你跑题了！”或嘟囔“我们能暂停一下吗？”，尽管表达方式并不好，这仍是一种修复尝试。如果你只听对方的语气，而忽略了话里的意思，就可能错过真正的信息：“停一下！事情正在失控。”",
+      "book_title": "《The Seven Principles for Making Marriage Work》",
+      "book_id": "book-0036",
+      "author": "John Gottman、Nan Silver",
+      "author_ids": [
+        "author-0040",
+        "author-0041"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "conflict-deescalation"
+      ],
+      "psychology_concept_names": [
+        "冲突降温"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-055",
+      "lq_id": "lq-0130",
+      "quote_text": "对话中的大多数责备，其实都是绝望的依恋呼喊，是在抗议彼此失去情感连接。",
+      "book_title": "《Hold Me Tight》",
+      "book_id": "book-0037",
+      "author": "Sue Johnson",
+      "author_ids": [
+        "author-0042"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-056",
+      "lq_id": "lq-0131",
+      "quote_text": "退缩和暴怒是“恶性对话”的典型标志，它们掩盖了更深层的脆弱情绪：悲伤、羞耻，尤其是恐惧。",
+      "book_title": "《Hold Me Tight》",
+      "book_id": "book-0037",
+      "author": "Sue Johnson",
+      "author_ids": [
+        "author-0042"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "defensiveness"
+      ],
+      "psychology_concept_names": [
+        "防御"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-057",
+      "lq_id": "lq-0132",
+      "quote_text": "婚姻的衰败，往往始于有回应的亲密互动逐渐消失；冲突是在这之后才出现的。",
+      "book_title": "《Hold Me Tight》",
+      "book_id": "book-0037",
+      "author": "Sue Johnson",
+      "author_ids": [
+        "author-0042"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "partner-responsiveness"
+      ],
+      "psychology_concept_names": [
+        "伴侣应答性"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-058",
+      "lq_id": "lq-0133",
+      "quote_text": "事实上，创伤专家普遍认为，最能预测创伤会造成多大影响的，不是事件本身有多严重，而是我们能否向他人寻求并接受安慰。",
+      "book_title": "《Hold Me Tight》",
+      "book_id": "book-0037",
+      "author": "Sue Johnson",
+      "author_ids": [
+        "author-0042"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "emotional-support"
+      ],
+      "psychology_concept_names": [
+        "情绪支持"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-059",
+      "lq_id": "lq-0134",
+      "quote_text": "当创伤被触发时，我们并不只是在回忆过去，而是在当下重新经历它。",
+      "book_title": "《Us》",
+      "book_id": "book-0038",
+      "author": "Terrence Real",
+      "author_ids": [
+        "author-0043"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "trauma"
+      ],
+      "psychology_concept_names": [
+        "创伤"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-060",
+      "lq_id": "lq-0135",
+      "quote_text": "苛刻没有任何可取之处。凡是靠苛刻想做到的事，带着爱意的坚定都能做得更好。",
+      "book_title": "《Us》",
+      "book_id": "book-0038",
+      "author": "Terrence Real",
+      "author_ids": [
+        "author-0043"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-061",
+      "lq_id": "lq-0136",
+      "quote_text": "悖论在于：只有放弃“两个人必须看法一致”的幻想，真正接受你和伴侣不会以同样的方式看待所有事情，问题才可能得到化解。",
+      "book_title": "《Us》",
+      "book_id": "book-0038",
+      "author": "Terrence Real",
+      "author_ids": [
+        "author-0043"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "acceptance"
+      ],
+      "psychology_concept_names": [
+        "接纳"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-062",
+      "lq_id": "lq-0137",
+      "quote_text": "亲密不是一种你已经拥有的东西，而是一件需要持续去做的事；而且，你可以学着把它做得更好。",
+      "book_title": "《Us》",
+      "book_id": "book-0038",
+      "author": "Terrence Real",
+      "author_ids": [
+        "author-0043"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "relationship-growth-beliefs"
+      ],
+      "psychology_concept_names": [
+        "关系成长信念"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-063",
+      "lq_id": "lq-0138",
+      "quote_text": "提醒伴侣去做一件事，并不会把这件事从你的清单上划掉，反而又给清单增加了一项；更糟的是，这种提醒还常常被不公平地说成“唠叨”。",
+      "book_title": "《Fair Play》",
+      "book_id": "book-0039",
+      "author": "Eve Rodsky",
+      "author_ids": [
+        "author-0044"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "relationship-equity"
+      ],
+      "psychology_concept_names": [
+        "关系公平"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-064",
+      "lq_id": "lq-0139",
+      "quote_text": "一项任务真正的“所有权”，属于那个先记得这件事需要规划、接着完成规划，并在无需提醒的情况下执行所有环节、把事情彻底做完的人。",
+      "book_title": "《Fair Play》",
+      "book_id": "book-0039",
+      "author": "Eve Rodsky",
+      "author_ids": [
+        "author-0044"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "mental-load"
+      ],
+      "psychology_concept_names": [
+        "心理负荷"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-065",
+      "lq_id": "lq-0140",
+      "quote_text": "让自己承担的所有隐形劳动被看见、被计算，确实有价值；但这只是起点，并不是解决方案。",
+      "book_title": "《Fair Play》",
+      "book_id": "book-0039",
+      "author": "Eve Rodsky",
+      "author_ids": [
+        "author-0044"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "relationship-equity"
+      ],
+      "psychology_concept_names": [
+        "关系公平"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-066",
+      "lq_id": "lq-0141",
+      "quote_text": "孩子出生后，我们不再像从前那样，持续而亲近地参与彼此的生活。无法充分参与彼此的生活，也使维持亲密变得更加困难。",
+      "book_title": "《And Baby Makes Three》",
+      "book_id": "book-0040",
+      "author": "John M. Gottman、Julie Schwartz Gottman",
+      "author_ids": [
+        "author-0040",
+        "author-0045"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "intimacy"
+      ],
+      "psychology_concept_names": [
+        "亲密感"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-067",
+      "lq_id": "lq-0142",
+      "quote_text": "性的亲密来自情感的亲密，而情感的亲密，来自伴侣在纷繁的责任与事务中，仍然努力找到彼此。",
+      "book_title": "《And Baby Makes Three》",
+      "book_id": "book-0040",
+      "author": "John M. Gottman、Julie Schwartz Gottman",
+      "author_ids": [
+        "author-0040",
+        "author-0045"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "intimacy"
+      ],
+      "psychology_concept_names": [
+        "亲密感"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-068",
+      "lq_id": "lq-0143",
+      "quote_text": "关系修复可以只是几句话或一个动作，让沟通重新回到正轨，让我们再次站到同一队里；而一次修复要奏效，需要两个人共同完成。",
+      "book_title": "《And Baby Makes Three》",
+      "book_id": "book-0040",
+      "author": "John M. Gottman、Julie Schwartz Gottman",
+      "author_ids": [
+        "author-0040",
+        "author-0045"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "relationship-repair"
+      ],
+      "psychology_concept_names": [
+        "关系修复"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-FAM-069",
+      "lq_id": "lq-0144",
+      "quote_text": "关于婚姻中的忠诚，也许成熟还可以这样理解：它不是没有激情的爱，而是一种知道还有其他激情存在，却没有选择它们的爱。",
+      "book_title": "《Mating in Captivity》",
+      "book_id": "book-0034",
+      "author": "Esther Perel",
+      "author_ids": [
+        "author-0038"
+      ],
+      "attribution_type": "person",
+      "theme": "婚姻家庭",
+      "psychology_concepts": [
+        "relationship-commitment"
+      ],
+      "psychology_concept_names": [
+        "关系承诺"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-065",
+      "lq_id": "lq-0145",
+      "quote_text": "在童年期，孩子最重要的需要，是感到安全、感到被爱，也希望自己所爱的人平安幸福；需要被看见、被肯定、被接纳，并拥有归属感；也需要体验成功，并发展出某种形式的自尊——能够对自己，也对他人，抱有积极的感受。",
+      "book_title": "Emotions in Child Psychotherapy: An Integrative Framework",
+      "book_id": "book-0017",
+      "author": "Kenneth Barish",
+      "author_ids": [
+        "author-0017"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "psychological-needs"
+      ],
+      "psychology_concept_names": [
+        "心理需要"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-068",
+      "lq_id": "lq-0146",
+      "quote_text": "儿童对未来的积极预期，建立在持续获得情感支持的基础上。",
+      "book_title": "Emotions in Child Psychotherapy: An Integrative Framework",
+      "book_id": "book-0017",
+      "author": "Kenneth Barish",
+      "author_ids": [
+        "author-0017"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "positive-expectancy",
+        "emotional-support"
+      ],
+      "psychology_concept_names": [
+        "积极预期",
+        "情绪支持"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-073",
+      "lq_id": "lq-0147",
+      "quote_text": "父母理解孩子的气质往往至关重要。这种理解不仅能减轻父母不必要的内疚，也能帮助他们更具共情地理解孩子，从而以更具建设性的方式回应孩子令人困扰的情绪和行为。",
+      "book_title": "Emotions in Child Psychotherapy: An Integrative Framework",
+      "book_id": "book-0017",
+      "author": "Kenneth Barish",
+      "author_ids": [
+        "author-0017"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "temperament",
+        "empathy"
+      ],
+      "psychology_concept_names": [
+        "气质",
+        "共情"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-INT-075",
+      "lq_id": "lq-0148",
+      "quote_text": "当孩子感受到我们在认真倾听他们，也理解他们合理的需要和担忧时，他们会更愿意以开放的态度听我们说话。这是所有对话的基本原则——夫妻之间、父母与孩子之间、群体之间，乃至国家之间，都是如此。",
+      "book_title": "Emotions in Child Psychotherapy: An Integrative Framework",
+      "book_id": "book-0017",
+      "author": "Kenneth Barish",
+      "author_ids": [
+        "author-0017"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "active-listening",
+        "reciprocal-influence"
+      ],
+      "psychology_concept_names": [
+        "积极倾听",
+        "循环互动"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-013",
+      "lq_id": "lq-0149",
+      "quote_text": "我从来没想过，当我为自己的不当行为承担责任，不为自己辩解，也不把责任推给别人时，孩子也会学着这样做。这道理其实很自然。孩子和我们一样，往往会按照别人对待自己的方式去对待他人。",
+      "book_title": "The Book You Wish Your Parents Had Read (and Your Children Will Be Glad That You Did)",
+      "book_id": "book-0041",
+      "author": "Philippa Perry",
+      "author_ids": [
+        "author-0046"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-014",
+      "lq_id": "lq-0150",
+      "quote_text": "你也许会觉得，说谎终究是不对的。但用严厉、道德说教式的态度对待孩子说谎，并不会让他们更诚实。事实上，研究显示，这反而会让孩子更擅长说谎。",
+      "book_title": "The Book You Wish Your Parents Had Read (and Your Children Will Be Glad That You Did)",
+      "book_id": "book-0041",
+      "author": "Philippa Perry",
+      "author_ids": [
+        "author-0046"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "punishment"
+      ],
+      "psychology_concept_names": [
+        "惩罚"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-015",
+      "lq_id": "lq-0151",
+      "quote_text": "孩子那些令人担忧的行为，是在告诉我们：孩子在满足某些要求时遇到了困难。把这些行为简单理解为“博取关注”，既不准确，也无助于解决问题。",
+      "book_title": "The Explosive Child",
+      "book_id": "book-0042",
+      "author": "Ross W. Greene",
+      "author_ids": [
+        "author-0047"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "attribution"
+      ],
+      "psychology_concept_names": [
+        "归因"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-016",
+      "lq_id": "lq-0152",
+      "quote_text": "人在情绪激动时，往往无法进行最清晰的思考。而尚未解决的问题通常是可以预见的，所以没有理由等到孩子情绪激动时，才尝试去解决。",
+      "book_title": "The Explosive Child",
+      "book_id": "book-0042",
+      "author": "Ross W. Greene",
+      "author_ids": [
+        "author-0047"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-017",
+      "lq_id": "lq-0153",
+      "quote_text": "心理健康并不意味着感觉良好，而是在恰当的时候拥有恰当的感受，并且能够有效地调节这些感受。",
+      "book_title": "The Emotional Lives of Teenagers",
+      "book_id": "book-0043",
+      "author": "Lisa Damour",
+      "author_ids": [
+        "author-0048"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "emotion-regulation"
+      ],
+      "psychology_concept_names": [
+        "情绪调节"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-018",
+      "lq_id": "lq-0154",
+      "quote_text": "青少年的情绪本身可能完全合理，但表达这些情绪的方式却可能有问题。作为身边的成年人，我们需要帮助他们看清这个关键区别。",
+      "book_title": "The Emotional Lives of Teenagers",
+      "book_id": "book-0043",
+      "author": "Lisa Damour",
+      "author_ids": [
+        "author-0048"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "emotion-regulation"
+      ],
+      "psychology_concept_names": [
+        "情绪调节"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-019",
+      "lq_id": "lq-0155",
+      "quote_text": "孩子并不是有缺陷的成年人，也不是尚未成熟、正逐渐获得成年人那种完善与复杂性的人。相反，孩子与成年人是智人的两种不同形态。他们拥有截然不同、却同样复杂而有力的心智、大脑和意识形式，分别服务于不同的进化功能。",
+      "book_title": "The Philosophical Baby: What Children's Minds Tell Us About Truth, Love, and the Meaning of Life",
+      "book_id": "book-0044",
+      "author": "Alison Gopnik",
+      "author_ids": [
+        "author-0049"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-020",
+      "lq_id": "lq-0156",
+      "quote_text": "孩子与成年人之间，存在一种进化意义上的分工。孩子就像人类的研发部门——天马行空地构想，不断提出新点子；成年人则像生产和营销部门。孩子负责发现，我们负责把这些发现变成现实。",
+      "book_title": "The Philosophical Baby: What Children's Minds Tell Us About Truth, Love, and the Meaning of Life",
+      "book_id": "book-0044",
+      "author": "Alison Gopnik",
+      "author_ids": [
+        "author-0049"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-022",
+      "lq_id": "lq-0157",
+      "quote_text": "想与人建立稳固的关系，需要承认没有谁是绝对正确的。因为在一段关系中，让人感到安全的是理解，而非说服。",
+      "book_title": "Good Inside",
+      "book_id": "book-0045",
+      "author": "Dr. Becky Kennedy",
+      "author_ids": [
+        "author-0050"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "relational-security",
+        "empathy"
+      ],
+      "psychology_concept_names": [
+        "关系安全感",
+        "共情"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-023",
+      "lq_id": "lq-0158",
+      "quote_text": "孩子既需要感受到父母理解并接纳自己的感受，也需要明白，这些感受不能左右父母的决定。",
+      "book_title": "Good Inside",
+      "book_id": "book-0045",
+      "author": "Dr. Becky Kennedy",
+      "author_ids": [
+        "author-0050"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "emotional-validation",
+        "personal-boundaries"
+      ],
+      "psychology_concept_names": [
+        "情绪确认",
+        "边界"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-024",
+      "lq_id": "lq-0159",
+      "quote_text": "孩子如何理解自己的童年经历，不仅取决于他们经历了什么，也取决于父母、老师和其他照顾他们的人如何回应。",
+      "book_title": "The Whole-Brain Child",
+      "book_id": "book-0046",
+      "author": "Daniel J. Siegel、Tina Payne Bryson",
+      "author_ids": [
+        "author-0051",
+        "author-0052"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-025",
+      "lq_id": "lq-0160",
+      "quote_text": "只要情况允许，就尽量不要替孩子解决问题，也别急着替他们解围，即使他们犯了小错，或作出了不太理想的选择。毕竟，你的目标不是让孩子现在每次都作出完美决定，而是让他们大脑中负责思考和决策的部分得到更好的发展。",
+      "book_title": "The Whole-Brain Child",
+      "book_id": "book-0046",
+      "author": "Daniel J. Siegel、Tina Payne Bryson",
+      "author_ids": [
+        "author-0051",
+        "author-0052"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "autonomy"
+      ],
+      "psychology_concept_names": [
+        "自主性"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-026",
+      "lq_id": "lq-0161",
+      "quote_text": "我们要认识到，情绪是暂时的、不断变化的状态，而非一个人固定不变的特质。情绪就像天气。",
+      "book_title": "The Whole-Brain Child",
+      "book_id": "book-0046",
+      "author": "Daniel J. Siegel、Tina Payne Bryson",
+      "author_ids": [
+        "author-0051",
+        "author-0052"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-027",
+      "lq_id": "lq-0162",
+      "quote_text": "给孩子提供选择时，最理想的潜台词应该是：“我和你站在一边。我希望你做或不做某件事，但与其直接命令你，我更愿意让你参与决定，给你一些选择的余地。”",
+      "book_title": "How to Talk So Kids Will Listen & Listen So Kids Will Talk",
+      "book_id": "book-0047",
+      "author": "Adele Faber、Elaine Mazlish",
+      "author_ids": [
+        "author-0053",
+        "author-0054"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "autonomy"
+      ],
+      "psychology_concept_names": [
+        "自主性"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-028",
+      "lq_id": "lq-0163",
+      "quote_text": "父母明明已经表达了对孩子情绪的理解，孩子却反而更加生气。问题可能就出在紧接着的那句“但是……”上：它往往会否定、削弱，甚至完全抹去前面表达的理解。",
+      "book_title": "How to Talk So Kids Will Listen & Listen So Kids Will Talk",
+      "book_id": "book-0047",
+      "author": "Adele Faber、Elaine Mazlish",
+      "author_ids": [
+        "author-0053",
+        "author-0054"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "metacommunication"
+      ],
+      "psychology_concept_names": [
+        "元沟通"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-029",
+      "lq_id": "lq-0164",
+      "quote_text": "只有当孩子觉得父母真正听进了自己的话、理解了自己的感受，才有可能开始考虑父母的感受。",
+      "book_title": "How to Talk So Kids Will Listen & Listen So Kids Will Talk",
+      "book_id": "book-0047",
+      "author": "Adele Faber、Elaine Mazlish",
+      "author_ids": [
+        "author-0053",
+        "author-0054"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "active-listening",
+        "emotional-validation"
+      ],
+      "psychology_concept_names": [
+        "积极倾听",
+        "情绪确认"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-030",
+      "lq_id": "lq-0165",
+      "quote_text": "对孩子来说，重要的是始终把自己看作解决问题的一份力量，而不是问题的一部分。",
+      "book_title": "How to Talk So Kids Will Listen & Listen So Kids Will Talk",
+      "book_id": "book-0047",
+      "author": "Adele Faber、Elaine Mazlish",
+      "author_ids": [
+        "author-0053",
+        "author-0054"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "self-concept"
+      ],
+      "psychology_concept_names": [
+        "自我概念"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-031",
+      "lq_id": "lq-0166",
+      "quote_text": "父母的职责，是通过设立边界、理解并接纳孩子的感受，为他们营造安全的成长环境；孩子的职责，则是在体验和表达情绪的过程中探索与学习。",
+      "book_title": "Good Inside",
+      "book_id": "book-0045",
+      "author": "Dr. Becky Kennedy",
+      "author_ids": [
+        "author-0050"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "personal-boundaries",
+        "emotional-validation",
+        "empathy"
+      ],
+      "psychology_concept_names": [
+        "边界",
+        "情绪确认",
+        "共情"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-032",
+      "lq_id": "lq-0167",
+      "quote_text": "当其他孩子都加入活动，而你的孩子还在一旁观察时，这未必是缺乏自信。自信不在于能立刻参与，而是了解自己的感受，知道自己什么时候才准备好加入。",
+      "book_title": "Good Inside",
+      "book_id": "book-0045",
+      "author": "Dr. Becky Kennedy",
+      "author_ids": [
+        "author-0050"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "self-validation",
+        "self-awareness"
+      ],
+      "psychology_concept_names": [
+        "自我认可",
+        "自我觉察"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-033",
+      "lq_id": "lq-0168",
+      "quote_text": "青少年逐渐形成有别于父母的自我认同，是健康成长不可缺少的一部分。",
+      "book_title": "The Emotional Lives of Teenagers",
+      "book_id": "book-0043",
+      "author": "Lisa Damour",
+      "author_ids": [
+        "author-0048"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "self-concept"
+      ],
+      "psychology_concept_names": [
+        "自我概念"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-034",
+      "lq_id": "lq-0169",
+      "quote_text": "如果双方都在做自己该做的事，青少年会争取比父母愿意给予的更多自由和弹性，而父母则会有所约束，拒绝一些要求，并执行合理的规则。如果你正处在这种张力中，不必灰心——这通常意味着一切正在按照应有的方式发展。",
+      "book_title": "The Emotional Lives of Teenagers",
+      "book_id": "book-0043",
+      "author": "Lisa Damour",
+      "author_ids": [
+        "author-0048"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "autonomy",
+        "personal-boundaries"
+      ],
+      "psychology_concept_names": [
+        "自主性",
+        "边界"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-035",
+      "lq_id": "lq-0170",
+      "quote_text": "与其说我们因为爱孩子，所以才照顾他们；不如说正是在照顾孩子的过程中，我们才逐渐产生了对他们的爱。",
+      "book_title": "The Philosophical Baby: What Children's Minds Tell Us About Truth, Love, and the Meaning of Life",
+      "book_id": "book-0044",
+      "author": "Alison Gopnik",
+      "author_ids": [
+        "author-0049"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-036",
+      "lq_id": "lq-0171",
+      "quote_text": "教育孩子时，我们希望他们能自然而然地为他人着想，而不是为了获得奖励或害怕惩罚才表现得体。我们也希望他们明白，合作比对立更有助于和谐相处。",
+      "book_title": "The Book You Wish Your Parents Had Read",
+      "book_id": "book-0041",
+      "author": "Philippa Perry",
+      "author_ids": [
+        "author-0046"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-037",
+      "lq_id": "lq-0172",
+      "quote_text": "给孩子设定界限时，要养成一个习惯：说清楚自己的感受、要求和底线，而不是用“你不值得信任”、“你还太小”之类的话来评价孩子。",
+      "book_title": "The Book You Wish Your Parents Had Read",
+      "book_id": "book-0041",
+      "author": "Philippa Perry",
+      "author_ids": [
+        "author-0046"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "personal-boundaries"
+      ],
+      "psychology_concept_names": [
+        "边界"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-038",
+      "lq_id": "lq-0173",
+      "quote_text": "公平并不意味着每个人得到的都完全一样。在一个家庭里，我们应尽可能让每个孩子得到自己所需要的，而每个孩子需要的东西并不相同。有些孩子需要得更多一些。",
+      "book_title": "The Explosive Child",
+      "book_id": "book-0042",
+      "author": "Ross W. Greene",
+      "author_ids": [
+        "author-0047"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "relationship-equity"
+      ],
+      "psychology_concept_names": [
+        "关系公平"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-039",
+      "lq_id": "lq-0174",
+      "quote_text": "完美主义往往并非源于孩子进步得不够，而更多源于父母自己的焦虑。",
+      "book_title": "The Explosive Child",
+      "book_id": "book-0042",
+      "author": "Ross W. Greene",
+      "author_ids": [
+        "author-0047"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "perfectionism",
+        "attribution"
+      ],
+      "psychology_concept_names": [
+        "完美主义",
+        "归因"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-040",
+      "lq_id": "lq-0175",
+      "quote_text": "心理韧性，是我们即使经历各种不同的情绪，仍然能够保持自我的能力。它帮助我们从生活中的压力、失败、错误和逆境中逐渐恢复并重新振作起来。",
+      "book_title": "Good Inside",
+      "book_id": "book-0045",
+      "author": "Dr. Becky Kennedy",
+      "author_ids": [
+        "author-0050"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "emotional-resilience"
+      ],
+      "psychology_concept_names": [
+        "情绪复原力"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-041",
+      "lq_id": "lq-0176",
+      "quote_text": "孩子的自信，无法靠他人的认可或赞美建立起来。赞美虽然能让人一时感觉良好，但这种感觉很快就会消失，让人不断渴望下一次赞美，好让自己重新感觉良好。这不是自信，而是一种内在的空虚。",
+      "book_title": "Good Inside",
+      "book_id": "book-0045",
+      "author": "Dr. Becky Kennedy",
+      "author_ids": [
+        "author-0050"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "approval-seeking"
+      ],
+      "psychology_concept_names": [
+        "寻求认可"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-042",
+      "lq_id": "lq-0177",
+      "quote_text": "经历心理上的痛苦是生活中不可避免的一部分，青春期本就伴随着许多挑战和失望。我们的目标不应是阻止或驱散青少年的痛苦，而是帮助他们学会调节自己的情绪。",
+      "book_title": "The Emotional Lives of Teenagers",
+      "book_id": "book-0043",
+      "author": "Lisa Damour",
+      "author_ids": [
+        "author-0048"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "acceptance",
+        "emotion-regulation"
+      ],
+      "psychology_concept_names": [
+        "接纳",
+        "情绪调节"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-043",
+      "lq_id": "lq-0178",
+      "quote_text": "当孩子情绪激动时，如果我们没有先理解并回应他们的情绪需要，讲道理往往难以奏效。",
+      "book_title": "The Whole-Brain Child",
+      "book_id": "book-0046",
+      "author": "Daniel J. Siegel、Tina Payne Bryson",
+      "author_ids": [
+        "author-0051",
+        "author-0052"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "emotional-support"
+      ],
+      "psychology_concept_names": [
+        "情绪支持"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-044",
+      "lq_id": "lq-0179",
+      "quote_text": "父母如何看待孩子，不仅会影响孩子如何看待自己，也可能使孩子逐渐按照这种形象来表现自己。",
+      "book_title": "How to Talk So Kids Will Listen & Listen So Kids Will Talk",
+      "book_id": "book-0047",
+      "author": "Adele Faber、Elaine Mazlish",
+      "author_ids": [
+        "author-0053",
+        "author-0054"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [
+        "self-concept"
+      ],
+      "psychology_concept_names": [
+        "自我概念"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-045",
+      "lq_id": "lq-0180",
+      "quote_text": "孩子在玩耍时，会主动尝试和探索周围的世界，并根据这些尝试的结果来改变自己的想法。",
+      "book_title": "The Philosophical Baby: What Children's Minds Tell Us About Truth, Love, and the Meaning of Life",
+      "book_id": "book-0044",
+      "author": "Alison Gopnik",
+      "author_ids": [
+        "author-0049"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-PAR-046",
+      "lq_id": "lq-0181",
+      "quote_text": "暂时把某些尚未解决的问题放在一边，既不是屈服，也不是放弃，而是在确定优先次序。如果你试图一次解决孩子所有尚未解决的问题，最后可能一个也解决不了。",
+      "book_title": "The Explosive Child",
+      "book_id": "book-0042",
+      "author": "Ross W. Greene",
+      "author_ids": [
+        "author-0047"
+      ],
+      "attribution_type": "person",
+      "theme": "亲子教育",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-001",
+      "lq_id": "lq-0182",
+      "quote_text": "当我们最重要的爱情关系受到威胁时，情绪往往最为强烈。一方可能迫切地想重新靠近，另一方其实同样害怕失去亲密，却把这种不安掩藏在谈论妥协、强调成熟和试图维持平静的背后。",
+      "book_title": "《Hold Me Tight》",
+      "book_id": "book-0037",
+      "author": "Sue Johnson",
+      "author_ids": [
+        "author-0042"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "attachment"
+      ],
+      "psychology_concept_names": [
+        "依恋"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-002",
+      "lq_id": "lq-0183",
+      "quote_text": "爱情关系不是一场计算得失的交易，而是一种情感联结。爱无法靠讲道理或讨价还价换取；它是一种情感回应。",
+      "book_title": "《Hold Me Tight》",
+      "book_id": "book-0037",
+      "author": "Sue Johnson",
+      "author_ids": [
+        "author-0042"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-003",
+      "lq_id": "lq-0184",
+      "quote_text": "当我们感到与伴侣失去爱的联结时，会产生强烈的恐惧。渴望与亲近的人保持安全的情感联结，是一种贯穿一生的生存需要；而这种爱的联结，是自然能够给予我们的唯一安全。",
+      "book_title": "《Hold Me Tight》",
+      "book_id": "book-0037",
+      "author": "Sue Johnson",
+      "author_ids": [
+        "author-0042"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "attachment"
+      ],
+      "psychology_concept_names": [
+        "依恋"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-004",
+      "lq_id": "lq-0185",
+      "quote_text": "当你知道所爱的人会在你需要时来到身边，你会更确信自己是重要的、有价值的。当你知道有人可以依靠、自己并不孤单时，世界也就不再那么令人畏惧。",
+      "book_title": "《Hold Me Tight》",
+      "book_id": "book-0037",
+      "author": "Sue Johnson",
+      "author_ids": [
+        "author-0042"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "attachment",
+        "partner-responsiveness",
+        "relational-security"
+      ],
+      "psychology_concept_names": [
+        "依恋",
+        "伴侣应答性",
+        "关系安全感"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-005",
+      "lq_id": "lq-0186",
+      "quote_text": "大多数人之所以显得“需求太多”，只是因为他们的需求没有得到满足。当情感需求得到满足——而且越早越好——他们通常会把注意力转向外部世界。这就是所谓的“依赖悖论”：越能在需要时依靠彼此，人反而越独立，也越有勇气探索世界。",
+      "book_title": "《Attached》",
+      "book_id": "book-0048",
+      "author": "Amir Levine、Rachel Heller",
+      "author_ids": [
+        "author-0055",
+        "author-0056"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "attachment",
+        "psychological-needs"
+      ],
+      "psychology_concept_names": [
+        "依恋",
+        "心理需要"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-006",
+      "lq_id": "lq-0187",
+      "quote_text": "研究表明，当我们与某个人建立依恋关系时，双方就会形成一个相互影响的生理共同体。伴侣会调节我们的血压、心率、呼吸以及血液中的激素水平。从生理角度看，依赖是一种事实，而不是一种选择或偏好。",
+      "book_title": "《Attached》",
+      "book_id": "book-0048",
+      "author": "Amir Levine、Rachel Heller",
+      "author_ids": [
+        "author-0055",
+        "author-0056"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "attachment"
+      ],
+      "psychology_concept_names": [
+        "依恋"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-007",
+      "lq_id": "lq-0188",
+      "quote_text": "“安全基地”意味着你确信有一个人在支持你，可以完全信赖，也能在需要时向他求助。正是这种安全感，让我们有勇气探索未知、成长和学习。",
+      "book_title": "《Attached》",
+      "book_id": "book-0048",
+      "author": "Amir Levine、Rachel Heller",
+      "author_ids": [
+        "author-0055",
+        "author-0056"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "relational-security",
+        "attachment"
+      ],
+      "psychology_concept_names": [
+        "关系安全感",
+        "依恋"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-008",
+      "lq_id": "lq-0189",
+      "quote_text": "如果你是焦虑型依恋者，就要承认自己对亲密、伴侣回应和安全感的需要，并相信这些需要是正当的。它们没有好坏之分，只是你的需要。",
+      "book_title": "《Attached》",
+      "book_id": "book-0048",
+      "author": "Amir Levine、Rachel Heller",
+      "author_ids": [
+        "author-0055",
+        "author-0056"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "psychological-needs",
+        "needs-awareness",
+        "attachment"
+      ],
+      "psychology_concept_names": [
+        "心理需要",
+        "需要觉察",
+        "依恋"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-009",
+      "lq_id": "lq-0190",
+      "quote_text": "在亲密关系中，“零和博弈”意味着双方把彼此当成对手，只顾自己的利益：一方得利，另一方就受损。信任则恰恰相反：我们相信伴侣虽不必无私，也会把我们的利益放在心上。",
+      "book_title": "《The Science of Trust》",
+      "book_id": "book-0049",
+      "author": "John M. Gottman",
+      "author_ids": [
+        "author-0040"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "trust"
+      ],
+      "psychology_concept_names": [
+        "信任"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-010",
+      "lq_id": "lq-0191",
+      "quote_text": "与人的联结会影响我们成为怎样的人，而我们是怎样的人，也会影响我们如何与他人联结。感到与人联结时，我们会变得更开放、更有同理心，也更勇敢；感到与人隔绝时，我们会出于自我保护，变得封闭、爱评判他人或与人疏离。",
+      "book_title": "《Platonic》",
+      "book_id": "book-0050",
+      "author": "Marisa G. Franco",
+      "author_ids": [
+        "author-0057"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-011",
+      "lq_id": "lq-0192",
+      "quote_text": "在我们的文化里，爱似乎也有高低之分，而朋友之间的爱往往被放在最末位。可如果我们因此轻视友谊，那么对所有人而言，都是莫大的损失。",
+      "book_title": "《Platonic》",
+      "book_id": "book-0050",
+      "author": "Marisa G. Franco",
+      "author_ids": [
+        "author-0057"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-012",
+      "lq_id": "lq-0193",
+      "quote_text": "有些事，不说出来就无法真正释怀。承认内心的愤怒，可能开启一场坦诚的对话，让一段珍贵的友谊中积存的旧伤有机会愈合。",
+      "book_title": "《Platonic》",
+      "book_id": "book-0050",
+      "author": "Marisa G. Franco",
+      "author_ids": [
+        "author-0057"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "anger",
+        "relationship-repair"
+      ],
+      "psychology_concept_names": [
+        "愤怒",
+        "关系修复"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-013",
+      "lq_id": "lq-0194",
+      "quote_text": "友谊不仅能给予人安全感，也能改变一个人。那些我们以为只属于爱情的悸动与温柔，同样可能存在于友谊之中。",
+      "book_title": "《The Other Significant Others》",
+      "book_id": "book-0051",
+      "author": "Rhaina Cohen",
+      "author_ids": [
+        "author-0058"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-014",
+      "lq_id": "lq-0195",
+      "quote_text": "以爱情伴侣为中心的生活模式，并不适合所有人。有人找不到伴侣，也有人不愿将所有需求寄托于一段爱情。即使人人都有伴侣，婚姻也无法解决所有人的孤独；我们仍需要其他形式的亲密联结。",
+      "book_title": "《The Other Significant Others》",
+      "book_id": "book-0051",
+      "author": "Rhaina Cohen",
+      "author_ids": [
+        "author-0058"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-015",
+      "lq_id": "lq-0196",
+      "quote_text": "即使一段友谊共同经历过许多风雨，也不能保证它永不破裂。那些没有说出口的感受、一次次看似微不足道的误解，都可能慢慢积累，让一段珍贵的友谊悄然出现裂痕。",
+      "book_title": "《Big Friendship》",
+      "book_id": "book-0052",
+      "author": "Aminatou Sow、Ann Friedman",
+      "author_ids": [
+        "author-0059",
+        "author-0060"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-016",
+      "lq_id": "lq-0197",
+      "quote_text": "朋友会拓展我们的世界，也会挑战并激励我们改变。人生不断变化，友谊赖以建立的基础也可能随之改变。一段深厚的友谊若要延续下去，就必须学会适应这些变化。",
+      "book_title": "《Big Friendship》",
+      "book_id": "book-0052",
+      "author": "Aminatou Sow、Ann Friedman",
+      "author_ids": [
+        "author-0059",
+        "author-0060"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "relationship-maintenance"
+      ],
+      "psychology_concept_names": [
+        "关系维护"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-017",
+      "lq_id": "lq-0198",
+      "quote_text": "健康的友谊需要双方都愿意为彼此调整，适应彼此的差异，也适应这段关系不断发生的变化。这样的付出不必每时每刻对等：有时一方需要更多，但从长远来看，双方都应有所付出。",
+      "book_title": "《Big Friendship》",
+      "book_id": "book-0052",
+      "author": "Aminatou Sow、Ann Friedman",
+      "author_ids": [
+        "author-0059",
+        "author-0060"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "relationship-maintenance",
+        "relationship-equity"
+      ],
+      "psychology_concept_names": [
+        "关系维护",
+        "关系公平"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-018",
+      "lq_id": "lq-0199",
+      "quote_text": "真正的支持，不是急着替对方解决问题或代替他作决定，而是在他经历痛苦或抉择时陪伴他。我们尊重他的自由，也在他需要帮助时伸出援手。",
+      "book_title": "《How to Be an Adult in Relationships》",
+      "book_id": "book-0053",
+      "author": "David Richo",
+      "author_ids": [
+        "author-0061"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "emotional-support",
+        "autonomy"
+      ],
+      "psychology_concept_names": [
+        "情绪支持",
+        "自主性"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-019",
+      "lq_id": "lq-0200",
+      "quote_text": "约会这类社会惯例，以及社会传递的种种关系观念，会在不知不觉间改变我们对人生可能性的想象。它们可能让我们看不清自己真正想要什么，甚至没有察觉到自己其实已经拥有了想要的东西。",
+      "book_title": "《The Other Significant Others》",
+      "book_id": "book-0051",
+      "author": "Rhaina Cohen",
+      "author_ids": [
+        "author-0058"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "self-awareness"
+      ],
+      "psychology_concept_names": [
+        "自我觉察"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-020",
+      "lq_id": "lq-0201",
+      "quote_text": "即使身处一段令人满意的恋爱关系，我们也可能渐渐发现：当生活中有不止一个人可以依靠时，人生会更加丰盈。这些关系就像一张安全网。如果一个人就是你的全部，一旦这段关系结束，你可能同时失去倾诉对象、最好的朋友、亲密伴侣、事业上的支持者，以及更多重要的依靠。",
+      "book_title": "《The Other Significant Others》",
+      "book_id": "book-0051",
+      "author": "Rhaina Cohen",
+      "author_ids": [
+        "author-0058"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-021",
+      "lq_id": "lq-0202",
+      "quote_text": "我们都会受到自己认识和所爱之人的深刻影响。日常生活中，朋友影响我们的喜好和情绪；长远来看，他们还会影响我们如何看待自己的身体、如何花钱，甚至持有怎样的政治观点。我们在彼此的影响中成长，有些改变出于有意识的选择，有些则在不知不觉间发生。",
+      "book_title": "《Big Friendship》",
+      "book_id": "book-0052",
+      "author": "Aminatou Sow、Ann Friedman",
+      "author_ids": [
+        "author-0059",
+        "author-0060"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "reciprocal-influence"
+      ],
+      "psychology_concept_names": [
+        "循环互动"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-022",
+      "lq_id": "lq-0203",
+      "quote_text": "有一种愤怒，源于我们仍希望修复关系、重新亲近。坦诚说出心中的不满，不是为了责备或惩罚，而是为了表达自己未被满足的需要，让彼此明白怎样才能更好地相处。这样的冲突，反而可能修复甚至加深友谊。",
+      "book_title": "《Platonic》",
+      "book_id": "book-0050",
+      "author": "Marisa G. Franco",
+      "author_ids": [
+        "author-0057"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "anger",
+        "constructive-conflict",
+        "relationship-repair"
+      ],
+      "psychology_concept_names": [
+        "愤怒",
+        "建设性冲突",
+        "关系修复"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-023",
+      "lq_id": "lq-0204",
+      "quote_text": "亲密意味着，我们既能在关系中做自己，也允许对方成为他自己。即使彼此的想法、感受和信念不同，我们仍能保持情感联结，而不必试图改变、说服或纠正对方。",
+      "book_title": "《The Dance of Intimacy》",
+      "book_id": "book-0054",
+      "author": "Harriet Goldhor Lerner",
+      "author_ids": [
+        "author-0062"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "differentiation-of-self",
+        "acceptance"
+      ],
+      "psychology_concept_names": [
+        "自我分化",
+        "接纳"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-024",
+      "lq_id": "lq-0205",
+      "quote_text": "有些关系即使已经疏远，也未必真的归于平静。保持距离，有时正是我们应对强烈情绪的方式。如果你已经五年没见过前夫，却仍无法心平气和地与他谈论孩子，那么说明你们之间依然有着强烈的情绪牵扯。",
+      "book_title": "《The Dance of Intimacy》",
+      "book_id": "book-0054",
+      "author": "Harriet Goldhor Lerner",
+      "author_ids": [
+        "author-0062"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "emotion-regulation"
+      ],
+      "psychology_concept_names": [
+        "情绪调节"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-025",
+      "lq_id": "lq-0206",
+      "quote_text": "当伴侣感到彼此之间安全的情感联结正在消失时，往往会进入“战斗或逃跑”的状态：一方可能指责、攻击，只求得到对方的回应——无论什么回应；另一方则可能封闭自己，努力装作毫不在意。其实两个人都很害怕，只是应对恐惧的方式不同。",
+      "book_title": "《Hold Me Tight》",
+      "book_id": "book-0037",
+      "author": "Sue Johnson",
+      "author_ids": [
+        "author-0042"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "attachment"
+      ],
+      "psychology_concept_names": [
+        "依恋"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-026",
+      "lq_id": "lq-0207",
+      "quote_text": "当我们在与所爱之人的关系中感到安心，就自然有更多精力关怀他人。我们会更积极地看待别人，也更愿意与他们建立情感联结。感到被爱、感到安全，会使我们成为更加友善、更宽容的人。",
+      "book_title": "《Hold Me Tight》",
+      "book_id": "book-0037",
+      "author": "Sue Johnson",
+      "author_ids": [
+        "author-0042"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "attachment"
+      ],
+      "psychology_concept_names": [
+        "依恋"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-027",
+      "lq_id": "lq-0208",
+      "quote_text": "期待能为我们的行动和人际关系注入活力，推动我们不断向前，而不是安于平庸。心理健康并不意味着毫无期待，而是不被期待所支配。",
+      "book_title": "《How to Be an Adult in Relationships》",
+      "book_id": "book-0053",
+      "author": "David Richo",
+      "author_ids": [
+        "author-0061"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "positive-expectancy"
+      ],
+      "psychology_concept_names": [
+        "积极预期"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-028",
+      "lq_id": "lq-0209",
+      "quote_text": "在爱情中，我们想要的是对方能够给予的东西；在情感成瘾中，我们渴求的却是对方乃至任何人都无法给予的东西。",
+      "book_title": "《How to Be an Adult in Relationships》",
+      "book_id": "book-0053",
+      "author": "David Richo",
+      "author_ids": [
+        "author-0061"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "dependency"
+      ],
+      "psychology_concept_names": [
+        "心理依赖"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-029",
+      "lq_id": "lq-0210",
+      "quote_text": "一般来说，悲伤意味着有所缺失，愤怒意味着目标受阻，失望背后有希望与期待，孤独中则有对联结的渴望。每一种负面情绪都像一个导航系统，指引我们找到隐藏其中的渴望、愿望与希望。",
+      "book_title": "《The Science of Trust》",
+      "book_id": "book-0049",
+      "author": "John M. Gottman",
+      "author_ids": [
+        "author-0040"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "emotion-functions"
+      ],
+      "psychology_concept_names": [
+        "情绪功能"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-030",
+      "lq_id": "lq-0211",
+      "quote_text": "一段亲密关系中存在无数这样的时刻。每一个都是微小的转折点——可能成为彼此联结的机会，也可能错失机会。偶尔没有回应伴侣，未必会造成严重后果；但当我们一次次选择忽视对方的情绪，这些选择累积起来，便会使关系沿着不同的轨迹，走向截然不同的未来。",
+      "book_title": "《The Science of Trust》",
+      "book_id": "book-0049",
+      "author": "John M. Gottman",
+      "author_ids": [
+        "author-0040"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [
+        "partner-responsiveness"
+      ],
+      "psychology_concept_names": [
+        "伴侣应答性"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "QR-REL-031",
+      "lq_id": "lq-0212",
+      "quote_text": "当我们被强烈情绪淹没时，往往难以有效处理信息，共情、体谅他人、发挥创造力，甚至自我调侃的能力也会大幅下降。",
+      "book_title": "《The Science of Trust》",
+      "book_id": "book-0049",
+      "author": "John M. Gottman",
+      "author_ids": [
+        "author-0040"
+      ],
+      "attribution_type": "person",
+      "theme": "亲密关系",
+      "psychology_concepts": [],
+      "psychology_concept_names": [],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "1-Q1",
+      "lq_id": "lq-0213",
+      "quote_text": "我们越努力想得到金钱，甚至越试图忽视它、超越它，金钱对我们的束缚反而越紧。",
+      "book_title": "The Soul of Money",
+      "book_id": "book-0055",
+      "author": "Lynne Twist",
+      "author_ids": [
+        "author-0063"
+      ],
+      "attribution_type": "person",
+      "theme": "金钱与生活",
+      "psychology_concepts": [
+        "scarcity-mindset"
+      ],
+      "psychology_concept_names": [
+        "匮乏心态"
+      ],
+      "visual_tags": [],
+      "tags": [
+        "金钱"
+      ]
+    },
+    {
+      "work_id": "1-Q6",
+      "lq_id": "lq-0214",
+      "quote_text": "我们意识到，过去那种不断积累、不断升级生活的奔忙，其实是另一种饥饿。我们真正渴望的，是过一种有意义的生活。",
+      "book_title": "The Soul of Money",
+      "book_id": "book-0055",
+      "author": "Lynne Twist",
+      "author_ids": [
+        "author-0063"
+      ],
+      "attribution_type": "person",
+      "theme": "金钱与生活",
+      "psychology_concepts": [
+        "needs-awareness"
+      ],
+      "psychology_concept_names": [
+        "需要觉察"
+      ],
+      "visual_tags": [],
+      "tags": []
+    },
+    {
+      "work_id": "1-S1",
+      "lq_id": "lq-0215",
+      "quote_text": "钱不断流进来，而我们每得到一样东西，都会引出对下一样东西的欲望：下一次购买，或者下一个继续买更多的理由。生活升级的清单仿佛没有尽头。",
+      "book_title": "The Soul of Money",
+      "book_id": "book-0055",
+      "author": "Lynne Twist",
+      "author_ids": [
+        "author-0063"
+      ],
+      "attribution_type": "person",
+      "theme": "金钱与生活",
+      "psychology_concepts": [
+        "scarcity-mindset"
+      ],
+      "psychology_concept_names": [
+        "匮乏心态"
+      ],
+      "visual_tags": [],
+      "tags": [
+        "金钱"
+      ]
+    },
+    {
+      "work_id": "1-S2",
+      "lq_id": "lq-0216",
+      "quote_text": "在金钱的影响下，我们很容易把自己分成赢家或输家、强者或弱者，并让这些标签定义自己。仿佛拥有财富和掌控力就意味着天生更优越，而缺少它们，就意味着一个人的价值和潜能也更低。",
+      "book_title": "The Soul of Money",
+      "book_id": "book-0055",
+      "author": "Lynne Twist",
+      "author_ids": [
+        "author-0063"
+      ],
+      "attribution_type": "person",
+      "theme": "金钱与生活",
+      "psychology_concepts": [
+        "contingent-self-worth"
+      ],
+      "psychology_concept_names": [
+        "条件性自我价值"
+      ],
+      "visual_tags": [],
+      "tags": [
+        "金钱"
+      ]
+    }
+  ]
+}

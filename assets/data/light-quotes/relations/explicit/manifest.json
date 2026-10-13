@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "quote_dataset_version": "sha256-5c82497954cf481110be127e461e073c0d516601b002d09c36d3373eb45e3354",
-  "relation_version": "sha256-2d1623ed9ca332f16b7cd442d3d855bef37198c5b9ae461823f3927cc09d68b1",
+  "quote_dataset_version": "sha256-aedc9405b391eccc6cba7989b4f459cbab4447ac4642c45994127b44266a1172",
+  "relation_version": "sha256-a40412fe52d0eb6ba5b2f1d42c3c0e62683be93675df583595cbf71e202d4e0a",
   "dimension": "explicit",
   "key_count": 0,
   "bucket_count": 0,

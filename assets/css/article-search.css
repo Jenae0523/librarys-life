@@ -76,6 +76,16 @@
   box-shadow: 0 12px 32px rgba(38, 53, 84, 0.09);
 }
 
+.article-search-card--micro-note,
+.article-search-card--no-cover {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.article-search-card--micro-note .article-search-card-body {
+  width: 100%;
+  max-width: none;
+}
+
 .article-search-cover-link {
   align-self: start;
 }

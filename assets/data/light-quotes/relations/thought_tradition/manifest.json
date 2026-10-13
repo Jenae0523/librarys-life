@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "quote_dataset_version": "sha256-5c82497954cf481110be127e461e073c0d516601b002d09c36d3373eb45e3354",
-  "relation_version": "sha256-2d1623ed9ca332f16b7cd442d3d855bef37198c5b9ae461823f3927cc09d68b1",
+  "quote_dataset_version": "sha256-aedc9405b391eccc6cba7989b4f459cbab4447ac4642c45994127b44266a1172",
+  "relation_version": "sha256-a40412fe52d0eb6ba5b2f1d42c3c0e62683be93675df583595cbf71e202d4e0a",
   "dimension": "thought_tradition",
-  "key_count": 3,
-  "bucket_count": 3,
-  "chunk_count": 3,
+  "key_count": 4,
+  "bucket_count": 4,
+  "chunk_count": 4,
   "chunk_size": 500,
   "buckets": {
     "attachment-theory": {
       "key": "attachment-theory",
-      "count": 7,
+      "count": 8,
       "chunks": [
         {
-          "url": "buckets/193a7a65ceffee63-0001-8c6633223667.json",
+          "url": "buckets/193a7a65ceffee63-0001-d2b73092c5b1.json",
           "start": 0,
-          "count": 7,
-          "sha256": "8c6633223667e320462f5ea38f0694f614c0c8cd6c6f1ebcf0942535be3aad32"
+          "count": 8,
+          "sha256": "d2b73092c5b16df574b1c88b310df8a52fe1d6d19e3ab468cdcceb6c68721196"
         }
       ]
     },
@@ -25,10 +25,22 @@
       "count": 2,
       "chunks": [
         {
-          "url": "buckets/94adfed006049044-0001-145e93821240.json",
+          "url": "buckets/94adfed006049044-0001-a4f0b8c716df.json",
           "start": 0,
           "count": 2,
-          "sha256": "145e93821240d0ce0921ca9defa417222f82daab2a3cc130336b0d0976af93ca"
+          "sha256": "a4f0b8c716df23812e25606ac1e9ef7150d37cde8fc321e5804c770f04003512"
+        }
+      ]
+    },
+    "logotherapy": {
+      "key": "logotherapy",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/a01006ffccef8e2d-0001-169e44417455.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "169e44417455a6c2df8e77ec3c0e434e99d64f89e1c5f417cc456ac356e81bdf"
         }
       ]
     },
@@ -37,10 +49,10 @@
       "count": 4,
       "chunks": [
         {
-          "url": "buckets/21701d4cc535a928-0001-e929543d7f05.json",
+          "url": "buckets/21701d4cc535a928-0001-e1d177a091a2.json",
           "start": 0,
           "count": 4,
-          "sha256": "e929543d7f054b784c1689f11181f020e50474e8cd1f5da558353c38e6239ba1"
+          "sha256": "e1d177a091a2f6e38f209b324c0a711fcc571461eed4b2f9599576ce5df1ff6b"
         }
       ]
     }

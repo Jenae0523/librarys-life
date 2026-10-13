@@ -1,70 +1,70 @@
 {
   "schema_version": 1,
-  "quote_dataset_version": "sha256-5c82497954cf481110be127e461e073c0d516601b002d09c36d3373eb45e3354",
-  "relation_version": "sha256-2d1623ed9ca332f16b7cd442d3d855bef37198c5b9ae461823f3927cc09d68b1",
+  "quote_dataset_version": "sha256-aedc9405b391eccc6cba7989b4f459cbab4447ac4642c45994127b44266a1172",
+  "relation_version": "sha256-a40412fe52d0eb6ba5b2f1d42c3c0e62683be93675df583595cbf71e202d4e0a",
   "dimension": "knowledge_node",
-  "key_count": 42,
-  "bucket_count": 42,
-  "chunk_count": 42,
+  "key_count": 46,
+  "bucket_count": 46,
+  "chunk_count": 46,
   "chunk_size": 500,
   "buckets": {
     "acceptance": {
       "key": "acceptance",
-      "count": 7,
+      "count": 8,
       "chunks": [
         {
-          "url": "buckets/c1514c6cdad166c1-0001-e2f9fd52dff2.json",
+          "url": "buckets/c1514c6cdad166c1-0001-e86dbf1b415a.json",
           "start": 0,
-          "count": 7,
-          "sha256": "e2f9fd52dff237a27af3c73b0c31bec50c6cad682030c7a47d9bc4610b72a0f0"
+          "count": 8,
+          "sha256": "e86dbf1b415a65f498ddd0b5587fff6178faf559c7772fb57b123f5cdd7d3c20"
         }
       ]
     },
     "active-listening": {
       "key": "active-listening",
-      "count": 5,
+      "count": 11,
       "chunks": [
         {
-          "url": "buckets/92f417aa514ce415-0001-c859892f2e9d.json",
+          "url": "buckets/92f417aa514ce415-0001-e237e1c33829.json",
           "start": 0,
-          "count": 5,
-          "sha256": "c859892f2e9d686efca4b749fb6b47f43ebf65fe9ebf8e61f150054bf3587cd4"
+          "count": 11,
+          "sha256": "e237e1c33829b90bd7ce56fb5c05d3c41cc500c37ab57b2397bf404dd5e7e6e3"
         }
       ]
     },
     "anger": {
       "key": "anger",
-      "count": 3,
+      "count": 7,
       "chunks": [
         {
-          "url": "buckets/d4cc56aa47e0b5c7-0001-0ccfd803e697.json",
+          "url": "buckets/d4cc56aa47e0b5c7-0001-5e453b9fe545.json",
           "start": 0,
-          "count": 3,
-          "sha256": "0ccfd803e697ac97abc9c96ab31a389da90f95200e5ddf28441b4091a6c2b7c1"
+          "count": 7,
+          "sha256": "5e453b9fe5459ce0c8ed3cb58b35ded9dd7bf30b5d782d3d92f10a7768562bf9"
         }
       ]
     },
     "attachment": {
       "key": "attachment",
-      "count": 6,
+      "count": 11,
       "chunks": [
         {
-          "url": "buckets/602a5e69c3021bdb-0001-ead0b23e51b2.json",
+          "url": "buckets/602a5e69c3021bdb-0001-fb253663a9f9.json",
           "start": 0,
-          "count": 6,
-          "sha256": "ead0b23e51b2e93dce8b977ea4823493e1fdd67542a2a145a9695f8a9a2204a6"
+          "count": 11,
+          "sha256": "fb253663a9f9e85a7b85409d89e197f00e1290b6881fdb2470347eedcbf61530"
         }
       ]
     },
     "attachment-theory": {
       "key": "attachment-theory",
-      "count": 7,
+      "count": 8,
       "chunks": [
         {
-          "url": "buckets/193a7a65ceffee63-0001-18859f308bea.json",
+          "url": "buckets/193a7a65ceffee63-0001-414b7c4857db.json",
           "start": 0,
-          "count": 7,
-          "sha256": "18859f308bead0047d5a90c2ea0e0a6c43636ab795b5b03b1ce2e58468a3c466"
+          "count": 8,
+          "sha256": "414b7c4857dbd68a22df2f9b1578f1bf4fe9e31422c555ce6dab0ff9a0bcfa81"
         }
       ]
     },
@@ -73,94 +73,94 @@
       "count": 1,
       "chunks": [
         {
-          "url": "buckets/8bd7b9eee0ea7515-0001-d0b5d40d0947.json",
+          "url": "buckets/8bd7b9eee0ea7515-0001-a1a8b2cbbd79.json",
           "start": 0,
           "count": 1,
-          "sha256": "d0b5d40d0947ce824768773a4ef1d391fba66c1a1d8613f4721b4588051c7d6a"
+          "sha256": "a1a8b2cbbd795f417d4be686135411421d9765cd621f4f520e919fcde66b4cc7"
         }
       ]
     },
     "attribution": {
       "key": "attribution",
-      "count": 5,
+      "count": 9,
       "chunks": [
         {
-          "url": "buckets/3ee591fcb25f09a0-0001-047a3e5b7816.json",
+          "url": "buckets/3ee591fcb25f09a0-0001-459baf80460c.json",
           "start": 0,
-          "count": 5,
-          "sha256": "047a3e5b7816e1f4a62db854e90eac4c657ede66adb3730946370af6daba7c98"
+          "count": 9,
+          "sha256": "459baf80460c3032d23e0fefb462b74e539711e956a9d909b3014a8ad13565eb"
         }
       ]
     },
     "authenticity": {
       "key": "authenticity",
-      "count": 1,
+      "count": 2,
       "chunks": [
         {
-          "url": "buckets/c62eda8e53de8f7a-0001-6c05035a78f1.json",
+          "url": "buckets/c62eda8e53de8f7a-0001-d6399067988a.json",
           "start": 0,
-          "count": 1,
-          "sha256": "6c05035a78f151d0486f6c448cfed20276bfd01638e702511bfee5baf0407d21"
+          "count": 2,
+          "sha256": "d6399067988a5b4df147a861d3c9d8bb94c7ebb5b40ee302f29aa5ee0771fada"
         }
       ]
     },
     "autonomy": {
       "key": "autonomy",
-      "count": 9,
+      "count": 8,
       "chunks": [
         {
-          "url": "buckets/e94d787f61ea3ee8-0001-f2ce01c85d9f.json",
+          "url": "buckets/e94d787f61ea3ee8-0001-10d3fb6c5e6b.json",
           "start": 0,
-          "count": 9,
-          "sha256": "f2ce01c85d9fe53a96053a570eb90dd8de9e6b8bc2d972476d02afded8d65702"
+          "count": 8,
+          "sha256": "10d3fb6c5e6b36ea6a60ffc3ffd27825e3b006a1832f5f9a6dc3c0e0a69b789b"
         }
       ]
     },
     "cognitive-bias": {
       "key": "cognitive-bias",
-      "count": 1,
+      "count": 2,
       "chunks": [
         {
-          "url": "buckets/3d56536992ed9d44-0001-845450c6f026.json",
+          "url": "buckets/3d56536992ed9d44-0001-9f73fb755dbe.json",
           "start": 0,
-          "count": 1,
-          "sha256": "845450c6f02601da4edea21e686d15049f1676a2f5af059ea762b8536f9f6a7b"
+          "count": 2,
+          "sha256": "9f73fb755dbe8648ff0cfe4a0d71b1b20f3f355974e9841428ef63e196d27626"
         }
       ]
     },
     "communication": {
       "key": "communication",
-      "count": 16,
+      "count": 26,
       "chunks": [
         {
-          "url": "buckets/d4e16994df9002e5-0001-1ab53566a2f9.json",
+          "url": "buckets/d4e16994df9002e5-0001-3dbc5c3e7229.json",
           "start": 0,
-          "count": 16,
-          "sha256": "1ab53566a2f9480eb5305500ffa82ff8df9ced7060b31ae237e31ce4112696d2"
+          "count": 26,
+          "sha256": "3dbc5c3e7229099e5de82661d7f38c74cdb08dc9b16270d52e609edcdad8a678"
         }
       ]
     },
     "control": {
       "key": "control",
-      "count": 2,
+      "count": 3,
       "chunks": [
         {
-          "url": "buckets/0fcd568a5cb9bdb4-0001-cc1d41f37cc8.json",
+          "url": "buckets/0fcd568a5cb9bdb4-0001-780395230f72.json",
           "start": 0,
-          "count": 2,
-          "sha256": "cc1d41f37cc8a556c340ec5f13ce27b9abb4abef83a7d53496d0b31aa928c570"
+          "count": 3,
+          "sha256": "780395230f72413c4f7aebaeb6c0010963189d441843988c1bacca05d3f46004"
         }
       ]
     },
     "dependency": {
       "key": "dependency",
-      "count": 1,
+      "count": 2,
       "chunks": [
         {
-          "url": "buckets/f26350dafe3f19aa-0001-ea583a49527b.json",
+          "url": "buckets/f26350dafe3f19aa-0001-609f61a0ede7.json",
           "start": 0,
-          "count": 1,
-          "sha256": "ea583a49527beb00cee9cb88299995df9afa347e0ae4fb241698a93d792966b9"
+          "count": 2,
+          "sha256": "609f61a0ede747c2b5ec0ebe7e64ba075bff3cf37a8b670e70797af1da42409f"
         }
       ]
     },
@@ -169,10 +169,10 @@
       "count": 2,
       "chunks": [
         {
-          "url": "buckets/f42878425f95c877-0001-e3f4051c7442.json",
+          "url": "buckets/f42878425f95c877-0001-b209b9383de0.json",
           "start": 0,
           "count": 2,
-          "sha256": "e3f4051c744210c0fb7bc80e0d88451e7007982d9629343f2df27876a16203d8"
+          "sha256": "b209b9383de04a84cfeaa4ca958329ca344d9330517397c2776853cb53ab9ae0"
         }
       ]
     },
@@ -181,22 +181,22 @@
       "count": 2,
       "chunks": [
         {
-          "url": "buckets/94adfed006049044-0001-84b3b6be6fb1.json",
+          "url": "buckets/94adfed006049044-0001-d07102f9364f.json",
           "start": 0,
           "count": 2,
-          "sha256": "84b3b6be6fb1cd08465a389c409f40c2585ef8f54e7f921afedc762966ef7bfb"
+          "sha256": "d07102f9364f82cfbe9027596ceeb380c2b97bfd3d254c791462985d3028fbda"
         }
       ]
     },
     "emotion-regulation": {
       "key": "emotion-regulation",
-      "count": 3,
+      "count": 4,
       "chunks": [
         {
-          "url": "buckets/facc433586c6e57c-0001-876551c6260c.json",
+          "url": "buckets/facc433586c6e57c-0001-9847ca375429.json",
           "start": 0,
-          "count": 3,
-          "sha256": "876551c6260c470a36cf12acbce854cc85c0dc2b07efa42f22ab51798e1f16fd"
+          "count": 4,
+          "sha256": "9847ca375429554e9af171d33ca3006289425b5b8d7bf0309943fb717fc62362"
         }
       ]
     },
@@ -205,22 +205,22 @@
       "count": 1,
       "chunks": [
         {
-          "url": "buckets/ba6354899af6138b-0001-088060ec95a1.json",
+          "url": "buckets/ba6354899af6138b-0001-65ccd589d874.json",
           "start": 0,
           "count": 1,
-          "sha256": "088060ec95a1bf6098135d6eec7eea816a57eae14472df1ea36cc359a92803cc"
+          "sha256": "65ccd589d8741e14fce169b84516c01023eabf254c62c30e997ca9d09277e1f6"
         }
       ]
     },
     "empathy": {
       "key": "empathy",
-      "count": 3,
+      "count": 8,
       "chunks": [
         {
-          "url": "buckets/1bb41bab96782718-0001-ef0abc50caab.json",
+          "url": "buckets/1bb41bab96782718-0001-d500e17a9bf1.json",
           "start": 0,
-          "count": 3,
-          "sha256": "ef0abc50caab1a2272a77cb3c84532d7662df03ed8c2240ef74f41db8f4102da"
+          "count": 8,
+          "sha256": "d500e17a9bf1ca6de2c0534e2927c42c87413c170e53e70ccb060484f1878782"
         }
       ]
     },
@@ -229,10 +229,10 @@
       "count": 2,
       "chunks": [
         {
-          "url": "buckets/58d54e7c7553ce1f-0001-f0fc9f1c9181.json",
+          "url": "buckets/58d54e7c7553ce1f-0001-f7e6c4801ee0.json",
           "start": 0,
           "count": 2,
-          "sha256": "f0fc9f1c918106cfff35c66c24cf8a6cb0d558641643fd8ffbc3b84306400664"
+          "sha256": "f7e6c4801ee0e06ea9fd09880a7515315b65bec150f03a76f45dabe542be3739"
         }
       ]
     },
@@ -241,58 +241,70 @@
       "count": 4,
       "chunks": [
         {
-          "url": "buckets/6ac1d6fb285db09a-0001-c3e237cc3961.json",
+          "url": "buckets/6ac1d6fb285db09a-0001-7c51e9362d7c.json",
           "start": 0,
           "count": 4,
-          "sha256": "c3e237cc3961fa5ec4e295e9c5153bc16a0bc8c4f9dc91237394a4877cfe4d2e"
+          "sha256": "7c51e9362d7c7f60c48b341e82597edc5ef30028029cd55ea711d00aa95d260e"
         }
       ]
     },
     "intimacy": {
       "key": "intimacy",
-      "count": 3,
+      "count": 2,
       "chunks": [
         {
-          "url": "buckets/a427b3cbc38e5ca8-0001-8998b1034f64.json",
+          "url": "buckets/a427b3cbc38e5ca8-0001-03b7a524e7a2.json",
           "start": 0,
-          "count": 3,
-          "sha256": "8998b1034f647d6425e927f987665210c2c34cac6245fcb32dc3d00db06356a8"
+          "count": 2,
+          "sha256": "03b7a524e7a2d6237f3866ef375db8989e06ba75ba76203a4a40bffdc8f652cc"
         }
       ]
     },
     "life-change-and-transition": {
       "key": "life-change-and-transition",
-      "count": 2,
+      "count": 3,
       "chunks": [
         {
-          "url": "buckets/7ca9641a9e4fc8ac-0001-a2e4bf8ff5af.json",
+          "url": "buckets/7ca9641a9e4fc8ac-0001-5a07d0cc7f10.json",
           "start": 0,
-          "count": 2,
-          "sha256": "a2e4bf8ff5af0a58951ac2bddcc280f2c96d44244405e537702155c49c7a53d6"
+          "count": 3,
+          "sha256": "5a07d0cc7f1014d1936b00fa5388b7db7b9504cd7308d5f3ab0c3008486e8bcf"
+        }
+      ]
+    },
+    "logotherapy": {
+      "key": "logotherapy",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/a01006ffccef8e2d-0001-df0d860c2f51.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "df0d860c2f513fee51e75a9bca3d2502575b26615d6ec5385fbbcc035efeaa1c"
+        }
+      ]
+    },
+    "money": {
+      "key": "money",
+      "count": 3,
+      "chunks": [
+        {
+          "url": "buckets/8d2ac8b58ead9744-0001-be1e9ba97962.json",
+          "start": 0,
+          "count": 3,
+          "sha256": "be1e9ba97962e60c9e43bf6b709acc579e58d7f1128bd44707fa4cdf9f83c24e"
         }
       ]
     },
     "narrative-identity": {
       "key": "narrative-identity",
-      "count": 2,
+      "count": 1,
       "chunks": [
         {
-          "url": "buckets/78bc69b3f4381a68-0001-9d2683f18d35.json",
+          "url": "buckets/78bc69b3f4381a68-0001-9176d2d3d054.json",
           "start": 0,
-          "count": 2,
-          "sha256": "9d2683f18d35f84b13f4df5b1fe7e3ecdd184a9caf056ecce00916f0bd784c7d"
-        }
-      ]
-    },
-    "need-to-belong": {
-      "key": "need-to-belong",
-      "count": 2,
-      "chunks": [
-        {
-          "url": "buckets/ff4c57eb263806cb-0001-54ba53788f88.json",
-          "start": 0,
-          "count": 2,
-          "sha256": "54ba53788f888f557ccaa002657b98bb164fac037cb7f5c8b55b1962268bb9aa"
+          "count": 1,
+          "sha256": "9176d2d3d054fe7a4a276425b2281f7a55f7e63b36a19b635232f67e0738c5cc"
         }
       ]
     },
@@ -301,58 +313,70 @@
       "count": 1,
       "chunks": [
         {
-          "url": "buckets/93d912ee672c567d-0001-0729edb97301.json",
+          "url": "buckets/93d912ee672c567d-0001-582b72789252.json",
           "start": 0,
           "count": 1,
-          "sha256": "0729edb97301ba126238c921474de390c9d77d6e7655ae4f0ebc2807fd4af6f7"
+          "sha256": "582b72789252c7897d82059d2f8a89ed5d43780aad94141ef81a110b5811c0a6"
         }
       ]
     },
     "perfectionism": {
       "key": "perfectionism",
-      "count": 2,
+      "count": 4,
       "chunks": [
         {
-          "url": "buckets/b7e7dd772a86cd61-0001-261b6f548a65.json",
+          "url": "buckets/b7e7dd772a86cd61-0001-eda930a56b99.json",
           "start": 0,
-          "count": 2,
-          "sha256": "261b6f548a6541979a3e64d48d7595345d67649cc80d5a4dfe31fff4e7e1b85f"
+          "count": 4,
+          "sha256": "eda930a56b998c21d3e1c051d6a6745f4369ef9c4ab5bcefd395bb607c39fbad"
         }
       ]
     },
     "personal-boundaries": {
       "key": "personal-boundaries",
-      "count": 7,
+      "count": 8,
       "chunks": [
         {
-          "url": "buckets/de17828738f8aa8c-0001-4756c9ee49ff.json",
+          "url": "buckets/de17828738f8aa8c-0001-8e1688e7c2dd.json",
           "start": 0,
-          "count": 7,
-          "sha256": "4756c9ee49ff52c1a9f137033995a74e6fd88cff21188a0b8d4d4cd033b8c2d9"
+          "count": 8,
+          "sha256": "8e1688e7c2dd0e837eec7a8456fc2802a20e5841a8fc855e1c1e7958ad1577d3"
         }
       ]
     },
     "psychological-needs": {
       "key": "psychological-needs",
-      "count": 6,
+      "count": 5,
       "chunks": [
         {
-          "url": "buckets/7361b97619691991-0001-7d3246dfe346.json",
+          "url": "buckets/7361b97619691991-0001-43f356d371fb.json",
           "start": 0,
-          "count": 6,
-          "sha256": "7d3246dfe346a40ba2224c0e99c07f2cb278b786988d3c51f841ff592d641f86"
+          "count": 5,
+          "sha256": "43f356d371fb1354716bdd993e65444a965bb8b54db13a4f8c16ae4bf7424524"
+        }
+      ]
+    },
+    "punishment": {
+      "key": "punishment",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/6fb778f0a581be75-0001-04f73d9aaa36.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "04f73d9aaa362a57d1ee0b65a26510c9d6508bafb6379138191e18adb1e2c029"
         }
       ]
     },
     "relational-security": {
       "key": "relational-security",
-      "count": 5,
+      "count": 3,
       "chunks": [
         {
-          "url": "buckets/48d086bc78fb4113-0001-00b020bf080c.json",
+          "url": "buckets/48d086bc78fb4113-0001-6849cbd12d5c.json",
           "start": 0,
-          "count": 5,
-          "sha256": "00b020bf080c8a358bb786704f0245ce6f07b9fa2f7139deffbfc1f1c9137582"
+          "count": 3,
+          "sha256": "6849cbd12d5c798b5b4a4078c942f4ad8c4a9a6ae2ee95b2c2a11dde7fb1671c"
         }
       ]
     },
@@ -361,34 +385,46 @@
       "count": 4,
       "chunks": [
         {
-          "url": "buckets/21701d4cc535a928-0001-4d592b71db8e.json",
+          "url": "buckets/21701d4cc535a928-0001-e5b412cd2438.json",
           "start": 0,
           "count": 4,
-          "sha256": "4d592b71db8ee5740f3ac786b25a5499ad56092d13ab58ce6e5a7a46683747cd"
+          "sha256": "e5b412cd24387b0d8cf32bd43824927607fd2eb218e3dbb7943e00390360afbd"
         }
       ]
     },
     "relationship-repair": {
       "key": "relationship-repair",
-      "count": 1,
+      "count": 3,
       "chunks": [
         {
-          "url": "buckets/ac43ffc5a7197db6-0001-78a6e15c7991.json",
+          "url": "buckets/ac43ffc5a7197db6-0001-2f372ef5c8f1.json",
           "start": 0,
-          "count": 1,
-          "sha256": "78a6e15c7991659c3edd1f5861323a9008d55b48beb6dd5d41e1aeeebee0d0a9"
+          "count": 3,
+          "sha256": "2f372ef5c8f1ffd271fd809235a8829665ab93dbe729278fcdfe4302b4dbdc51"
+        }
+      ]
+    },
+    "scarcity-mindset": {
+      "key": "scarcity-mindset",
+      "count": 2,
+      "chunks": [
+        {
+          "url": "buckets/a2afac9f23a665df-0001-51181f7f212e.json",
+          "start": 0,
+          "count": 2,
+          "sha256": "51181f7f212e64debac51f377afcd90f52a6e9f6f2c0cb9f33c0ec5374f24b84"
         }
       ]
     },
     "self-awareness": {
       "key": "self-awareness",
-      "count": 3,
+      "count": 8,
       "chunks": [
         {
-          "url": "buckets/72713044acf7c21d-0001-c58c174f439d.json",
+          "url": "buckets/72713044acf7c21d-0001-5a77d930ced6.json",
           "start": 0,
-          "count": 3,
-          "sha256": "c58c174f439d06d76e51fb9a5b67972af9dc1d80b6451d8aa76c549861cc667e"
+          "count": 8,
+          "sha256": "5a77d930ced650796846d02d172e3ae0f31213a97c27d0622609bdab949ddfa0"
         }
       ]
     },
@@ -397,34 +433,22 @@
       "count": 2,
       "chunks": [
         {
-          "url": "buckets/1b1000d2bdbf5db7-0001-51d0a179d65c.json",
+          "url": "buckets/1b1000d2bdbf5db7-0001-50bdce44ec79.json",
           "start": 0,
           "count": 2,
-          "sha256": "51d0a179d65c604626729171d36bfa5905b36eb90af8de24cb48ed22d589659c"
+          "sha256": "50bdce44ec796c057c9e7949387ae67b0da5b4df71cca4705ebf91e00be240d2"
         }
       ]
     },
     "self-concept": {
       "key": "self-concept",
-      "count": 4,
+      "count": 6,
       "chunks": [
         {
-          "url": "buckets/a735c1a90b5104ae-0001-554402b2d918.json",
+          "url": "buckets/a735c1a90b5104ae-0001-11d27e902c1d.json",
           "start": 0,
-          "count": 4,
-          "sha256": "554402b2d9183e51e5fc2c13a3dfa9981c1ec96e1f7868fbd1c192258f4d4cf5"
-        }
-      ]
-    },
-    "self-control": {
-      "key": "self-control",
-      "count": 1,
-      "chunks": [
-        {
-          "url": "buckets/7fac42aaf082cbb5-0001-2e09d8068d98.json",
-          "start": 0,
-          "count": 1,
-          "sha256": "2e09d8068d98366a41b76bb0aa11b943d0efa562e3a9864a90b9bc333a3f826c"
+          "count": 6,
+          "sha256": "11d27e902c1d0ffa3045aabae412c213ed0957c65ef54bdf98172cffdfc11ebd"
         }
       ]
     },
@@ -433,22 +457,22 @@
       "count": 4,
       "chunks": [
         {
-          "url": "buckets/b87b6c72a73da6a2-0001-86435eea9f8d.json",
+          "url": "buckets/b87b6c72a73da6a2-0001-e5a6f68aceb5.json",
           "start": 0,
           "count": 4,
-          "sha256": "86435eea9f8d66ca3b19f0283853e103566e8585ee0ece9a08a23ad405e8a818"
+          "sha256": "e5a6f68aceb5dfb0cb4e85749791bba0ac31bdf86412aeaed22ed80bd3b934a8"
         }
       ]
     },
-    "self-sabotage": {
-      "key": "self-sabotage",
+    "self-relationship": {
+      "key": "self-relationship",
       "count": 1,
       "chunks": [
         {
-          "url": "buckets/1baff2347982ea8d-0001-6d4aa536be9f.json",
+          "url": "buckets/4c55657c57d2ed29-0001-fd7ecd8b934b.json",
           "start": 0,
           "count": 1,
-          "sha256": "6d4aa536be9f65b365543a300d1b410b2843a46658b3cef58403549e77653a76"
+          "sha256": "fd7ecd8b934bae0a87eb4ac5ef52393568741bdd6991d237f8ba7c974c456074"
         }
       ]
     },
@@ -457,58 +481,82 @@
       "count": 2,
       "chunks": [
         {
-          "url": "buckets/2e6b82fa7dfe8447-0001-933a9f54aa85.json",
+          "url": "buckets/2e6b82fa7dfe8447-0001-cdcbce33a7e1.json",
           "start": 0,
           "count": 2,
-          "sha256": "933a9f54aa85b9d32d44edde442af66a351166c65f6971304737656b8c19b62d"
+          "sha256": "cdcbce33a7e14eb57f27c71763d630d40bfd91b2be6bb176da0b13296fe6f2e4"
         }
       ]
     },
     "shame": {
       "key": "shame",
-      "count": 1,
+      "count": 4,
       "chunks": [
         {
-          "url": "buckets/bf197ff3615054b0-0001-0e01216cfec3.json",
+          "url": "buckets/bf197ff3615054b0-0001-b9fda4222e7a.json",
           "start": 0,
-          "count": 1,
-          "sha256": "0e01216cfec3310405f935f19ba2228295d4605bc7af55cd9bb16b529ba96aba"
+          "count": 4,
+          "sha256": "b9fda4222e7a6730ee1a839947e586dd8a670401217e859654717f321aaea0b5"
         }
       ]
     },
     "social-disconnection-and-loneliness": {
       "key": "social-disconnection-and-loneliness",
-      "count": 2,
+      "count": 1,
       "chunks": [
         {
-          "url": "buckets/6caa18eba2a10110-0001-ea7317b56182.json",
+          "url": "buckets/6caa18eba2a10110-0001-a3261f9db810.json",
           "start": 0,
-          "count": 2,
-          "sha256": "ea7317b56182044a5b13a1fad42feb265b35a95d0f9b7aa6e191b285745f1ae3"
+          "count": 1,
+          "sha256": "a3261f9db810631a12a72be8907c5a3f9a753eaa4455bf1ae5a720c92b8f56d9"
+        }
+      ]
+    },
+    "temperament": {
+      "key": "temperament",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/7cccee77765148bd-0001-1ac4867f98cc.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "1ac4867f98cc96cd6b4fc4773c79a8454e0d008446d66d3b613e7730557da3a2"
         }
       ]
     },
     "time-limits-and-prioritization": {
       "key": "time-limits-and-prioritization",
-      "count": 2,
+      "count": 4,
       "chunks": [
         {
-          "url": "buckets/2604a46f2dbfcf41-0001-03e604fb8a32.json",
+          "url": "buckets/2604a46f2dbfcf41-0001-7b54f6270574.json",
           "start": 0,
-          "count": 2,
-          "sha256": "03e604fb8a32f977bf58d4c7866ef2ff2493601677492b8cd4056d76b179e4d2"
+          "count": 4,
+          "sha256": "7b54f6270574e16b7ed18bf32eb14502ae6c195c2fef3239a3f3e904a46c75ca"
+        }
+      ]
+    },
+    "trauma": {
+      "key": "trauma",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/ad12f62c45fc1344-0001-7167808f967f.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "7167808f967fe12233bc731796fa71cfc9cbf26bd569ba7bb818d3752c97c9d6"
         }
       ]
     },
     "trust": {
       "key": "trust",
-      "count": 2,
+      "count": 3,
       "chunks": [
         {
-          "url": "buckets/f796e2f28ae58117-0001-0b410e3e7808.json",
+          "url": "buckets/f796e2f28ae58117-0001-3333c023b882.json",
           "start": 0,
-          "count": 2,
-          "sha256": "0b410e3e78088ad5a2e6b94d950d2f55e6d91a625d56551b74ae2b0c78faee5d"
+          "count": 3,
+          "sha256": "3333c023b88291976bdb8824e492da19e2e2f4b5a889a99dd257baa370bdbd9f"
         }
       ]
     }

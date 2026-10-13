@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "quote_dataset_version": "sha256-5c82497954cf481110be127e461e073c0d516601b002d09c36d3373eb45e3354",
-  "relation_version": "sha256-2d1623ed9ca332f16b7cd442d3d855bef37198c5b9ae461823f3927cc09d68b1",
+  "quote_dataset_version": "sha256-aedc9405b391eccc6cba7989b4f459cbab4447ac4642c45994127b44266a1172",
+  "relation_version": "sha256-a40412fe52d0eb6ba5b2f1d42c3c0e62683be93675df583595cbf71e202d4e0a",
   "dimension": "life_issue",
-  "key_count": 11,
-  "bucket_count": 11,
-  "chunk_count": 11,
+  "key_count": 10,
+  "bucket_count": 10,
+  "chunk_count": 10,
   "chunk_size": 500,
   "buckets": {
     "attention-fragmentation": {
@@ -13,22 +13,22 @@
       "count": 1,
       "chunks": [
         {
-          "url": "buckets/8bd7b9eee0ea7515-0001-41ad62782cb1.json",
+          "url": "buckets/8bd7b9eee0ea7515-0001-8084e5a2754b.json",
           "start": 0,
           "count": 1,
-          "sha256": "41ad62782cb102e09dea364284392f97677b3924b0dadc49675b68ad4f316c50"
+          "sha256": "8084e5a2754b11cb4f510f620cdcc894c558a730d747f3aea896ab250286caa1"
         }
       ]
     },
     "friendship-change-and-rupture": {
       "key": "friendship-change-and-rupture",
-      "count": 3,
+      "count": 2,
       "chunks": [
         {
-          "url": "buckets/b72ebab3a775f833-0001-86f91b9161b7.json",
+          "url": "buckets/b72ebab3a775f833-0001-e96325784639.json",
           "start": 0,
-          "count": 3,
-          "sha256": "86f91b9161b7abc29c74341c7d72622a5fdb60c140b93656ec023c0d95385c39"
+          "count": 2,
+          "sha256": "e963257846399ffd608ef45a9b7d9479e0a786b1719bb8796756ab94309fc420"
         }
       ]
     },
@@ -37,34 +37,22 @@
       "count": 3,
       "chunks": [
         {
-          "url": "buckets/6ac1d6fb285db09a-0001-21e257b4d67f.json",
+          "url": "buckets/6ac1d6fb285db09a-0001-7e7df70c2906.json",
           "start": 0,
           "count": 3,
-          "sha256": "21e257b4d67ffeff39fd2fcd7a2fc04fedd866340b82d9f6d5ef59529d6c1ec9"
+          "sha256": "7e7df70c29064c5c671077dc93772ccfdc30dd1b7190101aa1dce7922e161edb"
         }
       ]
     },
     "life-change-and-transition": {
       "key": "life-change-and-transition",
-      "count": 2,
+      "count": 3,
       "chunks": [
         {
-          "url": "buckets/7ca9641a9e4fc8ac-0001-e70dbdd9597f.json",
+          "url": "buckets/7ca9641a9e4fc8ac-0001-3ac27d3521a6.json",
           "start": 0,
-          "count": 2,
-          "sha256": "e70dbdd9597f965efc287f406178daacd8151667d99217786f57f50af42f6b72"
-        }
-      ]
-    },
-    "relational-insecurity": {
-      "key": "relational-insecurity",
-      "count": 2,
-      "chunks": [
-        {
-          "url": "buckets/4d105882c2242245-0001-7464f6cde02c.json",
-          "start": 0,
-          "count": 2,
-          "sha256": "7464f6cde02c038779104fe0154bf602f87b05f6c741583fdd82a07d7bdafdfe"
+          "count": 3,
+          "sha256": "3ac27d3521a655bf77df8f07f14357c098ac9900a28bf958eaaca31748c566b6"
         }
       ]
     },
@@ -73,58 +61,58 @@
       "count": 1,
       "chunks": [
         {
-          "url": "buckets/999f46a916a23c77-0001-e9c4418ff1ac.json",
+          "url": "buckets/999f46a916a23c77-0001-0ce421e5fda6.json",
           "start": 0,
           "count": 1,
-          "sha256": "e9c4418ff1ac677a915dd6150cc43d61ffa6e1198d27bd5883e8c5104aac83cd"
+          "sha256": "0ce421e5fda6ecacdee0cad70070f6d31f7f0057d950d00b6db78bca6cb36525"
         }
       ]
     },
     "relationship-norm-pressure": {
       "key": "relationship-norm-pressure",
-      "count": 4,
+      "count": 3,
       "chunks": [
         {
-          "url": "buckets/e3e66ad24d763ec6-0001-e55160a3fe91.json",
+          "url": "buckets/e3e66ad24d763ec6-0001-a2180173a6d8.json",
           "start": 0,
-          "count": 4,
-          "sha256": "e55160a3fe917704d7916d41507913bc95bd3f4732b97521eb36004a98c23a9f"
+          "count": 3,
+          "sha256": "a2180173a6d87264c1d41ae9dd6de2a6092e8a28ea7f077665e2127f6db4a827"
         }
       ]
     },
     "social-disconnection-and-loneliness": {
       "key": "social-disconnection-and-loneliness",
-      "count": 2,
+      "count": 1,
       "chunks": [
         {
-          "url": "buckets/6caa18eba2a10110-0001-ecf293358cb4.json",
+          "url": "buckets/6caa18eba2a10110-0001-6c231088d7f4.json",
           "start": 0,
-          "count": 2,
-          "sha256": "ecf293358cb4c129cf6a3f19b928ca8f2d1a50f99b0983dfdf012a692cf7aaa7"
+          "count": 1,
+          "sha256": "6c231088d7f4b9a984a43a66a2b52c25f2a1c20522a0e9ed980d71a2e831a4ce"
         }
       ]
     },
     "time-limits-and-prioritization": {
       "key": "time-limits-and-prioritization",
-      "count": 2,
+      "count": 4,
       "chunks": [
         {
-          "url": "buckets/2604a46f2dbfcf41-0001-ab5b37ebde86.json",
+          "url": "buckets/2604a46f2dbfcf41-0001-94f7386dbbd6.json",
           "start": 0,
-          "count": 2,
-          "sha256": "ab5b37ebde86d9b36f41b6464f9d3ead786d618677e2c0e06b54aa7390ac5c00"
+          "count": 4,
+          "sha256": "94f7386dbbd655d37d06f6aa43e10dd80bca03cd4b4fc2381b7764bbecbead96"
         }
       ]
     },
     "unmet-relational-needs": {
       "key": "unmet-relational-needs",
-      "count": 2,
+      "count": 1,
       "chunks": [
         {
-          "url": "buckets/ecd3978f1e0c1aaf-0001-ec29351b866a.json",
+          "url": "buckets/ecd3978f1e0c1aaf-0001-d585e8dcc0e4.json",
           "start": 0,
-          "count": 2,
-          "sha256": "ec29351b866aab3f0db4183aecd7c621124bb2e38c735647d5b50f59661e1f68"
+          "count": 1,
+          "sha256": "d585e8dcc0e426d4ece1c48e33d505171238d07dd7b4c24a71e1996858be6e0b"
         }
       ]
     },
@@ -133,10 +121,10 @@
       "count": 1,
       "chunks": [
         {
-          "url": "buckets/45b9314f0932de0d-0001-0f36c5eab3d8.json",
+          "url": "buckets/45b9314f0932de0d-0001-be7da058049d.json",
           "start": 0,
           "count": 1,
-          "sha256": "0f36c5eab3d8ec1f032f802cdb942a418489defda4a52e259df1c2e533f78526"
+          "sha256": "be7da058049d1108fd324cead61d77a8d4e11b4f8b7e2f5ec2a0f7ae2b7874ee"
         }
       ]
     }

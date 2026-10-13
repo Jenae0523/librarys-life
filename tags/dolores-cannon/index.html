@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -609,9 +641,10 @@
           </header>
 
 
-          <div class="row" data-tag-pagination-list>
+          <div class="tag-node-content-list" data-tag-pagination-list>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/human-body-healing/reconnect-with-body-body-soul-relationship.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -645,7 +678,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/soul-uncomfortable-in-body.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -679,39 +714,39 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
-              <a href="/micro-notes/2026/0730-body-creates-the-self.html"
-                 class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-                <p class="article-card-meta">
-                  微笔记
-                  <span aria-hidden="true"> · </span>
-                  2026年8月1日
 
 
-                </p>
+            <div class="tag-node-micro-note" data-tag-pagination-item>
+              
+              
+  
+  <a class="micro-note-card" href="/micro-notes/2026/0730-body-creates-the-self.html">
+    
+      <span class="micro-note-card__cover-wrap" aria-hidden="true">
+        <img
+          class="micro-note-card__cover"
+          src="https://img.librarys.life/img/articles-covers/micro-notes/2026/0730-body-creates-the-self.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        >
+      </span>
+    
+    <div class="micro-note-card__content">
+      <span class="micro-note-card__meta">微笔记 · 2026年8月1日</span>
+      <h2 class="micro-note-card__title">为什么总感觉我不属于这里？身体限制了灵魂，还是创造了“我”？</h2>
+      
+        <span class="micro-note-card__description">朵洛莉丝·侃南记录了一个抗拒进入人类身体的催眠个案：玛莉眷恋无形、无边界的合一状态，却必须学习触摸、选择、关系与责任。结合 DATRE 对“观察者”的不同定义，提出：身体不只限制灵魂，也使个体性第一次从整体中显现。</span>
+      
+    </div>
+  </a>
 
 
-                <img
-                  src="https://img.librarys.life/img/articles-covers/micro-notes/2026/0730-body-creates-the-self.jpg"
-                  alt="朵洛莉丝·侃南：为什么总感觉我不属于这里？ 身体限制了灵魂，还是创造了“我”？"
-                  class="article-cover">
-
-
-                <h3 class="article-title">
-
-                    <span class="title-line1">朵洛莉丝·侃南：为什么总感觉我不属于这里？</span>
-
-
-                    <span class="title-line2">身体限制了灵魂，还是创造了“我”？</span>
-
-
-                </h3>
-
-              </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-memory-shared-memory-simultaneous-time.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -745,7 +780,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/multiple-selves-personality-fragmentation-inner-integration.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -779,7 +816,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/gender-energy-soul-identity.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -813,39 +852,39 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
-              <a href="/all-articles/courses/creation-manifestation/focus-expands-thought-energy-possibility-sphere.html"
-                 class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
-
-                <p class="article-card-meta">
-                  微笔记
-                  <span aria-hidden="true"> · </span>
-                  2026年7月18日
 
 
-                </p>
+            <div class="tag-node-micro-note" data-tag-pagination-item>
+              
+              
+  
+  <a class="micro-note-card" href="/all-articles/courses/creation-manifestation/focus-expands-thought-energy-possibility-sphere.html">
+    
+      <span class="micro-note-card__cover-wrap" aria-hidden="true">
+        <img
+          class="micro-note-card__cover"
+          src="https://img.librarys.life/img/articles-covers/focus-expands-thought-energy-possibility-sphere.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        >
+      </span>
+    
+    <div class="micro-note-card__content">
+      <span class="micro-note-card__meta">微笔记 · 2026年7月18日</span>
+      <h2 class="micro-note-card__title">你所专注的，会被你的能量喂养｜思想如何参与创造现实？</h2>
+      
+        <span class="micro-note-card__description">一个念头如何从瞬间的想法，变成持续影响现实的力量？朵洛莉丝·侃南的资料以“可能性的能量球”比喻思想：反复专注会不断强化某种可能，使它更容易进入行动和物质经验。练习的重点不是压抑负面念头，而是看见它、停止喂养，并用更清明、更有建设性的思想重新选择方向。</span>
+      
+    </div>
+  </a>
 
 
-                <img
-                  src="https://img.librarys.life/img/articles-covers/focus-expands-thought-energy-possibility-sphere.jpg"
-                  alt="你所专注的，会被你的能量喂养 思想如何参与创造现实？"
-                  class="article-cover">
-
-
-                <h3 class="article-title">
-
-                    <span class="title-line1">你所专注的，会被你的能量喂养</span>
-
-
-                    <span class="title-line2">思想如何参与创造现实？</span>
-
-
-                </h3>
-
-              </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/multiverse/multidimensional-universe-time-nonlinear-parallel-lives-consciousness-ufo.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -879,7 +918,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/multiverse/parallel-universe-every-choice-creates-new-reality-multiverse-karma-explained.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -913,7 +954,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/tapestry-room-akashic-records-soul-reincarnation-karma-earth.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -947,7 +990,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/war-trauma-soul-reincarnation-subconscious-healing-starseed-case-study.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -981,7 +1026,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/star-children-hypnosis-past-life-soul-mission.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1015,7 +1062,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1049,7 +1098,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/beyond-karma-wheel-human-consciousness-dimensions-light-awakening.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1083,7 +1134,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/light-beings-healing-energy-how-to-use-healing-energy-dolores-cannon-hypnosis-report.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1117,7 +1170,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/cell-consciousness-healing-beyond-germs-self-exploration.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1151,7 +1206,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/human-body-healing/sleep-self-healing-fifth-dimension-higher-self-dreams.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1185,7 +1242,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/new-earth-ascension/photon-waves-human-consciousness-evolution-ascension-guide.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1219,7 +1278,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-collective-consciousness-astral-projection.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1253,7 +1314,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-karma-health-cases.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1287,7 +1350,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-body-signs-soul-healing.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1321,7 +1386,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/41-soul-evolution-earth-cycle-reincarnation-consciousness-unconditional-love-stage.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1355,7 +1422,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/40-soul-entry-birth-plan-reincarnation-hypnosis-family-choice-memory-loss.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1389,7 +1458,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/39-soul-switching-reincarnation-hypnosis-case-study-earth-school-consciousness-transfer.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1423,7 +1494,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/38-soul-imprints-akashic-records-reincarnation-christ-consciousness-evolution.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1457,7 +1530,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/37-astral-council-guides-future-events-soul-transition-near-death-experience.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1491,7 +1566,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/36-soul-council-astral-plane-cosmic-structure-reincarnation-karma-guides-evolution.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1525,7 +1602,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/35-karma-law-universe-soul-learning-reincarnation-evolution-consciousness.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1559,7 +1638,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/34-spirit-guides-soul-family-reincarnation-planning-communication-astral-guidance.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1593,7 +1674,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/33-soul-echo-ghost-energy-reflection-astral-guide-spirit-phenomena-explained.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1627,7 +1710,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/32-do-demons-exist-energy-view-entity-possession-negative-energy-cleansing-white-light-protection.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1661,7 +1746,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/31-jesus-death-meaning-trinity-holy-spirit-divine-energy-spiritual-interpretation.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1695,7 +1782,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/30-cosmic-source-god-consciousness-energy-grid-multiverse-spiritual-councils.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1729,7 +1818,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/29-soul-reincarnation-energy-laws-spiral-loop-astral-cycle-free-will.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1763,7 +1854,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/28-guardian-angels-spirit-guides-soul-frequency-difference-spiritual-assistance-system.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1797,7 +1890,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/27-suicide-karma-soul-contract-reincarnation-learning-purpose-free-will.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1831,7 +1926,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/26-karma-reincarnation-hitler-jack-the-ripper-soul-contract-extreme-lives.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1865,7 +1962,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/25-karma-reincarnation-school-soul-healing-violent-behavior-cycle-growth-system.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1899,7 +1998,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/24-karma-law-crime-reincarnation-soul-punishment-past-life-healing-relationships.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1933,7 +2034,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/23-reincarnation-karma-life-suffering-soul-learning-no-punishment-law.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1967,7 +2070,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/22-is-hell-created-by-mind-negative-energy-afterlife-near-death-experience-explained.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2001,7 +2106,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/21-how-supernatural-phenomena-work-multidimensional-reality-frequency-consciousness.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2035,7 +2142,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/20-soul-levels-reincarnation-system-spiritual-schools-earth-classroom-bodhisattva.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2069,7 +2178,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/19-soul-levels-group-soul-animal-consciousness-human-reincarnation-dual-worlds.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2103,7 +2214,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/18-nature-spirits-elementals-earth-vibration-evolution-group-souls-fairies.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2137,7 +2250,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/17-soul-hierarchy-elementals-fairies-earth-plane-astral-negative-entities.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2171,7 +2286,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/15-astral-plane-garden-archetype-earth-reflection-spiritual-reality-information-control.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2205,7 +2322,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/16-spiritual-levels-soul-evolution-seventh-plane-creativity-ascension-pyramid-consciousness.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2239,7 +2358,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/14-soul-reincarnation-system-astral-plane-evolution-heaven-hell-jesus-buddha.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2273,7 +2394,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/13-astral-plane-levels-low-middle-high-soul-frequency-reincarnation-system.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2307,7 +2430,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/12-spiritual-library-akashic-records-soul-evolution-viewing-room.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2341,7 +2466,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/11-akashic-records-soul-tapestry-fate-thread-consciousness-structure.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2375,7 +2502,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/10-spiritual-healing-hall-light-energy-aura-etheric-body-repair.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2409,7 +2538,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/9-reincarnation-karma-suicide-disability-soul-purpose-earth-life.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2443,7 +2574,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/8-karma-rest-life-reincarnation-soul-resting-phase-explained.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2477,7 +2610,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/7-akashic-records-soul-memory-energy-information-storage-mechanism.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2511,7 +2646,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/6-soul-plan-before-birth-karma-free-will-reincarnation-purpose.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2545,7 +2682,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/5-afterlife-soul-school-reincarnation-learning-paradise-vs-heaven.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2579,7 +2718,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/4-near-death-experience-afterlife-soul-council-energy-consciousness.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2613,7 +2754,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/3-what-happens-after-death-soul-journey-afterlife-reincarnation-guide.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2647,7 +2790,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/2-death-experience-nde-soul-out-of-body-silver-cord-explained.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2681,7 +2826,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/1-past-life-regression-death-experience-soul-afterlife-hypnosis.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -2714,6 +2861,7 @@
 
               </a>
             </div>
+
 
           </div>
           <nav class="site-pagination"
@@ -20975,13 +21123,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -21016,7 +21164,11 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -21045,6 +21197,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -21101,8 +21255,6 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -21236,7 +21388,9 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

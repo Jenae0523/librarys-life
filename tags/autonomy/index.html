@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -606,6 +638,9 @@
       <span aria-hidden="true"> / </span>
     
       <a class="tag-node-link" href="/tags/time-limits-and-prioritization/">时间有限与优先级取舍</a>
+      <span aria-hidden="true"> / </span>
+    
+      <a class="tag-node-link" href="/tags/free-will/">自由意志</a>
       
     
   </p>
@@ -623,63 +658,56 @@
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0036">
-            <blockquote>每当你决定把一部分时间用在某件事情上，就意味着牺牲所有那些你本来也可以选择、却没有选择的用法；而自愿作出这种牺牲，就是毫无保留地表明什么对你最重要。</blockquote>
+            <blockquote>每当你决定把一部分时间花在某件事上，就意味着放弃所有其他本可以用这段时间去做的事；而自愿作出这种取舍，就是毫无保留地表明，什么对你最重要。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Four Thousand Weeks》│ Oliver Burkeman</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0067">
-            <blockquote>一个不断分心的人其实并没有真正作出选择。他的注意力已经被并不关心其根本利益的力量接管。</blockquote>
+            <blockquote>一个分心的人其实并没有真正作出选择。他的注意力已经被那些并不真正在乎他利益的力量接管。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Four Thousand Weeks》│ Oliver Burkeman</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0089">
-            <blockquote>拒绝的能力和成功接受反馈的能力，两者并非平行线；其实拒绝是接受的核心，因为如果你不能说“不”，也就不可能自由地说“好”。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《谢谢你的指教》│ 道格拉斯·史东、席拉·西恩</figcaption>
+            <blockquote>能够说“不”，恰恰是善于接受反馈的核心。因为如果你不能说“不”，那么你说“好”也就不是自由选择的。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Thanks for the Feedback》│ Douglas Stone、Sheila Heen</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0119">
+            <blockquote>两个共同生活的人若都是自由的，就能让彼此的人生更加丰富；而各自的工作，也为彼此保持独立提供了保障。经济独立的妻子能让丈夫免受婚姻的奴役，因为妻子的依附与受支配，也会反过来把丈夫困在另一种婚姻束缚里。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Second Sex》│ Simone de Beauvoir</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0160">
-            <blockquote>只要情况允许，就不要替孩子解决问题，也不要急着解救他们，即使他们犯了小错或作出了不那么好的选择。毕竟，你此刻的目标不是让孩子每次都作出完美决定，而是让他们负责思考和自我控制的大脑得到充分发展。</blockquote>
+            <blockquote>只要情况允许，就尽量不要替孩子解决问题，也别急着替他们解围，即使他们犯了小错，或作出了不太理想的选择。毕竟，你的目标不是让孩子现在每次都作出完美决定，而是让他们大脑中负责思考和决策的部分得到更好的发展。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Whole-Brain Child》│ Daniel J. Siegel、Tina Payne Bryson</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0162">
-            <blockquote>一个真正的选择，其潜台词应该是：‘我和你站在一边。有件事我希望你做或者不做，但与其命令你，我更愿意让你对此拥有一些决定权。’</blockquote>
+            <blockquote>给孩子提供选择时，最理想的潜台词应该是：“我和你站在一边。我希望你做或不做某件事，但与其直接命令你，我更愿意让你参与决定，给你一些选择的余地。”</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《How to Talk So Kids Will Listen &amp; Listen So Kids Will Talk》│ Adele Faber、Elaine Mazlish</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0169">
-            <blockquote>如果双方都在履行自己的职责，青少年会争取比父母愿意给予的更多自由和弹性，而父母会有所约束，拒绝部分要求并执行合理的规则。如果你正生活在这种张力中，不必灰心——这通常意味着一切正在按照应有的方式发展。</blockquote>
+            <blockquote>如果双方都在做自己该做的事，青少年会争取比父母愿意给予的更多自由和弹性，而父母则会有所约束，拒绝一些要求，并执行合理的规则。如果你正处在这种张力中，不必灰心——这通常意味着一切正在按照应有的方式发展。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Emotional Lives of Teenagers》│ Lisa Damour</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
-          <a href="/light-quotes/?quote=lq-0186">
-            <blockquote>大多数人之所以显得“需求太多”，只是因为他们的需求没有得到满足。情感需求得到满足后——而且越早越好——他们通常会把注意力转向外部世界。彼此依靠得越有效，人反而越独立，也越敢于探索。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《Attached》│ Amir Levine、Rachel Heller</figcaption>
-          </a>
-        </figure>
-      
-        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
-          <a href="/light-quotes/?quote=lq-0188">
-            <blockquote>安全基地意味着：你知道身后有一个支持你的人，可以完全依靠，并能在需要时转向他。正是这种确信，使一个人能够探索、成长和学习。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《Attached》│ Amir Levine、Rachel Heller</figcaption>
-          </a>
-        </figure>
-      
-        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0199">
-            <blockquote>真正的支持不是修理另一个人，而是在他的痛苦和选择中站在身旁。我们尊重他的自由，同时也在他需要时伸出援手。</blockquote>
+            <blockquote>真正的支持，不是急着替对方解决问题或代替他作决定，而是在他经历痛苦或抉择时陪伴他。我们尊重他的自由，也在他需要帮助时伸出援手。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《How to Be an Adult in Relationships》│ David Richo</figcaption>
           </a>
         </figure>
@@ -736,13 +764,13 @@
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -777,7 +805,11 @@
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -806,6 +838,8 @@
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -862,8 +896,6 @@
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -997,7 +1029,9 @@
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

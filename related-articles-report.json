@@ -1090,16 +1090,21 @@
           "title": "多重真相揭秘：911事件、阴谋论、超权者与意识如何共同创造现实",
           "url": "/all-articles/courses/creation-manifestation/multiple-truths-911-conspiracy-consciousness-reality-creation.html",
           "source": "auto",
-          "score": 46,
-          "rank_score": 92,
+          "score": 49,
+          "rank_score": 98,
           "structural_score": 0,
-          "semantic_score": 46,
+          "semantic_score": 49,
           "reason": "共同关注「集体意识」",
           "matched_by": [
             {
               "type": "tag",
               "score": 24,
               "label": "平行宇宙"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "现实创造"
             },
             {
               "type": "keyword",
@@ -1110,11 +1115,6 @@
               "type": "related_tag",
               "score": 8,
               "label": "通灵信息"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "现实创造"
             }
           ]
         },
@@ -5270,10 +5270,10 @@
           "title": "星光议会与指导灵系统：未来预测、事件干预与灵魂过渡机制解析",
           "url": "/all-articles/books/between-death-life/37-astral-council-guides-future-events-soul-transition-near-death-experience.html",
           "source": "auto",
-          "score": 72,
-          "rank_score": 97.5,
+          "score": 81,
+          "rank_score": 115.5,
           "structural_score": 31,
-          "semantic_score": 41,
+          "semantic_score": 50,
           "reason": "共同关注「灵性成长」",
           "matched_by": [
             {
@@ -5287,6 +5287,11 @@
               "label": "《生死之间》"
             },
             {
+              "type": "tag",
+              "score": 12,
+              "label": "自由意志"
+            },
+            {
               "type": "identity",
               "score": 10,
               "label": "个人指引系统"
@@ -5297,30 +5302,25 @@
               "label": "催眠回溯"
             },
             {
-              "type": "tag",
+              "type": "text",
               "score": 6,
-              "label": "催眠回溯"
+              "label": "自由意志"
             },
             {
               "type": "parent",
               "score": 5,
               "label": "好书解读"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "灵性成长"
             }
           ]
         },
         {
-          "title": "地狱是心智创造的吗？灵魂能量、负面振动与濒死经验的深层解析",
-          "url": "/all-articles/books/between-death-life/22-is-hell-created-by-mind-negative-energy-afterlife-near-death-experience-explained.html",
+          "title": "灵魂如何进入身体：出生前计划、家庭选择与转世记忆的回溯催眠解析",
+          "url": "/all-articles/books/between-death-life/40-soul-entry-birth-plan-reincarnation-hypnosis-family-choice-memory-loss.html",
           "source": "auto",
-          "score": 65,
-          "rank_score": 83.5,
+          "score": 73,
+          "rank_score": 99.5,
           "structural_score": 31,
-          "semantic_score": 34,
+          "semantic_score": 42,
           "reason": "共同关注「灵性成长」",
           "matched_by": [
             {
@@ -5329,19 +5329,19 @@
               "label": "《生死之间》"
             },
             {
+              "type": "keyword",
+              "score": 16,
+              "label": "灵性成长"
+            },
+            {
               "type": "tag",
               "score": 12,
-              "label": "频率"
+              "label": "自由意志"
             },
             {
               "type": "identity",
               "score": 10,
               "label": "《生死之间》"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性成长"
             },
             {
               "type": "related_tag",
@@ -5351,7 +5351,7 @@
             {
               "type": "text",
               "score": 6,
-              "label": "频率"
+              "label": "自由意志"
             },
             {
               "type": "parent",
@@ -5361,18 +5361,23 @@
           ]
         },
         {
-          "title": "觉醒与地球未来：提升振动频率与灵性成长指南",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html",
+          "title": "朵洛莉丝·侃南：光子波协助人类意识的转变 │ 我们正处于地球进化的关键时刻",
+          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/photon-waves-human-consciousness-evolution-ascension-guide.html",
           "source": "auto",
-          "score": 44,
-          "rank_score": 73,
+          "score": 47,
+          "rank_score": 79,
           "structural_score": 10,
-          "semantic_score": 34,
+          "semantic_score": 37,
           "reason": "共同关注「灵性成长」",
           "matched_by": [
             {
               "type": "tag",
               "score": 12,
+              "label": "频率"
+            },
+            {
+              "type": "text",
+              "score": 9,
               "label": "频率"
             },
             {
@@ -5384,11 +5389,6 @@
               "type": "related_tag",
               "score": 8,
               "label": "催眠回溯"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "频率"
             },
             {
               "type": "identity",
@@ -5507,14 +5507,14 @@
           ]
         },
         {
-          "title": "阿卡西记录与生命的挂毯：灵魂轮回、业力与地球转世的真相",
-          "url": "/all-articles/dolores-cannon-hypnosis/tapestry-room-akashic-records-soul-reincarnation-karma-earth.html",
+          "title": "灵魂如何进入身体：出生前计划、家庭选择与转世记忆的回溯催眠解析",
+          "url": "/all-articles/books/between-death-life/40-soul-entry-birth-plan-reincarnation-hypnosis-family-choice-memory-loss.html",
           "source": "auto",
-          "score": 66,
-          "rank_score": 93,
-          "structural_score": 26,
+          "score": 71,
+          "rank_score": 95.5,
+          "structural_score": 31,
           "semantic_score": 40,
-          "reason": "共同关注「灵魂轮回」",
+          "reason": "共同关注「回溯催眠」",
           "matched_by": [
             {
               "type": "tag",
@@ -5524,12 +5524,17 @@
             {
               "type": "category",
               "score": 16,
-              "label": "灵魂旅程 / 生死轮回"
+              "label": "《生死之间》"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《生死之间》"
             },
             {
               "type": "keyword",
               "score": 8,
-              "label": "灵魂轮回"
+              "label": "回溯催眠"
             },
             {
               "type": "related_tag",
@@ -5539,17 +5544,12 @@
             {
               "type": "text",
               "score": 6,
-              "label": "灵魂轮回"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "朵洛莉丝·侃南"
+              "label": "自由意志"
             },
             {
               "type": "parent",
               "score": 5,
-              "label": "朵洛莉丝·侃南 / 催眠报告"
+              "label": "好书解读"
             }
           ]
         }
@@ -6262,16 +6262,16 @@
           "title": "灵魂如何进入身体：出生前计划、家庭选择与转世记忆的回溯催眠解析",
           "url": "/all-articles/books/between-death-life/40-soul-entry-birth-plan-reincarnation-hypnosis-family-choice-memory-loss.html",
           "source": "auto",
-          "score": 76,
-          "rank_score": 105.5,
+          "score": 82,
+          "rank_score": 117.5,
           "structural_score": 31,
-          "semantic_score": 45,
+          "semantic_score": 51,
           "reason": "共同关注「回溯催眠」",
           "matched_by": [
             {
               "type": "tag",
-              "score": 18,
-              "label": "业力法则"
+              "score": 24,
+              "label": "自由意志"
             },
             {
               "type": "category",
@@ -6601,10 +6601,10 @@
           "title": "星光议会与指导灵系统：未来预测、事件干预与灵魂过渡机制解析",
           "url": "/all-articles/books/between-death-life/37-astral-council-guides-future-events-soul-transition-near-death-experience.html",
           "source": "auto",
-          "score": 79,
-          "rank_score": 111.5,
+          "score": 82,
+          "rank_score": 117.5,
           "structural_score": 31,
-          "semantic_score": 48,
+          "semantic_score": 51,
           "reason": "共同关注「业力系统」",
           "matched_by": [
             {
@@ -6636,6 +6636,11 @@
               "type": "parent",
               "score": 5,
               "label": "好书解读"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "自由意志"
             }
           ]
         },
@@ -6700,10 +6705,10 @@
           "title": "灵魂议会与宇宙协作系统：转世期间的高层规划、业力调整与灵魂进化结构解析",
           "url": "/all-articles/books/between-death-life/36-soul-council-astral-plane-cosmic-structure-reincarnation-karma-guides-evolution.html",
           "source": "auto",
-          "score": 79,
-          "rank_score": 111.5,
+          "score": 82,
+          "rank_score": 117.5,
           "structural_score": 31,
-          "semantic_score": 48,
+          "semantic_score": 51,
           "reason": "共同关注「业力系统」",
           "matched_by": [
             {
@@ -6735,12 +6740,64 @@
               "type": "parent",
               "score": 5,
               "label": "好书解读"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "自由意志"
             }
           ]
         },
         {
-          "title": "灵魂转世的真相：电脑室系统、轮回机制与灵魂进化终极目标解析",
-          "url": "/all-articles/books/between-death-life/14-soul-reincarnation-system-astral-plane-evolution-heaven-hell-jesus-buddha.html",
+          "title": "守护天使与指导灵的真相：灵魂协助系统、振动识别与灵性成长机制解析",
+          "url": "/all-articles/books/between-death-life/28-guardian-angels-spirit-guides-soul-frequency-difference-spiritual-assistance-system.html",
+          "source": "auto",
+          "score": 81,
+          "rank_score": 115.5,
+          "structural_score": 31,
+          "semantic_score": 50,
+          "reason": "共同关注「业力系统」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 24,
+              "label": "业力系统"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "自由意志"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "个人指引系统"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "自由意志"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "灵魂如何进入身体：出生前计划、家庭选择与转世记忆的回溯催眠解析",
+          "url": "/all-articles/books/between-death-life/40-soul-entry-birth-plan-reincarnation-hypnosis-family-choice-memory-loss.html",
           "source": "auto",
           "score": 76,
           "rank_score": 105.5,
@@ -6751,7 +6808,7 @@
             {
               "type": "tag",
               "score": 18,
-              "label": "死后世界"
+              "label": "自由意志"
             },
             {
               "type": "category",
@@ -6781,49 +6838,7 @@
             {
               "type": "text",
               "score": 3,
-              "label": "灵魂转世"
-            }
-          ]
-        },
-        {
-          "title": "觉醒与地球未来：提升振动频率与灵性成长指南",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/awakening-human-consciousness-vibration-future.html",
-          "source": "auto",
-          "score": 41,
-          "rank_score": 67,
-          "structural_score": 10,
-          "semantic_score": 31,
-          "reason": "共同关注「灵性成长」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "集体意识"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性成长"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "催眠回溯"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "朵洛莉丝·侃南"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "朵洛莉丝·侃南 / 催眠报告"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "灵性成长"
+              "label": "自由意志"
             }
           ]
         }
@@ -7326,16 +7341,16 @@
           "title": "灵魂规划与指导灵系统：转世前协议、灵魂家族与日常引导机制解析",
           "url": "/all-articles/books/between-death-life/34-spirit-guides-soul-family-reincarnation-planning-communication-astral-guidance.html",
           "source": "auto",
-          "score": 76,
-          "rank_score": 105.5,
+          "score": 82,
+          "rank_score": 117.5,
           "structural_score": 31,
-          "semantic_score": 45,
+          "semantic_score": 51,
           "reason": "共同关注「回溯催眠」",
           "matched_by": [
             {
               "type": "tag",
-              "score": 18,
-              "label": "业力法则"
+              "score": 24,
+              "label": "自由意志"
             },
             {
               "type": "category",
@@ -7370,39 +7385,29 @@
           ]
         },
         {
-          "title": "自杀与灵魂业力：毁约、轮回学习与无法逃避的因果机制解析",
-          "url": "/all-articles/books/between-death-life/27-suicide-karma-soul-contract-reincarnation-learning-purpose-free-will.html",
+          "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
+          "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
           "source": "auto",
-          "score": 76,
-          "rank_score": 105.5,
-          "structural_score": 31,
-          "semantic_score": 45,
-          "reason": "共同关注「回溯催眠」",
+          "score": 42,
+          "rank_score": 76.5,
+          "structural_score": 5,
+          "semantic_score": 37,
+          "reason": "共同关注「灵魂转世」",
           "matched_by": [
             {
               "type": "tag",
               "score": 18,
-              "label": "业力法则"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《生死之间》"
+              "label": "自由意志"
             },
             {
               "type": "keyword",
-              "score": 16,
-              "label": "回溯催眠"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《生死之间》"
+              "score": 8,
+              "label": "灵魂转世"
             },
             {
               "type": "related_tag",
               "score": 8,
-              "label": "催眠回溯"
+              "label": "灵魂转世"
             },
             {
               "type": "parent",
@@ -7412,7 +7417,7 @@
             {
               "type": "text",
               "score": 3,
-              "label": "回溯催眠"
+              "label": "自由意志"
             }
           ]
         }
@@ -7729,34 +7734,34 @@
       "manual_issues": [],
       "recommendations": [
         {
-          "title": "罪与业力的真相：犯罪行为、前世因果与灵魂自我惩罚机制解析",
-          "url": "/all-articles/books/between-death-life/24-karma-law-crime-reincarnation-soul-punishment-past-life-healing-relationships.html",
+          "title": "阿卡西记录与生命的挂毯：灵魂轮回、业力与地球转世的真相",
+          "url": "/all-articles/dolores-cannon-hypnosis/tapestry-room-akashic-records-soul-reincarnation-karma-earth.html",
           "source": "auto",
-          "score": 84,
-          "rank_score": 121.5,
-          "structural_score": 31,
-          "semantic_score": 53,
+          "score": 83,
+          "rank_score": 127,
+          "structural_score": 26,
+          "semantic_score": 57,
           "reason": "共同关注「业力法则」",
           "matched_by": [
             {
-              "type": "keyword",
-              "score": 24,
-              "label": "业力法则"
-            },
-            {
               "type": "tag",
-              "score": 18,
-              "label": "业力法则"
+              "score": 24,
+              "label": "自由意志"
             },
             {
               "type": "category",
               "score": 16,
-              "label": "《生死之间》"
+              "label": "灵魂旅程 / 生死轮回"
             },
             {
-              "type": "identity",
-              "score": 10,
-              "label": "《生死之间》"
+              "type": "keyword",
+              "score": 16,
+              "label": "业力法则"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "自由意志"
             },
             {
               "type": "related_tag",
@@ -7764,20 +7769,20 @@
               "label": "催眠回溯"
             },
             {
-              "type": "parent",
+              "type": "identity",
               "score": 5,
-              "label": "好书解读"
+              "label": "朵洛莉丝·侃南"
             },
             {
-              "type": "text",
-              "score": 3,
-              "label": "业力法则"
+              "type": "parent",
+              "score": 5,
+              "label": "朵洛莉丝·侃南 / 催眠报告"
             }
           ]
         },
         {
-          "title": "轮回与人生苦乐真相：业力、灵魂学习与“没有惩罚”的宇宙法则解析",
-          "url": "/all-articles/books/between-death-life/23-reincarnation-karma-life-suffering-soul-learning-no-punishment-law.html",
+          "title": "罪与业力的真相：犯罪行为、前世因果与灵魂自我惩罚机制解析",
+          "url": "/all-articles/books/between-death-life/24-karma-law-crime-reincarnation-soul-punishment-past-life-healing-relationships.html",
           "source": "auto",
           "score": 84,
           "rank_score": 121.5,
@@ -7826,26 +7831,26 @@
           "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
           "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
           "source": "auto",
-          "score": 50,
-          "rank_score": 92.5,
+          "score": 56,
+          "rank_score": 104.5,
           "structural_score": 5,
-          "semantic_score": 45,
+          "semantic_score": 51,
           "reason": "共同关注「业力法则」",
           "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "自由意志"
+            },
             {
               "type": "keyword",
               "score": 16,
               "label": "业力法则"
             },
             {
-              "type": "tag",
-              "score": 12,
-              "label": "业力法则"
-            },
-            {
               "type": "text",
               "score": 9,
-              "label": "业力法则"
+              "label": "自由意志"
             },
             {
               "type": "related_tag",
@@ -8706,6 +8711,43 @@
       "manual_issues": [],
       "recommendations": [
         {
+          "title": "灵魂出生前计划与业力法则：命运是注定的吗？为什么还要转世？",
+          "url": "/all-articles/books/between-death-life/6-soul-plan-before-birth-karma-free-will-reincarnation-purpose.html",
+          "source": "auto",
+          "score": 56,
+          "rank_score": 104.5,
+          "structural_score": 5,
+          "semantic_score": 51,
+          "reason": "共同关注「业力法则」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "自由意志"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "业力法则"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "业力法则"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
           "title": "身体业力的3种类型，凯西解读中的业力法则、潜意识与身心关系的案例",
           "url": "/all-articles/books/many-mansions/body-karma-three-types-edgar-cayce.html",
           "source": "auto",
@@ -8753,71 +8795,29 @@
           ]
         },
         {
-          "title": "灵魂出生前计划与业力法则：命运是注定的吗？为什么还要转世？",
-          "url": "/all-articles/books/between-death-life/6-soul-plan-before-birth-karma-free-will-reincarnation-purpose.html",
+          "title": "阿卡西记录与生命的挂毯：灵魂轮回、业力与地球转世的真相",
+          "url": "/all-articles/dolores-cannon-hypnosis/tapestry-room-akashic-records-soul-reincarnation-karma-earth.html",
           "source": "auto",
-          "score": 50,
-          "rank_score": 92.5,
-          "structural_score": 5,
+          "score": 45,
+          "rank_score": 90,
+          "structural_score": 0,
           "semantic_score": 45,
           "reason": "共同关注「业力法则」",
           "matched_by": [
             {
+              "type": "tag",
+              "score": 18,
+              "label": "自由意志"
+            },
+            {
               "type": "keyword",
               "score": 16,
               "label": "业力法则"
             },
             {
-              "type": "tag",
-              "score": 12,
-              "label": "业力法则"
-            },
-            {
-              "type": "text",
-              "score": 9,
-              "label": "业力法则"
-            },
-            {
               "type": "related_tag",
               "score": 8,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            }
-          ]
-        },
-        {
-          "title": "自杀与灵魂业力：毁约、轮回学习与无法逃避的因果机制解析",
-          "url": "/all-articles/books/between-death-life/27-suicide-karma-soul-contract-reincarnation-learning-purpose-free-will.html",
-          "source": "auto",
-          "score": 44,
-          "rank_score": 80.5,
-          "structural_score": 5,
-          "semantic_score": 39,
-          "reason": "共同关注「因果法则」",
-          "matched_by": [
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "因果法则"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "业力法则"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "《生死之间》"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
+              "label": "灵魂转世"
             },
             {
               "type": "text",
@@ -8962,16 +8962,16 @@
           "title": "当“觉醒”成为商品：如何识别真正的灵性导师与安全实践",
           "url": "/all-articles/muyu-brief/2-awakening-as-commodity.html",
           "source": "auto",
-          "score": 34,
-          "rank_score": 68,
+          "score": 42,
+          "rank_score": 84,
           "structural_score": 0,
-          "semantic_score": 34,
+          "semantic_score": 42,
           "reason": "共同关注「灵性觉醒」",
           "matched_by": [
             {
               "type": "tag",
-              "score": 18,
-              "label": "灵性觉醒"
+              "score": 26,
+              "label": "金钱"
             },
             {
               "type": "keyword",
@@ -9634,16 +9634,21 @@
           "title": "人类情绪的炼金之路：情绪产生的机制？情绪的力量与理性的恐惧",
           "url": "/all-articles/insight-awakening/emotional-awareness-hsp-activate-soul-matrix-potential-codes.html",
           "source": "auto",
-          "score": 89,
-          "rank_score": 116.5,
+          "score": 95,
+          "rank_score": 128.5,
           "structural_score": 41,
-          "semantic_score": 48,
+          "semantic_score": 54,
           "reason": "共同关注「灵魂矩阵」",
           "matched_by": [
             {
               "type": "series",
               "score": 20,
               "label": "异邦者"
+            },
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "自由意志"
             },
             {
               "type": "category",
@@ -9654,11 +9659,6 @@
               "type": "keyword",
               "score": 16,
               "label": "灵魂矩阵"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "意识扩展"
             },
             {
               "type": "text",
@@ -10027,16 +10027,21 @@
           "title": "阿卡西记录能看见未来吗？大角星人谈可能时间线与集体意识｜《大角星人文摘》第10集",
           "url": "/all-articles/alien-archives/arcturian/the-arcturian-anthology10-akashic-records-future-timelines.html",
           "source": "auto",
-          "score": 46,
-          "rank_score": 92,
+          "score": 49,
+          "rank_score": 98,
           "structural_score": 0,
-          "semantic_score": 46,
+          "semantic_score": 49,
           "reason": "共同关注「集体意识」",
           "matched_by": [
             {
               "type": "tag",
               "score": 24,
               "label": "平行宇宙"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "集体意识"
             },
             {
               "type": "keyword",
@@ -10047,11 +10052,6 @@
               "type": "related_tag",
               "score": 8,
               "label": "汤姆肯永"
-            },
-            {
-              "type": "text",
-              "score": 6,
-              "label": "集体意识"
             }
           ]
         },
@@ -10143,9 +10143,9 @@
           "title": "如何与身体重新连接？4个视角理解身体与灵魂的关系",
           "url": "/all-articles/courses/human-body-healing/reconnect-with-body-body-soul-relationship.html",
           "source": "auto",
-          "score": 54,
-          "rank_score": 108,
-          "structural_score": 0,
+          "score": 75,
+          "rank_score": 118.5,
+          "structural_score": 21,
           "semantic_score": 54,
           "reason": "共同关注「安诺德·朱迪斯」",
           "matched_by": [
@@ -10153,6 +10153,11 @@
               "type": "tag",
               "score": 24,
               "label": "身体觉察"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
             },
             {
               "type": "keyword",
@@ -10168,6 +10173,11 @@
               "type": "text",
               "score": 6,
               "label": "身体觉察"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
             }
           ]
         },
@@ -10175,12 +10185,17 @@
           "title": "哈达瑜伽智慧：清洁气脉如何帮助身体、呼吸与心恢复内在平衡",
           "url": "/all-articles/courses/human-body-healing/20260823-clean-nadi-shodhana.html",
           "source": "auto",
-          "score": 34,
-          "rank_score": 68,
-          "structural_score": 0,
+          "score": 55,
+          "rank_score": 78.5,
+          "structural_score": 21,
           "semantic_score": 34,
           "reason": "共同关注「中脉」",
           "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
             {
               "type": "tag",
               "score": 12,
@@ -10200,6 +10215,11 @@
               "type": "text",
               "score": 6,
               "label": "脉轮"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
             }
           ]
         },
@@ -10207,9 +10227,9 @@
           "title": "大天使迈克尔：如何接入超意识心智？发展你的心灵感应潜能 │ 为什么生命力被削弱？如何获得充足的能量？",
           "url": "/all-articles/courses/messages-of-light-archangel-mike/ascension-open-your-sacred-heart-stabilize-energy-field.html",
           "source": "auto",
-          "score": 28,
-          "rank_score": 56,
-          "structural_score": 0,
+          "score": 33,
+          "rank_score": 58.5,
+          "structural_score": 5,
           "semantic_score": 28,
           "reason": "共同关注「能量场」",
           "matched_by": [
@@ -10227,6 +10247,11 @@
               "type": "related_tag",
               "score": 8,
               "label": "意识扩展"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
             }
           ]
         }
@@ -10278,6 +10303,48 @@
           ]
         },
         {
+          "title": "安诺德·朱迪斯：能量如何成为生命经验？从身体、核心到脉轮",
+          "url": "/all-articles/courses/human-body-healing/20260807-anodea-judith-energy-body-core-chakras.html",
+          "source": "auto",
+          "score": 55,
+          "rank_score": 78.5,
+          "structural_score": 21,
+          "semantic_score": 34,
+          "reason": "共同关注「中脉」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "脉轮"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "中脉"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "自我认知"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "脉轮"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
+            }
+          ]
+        },
+        {
           "title": "揭秘道教炼金术② 如何修炼“气体身”？从采气，到炼气化神 │ 现代科学已证明“经络”存在？│ 抹大拉手稿23集",
           "url": "/all-articles/books/mary-magdalene/23-taoist-alchemy-how-to-cultivate-energy-body-breathing-to-spirit.html",
           "source": "auto",
@@ -10306,43 +10373,6 @@
               "type": "text",
               "score": 3,
               "label": "中脉"
-            }
-          ]
-        },
-        {
-          "title": "灵界疗愈殿堂揭秘：光能量疗法、以太体修复与灵魂疗愈系统解析",
-          "url": "/all-articles/books/between-death-life/10-spiritual-healing-hall-light-energy-aura-etheric-body-repair.html",
-          "source": "auto",
-          "score": 50,
-          "rank_score": 68.5,
-          "structural_score": 21,
-          "semantic_score": 29,
-          "reason": "都涉及「能量场」主题",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "能量场"
-            },
-            {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "冥想"
             }
           ]
         }
@@ -10617,9 +10647,9 @@
           "title": "安诺德·朱迪斯：能量如何成为生命经验？从身体、核心到脉轮",
           "url": "/all-articles/courses/human-body-healing/20260807-anodea-judith-energy-body-core-chakras.html",
           "source": "auto",
-          "score": 54,
-          "rank_score": 108,
-          "structural_score": 0,
+          "score": 75,
+          "rank_score": 118.5,
+          "structural_score": 21,
           "semantic_score": 54,
           "reason": "共同关注「身体觉察」",
           "matched_by": [
@@ -10627,6 +10657,11 @@
               "type": "tag",
               "score": 24,
               "label": "身体觉察"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "身体 / 能量场 / 疗愈实践"
             },
             {
               "type": "keyword",
@@ -10642,6 +10677,11 @@
               "type": "text",
               "score": 6,
               "label": "身体觉察"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "课程 / 创造奇迹生命"
             }
           ]
         },
@@ -10688,39 +10728,34 @@
           ]
         },
         {
-          "title": "疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈",
-          "url": "/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html",
+          "title": "朵洛莉丝·侃南：不适应身体的灵魂，想帮助人类却不愿接触人群",
+          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/soul-uncomfortable-in-body.html",
           "source": "auto",
-          "score": 46,
-          "rank_score": 53,
-          "structural_score": 26,
-          "semantic_score": 20,
-          "reason": "都涉及「身体疗愈」主题",
+          "score": 27,
+          "rank_score": 46.5,
+          "structural_score": 5,
+          "semantic_score": 22,
+          "reason": "共同关注「自我认知」",
           "matched_by": [
             {
-              "type": "category",
-              "score": 16,
-              "label": "身体 / 能量场 / 疗愈实践"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "身体疗愈"
+              "type": "keyword",
+              "score": 8,
+              "label": "自我认知"
             },
             {
               "type": "related_tag",
               "score": 8,
-              "label": "心理学"
+              "label": "催眠回溯"
+            },
+            {
+              "type": "tag",
+              "score": 6,
+              "label": "自我认知"
             },
             {
               "type": "identity",
               "score": 5,
-              "label": "埃德加·凯西"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "课程 / 创造奇迹生命"
+              "label": "朵洛莉丝·侃南"
             }
           ]
         }
@@ -11612,14 +11647,14 @@
       "manual_issues": [],
       "recommendations": [
         {
-          "title": "多维宇宙与时间真相：平行人生、UFO与意识本质的终极解释",
-          "url": "/all-articles/dolores-cannon-hypnosis/multiverse/multidimensional-universe-time-nonlinear-parallel-lives-consciousness-ufo.html",
+          "title": "阿卡西记录与生命的挂毯：灵魂轮回、业力与地球转世的真相",
+          "url": "/all-articles/dolores-cannon-hypnosis/tapestry-room-akashic-records-soul-reincarnation-karma-earth.html",
           "source": "auto",
-          "score": 69,
-          "rank_score": 69,
+          "score": 75,
+          "rank_score": 81,
           "structural_score": 46,
-          "semantic_score": 23,
-          "reason": "都涉及「平行宇宙」主题",
+          "semantic_score": 29,
+          "reason": "都涉及「自由意志」主题",
           "matched_by": [
             {
               "type": "series",
@@ -11627,14 +11662,14 @@
               "label": "《回旋宇宙系列》"
             },
             {
+              "type": "tag",
+              "score": 18,
+              "label": "自由意志"
+            },
+            {
               "type": "category",
               "score": 16,
               "label": "错综复杂的宇宙"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "平行宇宙"
             },
             {
               "type": "related_tag",
@@ -11654,19 +11689,19 @@
             {
               "type": "text",
               "score": 3,
-              "label": "平行宇宙"
+              "label": "自由意志"
             }
           ]
         },
         {
-          "title": "阿卡西记录与生命的挂毯：灵魂轮回、业力与地球转世的真相",
-          "url": "/all-articles/dolores-cannon-hypnosis/tapestry-room-akashic-records-soul-reincarnation-karma-earth.html",
+          "title": "朵洛莉丝·侃南：如果并不存在“前世”，催眠回溯看到的是什么？前世记忆，也可能是共享记忆",
+          "url": "/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-memory-shared-memory-simultaneous-time.html",
           "source": "auto",
-          "score": 66,
-          "rank_score": 63,
+          "score": 72,
+          "rank_score": 75,
           "structural_score": 46,
-          "semantic_score": 20,
-          "reason": "都涉及「业力法则」主题",
+          "semantic_score": 26,
+          "reason": "都涉及「自由意志」主题",
           "matched_by": [
             {
               "type": "series",
@@ -11681,11 +11716,16 @@
             {
               "type": "tag",
               "score": 12,
-              "label": "业力法则"
+              "label": "自由意志"
             },
             {
               "type": "related_tag",
               "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "text",
+              "score": 6,
               "label": "催眠回溯"
             },
             {
@@ -11701,29 +11741,29 @@
           ]
         },
         {
-          "title": "超越业力之轮：高维意识、光的频率与人类觉醒的真实机制",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/beyond-karma-wheel-human-consciousness-dimensions-light-awakening.html",
+          "title": "灵魂出生前计划与业力法则：命运是注定的吗？为什么还要转世？",
+          "url": "/all-articles/books/between-death-life/6-soul-plan-before-birth-karma-free-will-reincarnation-purpose.html",
           "source": "auto",
-          "score": 50,
-          "rank_score": 55,
-          "structural_score": 30,
-          "semantic_score": 20,
-          "reason": "都涉及「业力法则」主题",
+          "score": 42,
+          "rank_score": 69,
+          "structural_score": 10,
+          "semantic_score": 32,
+          "reason": "都涉及「自由意志」主题",
           "matched_by": [
             {
-              "type": "series",
-              "score": 20,
-              "label": "《回旋宇宙系列》"
-            },
-            {
               "type": "tag",
-              "score": 12,
-              "label": "业力法则"
+              "score": 18,
+              "label": "自由意志"
             },
             {
               "type": "related_tag",
               "score": 8,
               "label": "催眠回溯"
+            },
+            {
+              "type": "text",
+              "score": 6,
+              "label": "业力法则"
             },
             {
               "type": "identity",
@@ -13381,13 +13421,13 @@
           ]
         },
         {
-          "title": "自杀与灵魂业力：毁约、轮回学习与无法逃避的因果机制解析",
-          "url": "/all-articles/books/between-death-life/27-suicide-karma-soul-contract-reincarnation-learning-purpose-free-will.html",
+          "title": "灵魂出生前计划与业力法则：命运是注定的吗？为什么还要转世？",
+          "url": "/all-articles/books/between-death-life/6-soul-plan-before-birth-karma-free-will-reincarnation-purpose.html",
           "source": "auto",
-          "score": 62,
-          "rank_score": 85,
+          "score": 68,
+          "rank_score": 97,
           "structural_score": 26,
-          "semantic_score": 36,
+          "semantic_score": 42,
           "reason": "共同关注「前世今生」",
           "matched_by": [
             {
@@ -13401,19 +13441,19 @@
               "label": "前世今生"
             },
             {
+              "type": "tag",
+              "score": 12,
+              "label": "自由意志"
+            },
+            {
               "type": "related_tag",
               "score": 8,
               "label": "催眠回溯"
             },
             {
-              "type": "tag",
-              "score": 6,
-              "label": "催眠回溯"
-            },
-            {
               "type": "text",
               "score": 6,
-              "label": "催眠回溯"
+              "label": "自由意志"
             },
             {
               "type": "identity",
@@ -13428,19 +13468,19 @@
           ]
         },
         {
-          "title": "朵洛莉丝·侃南：不适应身体的灵魂，想帮助人类却不愿接触人群",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/soul-uncomfortable-in-body.html",
+          "title": "超越业力之轮：高维意识、光的频率与人类觉醒的真实机制",
+          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/beyond-karma-wheel-human-consciousness-dimensions-light-awakening.html",
           "source": "auto",
-          "score": 41,
-          "rank_score": 67,
-          "structural_score": 10,
-          "semantic_score": 31,
+          "score": 55,
+          "rank_score": 65,
+          "structural_score": 30,
+          "semantic_score": 25,
           "reason": "共同关注「催眠回溯」",
           "matched_by": [
             {
-              "type": "tag",
-              "score": 12,
-              "label": "自我认知"
+              "type": "series",
+              "score": 20,
+              "label": "《回旋宇宙系列》"
             },
             {
               "type": "keyword",
@@ -13450,6 +13490,11 @@
             {
               "type": "related_tag",
               "score": 8,
+              "label": "催眠回溯"
+            },
+            {
+              "type": "tag",
+              "score": 6,
               "label": "催眠回溯"
             },
             {
@@ -13634,16 +13679,16 @@
           "title": "灵魂出生前计划与业力法则：命运是注定的吗？为什么还要转世？",
           "url": "/all-articles/books/between-death-life/6-soul-plan-before-birth-karma-free-will-reincarnation-purpose.html",
           "source": "auto",
-          "score": 77,
-          "rank_score": 115,
+          "score": 83,
+          "rank_score": 127,
           "structural_score": 26,
-          "semantic_score": 51,
+          "semantic_score": 57,
           "reason": "共同关注「业力法则」",
           "matched_by": [
             {
               "type": "tag",
-              "score": 18,
-              "label": "业力法则"
+              "score": 24,
+              "label": "自由意志"
             },
             {
               "type": "category",
@@ -13730,49 +13775,34 @@
           ]
         },
         {
-          "title": "朵洛莉丝·侃南：光子波协助人类意识的转变 │ 我们正处于地球进化的关键时刻",
-          "url": "/all-articles/dolores-cannon-hypnosis/new-earth-ascension/photon-waves-human-consciousness-evolution-ascension-guide.html",
+          "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
+          "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
           "source": "auto",
-          "score": 65,
-          "rank_score": 85,
-          "structural_score": 30,
-          "semantic_score": 35,
-          "reason": "共同关注「星际种子」",
+          "score": 45,
+          "rank_score": 90,
+          "structural_score": 0,
+          "semantic_score": 45,
+          "reason": "共同关注「业力法则」",
           "matched_by": [
             {
-              "type": "series",
-              "score": 20,
-              "label": "《回旋宇宙系列》"
-            },
-            {
               "type": "tag",
-              "score": 13,
-              "label": "星际种子"
+              "score": 18,
+              "label": "自由意志"
             },
             {
               "type": "keyword",
-              "score": 8,
-              "label": "星际种子"
+              "score": 16,
+              "label": "业力法则"
             },
             {
               "type": "related_tag",
               "score": 8,
-              "label": "催眠回溯"
+              "label": "灵魂转世"
             },
             {
               "type": "text",
-              "score": 6,
-              "label": "星际种子"
-            },
-            {
-              "type": "identity",
-              "score": 5,
-              "label": "朵洛莉丝·侃南"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "朵洛莉丝·侃南 / 催眠报告"
+              "score": 3,
+              "label": "自由意志"
             }
           ]
         }
@@ -15225,24 +15255,24 @@
           ]
         },
         {
-          "title": "逻辑心智：困在鱼缸里的青蛙 │ 逻辑导向结论，情绪的逻辑则带来认知觉醒",
-          "url": "/all-articles/insight-awakening/logic-mind-emotional-intelligence-keylonta-codes-awakening.html",
+          "title": "为什么五感无法洞悉真相？情绪的感知扩展，是直通灵魂矩阵的天线",
+          "url": "/all-articles/courses/consciousness-alchemy/hsp-soul-matrix-holographic-inserts-frequency-barrier.html",
           "source": "auto",
-          "score": 90,
-          "rank_score": 118.5,
+          "score": 95,
+          "rank_score": 128.5,
           "structural_score": 41,
-          "semantic_score": 49,
+          "semantic_score": 54,
           "reason": "共同关注「灵魂矩阵」",
           "matched_by": [
-            {
-              "type": "tag",
-              "score": 24,
-              "label": "心理学"
-            },
             {
               "type": "series",
               "score": 20,
               "label": "异邦者"
+            },
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "自由意志"
             },
             {
               "type": "category",
@@ -15250,14 +15280,14 @@
               "label": "意识炼金术"
             },
             {
-              "type": "text",
-              "score": 9,
-              "label": "直觉"
+              "type": "keyword",
+              "score": 16,
+              "label": "灵魂矩阵"
             },
             {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵魂矩阵"
+              "type": "text",
+              "score": 12,
+              "label": "直觉"
             },
             {
               "type": "related_tag",
@@ -16971,6 +17001,33 @@
       "manual_issues": [],
       "recommendations": [
         {
+          "title": "一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化",
+          "url": "/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html",
+          "source": "auto",
+          "score": 42,
+          "rank_score": 84,
+          "structural_score": 0,
+          "semantic_score": 42,
+          "reason": "共同关注「灵性觉醒」",
+          "matched_by": [
+            {
+              "type": "tag",
+              "score": 26,
+              "label": "金钱"
+            },
+            {
+              "type": "keyword",
+              "score": 8,
+              "label": "灵性觉醒"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "心理学"
+            }
+          ]
+        },
+        {
           "title": "真正的教导，指向自我实现｜教导与学习的本质解析",
           "url": "/all-articles/insight-awakening/teaching-and-learning-self-realization-spiritual-growth.html",
           "source": "auto",
@@ -17036,33 +17093,6 @@
               "type": "related_tag",
               "score": 8,
               "label": "集体意识"
-            }
-          ]
-        },
-        {
-          "title": "一个女人的觉醒之路：从原生家庭创伤到自我重建与意识转化",
-          "url": "/all-articles/books/mary-magdalene/26-woman-awakening-from-trauma-to-self-reconstruction-life-journey.html",
-          "source": "auto",
-          "score": 34,
-          "rank_score": 68,
-          "structural_score": 0,
-          "semantic_score": 34,
-          "reason": "共同关注「灵性觉醒」",
-          "matched_by": [
-            {
-              "type": "tag",
-              "score": 18,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "keyword",
-              "score": 8,
-              "label": "灵性觉醒"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "心理学"
             }
           ]
         }

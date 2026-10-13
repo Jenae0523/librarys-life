@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -596,21 +628,49 @@
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0064">
-            <blockquote>他们承受了两次痛苦：第一次来自悲伤，第二次来自“我应该怎样”的暴政——“我应该已经振作起来了”“我不该这么愤怒”“我早就应该走出来了”。</blockquote>
+            <blockquote>处在哀伤中的人，可能承受两次痛苦：第一次来自悲伤本身，第二次来自“我应该怎样”的暴政——“我应该已经振作起来了”“我不该这么愤怒”“我早就应该走出来了”。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Examined Life》│ Stephen Grosz</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0074">
+            <blockquote>愤怒是一份礼物，它促使我们去觉察那些尚未得到满足、并触发了这种反应的需要。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Surprising Purpose of Anger: Beyond Anger Management: Finding the Gift》│ Opening introduction</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0076">
+            <blockquote>愤怒源于责备和评判他人的念头，它会占用我们的能量，把这些能量导向惩罚别人，而不是满足自己的需要。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Surprising Purpose of Anger: Beyond Anger Management: Finding the Gift》│ Marshall B. Rosenberg</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0081">
+            <blockquote>当我们感受到他人的共情与理解时，愤怒会渐渐平息，悲伤和羞耻也会随之减轻。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Emotions in Child Psychotherapy: An Integrative Framework》│ Kenneth Barish</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0086">
-            <blockquote>最重要的是意识到：即使没有人蛮不讲理、心怀恶意或故意欺骗，误解和怒气仍然可能产生。我们可以停下来提醒自己，对方想表达的未必就是我们听到的意思。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《That’s Not What I Meant!》│ Deborah Tannen</figcaption>
+            <blockquote>最重要的是意识到：即使没有人蛮不讲理、心怀恶意或故意欺骗，误解和怒气仍然可能产生。我们可以停下来提醒自己，对方想表达的，未必就是我们听到的意思。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《That&#39;s Not What I Meant!》│ Deborah Tannen</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0193">
-            <blockquote>有些伤痛，除非我们把它说出来，否则无法真正过去。承认愤怒，可以开启一场对话，释放那些仍在纠缠一段珍贵友谊的旧日伤痛。</blockquote>
+            <blockquote>有些事，不说出来就无法真正释怀。承认内心的愤怒，可能开启一场坦诚的对话，让一段珍贵的友谊中积存的旧伤有机会愈合。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Platonic》│ Marisa G. Franco</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0203">
+            <blockquote>有一种愤怒，源于我们仍希望修复关系、重新亲近。坦诚说出心中的不满，不是为了责备或惩罚，而是为了表达自己未被满足的需要，让彼此明白怎样才能更好地相处。这样的冲突，反而可能修复甚至加深友谊。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Platonic》│ Marisa G. Franco</figcaption>
           </a>
         </figure>
@@ -667,13 +727,13 @@
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -708,7 +768,11 @@
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -737,6 +801,8 @@
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -793,8 +859,6 @@
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -928,7 +992,9 @@
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

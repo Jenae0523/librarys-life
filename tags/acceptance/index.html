@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -617,50 +649,57 @@
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0035">
-            <blockquote>面对改变，我们会迟疑，因为改变意味着失去。但如果不接受某种失去，我们可能失去一切。</blockquote>
+            <blockquote>面对改变时，我们会迟疑，因为改变意味着失去。但如果我们不能接受某些失去，就可能失去一切。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Examined Life》│ Stephen Grosz</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0037">
-            <blockquote>你终于可以放弃一项从来就不可能完成的追求：成为那个被期待的、经过完美优化、能力无限、情感上坚不可摧而又完全独立的人。然后，你可以挽起袖子，开始做那些真正可能、也同样美好的事情。</blockquote>
+            <blockquote>你终于可以放弃一项从来就不可能完成的追求：成为那个被期待要成为的、经过完美优化、能力无限、情感上坚不可摧而又完全独立的人。然后，你可以把精力转向那些真正可能实现、也真正值得去做的事。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Four Thousand Weeks》│ Oliver Burkeman</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0038">
-            <blockquote>明智的拖延者接受自己不可能完成一切，然后尽可能审慎地决定专注什么、忽略什么。相反，糟糕的拖延者之所以陷入瘫痪，恰恰是因为他无法忍受直面自己的限度。</blockquote>
+            <blockquote>明智的拖延者会接受一个事实：自己不可能把所有事情都做完，然后尽可能审慎地决定哪些事要专注，哪些事暂且不做。相反，糟糕的拖延者之所以陷入瘫痪，恰恰是因为他无法忍受直面自己的局限。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Four Thousand Weeks》│ Oliver Burkeman</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0066">
-            <blockquote>无论我们跌落得多远，作为人的资格都不会被夺走。恰恰是我们的不完美，证明我们也是人类的一员。</blockquote>
+            <blockquote>无论我们跌落得多远，作为人的资格都不会被夺走。恰恰是我们的不完美，证明我们也是人类的一员，因此始终自然而然地与整个人类相连。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Self-Compassion》│ Kristin Neff</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
-          <a href="/light-quotes/?quote=lq-0166">
-            <blockquote>父母的职责是通过行为规则、接纳和共情来构建安全的成长环境。孩子的职责是通过感知和表达情感来探索和学习。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《看见孩子：洞察、共情与联结》│ 贝姬·肯尼迪</figcaption>
+          <a href="/light-quotes/?quote=lq-0070">
+            <blockquote>当我们已经无法改变所处的境况时——比如面对无法治愈的癌症——我们就必须面对改变自己的挑战。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Man&#39;s Search for Meaning》│ Viktor E. Frankl</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
-          <a href="/light-quotes/?quote=lq-0167">
-            <blockquote>自信不是‘准备好了’的状态，而是不论准备好与否的那份对自己的接纳。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《看见孩子：洞察、共情与联结》│ 贝姬·肯尼迪</figcaption>
+          <a href="/light-quotes/?quote=lq-0136">
+            <blockquote>悖论在于：只有放弃“两个人必须看法一致”的幻想，真正接受你和伴侣不会以同样的方式看待所有事情，问题才可能得到化解。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Us》│ Terrence Real</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0177">
-            <blockquote>经历心理上的痛苦是生活中不可避免的一部分；青春期本就伴随着许多正常的挑战和失望，因此，痛苦也是青少年生活中无法回避的事实。我们的目标不能是阻止或驱散他们的痛苦，而应当帮助他们调节自己的情绪。</blockquote>
+            <blockquote>经历心理上的痛苦是生活中不可避免的一部分，青春期本就伴随着许多挑战和失望。我们的目标不应是阻止或驱散青少年的痛苦，而是帮助他们学会调节自己的情绪。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Emotional Lives of Teenagers》│ Lisa Damour</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0204">
+            <blockquote>亲密意味着，我们既能在关系中做自己，也允许对方成为他自己。即使彼此的想法、感受和信念不同，我们仍能保持情感联结，而不必试图改变、说服或纠正对方。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《The Dance of Intimacy》│ Harriet Goldhor Lerner</figcaption>
           </a>
         </figure>
       
@@ -716,13 +755,13 @@
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -757,7 +796,11 @@
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -786,6 +829,8 @@
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -842,8 +887,6 @@
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -977,7 +1020,9 @@
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

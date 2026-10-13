@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "quote_dataset_version": "sha256-aedc9405b391eccc6cba7989b4f459cbab4447ac4642c45994127b44266a1172",
+  "relation_version": "sha256-a40412fe52d0eb6ba5b2f1d42c3c0e62683be93675df583595cbf71e202d4e0a",
+  "dimension": "author",
+  "key": "author-0031",
+  "start": 0,
+  "count": 3,
+  "lq_ids": [
+    "lq-0120",
+    "lq-0121",
+    "lq-0122"
+  ]
+}

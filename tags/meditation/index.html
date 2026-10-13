@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -609,9 +641,10 @@
           </header>
 
 
-          <div class="row" data-tag-pagination-list>
+          <div class="tag-node-content-list" data-tag-pagination-list>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/human-body-healing/20260823-clean-nadi-shodhana.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -645,7 +678,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/consciousness-alchemy/fifth-dimension-consciousness-evolution-sound-meditation.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -679,7 +714,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/messages-of-light-archangel-mike/life-flower-creation-wheel-4-8-12-petals-activation.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -713,7 +750,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/human-body-healing/self-integration-guide-chakra-practice.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -747,7 +786,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/jiddu-krishnamurti/2-deep-listening-how-to-drop-mental-barriers-and-hear-the-whole-world.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -779,7 +820,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/insight-awakening/jiddu-krishnamurti/5-true-meditation-begins-with-understanding-self-desire.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -811,7 +854,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/mary-magdalene/23-taoist-alchemy-how-to-cultivate-energy-body-breathing-to-spirit.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -845,7 +890,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/human-body-healing/sleep-self-healing-fifth-dimension-higher-self-dreams.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -879,7 +926,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/muyu-notes/joy-of-being-how-to-stop-talking-and-thinking-to-awaken-self-and-universe.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -913,7 +962,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/muyu-notes/what-is-blocking-your-goals-mind-awareness-self-mastery.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -945,7 +996,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/dolores-cannon-hypnosis/soul-many-mansions/past-life-hypnosis-subconscious-collective-consciousness-astral-projection.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -979,7 +1032,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/muyu-notes/energy-release-rituals-space-mindset-shifting.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1013,7 +1068,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/32-do-demons-exist-energy-view-entity-possession-negative-energy-cleansing-white-light-protection.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1047,7 +1104,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/books/between-death-life/10-spiritual-healing-hall-light-energy-aura-etheric-body-repair.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1081,7 +1140,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/courses/human-body-healing/psycho-spiritual-detox-hypnosis-meditation-emotional-release.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1115,7 +1176,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology19-tom-kenyon-sound-healing-meditation-audio.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1149,7 +1212,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology15-nakura-meditation-altered-states-consciousness.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1183,7 +1248,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology11-mary-magdalene-isis-temple-arcturian-origin.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1217,7 +1284,9 @@
               </a>
             </div>
 
-            <div class="col-md-6 g-mb-40" data-tag-pagination-item>
+
+
+            <div data-tag-pagination-item>
               <a href="/all-articles/alien-archives/arcturian/the-arcturian-anthology06-pineal-meditation-alien-contact.html"
                  class="article-card g-bg-white g-pa-20 g-brd-around g-brd-gray-light-v4 g-rounded-5 h-100">
 
@@ -1250,6 +1319,7 @@
 
               </a>
             </div>
+
 
           </div>
           <nav class="site-pagination"
@@ -4736,13 +4806,13 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -4777,7 +4847,11 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -4806,6 +4880,8 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -4862,8 +4938,6 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -4997,7 +5071,9 @@ article.audio-card .audio-card-tags .u-tags-v1:hover {
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

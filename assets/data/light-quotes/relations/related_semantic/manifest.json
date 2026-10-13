@@ -1,34 +1,70 @@
 {
   "schema_version": 1,
-  "quote_dataset_version": "sha256-5c82497954cf481110be127e461e073c0d516601b002d09c36d3373eb45e3354",
-  "relation_version": "sha256-2d1623ed9ca332f16b7cd442d3d855bef37198c5b9ae461823f3927cc09d68b1",
+  "quote_dataset_version": "sha256-aedc9405b391eccc6cba7989b4f459cbab4447ac4642c45994127b44266a1172",
+  "relation_version": "sha256-a40412fe52d0eb6ba5b2f1d42c3c0e62683be93675df583595cbf71e202d4e0a",
   "dimension": "related_semantic",
-  "key_count": 18,
-  "bucket_count": 18,
-  "chunk_count": 18,
+  "key_count": 25,
+  "bucket_count": 25,
+  "chunk_count": 25,
   "chunk_size": 500,
   "buckets": {
+    "acceptance": {
+      "key": "acceptance",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/c1514c6cdad166c1-0001-7b6027043363.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "7b60270433636c84537b32e146733498b83d1fad8bcda6691b2341e1cdd013d2"
+        }
+      ]
+    },
     "attachment": {
       "key": "attachment",
       "count": 1,
       "chunks": [
         {
-          "url": "buckets/602a5e69c3021bdb-0001-3899b79ee040.json",
+          "url": "buckets/602a5e69c3021bdb-0001-bcf5584fc5dc.json",
           "start": 0,
           "count": 1,
-          "sha256": "3899b79ee040a73644a508a546c17fe4fb71b54058973f3e77eda9eb72cd2e3c"
+          "sha256": "bcf5584fc5dc8a856d51ee42a3662f5fe74aebe08e1709ad98a3ebf6d250f819"
+        }
+      ]
+    },
+    "attribution": {
+      "key": "attribution",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/3ee591fcb25f09a0-0001-52f2dcbb2fd3.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "52f2dcbb2fd3217e41420552e0b5661265e9b08845c6bf1d361a00a8d8b95595"
+        }
+      ]
+    },
+    "autonomy": {
+      "key": "autonomy",
+      "count": 4,
+      "chunks": [
+        {
+          "url": "buckets/e94d787f61ea3ee8-0001-01fd12f9a9bf.json",
+          "start": 0,
+          "count": 4,
+          "sha256": "01fd12f9a9bfeb270ecbe4f6947213098cda8beaec475ffa06501de298ca0c6c"
         }
       ]
     },
     "communication": {
       "key": "communication",
-      "count": 1,
+      "count": 7,
       "chunks": [
         {
-          "url": "buckets/d4e16994df9002e5-0001-1ee5556d7388.json",
+          "url": "buckets/d4e16994df9002e5-0001-1ccb27eb6476.json",
           "start": 0,
-          "count": 1,
-          "sha256": "1ee5556d7388689c35d9a6d182d6ff5bc4e12a8db03991d47db3d3d1eac87322"
+          "count": 7,
+          "sha256": "1ccb27eb64760613e6f18789ede8c1822ab5519e5de97efb2fa978812a94d8ae"
         }
       ]
     },
@@ -37,46 +73,82 @@
       "count": 2,
       "chunks": [
         {
-          "url": "buckets/0fcd568a5cb9bdb4-0001-43ca7b57c6cd.json",
+          "url": "buckets/0fcd568a5cb9bdb4-0001-f22b83be8791.json",
           "start": 0,
           "count": 2,
-          "sha256": "43ca7b57c6cd5d367db284e803a8c62d707f7f818d9ce109bbf5e6f82f363243"
+          "sha256": "f22b83be8791cd6e7565829975596c2add245fe427c69b8c795c3287ebf70a9d"
         }
       ]
     },
     "empathy": {
       "key": "empathy",
-      "count": 9,
+      "count": 14,
       "chunks": [
         {
-          "url": "buckets/1bb41bab96782718-0001-99ce2eb523a8.json",
+          "url": "buckets/1bb41bab96782718-0001-b9803bb5a0b4.json",
           "start": 0,
-          "count": 9,
-          "sha256": "99ce2eb523a8263dfb5cb602946c1edf1f40dde8c8bf6955b0cd0652dbf5ceae"
+          "count": 14,
+          "sha256": "b9803bb5a0b494d93da04701d0620990fff1f418a977975d87274f15dccd310c"
         }
       ]
     },
     "grief-and-loss": {
       "key": "grief-and-loss",
-      "count": 3,
+      "count": 2,
       "chunks": [
         {
-          "url": "buckets/6ac1d6fb285db09a-0001-e28a5092f79a.json",
+          "url": "buckets/6ac1d6fb285db09a-0001-4862310e35b0.json",
           "start": 0,
-          "count": 3,
-          "sha256": "e28a5092f79a763739318dd6ebc6b9d419b45af3fe843aaa5fcf94e7c6f55795"
+          "count": 2,
+          "sha256": "4862310e35b060f4b1845e7b279d505dd33b5ae0b8c6285dbc10d73bc25a600e"
         }
       ]
     },
     "intimacy": {
       "key": "intimacy",
-      "count": 6,
+      "count": 10,
       "chunks": [
         {
-          "url": "buckets/a427b3cbc38e5ca8-0001-bb1cefa580b3.json",
+          "url": "buckets/a427b3cbc38e5ca8-0001-7c55ceeb8ec3.json",
           "start": 0,
-          "count": 6,
-          "sha256": "bb1cefa580b37b1b893d6969200e22411244f16507fcd9bf9d969e1b42bc7a7b"
+          "count": 10,
+          "sha256": "7c55ceeb8ec3908491bdfd3e4a11659168fe9bb5a6d6cb63bb2e2ec35950bf62"
+        }
+      ]
+    },
+    "logotherapy": {
+      "key": "logotherapy",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/a01006ffccef8e2d-0001-d1b69ce6261e.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "d1b69ce6261eef59382e450e8c0060e0ac56d77174a101abe8be19a14c013422"
+        }
+      ]
+    },
+    "love": {
+      "key": "love",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/686f746a95b6f836-0001-da366568c85e.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "da366568c85e5e3778e4d60da7fffa02ba158be53c43d78e82f70978221a0166"
+        }
+      ]
+    },
+    "marriage-family": {
+      "key": "marriage-family",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/a484054f191b4b2e-0001-78f0b51fd2e7.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "78f0b51fd2e725784867ac89958061a03f80592f63c7c50c7de6e4ab404ecf91"
         }
       ]
     },
@@ -85,106 +157,118 @@
       "count": 1,
       "chunks": [
         {
-          "url": "buckets/ff4c57eb263806cb-0001-22cd4b838915.json",
+          "url": "buckets/ff4c57eb263806cb-0001-20c6e002cf73.json",
           "start": 0,
           "count": 1,
-          "sha256": "22cd4b838915c8b6319a8784b3f0c0edcdee305ee0749864c640a147a5c63049"
+          "sha256": "20c6e002cf73864b09bd86502ca349e8b11ffc12c7d624ea37a6b6d4255a8323"
+        }
+      ]
+    },
+    "original-family": {
+      "key": "original-family",
+      "count": 1,
+      "chunks": [
+        {
+          "url": "buckets/284b8bf0689e5cb4-0001-ca3a2f75e0c8.json",
+          "start": 0,
+          "count": 1,
+          "sha256": "ca3a2f75e0c8b025c20d38838462632298cbb502c49eff08c687bf12cc402949"
         }
       ]
     },
     "people-pleasing": {
       "key": "people-pleasing",
-      "count": 1,
+      "count": 3,
       "chunks": [
         {
-          "url": "buckets/93d912ee672c567d-0001-6ff336752828.json",
+          "url": "buckets/93d912ee672c567d-0001-9be4ddecc62e.json",
           "start": 0,
-          "count": 1,
-          "sha256": "6ff3367528287e6c3e3183e665e9fd18efb5a250a3fa1540bf5ea4dbd7b7b9ea"
+          "count": 3,
+          "sha256": "9be4ddecc62ebc3c2a50f8cf6b3924dfc228bbf58ccf2fd274a58540d3ac44e6"
         }
       ]
     },
     "personal-boundaries": {
       "key": "personal-boundaries",
-      "count": 1,
+      "count": 7,
       "chunks": [
         {
-          "url": "buckets/de17828738f8aa8c-0001-f757746c24df.json",
+          "url": "buckets/de17828738f8aa8c-0001-1ca34a17bbe4.json",
           "start": 0,
-          "count": 1,
-          "sha256": "f757746c24df88588233d9bad2086eb6c852311625e8051931148b49a1f77a02"
+          "count": 7,
+          "sha256": "1ca34a17bbe441e7a69d8e33905d244dca9d0330ab83fa082bafbeaecf98d741"
         }
       ]
     },
     "personal-growth": {
       "key": "personal-growth",
-      "count": 1,
+      "count": 4,
       "chunks": [
         {
-          "url": "buckets/57dcb3dd38d4ede4-0001-2c9242c3cc9f.json",
+          "url": "buckets/57dcb3dd38d4ede4-0001-4cf51ff8fd32.json",
           "start": 0,
-          "count": 1,
-          "sha256": "2c9242c3cc9ffc6f3041cf16e7eb689b1a09485afeb83545de338b2b9aa8143b"
+          "count": 4,
+          "sha256": "4cf51ff8fd3261ac486a7d7f1e188fc0996a54cf84bfd2d4fd17eeba442256bf"
         }
       ]
     },
     "psychological-needs": {
       "key": "psychological-needs",
-      "count": 3,
+      "count": 8,
       "chunks": [
         {
-          "url": "buckets/7361b97619691991-0001-028bbd55163f.json",
+          "url": "buckets/7361b97619691991-0001-b1850da56c3f.json",
           "start": 0,
-          "count": 3,
-          "sha256": "028bbd55163f3831d735d942306672ec0fb8fad4f415156c70f5feb6eeceae86"
+          "count": 8,
+          "sha256": "b1850da56c3fb4a53b83fdfdfd733f6036daaa1ee11c1c4943cffc2d80e9814e"
         }
       ]
     },
     "relational-security": {
       "key": "relational-security",
-      "count": 8,
+      "count": 10,
       "chunks": [
         {
-          "url": "buckets/48d086bc78fb4113-0001-4d34af5ab282.json",
+          "url": "buckets/48d086bc78fb4113-0001-002683a6aa57.json",
           "start": 0,
-          "count": 8,
-          "sha256": "4d34af5ab2822ff9ed1979bb7eb719868dfa104865e29243e27d38f6e42febe2"
+          "count": 10,
+          "sha256": "002683a6aa57b8eb2d16e7c9b6bba65fd6af20d4a19b453f5607ea3dbb768718"
         }
       ]
     },
     "relationship-pluralism": {
       "key": "relationship-pluralism",
-      "count": 4,
+      "count": 3,
       "chunks": [
         {
-          "url": "buckets/21701d4cc535a928-0001-985489321e8d.json",
+          "url": "buckets/21701d4cc535a928-0001-eb298b6861b4.json",
           "start": 0,
-          "count": 4,
-          "sha256": "985489321e8d7282fece7a4ff13b540075f0d26416719c2aa292849393c21ea0"
+          "count": 3,
+          "sha256": "eb298b6861b4733e4c67d2a12bc4b6b090600077215dc48e1aee96629a3b5df7"
         }
       ]
     },
     "relationship-repair": {
       "key": "relationship-repair",
-      "count": 2,
+      "count": 4,
       "chunks": [
         {
-          "url": "buckets/ac43ffc5a7197db6-0001-daa435c8557a.json",
+          "url": "buckets/ac43ffc5a7197db6-0001-c503ac330ac3.json",
           "start": 0,
-          "count": 2,
-          "sha256": "daa435c8557a70cd4910f53d68fad02fd2f56fea97e768b6f4622c2a4897b4c7"
+          "count": 4,
+          "sha256": "c503ac330ac318617bc3792c2251123e345d7b47fbf241d1bf4c02f9faccf131"
         }
       ]
     },
     "self-concept": {
       "key": "self-concept",
-      "count": 1,
+      "count": 5,
       "chunks": [
         {
-          "url": "buckets/a735c1a90b5104ae-0001-2f9cb5c69c4d.json",
+          "url": "buckets/a735c1a90b5104ae-0001-88db65d0e361.json",
           "start": 0,
-          "count": 1,
-          "sha256": "2f9cb5c69c4dc9417ad1975c9bb1e5062e838cb4dff944abbe0422eb1c267686"
+          "count": 5,
+          "sha256": "88db65d0e361d53eb60a532d98ac05b6c87a44f0352f018a46a3b2e72ece8a70"
         }
       ]
     },
@@ -193,10 +277,10 @@
       "count": 1,
       "chunks": [
         {
-          "url": "buckets/6caa18eba2a10110-0001-adcde620946b.json",
+          "url": "buckets/6caa18eba2a10110-0001-21b45648b3ef.json",
           "start": 0,
           "count": 1,
-          "sha256": "adcde620946b97559a55fcbef57dcb5c753d79ceba333beab7de6e429d164922"
+          "sha256": "21b45648b3ef9b0ec928f54162541275b62000703dd0f731f9c6c7bc272024c4"
         }
       ]
     },
@@ -205,22 +289,22 @@
       "count": 1,
       "chunks": [
         {
-          "url": "buckets/2c7e5a348e5f6e23-0001-ce77b08c6adb.json",
+          "url": "buckets/2c7e5a348e5f6e23-0001-5dd9c983d563.json",
           "start": 0,
           "count": 1,
-          "sha256": "ce77b08c6adba46b9afea5e9829b522fc4a96a4c0a3dcb1e77172f7bf79dbba4"
+          "sha256": "5dd9c983d5638213017c82447cd36fa2a7e03327357889b610256f06ba2fc8c7"
         }
       ]
     },
     "trust": {
       "key": "trust",
-      "count": 2,
+      "count": 3,
       "chunks": [
         {
-          "url": "buckets/f796e2f28ae58117-0001-49d5b193e045.json",
+          "url": "buckets/f796e2f28ae58117-0001-3cf00e9b1211.json",
           "start": 0,
-          "count": 2,
-          "sha256": "49d5b193e045706e6c90a0b3775a70866f39f026d05162dc7dcf9acc74263faa"
+          "count": 3,
+          "sha256": "3cf00e9b12116ada5fe36fd6a7dd1041dae21af8747886a936e0e10fa80eb851"
         }
       ]
     }

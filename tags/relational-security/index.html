@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -608,35 +640,21 @@
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0157">
-            <blockquote>人在关系中的安全感来自理解，而非说服。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《看见孩子：洞察、共情与联结》│ 贝姬·肯尼迪</figcaption>
-          </a>
-        </figure>
-      
-        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
-          <a href="/light-quotes/?quote=lq-0184">
-            <blockquote>爱的连接，是自然能够给予我们的唯一安全。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《Hold Me Tight》│ Sue Johnson</figcaption>
+            <blockquote>想与人建立稳固的关系，需要承认没有谁是绝对正确的。因为在一段关系中，让人感到安全的是理解，而非说服。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Good Inside》│ Dr. Becky Kennedy</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0185">
-            <blockquote>如果你知道所爱的人会在那里，并会在你呼唤时来到身边，你会更加确信自己的价值。当你知道有人可以依靠、自己并不孤单时，世界也不再那么令人畏惧。</blockquote>
+            <blockquote>当你知道所爱的人会在你需要时来到身边，你会更确信自己是重要的、有价值的。当你知道有人可以依靠、自己并不孤单时，世界也就不再那么令人畏惧。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Hold Me Tight》│ Sue Johnson</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0188">
-            <blockquote>安全基地意味着：你知道身后有一个支持你的人，可以完全依靠，并能在需要时转向他。正是这种确信，使一个人能够探索、成长和学习。</blockquote>
-            <figcaption class="quote-preview__source tag-quote-module__source">《Attached》│ Amir Levine、Rachel Heller</figcaption>
-          </a>
-        </figure>
-      
-        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
-          <a href="/light-quotes/?quote=lq-0189">
-            <blockquote>亲密、可获得性和安全感，是一段关系中真实而正当的需要。它们没有好坏之分，只是你的需要。</blockquote>
+            <blockquote>“安全基地”意味着你确信有一个人在支持你，可以完全信赖，也能在需要时向他求助。正是这种安全感，让我们有勇气探索未知、成长和学习。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《Attached》│ Amir Levine、Rachel Heller</figcaption>
           </a>
         </figure>
@@ -693,13 +711,13 @@
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -734,7 +752,11 @@
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -763,6 +785,8 @@
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -819,8 +843,6 @@
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -954,7 +976,9 @@
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>

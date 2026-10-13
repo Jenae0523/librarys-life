@@ -1,130 +1,22 @@
 {
   "schema_version": 1,
-  "quote_dataset_version": "sha256-5c82497954cf481110be127e461e073c0d516601b002d09c36d3373eb45e3354",
-  "relation_version": "sha256-2d1623ed9ca332f16b7cd442d3d855bef37198c5b9ae461823f3927cc09d68b1",
+  "quote_dataset_version": "sha256-aedc9405b391eccc6cba7989b4f459cbab4447ac4642c45994127b44266a1172",
+  "relation_version": "sha256-a40412fe52d0eb6ba5b2f1d42c3c0e62683be93675df583595cbf71e202d4e0a",
   "dimension": "tag",
-  "key_count": 10,
-  "bucket_count": 10,
-  "chunk_count": 10,
+  "key_count": 1,
+  "bucket_count": 1,
+  "chunk_count": 1,
   "chunk_size": 500,
   "buckets": {
-    "占有": {
-      "key": "占有",
-      "count": 1,
+    "金钱": {
+      "key": "金钱",
+      "count": 3,
       "chunks": [
         {
-          "url": "buckets/114f4c1d921403a6-0001-90486b6167f1.json",
+          "url": "buckets/5ca4682d5d1faa08-0001-6c9618f29aaf.json",
           "start": 0,
-          "count": 1,
-          "sha256": "90486b6167f1544c07028284c03565df8b6dd4b1e9396eb1bd9799d5448ac392"
-        }
-      ]
-    },
-    "善意归因": {
-      "key": "善意归因",
-      "count": 1,
-      "chunks": [
-        {
-          "url": "buckets/0a90dd109fbafdd1-0001-7e5eb75b8f42.json",
-          "start": 0,
-          "count": 1,
-          "sha256": "7e5eb75b8f42f14709eb48232583cd6a8a4e95da1355df9c3d662704198bdcb5"
-        }
-      ]
-    },
-    "宽容": {
-      "key": "宽容",
-      "count": 1,
-      "chunks": [
-        {
-          "url": "buckets/0684570693197b57-0001-4dd0c1fbb052.json",
-          "start": 0,
-          "count": 1,
-          "sha256": "4dd0c1fbb052702e8c945fb050d3c8f173887272a327cd90f137290a35b3d662"
-        }
-      ]
-    },
-    "心理依赖": {
-      "key": "心理依赖",
-      "count": 1,
-      "chunks": [
-        {
-          "url": "buckets/d81212d3ec618425-0001-41900260b5d4.json",
-          "start": 0,
-          "count": 1,
-          "sha256": "41900260b5d4227df969bdb0e4cf2f1b0543fc63585c81763d6cf895c2365cac"
-        }
-      ]
-    },
-    "恐惧": {
-      "key": "恐惧",
-      "count": 1,
-      "chunks": [
-        {
-          "url": "buckets/aa23878467ce0d30-0001-2b118b3fa5cc.json",
-          "start": 0,
-          "count": 1,
-          "sha256": "2b118b3fa5ccfa037d1adedc7047bcc242b1763f84c95fc297d88aed31b250c5"
-        }
-      ]
-    },
-    "米开朗基罗现象": {
-      "key": "米开朗基罗现象",
-      "count": 1,
-      "chunks": [
-        {
-          "url": "buckets/792a51f6736ed5f4-0001-fbaf3d50ed5b.json",
-          "start": 0,
-          "count": 1,
-          "sha256": "fbaf3d50ed5be6d3c5157d7b6bb74fefbe77e4dc6452c2b10cf071869644a6d6"
-        }
-      ]
-    },
-    "自我成长": {
-      "key": "自我成长",
-      "count": 1,
-      "chunks": [
-        {
-          "url": "buckets/9e2cc193e4713f17-0001-e5a09df4bde8.json",
-          "start": 0,
-          "count": 1,
-          "sha256": "e5a09df4bde842344afe7ccb8ceb5f073341e22d5dfff3913134444a26ee7e84"
-        }
-      ]
-    },
-    "边界": {
-      "key": "边界",
-      "count": 1,
-      "chunks": [
-        {
-          "url": "buckets/7a7e13ca96796233-0001-1adaacbf6fd7.json",
-          "start": 0,
-          "count": 1,
-          "sha256": "1adaacbf6fd7927ac8586b891e0f66c86889de1014b262665541da0c5c270819"
-        }
-      ]
-    },
-    "需要平等": {
-      "key": "需要平等",
-      "count": 1,
-      "chunks": [
-        {
-          "url": "buckets/56cf1d1baddb52a3-0001-3d02bb9d08c1.json",
-          "start": 0,
-          "count": 1,
-          "sha256": "3d02bb9d08c12d7f5c01bc4ee3aeb4ddbd243386dd58b4ff4fb5f4cc49d0643b"
-        }
-      ]
-    },
-    "非牺牲式关系": {
-      "key": "非牺牲式关系",
-      "count": 1,
-      "chunks": [
-        {
-          "url": "buckets/cb033d9a958f4d12-0001-97ace5f35861.json",
-          "start": 0,
-          "count": 1,
-          "sha256": "97ace5f35861d5ab69c70b6c5c329959edfb441ded9d5287a5d7f822ac23d707"
+          "count": 3,
+          "sha256": "6c9618f29aaff2e44d1dc6334a29902b876e01a9fe7ae89fe59589955e0b9428"
         }
       ]
     }

@@ -135,8 +135,9 @@
 </div>
 </section>
 
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261003-3">
-<script src="/assets/js/light-quotes.js?v=20260929-3" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261013-4">
+<link rel="stylesheet" href="/assets/css/micro-note-card.css?v=20261013-1">
+<script src="/assets/js/light-quotes.js?v=20261013-4" defer></script>
 
 <style>
   .tag-node-header {
@@ -310,6 +311,28 @@
   .article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tag-node-content-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 30px;
+  }
+
+  .tag-node-content-list > [data-tag-pagination-item] {
+    min-width: 0;
+  }
+
+  .tag-node-micro-note {
+    grid-column: 1 / -1;
+  }
+
+  .tag-node-micro-note .atomic-micro-note-item {
+    padding-inline: 4px;
+  }
+
+  .tag-node-micro-note .micro-note-card {
+    width: 100%;
   }
 
   .article-cover {
@@ -533,6 +556,15 @@
     .tag-node-resource-heading .tag-node-section-title {
       font-size: 1.65rem;
     }
+
+    .tag-node-content-list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+    }
+
+    .tag-node-micro-note {
+      grid-column: auto;
+    }
   }
 </style>
 
@@ -611,28 +643,42 @@
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0018">
-            <blockquote>我们对自我的感受，强烈影响我们如何诠释别人的行为。</blockquote>
+            <blockquote>我们对自己的看法和感受，会深刻影响我们如何解读他人的行为。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《沟通的艺术：看入人里，看出人外》│ 罗纳德·B·阿德勒、拉塞尔·F·普罗科特</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0053">
+            <blockquote>你采取的每一个行动，都是在为你想成为的那种人投下一票。一次行动不会改变你的信念，但随着投票不断累积，支持这种新身份的证据也会越来越多。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Atomic Habits》│ James Clear</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
+          <a href="/light-quotes/?quote=lq-0061">
+            <blockquote>你越是让一种信念定义自己，当生活发生变化、这种信念受到挑战时，你就越难适应。</blockquote>
+            <figcaption class="quote-preview__source tag-quote-module__source">《Atomic Habits》│ James Clear</figcaption>
+          </a>
+        </figure>
+      
+        <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0165">
-            <blockquote>对孩子来说，重要的是他始终把自己看作解决办法的一部分，而不是问题的一部分。</blockquote>
+            <blockquote>对孩子来说，重要的是始终把自己看作解决问题的一份力量，而不是问题的一部分。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《How to Talk So Kids Will Listen &amp; Listen So Kids Will Talk》│ Adele Faber、Elaine Mazlish</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0168">
-            <blockquote>建立一种有别于父母的自我身份，是青春期健康发展不可缺少的一部分。</blockquote>
+            <blockquote>青少年逐渐形成有别于父母的自我认同，是健康成长不可缺少的一部分。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《The Emotional Lives of Teenagers》│ Lisa Damour</figcaption>
           </a>
         </figure>
       
         <figure class="tag-quote-module__item" data-tag-quote-item hidden>
           <a href="/light-quotes/?quote=lq-0179">
-            <blockquote>父母如何看待孩子，不仅会影响孩子如何看待自己，也会影响他们怎样行动。</blockquote>
+            <blockquote>父母如何看待孩子，不仅会影响孩子如何看待自己，也可能使孩子逐渐按照这种形象来表现自己。</blockquote>
             <figcaption class="quote-preview__source tag-quote-module__source">《How to Talk So Kids Will Listen &amp; Listen So Kids Will Talk》│ Adele Faber、Elaine Mazlish</figcaption>
           </a>
         </figure>
@@ -689,13 +735,13 @@
 
                 <a href="/tags/ancient-civilizations/">古文明</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
-
                 <a href="/tags/nature/">自然</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/civilization/">文明</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/consciousness-studies/">意识研究</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/mind-body-healing/">身心疗愈</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/human-future/">人类未来</a><span aria-hidden="true">｜</span>
 
@@ -730,7 +776,11 @@
 
                 <a href="/tags/subconscious/">潜意识</a><span aria-hidden="true">｜</span>
 
+                <a href="/tags/free-will/">自由意志</a><span aria-hidden="true">｜</span>
+
                 <a href="/tags/energy-field/">能量场</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/money/">金钱</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/past-lives/">前世今生</a><span aria-hidden="true">｜</span>
 
@@ -759,6 +809,8 @@
                 <a href="/tags/consciousness-sovereignty/">意识主权</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/empathy/">共情力</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/time-and-consciousness/">时间与意识</a><span aria-hidden="true">｜</span>
 
@@ -815,8 +867,6 @@
                 <a href="/tags/life-origin/">生命起源</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/love/">爱</a><span aria-hidden="true">｜</span>
-
-                <a href="/tags/marriage-family/">婚姻家庭</a><span aria-hidden="true">｜</span>
 
                 <a href="/tags/narrative-identity/">叙事认同</a><span aria-hidden="true">｜</span>
 
@@ -950,7 +1000,9 @@
 
                 <a href="/tags/ritual/">仪式</a><span aria-hidden="true">｜</span>
 
-                <a href="/tags/scientific-method/">科学方法</a>
+                <a href="/tags/scientific-method/">科学方法</a><span aria-hidden="true">｜</span>
+
+                <a href="/tags/logotherapy/">意义疗法</a>
 
             </div>
           </div>
