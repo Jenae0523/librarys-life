@@ -17,10 +17,11 @@
     + 0.0722 * channelLuminance(42);
   const READY_IMAGE_QUEUE_LIMIT = 2;
   const TEXT_TOP_SAFE_RATIO = 0.025;
-  const LIGHT_QUOTES_BUILD = "20261014-8";
+  const LIGHT_QUOTES_BUILD = "20261015-1";
   const DEFAULT_TEXT_LAYOUT = Object.freeze({ scale: 1, widthPercent: 84.6154, align: "center", offsetXPercent: 0, offsetYPercent: -14, toneMode: "black" });
   const MOBILE_DEFAULT_TEXT_SCALE = 1.08;
-  const IOS_MOBILE_DEFAULT_TEXT_WIDTH_PERCENT = 89;
+  const IOS_MOBILE_DEFAULT_TEXT_WIDTH_PERCENT = 92;
+  const TEXT_SCALE_STEP = .1;
   const MOBILE_FOCUS_STAGE_MIN_WIDTH = 270;
   const MOBILE_FOCUS_STAGE_MAX_WIDTH = 410;
   const MOBILE_FOCUS_VERTICAL_BUDGET = 226;
@@ -1634,6 +1635,7 @@
     const status = options.status;
     const announce = options.onHint;
     const controllerWindow = options.windowObject || null;
+    const shouldContainGestures = options.shouldContainGestures || (() => false);
     const pointerEventsSupported = options.pointerEventsSupported
       ?? (controllerWindow ? typeof controllerWindow.PointerEvent === "function" : true);
     const controls = options.controls || {};
@@ -1712,7 +1714,7 @@
       const direction = step > 0 ? 1 : -1;
       const previousPreferred = { ...preferredLayout };
       const previousEffectiveScale = effectiveLayout.scale;
-      const candidate = Math.min(1.3, Math.max(.75, Math.round((preferredLayout.scale + direction * .05) * 100) / 100));
+      const candidate = Math.min(1.3, Math.max(.75, Math.round((preferredLayout.scale + direction * TEXT_SCALE_STEP) * 100) / 100));
       if (candidate === preferredLayout.scale) {
         const message = direction > 0 ? "文字已达到最大比例。" : "文字已达到最小比例。";
         if (status) status.textContent = message;
@@ -1786,10 +1788,10 @@
     }
 
     function pointerDown(event) {
+      if (adjustmentMode || shouldContainGestures()) event.preventDefault?.();
       if (!adjustmentMode || event?.button > 0) return;
       const stageRect = stage?.getBoundingClientRect?.();
       if (!stageRect?.height || !stageRect?.width) return;
-      event.preventDefault?.();
       if (pointers.size >= 2 && !pointers.has(event.pointerId)) return;
       pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
       dragging = true;
@@ -1819,12 +1821,13 @@
     }
 
     function preventSafariGesture(event) {
-      if (adjustmentMode) event.preventDefault?.();
+      if (adjustmentMode || shouldContainGestures()) event.preventDefault?.();
     }
 
     function touchEventPointers(event, handler) {
-      if (!adjustmentMode) return;
+      if (!adjustmentMode && !shouldContainGestures()) return;
       event.preventDefault?.();
+      if (!adjustmentMode) return;
       [...(event.changedTouches || [])].forEach(touch => handler({
         pointerId: `touch-${touch.identifier}`,
         pointerType: "touch-fallback",
@@ -1989,6 +1992,7 @@
       status: null,
       onHint: showToolbarHint,
       windowObject,
+      shouldContainGestures: () => mobileFocusMode,
       defaultLayout: mobileFocusCapable || options.mobileFocusMode === true ? {
         scale: MOBILE_DEFAULT_TEXT_SCALE,
         widthPercent: isIOSDevice(navigatorObject)
@@ -2076,17 +2080,12 @@
       return true;
     }
 
-    const focusEntrySelector = [
-      "[data-light-quote-stage]",
-      "[data-light-quote-background]",
-      "[data-light-quote-text-adjust]",
-      "[data-light-quote-next]",
-      "[data-light-quote-freeze]",
-      "[data-light-quote-copy]"
-    ].join(",");
     rootElement.addEventListener?.("click", event => {
       if (!mobileFocusCapable || mobileFocusMode) return;
-      const target = event.target?.closest?.(focusEntrySelector);
+      const adjustTarget = event.target?.closest?.("[data-light-quote-text-adjust]");
+      const stageTarget = event.target?.closest?.("[data-light-quote-stage]");
+      const stageControl = stageTarget && event.target?.closest?.("button, a, input, select, textarea, [role=button]");
+      const target = adjustTarget || (stageTarget && !stageControl ? stageTarget : null);
       if (!target || (rootElement.contains && !rootElement.contains(target))) return;
       event.preventDefault?.();
       event.stopImmediatePropagation?.();
@@ -2155,6 +2154,11 @@
       return runtimeImageUrl(image?.url, rootElement.ownerDocument);
     }
 
+    function applyStageVisualClasses(image, tone = "dark") {
+      stage.className = `light-quote-stage light-quote-stage--${image?.text_safe_area || "flexible"} light-quote-stage--text-${tone}`;
+      stage.classList?.toggle?.("is-text-adjusting", textPosition.isAdjustmentMode());
+    }
+
     function analyzeCurrentTextTone(version, image, imagePromise) {
       const startedAt = Date.now();
       reportDiagnostic("TEXT_TONE_WAIT", { version, imageUrl: image?.url || "" });
@@ -2207,7 +2211,7 @@
       time.textContent = `${encounterTime.getFullYear()}.${pad(encounterTime.getMonth() + 1)}.${pad(encounterTime.getDate())} · ${pad(encounterTime.getHours())}:${pad(encounterTime.getMinutes())}`;
       const version = ++renderVersion;
       manualToneVersion = null;
-      stage.className = `light-quote-stage light-quote-stage--${currentImage?.text_safe_area || "flexible"} light-quote-stage--text-dark`;
+      applyStageVisualClasses(currentImage, "dark");
       textPosition.setToneMode("black", { source: "automatic-tone-pending" });
       if (currentImage) stage.style.backgroundImage = `url("${String(displayImageUrl(currentImage)).replace(/"/g, "%22")}")`;
       currentImagePromise = decodedImage
@@ -2283,7 +2287,7 @@
         const keepsManualTone = manualToneVersion === versionAtStart;
         manualToneVersion = keepsManualTone ? version : null;
         const preferredTone = textPosition.getPreferredLayout().toneMode === "white" ? "light" : "dark";
-        stage.className = `light-quote-stage light-quote-stage--${candidate.text_safe_area || "flexible"} light-quote-stage--text-${preferredTone}`;
+        applyStageVisualClasses(candidate, preferredTone);
         stage.style.backgroundImage = `url("${String(displayImageUrl(candidate)).replace(/"/g, "%22")}")`;
         applyTextTone(preferredTone);
         textTonePromise = keepsManualTone
@@ -2361,7 +2365,7 @@
       }
       const shareUrl = new URL("/light-quotes/", location.origin);
       shareUrl.searchParams.set("quote", currentQuote.lq_id);
-      const value = `「${currentQuote.quote_text}」\n${formatBookTitle(currentQuote.book_title)} │ ${currentQuote.author}\n${shareUrl.href}`;
+      const value = `${currentQuote.quote_text}\n${formatBookTitle(currentQuote.book_title)} │ ${currentQuote.author}\n${shareUrl.href}`;
       const copied = await copyTextValue(value);
       showStatus(copied ? "文字与固定语录链接已复制。" : "复制失败，请手动选择文字。");
     });
@@ -2630,6 +2634,7 @@
     EXPORT_WIDTH,
     LIGHT_QUOTES_BUILD,
     IOS_MOBILE_DEFAULT_TEXT_WIDTH_PERCENT,
+    TEXT_SCALE_STEP,
     MOBILE_DEFAULT_TEXT_SCALE,
     LIGHT_TEXT_COVERAGE_LEAD,
     MIN_EXPORT_BYTES,

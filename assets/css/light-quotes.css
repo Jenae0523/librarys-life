@@ -803,6 +803,8 @@
   body.light-quote-page.light-quote-focus-active .light-quote-stage {
     width: 100%;
     max-width: 100%;
+    touch-action: none;
+    overscroll-behavior: contain;
   }
   body.light-quote-page.light-quote-focus-active .light-quote-background-control {
     flex-wrap: nowrap;
