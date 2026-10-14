@@ -68,7 +68,7 @@
 
 </head>
 
-<body>
+<body class="light-quote-page">
   <!-- Header -->
 <header id="js-header" class="u-header u-header--sticky-top u-header--toggle-section u-header--change-appearance u-shadow-v19 g-px-100--lg g-bg-white" data-header-fix-moment="300">
 <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3" data-header-fix-moment-exclude="g-py-0" data-header-fix-moment-classes="u-shadow-v18 g-py-0">
@@ -122,10 +122,14 @@
 
   <main>
     
-<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261014-4">
-<script src="/assets/js/light-quotes.js?v=20261014-4" defer></script>
+<link rel="stylesheet" href="/assets/css/light-quotes.css?v=20261014-7">
+<script src="/assets/js/light-quotes.js?v=20261014-7" defer></script>
 
 <section class="light-quote-main" data-light-quote-main data-light-quote-manifest-url="/assets/data/light-quotes/manifest.json" aria-labelledby="light-quote-title">
+  <div class="light-quote-focus-header" aria-label="光语录专注编辑">
+    <a href="/" aria-label="返回网站首页">← 返回</a>
+    <strong>光语录</strong>
+  </div>
   <header class="light-quote-header">
     <div class="light-quote-header__inner">
       <h1 id="light-quote-title">光语录</h1>
@@ -196,7 +200,6 @@
           </button>
         </div>
       </div>
-      <p data-light-quote-layout-warning aria-live="polite"></p>
     </section>
 
     <div class="light-quote-actions" aria-label="光语录操作">
@@ -204,7 +207,7 @@
       <button type="button" data-light-quote-freeze>定格此刻</button>
       <button type="button" data-light-quote-copy>复制文字</button>
     </div>
-    <p class="light-quote-status" data-light-quote-status aria-live="polite"></p>
+    <p class="light-quote-status light-quote-focus-hint" data-light-quote-status data-light-quote-focus-hint aria-live="polite">单指移动文字组，双指缩放。</p>
     <section class="light-quote-debug" data-light-quote-debug hidden aria-label="光语录保存诊断">
       <strong>LIGHT QUOTES DEBUG</strong>
       <pre data-light-quote-debug-output></pre>
@@ -291,7 +294,7 @@
     try { objectSpread = Boolean(Function("var value={a:1};return {...value}.a")()); } catch (_) {}
     try { asyncFunction = Boolean(Function("return async function () {}")()); } catch (_) {}
     report("BUILD", {
-      build: "20261014-4",
+      build: "20261014-7",
       js: script && script.getAttribute("src") || "unknown",
       css: stylesheet && stylesheet.getAttribute("href") || "unknown",
       userAgent: navigator.userAgent || "unknown",

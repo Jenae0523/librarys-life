@@ -17,8 +17,12 @@
     + 0.0722 * channelLuminance(42);
   const READY_IMAGE_QUEUE_LIMIT = 2;
   const TEXT_TOP_SAFE_RATIO = 0.025;
-  const LIGHT_QUOTES_BUILD = "20261014-4";
+  const LIGHT_QUOTES_BUILD = "20261014-7";
   const DEFAULT_TEXT_LAYOUT = Object.freeze({ scale: 1, widthPercent: 84.6154, align: "center", offsetXPercent: 0, offsetYPercent: -14, toneMode: "black" });
+  const MOBILE_DEFAULT_TEXT_SCALE = 1.08;
+  const MOBILE_FOCUS_STAGE_MIN_WIDTH = 270;
+  const MOBILE_FOCUS_STAGE_MAX_WIDTH = 410;
+  const MOBILE_FOCUS_VERTICAL_BUDGET = 226;
   const CONTROLLED_RANDOM_DEFAULTS = Object.freeze({
     historySize: 20,
     quoteExclusionWindow: 20,
@@ -1603,15 +1607,27 @@
     return Math.min(bounds.max, Math.max(bounds.min, number));
   }
 
+  function mobileFocusStageWidth(viewportWidth, viewportHeight) {
+    const availableWidth = Math.max(0, Number(viewportWidth || 0) - 20);
+    const heightBasedWidth = Math.max(
+      MOBILE_FOCUS_STAGE_MIN_WIDTH,
+      (Math.max(0, Number(viewportHeight || 0) - MOBILE_FOCUS_VERTICAL_BUDGET) * 9) / 16
+    );
+    return Math.max(0, Math.min(availableWidth, MOBILE_FOCUS_STAGE_MAX_WIDTH, heightBasedWidth));
+  }
+
   function createTextPositionController(options = {}) {
     const stage = options.stage;
     const body = options.body;
     const textGroup = options.textGroup;
+    const gestureSurface = options.gestureSurface || stage || textGroup;
     const footer = options.footer;
     const adjustButton = options.adjustButton;
     const status = options.status;
+    const announce = options.onHint;
     const controls = options.controls || {};
-    let preferredLayout = { ...DEFAULT_TEXT_LAYOUT, ...(options.initialLayout || {}) };
+    const defaultLayout = { ...DEFAULT_TEXT_LAYOUT, ...(options.defaultLayout || {}) };
+    let preferredLayout = { ...defaultLayout, ...(options.initialLayout || {}) };
     let effectiveLayout = { ...preferredLayout };
     let adjustmentMode = false;
     let dragging = false;
@@ -1632,6 +1648,11 @@
       setProperty("--lq-text-offset-x", `${(stageRect?.width || 0) * layout.offsetXPercent / 100}px`);
       setProperty("--lq-text-offset-y", `${(stageRect?.height || 0) * layout.offsetYPercent / 100}px`);
       if (controls.width) controls.width.value = String(Math.round(preferredLayout.widthPercent));
+      if (controls.width?.style) {
+        const progress = Math.max(0, Math.min(100, (preferredLayout.widthPercent - 62) / 34 * 100));
+        if (typeof controls.width.style.setProperty === "function") controls.width.style.setProperty("--lq-width-progress", `${progress}%`);
+        else controls.width.style["--lq-width-progress"] = `${progress}%`;
+      }
       if (controls.scaleDown) controls.scaleDown.disabled = preferredLayout.scale <= .75;
       if (controls.scaleUp) controls.scaleUp.disabled = preferredLayout.scale >= 1.3;
       controls.alignButtons?.forEach?.(button => button.setAttribute?.("aria-pressed", String(button.dataset?.lightQuoteAlign === preferredLayout.align)));
@@ -1676,6 +1697,36 @@
       return preferredLayout;
     }
 
+    function updateScale(step) {
+      const direction = step > 0 ? 1 : -1;
+      const previousPreferred = { ...preferredLayout };
+      const previousEffectiveScale = effectiveLayout.scale;
+      const candidate = Math.min(1.3, Math.max(.75, Math.round((preferredLayout.scale + direction * .05) * 100) / 100));
+      if (candidate === preferredLayout.scale) {
+        const message = direction > 0 ? "文字已达到最大比例。" : "文字已达到最小比例。";
+        if (status) status.textContent = message;
+        announce?.(message);
+        return preferredLayout;
+      }
+      preferredLayout = { ...preferredLayout, scale: candidate };
+      measureAndFit();
+      if (Math.abs(effectiveLayout.scale - previousEffectiveScale) < .005) {
+        preferredLayout = previousPreferred;
+        measureAndFit();
+        const message = direction > 0
+          ? "当前文字已达到安全区上限，可增加行宽后再放大。"
+          : "当前文字已达到安全区下限。";
+        if (status) status.textContent = message;
+        announce?.(direction > 0 ? "已达到安全区上限。" : "已达到安全区下限。");
+        return preferredLayout;
+      }
+      const message = `文字比例 ${Math.round(effectiveLayout.scale * 100)}%。`;
+      if (status) status.textContent = message;
+      announce?.(direction > 0 ? "文字已放大。" : "文字已缩小。");
+      options.onChange?.({ ...preferredLayout }, { ...effectiveLayout }, { source: direction > 0 ? "scale-up" : "scale-down" });
+      return preferredLayout;
+    }
+
     function setToneMode(toneMode, metadata = {}) {
       const resolvedToneMode = toneMode === "white" ? "white" : "black";
       preferredLayout = { ...preferredLayout, toneMode: resolvedToneMode };
@@ -1688,9 +1739,9 @@
     function finishDrag(event) {
       if (event?.pointerId != null) {
         pointers.delete(event.pointerId);
-        textGroup?.releasePointerCapture?.(event.pointerId);
+        gestureSurface?.releasePointerCapture?.(event.pointerId);
       } else {
-        [...pointers.keys()].forEach(id => textGroup?.releasePointerCapture?.(id));
+        [...pointers.keys()].forEach(id => gestureSurface?.releasePointerCapture?.(id));
         pointers.clear();
       }
       dragging = pointers.size > 0;
@@ -1709,6 +1760,7 @@
       adjustmentMode = Boolean(active);
       if (!adjustmentMode) finishDrag();
       textGroup?.classList?.toggle?.("is-adjusting", adjustmentMode);
+      stage?.classList?.toggle?.("is-text-adjusting", adjustmentMode);
       adjustButton?.setAttribute?.("aria-pressed", String(adjustmentMode));
       if (adjustButton) adjustButton.textContent = adjustmentMode ? "锁定文字" : "调整文字";
       if (controls.panel) controls.panel.hidden = !adjustmentMode;
@@ -1735,7 +1787,7 @@
         pinchStart = { distance: Math.hypot(b.x-a.x,b.y-a.y), scale: preferredLayout.scale };
         dragStart = null;
       }
-      textGroup.setPointerCapture?.(event.pointerId);
+      gestureSurface?.setPointerCapture?.(event.pointerId);
       textGroup.classList?.toggle?.("is-dragging", true);
     }
 
@@ -1754,29 +1806,42 @@
       });
     }
 
-    controls.scaleDown?.addEventListener?.("click", () => updatePreferred({ scale: Math.max(.75, Math.round((preferredLayout.scale - .05) * 100) / 100) }));
-    controls.scaleUp?.addEventListener?.("click", () => updatePreferred({ scale: Math.min(1.3, Math.round((preferredLayout.scale + .05) * 100) / 100) }));
-    controls.width?.addEventListener?.("input", event => updatePreferred({ widthPercent: Number(event.target.value) }));
+    controls.scaleDown?.addEventListener?.("click", () => updateScale(-1));
+    controls.scaleUp?.addEventListener?.("click", () => updateScale(1));
+    controls.width?.addEventListener?.("input", event => {
+      updatePreferred({ widthPercent: Number(event.target.value) });
+      announce?.(`行宽 ${Math.round(preferredLayout.widthPercent)}%。`);
+    });
     controls.widthToggle?.addEventListener?.("click", () => {
       const expanded = controls.widthToggle?.getAttribute?.("aria-expanded") === "true";
       controls.widthToggle?.setAttribute?.("aria-expanded", String(!expanded));
       if (controls.widthPopover) controls.widthPopover.hidden = expanded;
+      announce?.(expanded ? "行宽设置已收起。" : "向右加宽，向左收窄。");
     });
-    controls.alignButtons?.forEach?.(button => button.addEventListener?.("click", () => updatePreferred({ align: button.dataset.lightQuoteAlign })));
-    controls.toneButtons?.forEach?.(button => button.addEventListener?.("click", () => setToneMode(button.dataset.lightQuoteTone, { source: "tone-control" })));
+    controls.alignButtons?.forEach?.(button => button.addEventListener?.("click", () => {
+      const align = button.dataset.lightQuoteAlign;
+      updatePreferred({ align });
+      announce?.(({ left: "已左对齐。", center: "已居中。", right: "已右对齐。" })[align] || "对齐已更新。");
+    }));
+    controls.toneButtons?.forEach?.(button => button.addEventListener?.("click", () => {
+      const tone = button.dataset.lightQuoteTone;
+      setToneMode(tone, { source: "tone-control" });
+      announce?.(tone === "white" ? "已切换白色文字。" : "已切换黑色文字。");
+    }));
     controls.reset?.addEventListener?.("click", () => {
-      preferredLayout = { ...DEFAULT_TEXT_LAYOUT, toneMode: preferredLayout.toneMode };
+      preferredLayout = { ...defaultLayout, toneMode: preferredLayout.toneMode };
       if (controls.widthPopover) controls.widthPopover.hidden = true;
       controls.widthToggle?.setAttribute?.("aria-expanded", "false");
       measureAndFit();
       options.onChange?.({ ...preferredLayout }, { ...effectiveLayout }, { source: "reset" });
+      announce?.("已恢复默认设置。");
     });
 
     adjustButton?.addEventListener?.("click", () => setMode(!adjustmentMode));
-    textGroup?.addEventListener?.("pointerdown", pointerDown);
-    textGroup?.addEventListener?.("pointermove", pointerMove);
-    textGroup?.addEventListener?.("pointerup", finishDrag);
-    textGroup?.addEventListener?.("pointercancel", finishDrag);
+    gestureSurface?.addEventListener?.("pointerdown", pointerDown);
+    gestureSurface?.addEventListener?.("pointermove", pointerMove);
+    gestureSurface?.addEventListener?.("pointerup", finishDrag);
+    gestureSurface?.addEventListener?.("pointercancel", finishDrag);
     applyLayout();
 
     return {
@@ -1786,11 +1851,40 @@
       getPreferredLayout: () => ({ ...preferredLayout }),
       getEffectiveLayout: () => ({ ...effectiveLayout }),
       updatePreferred,
+      updateScale,
       setToneMode,
       measureAndFit,
       isAdjustmentMode: () => adjustmentMode,
       isDragging: () => dragging
     };
+  }
+
+  function createHintPresenter(element, scheduler, options = {}) {
+    const timers = scheduler || (typeof window !== "undefined" ? window : null);
+    const defaultMessage = options.defaultMessage || "单指移动文字组，双指缩放。";
+    const delay = Number(options.delay) || 2400;
+    let timer = null;
+
+    function cancelPendingRestore() {
+      if (timer !== null) timers?.clearTimeout?.(timer);
+      timer = null;
+    }
+
+    function show(message) {
+      cancelPendingRestore();
+      if (element) element.textContent = message || defaultMessage;
+    }
+
+    function showTemporary(message) {
+      show(message);
+      timer = timers?.setTimeout?.(() => {
+        timer = null;
+        if (element) element.textContent = defaultMessage;
+      }, delay) ?? null;
+    }
+
+    show(defaultMessage);
+    return { show, showTemporary, cancelPendingRestore, getDefaultMessage: () => defaultMessage };
   }
 
   function initMainPage(rootElement, options = {}) {
@@ -1806,7 +1900,8 @@
     const sourceBook = rootElement.querySelector("[data-light-quote-book]");
     const sourceAuthor = rootElement.querySelector("[data-light-quote-author]");
     const time = rootElement.querySelector("[data-light-quote-time]");
-    const status = rootElement.querySelector("[data-light-quote-status]");
+    const status = rootElement.querySelector("[data-light-quote-status]")
+      || rootElement.querySelector("[data-light-quote-focus-hint]");
     const nextButton = rootElement.querySelector("[data-light-quote-next]");
     const backgroundButton = rootElement.querySelector("[data-light-quote-background]");
     const textAdjustButton = rootElement.querySelector("[data-light-quote-text-adjust]");
@@ -1819,6 +1914,15 @@
     const previewClose = rootElement.querySelector("[data-light-quote-preview-close]");
     const navigatorObject = options.navigatorObject || (typeof navigator !== "undefined" ? navigator : null);
     const windowObject = options.windowObject || rootElement.ownerDocument?.defaultView || (typeof window !== "undefined" ? window : null);
+    const documentObject = rootElement.ownerDocument || (typeof document !== "undefined" ? document : null);
+    const bodyElement = documentObject?.body;
+    const mobileFocusMode = options.mobileFocusMode ?? Boolean(
+      bodyElement?.classList?.contains?.("light-quote-page")
+      && windowObject?.matchMedia?.("(max-width: 575px)")?.matches
+    );
+    const hintPresenter = createHintPresenter(status, windowObject, { delay: 2400 });
+    const showStatus = hintPresenter.show;
+    const showToolbarHint = hintPresenter.showTemporary;
     const reportDiagnostic = options.reportDiagnostic || createDebugReporter(rootElement, {
       documentObject: rootElement.ownerDocument,
       windowObject,
@@ -1835,7 +1939,9 @@
       textGroup: stage?.querySelector?.(".light-quote-stage__glow"),
       footer: stage?.querySelector?.(".light-quote-stage__footer"),
       adjustButton: textAdjustButton,
-      status,
+      status: null,
+      onHint: showToolbarHint,
+      defaultLayout: mobileFocusMode ? { scale: MOBILE_DEFAULT_TEXT_SCALE } : undefined,
       controls: {
         panel: layoutControls,
         scaleDown: rootElement.querySelector("[data-light-quote-scale-down]"),
@@ -1846,13 +1952,40 @@
         alignButtons: [...(rootElement.querySelectorAll?.("[data-light-quote-align]") || [])],
         toneButtons: [...(rootElement.querySelectorAll?.("[data-light-quote-tone]") || [])],
         reset: rootElement.querySelector("[data-light-quote-reset]"),
-        warning: rootElement.querySelector("[data-light-quote-layout-warning]")
+        warning: null
       },
       onChange(preferred, _effective, metadata = {}) {
         if (metadata.source === "tone-control") manualToneVersion = renderVersion;
         applyTextTone(preferred.toneMode === "white" ? "light" : "dark");
       }
     });
+    let viewportFrame = null;
+
+    function syncMobileViewport() {
+      viewportFrame = null;
+      if (!mobileFocusMode) return;
+      const visualViewport = windowObject?.visualViewport;
+      const viewportWidth = visualViewport?.width || windowObject?.innerWidth || 0;
+      const viewportHeight = visualViewport?.height || windowObject?.innerHeight || 0;
+      rootElement.style?.setProperty?.("--lq-viewport-height", `${viewportHeight}px`);
+      rootElement.style?.setProperty?.("--lq-focus-stage-width", `${mobileFocusStageWidth(viewportWidth, viewportHeight)}px`);
+      textPosition.measureAndFit();
+    }
+
+    function scheduleMobileViewportSync() {
+      if (!mobileFocusMode || viewportFrame !== null) return;
+      if (typeof windowObject?.requestAnimationFrame === "function") {
+        viewportFrame = windowObject.requestAnimationFrame(syncMobileViewport);
+      } else {
+        syncMobileViewport();
+      }
+    }
+
+    rootElement.classList?.toggle?.("is-mobile-focus", mobileFocusMode);
+    if (mobileFocusMode) {
+      textPosition.setMode(true);
+      scheduleMobileViewportSync();
+    }
     let currentQuote = null;
     let currentImage = null;
     let encounterTime = null;
@@ -1971,7 +2104,7 @@
         history.replaceState({}, "", url);
       }
       document.title = `${technicalTitle(quote.quote_text)}・光语录・生命之书 | librarys.life`;
-      status.textContent = "";
+      showStatus("");
       readyImages.refresh();
       scheduleReadyPreload(version);
       randomStrategy.record(quote);
@@ -1988,7 +2121,7 @@
       reportDiagnostic("NEXT_QUOTE_READY", { actionToken, quoteId: quote?.lq_id || "", durationMs: Date.now() - startedAt });
       if (!quote) return false;
       if (nextButton) nextButton.disabled = true;
-      status.textContent = "图片还在准备，请稍候…";
+      showStatus("图片还在准备，请稍候…");
       try {
         const imageStartedAt = Date.now();
         const prepared = await readyImages.consume();
@@ -2005,7 +2138,7 @@
         return true;
       } catch (error) {
         console.error("Light quote background preload failed", error);
-        if (actionToken === actionSequence) status.textContent = "背景图片加载失败，请稍后重试。";
+        if (actionToken === actionSequence) showStatus("背景图片加载失败，请稍后重试。");
         return false;
       } finally {
         if (nextButton) nextButton.disabled = false;
@@ -2020,7 +2153,7 @@
 
       backgroundBusy = true;
       if (backgroundButton) backgroundButton.disabled = true;
-      status.textContent = "正在准备新背景…";
+      showStatus("正在准备新背景…");
       try {
         const prepared = await readyImages.consume();
         if (!prepared) throw new Error("No decoded background candidate is available");
@@ -2039,14 +2172,14 @@
         textTonePromise = keepsManualTone
           ? Promise.resolve(preferredTone)
           : analyzeCurrentTextTone(version, candidate, currentImagePromise);
-        status.textContent = "背景已更换。";
+        showStatus("背景已更换。");
         readyImages.refresh();
         scheduleReadyPreload(version);
         return true;
       } catch (error) {
         console.error("Light quote background change failed", error);
         if (versionAtStart === renderVersion && currentImage === previousImage) {
-          status.textContent = "背景图片加载失败，已保留当前背景。";
+          showStatus("背景图片加载失败，已保留当前背景。");
         }
         return false;
       } finally {
@@ -2097,7 +2230,7 @@
       return quote;
     })().catch(error => {
       console.error("Light quote initialization failed", error);
-      status.textContent = "语录加载失败，请稍后刷新页面。";
+      showStatus("语录加载失败，请稍后刷新页面。");
       return null;
     });
 
@@ -2106,14 +2239,14 @@
     rootElement.querySelector("[data-light-quote-copy]")?.addEventListener("click", async function () {
       await initializationPromise;
       if (!currentQuote) {
-        status.textContent = "语录尚未加载完成，请稍后重试。";
+        showStatus("语录尚未加载完成，请稍后重试。");
         return;
       }
       const shareUrl = new URL("/light-quotes/", location.origin);
       shareUrl.searchParams.set("quote", currentQuote.lq_id);
       const value = `「${currentQuote.quote_text}」\n${formatBookTitle(currentQuote.book_title)} │ ${currentQuote.author}\n${shareUrl.href}`;
       const copied = await copyTextValue(value);
-      status.textContent = copied ? "文字与固定语录链接已复制。" : "复制失败，请手动选择文字。";
+      showStatus(copied ? "文字与固定语录链接已复制。" : "复制失败，请手动选择文字。");
     });
     previewClose?.addEventListener("click", closePreview);
     preview?.addEventListener("click", event => { if (event.target === preview) closePreview(); });
@@ -2128,11 +2261,11 @@
         const shared = await shareExistingPngFile(file, { navigatorObject, reportDiagnostic });
         if (shared.mode === "share") {
           closePreview();
-          status.textContent = "图片已交给系统分享面板。";
+          showStatus("图片已交给系统分享面板。");
         } else if (shared.mode === "cancelled") {
-          status.textContent = "已取消分享；PNG 仍保留在预览中。";
+          showStatus("已取消分享；PNG 仍保留在预览中。");
         } else {
-          status.textContent = "系统分享失败；PNG 仍可下载或长按保存。";
+          showStatus("系统分享失败；PNG 仍可下载或长按保存。");
         }
       } finally {
         shareBusy = false;
@@ -2143,7 +2276,7 @@
       if (exportBusy) return;
       await initializationPromise;
       if (!currentQuote || !currentImage || !encounterTime) {
-        status.textContent = "语录尚未加载完成，请稍后重试。";
+        showStatus("语录尚未加载完成，请稍后重试。");
         return;
       }
       const button = this;
@@ -2167,7 +2300,7 @@
       exportBusy = true;
       button.disabled = true;
       button.textContent = "生成中…";
-      status.textContent = "图片还在准备，请稍候…";
+      showStatus("图片还在准备，请稍候…");
       reportDiagnostic("CLICK", { operationId, userActivation: userActivationState(navigatorObject) });
       try {
         let result;
@@ -2181,16 +2314,16 @@
             reportDiagnostic("BG_REUSE_UNAVAILABLE", errorDiagnostic(error, "background-reuse"));
           }
           if (frozenVersion !== renderVersion) throw new Error("Quote changed while preparing the image");
-          status.textContent = "正在生成 1080 × 1920 PNG…";
+          showStatus("正在生成 1080 × 1920 PNG…");
           result = await (options.pngGenerator || generateMomentPng)({ stage, snapshot, diagnostics, reportDiagnostic, backgroundImage });
           if (frozenVersion !== renderVersion) throw new Error("Quote changed while generating the image");
           reportDiagnostic("PNG_GENERATION_OK", { operationId, blobSize: result.blob.size });
         } catch (error) {
           reportDiagnostic("PNG_GENERATION_FAIL", { operationId, stage: diagnostics.stage, ...errorDiagnostic(error) });
           console.error("Light quote PNG generation failed", JSON.stringify(diagnostics), error);
-          status.textContent = error?.message?.includes("Quote changed")
+          showStatus(error?.message?.includes("Quote changed")
             ? "当前语录已切换，请重新点击“定格此刻”。"
-            : "图片生成失败，请稍后重试。";
+            : "图片生成失败，请稍后重试。");
           return;
         }
         try { sessionStorage.setItem("light-quote-snapshot", JSON.stringify(snapshot)); } catch (_) {}
@@ -2203,16 +2336,16 @@
             previewer: (blob, filename, file, canShareFile) => showPreview(blob, filename, file, canShareFile),
             sharePresenter: (file, shareResult) => showPreview(shareResult.blob, shareResult.filename, file, true)
           });
-          if (delivery.mode === "download") status.textContent = `PNG 已生成并开始下载：1080 × 1920，${size}`;
-          if (delivery.mode === "share") status.textContent = `PNG 已生成并交给系统分享：1080 × 1920，${size}`;
-          if (delivery.mode === "share-ready") status.textContent = `图片已生成，请点击“保存 / 分享图片”：1080 × 1920，${size}`;
-          if (delivery.mode === "preview") status.textContent = `图片已生成，请下载或长按预览图保存：1080 × 1920，${size}`;
-          if (delivery.mode === "cancelled") status.textContent = "已取消分享；PNG 仍保留在预览中。";
-          if (delivery.mode === "share-failed") status.textContent = "PNG 已生成；系统分享失败，仍可下载或长按保存。";
+          if (delivery.mode === "download") showStatus(`PNG 已生成并开始下载：1080 × 1920，${size}`);
+          if (delivery.mode === "share") showStatus(`PNG 已生成并交给系统分享：1080 × 1920，${size}`);
+          if (delivery.mode === "share-ready") showStatus(`图片已生成，请点击“保存 / 分享图片”：1080 × 1920，${size}`);
+          if (delivery.mode === "preview") showStatus(`图片已生成，请下载或长按预览图保存：1080 × 1920，${size}`);
+          if (delivery.mode === "cancelled") showStatus("已取消分享；PNG 仍保留在预览中。");
+          if (delivery.mode === "share-failed") showStatus("PNG 已生成；系统分享失败，仍可下载或长按保存。");
         } catch (error) {
           reportDiagnostic("DELIVERY_FAIL", errorDiagnostic(error));
           console.error("Light quote PNG delivery failed", error);
-          status.textContent = `PNG 已生成，但保存界面打开失败：1080 × 1920，${size}`;
+          showStatus(`PNG 已生成，但保存界面打开失败：1080 × 1920，${size}`);
         }
       } finally {
         exportBusy = false;
@@ -2220,7 +2353,8 @@
         button.textContent = originalButtonText;
       }
     });
-    windowObject?.addEventListener?.("resize", () => textPosition.measureAndFit());
+    windowObject?.addEventListener?.("resize", mobileFocusMode ? scheduleMobileViewportSync : () => textPosition.measureAndFit());
+    windowObject?.visualViewport?.addEventListener?.("resize", scheduleMobileViewportSync);
     return {
       ready: initializationPromise,
       quoteStore,
@@ -2245,7 +2379,8 @@
       getPreferredLayout: textPosition.getPreferredLayout,
       getEffectiveLayout: textPosition.getEffectiveLayout,
       isTextAdjustmentMode: textPosition.isAdjustmentMode,
-      isTextDragging: textPosition.isDragging
+      isTextDragging: textPosition.isDragging,
+      isMobileFocusMode: () => mobileFocusMode
     };
   }
 
@@ -2375,6 +2510,7 @@
     EXPORT_HEIGHT,
     EXPORT_WIDTH,
     LIGHT_QUOTES_BUILD,
+    MOBILE_DEFAULT_TEXT_SCALE,
     LIGHT_TEXT_COVERAGE_LEAD,
     MIN_EXPORT_BYTES,
     READY_IMAGE_QUEUE_LIMIT,
@@ -2396,6 +2532,7 @@
     copyTextValue,
     coverSampleRect,
     createImagePreloader,
+    createHintPresenter,
     createQuoteStore,
     createControlledRandomStrategy,
     createShardedQuoteStore,
@@ -2424,6 +2561,7 @@
     loadRasterImage,
     luminanceStats,
     matchingImages,
+    mobileFocusStageWidth,
     momentFilename,
     normalizeMatchingMode,
     prepareExportBackground,

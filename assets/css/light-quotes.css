@@ -105,6 +105,9 @@
   background: #fff;
   color: #303541;
 }
+.light-quote-focus-header {
+  display: none;
+}
 .light-quote-header {
   width: calc(100% + 40px);
   margin: 0 -20px 66px;
@@ -207,9 +210,11 @@
 }
 .light-quote-stage__glow.is-adjusting {
   cursor: move;
-  touch-action: none;
   user-select: none;
   -webkit-user-select: none;
+}
+.light-quote-stage.is-text-adjusting {
+  touch-action: none;
 }
 .light-quote-stage__glow.is-dragging { cursor: grabbing; }
 .light-quote-stage--text-dark {
@@ -448,16 +453,44 @@
 }
 .light-quote-layout-controls__popover[hidden] { display: none; }
 .light-quote-layout-controls__popover input {
+  --lq-width-progress: 67.65%;
+  appearance: none;
+  -webkit-appearance: none;
   display: block;
   width: 100%;
+  height: 4px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--lq-primary-color) 0 var(--lq-width-progress), #e3e6ed var(--lq-width-progress) 100%);
   accent-color: var(--lq-primary-color);
 }
-.light-quote-layout-controls > p {
-  min-height: 1.4em;
-  margin: 5px 0 0;
-  color: #a14d4d;
-  font-size: .82rem;
-  text-align: center;
+.light-quote-layout-controls__popover input::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--lq-primary-color);
+  box-shadow: 0 1px 4px rgba(65,77,122,.24);
+}
+.light-quote-layout-controls__popover input::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: #e3e6ed;
+}
+.light-quote-layout-controls__popover input::-moz-range-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--lq-primary-color);
+}
+.light-quote-layout-controls__popover input::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--lq-primary-color);
+  box-shadow: 0 1px 4px rgba(65,77,122,.24);
 }
 .light-quote-actions {
   display: flex;
@@ -503,13 +536,18 @@
   box-shadow: 0 0 0 4px rgba(98, 129, 200, .1);
 }
 .light-quote-status {
+  height: 1.5em;
   min-height: 1.5em;
+  max-width: 100%;
   margin: 14px 0 0;
+  overflow: hidden;
   color: #777e89;
   font: inherit;
   font-size: .9rem;
-  line-height: 1.6;
+  line-height: 1.5;
   text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .light-quote-debug[hidden] { display: none; }
 .light-quote-debug {
@@ -696,6 +734,154 @@
   .tag-quote-module { margin-top: 48px; margin-bottom: 54px; padding: 58px 18px 52px; }
   .tag-quote-module__mark { margin-bottom: 16px; }
   .tag-quote-module__item blockquote { font-size: clamp(1.1rem, 5vw, 1.22rem); line-height: 1.9; }
+}
+
+@media (max-width: 575px) {
+  body.light-quote-page {
+    overflow-x: clip;
+  }
+  body.light-quote-page > #js-header,
+  body.light-quote-page > footer,
+  body.light-quote-page .light-quote-header {
+    display: none;
+  }
+  body.light-quote-page > main {
+    min-width: 0;
+    overflow-x: clip;
+  }
+  body.light-quote-page .light-quote-main {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: max(4px, env(safe-area-inset-top)) 10px max(8px, env(safe-area-inset-bottom));
+  }
+  body.light-quote-page .light-quote-focus-header {
+    display: grid;
+    grid-template-columns: minmax(72px, 1fr) auto minmax(72px, 1fr);
+    align-items: center;
+    min-height: 38px;
+    gap: 8px;
+    margin: 0 auto 5px;
+    color: #555b64;
+    font-size: .82rem;
+    line-height: 1.2;
+  }
+  .light-quote-focus-header a {
+    min-height: 32px;
+    padding: 5px 4px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #555b64;
+    font: inherit;
+    text-decoration: none;
+  }
+  .light-quote-focus-header a {
+    display: inline-flex;
+    align-items: center;
+    justify-self: start;
+  }
+  .light-quote-focus-header strong {
+    color: #3f4550;
+    font-size: .94rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .light-quote-focus-header a:focus-visible {
+    outline: 2px solid rgba(98,129,200,.34);
+    outline-offset: 1px;
+  }
+  body.light-quote-page .light-quote-experience {
+    --lq-action-font-size: .84rem;
+    position: relative;
+    width: min(calc(100vw - 20px), var(--lq-focus-stage-width, calc(100vw - 20px)));
+    max-width: 410px;
+  }
+  body.light-quote-page .light-quote-stage {
+    width: 100%;
+    max-width: 100%;
+  }
+  body.light-quote-page .light-quote-background-control {
+    flex-wrap: nowrap;
+    gap: 0 8px;
+    margin-top: 3px;
+  }
+  body.light-quote-page .light-quote-background-control button {
+    min-height: 32px;
+    padding: 4px 2px;
+    font-size: .86rem;
+    white-space: nowrap;
+  }
+  body.light-quote-page .light-quote-layout-controls {
+    margin-top: 4px;
+  }
+  body.light-quote-page .light-quote-layout-controls__toolbar {
+    left: 50%;
+    width: max-content;
+    max-width: calc(100vw - 8px);
+    margin-left: 0;
+    padding: 4px 3px;
+    transform: translateX(-50%);
+  }
+  body.light-quote-page .light-quote-layout-controls__group + .light-quote-layout-controls__group {
+    margin-left: 2px;
+    padding-left: 3px;
+  }
+  body.light-quote-page .light-quote-layout-controls button {
+    width: clamp(27px, 7.7vw, 32px);
+    height: 34px;
+    flex-basis: clamp(27px, 7.7vw, 32px);
+    font-size: .86rem;
+  }
+  body.light-quote-page .light-quote-layout-controls svg {
+    width: 18px;
+    height: 18px;
+  }
+  body.light-quote-page .light-quote-layout-controls__swatch {
+    width: 18px;
+    height: 18px;
+  }
+  body.light-quote-page .light-quote-layout-controls__group--width {
+    position: static;
+  }
+  body.light-quote-page .light-quote-layout-controls__popover {
+    right: auto;
+    left: 50%;
+    width: min(240px, calc(100vw - 24px));
+    transform: translateX(-50%);
+  }
+  body.light-quote-page .light-quote-actions {
+    flex-wrap: nowrap;
+    gap: 6px;
+    margin-top: 7px;
+  }
+  body.light-quote-page .light-quote-actions button {
+    min-width: 0;
+    min-height: 36px;
+    flex: 1 1 0;
+    padding: 7px 5px;
+    font-size: .82rem;
+    white-space: nowrap;
+  }
+  body.light-quote-page .light-quote-status {
+    min-height: 1.25em;
+    margin-top: 3px;
+    font-size: .76rem;
+    line-height: 1.25;
+  }
+  body.light-quote-page .light-quote-focus-hint {
+    display: block;
+    height: 1.25em;
+    min-height: 1.25em;
+    margin: 16px 0 0;
+    overflow: hidden;
+    color: #8a91a0;
+    font-size: .72rem;
+    line-height: 1.25;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 350px) {
