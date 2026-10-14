@@ -17,9 +17,10 @@
     + 0.0722 * channelLuminance(42);
   const READY_IMAGE_QUEUE_LIMIT = 2;
   const TEXT_TOP_SAFE_RATIO = 0.025;
-  const LIGHT_QUOTES_BUILD = "20261014-7";
+  const LIGHT_QUOTES_BUILD = "20261014-8";
   const DEFAULT_TEXT_LAYOUT = Object.freeze({ scale: 1, widthPercent: 84.6154, align: "center", offsetXPercent: 0, offsetYPercent: -14, toneMode: "black" });
   const MOBILE_DEFAULT_TEXT_SCALE = 1.08;
+  const IOS_MOBILE_DEFAULT_TEXT_WIDTH_PERCENT = 89;
   const MOBILE_FOCUS_STAGE_MIN_WIDTH = 270;
   const MOBILE_FOCUS_STAGE_MAX_WIDTH = 410;
   const MOBILE_FOCUS_VERTICAL_BUDGET = 226;
@@ -978,6 +979,13 @@
       || Boolean(windowObject?.matchMedia?.("(pointer: coarse)")?.matches);
   }
 
+  function isIOSDevice(navigatorObject) {
+    const userAgent = String(navigatorObject?.userAgent || "");
+    const platform = String(navigatorObject?.platform || "");
+    return /iPad|iPhone|iPod/i.test(userAgent)
+      || (platform === "MacIntel" && Number(navigatorObject?.maxTouchPoints || 0) > 1);
+  }
+
   function createPngFile(blob, filename, FileConstructor) {
     const Constructor = FileConstructor || (typeof File !== "undefined" ? File : null);
     return Constructor ? new Constructor([blob], filename, { type: "image/png" }) : null;
@@ -1625,6 +1633,9 @@
     const adjustButton = options.adjustButton;
     const status = options.status;
     const announce = options.onHint;
+    const controllerWindow = options.windowObject || null;
+    const pointerEventsSupported = options.pointerEventsSupported
+      ?? (controllerWindow ? typeof controllerWindow.PointerEvent === "function" : true);
     const controls = options.controls || {};
     const defaultLayout = { ...DEFAULT_TEXT_LAYOUT, ...(options.defaultLayout || {}) };
     let preferredLayout = { ...defaultLayout, ...(options.initialLayout || {}) };
@@ -1739,7 +1750,7 @@
     function finishDrag(event) {
       if (event?.pointerId != null) {
         pointers.delete(event.pointerId);
-        gestureSurface?.releasePointerCapture?.(event.pointerId);
+        if (event.pointerType !== "touch-fallback") gestureSurface?.releasePointerCapture?.(event.pointerId);
       } else {
         [...pointers.keys()].forEach(id => gestureSurface?.releasePointerCapture?.(id));
         pointers.clear();
@@ -1779,6 +1790,7 @@
       const stageRect = stage?.getBoundingClientRect?.();
       if (!stageRect?.height || !stageRect?.width) return;
       event.preventDefault?.();
+      if (pointers.size >= 2 && !pointers.has(event.pointerId)) return;
       pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
       dragging = true;
       if (pointers.size === 1) dragStart = { x: event.clientX, y: event.clientY, layout: { ...preferredLayout } };
@@ -1787,7 +1799,7 @@
         pinchStart = { distance: Math.hypot(b.x-a.x,b.y-a.y), scale: preferredLayout.scale };
         dragStart = null;
       }
-      gestureSurface?.setPointerCapture?.(event.pointerId);
+      if (event.pointerType !== "touch-fallback") gestureSurface?.setPointerCapture?.(event.pointerId);
       textGroup.classList?.toggle?.("is-dragging", true);
     }
 
@@ -1804,6 +1816,23 @@
         offsetXPercent: dragStart.layout.offsetXPercent + (event.clientX-dragStart.x)/stageRect.width*100,
         offsetYPercent: dragStart.layout.offsetYPercent + (event.clientY-dragStart.y)/stageRect.height*100
       });
+    }
+
+    function preventSafariGesture(event) {
+      if (adjustmentMode) event.preventDefault?.();
+    }
+
+    function touchEventPointers(event, handler) {
+      if (!adjustmentMode) return;
+      event.preventDefault?.();
+      [...(event.changedTouches || [])].forEach(touch => handler({
+        pointerId: `touch-${touch.identifier}`,
+        pointerType: "touch-fallback",
+        clientX: touch.clientX,
+        clientY: touch.clientY,
+        button: 0,
+        preventDefault() { event.preventDefault?.(); }
+      }));
     }
 
     controls.scaleDown?.addEventListener?.("click", () => updateScale(-1));
@@ -1838,10 +1867,21 @@
     });
 
     adjustButton?.addEventListener?.("click", () => setMode(!adjustmentMode));
-    gestureSurface?.addEventListener?.("pointerdown", pointerDown);
-    gestureSurface?.addEventListener?.("pointermove", pointerMove);
-    gestureSurface?.addEventListener?.("pointerup", finishDrag);
-    gestureSurface?.addEventListener?.("pointercancel", finishDrag);
+    if (pointerEventsSupported) {
+      gestureSurface?.addEventListener?.("pointerdown", pointerDown, { passive: false });
+      gestureSurface?.addEventListener?.("pointermove", pointerMove, { passive: false });
+      gestureSurface?.addEventListener?.("pointerup", finishDrag);
+      gestureSurface?.addEventListener?.("pointercancel", finishDrag);
+      gestureSurface?.addEventListener?.("lostpointercapture", finishDrag);
+    } else {
+      gestureSurface?.addEventListener?.("touchstart", event => touchEventPointers(event, pointerDown), { passive: false });
+      gestureSurface?.addEventListener?.("touchmove", event => touchEventPointers(event, pointerMove), { passive: false });
+      gestureSurface?.addEventListener?.("touchend", event => touchEventPointers(event, finishDrag), { passive: false });
+      gestureSurface?.addEventListener?.("touchcancel", event => touchEventPointers(event, finishDrag), { passive: false });
+    }
+    gestureSurface?.addEventListener?.("gesturestart", preventSafariGesture, { passive: false });
+    gestureSurface?.addEventListener?.("gesturechange", preventSafariGesture, { passive: false });
+    gestureSurface?.addEventListener?.("gestureend", preventSafariGesture, { passive: false });
     applyLayout();
 
     return {
@@ -1905,6 +1945,7 @@
     const nextButton = rootElement.querySelector("[data-light-quote-next]");
     const backgroundButton = rootElement.querySelector("[data-light-quote-background]");
     const textAdjustButton = rootElement.querySelector("[data-light-quote-text-adjust]");
+    const focusBackButton = rootElement.querySelector("[data-light-quote-focus-back]");
     const layoutControls = rootElement.querySelector("[data-light-quote-layout-controls]");
     const freezeButton = rootElement.querySelector("[data-light-quote-freeze]");
     const preview = rootElement.querySelector("[data-light-quote-image-preview]");
@@ -1916,10 +1957,16 @@
     const windowObject = options.windowObject || rootElement.ownerDocument?.defaultView || (typeof window !== "undefined" ? window : null);
     const documentObject = rootElement.ownerDocument || (typeof document !== "undefined" ? document : null);
     const bodyElement = documentObject?.body;
-    const mobileFocusMode = options.mobileFocusMode ?? Boolean(
+    const mobileFocusCapable = options.mobileFocusMode !== false && Boolean(
       bodyElement?.classList?.contains?.("light-quote-page")
       && windowObject?.matchMedia?.("(max-width: 575px)")?.matches
     );
+    let focusRequested = false;
+    try {
+      const pageUrl = new URL(windowObject?.location?.href || "http://localhost/");
+      focusRequested = pageUrl.searchParams.get("focus") === "1";
+    } catch (_) {}
+    let mobileFocusMode = options.mobileFocusMode === true || (mobileFocusCapable && focusRequested);
     const hintPresenter = createHintPresenter(status, windowObject, { delay: 2400 });
     const showStatus = hintPresenter.show;
     const showToolbarHint = hintPresenter.showTemporary;
@@ -1941,7 +1988,13 @@
       adjustButton: textAdjustButton,
       status: null,
       onHint: showToolbarHint,
-      defaultLayout: mobileFocusMode ? { scale: MOBILE_DEFAULT_TEXT_SCALE } : undefined,
+      windowObject,
+      defaultLayout: mobileFocusCapable || options.mobileFocusMode === true ? {
+        scale: MOBILE_DEFAULT_TEXT_SCALE,
+        widthPercent: isIOSDevice(navigatorObject)
+          ? IOS_MOBILE_DEFAULT_TEXT_WIDTH_PERCENT
+          : DEFAULT_TEXT_LAYOUT.widthPercent
+      } : undefined,
       controls: {
         panel: layoutControls,
         scaleDown: rootElement.querySelector("[data-light-quote-scale-down]"),
@@ -1981,11 +2034,75 @@
       }
     }
 
-    rootElement.classList?.toggle?.("is-mobile-focus", mobileFocusMode);
-    if (mobileFocusMode) {
-      textPosition.setMode(true);
-      scheduleMobileViewportSync();
+    function updateFocusUrl(active, method = "replaceState") {
+      if (!windowObject?.history?.[method] || !windowObject?.location?.href) return;
+      const url = new URL(windowObject.location.href);
+      if (active) url.searchParams.set("focus", "1");
+      else url.searchParams.delete("focus");
+      const state = active ? { ...(windowObject.history.state || {}), lightQuoteFocus: true } : {};
+      windowObject.history[method](state, "", url);
     }
+
+    function setMobileFocusMode(active) {
+      const next = Boolean(active && (mobileFocusCapable || options.mobileFocusMode === true));
+      mobileFocusMode = next;
+      bodyElement?.classList?.toggle?.("light-quote-focus-active", next);
+      rootElement.classList?.toggle?.("is-mobile-focus", next);
+      textPosition.setMode(next);
+      if (next) scheduleMobileViewportSync();
+      else {
+        rootElement.style?.removeProperty?.("--lq-viewport-height");
+        rootElement.style?.removeProperty?.("--lq-focus-stage-width");
+        textPosition.measureAndFit();
+      }
+      return mobileFocusMode;
+    }
+
+    function enterMobileFocus() {
+      if (!mobileFocusCapable || mobileFocusMode) return false;
+      updateFocusUrl(true, "pushState");
+      setMobileFocusMode(true);
+      return true;
+    }
+
+    function exitMobileFocus() {
+      if (!mobileFocusMode) return false;
+      if (windowObject?.history?.state?.lightQuoteFocus && typeof windowObject.history.back === "function") {
+        windowObject.history.back();
+      } else {
+        updateFocusUrl(false, "replaceState");
+        setMobileFocusMode(false);
+      }
+      return true;
+    }
+
+    const focusEntrySelector = [
+      "[data-light-quote-stage]",
+      "[data-light-quote-background]",
+      "[data-light-quote-text-adjust]",
+      "[data-light-quote-next]",
+      "[data-light-quote-freeze]",
+      "[data-light-quote-copy]"
+    ].join(",");
+    rootElement.addEventListener?.("click", event => {
+      if (!mobileFocusCapable || mobileFocusMode) return;
+      const target = event.target?.closest?.(focusEntrySelector);
+      if (!target || (rootElement.contains && !rootElement.contains(target))) return;
+      event.preventDefault?.();
+      event.stopImmediatePropagation?.();
+      enterMobileFocus();
+    }, true);
+    focusBackButton?.addEventListener?.("click", event => {
+      if (!mobileFocusMode) return;
+      event.preventDefault?.();
+      exitMobileFocus();
+    });
+    windowObject?.addEventListener?.("popstate", () => {
+      let active = false;
+      try { active = new URL(windowObject.location.href).searchParams.get("focus") === "1"; } catch (_) {}
+      setMobileFocusMode(active);
+    });
+    setMobileFocusMode(mobileFocusMode);
     let currentQuote = null;
     let currentImage = null;
     let encounterTime = null;
@@ -2098,10 +2215,10 @@
         : currentImage ? preloadImage(currentImage.url) : Promise.resolve(null);
       textTonePromise = analyzeCurrentTextTone(version, currentImage, currentImagePromise);
       rootElement.dataset.currentQuote = quote.lq_id;
-      if (updateUrl && typeof history !== "undefined") {
-        const url = new URL(location.href);
+      if (updateUrl && windowObject?.history?.replaceState && windowObject?.location?.href) {
+        const url = new URL(windowObject.location.href);
         url.searchParams.set("quote", quote.lq_id);
-        history.replaceState({}, "", url);
+        windowObject.history.replaceState(windowObject.history.state || {}, "", url);
       }
       document.title = `${technicalTitle(quote.quote_text)}・光语录・生命之书 | librarys.life`;
       showStatus("");
@@ -2380,7 +2497,9 @@
       getEffectiveLayout: textPosition.getEffectiveLayout,
       isTextAdjustmentMode: textPosition.isAdjustmentMode,
       isTextDragging: textPosition.isDragging,
-      isMobileFocusMode: () => mobileFocusMode
+      isMobileFocusMode: () => mobileFocusMode,
+      enterMobileFocus,
+      exitMobileFocus
     };
   }
 
@@ -2510,6 +2629,7 @@
     EXPORT_HEIGHT,
     EXPORT_WIDTH,
     LIGHT_QUOTES_BUILD,
+    IOS_MOBILE_DEFAULT_TEXT_WIDTH_PERCENT,
     MOBILE_DEFAULT_TEXT_SCALE,
     LIGHT_TEXT_COVERAGE_LEAD,
     MIN_EXPORT_BYTES,
@@ -2557,6 +2677,7 @@
     initPreviewModules,
     initTagModule,
     initTagModules,
+    isIOSDevice,
     isTouchDevice,
     loadRasterImage,
     luminanceStats,

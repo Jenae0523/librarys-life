@@ -215,6 +215,9 @@
 }
 .light-quote-stage.is-text-adjusting {
   touch-action: none;
+  overscroll-behavior: contain;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .light-quote-stage__glow.is-dragging { cursor: grabbing; }
 .light-quote-stage--text-dark {
@@ -737,25 +740,25 @@
 }
 
 @media (max-width: 575px) {
-  body.light-quote-page {
+  body.light-quote-page.light-quote-focus-active {
     overflow-x: clip;
   }
-  body.light-quote-page > #js-header,
-  body.light-quote-page > footer,
-  body.light-quote-page .light-quote-header {
+  body.light-quote-page.light-quote-focus-active > #js-header,
+  body.light-quote-page.light-quote-focus-active > footer,
+  body.light-quote-page.light-quote-focus-active .light-quote-header {
     display: none;
   }
-  body.light-quote-page > main {
+  body.light-quote-page.light-quote-focus-active > main {
     min-width: 0;
     overflow-x: clip;
   }
-  body.light-quote-page .light-quote-main {
+  body.light-quote-page.light-quote-focus-active .light-quote-main {
     width: 100%;
     min-width: 0;
     box-sizing: border-box;
     padding: max(4px, env(safe-area-inset-top)) 10px max(8px, env(safe-area-inset-bottom));
   }
-  body.light-quote-page .light-quote-focus-header {
+  body.light-quote-page.light-quote-focus-active .light-quote-focus-header {
     display: grid;
     grid-template-columns: minmax(72px, 1fr) auto minmax(72px, 1fr);
     align-items: center;
@@ -791,31 +794,31 @@
     outline: 2px solid rgba(98,129,200,.34);
     outline-offset: 1px;
   }
-  body.light-quote-page .light-quote-experience {
+  body.light-quote-page.light-quote-focus-active .light-quote-experience {
     --lq-action-font-size: .84rem;
     position: relative;
     width: min(calc(100vw - 20px), var(--lq-focus-stage-width, calc(100vw - 20px)));
     max-width: 410px;
   }
-  body.light-quote-page .light-quote-stage {
+  body.light-quote-page.light-quote-focus-active .light-quote-stage {
     width: 100%;
     max-width: 100%;
   }
-  body.light-quote-page .light-quote-background-control {
+  body.light-quote-page.light-quote-focus-active .light-quote-background-control {
     flex-wrap: nowrap;
     gap: 0 8px;
     margin-top: 3px;
   }
-  body.light-quote-page .light-quote-background-control button {
+  body.light-quote-page.light-quote-focus-active .light-quote-background-control button {
     min-height: 32px;
     padding: 4px 2px;
     font-size: .86rem;
     white-space: nowrap;
   }
-  body.light-quote-page .light-quote-layout-controls {
+  body.light-quote-page.light-quote-focus-active .light-quote-layout-controls {
     margin-top: 4px;
   }
-  body.light-quote-page .light-quote-layout-controls__toolbar {
+  body.light-quote-page.light-quote-focus-active .light-quote-layout-controls__toolbar {
     left: 50%;
     width: max-content;
     max-width: calc(100vw - 8px);
@@ -823,39 +826,39 @@
     padding: 4px 3px;
     transform: translateX(-50%);
   }
-  body.light-quote-page .light-quote-layout-controls__group + .light-quote-layout-controls__group {
+  body.light-quote-page.light-quote-focus-active .light-quote-layout-controls__group + .light-quote-layout-controls__group {
     margin-left: 2px;
     padding-left: 3px;
   }
-  body.light-quote-page .light-quote-layout-controls button {
+  body.light-quote-page.light-quote-focus-active .light-quote-layout-controls button {
     width: clamp(27px, 7.7vw, 32px);
     height: 34px;
     flex-basis: clamp(27px, 7.7vw, 32px);
     font-size: .86rem;
   }
-  body.light-quote-page .light-quote-layout-controls svg {
+  body.light-quote-page.light-quote-focus-active .light-quote-layout-controls svg {
     width: 18px;
     height: 18px;
   }
-  body.light-quote-page .light-quote-layout-controls__swatch {
+  body.light-quote-page.light-quote-focus-active .light-quote-layout-controls__swatch {
     width: 18px;
     height: 18px;
   }
-  body.light-quote-page .light-quote-layout-controls__group--width {
+  body.light-quote-page.light-quote-focus-active .light-quote-layout-controls__group--width {
     position: static;
   }
-  body.light-quote-page .light-quote-layout-controls__popover {
+  body.light-quote-page.light-quote-focus-active .light-quote-layout-controls__popover {
     right: auto;
     left: 50%;
     width: min(240px, calc(100vw - 24px));
     transform: translateX(-50%);
   }
-  body.light-quote-page .light-quote-actions {
+  body.light-quote-page.light-quote-focus-active .light-quote-actions {
     flex-wrap: nowrap;
     gap: 6px;
     margin-top: 7px;
   }
-  body.light-quote-page .light-quote-actions button {
+  body.light-quote-page.light-quote-focus-active .light-quote-actions button {
     min-width: 0;
     min-height: 36px;
     flex: 1 1 0;
@@ -863,13 +866,13 @@
     font-size: .82rem;
     white-space: nowrap;
   }
-  body.light-quote-page .light-quote-status {
+  body.light-quote-page.light-quote-focus-active .light-quote-status {
     min-height: 1.25em;
     margin-top: 3px;
     font-size: .76rem;
     line-height: 1.25;
   }
-  body.light-quote-page .light-quote-focus-hint {
+  body.light-quote-page.light-quote-focus-active .light-quote-focus-hint {
     display: block;
     height: 1.25em;
     min-height: 1.25em;
@@ -881,6 +884,10 @@
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  body.light-quote-page.light-quote-focus-active button,
+  body.light-quote-page.light-quote-focus-active .light-quote-focus-header a {
+    touch-action: manipulation;
   }
 }
 
