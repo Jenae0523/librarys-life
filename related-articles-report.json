@@ -1,7 +1,7 @@
 {
   "rule_version": "mixed-related-articles-v1",
-  "article_count": 140,
-  "recommendation_count": 420,
+  "article_count": 141,
+  "recommendation_count": 423,
   "articles": [
     {
       "title": "遇见大角星人：在通灵信息、直觉体验与逻辑判断之间保持清醒",
@@ -7385,8 +7385,8 @@
           ]
         },
         {
-          "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
-          "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
+          "title": "如果苦难来自前世业力，我们还应该帮助他人吗？｜埃德加·凯西谈业力与慈悲",
+          "url": "/all-articles/books/many-mansions/karma-not-fate-edgar-cayce-compassion-free-will-destiny.html",
           "source": "auto",
           "score": 42,
           "rank_score": 76.5,
@@ -7828,24 +7828,24 @@
           ]
         },
         {
-          "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
-          "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
+          "title": "如果苦难来自前世业力，我们还应该帮助他人吗？｜埃德加·凯西谈业力与慈悲",
+          "url": "/all-articles/books/many-mansions/karma-not-fate-edgar-cayce-compassion-free-will-destiny.html",
           "source": "auto",
-          "score": 56,
-          "rank_score": 104.5,
+          "score": 64,
+          "rank_score": 120.5,
           "structural_score": 5,
-          "semantic_score": 51,
+          "semantic_score": 59,
           "reason": "共同关注「业力法则」",
           "matched_by": [
+            {
+              "type": "keyword",
+              "score": 24,
+              "label": "业力法则"
+            },
             {
               "type": "tag",
               "score": 18,
               "label": "自由意志"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "业力法则"
             },
             {
               "type": "text",
@@ -8471,6 +8471,53 @@
           ]
         },
         {
+          "title": "如果苦难来自前世业力，我们还应该帮助他人吗？｜埃德加·凯西谈业力与慈悲",
+          "url": "/all-articles/books/many-mansions/karma-not-fate-edgar-cayce-compassion-free-will-destiny.html",
+          "source": "auto",
+          "score": 70,
+          "rank_score": 93.5,
+          "structural_score": 31,
+          "semantic_score": 39,
+          "reason": "共同关注「业力法则」",
+          "matched_by": [
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《多世生命》"
+            },
+            {
+              "type": "keyword",
+              "score": 16,
+              "label": "业力法则"
+            },
+            {
+              "type": "tag",
+              "score": 12,
+              "label": "业力法则"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《灵魂转生的奥秘》"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "自由意志"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            },
+            {
+              "type": "text",
+              "score": 3,
+              "label": "业力法则"
+            }
+          ]
+        },
+        {
           "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
           "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
           "source": "auto",
@@ -8504,53 +8551,6 @@
               "type": "related_tag",
               "score": 8,
               "label": "灵魂转世"
-            },
-            {
-              "type": "parent",
-              "score": 5,
-              "label": "好书解读"
-            },
-            {
-              "type": "text",
-              "score": 3,
-              "label": "业力法则"
-            }
-          ]
-        },
-        {
-          "title": "疾病是业力惩罚吗？埃德加·凯西谈健康、心态与整体疗愈",
-          "url": "/all-articles/books/many-mansions/edgar-cayce-karma-health-holistic-healing.html",
-          "source": "auto",
-          "score": 70,
-          "rank_score": 93.5,
-          "structural_score": 31,
-          "semantic_score": 39,
-          "reason": "共同关注「业力法则」",
-          "matched_by": [
-            {
-              "type": "category",
-              "score": 16,
-              "label": "《多世生命》"
-            },
-            {
-              "type": "keyword",
-              "score": 16,
-              "label": "业力法则"
-            },
-            {
-              "type": "tag",
-              "score": 12,
-              "label": "身体疗愈"
-            },
-            {
-              "type": "identity",
-              "score": 10,
-              "label": "《灵魂转生的奥秘》"
-            },
-            {
-              "type": "related_tag",
-              "score": 8,
-              "label": "业力法则"
             },
             {
               "type": "parent",
@@ -8622,8 +8622,8 @@
           ]
         },
         {
-          "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
-          "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
+          "title": "如果苦难来自前世业力，我们还应该帮助他人吗？｜埃德加·凯西谈业力与慈悲",
+          "url": "/all-articles/books/many-mansions/karma-not-fate-edgar-cayce-compassion-free-will-destiny.html",
           "source": "auto",
           "score": 61,
           "rank_score": 75.5,
@@ -8649,7 +8649,7 @@
             {
               "type": "related_tag",
               "score": 8,
-              "label": "灵魂转世"
+              "label": "自由意志"
             },
             {
               "type": "tag",
@@ -8710,6 +8710,53 @@
       "manual_valid": 0,
       "manual_issues": [],
       "recommendations": [
+        {
+          "title": "如果苦难来自前世业力，我们还应该帮助他人吗？｜埃德加·凯西谈业力与慈悲",
+          "url": "/all-articles/books/many-mansions/karma-not-fate-edgar-cayce-compassion-free-will-destiny.html",
+          "source": "auto",
+          "score": 90,
+          "rank_score": 133.5,
+          "structural_score": 31,
+          "semantic_score": 59,
+          "reason": "共同关注「业力法则」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 24,
+              "label": "业力法则"
+            },
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "自由意志"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《多世生命》"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《灵魂转生的奥秘》"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "自由意志"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "自由意志"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
         {
           "title": "灵魂出生前计划与业力法则：命运是注定的吗？为什么还要转世？",
           "url": "/all-articles/books/between-death-life/6-soul-plan-before-birth-karma-free-will-reincarnation-purpose.html",
@@ -8793,15 +8840,109 @@
               "label": "业力法则"
             }
           ]
+        }
+      ],
+      "needs_manual_review": false
+    },
+    {
+      "title": "如果苦难来自前世业力，我们还应该帮助他人吗？｜埃德加·凯西谈业力与慈悲",
+      "url": "/all-articles/books/many-mansions/karma-not-fate-edgar-cayce-compassion-free-will-destiny.html",
+      "manual_declared": 0,
+      "manual_valid": 0,
+      "manual_issues": [],
+      "recommendations": [
+        {
+          "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
+          "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
+          "source": "auto",
+          "score": 90,
+          "rank_score": 133.5,
+          "structural_score": 31,
+          "semantic_score": 59,
+          "reason": "共同关注「业力法则」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 24,
+              "label": "业力法则"
+            },
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "自由意志"
+            },
+            {
+              "type": "category",
+              "score": 16,
+              "label": "《多世生命》"
+            },
+            {
+              "type": "identity",
+              "score": 10,
+              "label": "《灵魂转生的奥秘》"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "自由意志"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "灵魂转世"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
+        },
+        {
+          "title": "灵魂出生前计划与业力法则：命运是注定的吗？为什么还要转世？",
+          "url": "/all-articles/books/between-death-life/6-soul-plan-before-birth-karma-free-will-reincarnation-purpose.html",
+          "source": "auto",
+          "score": 64,
+          "rank_score": 120.5,
+          "structural_score": 5,
+          "semantic_score": 59,
+          "reason": "共同关注「业力法则」",
+          "matched_by": [
+            {
+              "type": "keyword",
+              "score": 24,
+              "label": "业力法则"
+            },
+            {
+              "type": "tag",
+              "score": 18,
+              "label": "自由意志"
+            },
+            {
+              "type": "text",
+              "score": 9,
+              "label": "业力法则"
+            },
+            {
+              "type": "related_tag",
+              "score": 8,
+              "label": "《生死之间》"
+            },
+            {
+              "type": "parent",
+              "score": 5,
+              "label": "好书解读"
+            }
+          ]
         },
         {
           "title": "阿卡西记录与生命的挂毯：灵魂轮回、业力与地球转世的真相",
           "url": "/all-articles/dolores-cannon-hypnosis/tapestry-room-akashic-records-soul-reincarnation-karma-earth.html",
           "source": "auto",
-          "score": 45,
-          "rank_score": 90,
+          "score": 48,
+          "rank_score": 96,
           "structural_score": 0,
-          "semantic_score": 45,
+          "semantic_score": 48,
           "reason": "共同关注「业力法则」",
           "matched_by": [
             {
@@ -8821,7 +8962,7 @@
             },
             {
               "type": "text",
-              "score": 3,
+              "score": 6,
               "label": "自由意志"
             }
           ]
@@ -13775,13 +13916,13 @@
           ]
         },
         {
-          "title": "如何改变业力？动机决定业力吗？埃德加·凯西谈正确的思想与行动，以及命运的可变性",
-          "url": "/all-articles/books/many-mansions/how-to-change-karma-edgar-cayce-intention-action-free-will.html",
+          "title": "如果苦难来自前世业力，我们还应该帮助他人吗？｜埃德加·凯西谈业力与慈悲",
+          "url": "/all-articles/books/many-mansions/karma-not-fate-edgar-cayce-compassion-free-will-destiny.html",
           "source": "auto",
-          "score": 45,
-          "rank_score": 90,
+          "score": 48,
+          "rank_score": 96,
           "structural_score": 0,
-          "semantic_score": 45,
+          "semantic_score": 48,
           "reason": "共同关注「业力法则」",
           "matched_by": [
             {
@@ -13801,7 +13942,7 @@
             },
             {
               "type": "text",
-              "score": 3,
+              "score": 6,
               "label": "自由意志"
             }
           ]
